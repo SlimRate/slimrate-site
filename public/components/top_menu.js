@@ -1,0 +1,442 @@
+const productMenuElementId = "dropmenu__product";
+const businessTypeMenuElementId = "dropmenu__business-types";
+const pricingMenuElementId = "dropmenu__pricing";
+const companyMenuElementId = "dropmenu__company";
+
+const topMenuTeplate = document.createElement("template");
+topMenuTeplate.innerHTML = `
+<header class="header">
+<div class="container">
+<a class="header-logo" href="index.html">
+    <img src="assets/img/logo.svg" alt="">
+</a>
+<div class="header-nav">
+    <ul>
+    <li id='${productMenuElementId}'><a href="javascript:void(0)">Solutions</a></li>
+      <li id='${businessTypeMenuElementId}'><a href="javascript:void(0)">Business Types</a></li>
+      <li ><a href="pricing.html" id='${pricingMenuElementId}'>Pricing</a></li>
+      <li><a href="company.html" id ='${companyMenuElementId}'>Company</a></li>
+      <li><a href="https://admin.slimrate.com/#" target="blank">Login</a></li>
+    </ul>
+    <a href="#get_demo">
+        <button class="btn btn-red">Get Demo</button></a>
+</div>
+</div>
+</header>
+<header class="mobile_header">
+<div class="hamburger-menu">
+<input id="menu__toggle" type="checkbox" />
+<label class="menu__btn" for="menu__toggle">
+    <span></span>
+</label>
+
+<div class="menu__box">
+    <div class="menu__item i1" id="menu1">
+        <a href="#menu1">
+            Solutions</a>
+        <img class="menu_arrow_rotate r1" src=" assets/img/arrow-right.svg" alt="">
+        <div class="more m1">
+            <a class="more_head">Industry leading point of sale and management tools to separate you from your competition. Live
+            support to ensure your questions are always answered.</a>
+            <ul>
+                <li class="divider">
+                </li>
+                <li>
+                    <a href="software.html">Software</a>
+                </li>
+                <li>
+                    <a href="hardware.html">Hardware</a>
+                </li>
+                <li>
+                    <a href="payment_processing.html">Payment Processing</a>
+                </li>
+                <li>
+                    <a href="e-commerce.html">E-commerce</a>
+                </li>
+            </ul>
+        </div>
+
+
+    </div>
+
+    
+    <div class="divider"></div>
+    <div class="menu__item i2" id="menu2"><a href="#menu2">Business Types</a>
+        <img class="menu_arrow_rotate r2" src=" assets/img/arrow-right.svg" alt="">
+        <div class="more m2">
+            <a class="more_head">Modern payment and point of sale technology for a variety of applications</a>
+            <ul>
+            <div class="divider"></div>
+                </li>
+
+                <li>
+                    <div class="menu__item i3" id="menu3"><a href="#menu3">Restaurant POS</a>
+                        <img class="menu_arrow_rotate r3" src=" assets/img/arrow-right.svg" alt="">
+                        <div class="more m3">
+                            <a class="more_head">Cloud-based POS & management solution for restaurants of
+                                all sizes. Built to make your restaurant perform better
+                            </a>
+                            <ul>
+                                <li>
+                                    <a href="restaurant.html">Restaurant POS</a>
+                                </li>
+
+                                <li>
+                                    <a href="h-bars.html">Bars & Nightclubs</a>
+                                </li>
+                                <li>
+                                    <a href="h-casual.html">Casual Dining</a>
+                                </li>
+                                <li>
+                                    <a href="h-fine.html">Fine Dining</a>
+                                </li>
+                                <li>
+                                    <a href="h-quick.html">Quick Service Restaurants (QSR)</a>
+                                </li>
+                                <li>
+                                    <a href="h-coffee.html">Coffee Shops & Bakeries</a>
+                                </li>
+                                <li>
+                                    <a href="h-truck.html">Food Trucks</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="menu__item i4" id="menu4"><a href="#menu4">Retail POS</a>
+                        <img class="menu_arrow_rotate r4" src=" assets/img/arrow-right.svg" alt="">
+                        <div class="more m4">
+                            <a class="more_head">Sell in-style with an integrated retail POS solution that
+                                makes it easy to sell online and in-store</a>
+                            <ul>
+                                <li>
+                                    <a href="r-liquor.html">Liquor Stores</a>
+                                </li>
+                                <li>
+                                    <a href="r-clothing.html">Clothing and Apparel Stores</a>
+                                </li>
+                                <li>
+                                    <a href="r-grocery.html">Grocery and Convenience Stores</a>
+                                </li>
+                                <li>
+                                    <a href="r-specialty.html">Specialty Stores</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="divider"></div>
+    <div class="menu__item"><a href="pricing.html">Pricing</a> </div>
+    <div class="divider"></div>
+    <div class="menu__item"><a href="company.html">Company</a></div>
+    <div class="divider"></div>
+    <div class="menu__item"><a href="https://admin.slimrate.com/#" target="blank">Login</a></div>
+    <a href="#get_demo"><button onclick="uncheck()" class="btn btn-red">Get a Demo</button></a>
+    
+</div>
+</div>
+</header>
+`;
+class TopMenu extends HTMLElement {
+  constructor() {
+    super();
+    this._contents = new DocumentFragment();
+    this._contents.appendChild(topMenuTeplate.content.cloneNode(true));
+  }
+  connectedCallback() {
+    this.appendChild(this._contents);
+    console.log("connected callback");
+    initDropment();
+  }
+}
+
+customElements.define("top-menu", TopMenu);
+
+function initDropment() {
+  console.log("init initDropment");
+  const productHtmlObj = {
+    infoHtmlStr: `
+      <h2 class="dropmenu-title">Solutions</h2>
+      <p class="dropmenu-descr">Industry leading point of sale and management tools to separate you from your competition. Live
+      support to ensure your questions are always answered.</p>
+      `,
+    navContentHtmlStr: `
+      <div class="dropmenu-nav">
+      <ul>
+      <li>
+          <a href="software.html">
+              <div class="nav-body">
+                  <div class="nav-el-i"><i class="nav-el las la-desktop"></i></div>
+                  <div>Software<span><br>Increase revenue, streamline
+      operations, and build customer loyalty with powerful cloud-based
+      software.
+              </span></div>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="hardware.html">
+              <div class="nav-body">
+                  <div class="nav-el-i"><i class="nav-el las la-server"></i></div>
+                  <div>Hardware<span><br>Deliver a seamless user experience
+                    with durable hardware and built-in powerful technology
+            </span></div>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="payment_processing.html">
+              <div class="nav-body">
+                  <div class="nav-el-i"><i class="nav-el las la-money-check-alt"></i></div>
+                  <div>Payment Processing<span><br>Full suite of
+                    payment acceptance tools - in-store, online and mobile. Designed to
+                    help build and grow your business.
+          </span></div>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="e-commerce.html">
+              <div class="nav-body">
+                  <div class="nav-el-i"><i class="nav-el las la-cart-plus"></i></div>
+                  <div>E-commerce<span><br>Coming soon!
+        </span></div>
+              </div>
+          </a>
+      </li>
+  </ul>
+        <!-- <a href="">Overview→</a> -->
+      </div>
+    `,
+  };
+
+  const businessTypesHtmlObj = {
+    infoHtmlStr: `
+        <h2 class="dropmenu-title">Business Types</h2>
+        <a class="header__tab t1 active" href="javascript:void(0)">Restaurant POS<span>Cloud-based
+                POS & management solution for restaurants of all sizes. Built to make your
+                restaurant perform better.
+            </span></a>
+        <a class="header__tab t2" href="javascript:void(0)">Retail POS<span>Sell in-style with an integrated retail
+                POS solution that makes it easy to sell online and in-store
+            </span></a>
+      `,
+    navContentHtmlStr: `
+      <div class="dropmenu-nav n1">
+        <ul>
+
+          <li><a href="h-bars.html"><div class="nav-body">
+          <div class="nav-el-i"><i class="nav-el las la-cocktail"></i></div><div>Bars & Nightclubs<span><br>Powerful bar and club point
+                      of sale solution to ignite your business
+                  </span></div></div></a></li>
+
+          <li><a href="h-casual.html"><div class="nav-body">
+          <div class="nav-el-i"><i class="nav-el las la-apple-alt"></i></div><div>Casual Dining<span><br>Enhance efficiency,
+          profitability, and customer service with our all-in-one cloud based
+          solution</span></div></div></a></li>
+
+
+          <li><a href="h-fine.html"><div class="nav-body">
+          <div class="nav-el-i"><i class="nav-el las la-cheese"></i></div><div>Fine Dining<span><br>Enhance customer experience with our
+          feature-rich, easy to use software, durable hardware, and seamless
+          payments
+                  </span></div></div></a></li>
+
+          <li><a href="h-quick.html"><div class="nav-body">
+          <div class="nav-el-i"><i class="nav-el las la-pizza-slice"></i></div><div>Quick Service Restaurants (QSR)<span><br>Maximize performance
+          with smart, easy to use technology
+                  </span></div></div></a></li>
+
+          <li><a href="h-coffee.html"><div class="nav-body">
+          <div class="nav-el-i"><i class="nav-el las la-coffee"></i></div><div>Coffee Shops & Bakeries<span><br>Build customer loyalty
+                  with tools curated for an excellent customer experience
+          </span></div></div></a></li>
+      
+          <li><a href="h-truck.html"><div class="nav-body">
+          <div class="nav-el-i"><i class="nav-el las la-hamburger"></i></div><div>Food Trucks<span><br>A simple, reliable technology partner
+          to get you up and running while you’re on the go
+                  </span></div></div></a></li>
+
+          
+      </div>
+      <div class="dropmenu-nav n2 hidden">
+      <ul>
+
+      <li><a href="r-liquor.html"><div class="nav-body">
+      <div class="nav-el-i"><i class="nav-el las la-wine-glass"></i></div><div>Liquor Stores<span><br>The comprehensive and
+      user-friendly wine and spirits solution to build customer loyalty
+      and keep them coming back
+              </span></div></div></a></li>
+
+      <li><a href="r-clothing.html"><div class="nav-body">
+      <div class="nav-el-i"><i class="nav-el las la-tshirt"></i></div><div>
+      Clothing and Apparel Stores
+      <span><br>
+      Best in class point of sale solution for clothing and apparel stores
+              </span></div></div></a></li>
+
+      <li><a href="r-grocery.html"><div class="nav-body">
+      <div class="nav-el-i"><i class="nav-el las la-fish"></i></div><div>
+      Grocery and Convenience Stores
+      <span><br>
+      Turn more customers with a seamless checkout process. Customizable reward and
+                      loyalty programs to engage your customers
+              </span></div></div></a></li>
+
+              <li><a href="r-specialty.html"><div class="nav-body">
+              <div class="nav-el-i"><i class="nav-el las la-dice-d6"></i></div><div>
+              Specialty Stores
+              <span><br>
+              Product and management solutions that will help You run your business
+                      </span></div></div></a></li>
+      
+      <!-- <a href="">Overview→</a> -->
+      </div>
+      `,
+  };
+
+  var isHeaderHovered = false;
+
+  const header = document.getElementsByClassName("header")[0];
+  header.addEventListener("mouseenter", () => {
+    isHeaderHovered = true;
+  });
+  header.addEventListener("mouseleave", () => {
+    isHeaderHovered = false;
+  });
+
+  document
+    .getElementById(productMenuElementId)
+    .addEventListener("mouseenter", () => {
+      openProductMenu();
+    });
+  document
+    .getElementById(businessTypeMenuElementId)
+    .addEventListener("mouseenter", () => {
+      openBusinessTypesMenu();
+    });
+
+  document
+    .getElementById(pricingMenuElementId)
+    .addEventListener("mouseenter", () => {
+      const el = document.getElementsByClassName("dropmenu")[0];
+      if (el != null) {
+        onRemoveForce(el);
+      }
+    });
+  document
+    .getElementById(companyMenuElementId)
+    .addEventListener("mouseenter", () => {
+      const el = document.getElementsByClassName("dropmenu")[0];
+      if (el != null) {
+        onRemoveForce(el);
+      }
+    });
+
+  var productMenu;
+
+  function openProductMenu() {
+    businessTypeMenu = null;
+    if (productMenu != null) return;
+    destroyElement();
+    productMenu = createDropmenu({
+      ...productHtmlObj,
+      parentId: productMenuElementId,
+    });
+  }
+  var businessTypeMenu;
+
+  function openBusinessTypesMenu() {
+    productMenu = null;
+    if (businessTypeMenu != null) return;
+    destroyElement();
+    businessTypeMenu = createDropmenu({
+      ...businessTypesHtmlObj,
+      parentId: businessTypeMenuElementId,
+    });
+  }
+
+  function destroyElement() {
+    const els = document.getElementsByClassName("dropmenu");
+    if (els.length > 0) {
+      console.log({ els });
+      for (const el of els) {
+        el.parentElement.removeChild(el);
+        el.remove();
+      }
+    }
+  }
+
+  function createDropmenu({ infoHtmlStr, navContentHtmlStr, parentId }) {
+    const fragment = document.createDocumentFragment();
+
+    const element = document.createElement("div");
+
+    element.innerHTML = `
+      <div class="dropmenu hovered">
+          <div class="dropmenu-container">
+              <div class="dropmenu-info">
+                  ${infoHtmlStr}
+              </div>
+              ${navContentHtmlStr}
+          </div>
+      </div>
+    `;
+
+    while (element.childNodes[0]) {
+      fragment.appendChild(element.childNodes[0]);
+    }
+
+    const parentElement = document.getElementById(parentId);
+
+    parentElement.appendChild(fragment);
+    const el = document.getElementsByClassName("dropmenu")[0];
+    el.addEventListener("mouseleave", () => onRemove(el));
+
+
+    $(".t1 ").hover(
+      function () {
+        $(".n1").removeClass("hidden");
+        $(".n2").addClass("hidden");
+        $(".t2").removeClass("active");
+        $(".t1").addClass("active");
+      },
+      function () { }
+    );
+
+    $(".t2 ").hover(
+      function () {
+        $(".n2").removeClass("hidden");
+        $(".n1").addClass("hidden");
+        $(".t1").removeClass("active");
+        $(".t2").addClass("active");
+      },
+      function () { }
+    );
+
+    return fragment;
+  }
+
+  function onRemove(fragment) {
+    if (!isHeaderHovered) return;
+    setTimeout(function () {
+      productMenu = null;
+      businessTypeMenu = null;
+      fragment.parentElement.removeChild(fragment);
+      fragment.removeEventListener("mouseleave", onRemove);
+    }, 100);
+  }
+
+  function onRemoveForce(fragment) {
+    setTimeout(function () {
+      productMenu = null;
+      businessTypeMenu = null;
+      fragment.parentElement.removeChild(fragment);
+      fragment.removeEventListener("mouseleave", onRemove);
+    }, 100);
+  }
+}

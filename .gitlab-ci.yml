@@ -1,0 +1,41 @@
+stages:
+  - deploy
+
+deploy_main:
+  rules:
+    - if: $CI_COMMIT_BRANCH == 'prod' && $CI_COMMIT_TAG == null
+      changes:
+        - ".gitlab-ci.yml"
+      when: always
+    - if: $CI_COMMIT_BRANCH == 'prod' && $CI_COMMIT_TAG == null
+      when: always
+    - if: $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == 'prod' && $CI_MERGE_REQUEST_APPROVED
+      when: always
+    - when: never
+  stage: deploy
+  when: on_success
+  image: kroniak/ssh-client
+  variables:
+    SSH_HOST: $SSH_HOST_AWS
+    SSH_USER: $SSH_USER_AWS
+    SSH_KEY: $SSH_KEY_AWS
+    TARGET_PATH: /var/www/slimrate
+    TARGET_PATH_NEW: /var/www/slimrate.new
+    TARGET_PATH_OLD: /var/www/slimrate.old
+  script:
+    - "which ssh-agent || ( apk add openssh )"
+    - eval $(ssh-agent -s)
+    - echo "$SSH_KEY" | ssh-add -
+    - mkdir -p ~/.ssh
+    #- '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+    - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+    - echo "Deploying static at $SSH_USER@$SSH_HOST"
+    #- ssh $SSH_USER@$SSH_HOST "rm -rf $TARGET_PATH && mkdir -p $TARGET_PATH && exit"
+    - ssh $SSH_USER@$SSH_HOST "bash -c 'sudo rm -rf $TARGET_PATH_OLD'"
+    - ssh $SSH_USER@$SSH_HOST "bash -c 'sudo rm -rf $TARGET_PATH'"
+    - ssh $SSH_USER@$SSH_HOST "bash -c 'mkdir -p $TARGET_PATH'"
+    - ssh $SSH_USER@$SSH_HOST "bash -c 'mkdir -p $TARGET_PATH_NEW/public'"
+    - scp -r public/* $SSH_USER@$SSH_HOST:$TARGET_PATH_NEW/public/
+    - ssh $SSH_USER@$SSH_HOST "bash -c 'mv $TARGET_PATH $TARGET_PATH_OLD'"
+    - ssh $SSH_USER@$SSH_HOST "bash -c 'mv $TARGET_PATH_NEW $TARGET_PATH'"
+    - echo "Deployment of static files complete"    

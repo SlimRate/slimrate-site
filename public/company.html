@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="stylesheet"
+        href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <meta charset="UTF-8" />
+    <meta name="theme-color" content="#407AF4" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>Slimrate</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="assets/slick/slick.css" />
+    <link rel="stylesheet" href="assets/slick/slick-theme.css" />
+    <link rel="stylesheet" href="assets/css/burger.css" />
+    <!-- Define custom components -->
+    <script src="components/top_menu.js"></script>
+    <script src="components/bottom_menu.js"></script>
+    <script src="components/our_products.js"></script>
+    <script src="components/company_form.js"></script>
+    <script src="components/equip_company.js"></script>
+    <script src="components/our_products_company.js"></script>
+    <script src="components/tech_stack.js"></script>
+</head>
+
+<body>
+    <top-menu></top-menu>
+
+    <div class="wrapper">
+
+        <section class="main" style="padding-bottom: 280px;">
+            <div class="main-bg">
+                <video src="assets/video_bg_company.mp4" autoplay muted loop></video>
+            </div>
+            <div class="container">
+                <div class="block-left">
+                    <h1 class="section-title">About Us</h1>
+                    <p class="section-descr">
+                        Cutting-edge Technology for the Future of Commerce
+                    </p>
+                    <div class="equip-buttons">
+                        <a href="#get_demo"><button class="btn btn-red">Get Demo</button></a>
+                        <!-- <a href="">All products →</a> -->
+                    </div>
+                </div>
+            </div>
+            <img src="assets/img/main-mobile-bg-top.svg" alt="" class="main-mobile-bg-top" />
+        </section>
+
+        <product-company-cards></product-company-cards>
+        <section class="types company-types">
+            <div class="container">
+                <div class="types-card">
+                    <div class="types-card__img">
+                        <img src="assets/img/images/fin.jpg" alt="">
+                    </div>
+                    <div class="types-card__text">
+                        <h4 class="section-title">What We Offer</h4>
+                        <p class="section-descr">A seamlessly integrated software, hardware, and payment processing
+                            solution to empower your
+                            business
+                        </p>
+                    </div>
+                </div>
+                <div class="types-card">
+                    <div class="types-card__img">
+                        <img src="assets/img/images/websa.jpg" alt="">
+                    </div>
+                    <div class="types-card__text">
+                        <h4 class="section-title">Who We Serve</h4>
+                        <p class="section-descr">Slimrate POS is built specifically for restaurant and retail
+                            applications; However, Slimrate offers
+                            many specialized solutions for a variety of business types.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="something company-something">
+            <div class="container">
+                <div class="container-header">
+                    <h2 class="section-title">Industries We Serve</h2>
+
+                </div>
+                <div class="something-cards swiper">
+                    <div class="something-wrapper swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="something-card">
+                                <div class="something-card__img"><i class="las la-balance-scale-left"></i></div>
+                                <h4 class="something-card__title">Bars and Nightclubs </h4>
+                                <p class="something-card__descr">All in one POS solution designed specifically for bars
+                                    and nightclubs. </p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="something-card">
+                                <div class="something-card__img"><i class="las la-search-location"></i></div>
+                                <h4 class="something-card__title">Casual Dining</h4>
+                                <p class="something-card__descr">Fully integrated POS solution to help turn tables
+                                    faster.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="something-card">
+                                <div class="something-card__img"><i class="las la-tags"></i></div>
+                                <h4 class="something-card__title">Fine Dining </h4>
+                                <p class="something-card__descr">Fine dining specialized POS solution delivers an
+                                    exceptional customer experience with the latest ordering and payment technology
+                                </p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="something-card">
+                                <div class="something-card__img"><i class="las la-warehouse"></i></div>
+                                <h4 class="something-card__title">Quick Service Restaurants</h4>
+                                <p class="something-card__descr">Quick service tools and features designed to outperform
+                                    your competition</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="something-card">
+                                <div class="something-card__img"><i class="las la-user"></i></div>
+                                <h4 class="something-card__title">Coffee Shop and Bakeries </h4>
+                                <p class="something-card__descr">All-in-one software built to simplify operations and
+                                    delight your customers </p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="something-card">
+                                <div class="something-card__img"><i class="las la-fingerprint"></i></div>
+                                <h4 class="something-card__title">Food Truck</h4>
+                                <p class="something-card__descr">Order and payment technology for your mobile kitchen
+                                </p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="something-card">
+                                <div class="something-card__img"><i class="las la-shield-alt"></i></div>
+                                <h4 class="something-card__title">Liquor Stores</h4>
+                                <p class="something-card__descr">The comprehensive and user-friendly wine and spirits
+                                    solution to build customer loyalty and keep them coming back
+                                </p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="something-card">
+                                <div class="something-card__img"><i class="las la-gift"></i></div>
+                                <h4 class="something-card__title">Clothing and Apparel Stores</h4>
+                                <p class="something-card__descr">Best in class point of sale solution for clothing and
+                                    apparel stores.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="something-card">
+                                <div class="something-card__img"><i class="las la-poll-h"></i></div>
+                                <h4 class="something-card__title">Grocery and Convenience Stores</h4>
+                                <p class="something-card__descr">Turn more customers with a seamless checkout process.
+                                    Customizable reward and loyalty programs to engage your customers
+                                </p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="something-card">
+                                <div class="something-card__img"><i class="las la-map-marked-alt"></i></div>
+                                <h4 class="something-card__title">Specialty Stores</h4>
+                                <p class="something-card__descr">Product and management solutions that will help You run
+                                    your business
+
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="company-tech">
+            <tech-stack></tech-stack>
+        </div>
+        <!-- <equip-company-el></equip-company-el>
+        <section class="advantages company-advantages">
+            <div class="container">
+                <div class="container-header">
+                    <p class="section-descr small">Why Slimrate</p>
+                    <h2 class="section-title">
+                        A powerful POS solution and 24/7 support to help you stay ahead of the competition
+                    </h2>
+                </div>
+                <div class="advantages-cards">
+                    <div class="advantages-card">
+                        <div class="advantages-card__img">
+                            <i class="las la-wallet"></i>
+                        </div>
+                        <h2 class="advantages-card__title">Our Fintech experience</h2>
+                        <p class="advantages-card__descr">
+                            We make simple, safe and easy to use all financial software services thanks to our
+                            expertise.
+                        </p>
+                    </div>
+                    <div class="advantages-card">
+                        <div class="advantages-card__img"><i class="las la-chart-bar"></i>
+                        </div>
+                        <h2 class="advantages-card__title">We research</h2>
+                        <p class="advantages-card__descr">
+                            We can estimate your company opportunities, explore your economic status, analyze your
+                            business needs.
+                        </p>
+                    </div>
+                    <div class="advantages-card">
+                        <div class="advantages-card__img"><i class="las la-hourglass-half"></i>
+                        </div>
+                        <h2 class="advantages-card__title">Operational customer support</h2>
+                        <p class="advantages-card__descr">
+                            Our experts are always in touch with customers and are ready to help in solving any issues.
+                        </p>
+                    </div>
+                    <div class="advantages-card">
+                        <div class="advantages-card__img"><i class="las la-chart-pie"></i>
+                        </div>
+                        <h2 class="advantages-card__title">High scalability</h2>
+                        <p class="advantages-card__descr">
+                            We developed a universal system that is easily scalable. We are ready for your business
+                            growth!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+
+
+
+
+
+        <section id="faq" class="faq">
+            <div class="container">
+                <div class="faq-block__left">
+                    <h2 class="section-title">FAQ</h2>
+                    <p class="section-descr">
+                        Haven’t found the answer? <br /> Call us at
+                    </p>
+                    <a href="tel:(888)9774533">(888)977-4533</a>
+                </div>
+                <div class="faq-block__right">
+                    <div class="faq-question">
+                        <p class="faq-question__title">How quickly can I get set up with Slimrate?</p>
+                        <p class="faq-question__descr">
+                            Most applications are approved within 2-3 business days.
+                        </p>
+                    </div>
+                    <div class="faq-question">
+                        <p class="faq-question__title">Who is Slimrate for?</p>
+                        <p class="faq-question__descr">
+                            Slimrate POS is built specifically for restaurant and retail applications; however, Slimrate
+                            offers many specialized solutions for a variety of business types. Please speak with an
+                            agent to find the best solution for your business.
+                        </p>
+                    </div>
+                    <div class="faq-question">
+                        <p class="faq-question__title">
+                            How can I get in touch with customer service?
+                        </p>
+                        <p class="faq-question__descr">
+                            Please call <a style="color:black;font-weight:bold" href="tel:+18889774533">(888)
+                                977-4533</a> to speak to a live agent. Alternatively, you can send an email to <a
+                                style="color:black;font-weight:bold"
+                                href="mailto:info@slimrate.com">info@slimrate.com</a>.
+                        </p>
+                    </div>
+                    <div class="faq-question">
+                        <p class="faq-question__title">
+                            Is Slimrate POS cloud-based?
+                        </p>
+                        <p class="faq-question__descr">
+                            Yes. As a cloud-based solution, Slimrate accounts cupdate in real time and can be accessed
+                            anytime, anywhere.
+                        </p>
+                    </div>
+                    <div class="faq-question">
+                        <p class="faq-question__title">
+                            What kind of hardware is needed for the POS system?
+                        </p>
+                        <p class="faq-question__descr">
+                            All-in-one touchscreen tablet, thermal or impact printer, and a payment terminal.
+                        </p>
+                    </div>
+                    <div class="faq-question">
+                        <p class="faq-question__title">
+                            What is the difference between online and offline transactions?
+                        </p>
+                        <p class="faq-question__descr">
+                            Online debit transactions call for customers to endorse payments by submitting their
+                            personal identification number at the point of sale. While offline transactions require
+                            shoppers to sign sales receipt.
+                        </p>
+                    </div>
+                    <div class="faq-question">
+                        <p class="faq-question__title">
+                            Can I accept contactless payments?
+                        </p>
+                        <p class="faq-question__descr">
+                            Yes. Slimrate supports contactless and EMV payments.
+                        </p>
+                    </div>
+                    <div class="faq-question">
+                        <p class="faq-question__title">
+                            What is an offline payment?
+                        </p>
+                        <p class="faq-question__descr">
+                            An offline payment is a transaction which does not require internet or telecom connectivity.
+                        </p>
+                    </div>
+
+                    <div class="faq-contacts">
+                    </div>
+                    <p class="section-descr">
+                        Need more help?
+                    </p>
+                    <a href="mailto:info@slimrate.com">info@slimrate.com</a>
+                    <br />
+                    <a href="tel:(888)9774533">(888)977-4533</a>
+                </div>
+            </div>
+    </div>
+    </section>
+    <div style="margin-top:50px;" class="on-mobile"></div>
+    <div style="margin-top:-100px;" class="off-mobile"></div>
+    <company-form></company-form>
+    <div style="margin-top:-150px;" class="on-mobile"></div>
+    <bottom-menu></bottom-menu>
+    </div>
+    <script src="https://unpkg.com/imask"></script>
+    <script src="assets/js/masks.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="assets/slick/slick.min.js"></script>
+    <script src="assets/js/more.js"></script>
+</body>
+
+</html>
