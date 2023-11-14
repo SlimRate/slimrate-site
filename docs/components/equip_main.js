@@ -6,10 +6,10 @@ equipCompanyTemplate.innerHTML = `
             <img src="assets/img/bg-bot-1.svg" alt="" class="bg-bottom">
             <div class="container">
                 <div class="block-left">
-                    <h2 class="section-title">Modern Business Solutions<br>
-                    That Work For You.</h2>
-                    <p class="equip-text">Slimrate POS powers your business from a single, smart platform.<br>
-                    Accept payments, manage employees and inventory, generate reports, and much more.
+                    <h2 class="section-title">Slimrate POS: <br>
+                    Your All-in-One Business Solution</h2>
+                    <p class="equip-text">Streamline your business operations with Slimrate POS. From accepting payments to managing employees and inventory, our system simplifies it all. Get insights with powerful reporting, and customize it to your unique needs. We prioritize security and reliability, so you can focus on growth.<br><br>
+                    Experience the difference with Slimrate POS – your path to a smarter, more efficient, and profitable future. Start today!
                      </p>
                     <div class="equip-buttons">
                         <a href="#get_demo"><button class="btn btn-white">Get Demo</button></a>
