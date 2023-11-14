@@ -5,7 +5,7 @@ miniFAQTemplate.innerHTML = `
                 <div class="faq-block__left">
                     <h2 class="section-title">FAQ</h2>
                     <p class="section-descr">
-                        Haven’t found the answer? <br /> Call us at
+                        Haven’t find the answer? <br /> Call us at
                     </p>
                     <a href="tel:(888)9774533">(888)977-4533</a>
                 </div>
