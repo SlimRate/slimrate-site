@@ -17,7 +17,7 @@ hardwareCardsTemplate.innerHTML = `
                     </div>
                     <div class="swiper-slide">
                     <div class="hardware-card">
-                        <div class="hardware-card__img"><img src="assets/img/products/hardware/cfamon.png"></div>
+                        <div class="hardware-card__img"><img src="assets/img/products/hardware/Customer facing monitor.png"></div>
                         <h4 class="hardware-card__title">Customer facing monitor </h4>
                         <p class="hardware-card__descr">Ensure order accuracy, allow customer signature and display
                             promotional content
@@ -37,7 +37,7 @@ hardwareCardsTemplate.innerHTML = `
                     </div>
                     <div class="swiper-slide">
                     <div class="hardware-card">
-                        <div class="hardware-card__img"><img src="assets/img/products/hardware/printert.webp"></div>
+                        <div class="hardware-card__img"><img src="assets/img/products/hardware/Thermal Printer.png"></div>
                         <h4 class="hardware-card__title">Thermal printer </h4>
                         <p class="hardware-card__descr">Plug and play printer for easy use
                         </p>
@@ -55,7 +55,7 @@ hardwareCardsTemplate.innerHTML = `
                     </div>
                     <div class="swiper-slide">
                     <div class="hardware-card">
-                        <div class="hardware-card__img"><img src="assets/img/products/hardware/register.png"></div>
+                        <div class="hardware-card__img"><img src="assets/img/products/hardware/Cash Drawer.png"></div>
                         <h4 class="hardware-card__title">Cash drawer </h4>
                         <p class="hardware-card__descr">Keep your cash safe and organized
                         </p>
