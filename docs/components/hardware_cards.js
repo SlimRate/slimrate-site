@@ -37,7 +37,7 @@ hardwareCardsTemplate.innerHTML = `
                     </div>
                     <div class="swiper-slide">
                     <div class="hardware-card">
-                        <div class="hardware-card__img"><img src="assets/img/products/hardware/Thermal Printer.png"></div>
+                        <div class="hardware-card__img"><img src="assets/img/products/hardware/Thermal  Printer.png"></div>
                         <h4 class="hardware-card__title">Thermal printer </h4>
                         <p class="hardware-card__descr">Plug and play printer for easy use
                         </p>
