@@ -27,7 +27,7 @@ hardwareCardsTemplate.innerHTML = `
                     </div>
                     <div class="swiper-slide">
                     <div class="hardware-card">
-                        <div class="hardware-card__img"><img src="assets/img/products/hardware/terminal.webp"></div>
+                        <div class="hardware-card__img"><img src="assets/img/products/hardware/All-in-one  touchscreen tablet.png"></div>
                         <h4 class="hardware-card__title">Payment terminals </h4>
                         <p class="hardware-card__descr">Let your customers pay how they want. Credit or debit. Swipe,
                             dip or tap
