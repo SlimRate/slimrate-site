@@ -64,7 +64,7 @@ hardwareCardsTemplate.innerHTML = `
                     </div>
                     <div class="swiper-slide">
                     <div class="hardware-card">
-                        <div class="hardware-card__img"  ><img src="assets/img/products/hardware/scanner.png"></div>
+                        <div class="hardware-card__img"  ><img src="assets/img/products/hardware/Scanner1.png"></div>
                         <h4  class="hardware-card__title">Scanner</h4>
                         <p class="hardware-card__descr">Speed up checkout and get your customers on the road
                         </p>
