@@ -8,7 +8,7 @@ hardwareCardsTemplate.innerHTML = `
                 <div class="hardware-cards">
                 <div class="swiper-slide">
                     <div class="hardware-card">
-                        <div class="hardware-card__img"><img src="assets/img/products/hardware/stand.webp"></div>
+                        <div class="hardware-card__img"><img src="assets/img/products/hardware/All-in-one  touchscreen tablet.png"></div>
                         <h4 class="hardware-card__title">All-in-one touchscreen tablet </h4>
                         <p class="hardware-card__descr">Quickly access all of Slimrate’s tools and features
                         </p>
@@ -27,7 +27,7 @@ hardwareCardsTemplate.innerHTML = `
                     </div>
                     <div class="swiper-slide">
                     <div class="hardware-card">
-                        <div class="hardware-card__img"><img src="assets/img/products/hardware/All-in-one  touchscreen tablet.png"></div>
+                        <div class="hardware-card__img"><img src="assets/img/products/hardware/terminal.webp"></div>
                         <h4 class="hardware-card__title">Payment terminals </h4>
                         <p class="hardware-card__descr">Let your customers pay how they want. Credit or debit. Swipe,
                             dip or tap
