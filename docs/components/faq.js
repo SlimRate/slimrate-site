@@ -13,16 +13,13 @@ miniFAQTemplate.innerHTML = `
                     <div class="faq-question">
                         <p class="faq-question__title">Who is Slimrate for?</p>
                         <p class="faq-question__descr">
-                            Slimrate POS is built specifically for restaurant and retail applications; however, Slimrate
-                            offers many specialized solutions for a variety of business types. Please speak with an
-                            agent to find the best solution for your business.
+                        Slimrate POS caters primarily to the restaurant and retail sectors, offering tailored solutions for these industries. However, our commitment to versatility means that we also provide specialized solutions for various other business types. To discover the ideal Slimrate solution for your business, we recommend connecting with one of our agents. They'll work with you to determine how our system can best meet your specific needs, ensuring you get the most out of your Slimrate experience.
                         </p>
                     </div>
                     <div class="faq-question">
                         <p class="faq-question__title">Is Slimrate POS cloud-based?</p>
                         <p class="faq-question__descr">
-                            Yes. As a cloud-based solution, Slimrate accounts update in real time and can be accessed
-                            anytime, anywhere.
+                        Indeed, Slimrate POS operates as a cloud-based solution. This means that your Slimrate accounts are continuously updated in real-time, and you can access them from virtually anywhere at any time. Whether you're in your store, at home, or on the go, you can seamlessly connect to your Slimrate POS system to oversee your business operations, make crucial decisions, and stay in control no matter where you are.
                         </p>
                     </div>
                     <div class="faq-question">
@@ -30,7 +27,7 @@ miniFAQTemplate.innerHTML = `
                             What kind of hardware is needed for the POS system?
                         </p>
                         <p class="faq-question__descr">
-                            All-in-one touchscreen tablet, thermal or impact printer, and a payment terminal.
+                        All-in-one touchscreen tablet, thermal or impact printer, and a payment terminal. 
                         </p>
                     </div>
 
