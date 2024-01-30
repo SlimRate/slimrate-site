@@ -7,8 +7,8 @@ pricingFormTemplate.innerHTML = `
 <div class="container">
     <div class="contact__left">
         <h2 class="section-title">Contact us</h2>
-        <p class="section-descr">We’re here to help answer any questions you may have. We look forward to
-            hearing from you!
+        <p class="section-descr">Get in Touch - Your Questions, Our Answers. 
+        Let's Connect!
         </p>
     </div>
     <div class="contact__right">
