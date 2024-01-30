@@ -3,10 +3,10 @@ if (window.innerWidth < 920) {
     hardwareSomethingSliderTemplate.innerHTML = `
 <section class="something">
 <div class="container">
-<div class="container-header">
+<!--<div class="container-header">
     <h2 class="section-title">POS Hardware</h2>
 
-</div>
+</div>-->
 <div class="something-cards swiper">
     <div class="something-wrapper swiper-wrapper">
         <div class="swiper-slide">
@@ -49,10 +49,10 @@ if (window.innerWidth < 920) {
     hardwareSomethingSliderTemplate.innerHTML = `
     <section class="something">
         <div class="container">
-            <div class="container-header">
+            <!--<div class="container-header">
                 <h2 class="section-title">POS Hardware</h2>
 
-            </div>
+            </div>-->
             <div class="something-cards-hardware">
                 <div class="something-wrapper-hardware">
                     <div class="something-card">
