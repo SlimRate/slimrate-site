@@ -693,7 +693,7 @@ h2.section-title span {
 }
 
 .advantages-allPage {
-    padding-bottom: 500px;
+    padding-bottom: 200px;
     padding-top: 128px;
     margin-bottom: 0px;
     background: rgba(196, 196, 196, 0.2);
@@ -1029,7 +1029,7 @@ h2.section-title span {
 }
 
 .coop {
-    margin-bottom: 500px;
+    margin-bottom: 100px;
     position: relative;
     z-index: 2;
 }
