@@ -43,7 +43,7 @@ hardwareCardsTemplate.innerHTML = `
                         </p>
                         
                     </div>
-                    </div>
+                    <!--</div>
                     <div class="swiper-slide">
                     <div class="hardware-card">
                         <div class="hardware-card__img"><img src="assets/img/products/hardware/printeri.webp"></div>
@@ -51,7 +51,7 @@ hardwareCardsTemplate.innerHTML = `
                         <p class="hardware-card__descr">Durable design, suitable for kitchen applications
                         </p>
                         
-                    </div>
+                    </div>-->
                     </div>
                     <div class="swiper-slide">
                     <div class="hardware-card">
