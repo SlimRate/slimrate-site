@@ -36,7 +36,7 @@ bottomMenuTemplate.innerHTML = `
             <li><a href="legal.html">Legal</a></li>
             <li><a href="cookie.html">Cookie Policy</a></li>
             <li><a href="mailto:report@slimrate.com">Report a Vulnerability</a></li> --->
-            <li><a href="index.html">Copyright © 2024 Slimrate LLC. All rights reserved</a></li>
+            <li><a href="index.html">Copyright © 2024. Slimrate LLC. All rights reserved</a></li>
         </ul>
     </div>
 </div>
