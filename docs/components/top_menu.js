@@ -50,9 +50,7 @@ topMenuTeplate.innerHTML = `
                 <li>
                     <a href="payment_processing.html">Payment Processing</a>
                 </li>
-                <li>
-                    <a href="e-commerce.html">E-commerce</a>
-                </li>
+              
             </ul>
         </div>
 
@@ -200,13 +198,7 @@ function initDropment() {
           </a>
       </li>
       <li>
-          <a href="e-commerce.html">
-              <div class="nav-body">
-                  <div class="nav-el-i"><i class="nav-el las la-cart-plus"></i></div>
-                  <div>E-commerce<span><br>Coming soon!
-        </span></div>
-              </div>
-          </a>
+         
       </li>
   </ul>
         <!-- <a href="">Overview→</a> -->

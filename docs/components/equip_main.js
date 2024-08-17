@@ -30,8 +30,7 @@ equipCompanyTemplate.innerHTML = `
                             <a href="software.html">POS Software</a><a href="software.html"><img src="assets/img/icons/equip-btn.svg" alt="" class="equip-btn"></a></div>
                         <div class="equip-img">
                             <a href="hardware.html">POS Hardware</a><a href="hardware.html"><img src="assets/img/icons/equip-btn.svg" alt="" class="equip-btn"></a></div>
-                        <div class="equip-img">
-                            <a href="e-commerce.html">E-Commerce</a><a href="e-commerce.html"><img src="assets/img/icons/equip-btn.svg" alt="" class="equip-btn"></a></div>
+                        
                     </div>
                     <img src="assets/img/circle.svg" alt="" class="block-img-circle">
                 </div>

@@ -6,7 +6,6 @@ bottomMenuTemplate.innerHTML = `
         <ul>
             <li>Solutions</li>
             <li><a href="hardware.html">POS Hardware</a></li>
-            <li><a href="e-commerce.html">E-commerce</a></li>
             <li><a href="payment_processing.html">Payment Processing</a></li>
             <li><a href="software.html">POS Software</a></li>
         </ul>
