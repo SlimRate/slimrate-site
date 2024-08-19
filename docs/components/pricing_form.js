@@ -1,6 +1,62 @@
 const pricingFormTemplate = document.createElement('template');
 pricingFormTemplate.innerHTML = `
 <section class="contact" id="get_demo">
+<style>
+.toast {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  font-size: 17px;
+}
+
+.toast.show {
+  visibility: visible;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;} 
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;} 
+  to {bottom: 0; opacity: 0;}
+}
+
+.toast.success {
+  background-color: #4CAF50; 
+}
+
+.toast.error {
+  background-color: #f44336; 
+}
+
+.toast.top {
+  bottom: auto;
+  top: 30px;
+}
+
+@keyframes fadein-top {
+  from {top: 0; opacity: 0;} 
+  to {top: 30px; opacity: 1;}
+}
+
+@keyframes fadeout-top {
+  from {top: 30px; opacity: 1;} 
+  to {top: 0; opacity: 0;}
+}
+
+</style>
 <img src="assets/img/custom-bg-2.svg" alt="" class="custom-bg">
 <img src="assets/img/bg-top-2.svg" alt="" class="bg-top">
 <img src="assets/img/bg-bot-2.svg" alt="" class="bg-bottom">
@@ -10,6 +66,9 @@ pricingFormTemplate.innerHTML = `
         <p class="section-descr">Get in Touch - Your Questions, Our Answers. 
         Let's Connect!
         </p>
+    </div>
+    <div id="toast" class="toast">
+        <span id="toast-message"></span>
     </div>
     <div class="contact__right">
         <form id="my-form"  class="contact__form form" action="#" onsubmit="onSubmit();return false" >
@@ -49,7 +108,7 @@ pricingFormTemplate.innerHTML = `
                     <label for="index">Zip Code</label>
                 </div>
             </div>
-            <input class="form__btn" type="submit">
+            <input class="form__btn" type="submit" id="submitBtn">
             </input>
         </form>
        <!-- <p class="contact__privacy">By requesting a demo, you agree to receive automated text messages from
@@ -81,25 +140,58 @@ function onSubmit() {
         zipCode: $('#index').val()
     };
 
+    document.getElementById('submitBtn').disabled = true;
     console.log(JSON.stringify(formData));
+    
 
     $.ajax({
-        url: 'https://dev.slimrate.com/v1/feedback',
-        // url: 'https://prod.slimrate.com/v1/feedback',
+        // url: 'https://dev.slimrate.com/v1/feedback',
+        url: 'https://prod.slimrate.com/v1/feedback',
         type: 'POST',
         contentType: 'application/json',
         data: JSON.stringify(formData),
         success: function () {
-            alert('Thank you! We will get back to you shortly');
+            showToast("Thank you! Your request has been received.", "success", "bottom");
+            document.getElementById('submitBtn').disabled = false;
             $('#my-form').each(function () {
                 this.reset();
             });
+        },
+        error: function () {
+            showToast("Oops! Something went wrong. Please resubmit the form.", "error", "bottom");
+            document.getElementById('submitBtn').disabled = false;
         }
     });
 
     return false;
 };
 const form = document.getElementById('my-form');
+
+function showToast(message, type, position = 'bottom') {
+    var toast = document.getElementById("toast");
+    var toastMessage = document.getElementById("toast-message");
+    
+    toastMessage.textContent = message;
+    
+    // Удаляем все предыдущие классы
+    toast.className = "toast";
+
+    // Добавляем класс для стиля успеха или ошибки
+    toast.classList.add("show", type);
+
+    // Выбираем позицию тоста (верх или низ)
+    if (position === 'top') {
+        toast.classList.add("top");
+        toast.style.animation = "fadein-top 0.5s, fadeout-top 0.5s 2.5s";
+    } else {
+        toast.style.animation = "fadein 0.5s, fadeout 0.5s 2.5s";
+    }
+
+    // Убираем тост через 3 секунды
+    setTimeout(function() {
+        toast.className = toast.className.replace("show", "");
+    }, 3000);
+}
 
 form.addEventListener('submit', function handleSubmit(event) {
     event.preventDefault();
