@@ -5,7 +5,6 @@ pricingFormTemplate.innerHTML = `
 .toast {
   visibility: hidden;
   min-width: 250px;
-  margin-left: -125px;
   background-color: #333;
   color: #fff;
   text-align: center;
@@ -14,7 +13,8 @@ pricingFormTemplate.innerHTML = `
   position: fixed;
   z-index: 1;
   left: 50%;
-  bottom: 30px;
+  transform: translateX(-50%); /* Центрирование по ширине */
+  bottom: 30px; /* Нижнее расположение */
   font-size: 17px;
 }
 
@@ -34,16 +34,17 @@ pricingFormTemplate.innerHTML = `
 }
 
 .toast.success {
-  background-color: #4CAF50; 
+  background-color: #4CAF50; /* Зеленый для успеха */
 }
 
 .toast.error {
-  background-color: #f44336; 
+  background-color: #f44336; /* Красный для ошибки */
 }
 
+/* Тост для верхней части страницы */
 .toast.top {
   bottom: auto;
-  top: 30px;
+  top: 30px; /* Верхнее расположение */
 }
 
 @keyframes fadein-top {
@@ -55,6 +56,7 @@ pricingFormTemplate.innerHTML = `
   from {top: 30px; opacity: 1;} 
   to {top: 0; opacity: 0;}
 }
+
 
 </style>
 <img src="assets/img/custom-bg-2.svg" alt="" class="custom-bg">
@@ -147,6 +149,7 @@ function onSubmit() {
     $.ajax({
         // url: 'https://dev.slimrate.com/v1/feedback',
         url: 'https://prod.slimrate.com/v1/feedback',
+        // url: 'https://test.ds/v1/feedback',
         type: 'POST',
         contentType: 'application/json',
         data: JSON.stringify(formData),
