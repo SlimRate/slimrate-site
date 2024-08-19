@@ -20,7 +20,7 @@ pricingFormTemplate.innerHTML = `
                         value="Restaurant" checked="">
                     <label for="restaurant">Restaurant</label>
                     <input type="radio" name="type" class="form__select-item form_type" id="retail"
-                        value="Retai">
+                        value="Retail">
                     <label for="retail">Retail</label>
                 </div>
             </div>
@@ -71,12 +71,24 @@ class PricingForm extends HTMLElement {
 }
 customElements.define("pricing-form", PricingForm);
 function onSubmit() {
-    console.log($('#my-form').serialize());
+    const formData = {
+        requestType: "test",
+        fullName: $('#first-and-last-name').val(),
+        email: $('#email').val(),
+        phoneNumber: $('#phone-number').val(),
+        companyPlaceType: $('input[name="type"]:checked').val(),
+        companyPlaceName: $('#company-place-name').val(),
+        zipCode: $('#index').val()
+    };
+
+    console.log(JSON.stringify(formData));
 
     $.ajax({
-        url: 'https://script.google.com/macros/s/AKfycbxFduAr5KBCWk6z7QEMrao6oity5QVlKbTZq9CcMwO7D0lTsPyxBjggd4LfgNQPBKwT/exec',
-        type: 'post',
-        data: $('#my-form').serialize(),
+        url: 'https://dev.slimrate.com/v1/feedback',
+        // url: 'https://prod.slimrate.com/v1/feedback',
+        type: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify(formData),
         success: function () {
             alert('Thank you! We will get back to you shortly');
             $('#my-form').each(function () {
@@ -84,6 +96,7 @@ function onSubmit() {
             });
         }
     });
+
     return false;
 };
 const form = document.getElementById('my-form');
