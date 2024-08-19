@@ -3947,3 +3947,7 @@ ection.we-support {
     overflow: hidden;
     z-index: -1;
 }
+
+.who-cards a {
+    display: flex
+}
