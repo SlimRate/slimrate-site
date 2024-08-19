@@ -138,7 +138,7 @@ function onSubmit() {
         email: $('#email').val(),
         phoneNumber: $('#phone-number').val(),
         companyPlaceType: $('input[name="type"]:checked').val(),
-        companyPlaceName: $('#company-place-name').val(),
+        companyPlaceName: $('#company').val(),
         zipCode: $('#index').val()
     };
 
