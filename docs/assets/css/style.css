@@ -3303,12 +3303,12 @@ label.has-value {
     }
 
     .who::before {
-        height: 92%;
+        height: 100%;
     }
 
     .who-bg-bottom {
         top: unset;
-        bottom: 7%;
+        bottom: -1%;
     }
 
     .who-card:nth-child(4) {
