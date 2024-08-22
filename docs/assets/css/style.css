@@ -2951,10 +2951,7 @@ label.has-value {
     .something {
         padding-bottom: 32px;
     }
-
-    .footer {
-        padding-top: 110px;
-    }
+  
 }
 
 @media screen and (max-width: 991px) {
@@ -3188,7 +3185,7 @@ label.has-value {
     }
 
     .advantages {
-        margin-bottom: 0;
+        margin-bottom: 150px;
     }
 
     .advantages-cards {
@@ -3203,6 +3200,7 @@ label.has-value {
     .advantages-allPages {
         margin-bottom: 128px;
     }
+    
 
     .equip {
         padding-bottom: 0px;
@@ -3339,6 +3337,8 @@ label.has-value {
         width: 100%;
         position: absolute;
         top: 99%;
+        animation: 4s ease-in-out 0s infinite alternate none running meet-right-drawing-animation;
+        transform: translateX(-50%);
     }
 
     .coop-logo {
@@ -3854,6 +3854,10 @@ label.has-value {
     .equip-buttons .btn {
         margin-right: 0px;
         margin-bottom: 20px;
+    }
+    .advantages {
+        margin-top: 150px;
+        margin-bottom: 150px;
     }
 }
 
