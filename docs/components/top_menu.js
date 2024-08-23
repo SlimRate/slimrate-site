@@ -16,7 +16,7 @@ topMenuTeplate.innerHTML = `
       <li id='${businessTypeMenuElementId}'><a href="javascript:void(0)">Business Types</a></li>
       <li ><a href="pricing.html" id='${pricingMenuElementId}'>Pricing</a></li>
       <li><a href="company.html" id ='${companyMenuElementId}'>Company</a></li>
-      <li><a href="https://admin.slimrate.com/#" target="blank">Login</a></li>
+      <li><a href="https://ap.slimrate.com/#" target="blank">Login</a></li>
     </ul>
     <a href="#get_demo">
         <button class="btn btn-red">Get Demo</button></a>
@@ -132,7 +132,7 @@ topMenuTeplate.innerHTML = `
     <div class="divider"></div>
     <div class="menu__item"><a href="company.html">Company</a></div>
     <div class="divider"></div>
-    <div class="menu__item"><a href="https://admin.slimrate.com/#" target="blank">Login</a></div>
+    <div class="menu__item"><a href="https://ap.slimrate.com/#" target="blank">Login</a></div>
     <a href="#get_demo"><button onclick="uncheck()" class="btn btn-red">Get a Demo</button></a>
     
 </div>

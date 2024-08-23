@@ -18,7 +18,7 @@ bottomMenuTemplate.innerHTML = `
             <li>Company</li>
             <li><a href="company.html">About us</a></li>
             <li><a href="pricing.html">Pricing</a></li>
-            <li><a href="http://admin.slimrate.com/" target="_blank">Login Merchant</a></li>
+            <li><a href="http://ap.slimrate.com/" target="_blank">Login Merchant</a></li>
         </ul>
         <ul>
             <li>Contact Us</li>
