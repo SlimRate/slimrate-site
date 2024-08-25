@@ -880,13 +880,13 @@ h2.section-title span {
 }
 
 .equip-img:nth-child(1) {
-    bottom: -60px;
-    left: -105px;
+    bottom: -48px;
+    left: -138px;
 }
 
 .equip-img:nth-child(2) {
-    left: -91px;
-    top: 51px;
+    left: -66px;
+    top: 90px;
 }
 
 .equip-img:nth-child(3) {
@@ -895,8 +895,8 @@ h2.section-title span {
 }
 
 .equip-img:nth-child(4) {
-    right: 69px;
-    bottom: -124px;
+    right: 120px;
+    bottom: -66px;
 }
 
 .equip-img .equip-btn {
@@ -2728,16 +2728,16 @@ label.has-value {
     }
 
     .equip-img:nth-child(1) {
-        width: 299px;
+        width: 190px;
         height: auto;
-        left: -79px;
-        bottom: -68px;
+        left: -120px;
+        bottom: -64px;
     }
 
     .equip-img:nth-child(2) {
-        width: 162px;
-        left: -72px;
-        top: 70px;
+        width: 140px;
+        left: -50px;
+        top: 90px;
         height: auto;
     }
 
@@ -2749,10 +2749,10 @@ label.has-value {
     }
 
     .equip-img:nth-child(4) {
-        width: 296px;
+        width: 212px;
         height: auto;
-        right: 19px;
-        bottom: -110px;
+        right: 64px;
+        bottom: -83px;
     }
 
     .equip-img:nth-child(5) {
@@ -3251,15 +3251,15 @@ label.has-value {
     }
 
     .equip-img:nth-child(1) {
-        width: 246px;
-        left: 60px;
-        bottom: 40px;
+        width: 180px;
+        left: 20px;
+        bottom: 24px;
     }
 
     .equip-img:nth-child(2) {
-        left: 60px;
-        width: 144px;
-        top: 98px;
+        left: 80px;
+        width: 120px;
+        top: 115px;
     }
 
     .equip-img:nth-child(3) {
@@ -3269,9 +3269,9 @@ label.has-value {
     }
 
     .equip-img:nth-child(4) {
-        width: 239px;
-        left: 206px;
-        bottom: 13px;
+        width: 187px;
+        left: 237px;
+        bottom: 26px;
         right: auto;
     }
 
@@ -3784,16 +3784,16 @@ label.has-value {
     }
 
     .equip-img:nth-child(1) {
-        width: 50vw;
-        left: 18vw;
-        bottom: 10vw;
+        width: 32vw;
+        left: 10vw;
+        bottom: 7vw;
         right: auto;
     }
 
     .equip-img:nth-child(2) {
-        left: 20vw;
-        width: 30vw;
-        bottom: 30vw;
+        left: 17vw;
+        width: 24vw;
+        bottom: 34vw;
         top: auto;
     }
 
@@ -3806,9 +3806,9 @@ label.has-value {
     }
 
     .equip-img:nth-child(4) {
-        width: 50vw;
-        bottom: 4vw;
-        right: 8vw;
+        width: 38vw;
+        bottom: 8vw;
+        right: 10vw;
         left: auto;
     }
 
