@@ -3954,3 +3954,7 @@ ection.we-support {
 .who-cards a {
     display: flex
 }
+
+.submit-descr {
+    color: #fff;
+}

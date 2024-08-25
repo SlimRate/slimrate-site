@@ -8,6 +8,7 @@ companyFormTemplate.innerHTML = `
     <div class="contact__left">
         <h2 class="section-title">Join #TeamSlimrate</h2>
         <p class="section-descr">
+        We are looking for dedicated, customer-focused team members! Complete our form below, upload your resume (if you have one), and submit. Slimrate LLC will get back to you shortly to discuss your application. Call us for more information or questions you may have.
         </p>
     </div>
     <div class="contact__right">
@@ -40,8 +41,11 @@ companyFormTemplate.innerHTML = `
                     <label for="first-and-last-name">Additional Information</label>
                 </div>
             </div>
-            <input class="form__btn" type="submit">
-            </input>
+            <div style="display: flex; align-items: center;">
+                <input class="form__btn" type="submit" style="margin-right: 10px;">
+                <p class="submit-descr">Please fill out this brief application form and we'll contact you shortly.</p>
+                </input>
+            </div>
         </form>
         
     </div>
