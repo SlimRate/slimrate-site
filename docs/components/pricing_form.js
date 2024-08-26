@@ -133,7 +133,7 @@ class PricingForm extends HTMLElement {
 customElements.define("pricing-form", PricingForm);
 function onSubmit() {
     const formData = {
-        requestType: "test",
+        requestType: "newCompany",
         fullName: $('#first-and-last-name').val(),
         email: $('#email').val(),
         phoneNumber: $('#phone-number').val(),
