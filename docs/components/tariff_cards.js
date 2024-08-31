@@ -38,6 +38,7 @@ tariffsTemplate.innerHTML = `
                             <br> 
                             <br> 
                             <br> 
+                            <br> 
                             <p class="tariff-card__text">Perfect for: Small businesses, startups, cafes, and boutique retailers.
                             </p>
                             <p class="tariff-card__priceTitle">Starting at</p>
