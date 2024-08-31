@@ -15,10 +15,10 @@ tariffsTemplate.innerHTML = `
                 <div class="tariff-cards">
                     <div class="swiper-slide">
                         <div class="tariff-card">
-                            <h4 class="tariff-card__title">Basic
+                            <h4 class="tariff-card__title">Basic Plan
                             </h4>
-                            <!-- <p class="tariff-card__text">For restaurants who need one or two terminals
-                            </p> -->
+                            <p class="tariff-card__text">For businesses starting out or needing essential POS functionality, our Basic Plan covers all your core needs.
+                            </p>
                             <ul>
                                 <li>Cloud-based point of sale</li>
                                 <li>Hardware configuration including one terminal. (Additional charges apply for
@@ -33,10 +33,10 @@ tariffsTemplate.innerHTML = `
                     </div>
                     <div class="swiper-slide">
                         <div class="tariff-card">
-                            <h4 class="tariff-card__title">Premium
+                            <h4 class="tariff-card__title">Premium Plan
                             </h4>
-                            <!-- <p class="tariff-card__text">For middle restaurants who need three or four terminals
-                            </p> -->
+                            <p class="tariff-card__text">Unlock advanced features and boost your business operations with our Premium Plan. This plan offers enhanced capabilities to streamline your workflow and grow your business.
+                            </p>
                             <ul>
                                 <li>Cloud-based point of sale</li>
                                 <li>Hardware configuration including three terminal. (Additional charges apply for
@@ -51,10 +51,10 @@ tariffsTemplate.innerHTML = `
                     </div>
                     <div class="swiper-slide">
                         <div class="tariff-card">
-                            <h4 class="tariff-card__title">Custom
+                            <h4 class="tariff-card__title">Custom Plan
                             </h4>
-                           <!-- <p class="tariff-card__text">For middle restaurants who need more then five terminals
-                            </p> -->
+                            <p class="tariff-card__text">For businesses with unique needs, our Custom Plan provides a fully tailored POS experience. Work with our in-house software team to build a solution that aligns perfectly with your business requirements.
+                            </p>
                             <ul>
                                 <li>Cloud-based point of sale</li>
                                 <li>Hardware configuration including more terminal. (Additional charges apply for
