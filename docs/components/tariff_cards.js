@@ -31,6 +31,8 @@ tariffsTemplate.innerHTML = `
                                 <li>24/7 live customer support
                                 </li>
                             </ul>
+                            <p class="tariff-card__text">Perfect for: Small businesses, startups, cafes, and boutique retailers.
+                            </p>
                             <p class="tariff-card__priceTitle">Starting at</p>
                             <div class="tariff-card__price"><span>$0</span>/month</div>
                             <a href="#get_demo"><button class="btn btn-red">Shop Now</button></a>
@@ -57,6 +59,8 @@ tariffsTemplate.innerHTML = `
                                 <li>Priority support with dedicated account management
                                 </li>
                             </ul>
+                            <p class="tariff-card__text">Perfect for: Medium-sized businesses, multi-location stores, and businesses looking to scale.
+                            </p>
                             <p class="tariff-card__priceTitle">Starting at</p>
                             <div class="tariff-card__price"><span>$99</span>/month</div>
                             <a href="#get_demo"><button class="btn btn-red">Shop Now</button></a>
@@ -81,6 +85,8 @@ tariffsTemplate.innerHTML = `
                                 <li>Dedicated project manager and ongoing support
                                 </li>
                             </ul>
+                            <p class="tariff-card__text">Perfect for: Large enterprises, specialty retailers, and businesses with complex requirements.
+                            </p>
                             <p class="tariff-card__priceTitle">Starting at</p>
                             <div class="tariff-card__price"><span>Custom price</span></div>
                             <a href="#get_demo"><button class="btn btn-red">Shop Now</button></a>
