@@ -5,12 +5,12 @@ tariffsTemplate.innerHTML = `
                 <div class="container-header">
                     <h2 class="section-title">Slimrate rates</h2>
                     <!-- <p class="section-descr">Choose the rate that suits your business type</p> -->
-                    <ul class="tariff-descr">
+                    <!--<ul class="tariff-descr">
                         <li>Flexible payment options</li>
                         <li>Offline mode</li>
                         <li>Inventory management</li>
                         <li>Marketing tools</li>
-                    </ul>
+                    </ul>-->
                 </div>
                 <div class="tariff-cards">
                     <div class="swiper-slide">
