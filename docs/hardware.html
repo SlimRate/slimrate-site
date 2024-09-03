@@ -19,6 +19,9 @@
     <link rel="stylesheet" href="assets/slick/slick-theme.css">
     <link rel="stylesheet" href="assets/css/burger.css">
 
+    <!-- added -->
+    <link rel="stylesheet" href="assets/css/hardwareCards.css">
+
     <!-- Define custom components -->
     <script src="components/top_menu.js"></script>
     <script src="components/faq-hard.js"></script>
@@ -31,6 +34,7 @@
     <script src="components/type_cards.js"></script>
     <script src="components/hardware_cards.js"></script>
     <script src="components/hardware_something_slider.js"></script>
+  
 </head>
 
 <body>
@@ -57,7 +61,8 @@
             <img src="assets/img/main-mobile-bg-bottom.svg" alt="" class="main-mobile-bg-bottom">
             <img src="assets/img/main-mobile-bg-top.svg" alt="" class="main-mobile-bg-top">
         </section>
-        <hardware-cards></hardware-cards>
+        <!-- <hardware-cards></hardware-cards> -->
+        <div id="cards-container" style="height: auto; margin: 0 auto;"></div>
         <hardware-something-slider></hardware-something-slider>
         <hardware-advantages></hardware-advantages>
         <pricing-form></pricing-form>
@@ -72,6 +77,10 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script src="assets/slick/slick.min.js"></script>
     <script src="assets/js/more.js"></script>
+
+        <!-- added -->
+    <script src="components/hardware_cards_vertical_slider.js"></script>
+   
 </body>
 
 </html>
