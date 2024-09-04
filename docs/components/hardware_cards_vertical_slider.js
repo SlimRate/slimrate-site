@@ -20,8 +20,8 @@ function createProductCard(data) {
                 <div class="flex items-center">
                     <span>Color:</span>
                     <div class="color-options ml-2">
-                        <button class="black"></button>
-                        <button class="white ml-2"></button>
+                        <button class="black" id="black-button-${data.name}"></button>
+                        <button class="white ml-2" id="white-button-${data.name}"></button>
                     </div>
                 </div>
                 <div class="flex flex-col justify-evenly">
@@ -33,21 +33,54 @@ function createProductCard(data) {
     `;
 
     const imageElement = card.querySelector(`#current-image-${data.name}`);
-    const sliderElements = card.querySelectorAll(`#slider-${data.name} div`);
+    const sliderElement = card.querySelector(`#slider-${data.name}`);
+    const whiteButton = card.querySelector(`#white-button-${data.name}`);
+    const blackButton = card.querySelector(`#black-button-${data.name}`);
+    let isWhiteButtonActive = false;
 
     let currentIndex = 0;
 
     card.querySelector(`#image-container-${data.name}`).addEventListener('click', () => {
+        if (isWhiteButtonActive) return;
+
         currentIndex = (currentIndex + 1) % data.images.length;
         imageElement.src = data.images[currentIndex];
 
+        const sliderElements = card.querySelectorAll(`#slider-${data.name} div`);
         sliderElements.forEach((dot, index) => {
             dot.classList.toggle('active', index === currentIndex);
         });
     });
 
+    whiteButton.addEventListener('click', () => {
+        if (sliderElement) {
+            sliderElement.style.display = 'none';
+        }
+
+        imageElement.src = 'assets/img/gallery/hardware/not in stock.png';
+       
+        isWhiteButtonActive = true;
+    });
+
+    blackButton.addEventListener('click', () => {
+        if (sliderElement) {
+            sliderElement.style.display = 'flex';
+        }
+
+        imageElement.src = data.images[0];
+        currentIndex = 0;
+
+        const sliderElements = card.querySelectorAll(`#slider-${data.name} div`);
+        sliderElements.forEach((dot, index) => {
+            dot.classList.toggle('active', index === 0);
+        });
+
+        isWhiteButtonActive = false;
+    });
+
     return card;
 }
+
 
 function createProductGroup(group) {
     const groupContainer = document.createElement('div');
