@@ -1036,11 +1036,14 @@ h2.section-title span {
 }
 
 .coop .img-bg {
+    top: -20px;
     position: absolute;
     width: 100%;
-    height: auto;
+    height: 125px;
     bottom: 0px;
     z-index: -1;
+    animation: 3s ease-in-out 0s infinite alternate none running meet-right-drawing-animation;
+    transform: translateX(-50%);
 }
 
 .coop .container {
