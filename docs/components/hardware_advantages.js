@@ -14,39 +14,26 @@ hardwareAdvantagesTemplate.innerHTML = `
         </div>
         <div class="advantages-cards">
             <div class="advantages-card">
-                <div class="advantages-card__img"><i class="las la-tv"></i></div>
-                <h2 class="advantages-card__title">All-In-One Touchscreen Terminal</h2>
-                -15.6” Android Touchscreen<br />
--Splash-Proof<br />
--Dust-Proof<br />
--Customer-facing Touchable Display<br />
--12-Month Guarantee
+                <div class="advantages-card__img"><i class="las la-sort-amount-up"></i></div>
+                <h2 class="advantages-card__title">Durable and Reliable Hardware</h2>
+                High-performance POS hardware built tough, specifically for restaurant and retail applications.
             </div>
             <div class="advantages-card">
-                <div class="advantages-card__img"><i class="las la-print"></i></div>
-                <h2 class="advantages-card__title">Thermal and Impact Printers </h2>
-                -Splash Proof<br />
--Dust Proof<br />
--High-Capacity 80mm<br />
--High Printing Speed Up to 300mm/Sec<br />
--Interface: Serial + USB + LAN<br />
--Metal or Plastic Base
+                <div class="advantages-card__img"><i class="las la-clock"></i></div>
+                <h2 class="advantages-card__title">24/7/365 Tech Support </h2>
+                Direct access to technical support 24 hour a day. 7 days a week. Available both online and by
+                phone.
             </div>
             <div class="advantages-card">
-                <div class="advantages-card__img"><i class="las la-receipt"></i></div>
-                <h2 class="advantages-card__title">Payment Terminals</h2>
-                -EMV ®, MSR and NFC/Contactless<br />
--EMV &amp; PCI Compliant<br />
--Large Memory Capacity<br />
--User-friendly Interface with Powerful GUI
+                <div class="advantages-card__img"><i class="las la-server"></i></div>
+                <h2 class="advantages-card__title">Professional Installations and Trainings</h2>
+                Professional installation by our Slimrate certified technicians. Live trainings to keep you up to
+                speed on the latest features.
             </div>
             <div class="advantages-card">
-                <div class="advantages-card__img"><i class="las la-hdd"></i></div>
-                <h2 class="advantages-card__title">Accessories</h2>
-                -2D Barcode Scanner<br />
--ID Scanner<br />
--Cash Drawer<br />
--Scale
+                <div class="advantages-card__img"><i class="las la-list-alt"></i></div>
+                <h2 class="advantages-card__title">Quality Guaranteed </h2>
+                All Slimrate POS hardware includes a 12-month limited warranty.
             </div>
         </div>
     </div>
