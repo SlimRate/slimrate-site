@@ -19,10 +19,10 @@ equipCompanyTemplate.innerHTML = `
 
                 <div class="block-right">
                     <div class="equip-card">
-                        <img src="assets/img/icons/equip-1.svg" alt="" class="equip-img">
-                        <img src="assets/img/icons/equip-2.svg" alt="" class="equip-img">
+                        <img src="assets/img/icons/checkMashine.svg" alt="" class="equip-img">
+                        <img src="assets/img/icons/scanner.svg" alt="" class="equip-img">
                         <img src="assets/img/icons/equip-3.svg" alt="" class="equip-img">
-                        <img src="assets/img/icons/equip-4.svg" alt="" class="equip-img">
+                        <img src="assets/img/icons/phone.svg" alt="" class="equip-img">
                         
                         <div class="equip-img">
                             <a href="payment_processing.html">Payment Processing</a><a href="payment_processing.html"><img src="assets/img/icons/equip-btn.svg" alt="" class="equip-btn"></a></div>
