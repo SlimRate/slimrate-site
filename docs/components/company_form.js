@@ -66,7 +66,7 @@ companyFormTemplate.innerHTML = `
         <h2 class="section-title">Join</h2>
         <h2 class="section-title">#TeamSlimrate</h2>
         <p class="section-descr">
-        We are looking for dedicated, customer-focused team members! Complete our form below, upload your resume (if you have one), and submit. Slimrate LLC will get back to you shortly to discuss your application. Call us for more information or questions you may have.
+        We are looking for dedicated, customer-focused team members! Complete our form below and submit. Slimrate will get back to you shortly to discuss your application. Call us for more information or questions you may have.
         </p>
     </div>
     <div id="toast" class="toast">
