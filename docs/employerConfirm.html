@@ -21,25 +21,43 @@
     <link rel="stylesheet" href="assets/css/burger.css">
     <!-- Define custom components -->
     <script src="components/top_menu.js"></script>
-    <script src="components/our_products.js"></script>
     <script src="components/bottom_menu.js"></script>
-    <script src="components/tariff_cards.js"></script>
-    <script src="components/h_who_cards.js"></script>
     <script src="components/equip_company.js"></script>
-    <!-- <script src="components/h_advantages.js"></script> -->
-    <script src="components/h_employer-confirm.js"></script>git 
+    <script src="components/h_employer-confirm.js"></script>
+    <style>
+        .equipBottomDiv {
+            height: 100px;
+        }
+
+        @media screen and (max-width: 991px) {
+            .equipBottomDiv {
+                height: 100px;
+            }
+        }
+
+        @media screen and (max-width: 639px) {
+
+        }
+
+        @media screen and (max-width: 479px) {
+            .equipBottomDiv {
+                height: 0px;
+            }
+        }
+
+    </style>
 </head>
 
 <body>
     <top-menu></top-menu>
     <div class="wrapper">
         <h-employer-confirm></h-employer-confirm>
+        <div class="equipBottomDiv"></div>
         <equip-company-el></equip-company-el>
+        <div class="equipBottomDiv"></div>
         <bottom-menu></bottom-menu>
     </div>
 
-    <script src="https://unpkg.com/imask"></script>
-    <script src="assets/js/masks.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script src="assets/slick/slick.min.js"></script>

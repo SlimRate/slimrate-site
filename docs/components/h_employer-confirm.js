@@ -25,17 +25,17 @@ hAdvantagesTemplate.innerHTML = `
                 Ask any question to your personal Slimrate Salesman:
             </p>
 
-            <p style="line-height: 22px; font-weight: 400; font-size: 20px;">Danny Smith (ID: 83498274)</p>
+            <p id="salesman-name" style="line-height: 22px; font-weight: 400; font-size: 20px;"></p>
     
-    <div class="contact-info">
-        <i class="fa-solid fa-address-book"></i>
-        <p>(517) 320-4474</p>
-    </div>
+            <div class="contact-info">
+                <i class="fa-solid fa-address-book"></i>
+                <p id="salesman-phone"></p>
+            </div>
     
-    <div class="contact-info">
-        <i class="fa-solid fa-at"></i>
-        <p>wtulloch@slimrate.com</p>
-    </div>
+            <div class="contact-info">
+                <i class="fa-solid fa-at"></i>
+                <p id="salesman-email"></p>
+            </div>
         </div>
     </div>
 </section>`;
@@ -46,8 +46,21 @@ class hEmployerConfirm extends HTMLElement {
         this._contents = new DocumentFragment();
         this._contents.appendChild(hAdvantagesTemplate.content.cloneNode(true));
     }
+
     connectedCallback() {
         this.appendChild(this._contents);
+
+        const salesman = {
+            name: 'Danny Smith',
+            id: '83498274',
+            phone: '(517) 320-4475',
+            email: 'wtulloch@slimrate.com'
+        };
+
+        this.querySelector('#salesman-name').textContent = `${salesman.name} (ID: ${salesman.id})`;
+        this.querySelector('#salesman-phone').textContent = salesman.phone;
+        this.querySelector('#salesman-email').textContent = salesman.email;
     }
 }
+
 customElements.define("h-employer-confirm", hEmployerConfirm);
