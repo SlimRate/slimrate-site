@@ -24,17 +24,17 @@ hAdvantagesTemplate.innerHTML = `
                 We care about your safety! Our Slimrate Salesmen will provide all the necessary information about our product. 
                 Ask any question to your personal Slimrate Salesman:
             </p>
-
-            <p id="salesman-name" style="line-height: 22px; font-weight: 400; font-size: 20px;"></p>
+    
+            <p class="user-info" style="line-height: 22px; font-weight: 400; font-size: 20px;"></p>
     
             <div class="contact-info">
                 <i class="fa-solid fa-address-book"></i>
-                <p id="salesman-phone"></p>
+                <p class="user-phone"></p>
             </div>
     
             <div class="contact-info">
                 <i class="fa-solid fa-at"></i>
-                <p id="salesman-email"></p>
+                <p class="user-email"></p>
             </div>
         </div>
     </div>
@@ -48,18 +48,16 @@ class hEmployerConfirm extends HTMLElement {
     }
 
     connectedCallback() {
+        const userName = this.getAttribute('name') || 'No Name Provided';
+        const userId = this.getAttribute('id') || 'No ID Provided';
+        const userPhone = this.getAttribute('phone') || 'No Phone Provided';
+        const userEmail = this.getAttribute('email') || 'No Email Provided';
+
+        this._contents.querySelector('.user-info').textContent = `${userName} (ID: ${userId})`;
+        this._contents.querySelector('.user-phone').textContent = userPhone;
+        this._contents.querySelector('.user-email').textContent = userEmail;
+
         this.appendChild(this._contents);
-
-        const salesman = {
-            name: 'Danny Smith',
-            id: '83498274',
-            phone: '(517) 320-4475',
-            email: 'wtulloch@slimrate.com'
-        };
-
-        this.querySelector('#salesman-name').textContent = `${salesman.name} (ID: ${salesman.id})`;
-        this.querySelector('#salesman-phone').textContent = salesman.phone;
-        this.querySelector('#salesman-email').textContent = salesman.email;
     }
 }
 
