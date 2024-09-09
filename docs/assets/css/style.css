@@ -432,6 +432,15 @@ button {
     border: 1px solid #ef2b23;
     color: #fff;
     box-sizing: border-box;
+    display: inline-block;
+}
+
+.btn-blue {
+    background: #2B6BF3;
+    border: 1px solid #2B6BF3;
+    color: #fff;
+    box-sizing: border-box;
+    display: inline-block;
 }
 
 .btn-red:hover {
@@ -3972,3 +3981,15 @@ ection.we-support {
     justify-content: space-between;
     height: 100%; 
 }
+
+.menu-buttons {
+    display: flex;
+    justify-content: center; 
+    gap: 10px; 
+    margin-bottom: 20px; 
+  }
+  
+  .menu-buttons a {
+    display: inline-block;
+  }
+  

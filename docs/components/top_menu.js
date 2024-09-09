@@ -18,8 +18,8 @@ topMenuTeplate.innerHTML = `
       <li><a href="company.html" id ='${companyMenuElementId}'>Company</a></li>
       <li><a href="https://ap.slimrate.com/#" target="blank">Login</a></li>
     </ul>
-    <a href="#get_demo">
-        <button class="btn btn-red">Get Demo</button></a>
+    
+    <a href="#get_demo"><button class="btn btn-red">Get Demo</button></a>
 </div>
 </div>
 </header>
@@ -30,11 +30,13 @@ topMenuTeplate.innerHTML = `
     <span></span>
 </label>
 
-<div class="menu__box">
+<div class="menu__box menuContainer">
+<div>
     <div class="menu__item i1" id="menu1">
-        <a href="#menu1">
-            Solutions</a>
+      <div class="flexContainer">
+        <a href="#menu1">Solutions</a>
         <img class="menu_arrow_rotate r1" src=" assets/img/arrow-right.svg" alt="">
+      </div>
         <div class="more m1">
             <a class="more_head">Industry leading point of sale and management tools to separate you from your competition. Live
             support to ensure your questions are always answered.</a>
@@ -42,13 +44,13 @@ topMenuTeplate.innerHTML = `
                 <li class="divider">
                 </li>
                 <li>
-                    <a href="software.html">Software</a>
+                    <a href="software.html" class='lastLink'>Software</a>
                 </li>
                 <li>
-                    <a href="hardware.html">Hardware</a>
+                    <a href="hardware.html" class='lastLink'>Hardware</a>
                 </li>
                 <li>
-                    <a href="payment_processing.html">Payment Processing</a>
+                    <a href="payment_processing.html" class='lastLink'>Payment Processing</a>
                 </li>
               
             </ul>
@@ -59,8 +61,11 @@ topMenuTeplate.innerHTML = `
 
     
     <div class="divider"></div>
-    <div class="menu__item i2" id="menu2"><a href="#menu2">Business Types</a>
-        <img class="menu_arrow_rotate r2" src=" assets/img/arrow-right.svg" alt="">
+    <div class="menu__item i2" id="menu2">
+        <div class="flexContainer">
+          <a href="#menu2">Business Types</a>
+          <img class="menu_arrow_rotate r2" src=" assets/img/arrow-right.svg" alt="">
+        </div>
         <div class="more m2">
             <a class="more_head">Modern payment and point of sale technology for a variety of applications</a>
             <ul>
@@ -68,57 +73,63 @@ topMenuTeplate.innerHTML = `
                 </li>
 
                 <li>
-                    <div class="menu__item i3" id="menu3"><a href="#menu3">Restaurant POS</a>
-                        <img class="menu_arrow_rotate r3" src=" assets/img/arrow-right.svg" alt="">
+                    <div class="menu__item i3" id="menu3">
+                        <div class="flexContainer">
+                          <a href="#menu3">Restaurant POS</a>
+                          <img class="menu_arrow_rotate r3" src=" assets/img/arrow-right.svg" alt="">
+                        </div>
                         <div class="more m3">
                             <a class="more_head">Cloud-based POS & management solution for restaurants of
                                 all sizes. Built to make your restaurant perform better
                             </a>
                             <ul>
                                 <li>
-                                    <a href="restaurant.html">Restaurant POS</a>
+                                    <a href="restaurant.html" class='lastLink'>Restaurant POS</a>
                                 </li>
 
                                 <li>
-                                    <a href="h-bars.html">Bars & Nightclubs</a>
+                                    <a href="h-bars.html" class='lastLink'>Bars & Nightclubs</a>
                                 </li>
                                 <li>
-                                    <a href="h-casual.html">Casual Dining</a>
+                                    <a href="h-casual.html" class='lastLink'>Casual Dining</a>
                                 </li>
                                 <li>
-                                    <a href="h-fine.html">Fine Dining</a>
+                                    <a href="h-fine.html" class='lastLink'>Fine Dining</a>
                                 </li>
                                 <li>
-                                    <a href="h-quick.html">Quick Service Restaurants (QSR)</a>
+                                    <a href="h-quick.html" class='lastLink'>Quick Service Restaurants (QSR)</a>
                                 </li>
                                 <li>
-                                    <a href="h-coffee.html">Coffee Shops & Bakeries</a>
+                                    <a href="h-coffee.html" class='lastLink'>Coffee Shops & Bakeries</a>
                                 </li>
                                 <li>
-                                    <a href="h-truck.html">Food Trucks</a>
+                                    <a href="h-truck.html" class='lastLink'>Food Trucks</a>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </li>
                 <li>
-                    <div class="menu__item i4" id="menu4"><a href="#menu4">Retail POS</a>
+                    <div class="menu__item i4" id="menu4">
+                       <div class="flexContainer">
+                        <a href="#menu4">Retail POS</a>
                         <img class="menu_arrow_rotate r4" src=" assets/img/arrow-right.svg" alt="">
+                       </div>
                         <div class="more m4">
                             <a class="more_head">Sell in-style with an integrated retail POS solution that
                                 makes it easy to sell online and in-store</a>
                             <ul>
                                 <li>
-                                    <a href="r-liquor.html">Liquor Stores</a>
+                                    <a href="r-liquor.html" class='lastLink'>Liquor Stores</a>
                                 </li>
                                 <li>
-                                    <a href="r-clothing.html">Clothing and Apparel Stores</a>
+                                    <a href="r-clothing.html" class='lastLink'>Clothing and Apparel Stores</a>
                                 </li>
                                 <li>
-                                    <a href="r-grocery.html">Grocery and Convenience Stores</a>
+                                    <a href="r-grocery.html" class='lastLink'>Grocery and Convenience Stores</a>
                                 </li>
                                 <li>
-                                    <a href="r-specialty.html">Specialty Stores</a>
+                                    <a href="r-specialty.html" class='lastLink'>Specialty Stores</a>
                                 </li>
                             </ul>
                         </div>
@@ -128,13 +139,31 @@ topMenuTeplate.innerHTML = `
         </div>
     </div>
     <div class="divider"></div>
-    <div class="menu__item"><a href="pricing.html">Pricing</a> </div>
+    <div class="menu__item">
+      <div class="flexContainer">
+        <a href="pricing.html">Pricing</a>
+        <img class="menu_arrow_rotate r1" src=" assets/img/arrow-right.svg" alt="">
+      </div>
+    </div>
     <div class="divider"></div>
-    <div class="menu__item"><a href="company.html">Company</a></div>
+      <div class="menu__item">
+        <div class="flexContainer">
+          <a href="company.html">Company</a>
+          <img class="menu_arrow_rotate r1" src=" assets/img/arrow-right.svg" alt="">
+        </div>
+      </div>
     <div class="divider"></div>
-    <div class="menu__item"><a href="https://ap.slimrate.com/#" target="blank">Login</a></div>
-    <a href="#get_demo"><button onclick="uncheck()" class="btn btn-red">Get a Demo</button></a>
-    
+    </div>
+    <div>
+        <div class="menu-buttons">
+          <a href="https://ap.slimrate.com/#" target="blank">
+            <button class="btn btn-blue">Login</button>
+          </a>
+          <a href="#get_demo">
+            <button onclick="uncheck()" class="btn btn-red">Get a Demo</button>
+          </a>
+        </div>
+    </div>
 </div>
 </div>
 </header>

@@ -10,7 +10,7 @@
         .more li {
             font-size: 18px;
             line-height: 29px;
-            font-weight: 700;
+            font-weight: 600;
             color: #252525;
             -webkit-transition: all 0.5s ease;
             transition: all 0.5s ease;
@@ -18,9 +18,9 @@
         }
         
         .more ul {
-            padding-top: 10px;
+            padding: 10px 12px;
         }
-        .menu__item.i3.open, .menu__item.i4.open{
+        .menu__item.i3.open, .menu__item.i4.open, .menu__item.i2.open, .menu__item.i1.open {
 background: #fafafa;
         }
         
@@ -108,6 +108,15 @@ background: #fafafa;
             margin-left: auto;
             margin-right: auto;
             padding: 16px;
+            width: 120px;
+        }
+
+        .menu__box .btn-blue {
+            margin-top: 40px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 16px;
+            width: 120px;
         }
         
         .more .menu__item {
@@ -182,11 +191,24 @@ background: #fafafa;
             padding: 12px 24px;
             color: #000;
             font-size: 18px;
-            font-weight: 700;
+            font-weight: 600;
             text-decoration: none;
             transition-duration: 0.25s;
         }
         
         .menu__item:target {
             background-color: #fff;
+        }
+
+        .lastLink {
+            color: #2B6BF3 !important;
+        }
+        .flexContainer {
+            display: flex;
+            justify-content: space-between;
+        }
+        .menuContainer {
+            justify-content: space-between;
+            display: flex;
+            flex-direction: column;
         }
