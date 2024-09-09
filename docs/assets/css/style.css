@@ -3892,7 +3892,7 @@ li.divider {
 div.divider {
     display: block;
     position: absolute;
-    width: 50%;
+    width: 1000%;
     height: 2px;
     margin-bottom: 5px;
     background-color: #f8faff;
