@@ -33,6 +33,227 @@
     <script src="components/bottom_menu.js"></script>
     <script src="components/pricing_form.js"></script>
     <script src="components/equip_main.js"></script>
+
+         <!-- Customers tentimonial -->
+    <style>
+        @import url(https://fonts.googleapis.com/css2?family=Sourse+Sans+Pro&family=Lato&display=swap);
+  
+        #cardComponent {
+          font-family: 'Sourse Sans Pro', sans-serif;
+          margin: 0 auto;
+          width: 100%;
+          max-width: 1160px;
+          background-color: #ffffff;
+  
+          padding: 24px;
+          padding-bottom: 36px;
+          position: relative;
+          overflow: hidden;
+        }
+  
+        .testimonial-header {
+          font-family: 'Sourse Sans Pro', sans-serif;
+          font-size: 24px;
+          margin-bottom: 16px;
+        }
+  
+        .testimonial-header .highlight {
+          color: #dc2626;
+        }
+  
+        .flex {
+          display: flex;
+          gap: 16px;
+        }
+  
+        .relative {
+          position: relative;
+        }
+  
+        .image-container {
+          width: 260px;
+          height: 100%;
+          border-radius: 8px;
+          overflow: hidden;
+        }
+  
+        .image-container img {
+          width: 260px;
+          height: 100%;
+          object-fit: cover;
+        }
+  
+        .image-container span {
+          position: absolute;
+          bottom: 8px;
+          left: 8px;
+          color: white;
+          font-weight: bold;
+        }
+  
+        .font-bold {
+          font-weight: bold;
+        }
+  
+        .text-blue {
+          color: #1d4ed8;
+        }
+  
+        .text-green {
+          color: #15803d;
+        }
+  
+        .rounded {
+          border-radius: 8px;
+        }
+  
+        .stats-box {
+          min-height: 110px;
+          width: 244px;
+          padding: 4px 10px;
+          background-color: #f3f3f3;
+          border-radius: 8px;
+          text-align: center;
+        }
+  
+        .stats-value {
+          text-align: left;
+          font-size: 44px;
+          color: #1d4ed8;
+          margin: 0px 0px;
+        }
+  
+        .rise-info {
+          text-align: left;
+          font-size: 14px;
+        }
+  
+        .margin-top-small {
+          margin-top: 4px;
+        }
+  
+        .margin-top-medium {
+          margin-top: 16px;
+        }
+  
+        .margin-top-large {
+          margin-top: 24px;
+        }
+  
+        .margin-top-none {
+          margin-top: 0px;
+        }
+  
+        .h2Text {
+          font-size: 26px;
+          font-weight: 700;
+          line-height: 32px;
+          margin-bottom: 4px;
+        }
+  
+        .slider-dots {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 28px;
+          position: absolute;
+          bottom: 12px;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+  
+        .slider-dot {
+          width: 7px;
+          height: 7px;
+          border-radius: 50%;
+          background-color: #e5e7eb;
+          cursor: pointer;
+        }
+  
+        .slider-dot.activeSlider {
+          background-color: black;
+        }
+  
+        .testimonial-content {
+          opacity: 0;
+          transform: translateX(50px);
+          transition: opacity 0.5s ease, transform 0.5s ease;
+          height: 340px;
+          overflow: hidden;
+        }
+  
+        .testimonial-content.activeSlider {
+          opacity: 1;
+          transform: translateX(0);
+        }
+  
+        .testimonial-text-container {
+          height: 100%;
+          overflow-y: auto;
+        }
+        .desctopColumn {
+          flex-direction: column;
+          display: flex;
+          justify-content: space-between;
+        }
+  
+        @media (max-width: 768px) {
+          #cardComponent {
+            height: 640px;
+            width: 100%;
+            padding: 16px;
+          }
+  
+          .testimonial-content {
+            flex-direction: column;
+            height: 580px;
+          }
+  
+          .mobile-first-level {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 16px;
+          }
+  
+          .image-container {
+            width: 50%;
+            height: 100%;
+          }
+  
+          .testimonial-text-container {
+            width: 50%;
+          }
+  
+          .image-container img {
+            width: 100%;
+            height: 100%;
+          }
+  
+          /* Второй уровень: блок Solution */
+          .mobile-second-level {
+            /* margin-top: 16px; */
+          }
+  
+          /* Третий уровень: карточки по 2 в ряд */
+          .mobile-third-level {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            /* margin-top: 16px; */
+          }
+  
+          .stats-box {
+            width: 75%;
+          }
+  
+          .font-bold {
+            margin-bottom: 6px;
+            margin-top: 0px;
+          }
+        }
+      </style>
 </head>
 
 <body>
@@ -76,6 +297,264 @@
                 <img src="assets/img/coop-logo/img-3-white.svg" alt="" class="coop-logo coop-logo-white" />
             </div>
         </div>
+
+        <!-- Customers tentimonial -->
+        <div id="cardComponent">
+            <h2 class="testimonial-header">
+              Customer <span class="highlight">Testimonials</span>
+            </h2>
+            <div class="flex testimonial-content" id="testimonial-content"></div>
+            <div class="slider-dots" id="slider-dots"></div>
+          </div>
+      
+          <script>
+            const testimonials = [
+              {
+                image: 'assets/img/gallery/r-liquor/1.jpg',
+                title: 'Golf Course',
+                challenge:
+                  'Managing tee time bookings, membership renewals, pro shop sales, and restaurant operations with an outdated system.',
+                solution:
+                  'A comprehensive POS system integrating all functions into a single platform.',
+                stats: [
+                  {
+                    label: 'Increased Revenue',
+                    value: '20%',
+                    info: 'rise in pro shop sales',
+                  },
+                  {
+                    label: 'Increased Revenue',
+                    value: '20%',
+                    info: 'rise in pro shop sales',
+                  },
+                  // { label: 'Increased Memberships', value: '25%', info: 'growth in memberships' }
+                ],
+              },
+              {
+                image: 'assets/img/gallery/r-liquor/2.jpg',
+                title: 'Supermarket',
+                challenge:
+                  'Inventory management, long checkout times, and lack of data insights with an unscalable system.',
+                solution:
+                  'Advanced inventory management, efficient checkout processes, and robust data analytics with our POS system.',
+                stats: [
+                  {
+                    label: 'Inventory Accuracy',
+                    value: '50%',
+                    info: 'reduction in stockouts and overstock situations',
+                  },
+                  {
+                    label: 'Faster Checkouts',
+                    value: '30%',
+                    info: 'improvement in checkout speed',
+                  },
+                  // { label: 'Increased Memberships', value: '35%', info: 'growth in memberships' }
+                ],
+              },
+              {
+                image: 'assets/img/gallery/r-liquor/3.jpg',
+                title: 'Quick Service Restaurant',
+                challenge:
+                  'Slow order processing, inconsistent food quality, and difficulties in managing location with legacy systems.',
+                solution:
+                  'A unified POS platform for order processing, kitchen management, and multi-location control.',
+                stats: [
+                  {
+                    label: 'Faster Order Processing',
+                    value: '20%',
+                    info: 'reduction in processing time',
+                  },
+                  {
+                    label: 'Revenue Growth',
+                    value: '15%',
+                    info: 'increase in sales through efficient upselling',
+                  },
+                ],
+              },
+              {
+                image: 'assets/img/gallery/r-liquor/3.jpg',
+                title: 'Convenience Store/Gas Station',
+                challenge:
+                  'Managing inventory, sales reporting, and customer loyalty programs with manual processes.',
+                solution:
+                  'Advanced inventory management, efficient checkout processes, and accurate accounting tools with our POS system.',
+                stats: [
+                  {
+                    label: 'Cost Savings',
+                    value: '20%',
+                    info: 'reduction in monthly POS/processing costs',
+                  },
+                  {
+                    label: 'Increased Upselling',
+                    value: '15%',
+                    info: 'increase in sales of promotional items',
+                  },
+                  {
+                    label: 'Faster Checkouts',
+                    value: '25%',
+                    info: 'faster checkout speeds',
+                  },
+                ],
+              },
+              {
+                image: 'assets/img/gallery/r-liquor/3.jpg',
+                title: 'Retail Boutique',
+                challenge:
+                  'Managing inventory, sales reporting, and customer loyalty programs with manual processes.',
+                solution:
+                  'Integrated inventory management, sales reporting, and customer loyalty programs with our POS system.',
+                stats: [
+                  {
+                    label: 'Inventory Management',
+                    value: '40%',
+                    info: 'reduction in stock discrepancies',
+                  },
+                  {
+                    label: 'Reduced Monthly Fees',
+                    value: '20%',
+                    info: 'reduction in fees',
+                  },
+                ],
+              },
+              {
+                image: 'assets/img/gallery/r-liquor/3.jpg',
+                title: 'Sober House Network',
+                challenge:
+                  'Managing multiple locations, tracking resident payments, scheduling counseling sessions, and ensuring inventory of daily essentials with manual processes',
+                solution:
+                  'A tailored POS system for real-time tracking of payments, automated scheduling, and resident management.',
+                stats: [
+                  {
+                    label: 'Improved Efficiency',
+                    value: '40%',
+                    info: 'reduction in administrative time',
+                  },
+                  {
+                    label: 'Accurate Tracking',
+                    value: '80%',
+                    info: 'reduction in errors with real-time updates',
+                  },
+                ],
+              },
+            ];
+      
+            let currentSlide = 0;
+      
+            function renderTestimonial(slideIndex) {
+              const testimonial = testimonials[slideIndex];
+              const testimonialContent = document.getElementById(
+                'testimonial-content'
+              );
+      
+              const isMobile = window.innerWidth <= 768;
+              testimonialContent.classList.remove('activeSlider');
+      
+              setTimeout(() => {
+                const firstLevelClass = isMobile ? 'mobile-first-level' : '';
+                const secondLevelClass = isMobile ? 'mobile-second-level' : '';
+                const thirdLevelClass = isMobile ? 'mobile-third-level' : '';
+      
+                if (isMobile) {
+                  testimonialContent.innerHTML = `
+            <div class="${firstLevelClass}">
+              <div class="image-container relative">
+                <img src="${testimonial.image}" alt="${testimonial.title}" />
+                <span class="font-bold">${testimonial.title}</span>
+              </div>
+              <div class="testimonial-text-container">
+                <p class="text-blue h2Text margin-top-none">Challenge:</p>
+                <p class="margin-top-small">${testimonial.challenge}</p>
+              </div>
+            </div>
+      
+            <div class="${secondLevelClass}">
+              <p class="h2Text text-green margin-top-medium">Solution:</p>
+              <p class="margin-top-small">${testimonial.solution}</p>
+            </div>
+      
+            <div class="${thirdLevelClass}">
+              ${testimonial.stats
+                .map(
+                  (stat) => `
+                <div>
+                  <p class="font-bold">${stat.label}</p>
+                  <div class="stats-box">
+                    <p class="stats-value">${stat.value}</p>
+                    <p class="rise-info">${stat.info}</p>
+                  </div>
+                </div>
+              `
+                )
+                .join('')}
+            </div>
+          `;
+                } else {
+                  testimonialContent.innerHTML = `
+                  <div class="image-container relative">
+                    <img src="${testimonial.image}" alt="${testimonial.title}" />
+                    <span class="font-bold">${testimonial.title}</span>
+                  </div>
+                  <div class="flex-1 testimonial-text-container desctopColumn">
+                    <div>
+                    <p class="text-blue h2Text margin-top-none">Challenge:</p>
+                    <p class="margin-top-small">${testimonial.challenge}</p>
+                    </div>
+                    <div>
+                    <p class="h2Text text-green margin-top-medium">Solution:</p>
+                    <p class="margin-top-small">${testimonial.solution}</p>
+                    </div>
+                    <div class="flex ">
+                      ${testimonial.stats
+                        .map(
+                          (stat) => `
+                        <div>
+                          <p class="font-bold">${stat.label}</p>
+                          <div class="stats-box">
+                            <p class="stats-value">${stat.value}</p>
+                            <p class="rise-info">${stat.info}</p>
+                          </div>
+                        </div>
+                      `
+                        )
+                        .join('')}
+                    </div>
+                  </div>
+                `;
+                }
+      
+                testimonialContent.classList.add('activeSlider');
+              }, 300);
+            }
+      
+            function renderDots() {
+              const sliderDots = document.getElementById('slider-dots');
+              sliderDots.innerHTML = testimonials
+                .map(
+                  (_, index) => `
+                <div class="slider-dot ${
+                  index === currentSlide ? 'activeSlider' : ''
+                }" onclick="goToSlide(${index})"></div>
+              `
+                )
+                .join('');
+            }
+      
+            function goToSlide(slideIndex) {
+              currentSlide = slideIndex;
+              renderTestimonial(currentSlide);
+              renderDots();
+            }
+            function nextSlide() {
+              currentSlide = (currentSlide + 1) % testimonials.length; 
+              renderTestimonial(currentSlide);
+              renderDots();
+            }
+      
+            renderTestimonial(currentSlide);
+            renderDots();
+      
+            //   setInterval(nextSlide, 3000);
+          </script>
 
         <section class="advantages" id="advantages">
             <div class="container">
