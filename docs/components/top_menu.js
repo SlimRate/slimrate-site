@@ -139,21 +139,23 @@ topMenuTeplate.innerHTML = `
         </div>
     </div>
     <div class="divider"></div>
-    <div class="menu__item">
-      <div class="flexContainer">
-        <a href="pricing.html">Pricing</a>
-        <img class="menu_arrow_rotate r1" src=" assets/img/arrow-right.svg" alt="">
-      </div>
-    </div>
-    <div class="divider"></div>
+   <a href="pricing.html" class="menu__item-link">
       <div class="menu__item">
         <div class="flexContainer">
-          <a href="company.html">Company</a>
+          <span>Pricing</span>
+          <img class="menu_arrow_rotate r1" src="assets/img/arrow-right.svg" alt="">
+        </div>
+      </div>
+   </a>
+   <a href="company.html" class="menu__item-link">
+      <div class="menu__item">
+        <div class="flexContainer">
+          <span>Company</span>
           <img class="menu_arrow_rotate r1" src=" assets/img/arrow-right.svg" alt="">
         </div>
       </div>
+   </a>
     <div class="divider"></div>
-    </div>
     <div>
         <div class="menu-buttons">
           <a href="https://ap.slimrate.com/#" target="blank">
