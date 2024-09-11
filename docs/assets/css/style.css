@@ -557,6 +557,9 @@ h2.section-title span {
     padding-top: 40px;
     padding-bottom: 180px;
     position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .main-mobile-bg-top {
@@ -1552,7 +1555,7 @@ label.has-value {
 }
 
 .something {
-    padding-top: 80px;
+    /* padding-top: 80px; */
     padding-bottom: 80px;
 }
 
@@ -2963,7 +2966,7 @@ label.has-value {
     }
 
     .something {
-        padding-bottom: 32px;
+        /* padding-bottom: 32px; */
     }
   
 }
@@ -3041,8 +3044,7 @@ label.has-value {
     }
 
     .main {
-        background: #407af4;
-        margin-top: 80px;
+        /* margin-top: 80px; */
     }
 
     .main-mobile-bg-top {
@@ -3067,7 +3069,7 @@ label.has-value {
         margin-bottom: 90px;
         padding: 0;
         padding-bottom: 80px;
-        margin-top: 120px;
+        /* margin-top: 120px; */
     }
 
     .main-allPages .container .section-title {
@@ -3087,11 +3089,11 @@ label.has-value {
     }
 
     .main .block-left {
-        -webkit-backdrop-filter: unset;
-        backdrop-filter: unset;
-        background: transparent;
-        padding: 0px;
+        backdrop-filter: blur(6px);
+        background: rgba(0, 0, 0, 0.1);
+        padding: 10px;
         max-width: none;
+        border-radius: 5px;
     }
 
     .main .section-title {
