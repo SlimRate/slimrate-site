@@ -123,6 +123,7 @@ const productGroups = [
                 costForWhite: 850,
                 images: [
                     "assets/img/gallery/hardware/SR155 Solo 1.png",
+                    "assets/img/gallery/hardware/SR155 Solo 2.png",
                 ],
             }
         ]
@@ -170,7 +171,7 @@ const productGroups = [
                 costForBlack: 279,
                 costForWhite: 279,
                 images: [
-                    ,
+                    "assets/img/gallery/hardware/SR-WHS1 Wired Table Scanner 1.png",,
                 ],
             },
             {
@@ -180,7 +181,9 @@ const productGroups = [
                 costForBlack: 399,
                 costForWhite: 399,
                 images: [
-                    ,
+                    "assets/img/gallery/hardware/SR-WLHS1 Wireless Handheld Scanner 3.png",
+                    "assets/img/gallery/hardware/SR-WHS1 Wired Handheld Scanner 2.png",
+                    "assets/img/gallery/hardware/SR-WHS1 Wired Handheld Scanner 3.png",
                 ],
             },
             {
@@ -241,7 +244,7 @@ const productGroups = [
                 costForBlack: 475,
                 costForWhite: 475,
                 images: [
-                    ,
+                    "assets/img/gallery/hardware/DS1.png",
                 ],
             },
             {
