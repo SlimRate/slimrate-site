@@ -147,6 +147,7 @@ topMenuTeplate.innerHTML = `
         </div>
       </div>
    </a>
+   <div class="divider"></div>
    <a href="company.html" class="menu__item-link">
       <div class="menu__item">
         <div class="flexContainer">
