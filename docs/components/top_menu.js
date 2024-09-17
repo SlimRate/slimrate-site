@@ -1,9 +1,9 @@
-const productMenuElementId = "dropmenu__product";
-const businessTypeMenuElementId = "dropmenu__business-types";
-const pricingMenuElementId = "dropmenu__pricing";
-const companyMenuElementId = "dropmenu__company";
+const productMenuElementId = 'dropmenu__product';
+const businessTypeMenuElementId = 'dropmenu__business-types';
+const pricingMenuElementId = 'dropmenu__pricing';
+const companyMenuElementId = 'dropmenu__company';
 
-const topMenuTeplate = document.createElement("template");
+const topMenuTeplate = document.createElement('template');
 topMenuTeplate.innerHTML = `
 <header class="header">
 <div class="container">
@@ -16,10 +16,9 @@ topMenuTeplate.innerHTML = `
       <li id='${businessTypeMenuElementId}'><a href="javascript:void(0)">Business Types</a></li>
       <li ><a href="pricing.html" id='${pricingMenuElementId}'>Pricing</a></li>
       <li><a href="company.html" id ='${companyMenuElementId}'>Company</a></li>
-      <li><a href="https://ap.slimrate.com/#" target="blank">Login</a></li>
     </ul>
-    
-    <a href="#get_demo"><button class="btn btn-red">Get Demo</button></a>
+    <a href="company.html#get_demo" onclick="if (!document.getElementById('get_demo')) { window.location.href='company.html#get_demo'; }"><button class="btn btn-red">Turn Salesman</button></a>
+    <a href="https://ap.slimrate.com/#"><button class="btn btn-blue">Login</button></a>
 </div>
 </div>
 </header>
@@ -156,6 +155,15 @@ topMenuTeplate.innerHTML = `
         </div>
       </div>
    </a>
+      <div class="divider"></div>
+   <a href="company.html#get_demo" class="menu__item-link ">
+      <div class="menu__item">
+        <div class="flexContainer">
+          <span style="color: #2B6BF3">Turn Salesmen</span>
+          <img class="menu_arrow_rotate r1" src=" assets/img/arrow-right.svg" alt="">
+        </div>
+      </div>
+   </a>
     <div class="divider"></div>
     <div>
         <div class="menu-buttons">
@@ -179,15 +187,15 @@ class TopMenu extends HTMLElement {
   }
   connectedCallback() {
     this.appendChild(this._contents);
-    console.log("connected callback");
+    console.log('connected callback');
     initDropment();
   }
 }
 
-customElements.define("top-menu", TopMenu);
+customElements.define('top-menu', TopMenu);
 
 function initDropment() {
-  console.log("init initDropment");
+  console.log('init initDropment');
   const productHtmlObj = {
     infoHtmlStr: `
       <h2 class="dropmenu-title">Solutions</h2>
@@ -325,37 +333,37 @@ function initDropment() {
 
   var isHeaderHovered = false;
 
-  const header = document.getElementsByClassName("header")[0];
-  header.addEventListener("mouseenter", () => {
+  const header = document.getElementsByClassName('header')[0];
+  header.addEventListener('mouseenter', () => {
     isHeaderHovered = true;
   });
-  header.addEventListener("mouseleave", () => {
+  header.addEventListener('mouseleave', () => {
     isHeaderHovered = false;
   });
 
   document
     .getElementById(productMenuElementId)
-    .addEventListener("mouseenter", () => {
+    .addEventListener('mouseenter', () => {
       openProductMenu();
     });
   document
     .getElementById(businessTypeMenuElementId)
-    .addEventListener("mouseenter", () => {
+    .addEventListener('mouseenter', () => {
       openBusinessTypesMenu();
     });
 
   document
     .getElementById(pricingMenuElementId)
-    .addEventListener("mouseenter", () => {
-      const el = document.getElementsByClassName("dropmenu")[0];
+    .addEventListener('mouseenter', () => {
+      const el = document.getElementsByClassName('dropmenu')[0];
       if (el != null) {
         onRemoveForce(el);
       }
     });
   document
     .getElementById(companyMenuElementId)
-    .addEventListener("mouseenter", () => {
-      const el = document.getElementsByClassName("dropmenu")[0];
+    .addEventListener('mouseenter', () => {
+      const el = document.getElementsByClassName('dropmenu')[0];
       if (el != null) {
         onRemoveForce(el);
       }
@@ -385,7 +393,7 @@ function initDropment() {
   }
 
   function destroyElement() {
-    const els = document.getElementsByClassName("dropmenu");
+    const els = document.getElementsByClassName('dropmenu');
     if (els.length > 0) {
       console.log({ els });
       for (const el of els) {
@@ -398,7 +406,7 @@ function initDropment() {
   function createDropmenu({ infoHtmlStr, navContentHtmlStr, parentId }) {
     const fragment = document.createDocumentFragment();
 
-    const element = document.createElement("div");
+    const element = document.createElement('div');
 
     element.innerHTML = `
       <div class="dropmenu hovered">
@@ -418,28 +426,27 @@ function initDropment() {
     const parentElement = document.getElementById(parentId);
 
     parentElement.appendChild(fragment);
-    const el = document.getElementsByClassName("dropmenu")[0];
-    el.addEventListener("mouseleave", () => onRemove(el));
+    const el = document.getElementsByClassName('dropmenu')[0];
+    el.addEventListener('mouseleave', () => onRemove(el));
 
-
-    $(".t1 ").hover(
+    $('.t1 ').hover(
       function () {
-        $(".n1").removeClass("hidden");
-        $(".n2").addClass("hidden");
-        $(".t2").removeClass("active");
-        $(".t1").addClass("active");
+        $('.n1').removeClass('hidden');
+        $('.n2').addClass('hidden');
+        $('.t2').removeClass('active');
+        $('.t1').addClass('active');
       },
-      function () { }
+      function () {}
     );
 
-    $(".t2 ").hover(
+    $('.t2 ').hover(
       function () {
-        $(".n2").removeClass("hidden");
-        $(".n1").addClass("hidden");
-        $(".t1").removeClass("active");
-        $(".t2").addClass("active");
+        $('.n2').removeClass('hidden');
+        $('.n1').addClass('hidden');
+        $('.t1').removeClass('active');
+        $('.t2').addClass('active');
       },
-      function () { }
+      function () {}
     );
 
     return fragment;
@@ -451,7 +458,7 @@ function initDropment() {
       productMenu = null;
       businessTypeMenu = null;
       fragment.parentElement.removeChild(fragment);
-      fragment.removeEventListener("mouseleave", onRemove);
+      fragment.removeEventListener('mouseleave', onRemove);
     }, 100);
   }
 
@@ -460,7 +467,7 @@ function initDropment() {
       productMenu = null;
       businessTypeMenu = null;
       fragment.parentElement.removeChild(fragment);
-      fragment.removeEventListener("mouseleave", onRemove);
+      fragment.removeEventListener('mouseleave', onRemove);
     }, 100);
   }
 }

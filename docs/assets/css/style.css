@@ -441,6 +441,15 @@ button {
     color: #fff;
     box-sizing: border-box;
     display: inline-block;
+    margin-left: 0px !important;
+}
+
+.btn-blue:hover {
+    background: #fff;
+    border: 1px solid #2B6BF3;
+    color: #2B6BF3;
+    transition: 0.3s linear;
+    box-sizing: border-box;
 }
 
 .btn-red:hover {
