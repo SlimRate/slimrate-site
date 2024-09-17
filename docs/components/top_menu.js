@@ -17,7 +17,7 @@ topMenuTeplate.innerHTML = `
       <li ><a href="pricing.html" id='${pricingMenuElementId}'>Pricing</a></li>
       <li><a href="company.html" id ='${companyMenuElementId}'>Company</a></li>
     </ul>
-    <a href="company.html#get_demo" onclick="if (!document.getElementById('get_demo')) { window.location.href='company.html#get_demo'; }"><button class="btn btn-red">Turn Salesman</button></a>
+    <a href="company.html#get_demo" onclick="if (!document.getElementById('get_demo')) { window.location.href='company.html#get_demo'; }"><button class="btn btn-red">Careers</button></a>
     <a href="https://ap.slimrate.com/#"><button class="btn btn-blue">Login</button></a>
 </div>
 </div>
