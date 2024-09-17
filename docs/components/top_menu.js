@@ -159,7 +159,7 @@ topMenuTeplate.innerHTML = `
    <a href="company.html#get_demo" class="menu__item-link ">
       <div class="menu__item">
         <div class="flexContainer">
-          <span style="color: #2B6BF3">Turn Salesmen</span>
+          <span style="color: #2B6BF3">Careers</span>
           <img class="menu_arrow_rotate r1" src=" assets/img/arrow-right.svg" alt="">
         </div>
       </div>
