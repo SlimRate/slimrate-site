@@ -6,10 +6,9 @@ hardwareAdvantagesTemplate.innerHTML = `
             <p class="section-descr small">
             Reliable Hardware Designed to Perform
             </p>
-            <h2 class="section-title">Powerful tool built to help you operate efficiently and effectively</h2>
+            <h2 class="section-title">Discover the Excellence of Our POS Hardware: Designed for Performance and Efficiency</h2>
             <p class="section-text">
-                Industry leading point of sale and management tools to separate you from your competition. Live
-                support to ensure your questions are always answered.
+                In today's fast-paced business world, the right tools can make all the difference. Our POS hardware is more than just a piece of equipment; it's a powerful tool designed to help you operate with efficiency and effectiveness, setting you apart from the competition. Here's why our hardware is the best choice for your business:
             </p>
         </div>
         <div class="advantages-cards">
