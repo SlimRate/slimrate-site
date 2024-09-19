@@ -601,6 +601,10 @@ h2.section-title span {
     padding-top: 80px;
 }
 
+.company-equip {
+   z-index: 1;
+}
+
 .company-faq .faq-block__left {
     padding-right: 200px;
 }
@@ -1334,7 +1338,7 @@ h2.section-title span {
 }
 
 .contact .container {
-    max-width: 960px;
+    /* max-width: 960px; */
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
@@ -2902,7 +2906,7 @@ label.has-value {
     }
 
     .contact .container {
-        max-width: 820px;
+        /* max-width: 820px; */
     }
 
     .contact .bg-top {
@@ -3087,10 +3091,6 @@ label.has-value {
 
     .main-allPages .container .section-descr {
         margin-bottom: 24px;
-    }
-
-    .main-allPages .main-bg-bot {
-        display: none;
     }
 
     .main-bg {
@@ -3635,6 +3635,9 @@ label.has-value {
     .equip .container {
         max-width: 460px;
     }
+    .equip .bg-bottom {
+        top: 98%;
+    }
 
     .equip-text {
         text-align: center;
@@ -3791,6 +3794,9 @@ label.has-value {
     .equip .bg-top {
         bottom: 99%;
     }
+    .equip .bg-bottom {
+        top: 98%;
+    }
 
     .equip .block-right {
         height: 291px;
@@ -3882,10 +3888,7 @@ label.has-value {
         margin-right: 0px;
         margin-bottom: 20px;
     }
-    .advantages {
-        margin-top: 150px;
-        margin-bottom: 150px;
-    }
+   
 }
 
 li.divider {
