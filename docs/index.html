@@ -26,6 +26,7 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script src="assets/slick/slick.min.js"></script>
+
     <!-- Define custom components -->
     <script src="components/top_menu.js"></script>
     <script src="components/faq.js"></script>
@@ -34,224 +35,227 @@
     <script src="components/pricing_form.js"></script>
     <script src="components/equip_main.js"></script>
 
-         <!-- Customers tentimonial -->
-        <style>
-            @import url(https://fonts.googleapis.com/css2?family=Sourse+Sans+Pro&family=Lato&display=swap);
-      
-            #cardComponent {
-              font-family: 'Sourse Sans Pro', sans-serif;
-              margin: 0 auto;
-              width: 100%;
-              max-width: 1160px;
-              background-color: #ffffff;
-      
-              padding: 24px;
-              padding-bottom: 36px;
-              position: relative;
-              overflow: hidden;
-            }
-      
-            .testimonial-header {
-              font-family: 'Sourse Sans Pro', sans-serif;
-              font-size: 32px;
-              margin-bottom: 16px;
-            }
-      
-            .testimonial-header .highlight {
-              color: #dc2626;
-            }
-      
-            .flex {
-              display: flex;
-              gap: 16px;
-            }
-      
-            .relative {
-              position: relative;
-            }
-      
-            .image-container {
-              width: 260px;
-              height: 100%;
-              border-radius: 8px;
-              overflow: hidden;
-            }
-      
-            .image-container img {
-              width: 260px;
-              height: 100%;
-              object-fit: cover;
-            }
-      
-            .image-container span {
-              position: absolute;
-              bottom: 8px;
-              left: 8px;
-              color: white;
-              font-weight: bold;
-            }
-      
-            .font-bold {
-              font-weight: bold;
-            }
-      
-            .text-blue {
-              color: #1d4ed8;
-            }
-      
-            .text-green {
-              color: #15803d;
-            }
-      
-            .rounded {
-              border-radius: 8px;
-            }
-      
-            .stats-box {
-              min-height: 110px;
-              width: 244px;
-              padding: 4px 10px;
-              background-color: #f3f3f3;
-              border-radius: 8px;
-              text-align: center;
-            }
-      
-            .stats-value {
-              text-align: left;
-              font-size: 44px;
-              color: #1d4ed8;
-              margin: 0px 0px;
-              font-weight: 600;
-            }
-      
-            .rise-info {
-              text-align: left;
-              font-size: 14px;
-            }
-      
-            .margin-top-small {
-              margin-top: 4px;
-            }
-      
-            .margin-top-medium {
-              margin-top: 16px;
-            }
-      
-            .margin-top-large {
-              margin-top: 24px;
-            }
-      
-            .margin-top-none {
-              margin-top: 0px;
-            }
-      
-            .h2Text {
-              font-size: 26px;
-              font-weight: 700;
-              line-height: 32px;
-              margin-bottom: 4px;
-            }
-      
-            .slider-dots {
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              gap: 28px;
-              position: absolute;
-              bottom: 12px;
-              left: 50%;
-              transform: translateX(-50%);
-            }
-      
-            .slider-dot {
-              width: 7px;
-              height: 7px;
-              border-radius: 50%;
-              background-color: #e5e7eb;
-              cursor: pointer;
-            }
-      
-            .slider-dot.activeSlider {
-              background-color: black;
-            }
-      
-            .testimonial-content {
-              opacity: 0;
-              transform: translateX(50px);
-              transition: opacity 0.5s ease, transform 0.5s ease;
-              height: 340px;
-              overflow: hidden;
-            }
-      
-            .testimonial-content.activeSlider {
-              opacity: 1;
-              transform: translateX(0);
-            }
-      
-            .testimonial-text-container {
-              height: 100%;
-              overflow-y: auto;
-            }
-            .desctopColumn {
-              flex-direction: column;
-              display: flex;
-              justify-content: space-between;
-            }
-      
-            @media (max-width: 768px) {
-              #cardComponent {
-                height: 680px;
-                width: 100%;
-                padding: 16px;
-              }
-      
-              .testimonial-content {
-                flex-direction: column;
-                height: 580px;
-              }
-      
-              .mobile-first-level {
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: flex-start;
-                gap: 16px;
-              }
-      
-              .image-container {
-                width: 50%;
-                height: 100%;
-              }
-      
-              .testimonial-text-container {
-                width: 50%;
-              }
-      
-              .image-container img {
-                width: 100%;
-                height: 100%;
-              }
-      
-              .mobile-second-level {
-                /* margin-top: 16px; */
-              }
-      
-              .mobile-third-level {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 16px;
-              }
-      
-              .stats-box {
-                width: 100%;
-              }
-      
-              .font-bold {
-                margin-bottom: 6px;
-                margin-top: 0px;
-              }
-            }
-        </style>
+    <!-- Customers tentimonial -->
+    <style>
+        @import url(https://fonts.googleapis.com/css2?family=Sourse+Sans+Pro&family=Lato&display=swap);
+  
+        #cardComponent {
+          font-family: 'Sourse Sans Pro', sans-serif;
+          margin: 0 auto;
+          width: 100%;
+          max-width: 1160px;
+          background-color: #ffffff;
+  
+          padding: 24px;
+          padding-bottom: 36px;
+          position: relative;
+          overflow: hidden;
+        }
+  
+        .testimonial-header {
+          font-family: 'Sourse Sans Pro', sans-serif;
+          font-size: 32px;
+          margin-bottom: 16px;
+        }
+  
+        .testimonial-header .highlight {
+          color: #dc2626;
+        }
+  
+        .flex {
+          display: flex;
+          gap: 16px;
+        }
+  
+        .relative {
+          position: relative;
+        }
+  
+        .image-container {
+          width: 260px;
+          height: 100%;
+          border-radius: 8px;
+          overflow: hidden;
+        }
+  
+        .image-container img {
+          width: 260px;
+          height: 100%;
+          object-fit: cover;
+        }
+  
+        .image-container span {
+          position: absolute;
+          bottom: 8px;
+          left: 8px;
+          color: white;
+          font-weight: bold;
+        }
+  
+        .font-bold {
+          font-weight: bold;
+        }
+  
+        .text-blue {
+          color: #1d4ed8;
+        }
+  
+        .text-green {
+          color: #15803d;
+        }
+  
+        .rounded {
+          border-radius: 8px;
+        }
+  
+        .stats-box {
+          min-height: 110px;
+          width: 244px;
+          padding: 4px 10px;
+          background-color: #f3f3f3;
+          border-radius: 8px;
+          text-align: center;
+        }
+  
+        .stats-value {
+          text-align: left;
+          font-size: 44px;
+          color: #1d4ed8;
+          margin: 0px 0px;
+          font-weight: 600;
+        }
+  
+        .rise-info {
+          text-align: left;
+          font-size: 14px;
+        }
+  
+        .margin-top-small {
+          margin-top: 4px;
+        }
+  
+        .margin-top-medium {
+          margin-top: 16px;
+        }
+  
+        .margin-top-large {
+          margin-top: 24px;
+        }
+  
+        .margin-top-none {
+          margin-top: 0px;
+        }
+  
+        .h2Text {
+          font-size: 26px;
+          font-weight: 700;
+          line-height: 32px;
+          margin-bottom: 4px;
+        }
+  
+        .slider-dots {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 28px;
+          position: absolute;
+          bottom: 12px;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+  
+        .slider-dot {
+          width: 7px;
+          height: 7px;
+          border-radius: 50%;
+          background-color: #e5e7eb;
+          cursor: pointer;
+        }
+  
+        .slider-dot.activeSlider {
+          background-color: black;
+        }
+  
+        .testimonial-content {
+          opacity: 0;
+          transform: translateX(50px);
+          transition: opacity 0.5s ease, transform 0.5s ease;
+          height: 340px;
+          overflow: hidden;
+        }
+  
+        .testimonial-content.activeSlider {
+          opacity: 1;
+          transform: translateX(0);
+        }
+  
+        .testimonial-text-container {
+          height: 100%;
+          overflow-y: auto;
+        }
+        .desctopColumn {
+          flex-direction: column;
+          display: flex;
+          justify-content: space-between;
+        }
+  
+        @media (max-width: 768px) {
+          #cardComponent {
+            height: 680px;
+            width: 100%;
+            padding: 16px;
+          }
+  
+          .testimonial-content {
+            flex-direction: column;
+            height: 580px;
+          }
+  
+          .mobile-first-level {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 16px;
+          }
+  
+          .image-container {
+            width: 50%;
+            height: 100%;
+          }
+  
+          .testimonial-text-container {
+            width: 50%;
+          }
+  
+          .image-container img {
+            width: 100%;
+            height: 100%;
+          }
+  
+          .mobile-second-level {
+            /* margin-top: 16px; */
+          }
+  
+          .mobile-third-level {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+          }
+  
+          .stats-box {
+            width: 100%;
+          }
+  
+          .font-bold {
+            margin-bottom: 6px;
+            margin-top: 0px;
+          }
+        }
+    </style>
+
+    <!-- minimalSlider -->
+    <link rel="stylesheet" href="components/minimalSlider/minimalSlider.css">
 </head>
 
 <body>
@@ -303,7 +307,13 @@
             <div class="flex testimonial-content" id="testimonial-content"></div>
             <div class="slider-dots" id="slider-dots"></div>
         </div> 
-         
+
+         <!-- minimalSlider  -->
+        <div class="slider-container">
+          <div class="slider">
+            <div class="slides" id="slides"></div>
+          </div>
+        </div>
 
         <!-- <section class="advantages" id="advantages">
             <div class="container">
@@ -639,8 +649,11 @@
         renderTestimonial(currentSlide);
         renderDots();
   
-          setInterval(nextSlide, 5000);
+        setInterval(nextSlide, 5000);
     </script>
+
+  <!-- minimalSlider-->
+  <script src="components/minimalSlider/minimalSlider.js"></script>
 </body>
 
 </html>
