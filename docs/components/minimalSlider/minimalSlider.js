@@ -120,7 +120,7 @@ const productGroups = [
                     "assets/img/gallery/hardware/A920 Payment Terminal 1.png",
                 ],
             },
-  
+
             {
                 name: "E700",
                 text: "Experience the power of all-in-one payments with the E700 Payment Terminal. Featuring a large touchscreen and advanced processing capabilities, it simplifies transactions and enhances customer experience.",
@@ -159,40 +159,86 @@ const productGroups = [
         ]
     }
   ];
-  
+
   function createSlides() {
     const slidesContainer = document.getElementById('slides');
-  
+
     productGroups.forEach(group => {
       group.products.forEach(product => {
         const imageSrc = product.images[0];
         const productName = product.name;
-  
+
         const figure = document.createElement('figure');
-  
+        figure.dataset.productName = productName; 
+
         const img = document.createElement('img');
         img.src = imageSrc;
         img.alt = productName;
-  
+
         const figcaption = document.createElement('figcaption');
         figcaption.textContent = productName;
-  
+
         figure.appendChild(img);
         figure.appendChild(figcaption);
-  
+
         slidesContainer.appendChild(figure);
+
+        // open popUp
+        figure.addEventListener('click', () => openPopup(product));
       });
     });
   }
-  
+
+  // popUp
+  function openPopup(product) {
+    const popupOverlay = document.getElementById('popupOverlay');
+    const popupContent = document.getElementById('popupContent');
+
+    const existingContent = popupContent.querySelectorAll(':not(.close-btn)');
+    existingContent.forEach(element => element.remove());
+
+   
+    if (product.images.length > 0) {
+      const img = document.createElement('img');
+      img.src = product.images[0];
+      img.alt = product.name;
+      popupContent.appendChild(img);
+    }
+
+    const title = document.createElement('h2');
+    title.textContent = product.name;
+    popupContent.appendChild(title);
+
+    const description = document.createElement('p');
+    description.textContent = product.text;
+    popupContent.appendChild(description);
+
+    // const availability = document.createElement('p');
+    // availability.classList.add('availability');
+    // availability.textContent = `Наличие: ${product.avalible ? 'В наличии' : 'Нет в наличии'}`;
+    // popupContent.appendChild(availability);
+
+    // const price = document.createElement('p');
+    // price.classList.add('price');
+    // price.textContent = `Цена: Черный - ${product.costForBlack} руб., Белый - ${product.costForWhite} руб.`;
+    // popupContent.appendChild(price);
+
+    popupOverlay.classList.add('active');
+  }
+
+  function closePopup() {
+    const popupOverlay = document.getElementById('popupOverlay');
+    popupOverlay.classList.remove('active');
+  }
+
   document.addEventListener('DOMContentLoaded', () => {
-    createSlides();
-  
+    createSlides(); 
+
     const slides = document.querySelector('.slides');
     const images = document.querySelectorAll('.slides figure');
     const prevButton = document.querySelector('.prev');
     const nextButton = document.querySelector('.next');
-  
+
     const totalImages = images.length;
     
     const getImagesPerView = () => {
@@ -202,10 +248,10 @@ const productGroups = [
       if (width <= 1024) return 3;
       return 4;
     };
-  
+
     let imagesPerView = getImagesPerView();
     let currentIndex = 0;
-  
+
     window.addEventListener('resize', () => {
       const oldImagesPerView = imagesPerView;
       imagesPerView = getImagesPerView();
@@ -217,12 +263,12 @@ const productGroups = [
         updateSlidePosition();
       }
     });
-  
+
     const updateSlidePosition = () => {
       const percentage = (100 / imagesPerView) * currentIndex;
       slides.style.transform = `translateX(-${percentage}%)`;
     };
-  
+
     const nextSlide = () => {
       if (currentIndex < totalImages - imagesPerView) {
         currentIndex++;
@@ -231,26 +277,38 @@ const productGroups = [
       }
       updateSlidePosition();
     };
-  
+
     const prevSlide = () => {
       if (currentIndex > 0) {
         currentIndex--;
       } else {
-        currentIndex = totalImages - imagesPerView; 
+        currentIndex = totalImages - imagesPerView;
       }
       updateSlidePosition();
     };
-  
-    let slideInterval = setInterval(nextSlide, 2000);
-  
+
+    let slideInterval = setInterval(nextSlide, 3000);
+
+    
     document.querySelector('.slider-container').addEventListener('mouseover', () => {
       clearInterval(slideInterval);
     });
-  
+
+   
     document.querySelector('.slider-container').addEventListener('mouseout', () => {
-      slideInterval = setInterval(nextSlide, 2000);
+      slideInterval = setInterval(nextSlide, 3000);
     });
-  
-  //   nextButton.addEventListener('click', nextSlide);
-  //   prevButton.addEventListener('click', prevSlide);
+
+    // nextButton.addEventListener('click', nextSlide);
+    // prevButton.addEventListener('click', prevSlide);
+
+    const closeBtn = document.getElementById('closeBtnUp');
+    closeBtn.addEventListener('click', closePopup);
+
+    const popupOverlay = document.getElementById('popupOverlay');
+    popupOverlay.addEventListener('click', (e) => {
+      if (e.target === popupOverlay) {
+        closePopup();
+      }
+    });
   });
