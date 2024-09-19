@@ -1014,7 +1014,9 @@ h2.section-title span {
 }
 
 .coop {
+    margin-bottom: 50px;
     position: relative;
+    z-index: 2;
 }
 
 .coop .img-bg-top {
@@ -1052,12 +1054,6 @@ h2.section-title span {
     width: 100%;
     z-index: 1;
     display: none;
-}
-
-.coop {
-    margin-bottom: 100px;
-    position: relative;
-    z-index: 2;
 }
 
 .coop .img-bg {
