@@ -24,7 +24,21 @@ const productGroups = [
                   "assets/img/gallery/hardware/SR155 Solo 1.png",
                   "assets/img/gallery/hardware/SR155 Solo 2.png",
               ],
-          }
+          },
+          {
+            name: "SR155_Solo",
+            text: "This Slimrate device is a compact point-of-sale system featuring dual screens for customer and operator interaction. It includes a built-in cash drawer and printer, making it an efficient all-in-one solution for retail and hospitality. Its sleek design and secure payment technology enhance both functionality and user experience in busy service environments.",
+            avalible: true,
+            costForBlack: 0,
+            costForWhite: 0,
+            images: [
+                "assets/img/gallery/hardware/POS Terminal M155 1.png",
+                "assets/img/gallery/hardware/POS Terminal M155 2.png",
+                "assets/img/gallery/hardware/POS Terminal M155 3.png",
+                "assets/img/gallery/hardware/POS Terminal M155 4.png",
+                
+            ],
+        }
       ]
   },
   {
@@ -155,7 +169,29 @@ const productGroups = [
               images: [
                   "assets/img/gallery/hardware/Digital Scale 1.png",
               ],
-          }
+          },
+          {
+            name: "AIScale_Cash_Register_S625",
+            text: "This Slimrate device combines a tablet interface with integrated scales and a receipt printer, offering a compact, efficient solution for retail environments. Perfect for weight-based transactions, it provides both the convenience of a touchscreen and the practicality of built-in printing.",
+            avalible: true,
+            costForBlack: 0,
+            costForWhite: 0,
+            images: [
+                "assets/img/gallery/hardware/AIScale Cash Register S625 1.png",
+                "assets/img/gallery/hardware/AIScale Cash Register S625 2.png",
+            ],
+        },
+        {
+          name: "AIScale_Label_Printing_S130",
+          text: "These smart labeling scales with an integrated camera by Slimrate offer accurate weighing and automated product identification. Ideal for retail environments, they simplify labeling processes and enhance operational efficiency, ensuring precise product information with minimal user input.",
+          avalible: true,
+          costForBlack: 0,
+          costForWhite: 0,
+          images: [
+              "assets/img/gallery/hardware/AIScale Label Printing S130 1.png",
+              "assets/img/gallery/hardware/AIScale Label Printing S130 2.png",
+          ],
+      },
       ]
   }
 ];
