@@ -160,94 +160,40 @@ const productGroups = [
   }
 ];
 
+// Функция для создания карточек
 function createSlides() {
   const slidesContainer = document.getElementById('slides');
 
   productGroups.forEach(group => {
     group.products.forEach(product => {
+      // Используем первое изображение из массива images
       const imageSrc = product.images[0];
       const productName = product.name;
-      const deviceLabel = group.label;
 
       // Создаем элементы
       const figure = document.createElement('figure');
-      figure.dataset.productName = productName; 
 
       const img = document.createElement('img');
       img.src = imageSrc;
       img.alt = productName;
-      img.loading = 'lazy'; 
 
       const figcaption = document.createElement('figcaption');
+      figcaption.textContent = productName;
 
-      const labelSpan = document.createElement('span');
-      labelSpan.classList.add('label');
-      labelSpan.textContent = deviceLabel + ": ";
-
-      const separatorSpan = document.createElement('span');
-      separatorSpan.classList.add('separator');
-      separatorSpan.textContent = ':';
-
-      const nameSpan = document.createElement('span');
-      nameSpan.classList.add('product-name');
-      nameSpan.textContent = productName;
-
-      figcaption.appendChild(labelSpan);
-      figcaption.appendChild(nameSpan);
-
+      // Собираем структуру
       figure.appendChild(img);
       figure.appendChild(figcaption);
 
+      // Добавляем в слайды
       slidesContainer.appendChild(figure);
-
-      figure.addEventListener('click', () => openPopup(product));
     });
   });
 }
 
-function openPopup(product) {
-  const popupOverlay = document.getElementById('popupOverlay');
-  const popupContent = document.getElementById('popupContent');
-
-  const existingContent = popupContent.querySelectorAll(':not(.close-btn)');
-  existingContent.forEach(element => element.remove());
-
-  if (product.images.length > 0) {
-    const img = document.createElement('img');
-    img.src = product.images[0];
-    img.alt = product.name;
-    img.loading = 'lazy'; 
-    popupContent.appendChild(img);
-  }
-
-  const title = document.createElement('h2');
-  title.textContent = product.name;
-  popupContent.appendChild(title);
-
-  const description = document.createElement('p');
-  description.textContent = product.text;
-  popupContent.appendChild(description);
-
-  // const availability = document.createElement('p');
-  // availability.classList.add('availability');
-  // availability.textContent = `Наличие: ${product.avalible ? 'В наличии' : 'Нет в наличии'}`;
-  // popupContent.appendChild(availability);
-
-  // const price = document.createElement('p');
-  // price.classList.add('price');
-  // price.textContent = `Цена: Черный - ${product.costForBlack} руб., Белый - ${product.costForWhite} руб.`;
-  // popupContent.appendChild(price);
-
-  popupOverlay.classList.add('active');
-}
-
-function closePopup() {
-  const popupOverlay = document.getElementById('popupOverlay');
-  popupOverlay.classList.remove('active');
-}
-
+// Инициализация слайдера после загрузки контента
 document.addEventListener('DOMContentLoaded', () => {
-  createSlides(); 
+  createSlides(); // Создаем карточки
+
   const slides = document.querySelector('.slides');
   const images = document.querySelectorAll('.slides figure');
   const prevButton = document.querySelector('.prev');
@@ -255,6 +201,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const totalImages = images.length;
   
+  // Функция для определения количества карточек в видимой области
   const getImagesPerView = () => {
     const width = window.innerWidth;
     if (width <= 480) return 1;
@@ -266,6 +213,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let imagesPerView = getImagesPerView();
   let currentIndex = 0;
 
+  // Обновить количество карточек при изменении размера окна
   window.addEventListener('resize', () => {
     const oldImagesPerView = imagesPerView;
     imagesPerView = getImagesPerView();
@@ -278,49 +226,46 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // Обновить положение слайдов
   const updateSlidePosition = () => {
     const percentage = (100 / imagesPerView) * currentIndex;
     slides.style.transform = `translateX(-${percentage}%)`;
   };
 
+  // Переключение вперед
   const nextSlide = () => {
     if (currentIndex < totalImages - imagesPerView) {
       currentIndex++;
     } else {
-      currentIndex = 0; 
+      currentIndex = 0; // Зацикливание
     }
     updateSlidePosition();
   };
 
+  // Переключение назад
   const prevSlide = () => {
     if (currentIndex > 0) {
       currentIndex--;
     } else {
-      currentIndex = totalImages - imagesPerView; 
+      currentIndex = totalImages - imagesPerView; // Зацикливание
     }
     updateSlidePosition();
   };
 
-  let slideInterval = setInterval(nextSlide, 3000);
+  // Автоматическое переключение слайдов каждые 3 секунды
+  let slideInterval = setInterval(nextSlide, 2000);
 
+  // Остановить автоматическое переключение при наведении курсора
   document.querySelector('.slider-container').addEventListener('mouseover', () => {
     clearInterval(slideInterval);
   });
 
+  // Включить автоматическое переключение при уходе курсора
   document.querySelector('.slider-container').addEventListener('mouseout', () => {
-    slideInterval = setInterval(nextSlide, 3000);
+    slideInterval = setInterval(nextSlide, 2000);
   });
 
-  // nextButton.addEventListener('click', nextSlide);
-  // prevButton.addEventListener('click', prevSlide);
-
-  const closeBtn = document.getElementById('closeBtnUp');
-  closeBtn.addEventListener('click', closePopup);
-
-  const popupOverlay = document.getElementById('popupOverlay');
-  popupOverlay.addEventListener('click', (e) => {
-    if (e.target === popupOverlay) {
-      closePopup();
-    }
-  });
+  // Обработчики событий для кнопок
+//   nextButton.addEventListener('click', nextSlide);
+//   prevButton.addEventListener('click', prevSlide);
 });

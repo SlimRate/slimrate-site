@@ -168,7 +168,11 @@ function onSubmit() {
 
     return false;
 };
-const form = document.getElementById('my-form');
+
+document.getElementById('my-form')?.addEventListener('submit', function handleSubmit(event) {
+    event.preventDefault();
+    form.reset();
+});
 
 function showToast(message, type, position = 'bottom') {
     var toast = document.getElementById("toast");
@@ -195,8 +199,3 @@ function showToast(message, type, position = 'bottom') {
         toast.className = toast.className.replace("show", "");
     }, 3000);
 }
-
-form.addEventListener('submit', function handleSubmit(event) {
-    event.preventDefault();
-    form.reset();
-});

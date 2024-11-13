@@ -37,7 +37,6 @@
 
 .slides figure:hover {
   transform: scale(1.05);
-  /* box-shadow: 0 4px 8px rgba(0,0,0,0.1); */
 }
 
 .slides img {
@@ -56,6 +55,24 @@
   flex-grow: 1;
 }
 
+/* Стили для типа устройства и имени продукта */
+.slides .label {
+  color: blue; /* Синий цвет для типа устройства */
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.slides .separator {
+  color: #333;
+  margin-right: 5px;
+}
+
+.slides .product-name {
+  color: #333;
+  font-weight: normal;
+}
+
+/* Кнопки навигации */
 button.prev,
 button.next {
   position: absolute;
@@ -192,5 +209,8 @@ button.next:hover {
   }
   .slides img {
     aspect-ratio: 16 / 9;
+  }
+  .slides figcaption {
+    padding: 10px 5px;
   }
 }
