@@ -1,5 +1,5 @@
-const equipCompanyTemplate = document.createElement('template');
-equipCompanyTemplate.innerHTML = `
+const equipCompanyTemplate2 = document.createElement('template');
+equipCompanyTemplate2.innerHTML = `
 <section class="equip company-equip">
             <img src="assets/img/custom-bg-2.svg" alt="" class="custom-bg">
             <img src="assets/img/bg-top-1.svg" alt="" class="bg-top">
@@ -37,15 +37,15 @@ equipCompanyTemplate.innerHTML = `
         </section>
 `;
 
-class EquipCompany extends HTMLElement {
+class NewApp extends HTMLElement {
     constructor() {
         super();
         this._contents = new DocumentFragment();
-        this._contents.appendChild(equipCompanyTemplate.content.cloneNode(true));
+        this._contents.appendChild(equipCompanyTemplate2.content.cloneNode(true));
     }
     connectedCallback() {
         this.appendChild(this._contents);
     }
 }
-customElements.define("new-app", EquipCompany);
+customElements.define("new-app", NewApp);
 
