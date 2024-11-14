@@ -15,7 +15,18 @@ equipCompanyTemplate.innerHTML = `
                         and analysis with Slimrate!
                     </p>
                     <div class="equip-buttons equip-buttons2" >
-                        <a href="#get_demo"><button class="form__btn">Try NOW!</button></a>
+                        <button class="form__btn"  onclick="
+        (function() {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            if (/android/i.test(userAgent)) {
+                window.location.href = 'https://play.google.com/store/apps/details?id=com.slimrate.business'; 
+            } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                window.location.href = 'https://apps.apple.com/us/app/slimrate-business/id6651859534';
+            } else {
+                window.location.href = 'https://play.google.com/store/apps/details?id=com.slimrate.business'; 
+            }
+        })();
+    " >Try NOW!</button>
                     </div>
                 </div>
 
@@ -37,3 +48,4 @@ class EquipCompany extends HTMLElement {
     }
 }
 customElements.define("new-app", EquipCompany);
+
