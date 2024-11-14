@@ -93,6 +93,19 @@ button {
     transition-duration: 650ms;
 }
 
+  
+.section-title-app {
+    color: white;
+    font-size: 96px;
+    color: #2B6BF3; 
+    font-weight: bold;
+    text-shadow: 
+        -1px -1px 0 #ffffff,  
+        1px -1px 0 #ffffff,
+        -1px 1px 0 #ffffff,
+        1px 1px 0 #ffffff; 
+}
+
 .mobile_header {
     display: none;
 }
@@ -3763,6 +3776,13 @@ label.has-value {
         padding: 0;
         height: 60px;
     }
+    .section-title-app {
+        font-size: 48px;
+    }
+
+    .block-right2 {
+        height: 391px;
+    }
 
     .container {
         max-width: 300px;
@@ -3884,7 +3904,18 @@ label.has-value {
         margin-right: 0px;
         margin-bottom: 20px;
     }
+
+    .block-right2 {
+        height: 391px;
+    }
    
+    .equip .bg-bottom2 {
+     top: 93%;
+    }
+
+    .equip-buttons2 {
+        float: left;
+    }
 }
 
 li.divider {
@@ -4002,4 +4033,4 @@ ection.we-support {
   .menu-buttons a {
     display: inline-block;
   }
-  
+
