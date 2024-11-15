@@ -127,11 +127,11 @@ const productGroups = [
                 ],
             },
             {
-              name: "SR155_Solo",
+              name: "SR155_Combo",
               text: "This Slimrate device is a compact point-of-sale system featuring dual screens for customer and operator interaction. It includes a built-in cash drawer and printer, making it an efficient all-in-one solution for retail and hospitality. Its sleek design and secure payment technology enhance both functionality and user experience in busy service environments.",
               avalible: true,
-              costForBlack: 0,
-              costForWhite: 0,
+              costForBlack: 2400,
+              costForWhite: 2400,
               images: [
                   "assets/img/gallery/hardware/POS Terminal M155 1.png",
                   "assets/img/gallery/hardware/POS Terminal M155 2.png",
@@ -261,22 +261,13 @@ const productGroups = [
                     "assets/img/gallery/hardware/DS1.png",
                 ],
             },
+            
             {
-                name: "Smart_Scale",
-                text: "Upgrade your weighing process with our Smart Scale. Featuring advanced technology, it provides accurate measurements and can connect with your POS system for seamless integration.",
-                avalible: true,
-                costForBlack: 1475,
-                costForWhite: 1475,
-                images: [
-                    "assets/img/gallery/hardware/Digital Scale 1.png",
-                ],
-            },
-            {
-                name: "AIScale_Cash_Register_S625",
+                name: "AIScale_POS_S625",
                 text: "This Slimrate device combines a tablet interface with integrated scales and a receipt printer, offering a compact, efficient solution for retail environments. Perfect for weight-based transactions, it provides both the convenience of a touchscreen and the practicality of built-in printing.",
                 avalible: true,
-                costForBlack: 0,
-                costForWhite: 0,
+                costForBlack: 1799,
+                costForWhite: 1799,
                 images: [
                     "assets/img/gallery/hardware/AIScale Cash Register S625 1.png",
                     "assets/img/gallery/hardware/AIScale Cash Register S625 2.png",
@@ -286,8 +277,8 @@ const productGroups = [
               name: "AIScale_Label_Printing_S130",
               text: "These smart labeling scales with an integrated camera by Slimrate offer accurate weighing and automated product identification. Ideal for retail environments, they simplify labeling processes and enhance operational efficiency, ensuring precise product information with minimal user input.",
               avalible: true,
-              costForBlack: 0,
-              costForWhite: 0,
+              costForBlack: 1499,
+              costForWhite: 1499,
               images: [
                   "assets/img/gallery/hardware/AIScale Label Printing S130 1.png",
                   "assets/img/gallery/hardware/AIScale Label Printing S130 2.png",
