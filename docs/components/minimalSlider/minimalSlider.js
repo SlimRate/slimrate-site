@@ -264,16 +264,6 @@ function openPopup(product) {
   description.textContent = product.text;
   popupContent.appendChild(description);
 
-  // const availability = document.createElement('p');
-  // availability.classList.add('availability');
-  // availability.textContent = `Наличие: ${product.avalible ? 'В наличии' : 'Нет в наличии'}`;
-  // popupContent.appendChild(availability);
-
-  // const price = document.createElement('p');
-  // price.classList.add('price');
-  // price.textContent = `Цена: Черный - ${product.costForBlack} руб., Белый - ${product.costForWhite} руб.`;
-  // popupContent.appendChild(price);
-
   popupOverlay.classList.add('active');
 }
 

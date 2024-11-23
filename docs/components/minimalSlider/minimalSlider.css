@@ -26,8 +26,6 @@
   align-items: center;
   width: calc((100% - 30px) / 4);
   flex-shrink: 0;
-  /* background: #fafafa;
-  border: 1px solid #eee; */
   padding: 10px;
   box-sizing: border-box;
   border-radius: 5px;
@@ -41,8 +39,8 @@
 
 .slides img {
   width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
   border: 1px solid #ddd;
   border-radius: 5px;
 }
@@ -55,9 +53,8 @@
   flex-grow: 1;
 }
 
-/* Стили для типа устройства и имени продукта */
 .slides .label {
-  color: blue; /* Синий цвет для типа устройства */
+  color: blue;
   font-weight: bold;
   margin-right: 5px;
 }
@@ -208,7 +205,8 @@ button.next:hover {
     width: 100%;
   }
   .slides img {
-    aspect-ratio: 16 / 9;
+    /* Если хотите сохранить соотношение сторон */
+    height: auto;
   }
   .slides figcaption {
     padding: 10px 5px;
