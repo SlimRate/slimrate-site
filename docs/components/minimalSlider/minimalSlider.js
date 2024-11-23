@@ -151,7 +151,7 @@ const productGroups = [
       label: "Scales",
       products: [
           {
-              name: "Digital_Scale",
+              name: "Digital Scale",
               text: "Ensure precise measurements with our Digital Scale. Ideal for retail environments, it offers accurate weight readings and integrates seamlessly with your POS system.",
               avalible: true,
               costForBlack: 475,
