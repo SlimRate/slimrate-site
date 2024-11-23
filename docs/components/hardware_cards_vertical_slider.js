@@ -1,4 +1,4 @@
-import productGroups from '/slimrate-site/docs/data/hardware.js';
+import productGroups from '/data/hardware.js';
 
 function createProductCard(data) {
     const normalizedName = data.name.replace(/\s+/g, '_');
