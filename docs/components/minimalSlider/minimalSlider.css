@@ -69,7 +69,6 @@
   font-weight: normal;
 }
 
-/* Кнопки навигации */
 button.prev,
 button.next {
   position: absolute;
@@ -205,7 +204,6 @@ button.next:hover {
     width: 100%;
   }
   .slides img {
-    /* Если хотите сохранить соотношение сторон */
     height: auto;
   }
   .slides figcaption {
