@@ -6,6 +6,7 @@ const companyMenuElementId = 'dropmenu__company';
 const topMenuTeplate = document.createElement('template');
 topMenuTeplate.innerHTML = `
 <header class="header">
+
 <div class="container">
 <a class="header-logo" href="index.html">
     <img src="assets/img/logo.svg" alt="">
@@ -17,7 +18,9 @@ topMenuTeplate.innerHTML = `
       <li ><a href="pricing.html" id='${pricingMenuElementId}'>Pricing</a></li>
       <li><a href="company.html" id ='${companyMenuElementId}'>Company</a></li>
     </ul>
-    <a href="company.html#get_demo" onclick="if (!document.getElementById('get_demo')) { window.location.href='company.html#get_demo'; }"><button class="btn btn-red">Careers</button></a>
+    <a href="company.html#get_demo" id="careersLink">
+  <button class="btn btn-red">Careers</button>
+</a>
     <a href="https://ap.slimrate.com/#"><button class="btn btn-blue">Login</button></a>
 </div>
 </div>
@@ -156,14 +159,14 @@ topMenuTeplate.innerHTML = `
       </div>
    </a>
       <div class="divider"></div>
-   <a href="company.html#get_demo" class="menu__item-link ">
-      <div class="menu__item">
-        <div class="flexContainer">
-          <span style="color: #2B6BF3">Careers</span>
-          <img class="menu_arrow_rotate r1" src=" assets/img/arrow-right.svg" alt="">
-        </div>
-      </div>
-   </a>
+  <a href="company.html#get_demo" class="menu__item-link" id="mobileCareersLink">
+  <div class="menu__item">
+    <div class="flexContainer">
+      <span style="color: #2B6BF3">Careers</span>
+      <img class="menu_arrow_rotate r1" src="assets/img/arrow-right.svg" alt="">
+    </div>
+  </div>
+</a>
     <div class="divider"></div>
     <div>
         <div class="menu-buttons">
@@ -187,15 +190,37 @@ class TopMenu extends HTMLElement {
   }
   connectedCallback() {
     this.appendChild(this._contents);
-    console.log('connected callback');
     initDropment();
+    this.initEventListeners();
+  }
+  initEventListeners() {
+    // const careersLink = this.querySelector('#careersLink');
+    // if (careersLink) {
+    //   careersLink.addEventListener('click', this.handleCareersClick.bind(this));
+    // }
+    const mobileCareersLink = this.querySelector('#mobileCareersLink');
+    if (mobileCareersLink) {
+      mobileCareersLink.addEventListener('click', this.handleMobileCareersClick.bind(this));
+    }
+  }
+  handleCareersClick(event) {
+    if (document.getElementById('get_demo')) {
+      event.preventDefault();
+      document.getElementById('get_demo').scrollIntoView({ behavior: 'smooth' });
+    } else {
+    }
+  }
+  handleMobileCareersClick(event) {
+    const menuToggle = this.querySelector('#menu__toggle');
+    if (menuToggle) {
+      menuToggle.checked = false;
+    }
   }
 }
 
 customElements.define('top-menu', TopMenu);
 
 function initDropment() {
-  console.log('init initDropment');
   const productHtmlObj = {
     infoHtmlStr: `
       <h2 class="dropmenu-title">Solutions</h2>
