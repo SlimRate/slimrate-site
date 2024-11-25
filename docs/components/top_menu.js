@@ -36,7 +36,7 @@ topMenuTeplate.innerHTML = `
 <div>
     <div class="menu__item i1" id="menu1">
       <div class="flexContainer">
-        <a href="#menu1">Solutions</a>
+        <a >Solutions</a>
         <img class="menu_arrow_rotate r1" src=" assets/img/arrow-right.svg" alt="">
       </div>
         <div class="more m1">
@@ -65,7 +65,7 @@ topMenuTeplate.innerHTML = `
     <div class="divider"></div>
     <div class="menu__item i2" id="menu2">
         <div class="flexContainer">
-          <a href="#menu2">Business Types</a>
+          <a >Business Types</a>
           <img class="menu_arrow_rotate r2" src=" assets/img/arrow-right.svg" alt="">
         </div>
         <div class="more m2">
@@ -77,7 +77,7 @@ topMenuTeplate.innerHTML = `
                 <li>
                     <div class="menu__item i3" id="menu3">
                         <div class="flexContainer">
-                          <a href="#menu3">Restaurant POS</a>
+                          <a >Restaurant POS</a>
                           <img class="menu_arrow_rotate r3" src=" assets/img/arrow-right.svg" alt="">
                         </div>
                         <div class="more m3">
@@ -114,7 +114,7 @@ topMenuTeplate.innerHTML = `
                 <li>
                     <div class="menu__item i4" id="menu4">
                        <div class="flexContainer">
-                        <a href="#menu4">Retail POS</a>
+                        <a >Retail POS</a>
                         <img class="menu_arrow_rotate r4" src=" assets/img/arrow-right.svg" alt="">
                        </div>
                         <div class="more m4">
