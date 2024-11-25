@@ -27,7 +27,7 @@ const productGroups = [
             },
             {
               name: "SR155 Combo",
-              text: "This Slimrate device is a compact point-of-sale system featuring dual screens for customer and operator interaction. It includes a built-in cash drawer and printer, making it an efficient all-in-one solution for retail and hospitality. Its sleek design enhance both functionality and user experience in busy service environments.",
+              text: "This Slimrate device is a compact point-of-sale system featuring dual screens for customer and operator interaction. It includes a built-in cash drawer and printer, making it an efficient solution for retail and hospitality. Its sleek design enhance both functionality and user experience in busy service environments.",
               avalible: true,
               costForBlack: 2400,
               costForWhite: 2400,
