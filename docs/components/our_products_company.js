@@ -8,27 +8,25 @@ productsCompanyTemplate.innerHTML = `
         </div>
         <div class="products-cards">
             <a href="software.html"><div class="products-card">
-            <div class="products-card__img"><i  class="las la-money-check-alt"></i></div>
+            <div class="products-card__img"><i class="las la-cloud"></i></i></div>
                 <h2 class="products-card__title">Software</h2>
-                <div class="products-card__descr">A cloud-based retail + restaurant point of sale (POS) solution to manage and scale your business
-                using the latest technology</div>
+                <div class="products-card__descr">A cloud-based retail and restaurant point-of-sale solution crafted to streamline operations, enhance efficiency, and drive business growth through innovative, cutting-edge technology.</div>
             </div></a>
             <a href="hardware.html"><div class="products-card">
-            <div class="products-card__img"><i  class="las la-mobile"></i></div>
+            <div class="products-card__img"><i class="las la-server"></i></div>
                 <h2 class="products-card__title">Hardware</h2>
-                <div class="products-card__descr">Deliver a seamless user experience with durable, stylish hardware and powerful built-in
-                technology
+                <div class="products-card__descr">Enhance user experience with durable, stylish hardware and advanced integrated technology, offering seamless functionality and reliability for your business needs.
                 </div>
             </div></a>
             <a href="payment_processing.html"><div class="products-card">
-            <div class="products-card__img"><i  class="las la-share-alt"></i></div>
+            <div class="products-card__img"><i class="las la-credit-card"></i></i></div>
                 <h2 class="products-card__title">Payment Technology</h2>
-                <div class="products-card__descr">Omni-channel solutions deliver faster, easier, and more secure payments</div>
+                <div class="products-card__descr">An advanced omni-channel solution designed to provide faster, easier, and more secure payment processing, enhancing efficiency, and security across your business.</div>
             </div></a>
             <a href="company.html"><div class="products-card">
-            <div class="products-card__img"><i  class="las la-ad"></i></div>
+            <div class="products-card__img"><i class="las la-headset"></i></div>
                 <h2 class="products-card__title">Support</h2>
-                <div class="products-card__descr">A service-first company that delivers unparalleled customer support whenever you need it</div>
+                <div class="products-card__descr">A customer-focused company dedicated to providing exceptional, personalized support, ensuring reliable assistance is always available whenever and wherever you need it.</div>
             </div></a>
         </div>
     </div>
