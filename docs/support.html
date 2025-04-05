@@ -99,36 +99,46 @@
     </div>
   </div>
 
+  <!-- Ensure no conflicting scripts like lockdown-install.js are loaded before this -->
+  
   <!-- Load the official AWS Connect Chat Interface library -->
   <script src="https://db08fjupg2abb.cloudfront.net/amazon-connect-chat-interface-client.js"></script>
+  
   <script>
-    // Debug: Log that our script has started loading
+    // Debug log indicating the page has loaded
     console.log("Support chat page loaded.");
 
-    /* 
-      Chat configuration.
-      Replace the placeholder YOUR_API_ID with your actual API Gateway ID.
-      Values from your AWS Connect setup:
-      - Region: us-east-1
-      - Instance ID: 96d3e0e3-0ead-4a83-b6ad-196bca7654ba
-      - Contact Flow ID: e301344c-8201-43e7-8090-9960bdc1a165
+    // Wait for the widget script to load and then initialize
+    if (typeof amazon_connect === 'undefined') {
+      console.error("amazon_connect is undefined. The widget script failed to load.");
+    } else {
+      console.log("amazon_connect object loaded:", amazon_connect);
+    }
+
+    /* Chat configuration.
+       Replace 'YOUR_API_ID' with your actual API Gateway ID.
+       The following values come from your AWS Connect setup:
+       - Region: us-east-1
+       - Instance ID: 96d3e0e3-0ead-4a83-b6ad-196bca7654ba
+       - Contact Flow ID: e301344c-8201-43e7-8090-9960bdc1a165
     */
     var chatConfig = {
       region: 'us-east-1',
       apiGatewayEndpoint: 'https://8kkt30ldc2.execute-api.us-east-1.amazonaws.com/Prod/startChat',
       contactFlowId: 'e301344c-8201-43e7-8090-9960bdc1a165',
       instanceId: '96d3e0e3-0ead-4a83-b6ad-196bca7654ba',
-      customerName: 'Customer', // Replace or dynamically set from a pre-chat form
-      contactAttributes: {
-        // Additional attributes (e.g., utm_source, campaign) can be added here
-      }
+      customerName: 'Customer',
+      contactAttributes: {}
     };
 
-    var chatSession; // Global variable to store the active chat session
+    var chatSession; // Global variable for the active chat session
 
-    // Function to initialize the chat session using the official AWS Connect Chat Interface library
     function initChat() {
       console.log("Initializing chat with config:", chatConfig);
+      if (typeof connect === 'undefined') {
+        console.error("connect is not defined. The chat library did not load correctly.");
+        return;
+      }
       connect.ChatInterface.initiateChat({
           name: chatConfig.customerName,
           region: chatConfig.region,
@@ -139,11 +149,10 @@
           supportedMessagingContentTypes: "text/plain,text/markdown"
       },
       function(successResult) {
-          chatSession = successResult; // Save the chat session object
+          chatSession = successResult;
           console.log("Chat initiated successfully:", chatSession);
-          // Register a callback to handle incoming messages (assumed from agent)
           chatSession.onMessage(function(message) {
-            console.log("Incoming message received:", message);
+            console.log("Received incoming message:", message);
             displayMessage(message, 'agent');
           });
       },
@@ -157,10 +166,8 @@
       var messagesDiv = document.getElementById('messages');
       var messageEl = document.createElement('div');
       messageEl.className = 'message ' + sender;
-      // Check if the message object has a 'message' property; otherwise, convert it to string
       messageEl.textContent = msgObj.message || JSON.stringify(msgObj);
       messagesDiv.appendChild(messageEl);
-      // Auto-scroll to the bottom
       messagesDiv.scrollTop = messagesDiv.scrollHeight;
       console.log("Displayed message from", sender, ":", messageEl.textContent);
     }
@@ -171,9 +178,7 @@
       var messageText = inputField.value.trim();
       console.log("Send button clicked. Message:", messageText);
       if (messageText && chatSession) {
-        // Display the customer's message
-        displayMessage({ message: messageText }, 'customer');
-        // Send the message via the chat session
+        displayMessage({message: messageText}, 'customer');
         chatSession.sendMessage(
           messageText,
           function(response) {
@@ -183,20 +188,19 @@
             console.error("Error sending message:", error);
           }
         );
-        inputField.value = ''; // Clear the input field
+        inputField.value = '';
       } else {
-        console.warn("No message to send or chat session is not initialized.");
+        console.warn("No message or chat session not available.");
       }
     });
 
-    // Allow sending message with Enter key
+    // Send message on Enter key
     document.getElementById('chatInput').addEventListener('keypress', function(e) {
       if (e.key === 'Enter') {
         document.getElementById('sendBtn').click();
       }
     });
 
-    // Initialize the chat when the page loads
     window.onload = function() {
       console.log("Window loaded, initializing chat...");
       initChat();
