@@ -4,17 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>SlimRate Support Chat</title>
-  <!-- Google Fonts (e.g., Lato) -->
+  <!-- Google Fonts for a clean, modern look -->
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    /* Basic styles for the entire page */
+    /* Basic reset and typography */
     html, body {
       margin: 0;
       padding: 0;
       width: 100%;
       height: 100%;
       font-family: 'Lato', sans-serif;
-      background-color: #fff;
+      background-color: #ffffff;
       color: #333;
     }
     /* Header styling */
@@ -26,65 +26,166 @@
       font-size: 1.8em;
       font-weight: bold;
     }
-    /* Chat container occupies the remaining area */
-    #chat-container {
-      width: 100%;
-      height: calc(100% - 60px); /* Subtract header height */
-      position: relative;
+    /* Chat container occupies full remaining space */
+    .chat-container {
+      display: flex;
+      flex-direction: column;
+      height: calc(100% - 60px); /* subtract header height */
+    }
+    /* Messages area styling */
+    .messages {
+      flex: 1;
+      padding: 20px;
+      background-color: #f9f9f9;
+      overflow-y: auto;
+    }
+    /* Style for individual messages */
+    .message {
+      margin-bottom: 10px;
+      padding: 10px;
+      border-radius: 4px;
+      max-width: 70%;
+      word-wrap: break-word;
+    }
+    /* Customer messages (aligned right) */
+    .message.customer {
+      align-self: flex-end;
+      background-color: #e6f4ff;
+      color: #333;
+    }
+    /* Agent messages (aligned left) */
+    .message.agent {
+      align-self: flex-start;
+      background-color: #ffe6e6;
+      color: #EE2F2B;
+    }
+    /* Input area styling */
+    .input-area {
+      display: flex;
+      border-top: 1px solid #ddd;
+      background-color: #fff;
+      padding: 10px;
+    }
+    .input-area input {
+      flex: 1;
+      padding: 10px;
+      font-size: 1em;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-right: 10px;
+    }
+    .input-area button {
+      padding: 10px 20px;
+      font-size: 1em;
+      border: none;
+      background-color: #EE2F2B;
+      color: #fff;
+      border-radius: 4px;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
+  <!-- Page Header -->
   <div class="chat-header">SlimRate Support Chat</div>
-  <div id="chat-container"></div>
+  <!-- Main Chat UI Container -->
+  <div class="chat-container">
+    <!-- Chat messages will be displayed here -->
+    <div class="messages" id="messages"></div>
+    <!-- Input area for sending messages -->
+    <div class="input-area">
+      <input type="text" id="chatInput" placeholder="Type your message here...">
+      <button id="sendBtn">Send</button>
+    </div>
+  </div>
 
-  <!-- AWS Connect Chat Widget Script -->
-  <script type="text/javascript">
-    // Load the AWS Connect Chat Widget script asynchronously
-    (function(w, d, x, id){
-      var s = d.createElement('script');
-      s.src = 'https://db08fjupg2abb.cloudfront.net/amazon-connect-chat-interface-client.js';
-      s.async = 1;
-      s.id = id;
-      d.getElementsByTagName('head')[0].appendChild(s);
-      w[x] = w[x] || function() { (w[x].ac = w[x].ac || []).push(arguments); };
-    })(window, document, 'amazon_connect', '11392e21-d935-4a40-a259-849a819f2d1f');
+  <!-- Load the official AWS Connect Chat Interface library -->
+  <script src="https://db08fjupg2abb.cloudfront.net/amazon-connect-chat-interface-client.js"></script>
+  <script>
+    /* Chat configuration - replace YOUR_API_ID with your actual API Gateway ID.
+       These values are extracted from your AWS Connect setup:
+         - Region: us-east-1
+         - Instance ID: 96d3e0e3-0ead-4a83-b6ad-196bca7654ba
+         - Contact Flow ID: e301344c-8201-43e7-8090-9960bdc1a165
+    */
+    var chatConfig = {
+      region: 'us-east-1',
+      apiGatewayEndpoint: 'https://YOUR_API_ID.execute-api.us-east-1.amazonaws.com/Prod/startChat',
+      contactFlowId: 'e301344c-8201-43e7-8090-9960bdc1a165',
+      instanceId: '96d3e0e3-0ead-4a83-b6ad-196bca7654ba',
+      customerName: 'Customer', // This can be dynamic (e.g., from a pre-chat form)
+      contactAttributes: {
+        // Additional attributes can be added here (e.g., "utm_source": "website")
+      }
+    };
 
-    // Override global styles to make the chat widget occupy 100% width and height
-    amazon_connect('customStyles', {
-      global: {
-        frameWidth: '100%',
-        frameHeight: '100%'
+    var chatSession; // To store the active chat session
+
+    // Function to initialize the chat session using the official AWS library
+    function initChat() {
+      connect.ChatInterface.initiateChat({
+          name: chatConfig.customerName,
+          region: chatConfig.region,
+          apiGatewayEndpoint: chatConfig.apiGatewayEndpoint,
+          contactFlowId: chatConfig.contactFlowId,
+          instanceId: chatConfig.instanceId,
+          contactAttributes: chatConfig.contactAttributes,
+          supportedMessagingContentTypes: "text/plain,text/markdown"
+      },
+      function(successResult) {
+          chatSession = successResult; // Save the session object
+          console.log("Chat initiated successfully", chatSession);
+          // Register a callback to handle incoming messages (assumed to be from the agent)
+          chatSession.onMessage(function(message) {
+            displayMessage(message, 'agent');
+          });
+      },
+      function(error) {
+          console.error("Error initiating chat", error);
+      });
+    }
+
+    // Function to display messages in the chat window
+    function displayMessage(msgObj, sender) {
+      var messagesDiv = document.getElementById('messages');
+      var messageEl = document.createElement('div');
+      messageEl.className = 'message ' + sender;
+      // If msgObj contains a 'message' property, use it; otherwise, use msgObj directly
+      messageEl.textContent = msgObj.message || msgObj;
+      messagesDiv.appendChild(messageEl);
+      messagesDiv.scrollTop = messagesDiv.scrollHeight;
+    }
+
+    // Event listener for the send button
+    document.getElementById('sendBtn').addEventListener('click', function() {
+      var inputField = document.getElementById('chatInput');
+      var messageText = inputField.value.trim();
+      if (messageText && chatSession) {
+        // Display the customer's message
+        displayMessage({message: messageText}, 'customer');
+        // Send the message via the chat session
+        chatSession.sendMessage(
+          messageText,
+          function(response) {
+            console.log("Message sent successfully", response);
+          },
+          function(error) {
+            console.error("Error sending message", error);
+          }
+        );
+        inputField.value = '';
       }
     });
 
-    // Set up chat appearance (button colors and style)
-    amazon_connect('styles', { 
-      iconType: 'CHAT', 
-      openChat: { color: '#ffffff', backgroundColor: '#EE2F2B' }, 
-      closeChat: { color: '#ffffff', backgroundColor: '#EE2F2B' }
-    });
-
-    // Provide the snippetId issued by AWS Connect
-    amazon_connect('snippetId', 'QVFJREFIZ2JTNzdvNlZBdTFZSVJkT0xad3RDb08wM2NZamVYWno2UE4rbHpYL2JuRlFGOWhmUXA5TUE4TC9mU05uck8yMWdJQUFBQWJqQnNCZ2txaGtpRzl3MEJCd2FnWHpCZEFnRUFNRmdHQ1NxR1NJYjNEUUVIQVRBZUJnbGdoa2dCWlFNRUFTNHdFUVFNYW5tUXdqc2xxMno2Y0xZZEFnRVFnQ3NCOVBUZVRMUUJoSzM4KytZRGh6bXVROUVUaklpRm81Rm9rUDdRSHVkSjFZYVI5T2dpKzM1Q0ZucGg6Oi9zSklaaDZ1aGcyT1ZzditFRWJMUy8xOFBNT2toQjBETWJWbzdxRmc4UVNzWlRrMGovYy9RVmtJTWZtQnpySnFUWlhJR0w1Tk9xUmwwNERidXhrOFIzbXJFeHZIdnluYmxtdWEyTGFhWlBPUkxTNGNkeU9lOTF4cXdYcjgrZmFWbUY0RkwzSG5mQURTVm45a1l0WnIwVEJtcEZGWkZDaz0=');
-
-    // Enable rich messaging support
-    amazon_connect('supportedMessagingContentTypes', [ 
-      'text/plain', 
-      'text/markdown', 
-      'application/vnd.amazonaws.connect.message.interactive', 
-      'application/vnd.amazonaws.connect.message.interactive.response'
-    ]);
-
-    // Configure custom launch behavior to auto-launch the chat without a widget icon
-    amazon_connect('customLaunchBehavior', {
-      skipIconButtonAndAutoLaunch: true,
-      alwaysHideWidgetButton: true,
-      programmaticLaunch: function(launchCallback) {
-        // Immediately launch the chat when the page loads
-        launchCallback();
+    // Allow sending messages with the Enter key
+    document.getElementById('chatInput').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        document.getElementById('sendBtn').click();
       }
     });
+
+    // Initialize chat on page load
+    window.onload = initChat;
   </script>
 </body>
 </html>
