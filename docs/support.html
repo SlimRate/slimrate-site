@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SlimRate Support</title>
+  <!-- Google Fonts (example: Lato) -->
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Base reset and typography */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Lato', sans-serif;
+      line-height: 1.6;
+      background-color: #fff;
+      color: #333;
+    }
+    /* Header styling */
+    header {
+      background-color: #fff;
+      padding: 20px;
+      border-bottom: 1px solid #eee;
+    }
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav .logo {
+      font-size: 1.8em;
+      font-weight: 700;
+      color: #EE2F2B;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+    }
+    nav ul li {
+      margin-left: 20px;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover {
+      color: #EE2F2B;
+    }
+    /* Main section */
+    main {
+      padding: 40px 20px;
+      text-align: center;
+    }
+    main h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+    main p {
+      font-size: 1.1em;
+      margin-bottom: 20px;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #f8f8f8;
+      font-size: 0.9em;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">SlimRate</div>
+        <ul>
+          <li><a href="https://slimrate.com">Home</a></li>
+          <li><a href="https://slimrate.com/about">About</a></li>
+          <li><a href="https://slimrate.com/support">Support</a></li>
+          <li><a href="https://slimrate.com/contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <h1>Need Help?</h1>
+      <p>Welcome to SlimRate Support. Click the chat icon in the lower right corner to start a conversation with our support team.</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      &copy; 2025 SlimRate. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- AWS Connect Chat Widget Script -->
+  <script type="text/javascript">
+    (function(w, d, x, id){
+      var s = d.createElement('script');
+      s.src = 'https://db08fjupg2abb.cloudfront.net/amazon-connect-chat-interface-client.js';
+      s.async = 1;
+      s.id = id;
+      d.getElementsByTagName('head')[0].appendChild(s);
+      w[x] = w[x] || function() { (w[x].ac = w[x].ac || []).push(arguments); };
+    })(window, document, 'amazon_connect', '11392e21-d935-4a40-a259-849a819f2d1f');
+
+    amazon_connect('styles', { 
+      iconType: 'CHAT', 
+      openChat: { color: '#ffffff', backgroundColor: '#EE2F2B' }, 
+      closeChat: { color: '#ffffff', backgroundColor: '#EE2F2B' }
+    });
+    amazon_connect('snippetId', 'QVFJREFIZ2JTNzdvNlZBdTFZSVJkT0xad3RDb08wM2NZamVYWno2UE4rbHpYL2JuRlFGOWhmUXA5TUE4TC9mU05uck8yMWdJQUFBQWJqQnNCZ2txaGtpRzl3MEJCd2FnWHpCZEFnRUFNRmdHQ1NxR1NJYjNEUUVIQVRBZUJnbGdoa2dCWlFNRUFTNHdFUVFNYW5tUXdqc2xxMno2Y0xZZEFnRVFnQ3NCOVBUZVRMUUJoSzM4KytZRGh6bXVROUVUaklpRm81Rm9rUDdRSHVkSjFZYVI5T2dpKzM1Q0ZucGg6Oi9zSklaaDZ1aGcyT1ZzditFRWJMUy8xOFBNT2toQjBETWJWbzdxRmc4UVNzWlRrMGovYy9RVmtJTWZtQnpySnFUWlhJR0w1Tk9xUmwwNERidXhrOFIzbXJFeHZIdnluYmxtdWEyTGFhWlBPUkxTNGNkeU9lOTF4cXdYcjgrZmFWbUY0RkwzSG5mQURTVm45a1l0WnIwVEJtcEZGWkZDaz0=');
+    amazon_connect('supportedMessagingContentTypes', [ 
+      'text/plain', 
+      'text/markdown', 
+      'application/vnd.amazonaws.connect.message.interactive', 
+      'application/vnd.amazonaws.connect.message.interactive.response'
+    ]);
+  </script>
+</body>
+</html>
