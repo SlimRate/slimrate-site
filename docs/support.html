@@ -3,111 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SlimRate Support</title>
-  <!-- Google Fonts (example: Lato) -->
+  <title>SlimRate Support Chat</title>
+  <!-- Google Fonts (e.g., Lato) -->
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    /* Base reset and typography */
-    * {
+    /* Basic styles for the entire page */
+    html, body {
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-    }
-    body {
+      width: 100%;
+      height: 100%;
       font-family: 'Lato', sans-serif;
-      line-height: 1.6;
       background-color: #fff;
       color: #333;
     }
     /* Header styling */
-    header {
-      background-color: #fff;
-      padding: 20px;
-      border-bottom: 1px solid #eee;
-    }
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    nav .logo {
+    .chat-header {
+      background-color: #EE2F2B;
+      color: #fff;
+      padding: 15px;
+      text-align: center;
       font-size: 1.8em;
-      font-weight: 700;
-      color: #EE2F2B;
+      font-weight: bold;
     }
-    nav ul {
-      list-style: none;
-      display: flex;
-    }
-    nav ul li {
-      margin-left: 20px;
-    }
-    nav ul li a {
-      text-decoration: none;
-      color: #333;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-    nav ul li a:hover {
-      color: #EE2F2B;
-    }
-    /* Main section */
-    main {
-      padding: 40px 20px;
-      text-align: center;
-    }
-    main h1 {
-      font-size: 2.5em;
-      margin-bottom: 10px;
-    }
-    main p {
-      font-size: 1.1em;
-      margin-bottom: 20px;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #f8f8f8;
-      font-size: 0.9em;
-      color: #777;
+    /* Chat container occupies the remaining area */
+    #chat-container {
+      width: 100%;
+      height: calc(100% - 60px); /* Subtract header height */
+      position: relative;
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <nav>
-        <div class="logo">SlimRate</div>
-        <ul>
-          <li><a href="https://slimrate.com">Home</a></li>
-          <li><a href="https://slimrate.com/about">About</a></li>
-          <li><a href="https://slimrate.com/support">Support</a></li>
-          <li><a href="https://slimrate.com/contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <div class="container">
-      <h1>Need Help?</h1>
-      <p>Welcome to SlimRate Support. Click the chat icon in the lower right corner to start a conversation with our support team.</p>
-    </div>
-  </main>
-
-  <footer>
-    <div class="container">
-      &copy; 2025 SlimRate. All rights reserved.
-    </div>
-  </footer>
+  <div class="chat-header">SlimRate Support Chat</div>
+  <div id="chat-container"></div>
 
   <!-- AWS Connect Chat Widget Script -->
   <script type="text/javascript">
+    // Load the AWS Connect Chat Widget script asynchronously
     (function(w, d, x, id){
       var s = d.createElement('script');
       s.src = 'https://db08fjupg2abb.cloudfront.net/amazon-connect-chat-interface-client.js';
@@ -117,18 +50,41 @@
       w[x] = w[x] || function() { (w[x].ac = w[x].ac || []).push(arguments); };
     })(window, document, 'amazon_connect', '11392e21-d935-4a40-a259-849a819f2d1f');
 
+    // Override global styles to make the chat widget occupy 100% width and height
+    amazon_connect('customStyles', {
+      global: {
+        frameWidth: '100%',
+        frameHeight: '100%'
+      }
+    });
+
+    // Set up chat appearance (button colors and style)
     amazon_connect('styles', { 
       iconType: 'CHAT', 
       openChat: { color: '#ffffff', backgroundColor: '#EE2F2B' }, 
       closeChat: { color: '#ffffff', backgroundColor: '#EE2F2B' }
     });
+
+    // Provide the snippetId issued by AWS Connect
     amazon_connect('snippetId', 'QVFJREFIZ2JTNzdvNlZBdTFZSVJkT0xad3RDb08wM2NZamVYWno2UE4rbHpYL2JuRlFGOWhmUXA5TUE4TC9mU05uck8yMWdJQUFBQWJqQnNCZ2txaGtpRzl3MEJCd2FnWHpCZEFnRUFNRmdHQ1NxR1NJYjNEUUVIQVRBZUJnbGdoa2dCWlFNRUFTNHdFUVFNYW5tUXdqc2xxMno2Y0xZZEFnRVFnQ3NCOVBUZVRMUUJoSzM4KytZRGh6bXVROUVUaklpRm81Rm9rUDdRSHVkSjFZYVI5T2dpKzM1Q0ZucGg6Oi9zSklaaDZ1aGcyT1ZzditFRWJMUy8xOFBNT2toQjBETWJWbzdxRmc4UVNzWlRrMGovYy9RVmtJTWZtQnpySnFUWlhJR0w1Tk9xUmwwNERidXhrOFIzbXJFeHZIdnluYmxtdWEyTGFhWlBPUkxTNGNkeU9lOTF4cXdYcjgrZmFWbUY0RkwzSG5mQURTVm45a1l0WnIwVEJtcEZGWkZDaz0=');
+
+    // Enable rich messaging support
     amazon_connect('supportedMessagingContentTypes', [ 
       'text/plain', 
       'text/markdown', 
       'application/vnd.amazonaws.connect.message.interactive', 
       'application/vnd.amazonaws.connect.message.interactive.response'
     ]);
+
+    // Configure custom launch behavior to auto-launch the chat without a widget icon
+    amazon_connect('customLaunchBehavior', {
+      skipIconButtonAndAutoLaunch: true,
+      alwaysHideWidgetButton: true,
+      programmaticLaunch: function(launchCallback) {
+        // Immediately launch the chat when the page loads
+        launchCallback();
+      }
+    });
   </script>
 </body>
 </html>
