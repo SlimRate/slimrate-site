@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SlimRate Support Chat - Debug Version</title>
+  <title>SlimRate Support Chat - Debug Fixed</title>
   <!-- Google Fonts for a modern look -->
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
   <style>
@@ -99,7 +99,9 @@
     </div>
   </div>
   
-  <!-- Load the official AWS Connect Chat Interface library -->
+  <!-- Do not include lockdown-install.js on this page to avoid interference -->
+
+  <!-- Load AWS Connect Chat Interface library -->
   <script defer type="text/javascript">
     console.log("Starting to load AWS Connect Chat Interface library...");
     (function(w, d, x, id){
@@ -110,18 +112,20 @@
       s.id = id;
       s.onload = function() {
         console.log("AWS Connect Chat Interface library loaded successfully.");
-        if (typeof amazon_connect === "undefined") {
-          console.error("amazon_connect is not defined after loading the library.");
+        // Check if the global "connect" object is defined.
+        if (typeof window.connect === 'undefined') {
+          console.error("Error: 'connect' is undefined. This may be due to interfering security scripts.");
         } else {
-          console.log("amazon_connect is available.");
+          console.log("'connect' is available:", window.connect);
         }
       };
       s.onerror = function(e) {
         console.error("Error loading AWS Connect Chat Interface library:", e);
       };
       d.getElementsByTagName('head')[0].appendChild(s);
+      // Set up the amazon_connect function for logging purposes.
       w[x] = w[x] || function() { 
-        console.log("amazon_connect function called with arguments:", arguments);
+        console.log("amazon_connect called with arguments:", arguments);
         (w[x].ac = w[x].ac || []).push(arguments); 
       };
     })(window, document, 'amazon_connect', '11392e21-d935-4a40-a259-849a819f2d1f');
@@ -129,30 +133,27 @@
   
   <!-- Custom Chat UI Logic -->
   <script defer type="text/javascript">
-    // Chat configuration with your API Gateway endpoint and AWS Connect details.
+    // Chat configuration using your provided values.
     var chatConfig = {
       region: 'us-east-1',
-      // Replace YOUR_API_ID with your actual API Gateway ID from your provided URL.
       apiGatewayEndpoint: 'https://8kkt30ldc2.execute-api.us-east-1.amazonaws.com/Prod/startChat',
       contactFlowId: 'e301344c-8201-43e7-8090-9960bdc1a165',
       instanceId: '96d3e0e3-0ead-4a83-b6ad-196bca7654ba',
       customerName: 'Customer',
-      contactAttributes: {
-        // Additional attributes if needed
-      }
+      contactAttributes: {}
     };
 
     var chatSession; // Global variable to store the chat session
 
-    // Function to initialize the chat session using the official AWS Connect Chat Interface library.
+    // Initialize chat session using the official AWS Connect Chat Interface library.
     function initChat() {
       console.log("initChat called.");
-      if (typeof amazon_connect === "undefined") {
-        console.error("amazon_connect is undefined. Cannot initialize chat.");
+      if (typeof window.connect === 'undefined') {
+        console.error("'connect' is undefined. Chat cannot be initialized.");
         return;
       }
       console.log("Chat configuration:", chatConfig);
-      connect.ChatInterface.initiateChat({
+      window.connect.ChatInterface.initiateChat({
           name: chatConfig.customerName,
           region: chatConfig.region,
           apiGatewayEndpoint: chatConfig.apiGatewayEndpoint,
@@ -164,7 +165,7 @@
       function(successResult) {
           chatSession = successResult;
           console.log("Chat initiated successfully:", chatSession);
-          // Register callback for incoming messages
+          // Register callback for incoming messages.
           chatSession.onMessage(function(message) {
             console.log("Received message:", message);
             displayMessage(message, 'agent');
@@ -208,7 +209,7 @@
       }
     });
 
-    // Allow sending message with the Enter key.
+    // Allow sending messages with the Enter key.
     document.getElementById('chatInput').addEventListener('keypress', function(e) {
       if (e.key === 'Enter') {
         document.getElementById('sendBtn').click();
