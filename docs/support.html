@@ -4,15 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>SlimRate Support Chat</title>
-  <!-- 
-    Expanded Content Security Policy:
-      - default-src 'self': Baseline for other resources.
-      - script-src: Allows scripts from self, the CloudFront domain, and includes 'unsafe-inline' & 'unsafe-eval' to accommodate the widget's usage of inline/eval code.
-      - style-src: Allows inline styles and Google Fonts.
-      - font-src: Allows fonts from Google Fonts.
-      - connect-src: Permits connections to self, your CloudFront domain, your API Gateway domain, and wss://*.amazonaws.com for potential WebSocket connections.
-      - img-src: Permits images from self and data URIs if needed.
-  -->
+  <!-- Expanded Content Security Policy -->
   <meta http-equiv="Content-Security-Policy" content="
     default-src 'self';
     script-src 'self' https://db08fjupg2abb.cloudfront.net 'unsafe-inline' 'unsafe-eval';
@@ -21,10 +13,8 @@
     connect-src 'self' https://db08fjupg2abb.cloudfront.net https://8kkt30ldc2.execute-api.us-east-1.amazonaws.com wss://*.amazonaws.com;
     img-src 'self' data:;
   ">
-
-  <!-- Google Fonts for styling -->
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
-
   <style>
     /* Basic reset and typography */
     html, body {
@@ -49,7 +39,7 @@
     .chat-container {
       display: flex;
       flex-direction: column;
-      height: calc(100% - 60px); /* subtract header height */
+      height: calc(100% - 60px);
     }
     /* Messages area styling */
     .messages {
@@ -121,19 +111,21 @@
   <script>
     console.log("Support chat page loaded.");
 
-    // Check if amazon_connect is available
+    // Check that amazon_connect is available
     if (typeof amazon_connect === 'undefined') {
       console.error("amazon_connect is undefined. The widget script failed to load.");
     } else {
       console.log("amazon_connect loaded successfully:", amazon_connect);
+      // Set your snippetId from AWS Connect here:
+      amazon_connect('snippetId', 'YOUR_SNIPPET_ID');
     }
 
-    /* Chat configuration:
-       - Replace 'YOUR_API_ID' with your actual API Gateway ID.
-       - Values from your AWS Connect setup:
-         Region: us-east-1
-         Instance ID: 96d3e0e3-0ead-4a83-b6ad-196bca7654ba
-         Contact Flow ID: e301344c-8201-43e7-8090-9960bdc1a165
+    /* Chat configuration.
+       Replace the placeholder values with your actual configuration:
+         - YOUR_API_ID: Your API Gateway ID (e.g., 8kkt30ldc2)
+         - Region: us-east-1
+         - Instance ID: 96d3e0e3-0ead-4a83-b6ad-196bca7654ba
+         - Contact Flow ID: e301344c-8201-43e7-8090-9960bdc1a165
     */
     var chatConfig = {
       region: 'us-east-1',
@@ -148,7 +140,6 @@
 
     function initChat() {
       console.log("Initializing chat with config:", chatConfig);
-      // The official library sets a global variable named 'connect'
       if (typeof connect === 'undefined') {
         console.error("connect is not defined. The chat library did not load correctly.");
         return;
