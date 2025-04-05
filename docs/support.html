@@ -4,14 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>SlimRate Support Chat</title>
-  <!-- Content Security Policy to allow required resources -->
+  <!-- 
+    Expanded Content Security Policy:
+      - default-src 'self': Baseline for other resources.
+      - script-src: Allows scripts from self, the CloudFront domain, and includes 'unsafe-inline' & 'unsafe-eval' to accommodate the widget's usage of inline/eval code.
+      - style-src: Allows inline styles and Google Fonts.
+      - font-src: Allows fonts from Google Fonts.
+      - connect-src: Permits connections to self, your CloudFront domain, your API Gateway domain, and wss://*.amazonaws.com for potential WebSocket connections.
+      - img-src: Permits images from self and data URIs if needed.
+  -->
   <meta http-equiv="Content-Security-Policy" content="
     default-src 'self';
-    script-src 'self' https://db08fjupg2abb.cloudfront.net 'unsafe-inline';
+    script-src 'self' https://db08fjupg2abb.cloudfront.net 'unsafe-inline' 'unsafe-eval';
     style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
-    font-src 'self' https://fonts.gstatic.com;">
+    font-src 'self' https://fonts.gstatic.com;
+    connect-src 'self' https://db08fjupg2abb.cloudfront.net https://8kkt30ldc2.execute-api.us-east-1.amazonaws.com wss://*.amazonaws.com;
+    img-src 'self' data:;
+  ">
+
   <!-- Google Fonts for styling -->
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
   <style>
     /* Basic reset and typography */
     html, body {
@@ -115,12 +128,12 @@
       console.log("amazon_connect loaded successfully:", amazon_connect);
     }
 
-    /* Chat configuration.
-       Replace 'YOUR_API_ID' with your actual API Gateway ID.
-       The following values are from your AWS Connect setup:
-         - Region: us-east-1
-         - Instance ID: 96d3e0e3-0ead-4a83-b6ad-196bca7654ba
-         - Contact Flow ID: e301344c-8201-43e7-8090-9960bdc1a165
+    /* Chat configuration:
+       - Replace 'YOUR_API_ID' with your actual API Gateway ID.
+       - Values from your AWS Connect setup:
+         Region: us-east-1
+         Instance ID: 96d3e0e3-0ead-4a83-b6ad-196bca7654ba
+         Contact Flow ID: e301344c-8201-43e7-8090-9960bdc1a165
     */
     var chatConfig = {
       region: 'us-east-1',
@@ -135,6 +148,7 @@
 
     function initChat() {
       console.log("Initializing chat with config:", chatConfig);
+      // The official library sets a global variable named 'connect'
       if (typeof connect === 'undefined') {
         console.error("connect is not defined. The chat library did not load correctly.");
         return;
