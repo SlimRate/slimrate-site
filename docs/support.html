@@ -100,7 +100,7 @@
   </div>
   
   <!-- IMPORTANT: Do not include any lockdown-install.js or similar scripts on this page -->
-  
+
   <!-- Load the AWS Connect Chat Interface library -->
   <script defer type="text/javascript">
     console.log("Starting to load AWS Connect Chat Interface library...");
@@ -122,6 +122,7 @@
         console.error("Error loading AWS Connect Chat Interface library:", e);
       };
       d.getElementsByTagName('head')[0].appendChild(s);
+      // Setup the amazon_connect function for debugging
       w[x] = w[x] || function() { 
         console.log("amazon_connect called with arguments:", arguments);
         (w[x].ac = w[x].ac || []).push(arguments); 
@@ -206,7 +207,7 @@
       }
     });
 
-    // Allow sending message with the Enter key.
+    // Allow sending messages with the Enter key.
     document.getElementById('chatInput').addEventListener('keypress', function(e) {
       if (e.key === 'Enter') {
         document.getElementById('sendBtn').click();
