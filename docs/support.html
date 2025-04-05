@@ -4,8 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>SlimRate Support Chat</title>
-  <!-- Example CSP meta tag (adjust as necessary) -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://db08fjupg2abb.cloudfront.net;">
+  <!-- Content Security Policy to allow required resources -->
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    script-src 'self' https://db08fjupg2abb.cloudfront.net 'unsafe-inline';
+    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+    font-src 'self' https://fonts.gstatic.com;">
   <!-- Google Fonts for styling -->
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
   <style>
@@ -32,7 +36,7 @@
     .chat-container {
       display: flex;
       flex-direction: column;
-      height: calc(100% - 60px);
+      height: calc(100% - 60px); /* subtract header height */
     }
     /* Messages area styling */
     .messages {
@@ -49,11 +53,13 @@
       max-width: 70%;
       word-wrap: break-word;
     }
+    /* Customer messages (aligned right) */
     .message.customer {
       align-self: flex-end;
       background-color: #e6f4ff;
       color: #333;
     }
+    /* Agent messages (aligned left) */
     .message.agent {
       align-self: flex-start;
       background-color: #ffe6e6;
@@ -97,19 +103,25 @@
     </div>
   </div>
 
-  <!-- Load the AWS Connect Chat Widget script -->
+  <!-- Load the AWS Connect Chat Interface widget script -->
   <script src="https://db08fjupg2abb.cloudfront.net/amazon-connect-chat-interface-client.js"></script>
   <script>
     console.log("Support chat page loaded.");
 
-    // Check that the widget script has loaded
+    // Check if amazon_connect is available
     if (typeof amazon_connect === 'undefined') {
       console.error("amazon_connect is undefined. The widget script failed to load.");
     } else {
-      console.log("amazon_connect loaded successfully.");
+      console.log("amazon_connect loaded successfully:", amazon_connect);
     }
 
-    // Chat configuration
+    /* Chat configuration.
+       Replace 'YOUR_API_ID' with your actual API Gateway ID.
+       The following values are from your AWS Connect setup:
+         - Region: us-east-1
+         - Instance ID: 96d3e0e3-0ead-4a83-b6ad-196bca7654ba
+         - Contact Flow ID: e301344c-8201-43e7-8090-9960bdc1a165
+    */
     var chatConfig = {
       region: 'us-east-1',
       apiGatewayEndpoint: 'https://8kkt30ldc2.execute-api.us-east-1.amazonaws.com/Prod/startChat',
@@ -149,6 +161,7 @@
       });
     }
 
+    // Function to display a message in the chat UI
     function displayMessage(msgObj, sender) {
       var messagesDiv = document.getElementById('messages');
       var messageEl = document.createElement('div');
