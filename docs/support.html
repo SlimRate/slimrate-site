@@ -99,9 +99,9 @@
     </div>
   </div>
   
-  <!-- Do not include lockdown-install.js on this page to avoid interference -->
-
-  <!-- Load AWS Connect Chat Interface library -->
+  <!-- IMPORTANT: Do not include any lockdown-install.js or similar scripts on this page -->
+  
+  <!-- Load the AWS Connect Chat Interface library -->
   <script defer type="text/javascript">
     console.log("Starting to load AWS Connect Chat Interface library...");
     (function(w, d, x, id){
@@ -112,9 +112,8 @@
       s.id = id;
       s.onload = function() {
         console.log("AWS Connect Chat Interface library loaded successfully.");
-        // Check if the global "connect" object is defined.
-        if (typeof window.connect === 'undefined') {
-          console.error("Error: 'connect' is undefined. This may be due to interfering security scripts.");
+        if (typeof window.connect === "undefined") {
+          console.error("Error: 'connect' is not defined. Check for interfering scripts.");
         } else {
           console.log("'connect' is available:", window.connect);
         }
@@ -123,7 +122,6 @@
         console.error("Error loading AWS Connect Chat Interface library:", e);
       };
       d.getElementsByTagName('head')[0].appendChild(s);
-      // Set up the amazon_connect function for logging purposes.
       w[x] = w[x] || function() { 
         console.log("amazon_connect called with arguments:", arguments);
         (w[x].ac = w[x].ac || []).push(arguments); 
@@ -145,10 +143,10 @@
 
     var chatSession; // Global variable to store the chat session
 
-    // Initialize chat session using the official AWS Connect Chat Interface library.
+    // Function to initialize the chat session.
     function initChat() {
       console.log("initChat called.");
-      if (typeof window.connect === 'undefined') {
+      if (typeof window.connect === "undefined") {
         console.error("'connect' is undefined. Chat cannot be initialized.");
         return;
       }
@@ -181,7 +179,6 @@
       var messagesDiv = document.getElementById('messages');
       var messageEl = document.createElement('div');
       messageEl.className = 'message ' + sender;
-      // Use msgObj.message if available; otherwise, use msgObj directly.
       messageEl.textContent = msgObj.message || msgObj;
       messagesDiv.appendChild(messageEl);
       messagesDiv.scrollTop = messagesDiv.scrollHeight;
@@ -205,11 +202,11 @@
         );
         inputField.value = '';
       } else {
-        console.warn("Either message is empty or chat session is not initialized.");
+        console.warn("Message is empty or chat session is not initialized.");
       }
     });
 
-    // Allow sending messages with the Enter key.
+    // Allow sending message with the Enter key.
     document.getElementById('chatInput').addEventListener('keypress', function(e) {
       if (e.key === 'Enter') {
         document.getElementById('sendBtn').click();
