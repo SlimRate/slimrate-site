@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SlimRate Support Chat - Debug Fixed</title>
+  <title>SlimRate Support Chat - Isolated</title>
   <!-- Google Fonts for a modern look -->
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
   <style>
@@ -98,8 +98,8 @@
       <button id="sendBtn">Send</button>
     </div>
   </div>
-  
-  <!-- IMPORTANT: Do not include any lockdown-install.js or similar scripts on this page -->
+
+  <!-- DO NOT include any lockdown scripts on this page -->
 
   <!-- Load the AWS Connect Chat Interface library -->
   <script defer type="text/javascript">
@@ -122,14 +122,14 @@
         console.error("Error loading AWS Connect Chat Interface library:", e);
       };
       d.getElementsByTagName('head')[0].appendChild(s);
-      // Setup the amazon_connect function for debugging
+      // Setup the amazon_connect function for debugging purposes.
       w[x] = w[x] || function() { 
         console.log("amazon_connect called with arguments:", arguments);
         (w[x].ac = w[x].ac || []).push(arguments); 
       };
     })(window, document, 'amazon_connect', '11392e21-d935-4a40-a259-849a819f2d1f');
   </script>
-  
+
   <!-- Custom Chat UI Logic -->
   <script defer type="text/javascript">
     // Chat configuration using your provided values.
@@ -144,7 +144,7 @@
 
     var chatSession; // Global variable to store the chat session
 
-    // Function to initialize the chat session.
+    // Function to initialize the chat session using the official AWS Connect Chat Interface library.
     function initChat() {
       console.log("initChat called.");
       if (typeof window.connect === "undefined") {
