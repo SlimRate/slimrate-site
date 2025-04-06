@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Full Screen Chat - Auto Open</title>
+  <title>Full Screen Chat - Chatwoot</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    /* Ensure the page fills the entire viewport */
+    /* Basic full-page styles */
     html, body {
       margin: 0;
       padding: 0;
@@ -14,16 +14,52 @@
       overflow: hidden;
       background: #fff;
     }
-    /* Container for the Chatwoot widget */
+    /* Container for Chatwoot widget */
     #chat-container {
       width: 100%;
       height: 100%;
       position: relative;
     }
+    
+    /* Hide any default launcher/bubble elements */
+    .chatwoot-launcher,
+    .cw-launcher,
+    .woot-widget-bubble,
+    .woot--bubble-holder {
+      display: none !important;
+    }
+    
+    /* Override widget internal container styles to force full screen */
+    .chatwoot-container,
+    .chatwoot-chat-container,
+    .chatwoot-chat-content,
+    .chatwoot-inbox-widget {
+      width: 100% !important;
+      height: 100% !important;
+      max-height: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+    
+    /* Override default desktop media query that restricts widget size */
+    @media only screen and (min-width: 667px) {
+      .woot-widget-holder {
+        width: 100% !important;
+        height: 100% !important;
+        bottom: 0 !important;
+        border-radius: 0 !important;
+        max-height: 100% !important;
+      }
+      .woot-widget-holder iframe {
+        width: 100% !important;
+        height: 100% !important;
+        max-height: 100vh !important;
+      }
+    }
   </style>
 </head>
 <body>
-  <!-- This container will host the Chatwoot widget -->
+  <!-- Container where Chatwoot widget will render -->
   <div id="chat-container"></div>
   
   <script>
@@ -32,28 +68,27 @@
       var BASE_URL = "https://support.slimrate.com";
       var websiteToken = "ePxJHrr6bgupFw1H41r8U6b7";
       
-      // Dynamically load the Chatwoot SDK script
-      var script = d.createElement(t);
-      script.src = BASE_URL + "/packs/js/sdk.js";
-      script.defer = true;
-      script.async = true;
-      script.onload = function() {
-        // Initialize the widget but disable autoOpen
+      // Create and load the Chatwoot SDK script dynamically
+      var s = d.createElement(t);
+      s.src = BASE_URL + "/packs/js/sdk.js";
+      s.defer = true;
+      s.async = true;
+      s.onload = function() {
+        // Initialize Chatwoot widget without autoOpen, then simulate a button press.
         window.chatwootSDK.run({
           baseUrl: BASE_URL,
           websiteToken: websiteToken,
-          autoOpen: false,       // Disable auto-opening
-          hideLauncher: false,   // Keep the launcher visible for our simulation
+          autoOpen: false,    // We'll open it programmatically.
+          hideLauncher: false, // Keep launcher visible to simulate a click.
           container: "#chat-container"
         });
-        
-        // Wait for the widget to load, then "press" the open button
+        // Wait a short time for the widget to load, then simulate the click.
         setTimeout(function() {
-          // Option 1: If the Chatwoot SDK exposes an open() method, use it.
-          if (window.chatwootSDK && typeof window.chatwootSDK.open === 'function') {
+          // Try to call the SDK open method first (if available)
+          if (window.chatwootSDK && typeof window.chatwootSDK.open === "function") {
             window.chatwootSDK.open();
           } else {
-            // Option 2: Otherwise, simulate a click on the launcher button.
+            // Otherwise, simulate a click on the launcher button.
             var btn = document.querySelector(".woot-widget-bubble");
             if (btn) {
               btn.click();
@@ -61,9 +96,9 @@
               console.error("Launcher button not found.");
             }
           }
-        }, 3000); // Adjust the delay (in ms) as needed for your environment
+        }, 3000); // Adjust delay if needed.
       };
-      d.getElementsByTagName("head")[0].appendChild(script);
+      d.getElementsByTagName("head")[0].appendChild(s);
     })(document, "script");
   </script>
 </body>
