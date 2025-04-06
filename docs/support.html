@@ -2,74 +2,71 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Full Screen Chat Support</title>
+  <title>Full Screen Chat - Chatwoot</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
-    /* Make the page fill the entire browser window */
+    /* Ensure the page occupies full viewport */
     html, body {
       margin: 0;
       padding: 0;
-      width: 100%;
       height: 100%;
+      width: 100%;
       overflow: hidden;
+      background: #fff;
     }
-    /* Container where we embed the widget */
-    #chatwoot-widget-container {
+    /* Container for Chatwoot widget */
+    #chatwoot-container {
       width: 100%;
       height: 100%;
       position: relative;
-      background: #f8f8f8; /* optional background color */
     }
-
-    /* Force-hide the floating bubble */
-    .woot-widget-bubble, 
-    .woot-widget-bubble-holder {
+    /* Force-hide any launcher/bubble elements */
+    .chatwoot-launcher, 
+    .chatwoot-widget-launcher, 
+    .cw-launcher {
       display: none !important;
     }
-
-    /*
-      Make the embedded chat fill its container.
-      The classes below might vary slightly between Chatwoot versions,
-      but these are the common ones that can constrain the widget's size.
-    */
-    .woot-widget-holder.woot--hide .woot--inbox-widget {
-      display: block !important;
-      width: 100% !important;
-      height: 100% !important;
-      position: static !important;
-    }
-    /* Expand the chat's internal panels */
-    .woot--inbox-widget .woot--inbox-action-bar,
-    .woot--inbox-widget .woot--inbox-container {
+    /* Override Chatwoot widget internal sizing */
+    .chatwoot-chat-container,
+    .chatwoot-chat-content,
+    .chatwoot-inbox-widget {
       width: 100% !important;
       height: 100% !important;
       max-height: 100% !important;
-      overflow: auto; /* enable scrolling if content is longer than screen */
+      margin: 0;
+      padding: 0;
+    }
+    /* If there’s a wrapper for the chat panel, force it full size */
+    .chatwoot-chat-panel,
+    .chatwoot-container {
+      width: 100% !important;
+      height: 100% !important;
     }
   </style>
 </head>
 <body>
-  <div id="chatwoot-widget-container"></div>
-
+  <div id="chatwoot-container"></div>
   <script>
     (function(d, t) {
-      var BASE_URL = "https://support.slimrate.com";   // your Chatwoot URL
-      var websiteToken = "ePxJHrr6bgupFw1H41r8U6b7";    // your website token
+      // Replace with your actual Chatwoot domain and website token
+      var BASE_URL = "https://support.slimrate.com";
+      var websiteToken = "ePxJHrr6bgupFw1H41r8U6b7";
+      
+      // Create and insert the Chatwoot SDK script
+      var s = d.createElement(t), r = d.getElementsByTagName(t)[0];
+      s.src = BASE_URL + "/packs/js/sdk.js";
+      s.defer = true;
+      s.async = true;
+      r.parentNode.insertBefore(s, r);
 
-      var g = d.createElement(t),
-          s = d.getElementsByTagName(t)[0];
-      g.src = BASE_URL + "/packs/js/sdk.js";
-      g.defer = true;
-      g.async = true;
-      s.parentNode.insertBefore(g, s);
-
-      g.onload = function() {
+      // Once loaded, initialize the Chatwoot widget with full screen options
+      s.onload = function() {
         window.chatwootSDK.run({
           baseUrl: BASE_URL,
           websiteToken: websiteToken,
-          autoOpen: true,         // open immediately
-          hideLauncher: true,     // hide floating bubble
-          container: "#chatwoot-widget-container"
+          autoOpen: true,       // Open the chat immediately
+          hideLauncher: true,   // Hide the floating bubble
+          container: "#chatwoot-container" // Render into our full-screen container
         });
       };
     })(document, "script");
