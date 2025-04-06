@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Full Screen Chat - Forced Override</title>
+  <title>Full Screen Chat - Chatwoot</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    /* Force the entire page to occupy full screen */
+    /* Make sure the page fills the viewport */
     html, body {
       margin: 0;
       padding: 0;
@@ -14,20 +14,13 @@
       overflow: hidden;
       background: #fff;
     }
-    /* Container for Chatwoot widget */
+    /* Container for the Chatwoot widget */
     #chat-container {
       width: 100%;
       height: 100%;
       position: relative;
     }
-    /* Hide any floating bubble or launcher */
-    .chatwoot-launcher,
-    .cw-launcher,
-    .woot-widget-bubble,
-    .woot--bubble-holder {
-      display: none !important;
-    }
-    /* Force the main Chatwoot container to fill the screen */
+    /* Force Chatwoot widget to fill the entire screen */
     .woot-widget-holder {
       position: fixed !important;
       top: 0 !important;
@@ -36,27 +29,21 @@
       bottom: 0 !important;
       width: 100% !important;
       height: 100% !important;
+      max-width: 100% !important;
       max-height: 100% !important;
       margin: 0 !important;
       padding: 0 !important;
       border-radius: 0 !important;
       box-shadow: none !important;
+      transform: none !important;
       z-index: 2147483000 !important;
     }
     .woot-widget-holder iframe {
       width: 100% !important;
       height: 100% !important;
-      max-height: 100% !important;
       border: none !important;
     }
-    /* Overriding typical Chatwoot desktop constraints */
-    @media only screen and (min-width: 0px) {
-      .woot-widget-holder {
-        width: 100% !important;
-        height: 100% !important;
-      }
-    }
-    /* Additional overrides for Chatwoot internals */
+    /* Override internal container constraints */
     .chatwoot-container,
     .chatwoot-chat-container,
     .chatwoot-chat-content,
@@ -64,9 +51,7 @@
     .cw-app,
     .cw-conversations,
     .cw-conversation-container,
-    .cw-message-list,
-    .cw-chat-header,
-    .cw-chat-footer {
+    .cw-message-list {
       width: 100% !important;
       height: 100% !important;
       max-width: 100% !important;
@@ -74,49 +59,41 @@
       margin: 0 !important;
       padding: 0 !important;
       box-sizing: border-box !important;
-      overflow: auto !important; /* allow scrolling if content overflows */
+    }
+    /* Hide any default launcher or bubble */
+    .chatwoot-launcher,
+    .cw-launcher,
+    .woot-widget-bubble,
+    .woot--bubble-holder {
+      display: none !important;
     }
   </style>
 </head>
 <body>
   <div id="chat-container"></div>
-
+  
   <script>
     (function(d, t) {
-      const BASE_URL = "https://support.slimrate.com";
-      const websiteToken = "ePxJHrr6bgupFw1H41r8U6b7";
-
-      // Load Chatwoot SDK
-      const script = d.createElement(t);
-      script.src = BASE_URL + "/packs/js/sdk.js";
-      script.defer = true;
-      script.async = true;
-      script.onload = function() {
-        // Initialize the widget (not auto-opening so we can open it manually)
+      // Your Chatwoot instance details
+      var BASE_URL = "https://support.slimrate.com";
+      var websiteToken = "ePxJHrr6bgupFw1H41r8U6b7";
+      
+      // Dynamically load the Chatwoot SDK script
+      var sdkScript = d.createElement(t);
+      sdkScript.src = BASE_URL + "/packs/js/sdk.js";
+      sdkScript.defer = true;
+      sdkScript.async = true;
+      sdkScript.onload = function() {
+        // Initialize the widget with full-screen settings
         window.chatwootSDK.run({
           baseUrl: BASE_URL,
           websiteToken: websiteToken,
-          autoOpen: false,
-          hideLauncher: false,  // We'll simulate a click or call open()
+          autoOpen: true,      // Open the chat immediately
+          hideLauncher: true,  // Hide the floating launcher
           container: "#chat-container"
         });
-
-        // Wait a few seconds for widget to load, then open
-        setTimeout(function() {
-          if (window.chatwootSDK && typeof window.chatwootSDK.open === "function") {
-            window.chatwootSDK.open();
-          } else {
-            // Fallback: simulate a click on the bubble
-            const bubble = document.querySelector(".woot-widget-bubble");
-            if (bubble) {
-              bubble.click();
-            } else {
-              console.warn("Could not find the bubble to click.");
-            }
-          }
-        }, 3000);
       };
-      d.getElementsByTagName("head")[0].appendChild(script);
+      d.getElementsByTagName("head")[0].appendChild(sdkScript);
     })(document, "script");
   </script>
 </body>
