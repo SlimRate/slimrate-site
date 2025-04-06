@@ -2,47 +2,40 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Chat Support</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Full Screen Chat</title>
   <style>
-    /* Make the page fill the entire browser window. */
     html, body {
       margin: 0;
       padding: 0;
       height: 100%;
-      overflow: hidden; /* hide any scrollbars */
+      overflow: hidden;
     }
-    /* This container will hold the Chatwoot widget */
     #chatwoot-widget-container {
       width: 100%;
       height: 100%;
       position: relative;
-      background: #f8f8f8; /* optional background color */
     }
   </style>
 </head>
 <body>
   <div id="chatwoot-widget-container"></div>
-
   <script>
     (function(d, t) {
-      var BASE_URL = "https://support.slimrate.com"; // your Chatwoot URL
-      var websiteToken = "ePxJHrr6bgupFw1H41r8U6b7";  // your Chatwoot website token
-
-      var g = d.createElement(t),
-          s = d.getElementsByTagName(t)[0];
+      var BASE_URL = "https://support.slimrate.com";
+      var websiteToken = "ePxJHrr6bgupFw1H41r8U6b7";
+      var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
       g.src = BASE_URL + "/packs/js/sdk.js";
       g.defer = true;
       g.async = true;
       s.parentNode.insertBefore(g, s);
-
       g.onload = function() {
         window.chatwootSDK.run({
           baseUrl: BASE_URL,
           websiteToken: websiteToken,
-          autoOpen: true,         // open the chat automatically
-          hideLauncher: true,     // hide the floating bubble
-          container: "#chatwoot-widget-container"  // embed in this container
+          autoOpen: true,         // Open immediately
+          hideLauncher: true,     // Hide the floating launcher
+          container: "#chatwoot-widget-container"
         });
       };
     })(document, "script");
