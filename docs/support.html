@@ -5,27 +5,46 @@
   <title>Full Screen Chat Support</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
-    /* Ensure the entire page is full screen */
+    /* Make the page fill the entire browser window */
     html, body {
       margin: 0;
       padding: 0;
-      height: 100%;
       width: 100%;
+      height: 100%;
       overflow: hidden;
-      background-color: #fafafa;
     }
-    /* Container for the Chatwoot widget */
+    /* Container where we embed the widget */
     #chatwoot-widget-container {
       width: 100%;
       height: 100%;
       position: relative;
+      background: #f8f8f8; /* optional background color */
     }
-    /* Override Chatwoot widget default dimensions */
-    .chatwoot-chat-container,
-    .chatwoot-chat-body,
-    .chatwoot-chat-widget {
+
+    /* Force-hide the floating bubble */
+    .woot-widget-bubble, 
+    .woot-widget-bubble-holder {
+      display: none !important;
+    }
+
+    /*
+      Make the embedded chat fill its container.
+      The classes below might vary slightly between Chatwoot versions,
+      but these are the common ones that can constrain the widget's size.
+    */
+    .woot-widget-holder.woot--hide .woot--inbox-widget {
+      display: block !important;
       width: 100% !important;
       height: 100% !important;
+      position: static !important;
+    }
+    /* Expand the chat's internal panels */
+    .woot--inbox-widget .woot--inbox-action-bar,
+    .woot--inbox-widget .woot--inbox-container {
+      width: 100% !important;
+      height: 100% !important;
+      max-height: 100% !important;
+      overflow: auto; /* enable scrolling if content is longer than screen */
     }
   </style>
 </head>
@@ -34,19 +53,22 @@
 
   <script>
     (function(d, t) {
-      var BASE_URL = "https://support.slimrate.com";
-      var websiteToken = "ePxJHrr6bgupFw1H41r8U6b7";
-      var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
+      var BASE_URL = "https://support.slimrate.com";   // your Chatwoot URL
+      var websiteToken = "ePxJHrr6bgupFw1H41r8U6b7";    // your website token
+
+      var g = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
       g.src = BASE_URL + "/packs/js/sdk.js";
       g.defer = true;
       g.async = true;
       s.parentNode.insertBefore(g, s);
+
       g.onload = function() {
         window.chatwootSDK.run({
           baseUrl: BASE_URL,
           websiteToken: websiteToken,
           autoOpen: true,         // open immediately
-          hideLauncher: true,     // hide the floating bubble
+          hideLauncher: true,     // hide floating bubble
           container: "#chatwoot-widget-container"
         });
       };
