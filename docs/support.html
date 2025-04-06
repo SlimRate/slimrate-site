@@ -1,74 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Full Screen Chat - Chatwoot</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <title>Full Screen Chat - Auto Open</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    /* Ensure the page occupies full viewport */
+    /* Ensure the page fills the entire viewport */
     html, body {
       margin: 0;
       padding: 0;
-      height: 100%;
       width: 100%;
+      height: 100%;
       overflow: hidden;
       background: #fff;
     }
-    /* Container for Chatwoot widget */
-    #chatwoot-container {
+    /* Container for the Chatwoot widget */
+    #chat-container {
       width: 100%;
       height: 100%;
       position: relative;
     }
-    /* Force-hide any launcher/bubble elements */
-    .chatwoot-launcher, 
-    .chatwoot-widget-launcher, 
-    .cw-launcher {
-      display: none !important;
-    }
-    /* Override Chatwoot widget internal sizing */
-    .chatwoot-chat-container,
-    .chatwoot-chat-content,
-    .chatwoot-inbox-widget {
-      width: 100% !important;
-      height: 100% !important;
-      max-height: 100% !important;
-      margin: 0;
-      padding: 0;
-    }
-    /* If there’s a wrapper for the chat panel, force it full size */
-    .chatwoot-chat-panel,
-    .chatwoot-container {
-      width: 100% !important;
-      height: 100% !important;
-    }
   </style>
 </head>
 <body>
-  <div id="chatwoot-container"></div>
+  <!-- This container will host the Chatwoot widget -->
+  <div id="chat-container"></div>
+  
   <script>
     (function(d, t) {
-      // Replace with your actual Chatwoot domain and website token
+      // Your Chatwoot instance details
       var BASE_URL = "https://support.slimrate.com";
       var websiteToken = "ePxJHrr6bgupFw1H41r8U6b7";
       
-      // Create and insert the Chatwoot SDK script
-      var s = d.createElement(t), r = d.getElementsByTagName(t)[0];
-      s.src = BASE_URL + "/packs/js/sdk.js";
-      s.defer = true;
-      s.async = true;
-      r.parentNode.insertBefore(s, r);
-
-      // Once loaded, initialize the Chatwoot widget with full screen options
-      s.onload = function() {
+      // Dynamically load the Chatwoot SDK script
+      var script = d.createElement(t);
+      script.src = BASE_URL + "/packs/js/sdk.js";
+      script.defer = true;
+      script.async = true;
+      script.onload = function() {
+        // Initialize the widget but disable autoOpen
         window.chatwootSDK.run({
           baseUrl: BASE_URL,
           websiteToken: websiteToken,
-          autoOpen: true,       // Open the chat immediately
-          hideLauncher: true,   // Hide the floating bubble
-          container: "#chatwoot-container" // Render into our full-screen container
+          autoOpen: false,       // Disable auto-opening
+          hideLauncher: false,   // Keep the launcher visible for our simulation
+          container: "#chat-container"
         });
+        
+        // Wait for the widget to load, then "press" the open button
+        setTimeout(function() {
+          // Option 1: If the Chatwoot SDK exposes an open() method, use it.
+          if (window.chatwootSDK && typeof window.chatwootSDK.open === 'function') {
+            window.chatwootSDK.open();
+          } else {
+            // Option 2: Otherwise, simulate a click on the launcher button.
+            var btn = document.querySelector(".woot-widget-bubble");
+            if (btn) {
+              btn.click();
+            } else {
+              console.error("Launcher button not found.");
+            }
+          }
+        }, 3000); // Adjust the delay (in ms) as needed for your environment
       };
+      d.getElementsByTagName("head")[0].appendChild(script);
     })(document, "script");
   </script>
 </body>
