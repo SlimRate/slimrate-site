@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Full Screen Chat - Chatwoot</title>
+  <title>Full Screen Chat - Dynamic CSS Overrides</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    /* Make sure the page fills the viewport */
+    /* Basic full-page layout for our container */
     html, body {
       margin: 0;
       padding: 0;
@@ -14,58 +14,11 @@
       overflow: hidden;
       background: #fff;
     }
-    /* Container for the Chatwoot widget */
+    /* Container where the Chatwoot widget will render */
     #chat-container {
       width: 100%;
       height: 100%;
       position: relative;
-    }
-    /* Force Chatwoot widget to fill the entire screen */
-    .woot-widget-holder {
-      position: fixed !important;
-      top: 0 !important;
-      left: 0 !important;
-      right: 0 !important;
-      bottom: 0 !important;
-      width: 100% !important;
-      height: 100% !important;
-      max-width: 100% !important;
-      max-height: 100% !important;
-      margin: 0 !important;
-      padding: 0 !important;
-      border-radius: 0 !important;
-      box-shadow: none !important;
-      transform: none !important;
-      z-index: 2147483000 !important;
-    }
-    .woot-widget-holder iframe {
-      width: 100% !important;
-      height: 100% !important;
-      border: none !important;
-    }
-    /* Override internal container constraints */
-    .chatwoot-container,
-    .chatwoot-chat-container,
-    .chatwoot-chat-content,
-    .chatwoot-inbox-widget,
-    .cw-app,
-    .cw-conversations,
-    .cw-conversation-container,
-    .cw-message-list {
-      width: 100% !important;
-      height: 100% !important;
-      max-width: 100% !important;
-      max-height: 100% !important;
-      margin: 0 !important;
-      padding: 0 !important;
-      box-sizing: border-box !important;
-    }
-    /* Hide any default launcher or bubble */
-    .chatwoot-launcher,
-    .cw-launcher,
-    .woot-widget-bubble,
-    .woot--bubble-holder {
-      display: none !important;
     }
   </style>
 </head>
@@ -74,24 +27,78 @@
   
   <script>
     (function(d, t) {
-      // Your Chatwoot instance details
       var BASE_URL = "https://support.slimrate.com";
       var websiteToken = "ePxJHrr6bgupFw1H41r8U6b7";
-      
-      // Dynamically load the Chatwoot SDK script
+
+      // Dynamically load the Chatwoot SDK
       var sdkScript = d.createElement(t);
       sdkScript.src = BASE_URL + "/packs/js/sdk.js";
       sdkScript.defer = true;
       sdkScript.async = true;
       sdkScript.onload = function() {
-        // Initialize the widget with full-screen settings
+        // Initialize the Chatwoot widget
         window.chatwootSDK.run({
           baseUrl: BASE_URL,
           websiteToken: websiteToken,
-          autoOpen: true,      // Open the chat immediately
-          hideLauncher: true,  // Hide the floating launcher
+          autoOpen: true,
+          hideLauncher: true,
           container: "#chat-container"
         });
+
+        // Use MutationObserver to wait until the widget holder appears
+        var observer = new MutationObserver(function(mutations, obs) {
+          var widgetHolder = document.querySelector(".woot-widget-holder");
+          if (widgetHolder) {
+            // Inject custom CSS overrides after the widget has loaded
+            var styleTag = document.createElement("style");
+            styleTag.textContent = `
+              /* Force the widget to be full screen */
+              .woot-widget-holder {
+                position: fixed !important;
+                top: 0 !important;
+                left: 0 !important;
+                right: 0 !important;
+                bottom: 0 !important;
+                width: 100% !important;
+                height: 100% !important;
+                max-width: 100% !important;
+                max-height: 100% !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                border-radius: 0 !important;
+                box-shadow: none !important;
+                transform: none !important;
+                z-index: 2147483000 !important;
+              }
+              .woot-widget-holder iframe {
+                width: 100% !important;
+                height: 100% !important;
+                border: none !important;
+              }
+              /* Override internal container constraints */
+              .chatwoot-container,
+              .chatwoot-chat-container,
+              .chatwoot-chat-content,
+              .chatwoot-inbox-widget,
+              .cw-app,
+              .cw-conversations,
+              .cw-conversation-container,
+              .cw-message-list {
+                width: 100% !important;
+                height: 100% !important;
+                max-width: 100% !important;
+                max-height: 100% !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                box-sizing: border-box !important;
+                overflow: auto !important;
+              }
+            `;
+            document.head.appendChild(styleTag);
+            obs.disconnect(); // Stop observing once our overrides are injected
+          }
+        });
+        observer.observe(document.body, { childList: true, subtree: true });
       };
       d.getElementsByTagName("head")[0].appendChild(sdkScript);
     })(document, "script");
