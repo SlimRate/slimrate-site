@@ -3,7 +3,7 @@ equipCompanyTemplate2.innerHTML = `
 <section class="equip company-equip">
             <img src="assets/img/custom-bg-2.svg" alt="" class="custom-bg">
             <img src="assets/img/bg-top-1.svg" alt="" class="bg-top">
-            <img src="assets/img/whiteWave.svg" alt="" class="bg-bottom bg-bottom2" style="z-index: 999">
+            <img src="assets/img/whiteWave.svg" alt="" class="bg-bottom bg-bottom2" style="z-index: 1000">
             <div class="container">
                 <div class="block-left">
                     <h2 class="section-title-app">NEW<h1>
@@ -31,7 +31,7 @@ equipCompanyTemplate2.innerHTML = `
                 </div>
 
                 <div class="block-right block-right2" style=" display: flex;justify-content: center; margin-top: 60px">
-                <img src="assets/img/icons/screens.png" alt="" style="height: 100%; ">
+                <img src="assets/img/icons/screens.png" alt="Mobile app screens" style="height: 130%; margin-top: 20px;">
                 </div>
             </div>
         </section>
