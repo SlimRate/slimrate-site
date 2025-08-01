@@ -5,7 +5,7 @@ const productGroups = [
           {
               name: "SR155_Duo",
               text: "Our double display POS system ensures seamless interaction for both customers and staff. Featuring a customer-facing display, it enhances transparency and engagement at the point of sale. Slimrate SR155 Duo 15.6” + 10.1” Touchscreen terminal",
-              avalible: false,
+              available: false,
               costForBlack: 999,
               costForWhite: 999,
               images: [
@@ -17,7 +17,7 @@ const productGroups = [
           {
               name: "SR155_Solo",
               text: "Streamline your checkout process with our single display POS. Designed for efficiency and ease of use, it supports quick transactions and offers a user-friendly interface for staff. 15.6” Touchscreen terminal",
-              avalible: true,
+              available: true,
               costForBlack: 850,
               costForWhite: 850,
               images: [
@@ -28,7 +28,7 @@ const productGroups = [
           {
             name: "SR155_Solo",
             text: "This Slimrate device is a compact point-of-sale system featuring dual screens for customer and operator interaction. It includes a built-in cash drawer and printer, making it an efficient all-in-one solution for retail and hospitality. Its sleek design and secure payment technology enhance both functionality and user experience in busy service environments.",
-            avalible: true,
+            available: true,
             costForBlack: 0,
             costForWhite: 0,
             images: [
@@ -47,7 +47,7 @@ const productGroups = [
           {
               name: "SR-TRP1",
               text: "Print receipts swiftly and quietly with our Thermal Receipt Printer. Ideal for high-volume environments, it ensures crisp and clear receipts every time without the need for ink.",
-              avalible: true,
+              available: true,
               costForBlack: 329,
               costForWhite: 329,
               images: [
@@ -64,7 +64,7 @@ const productGroups = [
           {
               name: "SR-410",
               text: "Secure your cash transactions with our durable Cash Drawer. Featuring a robust design and smooth operation, it integrates seamlessly with your POS system for easy cash management.",
-              avalible: true,
+              available: true,
               costForBlack: 129,
               costForWhite: 129,
               images: [
@@ -80,7 +80,7 @@ const productGroups = [
           {
               name: "SR-DS1",
               text: "Streamline your scanning process with our Desktop Scanner. Designed for high-volume use, it offers fast and accurate scanning, making it perfect for busy retail settings.",
-              avalible: false,
+              available: false,
               costForBlack: 279,
               costForWhite: 279,
               images: [
@@ -90,7 +90,7 @@ const productGroups = [
           {
               name: "SR-WLHS1",
               text: "Improve mobility and efficiency with our Wireless Handheld Scanner. Perfect for inventory management and point-of-sale scanning, it offers reliable and fast barcode scanning.",
-              avalible: false,
+              available: false,
               costForBlack: 399,
               costForWhite: 399,
               images: [
@@ -102,7 +102,7 @@ const productGroups = [
           {
               name: "SR-WHS1",
               text: "Ensure consistent performance with our Wired Handheld Scanner. Ideal for retail environments, it provides quick and accurate barcode scanning with a durable design.",
-              avalible: true,
+              available: true,
               costForBlack: 199,
               costForWhite: 199,
               images: [
@@ -117,7 +117,7 @@ const productGroups = [
           {
               name: "A35",
               text: "The A35 Payment Terminal offers secure and efficient payment processing. Its compact design and advanced security features make it ideal for any retail environment.",
-              avalible: false,
+              available: false,
               costForBlack: 290,
               costForWhite: 290,
               images: [
@@ -127,7 +127,7 @@ const productGroups = [
           {
               name: "A920",
               text: "Enhance your mobile payments with the A920 Payment Terminal. Combining portability with robust functionality, it supports a variety of payment methods and offers a sleek design.",
-              avalible: false,
+              available: false,
               costForBlack: 349,
               costForWhite: 349,
               images: [
@@ -138,7 +138,7 @@ const productGroups = [
           {
               name: "E700",
               text: "Experience the power of all-in-one payments with the E700 Payment Terminal. Featuring a large touchscreen and advanced processing capabilities, it simplifies transactions and enhances customer experience.",
-              avalible: true,
+              available: true,
               costForBlack: 950,
               costForWhite: 950,
               images: [
@@ -153,7 +153,7 @@ const productGroups = [
           {
               name: "Digital_Scale",
               text: "Ensure precise measurements with our Digital Scale. Ideal for retail environments, it offers accurate weight readings and integrates seamlessly with your POS system.",
-              avalible: true,
+              available: true,
               costForBlack: 475,
               costForWhite: 475,
               images: [
@@ -163,7 +163,7 @@ const productGroups = [
           {
               name: "Smart_Scale",
               text: "Upgrade your weighing process with our Smart Scale. Featuring advanced technology, it provides accurate measurements and can connect with your POS system for seamless integration.",
-              avalible: true,
+              available: true,
               costForBlack: 1475,
               costForWhite: 1475,
               images: [
@@ -173,7 +173,7 @@ const productGroups = [
           {
             name: "AIScale_Cash_Register_S625",
             text: "This Slimrate device combines a tablet interface with integrated scales and a receipt printer, offering a compact, efficient solution for retail environments. Perfect for weight-based transactions, it provides both the convenience of a touchscreen and the practicality of built-in printing.",
-            avalible: true,
+            available: true,
             costForBlack: 0,
             costForWhite: 0,
             images: [
@@ -184,7 +184,7 @@ const productGroups = [
         {
           name: "AIScale_Label_Printing_S130",
           text: "These smart labeling scales with an integrated camera by Slimrate offer accurate weighing and automated product identification. Ideal for retail environments, they simplify labeling processes and enhance operational efficiency, ensuring precise product information with minimal user input.",
-          avalible: true,
+          available: true,
           costForBlack: 0,
           costForWhite: 0,
           images: [
