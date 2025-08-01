@@ -9,7 +9,7 @@ topMenuTeplate.innerHTML = `
 
 <div class="container">
 <a class="header-logo" href="index.html">
-    <img src="assets/img/logo.svg" alt="">
+    <img src="assets/img/logo.svg" alt="Slimrate logo">
 </a>
 <div class="header-nav">
     <ul>
@@ -37,7 +37,7 @@ topMenuTeplate.innerHTML = `
     <div class="menu__item i1" id="menu1">
       <div class="flexContainer">
         <a >Solutions</a>
-        <img class="menu_arrow_rotate r1" src=" assets/img/arrow-right.svg" alt="">
+        <img class="menu_arrow_rotate r1" src=" assets/img/arrow-right.svg" alt="Arrow icon">
       </div>
         <div class="more m1">
             <a class="more_head">Industry leading point of sale and management tools to separate you from your competition. Live
@@ -66,7 +66,7 @@ topMenuTeplate.innerHTML = `
     <div class="menu__item i2" id="menu2">
         <div class="flexContainer">
           <a >Business Types</a>
-          <img class="menu_arrow_rotate r2" src=" assets/img/arrow-right.svg" alt="">
+          <img class="menu_arrow_rotate r2" src=" assets/img/arrow-right.svg" alt="Arrow icon">
         </div>
         <div class="more m2">
             <a class="more_head">Modern payment and point of sale technology for a variety of applications</a>
@@ -78,7 +78,7 @@ topMenuTeplate.innerHTML = `
                     <div class="menu__item i3" id="menu3">
                         <div class="flexContainer">
                           <a >Restaurant POS</a>
-                          <img class="menu_arrow_rotate r3" src=" assets/img/arrow-right.svg" alt="">
+                          <img class="menu_arrow_rotate r3" src=" assets/img/arrow-right.svg" alt="Arrow icon">
                         </div>
                         <div class="more m3">
                             <a class="more_head">Cloud-based POS & management solution for restaurants of
@@ -115,7 +115,7 @@ topMenuTeplate.innerHTML = `
                     <div class="menu__item i4" id="menu4">
                        <div class="flexContainer">
                         <a >Retail POS</a>
-                        <img class="menu_arrow_rotate r4" src=" assets/img/arrow-right.svg" alt="">
+                        <img class="menu_arrow_rotate r4" src=" assets/img/arrow-right.svg" alt="Arrow icon">
                        </div>
                         <div class="more m4">
                             <a class="more_head">Sell in-style with an integrated retail POS solution that
@@ -145,7 +145,7 @@ topMenuTeplate.innerHTML = `
       <div class="menu__item">
         <div class="flexContainer">
           <span>Pricing</span>
-          <img class="menu_arrow_rotate r1" src="assets/img/arrow-right.svg" alt="">
+          <img class="menu_arrow_rotate r1" src="assets/img/arrow-right.svg" alt="Arrow icon">
         </div>
       </div>
    </a>
@@ -154,7 +154,7 @@ topMenuTeplate.innerHTML = `
       <div class="menu__item">
         <div class="flexContainer">
           <span>Company</span>
-          <img class="menu_arrow_rotate r1" src=" assets/img/arrow-right.svg" alt="">
+          <img class="menu_arrow_rotate r1" src=" assets/img/arrow-right.svg" alt="Arrow icon">
         </div>
       </div>
    </a>
@@ -163,7 +163,7 @@ topMenuTeplate.innerHTML = `
   <div class="menu__item">
     <div class="flexContainer">
       <span style="color: #2B6BF3">Careers</span>
-      <img class="menu_arrow_rotate r1" src="assets/img/arrow-right.svg" alt="">
+      <img class="menu_arrow_rotate r1" src="assets/img/arrow-right.svg" alt="Arrow icon">
     </div>
   </div>
 </a>

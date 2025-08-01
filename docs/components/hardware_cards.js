@@ -8,7 +8,7 @@ hardwareCardsTemplate.innerHTML = `
                 <div class="hardware-cards">
                 <div class="swiper-slide">
                     <div class="hardware-card">
-                        <div class="hardware-card__img"><img src="assets/img/products/hardware/All-in-one  touchscreen tablet.png"></div>
+                        <div class="hardware-card__img"><img src="assets/img/products/hardware/All-in-one  touchscreen tablet.png" alt="All-in-one touchscreen tablet"></div>
                         <h4 class="hardware-card__title">All-in-one touchscreen tablet </h4>
                         <p class="hardware-card__descr">Quickly access all of Slimrate’s tools and features
                         </p>
@@ -17,7 +17,7 @@ hardwareCardsTemplate.innerHTML = `
                     </div>
                     <div class="swiper-slide">
                     <div class="hardware-card">
-                        <div class="hardware-card__img"><img src="assets/img/products/hardware/Customer facing monitor.png"></div>
+                        <div class="hardware-card__img"><img src="assets/img/products/hardware/Customer facing monitor.png" alt="Customer facing monitor"></div>
                         <h4 class="hardware-card__title">Customer facing monitor </h4>
                         <p class="hardware-card__descr">Ensure order accuracy, allow customer signature and display
                             promotional content
@@ -27,7 +27,7 @@ hardwareCardsTemplate.innerHTML = `
                     </div>
                     <div class="swiper-slide">
                     <div class="hardware-card">
-                        <div class="hardware-card__img"><img src="assets/img/products/hardware/terminal.webp"></div>
+                        <div class="hardware-card__img"><img src="assets/img/products/hardware/terminal.webp" alt="Payment terminal"></div>
                         <h4 class="hardware-card__title">Payment terminals </h4>
                         <p class="hardware-card__descr">Let your customers pay how they want. Credit or debit. Swipe,
                             dip or tap
@@ -37,7 +37,7 @@ hardwareCardsTemplate.innerHTML = `
                     </div>
                     <div class="swiper-slide">
                     <div class="hardware-card">
-                        <div class="hardware-card__img"><img src="assets/img/products/hardware/Thermal  Printer.png"></div>
+                        <div class="hardware-card__img"><img src="assets/img/products/hardware/Thermal  Printer.png" alt="Thermal printer"></div>
                         <h4 class="hardware-card__title">Thermal printer </h4>
                         <p class="hardware-card__descr">Plug and play printer for easy use
                         </p>
@@ -46,7 +46,7 @@ hardwareCardsTemplate.innerHTML = `
                     <!--</div>
                     <div class="swiper-slide">
                     <div class="hardware-card">
-                        <div class="hardware-card__img"><img src="assets/img/products/hardware/printeri.webp"></div>
+                        <div class="hardware-card__img"><img src="assets/img/products/hardware/printeri.webp" alt="Impact printer"></div>
                         <h4 class="hardware-card__title">Impact printer </h4>
                         <p class="hardware-card__descr">Durable design, suitable for kitchen applications
                         </p>
@@ -55,7 +55,7 @@ hardwareCardsTemplate.innerHTML = `
                     </div>
                     <div class="swiper-slide">
                     <div class="hardware-card">
-                        <div class="hardware-card__img"><img src="assets/img/products/hardware/Cash Drawer.png"></div>
+                        <div class="hardware-card__img"><img src="assets/img/products/hardware/Cash Drawer.png" alt="Cash drawer"></div>
                         <h4 class="hardware-card__title">Cash drawer </h4>
                         <p class="hardware-card__descr">Keep your cash safe and organized
                         </p>
@@ -64,7 +64,7 @@ hardwareCardsTemplate.innerHTML = `
                     </div>
                     <div class="swiper-slide">
                     <div class="hardware-card">
-                        <div class="hardware-card__img"  ><img src="assets/img/products/hardware/Scanner1.png"></div>
+                        <div class="hardware-card__img"  ><img src="assets/img/products/hardware/Scanner1.png" alt="Barcode scanner"></div>
                         <h4  class="hardware-card__title">Scanner</h4>
                         <p class="hardware-card__descr">Speed up checkout and get your customers on the road
                         </p>
