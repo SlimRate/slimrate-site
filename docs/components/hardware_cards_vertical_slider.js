@@ -29,8 +29,8 @@ function createProductCard(data) {
                     </div>
                 </div>
                 <div class="flex flex-col justify-evenly">
-                    <span id="availability-status-${normalizedName}" class="availability">${data.avalible ? "Available" : "To order"}</span>
-                    <span class="price">$${data.avalible ? data.costForBlack : data.costForWhite}</span>
+                    <span id="availability-status-${normalizedName}" class="availability">${data.available ? "Available" : "To order"}</span>
+                    <span class="price">$${data.available ? data.costForBlack : data.costForWhite}</span>
                 </div>
             </div>
         </div>

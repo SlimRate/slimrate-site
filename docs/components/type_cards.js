@@ -19,7 +19,7 @@ typesTemplate.innerHTML = `
                 <img src="assets/img/retail.jpeg" alt="">
             </div>
             <div class="types-card__text">
-                <h4 class="section-title">Payment Proseccing</h4>
+                <h4 class="section-title">Payment Processing</h4>
                 <p class="section-descr">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
                     vulputate blandit fermentum. Duis tempor nec tortor sed ultricies. Ut facilisis condimentum
                     purus, vestibulum porta sapien ornare at. Donec facilisis vel arcu ac
