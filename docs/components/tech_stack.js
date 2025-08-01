@@ -14,7 +14,7 @@ techStackTemplate.innerHTML = `
             <div class="tech-stack-swiper swiper-wrapper">
                 <div class="swiper-slide">
                     <div class="tech-stack-card">
-                        <!-- <div class="we-support-card__img"><img src="assets/img/support-icons/emv.svg">
+                        <!-- <div class="we-support-card__img"><img src="assets/img/support-icons/emv.svg" alt="Slimrate product image">
                         </div> -->
                         <h4 class="we-support-card__title">C++</h4>
                         <p class="tech-stack-card__descr">Solutions:
@@ -27,7 +27,7 @@ techStackTemplate.innerHTML = `
                 </div>
                 <div class="swiper-slide">
                     <div class="tech-stack-card">
-                        <!-- <div class="we-support-card__img"><img src="assets/img/support-icons/emv.svg">
+                        <!-- <div class="we-support-card__img"><img src="assets/img/support-icons/emv.svg" alt="Slimrate product image">
                         </div> -->
                         <h4 class="we-support-card__title">PHP</h4>
                         <p class="tech-stack-card__descr">Solutions:
@@ -40,7 +40,7 @@ techStackTemplate.innerHTML = `
                 </div>
                 <div class="swiper-slide">
                     <div class="tech-stack-card">
-                        <!-- <div class="we-support-card__img"><img src="assets/img/support-icons/emv.svg">
+                        <!-- <div class="we-support-card__img"><img src="assets/img/support-icons/emv.svg" alt="Slimrate product image">
                         </div> -->
                         <h4 class="we-support-card__title">Python</h4>
                         <p class="tech-stack-card__descr">Solutions:
@@ -53,7 +53,7 @@ techStackTemplate.innerHTML = `
                 </div>
                 <div class="swiper-slide">
                     <div class="tech-stack-card">
-                        <!-- <div class="we-support-card__img"><img src="assets/img/support-icons/emv.svg">
+                        <!-- <div class="we-support-card__img"><img src="assets/img/support-icons/emv.svg" alt="Slimrate product image">
                         </div> -->
                         <h4 class="we-support-card__title">Java</h4>
                         <p class="tech-stack-card__descr">Solutions:
@@ -66,7 +66,7 @@ techStackTemplate.innerHTML = `
                 </div>
                 <div class="swiper-slide">
                     <div class="tech-stack-card">
-                        <!-- <div class="we-support-card__img"><img src="assets/img/support-icons/emv.svg">
+                        <!-- <div class="we-support-card__img"><img src="assets/img/support-icons/emv.svg" alt="Slimrate product image">
                         </div> -->
                         <h4 class="we-support-card__title">Swift</h4>
                         <p class="tech-stack-card__descr">Solutions:
@@ -79,7 +79,7 @@ techStackTemplate.innerHTML = `
                 </div>
                 <div class="swiper-slide">
                     <div class="tech-stack-card">
-                        <!-- <div class="we-support-card__img"><img src="assets/img/support-icons/emv.svg">
+                        <!-- <div class="we-support-card__img"><img src="assets/img/support-icons/emv.svg" alt="Slimrate product image">
                         </div> -->
                         <h4 class="we-support-card__title">.NET</h4>
                         <p class="tech-stack-card__descr">Solutions:
@@ -92,7 +92,7 @@ techStackTemplate.innerHTML = `
                 </div>
                 <div class="swiper-slide">
                     <div class="tech-stack-card">
-                        <!-- <div class="we-support-card__img"><img src="assets/img/support-icons/emv.svg">
+                        <!-- <div class="we-support-card__img"><img src="assets/img/support-icons/emv.svg" alt="Slimrate product image">
                         </div> -->
                         <h4 class="we-support-card__title">Unity</h4>
                         <p class="tech-stack-card__descr">Solutions:
@@ -105,7 +105,7 @@ techStackTemplate.innerHTML = `
                 </div>
                 <div class="swiper-slide">
                     <div class="tech-stack-card">
-                        <!-- <div class="we-support-card__img"><img src="assets/img/support-icons/emv.svg">
+                        <!-- <div class="we-support-card__img"><img src="assets/img/support-icons/emv.svg" alt="Slimrate product image">
                         </div> -->
                         <h4 class="we-support-card__title">Xamarin</h4>
                         <p class="tech-stack-card__descr">Solutions:
@@ -118,7 +118,7 @@ techStackTemplate.innerHTML = `
                 </div>
                 <div class="swiper-slide">
                     <div class="tech-stack-card">
-                        <!-- <div class="we-support-card__img"><img src="assets/img/support-icons/emv.svg">
+                        <!-- <div class="we-support-card__img"><img src="assets/img/support-icons/emv.svg" alt="Slimrate product image">
                         </div> -->
                         <h4 class="we-support-card__title">
                             Ruby on Rails</h4>

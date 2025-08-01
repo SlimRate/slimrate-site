@@ -9,74 +9,74 @@ weSupportTemplate.innerHTML = `
                     <div class="we-support-swiper swiper-wrapper">
                         <div class="swiper-slide">
                             <div class="we-support-card">
-                                <div class="we-support-card__img"><img src="assets/img/support-icons/emv.svg">
+                                <div class="we-support-card__img"><img src="assets/img/support-icons/emv.svg" alt="EMV symbol">
                                 </div>
                                 <h4 class="we-support-card__title">EMV</h4>
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="we-support-card">
-                                <div class="we-support-card__img"><img src="assets/img/support-icons/apple-pay.svg"></div>
+                                <div class="we-support-card__img"><img src="assets/img/support-icons/apple-pay.svg" alt="Apple Pay"></div>
                                 <h4 class="we-support-card__title">Apple Pay</h4>
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="we-support-card">
-                                <div class="we-support-card__img"><img src="assets/img/support-icons/google-pay.svg"></div>
+                                <div class="we-support-card__img"><img src="assets/img/support-icons/google-pay.svg" alt="Google Pay"></div>
                                 <h4 class="we-support-card__title">Google Pay</h4>
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="we-support-card">
-                                <div class="we-support-card__img"><img src="assets/img/support-icons/pay.svg"></div>
+                                <div class="we-support-card__img"><img src="assets/img/support-icons/pay.svg" alt="Contactless"></div>
                                 <h4 class="we-support-card__title">Pay</h4>
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="we-support-card">
-                                <div class="we-support-card__img"><img src="assets/img/support-icons/tap.svg"></div>
+                                <div class="we-support-card__img"><img src="assets/img/support-icons/tap.svg" alt="Tap"></div>
                                 <h4 class="we-support-card__title">Tap</h4>
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="we-support-card">
-                                <div class="we-support-card__img"><img src="assets/img/support-icons/dip.svg"></div>
+                                <div class="we-support-card__img"><img src="assets/img/support-icons/dip.svg" alt="Dip"></div>
                                 <h4 class="we-support-card__title">Dip</h4>
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="we-support-card">
-                                <div class="we-support-card__img"><img src="assets/img/support-icons/swipe.svg"></div>
+                                <div class="we-support-card__img"><img src="assets/img/support-icons/swipe.svg" alt="Swipe"></div>
                                 <h4 class="we-support-card__title">Swipe</h4>
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="we-support-card">
-                                <div class="we-support-card__img"><img src="assets/img/support-icons/viza.svg"></div>
+                                <div class="we-support-card__img"><img src="assets/img/support-icons/viza.svg" alt="Visa"></div>
                                 <h4 class="we-support-card__title">Visa</h4>
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="we-support-card">
-                                <div class="we-support-card__img"><img src="assets/img/support-icons/mc.svg"></div>
+                                <div class="we-support-card__img"><img src="assets/img/support-icons/mc.svg" alt="Mastercard"></div>
                                 <h4 class="we-support-card__title">Mastercard</h4>
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="we-support-card">
-                                <div class="we-support-card__img"><img src="assets/img/support-icons/discover.svg"></div>
+                                <div class="we-support-card__img"><img src="assets/img/support-icons/discover.svg" alt="Discover"></div>
                                 <h4 class="we-support-card__title">Discover</h4>
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="we-support-card">
-                                <div class="we-support-card__img"><img src="assets/img/support-icons/ae.svg"></div>
+                                <div class="we-support-card__img"><img src="assets/img/support-icons/ae.svg" alt="American Express"></div>
                                 <h4 class="we-support-card__title">American Express</h4>
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="we-support-card">
-                                <div class="we-support-card__img"><img src="assets/img/support-icons/gift-card.svg"></div>
+                                <div class="we-support-card__img"><img src="assets/img/support-icons/gift-card.svg" alt="Gift card"></div>
                                 <h4 class="we-support-card__title">Gift Cards</h4>
                             </div>
                         </div>

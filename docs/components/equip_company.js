@@ -1,9 +1,9 @@
 const equipCompanyTemplate = document.createElement('template');
 equipCompanyTemplate.innerHTML = `
 <section class="equip company-equip">
-            <img src="assets/img/custom-bg-1.svg" alt="" class="custom-bg">
-            <img src="assets/img/bg-top-1.svg" alt="" class="bg-top">
-            <img src="assets/img/bg-bot-1.svg" alt="" class="bg-bottom">
+            <img src="assets/img/custom-bg-1.svg" alt="Slimrate product image" class="custom-bg">
+            <img src="assets/img/bg-top-1.svg" alt="Slimrate product image" class="bg-top">
+            <img src="assets/img/bg-bot-1.svg" alt="Slimrate product image" class="bg-bottom">
             <div class="container">
                 <div class="block-left">
                     <h2 class="section-title">All-in-one point of sale solution built to run your business better</h2>
@@ -18,20 +18,20 @@ equipCompanyTemplate.innerHTML = `
 
                 <div class="block-right">
                     <div class="equip-card">
-                        <img src="assets/img/icons/checkMashine.svg" alt="" class="equip-img">
-                        <img src="assets/img/icons/scanner.svg" alt="" class="equip-img">
-                        <img src="assets/img/icons/equip-3.svg" alt="" class="equip-img">
-                        <img src="assets/img/icons/phone.svg" alt="" class="equip-img">
+                        <img src="assets/img/icons/checkMashine.svg" alt="Slimrate product image" class="equip-img">
+                        <img src="assets/img/icons/scanner.svg" alt="Slimrate product image" class="equip-img">
+                        <img src="assets/img/icons/equip-3.svg" alt="Slimrate product image" class="equip-img">
+                        <img src="assets/img/icons/phone.svg" alt="Slimrate product image" class="equip-img">
                         
                         <div class="equip-img">
-                            <a href="payment_processing.html">Payment Processing</a><a href="payment_processing.html"><img src="assets/img/icons/equip-btn.svg" alt="" class="equip-btn"></a></div>
+                            <a href="payment_processing.html">Payment Processing</a><a href="payment_processing.html"><img src="assets/img/icons/equip-btn.svg" alt="Slimrate product image" class="equip-btn"></a></div>
                         <div class="equip-img">
-                            <a href="software.html">POS Software</a><a href="software.html"><img src="assets/img/icons/equip-btn.svg" alt="" class="equip-btn"></a></div>
+                            <a href="software.html">POS Software</a><a href="software.html"><img src="assets/img/icons/equip-btn.svg" alt="Slimrate product image" class="equip-btn"></a></div>
                         <div class="equip-img">
-                            <a href="hardware.html">POS Hardware</a><a href="hardware.html"><img src="assets/img/icons/equip-btn.svg" alt="" class="equip-btn"></a></div>
+                            <a href="hardware.html">POS Hardware</a><a href="hardware.html"><img src="assets/img/icons/equip-btn.svg" alt="Slimrate product image" class="equip-btn"></a></div>
                     
                     </div>
-                    <img src="assets/img/circle.svg" alt="" class="block-img-circle">
+                    <img src="assets/img/circle.svg" alt="Slimrate product image" class="block-img-circle">
                 </div>
             </div>
         </section>
