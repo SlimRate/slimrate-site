@@ -37,8 +37,10 @@
     <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
     <meta http-equiv="pragma" content="no-cache" />
     <title>Slimrate</title>
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <link rel="stylesheet" href="assets/css/burger.css" />
+    <link rel="preload" href="assets/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="assets/css/style.css"></noscript>
+    <link rel="preload" href="assets/css/burger.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="assets/css/burger.css"></noscript>
     <script defer src="https://unpkg.com/imask"></script>
     <script defer src="assets/js/masks.js"></script>
     <script type="text/javascript" defer src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
@@ -53,10 +55,12 @@
     <script defer src="components/new_app.js"></script>
     <script defer src="components/equip_main.js"></script>
     
-    <!-- customerTestimonials -->  
-    <link rel="stylesheet" href="components/customerTestimonials/customertestimonials.css">
+    <!-- customerTestimonials -->
+    <link rel="preload" href="components/customerTestimonials/customertestimonials.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="components/customerTestimonials/customertestimonials.css"></noscript>
     <!-- minimalSlider -->
-    <link rel="stylesheet" href="components/minimalSlider/minimalSlider.css">
+    <link rel="preload" href="components/minimalSlider/minimalSlider.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="components/minimalSlider/minimalSlider.css"></noscript>
 </head>
 
 <body>
