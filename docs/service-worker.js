@@ -1,8 +1,8 @@
-const CACHE_NAME = 'slimrate-cache-v2';
+const CACHE_NAME = 'slimrate-cache-v3';
 
 // Time (in milliseconds) to keep cached responses before updating.
-// Currently set to thirty days.
-const CACHE_MAX_AGE = 30 * 24 * 60 * 60 * 1000;
+// Currently set to ninety days.
+const CACHE_MAX_AGE = 90 * 24 * 60 * 60 * 1000;
 
 // Helper to clone a response and attach the current timestamp so we can
 // determine its age later.
