@@ -31,7 +31,7 @@ equipCompanyTemplate2.innerHTML = `
                 </div>
 
                 <div class="block-right block-right2" style=" display: flex;justify-content: center; margin-top: 60px">
-                <img src="assets/img/icons/screens.png" alt="Mobile app screens" style="height: 130%; margin-top: 20px;">
+                <img src="assets/img/icons/screens.png" alt="" style="height: 100%; ">
                 </div>
             </div>
         </section>
