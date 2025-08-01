@@ -3,7 +3,7 @@ equipCompanyTemplate2.innerHTML = `
 <section class="equip company-equip">
             <img src="assets/img/custom-bg-2.svg" alt="" class="custom-bg">
             <img src="assets/img/bg-top-1.svg" alt="" class="bg-top">
-            <img src="assets/img/whiteWave.svg" alt="" class="bg-bottom bg-bottom2" style="z-index: 999">
+            <img src="assets/img/whiteWave.svg" alt="" class="bg-bottom bg-bottom2" style="z-index: 1000">
             <div class="container">
                 <div class="block-left">
                     <h2 class="section-title-app">NEW<h1>
