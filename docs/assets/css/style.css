@@ -3910,7 +3910,8 @@ label.has-value {
     }
    
     .equip .bg-bottom2 {
-     top: 93%;
+        top: 98%;
+        z-index: 1000;
     }
 
     .equip-buttons2 {
