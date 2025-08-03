@@ -1,4 +1,4 @@
-const CACHE_NAME = 'slimrate-cache-v3';
+const CACHE_NAME = 'slimrate-cache-v4';
 
 // Time (in milliseconds) to keep cached responses before updating.
 // Currently set to ninety days.
@@ -22,6 +22,8 @@ const ASSETS_TO_CACHE = [
   '/index.html',
   '/assets/css/style.css',
   '/assets/css/burger.css',
+  '/assets/js/imask.min.js',
+  '/assets/js/jquery.min.js',
   '/assets/js/masks.js',
   '/assets/js/more.js',
   '/assets/slick/slick.min.js',
@@ -51,6 +53,10 @@ self.addEventListener('activate', event => {
 self.addEventListener('fetch', event => {
   // Only handle GET requests so we don't interfere with form submissions.
   if (event.request.method !== 'GET') return;
+
+  const requestUrl = new URL(event.request.url);
+  // Skip cross-origin requests (e.g., CDN scripts) to avoid caching issues
+  if (requestUrl.origin !== self.location.origin) return;
 
   event.respondWith(
     caches.open(CACHE_NAME).then(cache =>
