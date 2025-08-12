@@ -73,7 +73,8 @@ companyFormTemplate.innerHTML = `
         <span id="toast-message"></span>
     </div>
     <div class="contact__right">
-        <form id="my-form"  class="contact__form form" action="#" onsubmit="onSubmit();return false" >
+    <!-- Removed inline onsubmit to prevent global collisions -->
+    <form id="company-form"  class="contact__form form" action="#" novalidate>
             <div class="form-inputs">
                 <div class="form__input-body">
                     <input type="input" id="first-and-last-name" name="first-and-last-name"
@@ -96,7 +97,7 @@ companyFormTemplate.innerHTML = `
                 </div>
             </div>
             <div style="display: flex; align-items: center;">
-                <input class="form__btn" type="submit" style="margin-right: 10px;" id="submitBtn">
+                <input class="form__btn" type="submit" style="margin-right: 10px;" id="submitCompanyBtn" value="Submit">
                 <p class="submit-descr">Please fill out this brief application form and we'll contact you shortly.</p>
                 </input>
             </div>
@@ -114,44 +115,46 @@ class CompanyForm extends HTMLElement {
     }
     connectedCallback() {
         this.appendChild(this._contents);
+        this.initForm();
+    }
+    initForm() {
+        const form = this.querySelector('#company-form');
+        if (!form) return;
+        const submitBtn = form.querySelector('#submitCompanyBtn');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const fullName = form.querySelector('#first-and-last-name').value.trim();
+            const email = form.querySelector('#email').value.trim();
+            if (!fullName || !email) {
+                showToast('Name and Email are required.', 'error');
+                return;
+            }
+            const formData = {
+                requestType: 'newEmployer',
+                fullName,
+                email,
+                phoneNumber: form.querySelector('#phone-number').value.trim(),
+                message: form.querySelector('#additional-information').value.trim(),
+            };
+            if (submitBtn) submitBtn.disabled = true;
+            fetch('https://prod.slimrate.com/v1/feedback', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData),
+            })
+                .then(r => {
+                    if (!r.ok) throw new Error('Network error');
+                    showToast('Thank you! Your request has been received.', 'success');
+                    form.reset();
+                })
+                .catch(() => {
+                    showToast('Oops! Something went wrong. Please resubmit the form.', 'error');
+                })
+                .finally(() => { if (submitBtn) submitBtn.disabled = false; });
+        });
     }
 }
-customElements.define("company-form", CompanyForm);
-function onSubmit() {
-    const formData = {
-        requestType: "newEmployer",
-        fullName: $('#first-and-last-name').val(),
-        email: $('#email').val(),
-        phoneNumber: $('#phone-number').val(),
-        message: $('#additional-information').val()
-    };
-
-    document.getElementById('submitBtn').disabled = true;
-    console.log(JSON.stringify(formData));
-    
-
-    $.ajax({
-        // url: 'https://dev.slimrate.com/v1/feedback',
-        url: 'https://prod.slimrate.com/v1/feedback',
-        // url: 'https://test.ds/v1/feedback',
-        type: 'POST',
-        contentType: 'application/json',
-        data: JSON.stringify(formData),
-        success: function () {
-            showToast("Thank you! Your request has been received.", "success", "bottom");
-            document.getElementById('submitBtn').disabled = false;
-            $('#my-form').each(function () {
-                this.reset();
-            });
-        },
-        error: function () {
-            showToast("Oops! Something went wrong. Please resubmit the form.", "error", "bottom");
-            document.getElementById('submitBtn').disabled = false;
-        }
-    });
-    return false;
-};
-const form = document.getElementById('my-form');
+customElements.define('company-form', CompanyForm);
 
 function showToast(message, type, position = 'bottom') {
     var toast = document.getElementById("toast");
@@ -175,7 +178,4 @@ function showToast(message, type, position = 'bottom') {
     }, 3000);
 }
 
-form.addEventListener('submit', function handleSubmit(event) {
-    event.preventDefault();
-    form.reset();
-});
+// Removed global form listener (now scoped within component)

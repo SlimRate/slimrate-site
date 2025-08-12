@@ -73,7 +73,8 @@ pricingFormTemplate.innerHTML = `
         <span id="toast-message"></span>
     </div>
     <div class="contact__right">
-        <form id="my-form"  class="contact__form form" action="#" onsubmit="onSubmit();return false" >
+    <!-- Removed inline onsubmit to avoid global handler collisions -->
+    <form id="pricing-form"  class="contact__form form" action="#" novalidate>
             <div class="form__select">
                 <h4 class="form__select-title">Business type?</h4>
                 <div class="form__select-body">
@@ -110,7 +111,7 @@ pricingFormTemplate.innerHTML = `
                     <label for="index">Zip Code</label>
                 </div>
             </div>
-            <input class="form__btn" type="submit" id="submitBtn">
+            <input class="form__btn" type="submit" id="submitBtn" value="Submit">
             </input>
         </form>
        <!-- <p class="contact__privacy">By requesting a demo, you agree to receive automated text messages from
@@ -128,51 +129,52 @@ class PricingForm extends HTMLElement {
     }
     connectedCallback() {
         this.appendChild(this._contents);
+        this.initForm();
+    }
+    initForm() {
+        const form = this.querySelector('#pricing-form');
+        if (!form) return;
+        const submitBtn = form.querySelector('#submitBtn');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Basic front-end validation (can be extended)
+            const fullName = form.querySelector('#first-and-last-name').value.trim();
+            const email = form.querySelector('#email').value.trim();
+            if (!fullName || !email) {
+                showToast('Name and Email are required.', 'error');
+                return;
+            }
+            const formData = {
+                requestType: 'newCompany',
+                fullName,
+                email,
+                phoneNumber: form.querySelector('#phone-number').value.trim(),
+                companyPlaceType: form.querySelector('input[name="type"]:checked')?.value || '',
+                companyPlaceName: form.querySelector('#company').value.trim(),
+                zipCode: form.querySelector('#index').value.trim(),
+            };
+            if (submitBtn) submitBtn.disabled = true;
+            // Use fetch (smaller footprint than jQuery $.ajax)
+            fetch('https://prod.slimrate.com/v1/feedback', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData),
+            })
+                .then(r => {
+                    if (!r.ok) throw new Error('Network response was not ok');
+                    showToast('Thank you! Your request has been received.', 'success');
+                    form.reset();
+                })
+                .catch(() => {
+                    showToast('Oops! Something went wrong. Please resubmit the form.', 'error');
+                })
+                .finally(() => {
+                    if (submitBtn) submitBtn.disabled = false;
+                });
+        });
     }
 }
-customElements.define("pricing-form", PricingForm);
-function onSubmit() {
-    const formData = {
-        requestType: "newCompany",
-        fullName: $('#first-and-last-name').val(),
-        email: $('#email').val(),
-        phoneNumber: $('#phone-number').val(),
-        companyPlaceType: $('input[name="type"]:checked').val(),
-        companyPlaceName: $('#company').val(),
-        zipCode: $('#index').val()
-    };
-
-    document.getElementById('submitBtn').disabled = true;
-    console.log(JSON.stringify(formData));
-    
-
-    $.ajax({
-        // url: 'https://dev.slimrate.com/v1/feedback',
-        url: 'https://prod.slimrate.com/v1/feedback',
-        // url: 'https://test.ds/v1/feedback',
-        type: 'POST',
-        contentType: 'application/json',
-        data: JSON.stringify(formData),
-        success: function () {
-            showToast("Thank you! Your request has been received.", "success", "bottom");
-            document.getElementById('submitBtn').disabled = false;
-            $('#my-form').each(function () {
-                this.reset();
-            });
-        },
-        error: function () {
-            showToast("Oops! Something went wrong. Please resubmit the form.", "error", "bottom");
-            document.getElementById('submitBtn').disabled = false;
-        }
-    });
-
-    return false;
-};
-
-document.getElementById('my-form')?.addEventListener('submit', function handleSubmit(event) {
-    event.preventDefault();
-    form.reset();
-});
+customElements.define('pricing-form', PricingForm);
 
 function showToast(message, type, position = 'bottom') {
     var toast = document.getElementById("toast");

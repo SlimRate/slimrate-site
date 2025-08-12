@@ -420,10 +420,10 @@ function initDropment() {
   function destroyElement() {
     const els = document.getElementsByClassName('dropmenu');
     if (els.length > 0) {
-      console.log({ els });
       for (const el of els) {
-        el.parentElement.removeChild(el);
-        el.remove();
+        if (el.parentElement) {
+          el.parentElement.removeChild(el);
+        }
       }
     }
   }
