@@ -95,6 +95,17 @@ companyFormTemplate.innerHTML = `
                         class="form__input">
                     <label for="first-and-last-name">Additional Information</label>
                 </div>
+                <!-- Hidden UTM fields (populated dynamically) -->
+                <input type="hidden" name="utm_source" id="utm_source" />
+                <input type="hidden" name="utm_medium" id="utm_medium" />
+                <input type="hidden" name="utm_campaign" id="utm_campaign" />
+                <input type="hidden" name="utm_term" id="utm_term" />
+                <input type="hidden" name="utm_content" id="utm_content" />
+                <input type="hidden" name="gclid" id="gclid" />
+                <input type="hidden" name="fbclid" id="fbclid" />
+                <input type="hidden" name="firstTouchTs" id="firstTouchTs" />
+                <input type="hidden" name="landingPage" id="landingPage" />
+                <input type="hidden" name="referrer" id="referrer" />
             </div>
             <div style="display: flex; align-items: center;">
                 <input class="form__btn" type="submit" style="margin-right: 10px;" id="submitCompanyBtn" value="Submit">
@@ -121,6 +132,12 @@ class CompanyForm extends HTMLElement {
         const form = this.querySelector('#company-form');
         if (!form) return;
         const submitBtn = form.querySelector('#submitCompanyBtn');
+        // Populate UTM hidden inputs
+        try {
+            const utm = (window.getSlimrateUtmData && window.getSlimrateUtmData()) || {};
+            ['utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid','fbclid','firstTouchTs','landingPage','referrer']
+                .forEach(k => { const el = form.querySelector('#'+k); if (el && utm[k]) el.value = utm[k]; });
+        } catch(e) { /* silent */ }
         form.addEventListener('submit', (e) => {
             e.preventDefault();
             const fullName = form.querySelector('#first-and-last-name').value.trim();
@@ -135,6 +152,7 @@ class CompanyForm extends HTMLElement {
                 email,
                 phoneNumber: form.querySelector('#phone-number').value.trim(),
                 message: form.querySelector('#additional-information').value.trim(),
+                utm: (window.getSlimrateUtmData && window.getSlimrateUtmData()) || {},
             };
             if (submitBtn) submitBtn.disabled = true;
             fetch('https://prod.slimrate.com/v1/feedback', {

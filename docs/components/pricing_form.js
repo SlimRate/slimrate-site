@@ -110,6 +110,17 @@ pricingFormTemplate.innerHTML = `
                     <input type="input" id="index" name="index" class="form__input">
                     <label for="index">Zip Code</label>
                 </div>
+                <!-- Hidden UTM fields (populated dynamically) -->
+                <input type="hidden" name="utm_source" id="utm_source" />
+                <input type="hidden" name="utm_medium" id="utm_medium" />
+                <input type="hidden" name="utm_campaign" id="utm_campaign" />
+                <input type="hidden" name="utm_term" id="utm_term" />
+                <input type="hidden" name="utm_content" id="utm_content" />
+                <input type="hidden" name="gclid" id="gclid" />
+                <input type="hidden" name="fbclid" id="fbclid" />
+                <input type="hidden" name="firstTouchTs" id="firstTouchTs" />
+                <input type="hidden" name="landingPage" id="landingPage" />
+                <input type="hidden" name="referrer" id="referrer" />
             </div>
             <input class="form__btn" type="submit" id="submitBtn" value="Submit">
             </input>
@@ -135,6 +146,12 @@ class PricingForm extends HTMLElement {
         const form = this.querySelector('#pricing-form');
         if (!form) return;
         const submitBtn = form.querySelector('#submitBtn');
+        // Populate UTM hidden inputs
+        try {
+            const utm = (window.getSlimrateUtmData && window.getSlimrateUtmData()) || {};
+            ['utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid','fbclid','firstTouchTs','landingPage','referrer']
+                .forEach(k => { const el = form.querySelector('#'+k); if (el && utm[k]) el.value = utm[k]; });
+        } catch(e) { /* silent */ }
         form.addEventListener('submit', (e) => {
             e.preventDefault();
             // Basic front-end validation (can be extended)
@@ -152,6 +169,7 @@ class PricingForm extends HTMLElement {
                 companyPlaceType: form.querySelector('input[name="type"]:checked')?.value || '',
                 companyPlaceName: form.querySelector('#company').value.trim(),
                 zipCode: form.querySelector('#index').value.trim(),
+                utm: (window.getSlimrateUtmData && window.getSlimrateUtmData()) || {},
             };
             if (submitBtn) submitBtn.disabled = true;
             // Use fetch (smaller footprint than jQuery $.ajax)

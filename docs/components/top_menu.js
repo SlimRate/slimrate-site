@@ -192,6 +192,8 @@ class TopMenu extends HTMLElement {
     this.appendChild(this._contents);
     initDropment();
     this.initEventListeners();
+  // Capture UTM params once component mounts (present on most pages)
+  try { captureUtmParams(); } catch(e) { /* silent */ }
   }
   initEventListeners() {
     // const careersLink = this.querySelector('#careersLink');
@@ -219,6 +221,56 @@ class TopMenu extends HTMLElement {
 }
 
 customElements.define('top-menu', TopMenu);
+
+// ---- UTM Tracking Utilities ----
+const SLIMRATE_UTM_KEY = 'slimrate_utm';
+
+function parseQueryParams() {
+  const params = new URLSearchParams(window.location.search);
+  const wanted = ['utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid','fbclid'];
+  const data = {};
+  let has = false;
+  wanted.forEach(k => {
+    if (params.has(k)) { data[k] = params.get(k); has = true; }
+  });
+  return has ? data : null;
+}
+
+function captureUtmParams() {
+  if (!window.sessionStorage) return;
+  const existing = safeGetUtm();
+  const nowParams = parseQueryParams();
+  if (!existing) {
+    const ref = document.referrer && !document.referrer.startsWith(location.origin) ? document.referrer : '';
+    const base = {
+      firstTouchTs: Date.now(),
+      landingPage: location.href.split('#')[0],
+      referrer: ref,
+    };
+    const merged = Object.assign(base, nowParams || {});
+    sessionStorage.setItem(SLIMRATE_UTM_KEY, JSON.stringify(merged));
+    window.__slimrateUtm = merged;
+  } else if (nowParams) {
+    // Update only additive (keep original landing / firstTouch)
+    const merged = Object.assign({}, existing);
+    Object.entries(nowParams).forEach(([k,v]) => { if (!merged[k]) merged[k] = v; });
+    sessionStorage.setItem(SLIMRATE_UTM_KEY, JSON.stringify(merged));
+    window.__slimrateUtm = merged;
+  } else {
+    window.__slimrateUtm = existing;
+  }
+}
+
+function safeGetUtm() {
+  try {
+    const raw = sessionStorage.getItem(SLIMRATE_UTM_KEY);
+    if (!raw) return null;
+    return JSON.parse(raw);
+  } catch { return null; }
+}
+
+// Public accessor for other components
+window.getSlimrateUtmData = function() { return window.__slimrateUtm || safeGetUtm() || {}; };
 
 function initDropment() {
   const productHtmlObj = {
