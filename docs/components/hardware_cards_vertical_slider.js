@@ -12,8 +12,6 @@ function createProductCard(data) {
     card.innerHTML = `
         <div class="image-container" id="image-container-${normalizedName}">
             <img src="${encodedImages[0] || ''}" alt="${data.name}" id="current-image-${normalizedName}" />
-            ${encodedImages.length > 1 ? `<button class="nav prev" id="prev-${normalizedName}" aria-label="Previous image">&#10094;</button>` : ''}
-            ${encodedImages.length > 1 ? `<button class="nav next" id="next-${normalizedName}" aria-label="Next image">&#10095;</button>` : ''}
             <div class="slider" id="slider-${normalizedName}">
                 ${encodedImages.map((_, index) => `
                     <div class="${index === 0 ? 'active' : ''}" data-index="${index}" aria-label="Go to image ${index+1}" role="button" tabindex="0"></div>
@@ -71,8 +69,8 @@ function createProductCard(data) {
 
     // Click on container cycles forward (only if multiple images and white mode inactive)
     card.querySelector(`#image-container-${normalizedName}`).addEventListener('click', (e) => {
-        // Ignore clicks on nav buttons or dots
-        if (e.target.closest('.nav') || e.target.closest('#slider-'+normalizedName)) return;
+        // Ignore clicks directly on a dot (handled separately)
+        if (e.target.closest('#slider-'+normalizedName)) return;
         if (isWhiteButtonActive || encodedImages.length < 2) return;
         setImageByIndex(currentIndex + 1);
     });
@@ -93,11 +91,7 @@ function createProductCard(data) {
         });
     });
 
-    // Prev / Next buttons
-    const prevBtn = card.querySelector(`#prev-${normalizedName}`);
-    const nextBtn = card.querySelector(`#next-${normalizedName}`);
-    if (prevBtn) prevBtn.addEventListener('click', (e) => { e.stopPropagation(); if (!isWhiteButtonActive) setImageByIndex(currentIndex - 1); });
-    if (nextBtn) nextBtn.addEventListener('click', (e) => { e.stopPropagation(); if (!isWhiteButtonActive) setImageByIndex(currentIndex + 1); });
+    // (Prev/Next arrows removed per request)
     });
 
     if (whiteButton) {
