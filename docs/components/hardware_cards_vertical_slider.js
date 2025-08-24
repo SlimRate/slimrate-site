@@ -6,12 +6,17 @@ function createProductCard(data) {
     const card = document.createElement('div');
     card.className = "product-card";
     
+    // Pre-encode image paths (spaces / unicode) for safety
+    const encodedImages = (data.images || []).map(src => encodeURI(src));
+
     card.innerHTML = `
         <div class="image-container" id="image-container-${normalizedName}">
-            <img src="${data.images[0]}" alt="${data.name}" id="current-image-${normalizedName}" />
+            <img src="${encodedImages[0] || ''}" alt="${data.name}" id="current-image-${normalizedName}" />
+            ${encodedImages.length > 1 ? `<button class="nav prev" id="prev-${normalizedName}" aria-label="Previous image">&#10094;</button>` : ''}
+            ${encodedImages.length > 1 ? `<button class="nav next" id="next-${normalizedName}" aria-label="Next image">&#10095;</button>` : ''}
             <div class="slider" id="slider-${normalizedName}">
-                ${data.images.map((_, index) => `
-                    <div class="${index === 0 ? 'active' : ''}" data-index="${index}"></div>
+                ${encodedImages.map((_, index) => `
+                    <div class="${index === 0 ? 'active' : ''}" data-index="${index}" aria-label="Go to image ${index+1}" role="button" tabindex="0"></div>
                 `).join('')}
             </div>
         </div>
@@ -56,15 +61,43 @@ function createProductCard(data) {
     let currentIndex = 0;
 
     card.querySelector(`#image-container-${normalizedName}`).addEventListener('click', () => {
-        if (isWhiteButtonActive) return;
+    const setImageByIndex = (idx) => {
+        if (!encodedImages.length) return;
+        currentIndex = ((idx % encodedImages.length) + encodedImages.length) % encodedImages.length;
+        imageElement.src = encodedImages[currentIndex];
+        const sliderDots = card.querySelectorAll(`#slider-${normalizedName} div`);
+        sliderDots.forEach((dot, i) => dot.classList.toggle('active', i === currentIndex));
+    };
 
-        currentIndex = (currentIndex + 1) % data.images.length;
-        imageElement.src = data.images[currentIndex];
+    // Click on container cycles forward (only if multiple images and white mode inactive)
+    card.querySelector(`#image-container-${normalizedName}`).addEventListener('click', (e) => {
+        // Ignore clicks on nav buttons or dots
+        if (e.target.closest('.nav') || e.target.closest('#slider-'+normalizedName)) return;
+        if (isWhiteButtonActive || encodedImages.length < 2) return;
+        setImageByIndex(currentIndex + 1);
+    });
 
-        const sliderElements = card.querySelectorAll(`#slider-${normalizedName} div`);
-        sliderElements.forEach((dot, index) => {
-            dot.classList.toggle('active', index === currentIndex);
+    // Dot (slider) click / keyboard navigation
+    const sliderDots = card.querySelectorAll(`#slider-${normalizedName} div`);
+    sliderDots.forEach(dot => {
+        dot.addEventListener('click', () => {
+            if (isWhiteButtonActive) return;
+            const idx = parseInt(dot.getAttribute('data-index'));
+            setImageByIndex(idx);
         });
+        dot.addEventListener('keydown', (ev) => {
+            if (ev.key === 'Enter' || ev.key === ' ') {
+                ev.preventDefault();
+                dot.click();
+            }
+        });
+    });
+
+    // Prev / Next buttons
+    const prevBtn = card.querySelector(`#prev-${normalizedName}`);
+    const nextBtn = card.querySelector(`#next-${normalizedName}`);
+    if (prevBtn) prevBtn.addEventListener('click', (e) => { e.stopPropagation(); if (!isWhiteButtonActive) setImageByIndex(currentIndex - 1); });
+    if (nextBtn) nextBtn.addEventListener('click', (e) => { e.stopPropagation(); if (!isWhiteButtonActive) setImageByIndex(currentIndex + 1); });
     });
 
     if (whiteButton) {
@@ -84,12 +117,14 @@ function createProductCard(data) {
                 sliderElement.style.display = 'flex';
             }
             imageElement.src = data.images[0];
+            imageElement.src = encodedImages[0];
             currentIndex = 0;
             const sliderElements = card.querySelectorAll(`#slider-${normalizedName} div`);
             sliderElements.forEach((dot, index) => {
                 dot.classList.toggle('active', index === 0);
+                sliderElement.style.display = 'flex';
             });
-            isWhiteButtonActive = false;
+                imageElement.src = encodedImages[0];
         });
     }
 

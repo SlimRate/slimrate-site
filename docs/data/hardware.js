@@ -7,8 +7,8 @@ const productGroups = [
                 name: "SR Falcon",
                 text: "Slimrate Falcon delivers flagship performance with an ultra-bright display ideal for any lighting and a modular I/O bay for peripherals. Built for speed, durability, and nonstop service.",
                 available: true,
-                costForBlack: 1299,
-                costForWhite: 1299,
+                costForBlack: 999,
+                costForWhite: 999,
                 availableColors: ["black"],
                 images: [
                     "assets/img/products/hardware/falcon/80 printer -1.png",
