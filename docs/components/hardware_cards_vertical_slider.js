@@ -42,6 +42,17 @@ function createProductCard(data) {
     const blackButton = card.querySelector(`#black-button-${normalizedName}`);
     let isWhiteButtonActive = false;
 
+    // Handle single-color products (e.g., Falcon, Swan) by hiding the white option
+    const hasSingleColor = Array.isArray(data.availableColors) && data.availableColors.length === 1;
+    if (hasSingleColor) {
+        if (whiteButton) whiteButton.style.display = 'none';
+        // If only black color, also hide the Color: label container if desired
+        const colorLabelWrapper = card.querySelector('.color-options')?.parentElement?.parentElement;
+        if (colorLabelWrapper) {
+            // Keep label but could remove if necessary; currently leaving for consistency
+        }
+    }
+
     let currentIndex = 0;
 
     card.querySelector(`#image-container-${normalizedName}`).addEventListener('click', () => {
@@ -56,31 +67,31 @@ function createProductCard(data) {
         });
     });
 
-    whiteButton.addEventListener('click', () => {
-        if (sliderElement) {
-            sliderElement.style.display = 'none';
-        }
-
-        imageElement.src = 'assets/img/gallery/hardware/not in stock.png';
-       
-        isWhiteButtonActive = true;
-    });
-
-    blackButton.addEventListener('click', () => {
-        if (sliderElement) {
-            sliderElement.style.display = 'flex';
-        }
-
-        imageElement.src = data.images[0];
-        currentIndex = 0;
-
-        const sliderElements = card.querySelectorAll(`#slider-${normalizedName} div`);
-        sliderElements.forEach((dot, index) => {
-            dot.classList.toggle('active', index === 0);
+    if (whiteButton) {
+        whiteButton.addEventListener('click', () => {
+            if (hasSingleColor) return; // ignore clicks when single color
+            if (sliderElement) {
+                sliderElement.style.display = 'none';
+            }
+            imageElement.src = 'assets/img/gallery/hardware/not in stock.png';
+            isWhiteButtonActive = true;
         });
+    }
 
-        isWhiteButtonActive = false;
-    });
+    if (blackButton) {
+        blackButton.addEventListener('click', () => {
+            if (sliderElement) {
+                sliderElement.style.display = 'flex';
+            }
+            imageElement.src = data.images[0];
+            currentIndex = 0;
+            const sliderElements = card.querySelectorAll(`#slider-${normalizedName} div`);
+            sliderElements.forEach((dot, index) => {
+                dot.classList.toggle('active', index === 0);
+            });
+            isWhiteButtonActive = false;
+        });
+    }
 
     return card;
 }

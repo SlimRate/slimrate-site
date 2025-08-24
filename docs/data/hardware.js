@@ -2,6 +2,34 @@ const productGroups = [
     {
         label: "Tablets",
         products: [
+            // Newly added high-end tablets (Falcon & Swan) inserted at top of list per request
+            {
+                name: "SR Falcon",
+                text: "Slimrate Falcon delivers flagship performance with an ultra-bright display ideal for any lighting and a modular I/O bay for peripherals. Built for speed, durability, and nonstop service.",
+                available: true,
+                costForBlack: 1299,
+                costForWhite: 1299,
+                availableColors: ["black"],
+                images: [
+                    "assets/img/products/hardware/falcon/80 printer -1.png",
+                    "assets/img/products/hardware/falcon/80 printer -2.png",
+                    "assets/img/products/hardware/falcon/80 printer -3.png",
+                    "assets/img/products/hardware/falcon/80 printer -4.png",
+                ],
+            },
+            {
+                name: "SR Swan",
+                text: "Slimrate Swan is a sleek, silent, fanless tablet POS with long-life components and premium aesthetics for front‑of‑house presentation.",
+                available: true,
+                costForBlack: 1199,
+                costForWhite: 1199,
+                availableColors: ["black"],
+                images: [
+                    "assets/img/products/hardware/swan 2/Swan2main.png",
+                    "assets/img/products/hardware/swan 2/Swan2front.png",
+                    "assets/img/products/hardware/swan 2/Swan2back.png",
+                ],
+            },
             {
                 name: "SR155 Duo",
                 text: "Our double display POS system ensures seamless interaction for both customers and staff. Featuring a customer-facing display, it enhances transparency and engagement at the point of sale. Slimrate SR155 Duo 	15.6” + 10.1” Touchscreen terminal",
