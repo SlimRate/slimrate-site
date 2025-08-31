@@ -135,16 +135,7 @@ const productGroups = [
               ],
           },
 
-          {
-              name: "E700",
-              text: "Experience the power of all-in-one payments with the E700 Payment Terminal. Featuring a large touchscreen and advanced processing capabilities, it simplifies transactions and enhances customer experience.",
-              available: true,
-              costForBlack: 950,
-              costForWhite: 950,
-              images: [
-                  "assets/img/gallery/hardware/E700 Payment Terminal 1.png",
-              ],
-          }
+          // E700 removed per request
       ]
   },
   {
