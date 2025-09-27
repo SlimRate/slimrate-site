@@ -2,6 +2,34 @@ const productGroups = [
     {
         label: "Tablets",
         products: [
+            // Newly added high-end tablets (Falcon & Swan) inserted at top of list per request
+            {
+                name: "SR Falcon",
+                text: "Slimrate Falcon delivers flagship performance with an ultra-bright display ideal for any lighting and a modular I/O bay for peripherals. Built for speed, durability, and nonstop service.",
+                available: true,
+                costForBlack: 999,
+                costForWhite: 999,
+                availableColors: ["black"],
+                images: [
+                    "assets/img/products/hardware/falcon/80 printer -1.png",
+                    "assets/img/products/hardware/falcon/80 printer -2.png",
+                    "assets/img/products/hardware/falcon/80 printer -3.png",
+                    "assets/img/products/hardware/falcon/80 printer -4.png",
+                ],
+            },
+            {
+                name: "SR Swan",
+                text: "Slimrate Swan is a sleek, silent, fanless tablet POS with long-life components and premium aesthetics for front‑of‑house presentation.",
+                available: true,
+                costForBlack: 1199,
+                costForWhite: 1199,
+                availableColors: ["black"],
+                images: [
+                    "assets/img/products/hardware/swan 2/Swan2main.png",
+                    "assets/img/products/hardware/swan 2/Swan2front.png",
+                    "assets/img/products/hardware/swan 2/Swan2back.png",
+                ],
+            },
             {
                 name: "SR155 Duo",
                 text: "Our double display POS system ensures seamless interaction for both customers and staff. Featuring a customer-facing display, it enhances transparency and engagement at the point of sale. Slimrate SR155 Duo 	15.6” + 10.1” Touchscreen terminal",
@@ -25,20 +53,7 @@ const productGroups = [
                     "assets/img/gallery/hardware/SR155 Solo 2.png",
                 ],
             },
-            {
-              name: "SR155 Combo",
-              text: "This Slimrate device is a compact point-of-sale system featuring dual screens for customer and operator interaction. It includes a built-in cash drawer and printer, making it an efficient solution for retail and hospitality. Its sleek design enhance both functionality and user experience in busy service environments.",
-              available: true,
-              costForBlack: 2400,
-              costForWhite: 2400,
-              images: [
-                  "assets/img/gallery/hardware/POS Terminal M155 1.png",
-                  "assets/img/gallery/hardware/POS Terminal M155 2.png",
-                  "assets/img/gallery/hardware/POS Terminal M155 3.png",
-                  "assets/img/gallery/hardware/POS Terminal M155 4.png",
-                  
-              ],
-          }
+            // SR155 Combo removed per request
         ]
     },
     {
@@ -135,16 +150,7 @@ const productGroups = [
                 ],
             },
   
-            {
-                name: "E700",
-                text: "Experience the power of all-in-one payments with the E700 Payment Terminal. Featuring a large touchscreen and advanced processing capabilities, it simplifies transactions and enhances customer experience.",
-                available: true,
-                costForBlack: 950,
-                costForWhite: 950,
-                images: [
-                    "assets/img/gallery/hardware/E700 Payment Terminal 1.png",
-                ],
-            }
+            // E700 removed per request
         ]
     },
     {

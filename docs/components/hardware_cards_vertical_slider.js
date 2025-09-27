@@ -6,12 +6,15 @@ function createProductCard(data) {
     const card = document.createElement('div');
     card.className = "product-card";
     
+    // Pre-encode image paths (spaces / unicode) for safety
+    const encodedImages = (data.images || []).map(src => encodeURI(src));
+
     card.innerHTML = `
         <div class="image-container" id="image-container-${normalizedName}">
-            <img src="${data.images[0]}" alt="${data.name}" id="current-image-${normalizedName}" />
+            <img src="${encodedImages[0] || ''}" alt="${data.name}" id="current-image-${normalizedName}" />
             <div class="slider" id="slider-${normalizedName}">
-                ${data.images.map((_, index) => `
-                    <div class="${index === 0 ? 'active' : ''}" data-index="${index}"></div>
+                ${encodedImages.map((_, index) => `
+                    <div class="${index === 0 ? 'active' : ''}" data-index="${index}" aria-label="Go to image ${index+1}" role="button" tabindex="0"></div>
                 `).join('')}
             </div>
         </div>
@@ -42,45 +45,82 @@ function createProductCard(data) {
     const blackButton = card.querySelector(`#black-button-${normalizedName}`);
     let isWhiteButtonActive = false;
 
+    // Handle single-color products (e.g., Falcon, Swan) by hiding the white option
+    const hasSingleColor = Array.isArray(data.availableColors) && data.availableColors.length === 1;
+    if (hasSingleColor) {
+        if (whiteButton) whiteButton.style.display = 'none';
+        // If only black color, also hide the Color: label container if desired
+        const colorLabelWrapper = card.querySelector('.color-options')?.parentElement?.parentElement;
+        if (colorLabelWrapper) {
+            // Keep label but could remove if necessary; currently leaving for consistency
+        }
+    }
+
     let currentIndex = 0;
 
     card.querySelector(`#image-container-${normalizedName}`).addEventListener('click', () => {
-        if (isWhiteButtonActive) return;
+    const setImageByIndex = (idx) => {
+        if (!encodedImages.length) return;
+        currentIndex = ((idx % encodedImages.length) + encodedImages.length) % encodedImages.length;
+        imageElement.src = encodedImages[currentIndex];
+        const sliderDots = card.querySelectorAll(`#slider-${normalizedName} div`);
+        sliderDots.forEach((dot, i) => dot.classList.toggle('active', i === currentIndex));
+    };
 
-        currentIndex = (currentIndex + 1) % data.images.length;
-        imageElement.src = data.images[currentIndex];
+    // Click on container cycles forward (only if multiple images and white mode inactive)
+    card.querySelector(`#image-container-${normalizedName}`).addEventListener('click', (e) => {
+        // Ignore clicks directly on a dot (handled separately)
+        if (e.target.closest('#slider-'+normalizedName)) return;
+        if (isWhiteButtonActive || encodedImages.length < 2) return;
+        setImageByIndex(currentIndex + 1);
+    });
 
-        const sliderElements = card.querySelectorAll(`#slider-${normalizedName} div`);
-        sliderElements.forEach((dot, index) => {
-            dot.classList.toggle('active', index === currentIndex);
+    // Dot (slider) click / keyboard navigation
+    const sliderDots = card.querySelectorAll(`#slider-${normalizedName} div`);
+    sliderDots.forEach(dot => {
+        dot.addEventListener('click', () => {
+            if (isWhiteButtonActive) return;
+            const idx = parseInt(dot.getAttribute('data-index'));
+            setImageByIndex(idx);
+        });
+        dot.addEventListener('keydown', (ev) => {
+            if (ev.key === 'Enter' || ev.key === ' ') {
+                ev.preventDefault();
+                dot.click();
+            }
         });
     });
 
-    whiteButton.addEventListener('click', () => {
-        if (sliderElement) {
-            sliderElement.style.display = 'none';
-        }
-
-        imageElement.src = 'assets/img/gallery/hardware/not in stock.png';
-       
-        isWhiteButtonActive = true;
+    // (Prev/Next arrows removed per request)
     });
 
-    blackButton.addEventListener('click', () => {
-        if (sliderElement) {
-            sliderElement.style.display = 'flex';
-        }
-
-        imageElement.src = data.images[0];
-        currentIndex = 0;
-
-        const sliderElements = card.querySelectorAll(`#slider-${normalizedName} div`);
-        sliderElements.forEach((dot, index) => {
-            dot.classList.toggle('active', index === 0);
+    if (whiteButton) {
+        whiteButton.addEventListener('click', () => {
+            if (hasSingleColor) return; // ignore clicks when single color
+            if (sliderElement) {
+                sliderElement.style.display = 'none';
+            }
+            imageElement.src = 'assets/img/gallery/hardware/not in stock.png';
+            isWhiteButtonActive = true;
         });
+    }
 
-        isWhiteButtonActive = false;
-    });
+    if (blackButton) {
+        blackButton.addEventListener('click', () => {
+            if (sliderElement) {
+                sliderElement.style.display = 'flex';
+            }
+            imageElement.src = data.images[0];
+            imageElement.src = encodedImages[0];
+            currentIndex = 0;
+            const sliderElements = card.querySelectorAll(`#slider-${normalizedName} div`);
+            sliderElements.forEach((dot, index) => {
+                dot.classList.toggle('active', index === 0);
+                sliderElement.style.display = 'flex';
+            });
+                imageElement.src = encodedImages[0];
+        });
+    }
 
     return card;
 }
