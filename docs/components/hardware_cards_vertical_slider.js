@@ -1,21 +1,38 @@
-import productGroups from '/data/hardware.js';
+import productGroups from '../data/hardware.js';
+
+const NOT_IN_STOCK_IMAGE = 'assets/img/gallery/hardware/not in stock.png';
+const ACTIVATION_KEYS = ['Enter', ' '];
+
+const sanitizeImages = (images) => {
+    if (!Array.isArray(images)) {
+        return [];
+    }
+
+    return images
+        .map((src) => (typeof src === 'string' ? src.trim() : ''))
+        .filter(Boolean);
+};
+
+const createSliderDotsMarkup = (count) =>
+    Array.from({ length: count }, (_, index) => `
+                    <div class="${index === 0 ? 'active' : ''}" data-index="${index}" role="button" tabindex="0" aria-label="Show image ${index + 1}"></div>
+                `).join('');
 
 function createProductCard(data) {
     const normalizedName = data.name.replace(/\s+/g, '_');
-    
+
     const card = document.createElement('div');
     card.className = "product-card";
-    
-    // Pre-encode image paths (spaces / unicode) for safety
-    const encodedImages = (data.images || []).map(src => encodeURI(src));
+
+    const sanitizedImages = sanitizeImages(data.images);
+    const encodedImages = sanitizedImages.map((src) => encodeURI(src));
+    const initialImage = encodedImages[0] || "";
 
     card.innerHTML = `
-        <div class="image-container" id="image-container-${normalizedName}">
-            <img src="${encodedImages[0] || ''}" alt="${data.name}" id="current-image-${normalizedName}" />
-            <div class="slider" id="slider-${normalizedName}">
-                ${encodedImages.map((_, index) => `
-                    <div class="${index === 0 ? 'active' : ''}" data-index="${index}" aria-label="Go to image ${index+1}" role="button" tabindex="0"></div>
-                `).join('')}
+        <div class="image-container" id="image-container-${normalizedName}" role="button" tabindex="0" aria-label="Cycle product images">
+            <img src="${initialImage}" alt="${data.name}" id="current-image-${normalizedName}" />
+            <div class="slider" id="slider-${normalizedName}" aria-live="polite">
+                ${createSliderDotsMarkup(encodedImages.length)}
             </div>
         </div>
         <div class="mainContainer">
@@ -39,91 +56,136 @@ function createProductCard(data) {
         </div>
     `;
 
+    const imageContainer = card.querySelector(`#image-container-${normalizedName}`);
     const imageElement = card.querySelector(`#current-image-${normalizedName}`);
     const sliderElement = card.querySelector(`#slider-${normalizedName}`);
+    const sliderDots = Array.from(card.querySelectorAll(`#slider-${normalizedName} div`));
     const whiteButton = card.querySelector(`#white-button-${normalizedName}`);
     const blackButton = card.querySelector(`#black-button-${normalizedName}`);
+
     let isWhiteButtonActive = false;
-
-    // Handle single-color products (e.g., Falcon, Swan) by hiding the white option
-    const hasSingleColor = Array.isArray(data.availableColors) && data.availableColors.length === 1;
-    if (hasSingleColor) {
-        if (whiteButton) whiteButton.style.display = 'none';
-        // If only black color, also hide the Color: label container if desired
-        const colorLabelWrapper = card.querySelector('.color-options')?.parentElement?.parentElement;
-        if (colorLabelWrapper) {
-            // Keep label but could remove if necessary; currently leaving for consistency
-        }
-    }
-
     let currentIndex = 0;
 
-    card.querySelector(`#image-container-${normalizedName}`).addEventListener('click', () => {
-    const setImageByIndex = (idx) => {
-        if (!encodedImages.length) return;
-        currentIndex = ((idx % encodedImages.length) + encodedImages.length) % encodedImages.length;
-        imageElement.src = encodedImages[currentIndex];
-        const sliderDots = card.querySelectorAll(`#slider-${normalizedName} div`);
-        sliderDots.forEach((dot, i) => dot.classList.toggle('active', i === currentIndex));
+    const toggleSlider = (shouldShow) => {
+        if (!sliderElement) {
+            return;
+        }
+
+        const canShow = shouldShow && encodedImages.length > 0;
+        sliderElement.style.display = canShow ? 'flex' : 'none';
+        sliderElement.setAttribute('aria-hidden', canShow ? 'false' : 'true');
     };
 
-    // Click on container cycles forward (only if multiple images and white mode inactive)
-    card.querySelector(`#image-container-${normalizedName}`).addEventListener('click', (e) => {
-        // Ignore clicks directly on a dot (handled separately)
-        if (e.target.closest('#slider-'+normalizedName)) return;
-        if (isWhiteButtonActive || encodedImages.length < 2) return;
+    const setImageByIndex = (index) => {
+        if (!encodedImages.length) {
+            return;
+        }
+
+        const normalizedIndex = ((index % encodedImages.length) + encodedImages.length) % encodedImages.length;
+        currentIndex = normalizedIndex;
+        imageElement.src = encodedImages[normalizedIndex];
+        sliderDots.forEach((dot, dotIndex) => {
+            dot.classList.toggle('active', dotIndex === normalizedIndex);
+        });
+    };
+
+    const cycleForward = () => {
+        if (isWhiteButtonActive || encodedImages.length < 2) {
+            return;
+        }
+
         setImageByIndex(currentIndex + 1);
+    };
+
+    imageContainer.addEventListener('click', (event) => {
+        if (event.target.closest(`#slider-${normalizedName}`)) {
+            return;
+        }
+
+        cycleForward();
     });
 
-    // Dot (slider) click / keyboard navigation
-    const sliderDots = card.querySelectorAll(`#slider-${normalizedName} div`);
-    sliderDots.forEach(dot => {
+    imageContainer.addEventListener('keydown', (event) => {
+        if (!ACTIVATION_KEYS.includes(event.key)) {
+            return;
+        }
+
+        event.preventDefault();
+        cycleForward();
+    });
+
+    sliderDots.forEach((dot) => {
+        const dotIndex = Number.parseInt(dot.getAttribute('data-index'), 10);
+
         dot.addEventListener('click', () => {
-            if (isWhiteButtonActive) return;
-            const idx = parseInt(dot.getAttribute('data-index'));
-            setImageByIndex(idx);
-        });
-        dot.addEventListener('keydown', (ev) => {
-            if (ev.key === 'Enter' || ev.key === ' ') {
-                ev.preventDefault();
-                dot.click();
+            if (isWhiteButtonActive || Number.isNaN(dotIndex)) {
+                return;
             }
+
+            setImageByIndex(dotIndex);
+        });
+
+        dot.addEventListener('keydown', (event) => {
+            if (!ACTIVATION_KEYS.includes(event.key)) {
+                return;
+            }
+
+            event.preventDefault();
+            dot.click();
         });
     });
 
-    // (Prev/Next arrows removed per request)
-    });
+    const hasSingleColor = Array.isArray(data.availableColors) && data.availableColors.length === 1;
 
     if (whiteButton) {
+        whiteButton.type = 'button';
+        whiteButton.setAttribute('aria-pressed', 'false');
+
+        if (hasSingleColor) {
+            whiteButton.style.display = 'none';
+            whiteButton.setAttribute('aria-hidden', 'true');
+        }
+
         whiteButton.addEventListener('click', () => {
-            if (hasSingleColor) return; // ignore clicks when single color
-            if (sliderElement) {
-                sliderElement.style.display = 'none';
+            if (hasSingleColor) {
+                return;
             }
-            imageElement.src = 'assets/img/gallery/hardware/not in stock.png';
+
+            toggleSlider(false);
+            imageElement.src = encodeURI(NOT_IN_STOCK_IMAGE);
             isWhiteButtonActive = true;
+            whiteButton.setAttribute('aria-pressed', 'true');
+            if (blackButton) {
+                blackButton.setAttribute('aria-pressed', 'false');
+            }
         });
     }
 
     if (blackButton) {
+        blackButton.type = 'button';
+        blackButton.setAttribute('aria-pressed', 'true');
+
         blackButton.addEventListener('click', () => {
-            if (sliderElement) {
-                sliderElement.style.display = 'flex';
+            toggleSlider(true);
+
+            if (encodedImages.length) {
+                setImageByIndex(0);
+            } else {
+                imageElement.removeAttribute('src');
             }
-            imageElement.src = data.images[0];
-            imageElement.src = encodedImages[0];
-            currentIndex = 0;
-            const sliderElements = card.querySelectorAll(`#slider-${normalizedName} div`);
-            sliderElements.forEach((dot, index) => {
-                dot.classList.toggle('active', index === 0);
-                sliderElement.style.display = 'flex';
-            });
-                imageElement.src = encodedImages[0];
+
+            isWhiteButtonActive = false;
+            blackButton.setAttribute('aria-pressed', 'true');
+            if (whiteButton && !hasSingleColor) {
+                whiteButton.setAttribute('aria-pressed', 'false');
+            }
         });
     }
 
+    toggleSlider(true);
     return card;
 }
+
 function createProductGroup(group) {
     const groupContainer = document.createElement('div');
     groupContainer.className = "product-group";
@@ -133,7 +195,9 @@ function createProductGroup(group) {
     label.className = "font-title text-2xl text-primary";
     groupContainer.appendChild(label);
 
-    group.products.forEach(product => {
+    const products = Array.isArray(group.products) ? group.products : [];
+
+    products.forEach((product) => {
         const card = createProductCard(product);
         groupContainer.appendChild(card);
     });
@@ -142,7 +206,10 @@ function createProductGroup(group) {
 }
 
 const container = document.getElementById('cards-container');
-productGroups.forEach(group => {
-    const groupContainer = createProductGroup(group);
-    container.appendChild(groupContainer);
-});
+
+if (container && Array.isArray(productGroups)) {
+    productGroups.forEach((group) => {
+        const groupContainer = createProductGroup(group);
+        container.appendChild(groupContainer);
+    });
+}

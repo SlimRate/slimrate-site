@@ -1,19 +1,29 @@
-
-
-import productGroups from '/data/hardware.js';
+import productGroups from '../../data/hardware.js';
 
 function createSlides() {
   const slidesContainer = document.getElementById('slides');
 
+  if (!slidesContainer || !Array.isArray(productGroups)) {
+    return;
+  }
+
   productGroups.forEach(group => {
+    if (!Array.isArray(group.products)) {
+      return;
+    }
+
     group.products.forEach(product => {
-      const imageSrc = product.images[0];
+      const firstImage = Array.isArray(product.images) && product.images.length > 0 ? product.images[0] : '';
+      const imageSrc = firstImage ? encodeURI(firstImage) : '';
       const productName = product.name;
       const deviceLabel = group.label;
 
       // Создаем элементы
       const figure = document.createElement('figure');
-      figure.dataset.productName = productName; 
+  figure.dataset.productName = productName; 
+  figure.tabIndex = 0;
+  figure.setAttribute('role', 'button');
+  figure.setAttribute('aria-label', `${deviceLabel}: ${productName}`);
 
       const img = document.createElement('img');
       img.src = imageSrc;
@@ -43,6 +53,12 @@ function createSlides() {
       slidesContainer.appendChild(figure);
 
       figure.addEventListener('click', () => openPopup(product));
+      figure.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          openPopup(product);
+        }
+      });
     });
   });
 }
@@ -54,9 +70,9 @@ function openPopup(product) {
   const existingContent = popupContent.querySelectorAll(':not(.close-btn)');
   existingContent.forEach(element => element.remove());
 
-  if (product.images.length > 0) {
+  if (Array.isArray(product.images) && product.images.length > 0) {
     const img = document.createElement('img');
-    img.src = product.images[0];
+    img.src = encodeURI(product.images[0]);
     img.alt = product.name;
     img.loading = 'lazy'; 
     popupContent.appendChild(img);

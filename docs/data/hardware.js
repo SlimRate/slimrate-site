@@ -1,4 +1,4 @@
-const productGroups = [
+const rawProductGroups = [
     {
         label: "Tablets",
         products: [
@@ -32,7 +32,7 @@ const productGroups = [
             },
             {
                 name: "SR155 Duo",
-                text: "Our double display POS system ensures seamless interaction for both customers and staff. Featuring a customer-facing display, it enhances transparency and engagement at the point of sale. Slimrate SR155 Duo 	15.6” + 10.1” Touchscreen terminal",
+                text: "Our double display POS system ensures seamless interaction for both customers and staff. Featuring a customer-facing display, it enhances transparency and engagement at the point of sale. Slimrate SR155 Duo \t15.6” + 10.1” Touchscreen terminal",
                 available: false,
                 costForBlack: 999,
                 costForWhite: 999,
@@ -54,7 +54,7 @@ const productGroups = [
                 ],
             },
             // SR155 Combo removed per request
-        ]
+        ],
     },
     {
         label: "Printers",
@@ -69,9 +69,8 @@ const productGroups = [
                     "assets/img/gallery/hardware/SR-TRP1 Thermal Receipt Printer 1.png",
                     "assets/img/gallery/hardware/SR-TRP1 Thermal Receipt Printer 2.png",
                 ],
-            }
-            
-        ]
+            },
+        ],
     },
     {
         label: "Cash Drawer",
@@ -86,8 +85,8 @@ const productGroups = [
                     "assets/img/gallery/hardware/SR-410 Cash Drawer 1.png",
                     "assets/img/gallery/hardware/SR-410 Cash Drawer 2.png",
                 ],
-            }
-        ]
+            },
+        ],
     },
     {
         label: "Scanners",
@@ -99,7 +98,7 @@ const productGroups = [
                 costForBlack: 279,
                 costForWhite: 279,
                 images: [
-                    "assets/img/gallery/hardware/SR-WHS1 Wired Table Scanner 1.png",,
+                    "assets/img/gallery/hardware/SR-WHS1 Wired Table Scanner 1.png",
                 ],
             },
             {
@@ -123,8 +122,8 @@ const productGroups = [
                 images: [
                     "assets/img/gallery/hardware/SR-WHS1.png",
                 ],
-            }
-        ]
+            },
+        ],
     },
     {
         label: "EMV Terminals",
@@ -149,9 +148,8 @@ const productGroups = [
                     "assets/img/gallery/hardware//A920 Payment Terminal 1.png",
                 ],
             },
-  
             // E700 removed per request
-        ]
+        ],
     },
     {
         label: "Scales",
@@ -166,7 +164,6 @@ const productGroups = [
                     "assets/img/gallery/hardware/DS1.png",
                 ],
             },
-            
             {
                 name: "AIScale POS S625",
                 text: "This Slimrate device combines a tablet interface with integrated scales and a receipt printer, offering a compact, efficient solution for retail environments. Perfect for weight-based transactions, it provides both the convenience of a touchscreen and the practicality of built-in printing.",
@@ -179,18 +176,54 @@ const productGroups = [
                 ],
             },
             {
-              name: "AIScale Label Printing S130",
-              text: "These smart labeling scales with an integrated camera by Slimrate offer accurate weighing and automated product identification. Ideal for retail environments, they simplify labeling processes and enhance operational efficiency, ensuring precise product information with minimal user input.",
-              available: true,
-              costForBlack: 1499,
-              costForWhite: 1499,
-              images: [
-                  "assets/img/gallery/hardware/AIScale Label Printing S130 1.png",
-                  "assets/img/gallery/hardware/AIScale Label Printing S130 2.png",
-              ],
-          },
-        ]
-    }
+                name: "AIScale Label Printing S130",
+                text: "These smart labeling scales with an integrated camera by Slimrate offer accurate weighing and automated product identification. Ideal for retail environments, they simplify labeling processes and enhance operational efficiency, ensuring precise product information with minimal user input.",
+                available: true,
+                costForBlack: 1499,
+                costForWhite: 1499,
+                images: [
+                    "assets/img/gallery/hardware/AIScale Label Printing S130 1.png",
+                    "assets/img/gallery/hardware/AIScale Label Printing S130 2.png",
+                ],
+            },
+        ],
+    },
 ];
+
+const normalizeImagePath = (src) => {
+    if (typeof src !== 'string') {
+        return '';
+    }
+
+    return src.trim().replace(/\\/g, '/').replace(/\/{2,}/g, '/');
+};
+
+const normalizeProductGroups = (groups) =>
+    groups.map((group) => ({
+        ...group,
+        products: Array.isArray(group.products)
+            ? group.products.map((product) => ({
+                  ...product,
+                  images: Array.isArray(product.images)
+                      ? product.images.map(normalizeImagePath).filter(Boolean)
+                      : [],
+              }))
+            : [],
+    }));
+
+const deepFreeze = (value) => {
+    if (value && typeof value === 'object' && !Object.isFrozen(value)) {
+        Object.freeze(value);
+        Object.keys(value).forEach((key) => {
+            deepFreeze(value[key]);
+        });
+    }
+
+    return value;
+};
+
+const productGroups = normalizeProductGroups(rawProductGroups);
+
+deepFreeze(productGroups);
 
 export default productGroups;
