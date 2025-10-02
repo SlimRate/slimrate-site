@@ -127,8 +127,16 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   const updateSlidePosition = () => {
-    const percentage = (100 / imagesPerView) * currentIndex;
-    slides.style.transform = `translateX(-${percentage}%)`;
+    const firstFigure = slides.querySelector('figure');
+    if (!firstFigure) {
+      return;
+    }
+
+    const styles = window.getComputedStyle(slides);
+    const gapValue = parseFloat(styles.gap || styles.columnGap || '0');
+    const stepWidth = firstFigure.offsetWidth + gapValue;
+    const offset = stepWidth * currentIndex;
+    slides.style.transform = `translateX(-${offset}px)`;
   };
 
   const nextSlide = () => {
