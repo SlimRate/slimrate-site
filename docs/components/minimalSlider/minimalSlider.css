@@ -23,6 +23,7 @@
   margin: 0;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   width: calc((100% - 30px) / 4);
   flex-shrink: 0;
@@ -31,6 +32,7 @@
   border-radius: 5px;
   cursor: pointer;
   transition: transform 0.3s, box-shadow 0.3s;
+  min-height: 340px;
 }
 
 .slides figure:hover {
@@ -39,7 +41,8 @@
 
 .slides img {
   width: 100%;
-  height: auto;
+  max-height: 220px;
+  height: 220px;
   object-fit: contain;
   border: 1px solid #ddd;
   border-radius: 5px;
@@ -187,12 +190,24 @@ button.next:hover {
 @media (max-width: 1024px) {
   .slides figure {
     width: calc((100% - 20px) / 3);
+    min-height: 320px;
+  }
+
+  .slides img {
+    height: 200px;
+    max-height: 200px;
   }
 }
 
 @media (max-width: 768px) {
   .slides figure {
     width: calc((100% - 10px) / 2);
+    min-height: 300px;
+  }
+
+  .slides img {
+    height: 190px;
+    max-height: 190px;
   }
 }
 
@@ -202,9 +217,11 @@ button.next:hover {
   }
   .slides figure {
     width: 100%;
+    min-height: 280px;
   }
   .slides img {
-    height: auto;
+    height: 180px;
+    max-height: 180px;
   }
   .slides figcaption {
     padding: 10px 5px;
