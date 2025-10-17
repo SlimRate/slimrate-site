@@ -10,106 +10,130 @@
     --sr-white: #FFFFFF;
     --slim-red: #ED1C24;
     --slim-blue: #0047FF;
+    --slim-white: #FFFFFF;
     --slim-dark-overlay: rgba(7, 27, 60, 0.60);
-    .contact__segment {
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-    }
+}
 
-    .contact__segment-label {
-        margin: 0;
-        font-size: 16px;
-        font-weight: 600;
-        color: rgba(255, 255, 255, 0.85);
-    }
+.contact__segment {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
 
-    .contact__segment-options {
-        display: inline-flex;
-        flex-wrap: wrap;
-        gap: 12px;
-    }
+.contact__segment-label {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.85);
+}
 
-    label.contact__segment-pill {
-        position: relative;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        padding: 0;
-        border-radius: 28px;
-        cursor: pointer;
-    }
+.contact__segment-options {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
 
-    .contact__segment-pill input {
-        position: absolute;
-        inset: 0;
-        opacity: 0;
-        cursor: pointer;
-    }
+label.contact__segment-pill {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border-radius: 28px;
+    cursor: pointer;
+}
 
-    .contact__segment-pill span {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        padding: 10px 24px;
-        border-radius: 28px;
-        border: 2px solid rgba(255, 255, 255, 0.6);
-        font-size: 16px;
-        font-weight: 600;
-        color: var(--slim-white);
-        background: transparent;
-        transition: all 0.2s ease;
-    }
+.contact__segment-pill input {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    cursor: pointer;
+}
 
-    .contact__segment-pill input:checked + span {
-        background: var(--slim-white);
-        border-color: var(--slim-white);
-        color: var(--slim-blue);
-    }
+.contact__segment-pill span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 24px;
+    border-radius: 28px;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--slim-white);
+    background: transparent;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
 
-    .contact__fields {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        column-gap: 20px;
-        row-gap: 16px;
-    }
+.contact__segment-pill input:checked + span {
+    background: var(--slim-white);
+    border-color: var(--slim-white);
+    color: var(--slim-blue);
+}
 
-    .contact__field input {
-        width: 100%;
-        height: 48px;
-        padding: 0 16px;
-        border: 2px solid rgba(255, 255, 255, 0.6);
-        border-radius: 24px;
-        background: transparent;
-        color: var(--slim-white);
-        font-size: 16px;
-        transition: border-color 0.2s ease, box-shadow 0.2s ease;
-    }
+.contact__segment-pill input:focus-visible + span {
+    outline: 3px solid rgba(0, 71, 255, 0.35);
+    outline-offset: 2px;
+}
 
-    .contact__field input::placeholder {
-        color: rgba(255, 255, 255, 0.6);
-    }
+.contact__fields {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 20px;
+    row-gap: 16px;
+}
 
-    .contact__field input:focus {
-        border-color: var(--slim-white);
-        outline: none;
-        box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
-    }
+.contact__field {
+    width: 100%;
+}
 
-    .contact__field--full {
-        grid-column: 1 / -1;
-    }
+.contact__field input,
+.contact__field select,
+.contact__field textarea {
+    width: 100%;
+    height: 48px;
+    padding: 0 16px;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    border-radius: 24px;
+    background: transparent;
+    color: var(--slim-white);
+    font-size: 16px;
+    transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
 
-    .contact__actions {
-        display: flex;
-        justify-content: center;
-        margin-top: 24px;
-    }
+.contact__field textarea {
+    padding: 12px 16px;
+    min-height: 120px;
+    resize: vertical;
+}
 
-    .contact__submit {
-        width: 140px;
-    }
+.contact__field input::placeholder,
+.contact__field textarea::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
 
+.contact__field input:focus,
+.contact__field input:focus-visible,
+.contact__field select:focus,
+.contact__field select:focus-visible,
+.contact__field textarea:focus,
+.contact__field textarea:focus-visible {
+    border-color: var(--slim-white);
+    outline: 3px solid rgba(0, 71, 255, 0.35);
+    outline-offset: 2px;
+}
+
+.contact__field--full {
+    grid-column: 1 / -1;
+}
+
+.contact__actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+}
+
+.contact__submit {
+    width: 140px;
 }
 
 a {
@@ -132,11 +156,28 @@ body {
 
 button,
 input,
-select {
+select,
+textarea {
     font-family: "Inter", "Poppins", "Segoe UI", Roboto, Arial, sans-serif;
     font-size: 16px;
     line-height: 1.6;
     color: var(--slim-text-dark);
+}
+
+input,
+select,
+textarea {
+    transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+input:focus,
+input:focus-visible,
+select:focus,
+select:focus-visible,
+textarea:focus,
+textarea:focus-visible {
+    outline: 3px solid rgba(0, 71, 255, 0.35);
+    outline-offset: 2px;
 }
 
 h1,
@@ -215,84 +256,96 @@ p {
     margin-bottom: 16px;
 }
 
-.sr-btn {
+.sr-btn,
+.btn-red,
+.btn-blue,
+.sr-btn-secondary,
+.company-equip__cta,
+.contact__submit {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     padding: 12px 22px;
     border-radius: 24px;
+    border: none;
     font-size: 16px;
     font-weight: 600;
     letter-spacing: 0.2px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, filter 0.2s ease;
+}
+
+.sr-btn {
     color: #FFFFFF;
     background-color: var(--sr-red);
-    border: none;
     box-shadow: 0 6px 18px rgba(237, 28, 36, 0.18);
-    cursor: pointer;
-    transition: all 0.2s ease;
-    text-decoration: none;
 }
 
 .sr-btn:hover {
-    background-color: #DF1A22;
-}
-
-.sr-btn:focus,
-.sr-btn:focus-visible {
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(237, 28, 36, 0.25);
+    background-color: color-mix(in srgb, var(--sr-red) 94%, #ffffff 6%);
 }
 
 .sr-btn-secondary {
+    color: #FFFFFF;
     background-color: var(--sr-blue);
     box-shadow: 0 6px 18px rgba(0, 71, 255, 0.18);
 }
 
 .sr-btn-secondary:hover {
-    background-color: #0043F0;
-}
-
-.sr-btn-secondary:focus,
-.sr-btn-secondary:focus-visible {
-    box-shadow: 0 0 0 3px rgba(0, 71, 255, 0.25);
+    background-color: color-mix(in srgb, var(--sr-blue) 94%, #ffffff 6%);
 }
 
 .btn-red,
-.btn-blue {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 12px 22px;
-    border-radius: 24px;
-    border: none;
-    font-size: 16px;
-    font-weight: 600;
+.company-equip__cta,
+.contact__submit {
     color: var(--slim-white);
+    background-color: var(--slim-red);
     box-shadow: 0 6px 18px rgba(237, 28, 36, 0.18);
-    transition: background 0.2s ease;
-    text-decoration: none;
-    cursor: pointer;
 }
 
-.btn-red {
-    background: var(--slim-red);
-}
-
-.btn-red:hover {
-    background: #DF1A22;
+.btn-red:hover,
+.company-equip__cta:hover,
+.contact__submit:hover {
+    background-color: color-mix(in srgb, var(--slim-red) 94%, #ffffff 6%);
 }
 
 .btn-blue {
-    background: var(--slim-blue);
+    color: var(--slim-white);
+    background-color: var(--slim-blue);
+    box-shadow: 0 6px 18px rgba(0, 71, 255, 0.18);
 }
 
 .btn-blue:hover {
-    background: #0043F0;
+    background-color: color-mix(in srgb, var(--slim-blue) 94%, #ffffff 6%);
 }
 
 button {
     cursor: pointer;
     border: none;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, filter 0.2s ease;
+}
+
+button:not(.btn-red):not(.btn-blue):not(.sr-btn):not(.sr-btn-secondary):hover {
+    filter: brightness(1.06);
+}
+
+button:focus,
+button:focus-visible,
+.sr-btn:focus,
+.sr-btn:focus-visible,
+.sr-btn-secondary:focus,
+.sr-btn-secondary:focus-visible,
+.btn-red:focus,
+.btn-red:focus-visible,
+.btn-blue:focus,
+.btn-blue:focus-visible,
+.company-equip__cta:focus,
+.company-equip__cta:focus-visible,
+.contact__submit:focus,
+.contact__submit:focus-visible {
+    outline: 3px solid rgba(0, 71, 255, 0.35);
+    outline-offset: 2px;
 }
 
 .nav-body {
@@ -693,36 +746,34 @@ button {
 }
 
 .btn-red {
-    background: #ef2b23;
-    border: 1px solid #ef2b23;
-    color: #fff;
+    background: var(--slim-red);
+    border: none;
+    color: var(--slim-white);
     box-sizing: border-box;
     display: inline-block;
 }
 
 .btn-blue {
-    background: #2B6BF3;
-    border: 1px solid #2B6BF3;
-    color: #fff;
+    background: var(--slim-blue);
+    border: none;
+    color: var(--slim-white);
     box-sizing: border-box;
     display: inline-block;
     margin-left: 0px !important;
 }
 
 .btn-blue:hover {
-    background: #fff;
-    border: 1px solid #2B6BF3;
-    color: #2B6BF3;
-    transition: 0.3s linear;
-    box-sizing: border-box;
+    background: color-mix(in srgb, var(--slim-blue) 94%, #ffffff 6%);
+    border: none;
+    color: var(--slim-white);
+    transition: background-color 0.2s ease;
 }
 
 .btn-red:hover {
-    background: #fff;
-    border: 1px solid #ef2b23;
-    color: #ef2b23;
-    transition: 0.3s linear;
-    box-sizing: border-box;
+    background: color-mix(in srgb, var(--slim-red) 94%, #ffffff 6%);
+    border: none;
+    color: var(--slim-white);
+    transition: background-color 0.2s ease;
 }
 
 .btn-white {
