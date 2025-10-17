@@ -2433,17 +2433,58 @@ label.has-value {
 .faq .container {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
-    justify-content: space-between;
-    max-width: 960px;
+    justify-content: flex-start;
+    max-width: 100%;
 }
 
 .faq-block__left {
-    max-width: 310px;
+    background: var(--slim-white);
+    padding: 32px;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+    max-width: 100%;
 }
 
-.faq-block__right {
-    max-width: 460px;
-    width: 100%;
+.faq-heading {
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--slim-text-dark);
+    margin: 0;
+}
+
+.faq-subtitle {
+    font-size: 18px;
+    color: var(--slim-text-grey);
+    margin: 0 0 20px;
+}
+
+.faq-cta {
+    width: 240px;
+    height: 50px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 16px;
+}
+
+.faq-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.faq-contact__link {
+    font-size: 16px;
+    color: var(--slim-text-grey);
+    text-decoration: none;
+}
+
+.faq-contact__link:hover {
+    text-decoration: underline;
 }
 
 .faq-question {

@@ -3,11 +3,13 @@ miniFAQTemplate.innerHTML = `
 <section class="faq">
             <div class="container faq__layout">
                 <div class="faq-block__left">
-                    <h2 class="section-title">FAQ</h2>
-                    <p class="section-descr">
-                        Haven’t find the answer? <br /> Call us at
-                    </p>
-                    <a href="tel:(888)9774533">(888)977-4533</a>
+                    <h2 class="faq-heading">FAQ</h2>
+                    <p class="faq-subtitle">Haven’t find the answer?</p>
+                    <a class="btn-blue faq-cta" href="company.html#faq">More Answers to Your Questions</a>
+                    <div class="faq-contact">
+                        <a class="faq-contact__link" href="mailto:info@slimrate.com">info@slimrate.com</a>
+                        <a class="faq-contact__link" href="tel:(888)9774533">(888) 977-4533</a>
+                    </div>
                 </div>
                 <div class="faq-block__right">
                     <div class="faq-question">
