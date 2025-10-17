@@ -4,18 +4,18 @@ equipCompanyTemplate2.innerHTML = `
             <img src="assets/img/custom-bg-2.svg" alt="Slimrate product image" class="custom-bg">
             <img src="assets/img/bg-top-1.svg" alt="Slimrate product image" class="bg-top">
             <img src="assets/img/whiteWave.svg" alt="Slimrate product image" class="bg-bottom bg-bottom2" style="z-index: 999">
-            <div class="container">
-                <div class="block-left">
-                    <h2 class="section-title-app">NEW<h1>
-                    <h2 class="section-title-app" style="margin-bottom: 20px">PRODUCT<h1>
-                    <h2 class="section-title" style="text-align: left">Mobile App <br></h2>
-                    <p class="equip-text" style="text-align: left; font-size: 19px">
+            <div class="container mobile-app__layout">
+                <div class="mobile-app__content">
+                    <h2 class="section-title-app mobile-app__label">NEW</h2>
+                    <h2 class="section-title-app mobile-app__label mobile-app__label--spaced">PRODUCT</h2>
+                    <h2 class="section-title mobile-app__headline">Mobile App <br></h2>
+                    <p class="equip-text mobile-app__text">
                         Manage your store from your phone! <br>
                         Convenient management<br>
                         and analysis with Slimrate!
                     </p>
-                    <div class="equip-buttons equip-buttons2" >
-                        <button class="form__btn"  onclick="
+                    <div class="equip-buttons equip-buttons2 mobile-app__actions">
+                        <button class="form__btn mobile-app__cta"  onclick="
         (function() {
             var userAgent = navigator.userAgent || navigator.vendor || window.opera;
             if (/android/i.test(userAgent)) {
@@ -30,8 +30,8 @@ equipCompanyTemplate2.innerHTML = `
                     </div>
                 </div>
 
-                <div class="block-right block-right2" style=" display: flex;justify-content: center; margin-top: 60px">
-                <img src="assets/img/icons/screens.png" alt="Slimrate product image" style="height: 100%; ">
+                <div class="mobile-app__visual">
+                <img src="assets/img/icons/screens.png" alt="Slimrate mobile app preview">
                 </div>
             </div>
         </section>

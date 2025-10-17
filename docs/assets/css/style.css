@@ -811,6 +811,80 @@ h2.section-title span {
    z-index: 1;
 }
 
+.company-equip .container.mobile-app__layout {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 64px 24px;
+    gap: 32px;
+}
+
+.company-equip .mobile-app__content,
+.company-equip .mobile-app__visual {
+    flex: 1 1 100%;
+    max-width: 100%;
+}
+
+.company-equip .mobile-app__label,
+.company-equip .mobile-app__headline,
+.company-equip .mobile-app__text {
+    text-align: left;
+}
+
+.company-equip .mobile-app__label--spaced {
+    margin-bottom: 20px;
+}
+
+.company-equip .mobile-app__text {
+    font-size: 19px;
+}
+
+.company-equip .mobile-app__actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 32px;
+}
+
+.company-equip .mobile-app__cta {
+    min-width: 160px;
+}
+
+.company-equip .mobile-app__visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 32px;
+    height: auto;
+}
+
+.company-equip .mobile-app__visual img {
+    width: 100%;
+    height: auto;
+    max-width: 520px;
+}
+
+@media (min-width: 992px) {
+    .company-equip .container.mobile-app__layout {
+        flex-direction: row;
+    }
+
+    .company-equip .mobile-app__content {
+        flex: 0 0 45%;
+        max-width: 45%;
+    }
+
+    .company-equip .mobile-app__visual {
+        flex: 0 0 55%;
+        max-width: 55%;
+        margin-top: 0;
+    }
+}
+
 .company-faq .faq-block__left {
     padding-right: 200px;
 }
