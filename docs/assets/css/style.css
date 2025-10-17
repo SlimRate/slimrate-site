@@ -1,5 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap");
 
+:root {
+    --sr-red: #ED1C24;
+    --sr-blue: #0047FF;
+    --sr-light-blue: #F1F6FF;
+    --sr-navy: #0A1E3A;
+    --sr-grey-700: #4D4D4D;
+    --sr-grey-600: #6F6F6F;
+    --sr-white: #FFFFFF;
+}
+
 html {
     scroll-behavior: smooth;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -17,7 +27,7 @@ input.form-control:focus {
 }
 
 * {
-    font-family: "Source Sans Pro", sans-serif;
+    font-family: "Inter", "Poppins", "Segoe UI", Roboto, Arial, sans-serif;
     margin: 0;
     padding: 0;
     outline: none;
@@ -76,6 +86,46 @@ a:hover {
 
 body {
     overflow-x: hidden;
+    font-family: "Inter", "Poppins", "Segoe UI", Roboto, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--sr-navy);
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-weight: 700;
+    color: var(--sr-navy);
+    margin-bottom: 16px;
+}
+
+h1 {
+    font-size: 56px;
+    line-height: 1.1;
+}
+
+h2 {
+    font-size: 48px;
+    line-height: 1.15;
+}
+
+h3 {
+    font-size: 32px;
+    line-height: 1.2;
+}
+
+h4 {
+    font-size: 24px;
+    line-height: 1.25;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--sr-grey-700);
+    margin-bottom: 16px;
 }
 
 button {
