@@ -31,7 +31,10 @@ equipCompanyTemplate2.innerHTML = `
                 </div>
 
                 <div class="mobile-app__visual">
-                <img src="assets/img/icons/screens.png" alt="Slimrate mobile app preview">
+                    <div class="mobile-app__media-card">
+                        <img src="assets/img/icons/screens.png" alt="Slimrate mobile app preview">
+                        <span class="mobile-app__play-icon" aria-hidden="true">&#9658;</span>
+                    </div>
                 </div>
             </div>
         </section>
