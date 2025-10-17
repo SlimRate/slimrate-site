@@ -3,7 +3,6 @@ equipCompanyTemplate2.innerHTML = `
 <section class="equip company-equip">
             <img src="assets/img/custom-bg-2.svg" alt="Slimrate product image" class="custom-bg">
             <img src="assets/img/bg-top-1.svg" alt="Slimrate product image" class="bg-top">
-            <img src="assets/img/whiteWave.svg" alt="Slimrate product image" class="bg-bottom bg-bottom2" style="z-index: 999">
             <div class="container mobile-app__layout">
                 <div class="mobile-app__content">
                     <span class="mobile-app__pretitle">NEW PRODUCT</span>

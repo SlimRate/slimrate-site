@@ -1,8 +1,6 @@
 const rWhoCardsTemplate = document.createElement('template');
 rWhoCardsTemplate.innerHTML = `
 <section class="who">
-<img src="assets/img/bg-blue-wave.svg" alt="Slimrate product image" class="who-bg-top">
-<img src="assets/img/bg-blue-wave.svg" alt="Slimrate product image" class="who-bg-bottom">
 <div class="container">
     <div class="container-header">
         <h2 class="section-title">For whom?</h2>
