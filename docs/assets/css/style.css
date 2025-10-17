@@ -842,28 +842,33 @@ h2.section-title span {
 }
 
 .main .section-title {
-    color: #fff;
-    margin-bottom: 40px;
+    color: #FFFFFF;
+    font-size: 56px;
+    line-height: 1.1;
+    margin-bottom: 0;
 }
 
 .main .section-descr {
-    margin-top: 0;
-    color: #fff;
-    margin-bottom: 40px;
+    margin-top: 16px;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 0;
     font-weight: 400;
-    font-size: 16px;
-    line-height: 26px;
+    font-size: 18px;
+    line-height: 1.6;
     letter-spacing: 0.02em;
-    max-width: 399px;
+    max-width: 100%;
 }
 
 .main .block-left {
     flex: 1 1 100%;
-    max-width: 100%;
-    padding: 24px;
-    background: rgba(0, 0, 0, 0.1);
+    width: 100%;
+    padding: 28px;
+    background: var(--slim-dark-overlay);
+    border-radius: 24px;
+    box-shadow: 0 12px 28px rgba(7, 27, 60, 0.35);
     -webkit-backdrop-filter: blur(6px);
     backdrop-filter: blur(6px);
+    max-width: 580px;
 }
 
 .main .container > *:not(.block-left) {
@@ -885,6 +890,10 @@ h2.section-title span {
 
 .main .equip-buttons .btn {
     margin-right: 48px;
+}
+
+.main .block-left .equip-buttons {
+    margin-top: 24px;
 }
 
 .main-allPages {
@@ -2543,28 +2552,9 @@ label.has-value {
 }
 
 .types .section-title {
-    font-size: 32px;
-    line-height: 40px;
+    color: #fff;
+    margin-bottom: 0;
     margin-bottom: 20px;
-}
-
-.types .section-descr {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 26px;
-}
-
-.types-card {
-    margin-bottom: 50px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    -webkit-box-align: start;
-    -ms-flex-align: start;
-    align-items: flex-start;
 }
 
 .types-card:last-child {
