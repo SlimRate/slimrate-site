@@ -3795,18 +3795,15 @@ label.has-value {
 }
 
 .footer__legal {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 24px 40px;
-    display: flex;
-    justify-content: center;
+    border-top: 1px solid var(--slim-border);
+    padding: 20px 24px;
     text-align: center;
 }
 
 .footer__legal-text {
     margin: 0;
     font-size: 14px;
-    color: rgba(12, 24, 46, 0.7);
+    color: var(--slim-text-grey);
 }
 
 @media screen and (max-width: 768px) {
@@ -3821,7 +3818,7 @@ label.has-value {
     }
 
     .footer__legal {
-        padding: 0 20px 32px;
+        padding: 20px;
     }
 }
 
