@@ -829,29 +829,48 @@ h2.section-title span {
     max-width: 100%;
 }
 
-.company-equip .mobile-app__label,
-.company-equip .mobile-app__headline,
-.company-equip .mobile-app__text {
-    text-align: left;
+.company-equip .mobile-app__content {
+    background: var(--slim-card-bg);
+    border-radius: 32px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 16px;
 }
 
-.company-equip .mobile-app__label--spaced {
-    margin-bottom: 20px;
+.company-equip .mobile-app__pretitle {
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--slim-blue);
 }
 
-.company-equip .mobile-app__text {
-    font-size: 19px;
+.company-equip .mobile-app__title {
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--slim-text-dark);
+    margin: 0 0 20px;
+}
+
+.company-equip .mobile-app__description {
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--slim-text-grey);
+    margin: 0 0 24px;
 }
 
 .company-equip .mobile-app__actions {
     display: flex;
     align-items: center;
     gap: 16px;
-    margin-top: 32px;
+    margin-top: 8px;
 }
 
 .company-equip .mobile-app__cta {
-    min-width: 160px;
+    width: 150px;
 }
 
 .company-equip .mobile-app__visual {

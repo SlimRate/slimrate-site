@@ -6,16 +6,13 @@ equipCompanyTemplate2.innerHTML = `
             <img src="assets/img/whiteWave.svg" alt="Slimrate product image" class="bg-bottom bg-bottom2" style="z-index: 999">
             <div class="container mobile-app__layout">
                 <div class="mobile-app__content">
-                    <h2 class="section-title-app mobile-app__label">NEW</h2>
-                    <h2 class="section-title-app mobile-app__label mobile-app__label--spaced">PRODUCT</h2>
-                    <h2 class="section-title mobile-app__headline">Mobile App <br></h2>
-                    <p class="equip-text mobile-app__text">
-                        Manage your store from your phone! <br>
-                        Convenient management<br>
-                        and analysis with Slimrate!
+                    <span class="mobile-app__pretitle">NEW PRODUCT</span>
+                    <h2 class="mobile-app__title">Mobile&nbsp;App</h2>
+                    <p class="mobile-app__description">
+                        Manage your store from your phone. Convenient management and analysis with Slimrate.
                     </p>
-                    <div class="equip-buttons equip-buttons2 mobile-app__actions">
-                        <button class="form__btn mobile-app__cta"  onclick="
+                    <div class="mobile-app__actions">
+                        <button class="btn-red mobile-app__cta"  onclick="
         (function() {
             var userAgent = navigator.userAgent || navigator.vendor || window.opera;
             if (/android/i.test(userAgent)) {
@@ -26,7 +23,7 @@ equipCompanyTemplate2.innerHTML = `
                 window.location.href = 'https://play.google.com/store/apps/details?id=com.slimrate.business'; 
             }
         })();
-    " >Try NOW!</button>
+    " >Try Now!</button>
                     </div>
                 </div>
 
