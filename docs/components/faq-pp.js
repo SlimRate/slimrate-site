@@ -1,7 +1,7 @@
 const miniFAQTemplate = document.createElement('template');
 miniFAQTemplate.innerHTML = `
 <section class="faq">
-            <div class="container">
+            <div class="container faq__layout">
                 <div class="faq-block__left">
                     <h2 class="section-title">FAQ</h2>
                     <p class="section-descr">
