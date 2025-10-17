@@ -2144,21 +2144,11 @@ label.has-value {
 .hardware-card {
     padding-top: 20px;
     padding-bottom: 20px;
-    margin-bottom: 64px;
     max-width: 360px;
     width: 100%;
     background: #fff;
     border-radius: 8px;
     border: 1px solid #b7b7b7;
-}
-
-.hardware-card__empty {
-    padding: 20px 20px 40px;
-    margin-bottom: 64px;
-    max-width: 360px;
-    width: 100%;
-    background: transparent;
-    border-radius: 8px;
 }
 
 .hardware-card__img {
@@ -2677,17 +2667,13 @@ label.has-value {
 }
 
 .hardware-cards {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    -webkit-box-align: start;
-    -ms-flex-align: start;
-    align-items: flex-start;
-    max-width: 1198px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+    grid-gap: 32px;
+    padding: 48px 24px;
+    max-width: 1200px;
     width: 100%;
+    margin: 0 auto;
 }
 
 .tariff-card {

@@ -6,7 +6,6 @@ hardwareCardsTemplate.innerHTML = `
                     <h2 class="section-title">Slimrate Hardware</h2>
                 </div>
                 <div class="hardware-cards">
-                <div class="swiper-slide">
                     <div class="hardware-card">
                         <div class="hardware-card__img"><img src="assets/img/products/hardware/All-in-one  touchscreen tablet.png" alt="All-in-one touchscreen tablet"></div>
                         <h4 class="hardware-card__title">All-in-one touchscreen tablet </h4>
@@ -14,8 +13,6 @@ hardwareCardsTemplate.innerHTML = `
                         </p>
                         
                     </div>
-                    </div>
-                    <div class="swiper-slide">
                     <div class="hardware-card">
                         <div class="hardware-card__img"><img src="assets/img/products/hardware/Customer facing monitor.png" alt="Customer facing monitor"></div>
                         <h4 class="hardware-card__title">Customer facing monitor </h4>
@@ -24,8 +21,6 @@ hardwareCardsTemplate.innerHTML = `
                         </p>
                         
                     </div>
-                    </div>
-                    <div class="swiper-slide">
                     <div class="hardware-card">
                         <div class="hardware-card__img"><img src="assets/img/products/hardware/terminal.webp" alt="Payment terminal"></div>
                         <h4 class="hardware-card__title">Payment terminals </h4>
@@ -34,8 +29,6 @@ hardwareCardsTemplate.innerHTML = `
                         </p>
                         
                     </div>
-                    </div>
-                    <div class="swiper-slide">
                     <div class="hardware-card">
                         <div class="hardware-card__img"><img src="assets/img/products/hardware/Thermal  Printer.png" alt="Thermal printer"></div>
                         <h4 class="hardware-card__title">Thermal printer </h4>
@@ -43,17 +36,6 @@ hardwareCardsTemplate.innerHTML = `
                         </p>
                         
                     </div>
-                    <!--</div>
-                    <div class="swiper-slide">
-                    <div class="hardware-card">
-                        <div class="hardware-card__img"><img src="assets/img/products/hardware/printeri.webp" alt="Impact printer"></div>
-                        <h4 class="hardware-card__title">Impact printer </h4>
-                        <p class="hardware-card__descr">Durable design, suitable for kitchen applications
-                        </p>
-                        
-                    </div>-->
-                    </div>
-                    <div class="swiper-slide">
                     <div class="hardware-card">
                         <div class="hardware-card__img"><img src="assets/img/products/hardware/Cash Drawer.png" alt="Cash drawer"></div>
                         <h4 class="hardware-card__title">Cash drawer </h4>
@@ -61,8 +43,6 @@ hardwareCardsTemplate.innerHTML = `
                         </p>
                         
                     </div>
-                    </div>
-                    <div class="swiper-slide">
                     <div class="hardware-card">
                         <div class="hardware-card__img"  ><img src="assets/img/products/hardware/Scanner1.png" alt="Barcode scanner"></div>
                         <h4  class="hardware-card__title">Scanner</h4>
@@ -70,8 +50,6 @@ hardwareCardsTemplate.innerHTML = `
                         </p>
                         
                     </div>
-                    </div>
-                    <!-- <div class="hardware-card__empty"></div> -->
                 </div>
             </div>
     </div>
