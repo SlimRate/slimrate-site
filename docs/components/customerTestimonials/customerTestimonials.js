@@ -140,43 +140,46 @@ function renderTestimonial(slideIndex) {
   testimonialContent.classList.remove('activeSlider');
 
   setTimeout(() => {
-    const firstLevelClass = isMobile ? 'mobile-first-level' : '';
-    const secondLevelClass = isMobile ? 'mobile-second-level' : '';
-    const thirdLevelClass = isMobile ? 'mobile-third-level' : '';
+    const copyMarkup = `
+      <div class="testimonial-copy">
+        <div class="testimonial-copy-block">
+          <p class="testimonial-label testimonial-label--challenge">Challenge:</p>
+          <p class="testimonial-description">${testimonial.challenge}</p>
+        </div>
+        <div class="testimonial-copy-block">
+          <p class="testimonial-label testimonial-label--solution">Solution:</p>
+          <p class="testimonial-description">${testimonial.solution}</p>
+        </div>
+      </div>
+    `;
+
+    const statsMarkup = `
+      <div class="stat-cards">
+        ${testimonial.stats
+          .map(
+            (stat) => `
+              <div class="stat-card">
+                <p class="stat-card__label">${stat.label}</p>
+                <p class="stat-card__value">${stat.value}</p>
+                <p class="stat-card__info">${stat.info}</p>
+              </div>
+            `
+          )
+          .join('')}
+      </div>
+    `;
 
     if (isMobile) {
       testimonialContent.innerHTML = `
-<div class="${firstLevelClass}">
+<div class="mobile-first-level">
   <div class="image-container relative">
     <img src="${testimonial.image}" alt="${testimonial.title}" />
     <span class="font-bold">${testimonial.title}</span>
   </div>
-  <div class="testimonial-text-container">
-    <p class="text-blue h2Text margin-top-none">Challenge:</p>
-    <p class="margin-top-small">${testimonial.challenge}</p>
-  </div>
+  ${copyMarkup}
 </div>
 
-<div class="${secondLevelClass}">
-  <p class="h2Text text-green margin-top-medium">Solution:</p>
-  <p class="margin-top-small">${testimonial.solution}</p>
-</div>
-
-<div class="${thirdLevelClass}">
-  ${testimonial.stats
-    .map(
-      (stat) => `
-    <div>
-      <p class="font-bold">${stat.label}</p>
-      <div class="stats-box">
-        <p class="stats-value">${stat.value}</p>
-        <p class="rise-info">${stat.info}</p>
-      </div>
-    </div>
-  `
-    )
-    .join('')}
-</div>
+${statsMarkup}
 `;
     } else {
       testimonialContent.innerHTML = `
@@ -185,31 +188,8 @@ function renderTestimonial(slideIndex) {
         <span class="font-bold">${testimonial.title}</span>
       </div>
       <div class="flex-1 testimonial-text-container desctopColumn">
-        <div>
-        <div>
-        <p class="text-blue h2Text margin-top-none">Challenge:</p>
-        <p class="margin-top-small">${testimonial.challenge}</p>
-        </div>
-        <div>
-        <p class="h2Text text-green margin-top-medium">Solution:</p>
-        <p class="margin-top-small">${testimonial.solution}</p>
-        </div>
-        </div>
-        <div class="flex ">
-          ${testimonial.stats
-            .map(
-              (stat) => `
-            <div>
-              <p class="font-bold">${stat.label}</p>
-              <div class="stats-box">
-                <p class="stats-value">${stat.value}</p>
-                <p class="rise-info">${stat.info}</p>
-              </div>
-            </div>
-          `
-            )
-            .join('')}
-        </div>
+        ${copyMarkup}
+        ${statsMarkup}
       </div>
     `;
     }

@@ -77,84 +77,101 @@
           font-weight: bold;
         }
   
-        .text-blue {
-          color: #1d4ed8;
+        .testimonial-copy {
+          display: flex;
+          flex-direction: column;
+          gap: 32px;
         }
-  
-        .text-green {
-          color: #15803d;
+
+        .testimonial-copy-block {
+          display: flex;
+          flex-direction: column;
         }
-  
-        .rounded {
-          border-radius: 8px;
-        }
-  
-        .stats-box {
-          min-height: 110px;
-          width: 244px;
-          padding: 4px 10px;
-          background-color: #f3f3f3;
-          border-radius: 8px;
-          text-align: center;
-        }
-  
-        .stats-value {
-          text-align: left;
-          font-size: 44px;
-          color: #1d4ed8;
-          margin: 0px 0px;
-          font-weight: 600;
-        }
-  
-        .rise-info {
-          text-align: left;
-          font-size: 14px;
-        }
-  
-        .margin-top-small {
-          margin-top: 4px;
-        }
-  
-        .margin-top-medium {
-          margin-top: 16px;
-        }
-  
-        .margin-top-large {
-          margin-top: 24px;
-        }
-  
-        .margin-top-none {
-          margin-top: 0px;
-        }
-  
-        .h2Text {
-          font-size: 26px;
+
+        .testimonial-label {
+          font-size: 18px;
           font-weight: 700;
-          line-height: 32px;
-          margin-bottom: 4px;
+          margin: 0 0 12px;
+          line-height: 1.4;
+          letter-spacing: -0.01em;
+        }
+
+        .testimonial-label--challenge {
+          color: #2563eb;
+        }
+
+        .testimonial-label--solution {
+          color: #15a34a;
+        }
+
+        .testimonial-description {
+          color: var(--slim-text-dark);
+          font-size: 16px;
+          line-height: 1.6;
+          margin: 0;
+        }
+
+        .stat-cards {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 24px;
+          align-items: stretch;
+        }
+
+        .stat-card {
+          background: var(--slim-white);
+          border-radius: 16px;
+          padding: 20px;
+          width: 240px;
+          box-shadow: 0 12px 24px rgba(7, 27, 60, 0.08);
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+          flex: 1 1 240px;
+        }
+
+        .stat-card__label {
+          font-size: 14px;
+          color: var(--slim-text-grey);
+          margin: 0;
+        }
+
+        .stat-card__value {
+          font-size: 40px;
+          font-weight: 700;
+          color: var(--slim-blue);
+          line-height: 1.1;
+          margin: 0;
+        }
+
+        .stat-card__info {
+          font-size: 14px;
+          color: var(--slim-text-grey);
+          margin: 0;
+          line-height: 1.5;
         }
   
         .slider-dots {
           display: flex;
           justify-content: center;
           align-items: center;
-          gap: 28px;
+          gap: 12px;
           position: static;
           transform: none;
-          margin: 16px auto 0;
+          margin: 32px auto 0;
            flex: 1 1 100%;
         }
   
         .slider-dot {
-          width: 7px;
-          height: 7px;
+          width: 6px;
+          height: 6px;
           border-radius: 50%;
-          background-color: #e5e7eb;
+          background-color: #c8d1e1;
           cursor: pointer;
         }
   
         .slider-dot.activeSlider {
-          background-color: black;
+          background-color: var(--slim-text-dark);
         }
   
         .testimonial-content {
@@ -243,18 +260,16 @@
             left: 16px;
           }
   
-          .mobile-third-level {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
+          .stat-cards {
+            gap: 20px;
           }
-  
-          .stats-box {
+
+          .stat-card {
             width: 100%;
+            flex: 1 1 100%;
           }
-  
-          .font-bold {
-            margin-bottom: 6px;
-            margin-top: 0px;
+
+          .testimonial-copy {
+            gap: 24px;
           }
         }
