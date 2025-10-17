@@ -226,7 +226,7 @@
           }
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 767px) {
           .testimonial-content {
             flex-direction: column;
             height: auto;
@@ -261,12 +261,13 @@
           }
   
           .stat-cards {
-            gap: 20px;
+            gap: 16px;
+            justify-content: center;
           }
 
           .stat-card {
-            width: 100%;
-            flex: 1 1 100%;
+            width: 180px;
+            flex: 0 0 180px;
           }
 
           .testimonial-copy {

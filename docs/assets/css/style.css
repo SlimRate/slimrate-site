@@ -110,11 +110,9 @@
         width: 140px;
     }
 
-    @media screen and (max-width: 768px) {
-        .contact__fields {
-            grid-template-columns: 1fr;
-        }
-    }
+}
+
+a {
     color: #b7b7b7;
     -webkit-transition: all 0.5s ease;
     transition: all 0.5s ease;
@@ -168,6 +166,46 @@ h3 {
 h4 {
     font-size: 24px;
     line-height: 1.25;
+}
+
+@media screen and (max-width: 1199px) {
+    h1 {
+        font-size: calc(56px * 0.9);
+    }
+
+    h2 {
+        font-size: calc(48px * 0.9);
+    }
+
+    h3 {
+        font-size: calc(32px * 0.9);
+    }
+
+    h4 {
+        font-size: calc(24px * 0.9);
+    }
+
+    h1.section-title {
+        font-size: calc(50px * 0.9);
+        line-height: calc(63px * 0.9);
+    }
+
+    h2.section-title {
+        font-size: calc(38px * 0.9);
+        line-height: calc(48px * 0.9);
+    }
+
+    .section-title-app {
+        font-size: calc(96px * 0.9);
+    }
+
+    .company-equip__title {
+        font-size: calc(40px * 0.9);
+    }
+
+    .contact__heading {
+        font-size: calc(48px * 0.9);
+    }
 }
 
 p {
@@ -4123,6 +4161,56 @@ label.has-value {
         display: block
     }
 
+    .main,
+    .hardware,
+    .company-equip,
+    .contact {
+        min-height: auto;
+        height: auto;
+        padding-top: 32px;
+        padding-bottom: 32px;
+    }
+
+    .main .container,
+    .company-equip--dual .company-equip__layout,
+    .company-equip .container.mobile-app__layout,
+    .faq__layout,
+    .contact__layout {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 32px;
+        padding: 32px;
+    }
+
+    .contact__left,
+    .contact__right,
+    .company-equip__card--info,
+    .company-equip__card--feature {
+        padding: 32px;
+        border-radius: 24px;
+    }
+
+    .contact__right {
+        margin-top: 0;
+    }
+
+    .company-equip__actions {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px;
+    }
+
+    .sr-btn,
+    .btn-red,
+    .btn-blue,
+    .company-equip__cta,
+    .contact__submit,
+    .contact__actions .btn-red,
+    .contact__actions .btn-blue {
+        width: 100%;
+        max-width: none;
+    }
+
     .footer-bottom ul li {
         margin-right: 16px;
         margin-left: 16px;
@@ -5166,4 +5254,75 @@ ection.we-support {
   .menu-buttons a {
     display: inline-block;
   }
+
+@media screen and (max-width: 767px) {
+    .main .container,
+    .company-equip--dual .company-equip__layout,
+    .company-equip .container.mobile-app__layout,
+    .contact__layout,
+    .faq__layout {
+        padding: 32px 16px;
+    }
+
+    .main .block-left,
+    .company-equip__card,
+    .contact__left,
+    .contact__right,
+    .faq__layout,
+    .faq__layout .faq-block__left,
+    .faq__layout .faq-block__right,
+    .section-title,
+    .section-descr,
+    .company-equip__title,
+    .company-equip__description,
+    .contact__heading,
+    .contact__tagline,
+    .contact__privacy {
+        text-align: center;
+    }
+
+    .contact__left,
+    .contact__right,
+    .company-equip__card,
+    .company-equip__actions {
+        align-items: center;
+    }
+
+    .company-equip__actions {
+        width: 100%;
+    }
+
+    .contact__segment {
+        align-items: center;
+        text-align: center;
+    }
+
+    .contact__segment-options {
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .contact__fields {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-cards {
+        justify-content: center;
+        gap: 16px;
+    }
+
+    .stat-card {
+        width: 180px;
+        flex: 0 0 180px;
+    }
+
+    .footer__columns {
+        padding: 32px 16px 16px;
+    }
+
+    .footer__legal {
+        padding: 16px;
+    }
+}
 
