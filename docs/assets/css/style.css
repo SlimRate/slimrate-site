@@ -927,8 +927,10 @@ h2.section-title span {
 
 .testimonials__inner .testimonial-content {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 40px;
+    align-items: stretch;
+    width: 100%;
 }
 
 .testimonials__inner .flex {
@@ -948,6 +950,12 @@ h2.section-title span {
 }
 
 @media (min-width: 992px) {
+    .testimonials__inner .testimonial-content {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 48px;
+    }
+
     .company-equip .container.mobile-app__layout {
         flex-direction: row;
     }
