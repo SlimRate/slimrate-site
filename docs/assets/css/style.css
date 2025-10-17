@@ -2044,18 +2044,18 @@ h2.section-title span {
     align-items: flex-start;
 }
 
-.contact__left .section-title {
-    color: var(--slim-text-dark);
+.contact__heading {
     font-size: 48px;
-    line-height: 1.15;
-    text-align: left;
+    font-weight: 700;
+    color: var(--slim-text-dark);
+    margin: 0 0 16px;
 }
 
-.contact__left .section-descr {
+.contact__tagline {
+    font-size: 18px;
+    line-height: 1.6;
     color: var(--slim-text-grey);
     margin: 0;
-    max-width: 100%;
-    text-align: left;
 }
 
 .contact__right {

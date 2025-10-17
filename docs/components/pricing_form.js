@@ -64,10 +64,8 @@ pricingFormTemplate.innerHTML = `
 <img src="assets/img/bg-bot-2.svg" alt="Slimrate product image" class="bg-bottom">
 <div class="container contact__layout">
     <div class="contact__left">
-        <h2 class="section-title">Contact us</h2>
-        <p class="section-descr">Get in Touch - Your Questions, Our Answers. 
-        Let's Connect!
-        </p>
+        <h2 class="contact__heading">Contact us</h2>
+        <p class="contact__tagline">Get in Touch – Your Questions, Our Answers. Let’s Connect!</p>
     </div>
     <div id="toast" class="toast">
         <span id="toast-message"></span>
