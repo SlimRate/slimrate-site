@@ -8,6 +8,15 @@
     --sr-grey-700: #4D4D4D;
     --sr-grey-600: #6F6F6F;
     --sr-white: #FFFFFF;
+    --slim-red: #ED1C24;
+    --slim-blue: #0047FF;
+    --slim-dark-overlay: rgba(7, 27, 60, 0.60);
+    --slim-light-bg: #F5F8FF;
+    --slim-card-bg: #EEF3FF;
+    --slim-text-dark: #1A1A1A;
+    --slim-text-grey: #4B4B4B;
+    --slim-border: #E5EAF5;
+    --slim-white: #FFFFFF;
 }
 
 html {
@@ -89,7 +98,16 @@ body {
     font-family: "Inter", "Poppins", "Segoe UI", Roboto, Arial, sans-serif;
     font-size: 16px;
     line-height: 1.6;
-    color: var(--sr-navy);
+    color: var(--slim-text-dark);
+}
+
+button,
+input,
+select {
+    font-family: "Inter", "Poppins", "Segoe UI", Roboto, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--slim-text-dark);
 }
 
 h1,
@@ -97,7 +115,7 @@ h2,
 h3,
 h4 {
     font-weight: 700;
-    color: var(--sr-navy);
+    color: var(--slim-text-dark);
     margin-bottom: 16px;
 }
 
@@ -124,7 +142,7 @@ h4 {
 p {
     font-size: 16px;
     line-height: 1.6;
-    color: var(--sr-grey-700);
+    color: var(--slim-text-grey);
     margin-bottom: 16px;
 }
 
@@ -2090,9 +2108,9 @@ label.has-value {
 }
 
 .why .container {
-    -webkit-box-pack: justify;
+    color: var(--slim-text-dark);
     -ms-flex-pack: justify;
-    justify-content: space-between
+    justify-content: space-between;
 }
 
 .why .container-header {
@@ -2101,14 +2119,6 @@ label.has-value {
 
 .why .container-header .section-title {
     position: relative;
-    width: 100%;
-    text-align: center
-}
-
-.why .container-header .section-title::before {
-    position: absolute;
-    content: '';
-    display: block;
     width: 100%;
     height: 30px;
     border-radius: 11px;
