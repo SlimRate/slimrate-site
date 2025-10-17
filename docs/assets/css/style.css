@@ -729,6 +729,16 @@ h2.section-title span {
     z-index: 1;
 }
 
+.main .container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
 .container-header {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -848,11 +858,29 @@ h2.section-title span {
 }
 
 .main .block-left {
-    max-width: 440px;
+    flex: 1 1 100%;
+    max-width: 100%;
     padding: 24px;
     background: rgba(0, 0, 0, 0.1);
     -webkit-backdrop-filter: blur(6px);
     backdrop-filter: blur(6px);
+}
+
+.main .container > *:not(.block-left) {
+    flex: 1 1 100%;
+    max-width: 100%;
+}
+
+@media (min-width: 992px) {
+    .main .block-left {
+        flex: 0 0 55%;
+        max-width: 55%;
+    }
+
+    .main .container > *:not(.block-left) {
+        flex: 0 0 45%;
+        max-width: 45%;
+    }
 }
 
 .main .equip-buttons .btn {
