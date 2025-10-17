@@ -188,6 +188,39 @@ p {
     box-shadow: 0 0 0 3px rgba(0, 71, 255, 0.25);
 }
 
+.btn-red,
+.btn-blue {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 22px;
+    border-radius: 24px;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--slim-white);
+    box-shadow: 0 6px 18px rgba(237, 28, 36, 0.18);
+    transition: background 0.2s ease;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn-red {
+    background: var(--slim-red);
+}
+
+.btn-red:hover {
+    background: #DF1A22;
+}
+
+.btn-blue {
+    background: var(--slim-blue);
+}
+
+.btn-blue:hover {
+    background: #0043F0;
+}
+
 button {
     cursor: pointer;
     border: none;
