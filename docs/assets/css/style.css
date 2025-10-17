@@ -872,12 +872,30 @@ h2.section-title span {
 }
 
 .company-equip__card--feature {
-    background: var(--slim-blue);
+    background-color: var(--slim-blue);
+    background-image: url("assets/img/custom-bg-1.svg");
+    background-size: cover;
+    background-position: center;
     border-radius: 32px;
     padding: 60px;
     color: var(--slim-white);
     position: relative;
     overflow: hidden;
+    isolation: isolate;
+}
+
+.company-equip__card--feature::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: repeating-linear-gradient(to right, rgba(255, 255, 255, 0.1) 0, rgba(255, 255, 255, 0.1) 1px, transparent 1px, transparent 60px), repeating-linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 0, rgba(255, 255, 255, 0.1) 1px, transparent 1px, transparent 60px);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.company-equip__card--feature > * {
+    position: relative;
+    z-index: 1;
 }
 
 .company-equip__feature-heading {
@@ -924,6 +942,10 @@ h2.section-title span {
     background: rgba(21, 163, 74, 0.35);
 }
 
+.company-equip__feature-item--mobile .company-equip__feature-icon {
+    background: rgba(255, 255, 255, 0.25);
+}
+
 .company-equip__feature-icon img {
     width: 28px;
     height: 28px;
@@ -935,6 +957,43 @@ h2.section-title span {
     display: flex;
     flex-direction: column;
     gap: 4px;
+}
+
+.company-equip__marker {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--slim-white);
+    font-size: 24px;
+    font-weight: 600;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.company-equip__marker--software {
+    top: 48px;
+    right: 64px;
+}
+
+.company-equip__marker--hardware {
+    top: 136px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.company-equip__marker--processing {
+    bottom: 96px;
+    left: 72px;
+}
+
+.company-equip__marker--mobile {
+    bottom: 56px;
+    right: 80px;
 }
 
 .company-equip__feature-title {
@@ -980,6 +1039,25 @@ h2.section-title span {
 
     .company-equip__card--feature {
         padding: 48px 32px;
+    }
+
+    .company-equip__marker--software {
+        top: 32px;
+        right: 32px;
+    }
+
+    .company-equip__marker--hardware {
+        top: 120px;
+    }
+
+    .company-equip__marker--processing {
+        bottom: 120px;
+        left: 48px;
+    }
+
+    .company-equip__marker--mobile {
+        bottom: 48px;
+        right: 48px;
     }
 }
 

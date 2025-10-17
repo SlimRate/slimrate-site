@@ -11,6 +11,10 @@ equipCompanyTemplate.innerHTML = `
             </div>
         </div>
         <div class="company-equip__card company-equip__card--feature">
+            <span class="company-equip__marker company-equip__marker--software" aria-hidden="true">+</span>
+            <span class="company-equip__marker company-equip__marker--hardware" aria-hidden="true">+</span>
+            <span class="company-equip__marker company-equip__marker--processing" aria-hidden="true">+</span>
+            <span class="company-equip__marker company-equip__marker--mobile" aria-hidden="true">+</span>
             <h3 class="company-equip__feature-heading">Everything you need to run better.</h3>
             <ul class="company-equip__feature-list">
                 <li class="company-equip__feature-item company-equip__feature-item--processing">
@@ -38,6 +42,15 @@ equipCompanyTemplate.innerHTML = `
                     <div class="company-equip__feature-content">
                         <p class="company-equip__feature-title">POS Hardware</p>
                         <a class="company-equip__feature-link" href="hardware.html">Browse devices</a>
+                    </div>
+                </li>
+                <li class="company-equip__feature-item company-equip__feature-item--mobile">
+                    <span class="company-equip__feature-icon">
+                        <img src="assets/img/icons/phone.svg" alt="Slimrate mobile app icon" />
+                    </span>
+                    <div class="company-equip__feature-content">
+                        <p class="company-equip__feature-title">Mobile App</p>
+                        <a class="company-equip__feature-link" href="software.html">Manage on the go</a>
                     </div>
                 </li>
             </ul>
