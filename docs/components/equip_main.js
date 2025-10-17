@@ -1,41 +1,49 @@
 const equipCompanyTemplate = document.createElement('template');
 equipCompanyTemplate.innerHTML = `
-<section class="equip company-equip">
-            <img src="assets/img/custom-bg-1.svg" alt="Slimrate product image" class="custom-bg">
-            <img src="assets/img/bg-top-1.svg" alt="Slimrate product image" class="bg-top">
-            <img src="assets/img/bg-bot-1.svg" alt="Slimrate product image" class="bg-bottom">
-            <div class="container">
-                <div class="block-left">
-                    <h2 class="section-title">Slimrate POS: <br>
-                    Your All-in-One Business Solution</h2>
-                    <p class="equip-text">Streamline your business operations with Slimrate POS. From accepting payments to managing employees and inventory, our system simplifies it all. Get insights with powerful reporting, and customize it to your unique needs. We prioritize security and reliability, so you can focus on growth.<br><br>
-                    Experience the difference with Slimrate POS – your path to a smarter, more efficient, and profitable future. Start today!
-                     </p>
-                    <div class="equip-buttons">
-                        <a href="#get_demo"><button class="btn btn-white">Get Demo</button></a>
-                        <!-- <a href="">All products →</a> -->
-                    </div>
-                </div>
-
-                <div class="block-right">
-                    <div class="equip-card">
-                        <img src="assets/img/icons/checkMashine.svg" alt="Slimrate product image" class="equip-img">
-                        <img src="assets/img/icons/scanner.svg" alt="Slimrate product image" class="equip-img">
-                        <img src="assets/img/icons/equip-3.svg" alt="Slimrate product image" class="equip-img">
-                        <img src="assets/img/icons/phone.svg" alt="Slimrate product image" class="equip-img">
-                        
-                        <div class="equip-img">
-                            <a href="payment_processing.html">Payment Processing</a><a href="payment_processing.html"><img src="assets/img/icons/equip-btn.svg" alt="Slimrate product image" class="equip-btn"></a></div>
-                        <div class="equip-img">
-                            <a href="software.html">POS Software</a><a href="software.html"><img src="assets/img/icons/equip-btn.svg" alt="Slimrate product image" class="equip-btn"></a></div>
-                        <div class="equip-img">
-                            <a href="hardware.html">POS Hardware</a><a href="hardware.html"><img src="assets/img/icons/equip-btn.svg" alt="Slimrate product image" class="equip-btn"></a></div>
-                        
-                    </div>
-                    <img src="assets/img/circle.svg" alt="Slimrate product image" class="block-img-circle">
-                </div>
+<section class="equip company-equip company-equip--dual">
+    <div class="company-equip__layout">
+        <div class="company-equip__card company-equip__card--info">
+            <h2 class="company-equip__title">Slimrate POS:<br /><span>All-in-One Business Solution</span></h2>
+            <p class="company-equip__description">Streamline every part of your operation with Slimrate POS. Accept payments, manage staff, track inventory, and unlock insights with real-time reporting&#8212;all inside one secure platform tailored to your workflow.</p>
+            <p class="company-equip__description">Experience the difference with Slimrate POS and build a smarter, more efficient, and profitable future for your team.</p>
+            <div class="company-equip__actions">
+                <a class="btn btn-white" href="#get_demo">Get Demo</a>
             </div>
-        </section>
+        </div>
+        <div class="company-equip__card company-equip__card--feature">
+            <h3 class="company-equip__feature-heading">Everything you need to run better.</h3>
+            <ul class="company-equip__feature-list">
+                <li class="company-equip__feature-item company-equip__feature-item--processing">
+                    <span class="company-equip__feature-icon">
+                        <img src="assets/img/icons/checkMashine.svg" alt="Payment processing icon" />
+                    </span>
+                    <div class="company-equip__feature-content">
+                        <p class="company-equip__feature-title">Payment Processing</p>
+                        <a class="company-equip__feature-link" href="payment_processing.html">Explore payment options</a>
+                    </div>
+                </li>
+                <li class="company-equip__feature-item company-equip__feature-item--software">
+                    <span class="company-equip__feature-icon">
+                        <img src="assets/img/icons/equip-3.svg" alt="POS software icon" />
+                    </span>
+                    <div class="company-equip__feature-content">
+                        <p class="company-equip__feature-title">POS Software</p>
+                        <a class="company-equip__feature-link" href="software.html">See software tools</a>
+                    </div>
+                </li>
+                <li class="company-equip__feature-item company-equip__feature-item--hardware">
+                    <span class="company-equip__feature-icon">
+                        <img src="assets/img/icons/scanner.svg" alt="POS hardware icon" />
+                    </span>
+                    <div class="company-equip__feature-content">
+                        <p class="company-equip__feature-title">POS Hardware</p>
+                        <a class="company-equip__feature-link" href="hardware.html">Browse devices</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
 `;
 
 class EquipCompany extends HTMLElement {
