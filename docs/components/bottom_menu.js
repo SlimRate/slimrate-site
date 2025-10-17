@@ -1,44 +1,33 @@
 const bottomMenuTemplate = document.createElement('template');
 bottomMenuTemplate.innerHTML = `
 <footer class="footer">
-<div class="container">
-    <div class="footer-top">
-        <ul>
-            <li>Solutions</li>
-            <li><a href="hardware.html">POS Hardware</a></li>
-            <li><a href="payment_processing.html">Payment Processing</a></li>
-            <li><a href="software.html">POS Software</a></li>
-        </ul>
-        <ul>
-            <li>Business Types</li>
-            <li><a href="restaurant.html">Restaurant POS</a></li>
-            <li><a href="retail.html">Retail POS</a></li>
-        </ul>
-        <ul>
-            <li>Company</li>
-            <li><a href="company.html">About us</a></li>
-            <li><a href="pricing.html">Pricing</a></li>
-            <li><a href="http://ap.slimrate.com/" target="_blank">Login Merchant</a></li>
-        </ul>
-        <ul>
-            <li>Contact Us</li>
-            <li><a href="mailto:info@slimrate.com">info@slimrate.com</a></li>
-            <li><a href="tel:(888)9774533">(888)977-4533</a></li>
-        </ul>
+    <div class="footer__columns">
+        <div class="footer__column">
+            <h4 class="footer__heading">Solutions</h4>
+            <a class="footer__link" href="hardware.html">POS Hardware</a>
+            <a class="footer__link" href="payment_processing.html">Payment Processing</a>
+            <a class="footer__link" href="software.html">POS Software</a>
+        </div>
+        <div class="footer__column">
+            <h4 class="footer__heading">Business Types</h4>
+            <a class="footer__link" href="restaurant.html">Restaurant POS</a>
+            <a class="footer__link" href="retail.html">Retail POS</a>
+        </div>
+        <div class="footer__column">
+            <h4 class="footer__heading">Company</h4>
+            <a class="footer__link" href="company.html">About Us</a>
+            <a class="footer__link" href="pricing.html">Pricing</a>
+            <a class="footer__link" href="http://ap.slimrate.com/" target="_blank" rel="noopener">Login Merchant</a>
+        </div>
+        <div class="footer__column">
+            <h4 class="footer__heading">Contact Us</h4>
+            <a class="footer__link" href="mailto:info@slimrate.com">info@slimrate.com</a>
+            <a class="footer__link" href="tel:(888)9774533">(888) 977-4533</a>
+        </div>
     </div>
-    <div class="footer-bottom">
-        <ul>
-            <!--- <li><a href="privacy.html">Privacy Statement</a></li>
-            <li><a href="do_not_sell_my_info.html">Do Not Sell My Personal Information</a></li>
-            <li><a href="terms.html">Terms of Service</a></li>
-            <li><a href="merchant.html">Merchant Agreement</a></li>
-            <li><a href="legal.html">Legal</a></li>
-            <li><a href="cookie.html">Cookie Policy</a></li>
-            <li><a href="mailto:report@slimrate.com">Report a Vulnerability</a></li> --->
-            <li><a href="index.html">Copyright © 2024 Slimrate LLC. All rights reserved</a></li>
-        </ul>
+    <div class="footer__legal">
+        <p class="footer__legal-text">Copyright © 2024 Slimrate LLC. All rights reserved.</p>
     </div>
-</div>
 </footer>`;
 
 class BottomMenu extends HTMLElement {

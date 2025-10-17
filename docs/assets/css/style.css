@@ -3755,68 +3755,74 @@ label.has-value {
 }
 
 .footer {
-    padding-top: 50px;
-    margin-bottom: 40px;
+    background: var(--slim-white);
+    border-top: 1px solid var(--slim-border);
 }
 
-.footer .container {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-}
-
-.footer-top {
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
+.footer__columns {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 48px 24px 24px;
     display: flex;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    -webkit-box-align: start;
-    -ms-flex-align: start;
-    align-items: flex-start;
-    padding-bottom: 70px;
-    border-bottom: 2px solid #f6f7f9;
-}
-
-.footer-top ul li {
-    margin-bottom: 18px;
-    line-height: 25px;
-}
-
-.footer-top ul li a {
-    line-height: 100%;
-}
-
-.footer-top ul li:first-child {
-    font-weight: bold;
-    font-size: 21px;
-    letter-spacing: 0.02em;
-    color: #000000;
-}
-
-.footer-top ul li:last-child {
-    margin-bottom: 0;
-}
-
-.footer-bottom {
-    padding-top: 72px;
-}
-
-.footer-bottom ul {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    justify-content: center;
+    gap: 40px;
 }
 
-.footer-bottom ul li {
-    margin-right: 36px;
-    margin-bottom: 16px;
+.footer__column {
+    flex: 1 1 220px;
+    min-width: 200px;
+}
+
+.footer__heading {
+    margin: 0 0 12px;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--slim-text-dark);
+}
+
+.footer__link {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
+    color: var(--slim-text-grey);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer__link:hover,
+.footer__link:focus {
+    color: var(--slim-red);
+}
+
+.footer__legal {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px 40px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.footer__legal-text {
+    margin: 0;
+    font-size: 14px;
+    color: rgba(12, 24, 46, 0.7);
+}
+
+@media screen and (max-width: 768px) {
+    .footer__columns {
+        flex-direction: column;
+        padding: 40px 20px 20px;
+        gap: 32px;
+    }
+
+    .footer__column {
+        min-width: 100%;
+    }
+
+    .footer__legal {
+        padding: 0 20px 32px;
+    }
 }
 
 @media screen and (max-width: 1300px) {
