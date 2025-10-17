@@ -844,18 +844,15 @@ h2.section-title span {
 }
 
 .company-equip__title {
-    font-size: clamp(36px, 4vw, 48px);
+    font-size: 40px;
     line-height: 1.1;
-    margin: 0;
+    font-weight: 700;
     color: var(--slim-text-dark);
-}
-
-.company-equip__title span {
-    color: var(--slim-blue);
+    margin: 0 0 20px;
 }
 
 .company-equip__description {
-    margin: 0;
+    margin: 0 0 24px;
     font-size: 18px;
     line-height: 1.6;
     color: var(--slim-text-grey);
@@ -865,7 +862,13 @@ h2.section-title span {
     display: flex;
     align-items: center;
     gap: 16px;
-    margin-top: 8px;
+    margin-top: 16px;
+}
+
+.company-equip__cta {
+    width: 150px;
+    display: inline-flex;
+    justify-content: center;
 }
 
 .company-equip__card--feature {

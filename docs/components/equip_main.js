@@ -3,11 +3,11 @@ equipCompanyTemplate.innerHTML = `
 <section class="equip company-equip company-equip--dual">
     <div class="company-equip__layout">
         <div class="company-equip__card company-equip__card--info">
-            <h2 class="company-equip__title">Slimrate POS:<br /><span>All-in-One Business Solution</span></h2>
-            <p class="company-equip__description">Streamline every part of your operation with Slimrate POS. Accept payments, manage staff, track inventory, and unlock insights with real-time reporting&#8212;all inside one secure platform tailored to your workflow.</p>
+            <h2 class="company-equip__title">Slimrate POS: Your All-in-One Business</h2>
+            <p class="company-equip__description">Streamline every part of your operation with Slimrate POS.<br />Accept payments, manage staff, track inventory, and unlock insights with real-time reporting&#8212;all inside one secure platform tailored to your workflow.</p>
             <p class="company-equip__description">Experience the difference with Slimrate POS and build a smarter, more efficient, and profitable future for your team.</p>
             <div class="company-equip__actions">
-                <a class="btn btn-white" href="#get_demo">Get Demo</a>
+                <a class="btn-red company-equip__cta" href="#get_demo">Get Demo</a>
             </div>
         </div>
         <div class="company-equip__card company-equip__card--feature">
