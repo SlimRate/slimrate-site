@@ -72,41 +72,36 @@ pricingFormTemplate.innerHTML = `
     </div>
     <div class="contact__right">
     <!-- Removed inline onsubmit to avoid global handler collisions -->
-    <form id="pricing-form"  class="contact__form form" action="#" novalidate>
-            <div class="form__select">
-                <h4 class="form__select-title">Business type?</h4>
-                <div class="form__select-body">
-                    <input type="radio" name="type" class="form__select-item form_type" id="restaurant"
-                        value="Restaurant" checked="">
-                    <label for="restaurant">Restaurant</label>
-                    <input type="radio" name="type" class="form__select-item form_type" id="retail"
-                        value="Retail">
-                    <label for="retail">Retail</label>
+    <form id="pricing-form"  class="contact__form" action="#" novalidate>
+            <div class="contact__segment">
+                <p class="contact__segment-label">Business type?</p>
+                <div class="contact__segment-options" role="radiogroup" aria-label="Business type">
+                    <label class="contact__segment-pill">
+                        <input type="radio" name="type" value="Restaurant" checked>
+                        <span>Restaurant</span>
+                    </label>
+                    <label class="contact__segment-pill">
+                        <input type="radio" name="type" value="Retail">
+                        <span>Retail</span>
+                    </label>
                 </div>
             </div>
-            
 
-            <div class="form-inputs">
-                <div class="form__input-body">
-                    <input type="input" id="first-and-last-name" name="first-and-last-name"
-                        class="form__input">
-                    <label for="first-and-last-name">First and Last Name</label>
+            <div class="contact__fields">
+                <div class="contact__field contact__field--half">
+                    <input type="text" id="first-and-last-name" name="first-and-last-name" placeholder="First and Last Name" required>
                 </div>
-                <div class="form__input-body">
-                    <input type="input" id="email" name="email" class="form__input">
-                    <label for="email">Email</label>
+                <div class="contact__field contact__field--half">
+                    <input type="email" id="email" name="email" placeholder="Email" required>
                 </div>
-                <div class="form__input-body">
-                    <input type="input" id="phone-number" name="phone-number" class="form__input">
-                    <label for="phone-number">Phone Number</label>
+                <div class="contact__field contact__field--half">
+                    <input type="tel" id="phone-number" name="phone-number" placeholder="Phone Number">
                 </div>
-                <div class="form__input-body">
-                    <input type="input" id="company" name="company-place-name" class="form__input">
-                    <label for="company">Company Name</label>
+                <div class="contact__field contact__field--half">
+                    <input type="text" id="index" name="index" placeholder="Zip Code">
                 </div>
-                <div class="form__input-body">
-                    <input type="input" id="index" name="index" class="form__input">
-                    <label for="index">Zip Code</label>
+                <div class="contact__field contact__field--full">
+                    <input type="text" id="company" name="company-place-name" placeholder="Company Name">
                 </div>
                 <!-- Hidden UTM fields (populated dynamically) -->
                 <input type="hidden" name="utm_source" id="utm_source" />
@@ -120,8 +115,9 @@ pricingFormTemplate.innerHTML = `
                 <input type="hidden" name="landingPage" id="landingPage" />
                 <input type="hidden" name="referrer" id="referrer" />
             </div>
-            <input class="form__btn" type="submit" id="submitBtn" value="Submit">
-            </input>
+            <div class="contact__actions">
+                <button class="btn-red contact__submit" type="submit" id="submitBtn">Send</button>
+            </div>
         </form>
        <!-- <p class="contact__privacy">By requesting a demo, you agree to receive automated text messages from
             Slimrate. We’ll handle your info according to our <a href="privacy.html">privacy statement.</a>

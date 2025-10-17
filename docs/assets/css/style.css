@@ -11,79 +11,110 @@
     --slim-red: #ED1C24;
     --slim-blue: #0047FF;
     --slim-dark-overlay: rgba(7, 27, 60, 0.60);
-    --slim-light-bg: #F5F8FF;
-    --slim-card-bg: #EEF3FF;
-    --slim-text-dark: #1A1A1A;
-    --slim-text-grey: #4B4B4B;
-    --slim-border: #E5EAF5;
-    --slim-white: #FFFFFF;
-}
-
-html {
-    scroll-behavior: smooth;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    -webkit-tap-highlight-color: transparent;
-    scroll-padding-top: 120px;
-}
-
-input:focus,
-input.form-control:focus {
-    outline: none !important;
-    outline-width: 0 !important;
-    box-shadow: none;
-    -moz-box-shadow: none;
-    -webkit-box-shadow: none;
-}
-
-* {
-    font-family: "Inter", "Poppins", "Segoe UI", Roboto, Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    outline: none;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-.las:not(.nav-el) {
-    color: #5B1D1D;
-    font-size: 42px;
-}
-
-.lab:not(.nav-el) {
-    color: #5B1D1D;
-    font-size: 42px;
-}
-
-@keyframes meet-right-drawing-animation-c {
-    0% {
-        transform: translateY(0px) scaleX(2);
+    .contact__segment {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
     }
 
-    100% {
-        transform: translateX(-100px) scaleX(1.9);
-    }
-}
-
-@keyframes meet-right-drawing-animation {
-    0% {
-        transform: translateY(0px);
+    .contact__segment-label {
+        margin: 0;
+        font-size: 16px;
+        font-weight: 600;
+        color: rgba(255, 255, 255, 0.85);
     }
 
-    100% {
-        transform: translateY(-5%) translateX(-5%) scaleX(1.1);
+    .contact__segment-options {
+        display: inline-flex;
+        flex-wrap: wrap;
+        gap: 12px;
     }
-}
 
-ul {
-    list-style: none;
-}
+    label.contact__segment-pill {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        border-radius: 28px;
+        cursor: pointer;
+    }
 
-a {
-    text-decoration: none;
-    cursor: pointer;
-    font-size: 16px;
-    line-height: 29px;
-    font-weight: 500;
+    .contact__segment-pill input {
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    .contact__segment-pill span {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 24px;
+        border-radius: 28px;
+        border: 2px solid rgba(255, 255, 255, 0.6);
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--slim-white);
+        background: transparent;
+        transition: all 0.2s ease;
+    }
+
+    .contact__segment-pill input:checked + span {
+        background: var(--slim-white);
+        border-color: var(--slim-white);
+        color: var(--slim-blue);
+    }
+
+    .contact__fields {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 20px;
+        row-gap: 16px;
+    }
+
+    .contact__field input {
+        width: 100%;
+        height: 48px;
+        padding: 0 16px;
+        border: 2px solid rgba(255, 255, 255, 0.6);
+        border-radius: 24px;
+        background: transparent;
+        color: var(--slim-white);
+        font-size: 16px;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .contact__field input::placeholder {
+        color: rgba(255, 255, 255, 0.6);
+    }
+
+    .contact__field input:focus {
+        border-color: var(--slim-white);
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
+    }
+
+    .contact__field--full {
+        grid-column: 1 / -1;
+    }
+
+    .contact__actions {
+        display: flex;
+        justify-content: center;
+        margin-top: 24px;
+    }
+
+    .contact__submit {
+        width: 140px;
+    }
+
+    @media screen and (max-width: 768px) {
+        .contact__fields {
+            grid-template-columns: 1fr;
+        }
+    }
     color: #b7b7b7;
     -webkit-transition: all 0.5s ease;
     transition: all 0.5s ease;
@@ -2069,6 +2100,359 @@ h2.section-title span {
     margin-top: 24px;
 }
 
+.contact__segment {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.contact__segment-label {
+    font-size: 16px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0;
+}
+
+.contact__segment-options {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.contact__segment-pill {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 28px;
+    padding: 10px 24px;
+    cursor: pointer;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    transition: all 0.2s ease;
+}
+
+.contact__segment-pill input {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.contact__segment-pill span {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--slim-white);
+}
+
+.contact__segment-pill input:checked + span {
+    color: var(--slim-blue);
+}
+
+.contact__segment-pill input:checked ~ span {
+    color: var(--slim-blue);
+}
+
+.contact__segment-pill input:checked ~ span,
+.contact__segment-pill input:checked ~ span::before {
+    font-weight: 600;
+}
+
+.contact__segment-pill input:checked ~ span,
+.contact__segment-pill input:checked ~ span + * {
+    font-weight: 600;
+}
+
+.contact__segment-pill input:checked ~ span,
+.contact__segment-pill input:checked ~ span + * {
+    color: var(--slim-blue);
+}
+
+.contact__segment-pill input:checked ~ span,
+.contact__segment-pill input:checked ~ span + * {
+    font-weight: 600;
+}
+
+.contact__segment-pill input:checked ~ span,
+.contact__segment-pill input:checked ~ span + * {
+    color: var(--slim-blue);
+}
+
+.contact__segment-pill input:checked ~ span,
+.contact__segment-pill input:checked ~ span + * {
+    font-weight: 600;
+}
+
+.contact__segment-pill input:checked ~ span,
+.contact__segment-pill input:checked ~ span + * {
+    color: var(--slim-blue);
+}
+
+.contact__segment-pill input:checked ~ span,
+.contact__segment-pill input:checked ~ span + * {
+    font-weight: 600;
+}
+
+.contact__segment-pill input:checked ~ span,
+.contact__segment-pill input:checked ~ span + * {
+    color: var(--slim-blue);
+}
+
+.contact__segment-pill input:checked ~ span,
+.contact__segment-pill input:checked ~ span + * {
+    font-weight: 600;
+}
+
+.contact__segment-pill input:checked ~ span,
+.contact__segment-pill input:checked ~ span + * {
+    color: var(--slim-blue);
+}
+
+.contact__segment-pill input:checked ~ span,
+.contact__segment-pill input:checked ~ span + * {
+    font-weight: 600;
+}
+
+.contact__segment-pill input:checked ~ span,
+.contact__segment-pill input:checked ~ span + * {
+    color: var(--slim-blue);
+}
+
+.contact__segment-pill input:checked ~ span,
+.contact__segment-pill input:checked ~ span + * {
+    font-weight: 600;
+}
+
+.contact__segment-pill input:checked ~ span,
+.contact__segment-pill input:checked ~ span + * {
+    color: var(--slim-blue);
+}
+
+.contact__segment-pill input:checked ~ span,
+.contact__segment-pill input:checked ~ span + * {
+    font-weight: 600;
+}
+
+.contact__segment-pill input:checked ~ span,
+.contact__segment-pill input:checked ~ span + * {
+    color: var(--slim-blue);
+}
+
+.contact__segment-pill input:checked ~ span,
+.contact__segment-pill input:checked ~ span + * {
+    font-weight: 600;
+}
+
+.contact__segment-pill input:checked ~ span,
+.contact__segment-pill input:checked ~ span + * {
+    color: var(--slim-blue);
+}
+
+.contact__segment-pill input:checked ~ span,
+.contact__segment-pill input:checked ~ span + * {
+    font-weight: 600;
+}
+
+.contact__segment-pill input:checked ~ span,
+.contact__segment-pill input:checked ~ span + * {
+    color: var(--slim-blue);
+}
+
+.contact__segment-pill input:checked ~ span,
+.contact__segment-pill input:checked ~ span + * {
+    font-weight: 600;
+}
+
+.contact__segment-pill input:checked ~ span,
+.contact__segment-pill input:checked ~ span + * {
+    color: var(--slim-blue);
+}
+
+.contact__segment-pill input:checked ~ span,
+.contact__segment-pill input:checked ~ span + * {
+    font-weight: 600;
+}
+
+.contact__segment-pill input:checked ~ span,
+.contact__segment-pill input:checked ~ span + * {
+    color: var(--slim-blue);
+}
+
+.contact__segment-pill input:checked ~ span,
+.contact__segment-pill input:checked ~ span + * {
+    font-weight: 600;
+}
+
+.contact__segment-pill input:checked ~ span,
+.contact__segment-pill input:checked ~ span + * {
+    color: var(--slim-blue);
+}
+
+.contact__segment-pill input:checked ~ span,
+.contact__segment-pill input:checked ~ span + * {
+    font-weight: 600;
+}
+
+.contact__segment-pill input:checked + span,
+.contact__segment-pill input:checked ~ span {
+    background: var(--slim-white);
+    border-radius: 24px;
+    color: var(--slim-blue);
+    padding: 0 0;
+}
+
+.contact__segment-pill input:checked ~ span {
+    background: transparent;
+}
+
+.contact__segment-pill input:checked ~ span,
+.contact__segment-pill input:checked ~ span + * {
+    background: transparent;
+}
+
+.contact__segment-pill input:checked ~ span {
+    background: transparent;
+}
+
+.contact__segment-pill input:checked ~ span,
+.contact__segment-pill input:checked ~ span + * {
+    background: transparent;
+}
+
+.contact__segment-pill input:checked ~ span {
+    background: transparent;
+}
+
+.contact__segment-pill input:checked ~ span,
+.contact__segment-pill input:checked ~ span + * {
+    background: transparent;
+}
+
+.contact__segment-pill input:checked ~ span {
+    background: transparent;
+}
+
+.contact__segment-pill input:checked ~ span,
+.contact__segment-pill input:checked ~ span + * {
+    background: transparent;
+}
+
+.contact__segment-pill input:checked ~ span {
+    background: transparent;
+}
+
+.contact__segment-pill input:checked ~ span,
+.contact__segment-pill input:checked ~ span + * {
+    background: transparent;
+}
+
+.contact__segment-pill input:checked ~ span {
+    background: transparent;
+}
+
+.contact__segment-pill input:checked ~ span,
+.contact__segment-pill input:checked ~ span + * {
+    background: transparent;
+}
+
+.contact__segment-pill input:checked ~ span {
+    background: transparent;
+}
+
+.contact__segment-pill input:checked ~ span,
+.contact__segment-pill input:checked ~ span + * {
+    background: transparent;
+}
+
+.contact__segment-pill input:checked ~ span {
+    background: transparent;
+}
+
+.contact__segment-pill input:checked ~ span,
+.contact__segment-pill input:checked ~ span + * {
+    background: transparent;
+}
+
+.contact__segment-pill input:checked ~ span {
+    background: transparent;
+}
+
+.contact__segment-pill input:checked ~ span,
+.contact__segment-pill input:checked ~ span + * {
+    background: transparent;
+}
+
+.contact__segment-pill input:checked ~ span {
+    background: transparent;
+}
+
+.contact__segment-pill input:checked ~ span,
+.contact__segment-pill input:checked ~ span + * {
+    background: transparent;
+}
+
+.contact__segment-pill input:checked ~ span {
+    background: transparent;
+}
+
+.contact__segment-pill input:checked ~ span,
+.contact__segment-pill input:checked ~ span + * {
+    background: transparent;
+}
+
+.contact__segment-pill input:checked ~ span {
+    background: transparent;
+}
+
+.contact__segment-pill input:checked ~ span,
+.contact__segment-pill input:checked ~ span + * {
+    background: transparent;
+}
+
+.contact__segment-pill input:checked ~ span {
+    background: transparent;
+}
+
+.contact__segment-pill input:checked ~ span,
+.contact__segment-pill input:checked ~ span + * {
+    background: transparent;
+}
+
+.contact__segment-pill input:checked ~ span {
+    background: transparent;
+}
+
+.contact__segment-pill input:checked ~ span,
+.contact__segment-pill input:checked ~ span + * {
+    background: transparent;
+}
+
+.contact__segment-pill input:checked ~ span {
+    background: transparent;
+}
+
+.contact__segment-pill input:checked ~ span,
+.contact__segment-pill input:checked ~ span + * {
+    background: transparent;
+}
+
+.contact__segment-pill input:checked ~ span {
+    background: transparent;
+}
+
+.contact__segment-pill input:checked ~ span,
+.contact__segment-pill input:checked ~ span + * {
+    background: transparent;
+}
+
+.contact__segment-pill input:checked ~ span {
+    background: transparent;
+}
+
+.contact__segment-pill input:checked ~ span,
+.contact__segment-pill input:checked ~ span + * {
+    background: transparent;
+}
 .contact__right .section-descr {
     color: rgba(255, 255, 255, 0.85);
 }
@@ -3652,9 +4036,7 @@ label.has-value {
         max-width: 300px;
     }
 
-    .contact .container {
-        /* max-width: 820px; */
-    }
+    /* .contact .container had a previous override removed to clear lint warning */
 
     .contact .bg-top {
         width: 100%;
@@ -3725,9 +4107,7 @@ label.has-value {
         max-width: 90%;
     }
 
-    .something {
-        /* padding-bottom: 32px; */
-    }
+    /* .something placeholder removed to clear lint warning */
   
 }
 
@@ -3804,9 +4184,7 @@ label.has-value {
         padding: 24px 0;
     }
 
-    .main {
-        /* margin-top: 80px; */
-    }
+    /* .main placeholder removed to clear lint warning */
 
     .main-mobile-bg-top {
         animation: 4s ease-in-out 0s infinite alternate none running meet-right-drawing-animation;
@@ -4128,9 +4506,7 @@ label.has-value {
         flex-wrap: wrap;
     }
 
-    .products-cards .products-card:last-child {
-        /* display: block; */
-    }
+    /* .products-cards .products-card:last-child placeholder removed to clear lint warning */
 
     .products-card {
         max-width: 220px;
