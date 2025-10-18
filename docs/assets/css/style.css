@@ -3941,6 +3941,24 @@ div.divider {
     border-radius: 100px;
 }
 
+.divider {
+    display: none !important;
+}
+
+.bg-top,
+.bg-bottom,
+.bg-bottom2,
+.main-mobile-bg-top,
+.main-mobile-bg-bottom,
+.img-bg,
+.img-bg-top,
+.img-bg-bottom,
+.custom-bg,
+.who-bg-top,
+.who-bg-bottom {
+    display: none !important;
+}
+
 .types-card__img:hover img {
     transform: scale(1.1);
 }
