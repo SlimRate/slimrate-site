@@ -4008,6 +4008,155 @@ ection.we-support {
 }
 
 
+.easy-guides {
+    padding: 80px 0;
+}
+
+.easy-guides__wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.easy-guides__media {
+    flex: 1 1 460px;
+    background: radial-gradient(80% 80% at 20% 20%, rgba(255, 110, 140, 0.35), rgba(55, 75, 155, 0.85));
+    border-radius: 36px;
+    padding: 32px;
+    position: relative;
+    box-shadow: 0 30px 70px rgba(22, 32, 90, 0.25);
+    min-height: 260px;
+}
+
+.easy-guides__media::before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: 24px;
+    width: 72px;
+    height: 20px;
+    border-radius: 50px;
+    background: linear-gradient(90deg, #ff5f5f 0%, #ffc15f 35%, #7fff7f 100%);
+    opacity: 0.85;
+    pointer-events: none;
+}
+
+.easy-guides__media::after {
+    content: "";
+    position: absolute;
+    top: 28px;
+    right: 32px;
+    height: 8px;
+    width: calc(100% - 120px);
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    pointer-events: none;
+}
+
+.easy-guides__iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: none;
+    border-radius: 20px;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 18px 40px rgba(11, 16, 60, 0.3);
+}
+
+.easy-guides__content {
+    flex: 1 1 420px;
+    background: #e7efff;
+    border-radius: 56px;
+    padding: 56px 64px;
+    box-shadow: 0 30px 70px rgba(22, 32, 90, 0.08);
+}
+
+.easy-guides__title {
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 1.1;
+    color: #1f2537;
+    margin-bottom: 24px;
+}
+
+.easy-guides__text {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #283047;
+    margin-bottom: 36px;
+}
+
+.easy-guides__actions {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.easy-guides__button {
+    padding: 18px 36px;
+    border-radius: 14px;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+@media (max-width: 992px) {
+    .easy-guides__wrap {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .easy-guides__content {
+        width: 100%;
+        padding: 48px;
+        border-radius: 40px;
+    }
+
+    .easy-guides__title {
+        font-size: 40px;
+    }
+
+    .easy-guides__text {
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 576px) {
+    .easy-guides {
+        padding: 60px 0;
+    }
+
+    .easy-guides__media {
+        padding: 20px;
+        border-radius: 24px;
+    }
+
+    .easy-guides__media::before {
+        top: 12px;
+        left: 16px;
+    }
+
+    .easy-guides__media::after {
+        top: 20px;
+        right: 20px;
+    }
+
+    .easy-guides__content {
+        padding: 36px 28px;
+        border-radius: 32px;
+    }
+
+    .easy-guides__title {
+        font-size: 32px;
+    }
+
+    .easy-guides__button {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+
 .pp .advantages-allPage {
     background: none;
 }
