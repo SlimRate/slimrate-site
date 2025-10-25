@@ -4137,7 +4137,7 @@ label.has-value {
 
 
 .equip.allinone .block-right {
-    max-width: 520px;
+    max-width: var(--allinone-square-size);
     width: 100%;
     aspect-ratio: 1 / 1;
     height: auto !important;
@@ -4153,21 +4153,22 @@ label.has-value {
 .equip.allinone::before {
     content: "";
     position: absolute;
-    top: 50%;
+    top: -58px;
     left: 0;
-    width: clamp(260px, 38vw, 520px);
-    aspect-ratio: 1 / 1;
+    width: calc(var(--allinone-square-size) + 116px);
+    height: calc(var(--allinone-square-size) + 116px);
     background: #2b6bf3;
     border-radius: 32px 0 32px 0;
-    transform: translate(-90%, -50%);
+    transform: translateX(-90%);
     z-index: 0;
     pointer-events: none;
 }
 .equip.allinone {
+    --allinone-square-size: clamp(260px, 38vw, 520px);
     overflow: visible;
     position: relative;
 }
- .equip.allinone .block-img-circle {
+.equip.allinone .block-img-circle {
     display: block;
     position: absolute;
     inset: 0;
