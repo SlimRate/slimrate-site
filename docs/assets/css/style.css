@@ -4168,6 +4168,14 @@ label.has-value {
     overflow: visible;
     position: relative;
 }
+.equip.allinone .block-left {
+    position: relative;
+    max-width: var(--allinone-square-size);
+    width: 100%;
+    background: #eaf1fe;
+    border-radius: 32px;
+    padding: 48px clamp(32px, 3vw, 48px);
+}
 .equip.allinone .block-img-circle {
     display: block;
     position: absolute;
