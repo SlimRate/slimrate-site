@@ -82,6 +82,27 @@ input.form-control:focus {
     }
 }
 
+    a {
+        color: #2b6bf3;
+        text-decoration: none;
+        transition: color 0.25s ease, opacity 0.25s ease;
+    }
+
+    a:visited {
+        color: #2b6bf3;
+    }
+
+    a:hover,
+    a:focus {
+        color: #ef2b23;
+        text-decoration: none;
+    }
+
+    a:focus-visible {
+        outline: 2px solid rgba(43, 107, 243, 0.35);
+        outline-offset: 3px;
+    }
+
 @keyframes meet-right-drawing-animation {
     0% {
         transform: translateY(0px);
@@ -247,6 +268,8 @@ input.form-control:focus {
     display: -ms-flexbox;
 
     display: flex;
+
+    list-style: none;
 
 }
 
