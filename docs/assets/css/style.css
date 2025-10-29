@@ -2763,27 +2763,15 @@ h2.section-title span {
 
     position: relative;
 
-    overflow: hidden;
+    overflow: visible;
 
     z-index: 0;
 
-}
+    --contact-decor-gap: clamp(28px, 5vw, 60px);
 
+    --contact-decor-offset: clamp(48px, 8vw, 92px);
 
-
-.contact__right::before,
-
-.contact__right::after {
-
-    content: "";
-
-    position: absolute;
-
-    border-radius: 50%;
-
-    background: rgba(255, 255, 255, 0.15);
-
-    pointer-events: none;
+    --contact-decor-radius: 100px;
 
 }
 
@@ -2791,13 +2779,21 @@ h2.section-title span {
 
 .contact__right::before {
 
-    width: 220px;
+    content: "";
 
-    height: 220px;
+    position: absolute;
 
-    top: -110px;
+    inset: 0;
 
-    right: -80px;
+    pointer-events: none;
+
+    background:
+
+        radial-gradient(220px 220px at calc(100% - 40px) -70px, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.18) 60%, transparent 61%),
+
+        radial-gradient(170px 170px at -30px calc(100% + 50px), rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.12) 65%, transparent 66%);
+
+    z-index: 0;
 
 }
 
@@ -2805,13 +2801,25 @@ h2.section-title span {
 
 .contact__right::after {
 
-    width: 160px;
+    content: "";
 
-    height: 160px;
+    position: absolute;
 
-    bottom: -60px;
+    top: calc(-1 * var(--contact-decor-offset));
 
-    left: -40px;
+    bottom: calc(-1 * var(--contact-decor-offset));
+
+    left: calc(100% + var(--contact-decor-gap));
+
+    right: -100vw;
+
+    background: #2b6bf3;
+
+    border-radius: 0 var(--contact-decor-radius) 0 var(--contact-decor-radius);
+
+    pointer-events: none;
+
+    z-index: -1;
 
 }
 
@@ -5682,6 +5690,12 @@ label.has-value {
 
 
 @media screen and (max-width: 1199px) {
+
+    .contact__right::after {
+
+        content: none;
+
+    }
 
     .tech-stack__right {
 
