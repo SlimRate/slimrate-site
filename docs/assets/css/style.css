@@ -1119,6 +1119,20 @@ h2.section-title span {
 
 
 
+.mainPageHeader {
+
+    margin: 0 32px;
+
+    border-radius: 48px 0 48px 0;
+
+    overflow: hidden;
+
+    background-image: url("../img/mainhardwarenew/2025mainbg.webp");
+
+}
+
+
+
 .main-mobile-bg-top {
 
     display: none;
@@ -8721,6 +8735,46 @@ ection.we-support {
         max-width: none;
 
     }
+
+}
+
+
+
+.testimonial-wrapper {
+
+    width: 100%;
+
+    padding: 0 32px;
+
+    box-sizing: border-box;
+
+}
+
+
+
+.testimonial-frame {
+
+    width: calc(100vw - 64px);
+
+    margin: 0 auto;
+
+    background: #eaf1fe;
+
+    border-radius: 0 48px 0 48px;
+
+    padding: clamp(24px, 6vw, 48px);
+
+    box-sizing: border-box;
+
+    max-width: 100%;
+
+}
+
+
+
+.testimonial-frame > #cardComponent {
+
+    background: transparent;
 
 }
 
