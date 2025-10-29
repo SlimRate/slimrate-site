@@ -2769,8 +2769,6 @@ h2.section-title span {
 
     --contact-decor-gap: clamp(28px, 5vw, 60px);
 
-    --contact-decor-offset: clamp(48px, 8vw, 92px);
-
     --contact-decor-radius: 100px;
 
 }
@@ -2805,9 +2803,9 @@ h2.section-title span {
 
     position: absolute;
 
-    top: calc(-1 * var(--contact-decor-offset));
+    top: 0;
 
-    bottom: calc(-1 * var(--contact-decor-offset));
+    bottom: 0;
 
     left: calc(100% + var(--contact-decor-gap));
 
@@ -2815,7 +2813,7 @@ h2.section-title span {
 
     background: #2b6bf3;
 
-    border-radius: 0 var(--contact-decor-radius) 0 var(--contact-decor-radius);
+    border-radius: 0 var(--contact-decor-radius) var(--contact-decor-radius) 0;
 
     pointer-events: none;
 
