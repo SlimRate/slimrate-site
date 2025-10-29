@@ -1123,11 +1123,11 @@ h2.section-title span {
 
     margin: 0 32px;
 
-    border-radius: 48px 0 48px 0;
+    border-radius: 100px 0 100px 0;
 
     overflow: hidden;
 
-    background-image: url("../img/mainhardwarenew/2025mainbg.webp");
+    background-image: url("../2025mainbg.png");
 
 }
 
@@ -4181,13 +4181,14 @@ label.has-value {
     height: auto !important;
     z-index: 1;
     container-type: inline-size;
+    border-radius: 0 100px 0 100px;
 }
 .equip.allinone .block-right::before {
     content: "";
     position: absolute;
     inset: calc(-1 * var(--allinone-decor-offset));
     background: #2b6bf3;
-    border-radius: 0 32px 0 32px;
+    border-radius: 0 100px 0 100px;
     z-index: 0;
 }
 .equip.allinone .block-right::after {
@@ -4198,7 +4199,7 @@ label.has-value {
     left: calc(100% + var(--allinone-gap));
     right: -100vw;
     background: #eaf1fe;
-    border-radius: 0 32px 0 32px;
+    border-radius: 0 100px 0 100px;
     pointer-events: none;
     z-index: -1;
 }
@@ -4224,7 +4225,7 @@ label.has-value {
     justify-content: flex-start;
     gap: clamp(16px, 2vw, 24px);
     background: #eaf1fe;
-    border-radius: 0 32px 0 32px;
+    border-radius: 0 100px 0 100px;
     padding: clamp(32px, 3vw, 48px);
     z-index: 1;
 }
@@ -4237,7 +4238,7 @@ label.has-value {
     left: -100vw;
     height: calc(100% + (2 * var(--allinone-decor-offset)));
     background: #2b6bf3;
-    border-radius: 32px 0 32px 0;
+    border-radius: 100px 0 100px 0;
     pointer-events: none;
     z-index: -1;
 }
@@ -8298,7 +8299,7 @@ ection.we-support {
 
     padding: clamp(32px, 4vw, 48px);
 
-    border-radius: clamp(36px, 4vw, 44px);
+    border-radius: 20px;
 
     color: #ffffff;
 
@@ -8760,7 +8761,7 @@ ection.we-support {
 
     background: #eaf1fe;
 
-    border-radius: 0 48px 0 48px;
+    border-radius: 0 100px 0 100px;
 
     padding: clamp(24px, 6vw, 48px);
 
