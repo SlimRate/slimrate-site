@@ -184,11 +184,13 @@
             <div class="easy-guides__media">
               <iframe
                 class="easy-guides__iframe"
-                src="https://www.youtube.com/embed/videoseries?list=PLt3HfNKaik2mLckgFSpBlcVO_xt1JEbi1"
+                data-playlist-src="https://www.youtube.com/embed/videoseries?list=PLt3HfNKaik2mLckgFSpBlcVO_xt1JEbi1&amp;listType=playlist&amp;si=8x7MXeHP1bWnEmKe&amp;modestbranding=1&amp;rel=0"
+                src="https://www.youtube.com/embed/videoseries?list=PLt3HfNKaik2mLckgFSpBlcVO_xt1JEbi1&amp;listType=playlist&amp;si=8x7MXeHP1bWnEmKe&amp;modestbranding=1&amp;rel=0"
                 title="Slimrate Easy Guides playlist"
                 loading="lazy"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen
+                referrerpolicy="strict-origin-when-cross-origin"
               ></iframe>
             </div>
             <div class="easy-guides__content">
@@ -225,6 +227,23 @@
       navigator.serviceWorker.register("service-worker.js");
     });
   }
+</script>
+
+<script>
+  (function setEasyGuidesPlaylist() {
+    const iframe = document.querySelector('.easy-guides__iframe[data-playlist-src]');
+    if (!iframe) return;
+    try {
+      const url = new URL(iframe.dataset.playlistSrc);
+      const origin = window.location.origin;
+      if (origin && origin.startsWith('http')) {
+        url.searchParams.set('origin', origin);
+      }
+      iframe.src = url.toString();
+    } catch (err) {
+      /* noop */
+    }
+  })();
 </script>
 
 

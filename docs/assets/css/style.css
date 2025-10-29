@@ -2813,7 +2813,7 @@ h2.section-title span {
 
     background: #2b6bf3;
 
-    border-radius: 0 var(--contact-decor-radius) var(--contact-decor-radius) 0;
+    border-radius: 0 var(--contact-decor-radius) var(--contact-decor-radius) var(--contact-decor-radius);
 
     pointer-events: none;
 
@@ -8913,6 +8913,7 @@ ection.we-support {
 
 
 
+
 .easy-guides__iframe {
 
     width: 100%;
@@ -8928,6 +8929,12 @@ ection.we-support {
     z-index: 1;
 
     box-shadow: 0 18px 40px rgba(11, 16, 60, 0.3);
+
+    display: block;
+
+    background: #0c0f1a;
+
+    object-fit: cover;
 
 }
 
