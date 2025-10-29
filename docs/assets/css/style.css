@@ -8226,6 +8226,504 @@ ection.we-support {
 
 
 
+.hardware-nav {
+
+    background: #f3f5f9;
+
+    padding: clamp(70px, 9vw, 90px) 0;
+
+}
+
+
+
+.hardware-nav__inner {
+
+    max-width: 1320px;
+
+    margin: 0 auto;
+
+    padding: 0 clamp(16px, 5vw, 32px);
+
+}
+
+
+
+.hardware-nav__grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+
+    grid-template-areas:
+
+        "tablets tablets ewm"
+
+        "printers accessories ewm";
+
+    gap: clamp(20px, 3vw, 32px);
+
+    grid-auto-rows: minmax(260px, auto);
+
+}
+
+
+
+.hardware-nav__card {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: clamp(20px, 4vw, 48px);
+
+    padding: clamp(32px, 4vw, 48px);
+
+    border-radius: clamp(36px, 4vw, 44px);
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    overflow: hidden;
+
+    isolation: isolate;
+
+    min-height: 280px;
+
+    transition: transform 0.35s ease;
+
+    --hardware-overlay: linear-gradient(135deg, rgba(24, 35, 78, 0.9) 0%, rgba(46, 77, 148, 0.7) 100%);
+
+}
+
+
+
+.hardware-nav__card:hover,
+
+.hardware-nav__card:focus-visible {
+
+    transform: translateY(-6px);
+
+}
+
+
+
+.hardware-nav__card:focus-visible {
+
+    outline: 3px solid rgba(255, 255, 255, 0.65);
+
+    outline-offset: 4px;
+
+}
+
+
+
+.hardware-nav__card:hover .hardware-nav__media img,
+
+.hardware-nav__card:focus-visible .hardware-nav__media img {
+
+    transform: scale(1.03);
+
+}
+
+
+
+.hardware-nav__card:hover .hardware-nav__cta,
+
+.hardware-nav__card:focus-visible .hardware-nav__cta {
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 12px 24px rgba(255, 59, 48, 0.35);
+
+}
+
+
+
+.hardware-nav__card--tablets {
+
+    grid-area: tablets;
+
+    --hardware-overlay: linear-gradient(135deg, rgba(28, 43, 84, 0.92) 0%, rgba(65, 94, 178, 0.72) 100%);
+
+    min-height: 360px;
+
+}
+
+
+
+.hardware-nav__card--ewm {
+
+    grid-area: ewm;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    justify-content: flex-end;
+
+    --hardware-overlay: linear-gradient(160deg, rgba(25, 31, 66, 0.95) 0%, rgba(68, 40, 114, 0.7) 60%, rgba(110, 66, 183, 0.6) 100%);
+
+    min-height: 100%;
+
+}
+
+
+
+.hardware-nav__card--printers {
+
+    grid-area: printers;
+
+    --hardware-overlay: linear-gradient(150deg, rgba(23, 37, 68, 0.92) 0%, rgba(170, 36, 47, 0.68) 100%);
+
+}
+
+
+
+.hardware-nav__card--accessories {
+
+    grid-area: accessories;
+
+    --hardware-overlay: linear-gradient(150deg, rgba(20, 37, 78, 0.92) 0%, rgba(218, 63, 79, 0.68) 100%);
+
+}
+
+
+
+.hardware-nav__layer {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: -2;
+
+    pointer-events: none;
+
+}
+
+
+
+.hardware-nav__layer::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: -20%;
+
+    background: url("../img/mainhardwarenew/Backgroundhardwares.png") center / cover no-repeat;
+
+    filter: blur(38.5px);
+
+    transform: scale(1.1);
+
+    z-index: 0;
+
+}
+
+
+
+.hardware-nav__layer::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: var(--hardware-overlay);
+
+    z-index: 1;
+
+    opacity: 0.92;
+
+}
+
+
+
+.hardware-nav__body {
+
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 18px;
+
+    max-width: clamp(220px, 25vw, 320px);
+
+}
+
+
+
+.hardware-nav__body--bottom {
+
+    margin-top: auto;
+
+}
+
+
+
+.hardware-nav__heading {
+
+    font-size: clamp(28px, 3vw, 36px);
+
+    line-height: 1.15;
+
+    font-weight: 700;
+
+    color: #ffffff;
+
+}
+
+
+
+.hardware-nav__cta {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 12px 28px;
+
+    border-radius: 999px;
+
+    background: #ff3b30;
+
+    color: #ffffff;
+
+    font-weight: 600;
+
+    font-size: 16px;
+
+    letter-spacing: 0.01em;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    box-shadow: 0 8px 18px rgba(255, 59, 48, 0.28);
+
+}
+
+
+
+.hardware-nav__cta--arrow::after {
+
+    content: "→";
+
+    font-size: 18px;
+
+    margin-left: 12px;
+
+}
+
+
+
+.hardware-nav__media {
+
+    position: relative;
+
+    z-index: 2;
+
+    flex: 1 1 auto;
+
+    max-width: 50%;
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    align-items: flex-end;
+
+}
+
+
+
+.hardware-nav__media--left {
+
+    order: -1;
+
+    justify-content: flex-start;
+
+}
+
+
+
+.hardware-nav__media--right {
+
+    justify-content: flex-end;
+
+}
+
+
+
+.hardware-nav__media img {
+
+    width: 100%;
+
+    height: auto;
+
+    max-height: 100%;
+
+    object-fit: contain;
+
+    transition: transform 0.35s ease;
+
+}
+
+
+
+.hardware-nav__card--ewm .hardware-nav__media {
+
+    align-self: stretch;
+
+    justify-content: flex-end;
+
+    max-width: none;
+
+}
+
+
+
+.hardware-nav__card--ewm .hardware-nav__media img {
+
+    max-width: clamp(220px, 45%, 340px);
+
+    align-self: flex-end;
+
+}
+
+
+
+.hardware-nav__card--tablets .hardware-nav__media img {
+
+    max-width: clamp(260px, 55%, 420px);
+
+}
+
+
+
+.hardware-nav__card--printers .hardware-nav__media img,
+
+.hardware-nav__card--accessories .hardware-nav__media img {
+
+    max-width: clamp(180px, 50%, 260px);
+
+}
+
+
+
+@media (max-width: 1279px) {
+
+    .hardware-nav__card {
+
+        min-height: 260px;
+
+    }
+
+}
+
+
+
+@media (max-width: 1023px) {
+
+    .hardware-nav__grid {
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        grid-template-areas:
+
+            "tablets ewm"
+
+            "printers accessories";
+
+    }
+
+
+
+    .hardware-nav__card--tablets,
+
+    .hardware-nav__card--ewm {
+
+        min-height: 320px;
+
+    }
+
+}
+
+
+
+@media (max-width: 767px) {
+
+    .hardware-nav__grid {
+
+        grid-template-columns: 1fr;
+
+        grid-template-areas:
+
+            "tablets"
+
+            "ewm"
+
+            "printers"
+
+            "accessories";
+
+    }
+
+
+
+    .hardware-nav__card {
+
+        flex-direction: row;
+
+        align-items: flex-start;
+
+        min-height: 240px;
+
+    }
+
+
+
+    .hardware-nav__card--ewm {
+
+        flex-direction: row;
+
+        align-items: flex-start;
+
+    }
+
+
+
+    .hardware-nav__media {
+
+        max-width: 45%;
+
+    }
+
+
+
+    .hardware-nav__body {
+
+        max-width: none;
+
+    }
+
+}
+
 
 
 .easy-guides {
