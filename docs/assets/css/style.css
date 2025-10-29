@@ -2639,6 +2639,32 @@ h2.section-title span {
 
     box-shadow: 0 40px 80px rgba(21, 40, 100, 0.08);
 
+    position: relative;
+
+    overflow: visible;
+
+    z-index: 0;
+
+}
+
+.contact__left::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    bottom: 0;
+
+    left: -100vw;
+
+    width: 100vw;
+
+    background: #e4ecff;
+
+    z-index: -1;
+
 }
 
 
