@@ -1,50 +1,60 @@
 const equipCompanyTemplate = document.createElement('template');
 equipCompanyTemplate.innerHTML = `
-<section class="equip company-equip">
-            <img src="assets/img/custom-bg-1.svg" alt="Slimrate product image" class="custom-bg">
-            <img src="assets/img/bg-top-1.svg" alt="Slimrate product image" class="bg-top">
-            <img src="assets/img/bg-bot-1.svg" alt="Slimrate product image" class="bg-bottom">
-            <div class="container">
-                <div class="block-left">
-                    <h2 class="section-title">All-in-one point of sale solution built to run your business better</h2>
-                    <p class="equip-text">Slimrate POS powers your business from a single, smart platform.<br>
-                    Accept payments, manage employees and inventory, generate reports, and much more.
-                     </p>
-                    <div class="equip-buttons">
-                        <a href="#get_demo"><button class="btn btn-white">Get Demo</button></a>
-                        <!-- <a href="">All products →</a> -->
-                    </div>
-                </div>
+<section class="equip company-equip allinone" id="slimrate-pos">
+    <img src="assets/img/custom-bg-1.svg" alt="Slimrate decorative background" class="custom-bg">
+    <img src="assets/img/bg-top-1.svg" alt="Slimrate decorative background" class="bg-top">
+    <img src="assets/img/bg-bot-1.svg" alt="Slimrate decorative background" class="bg-bottom">
+    <div class="container allinone__wrap">
+        <div class="block-left allinone__card">
+            <h2 class="allinone__title">Slimrate POS:<span>Your All-in-One Business Solution</span></h2>
+            <p class="allinone__text">
+                Streamline your business operations with Slimrate POS. From accepting payments to managing employees and
+                inventory, our system simplifies it all. Get insights with powerful reporting, and customize it to your unique
+                needs. We prioritize security and reliability, so you can focus on growth.
+            </p>
+            <p class="allinone__text">
+                Experience the difference with Slimrate POS – your path to a smarter, more efficient, and profitable future.
+                Start today!
+            </p>
+            <a href="#get_demo" class="btn btn-red allinone__cta">Get Demo</a>
+        </div>
+        <div class="block-right">
+            <div class="equip-card">
+                <img src="assets/img/icons/checkMashine.svg" alt="Slimrate payment terminal" class="equip-img">
+                <img src="assets/img/icons/scanner.svg" alt="Slimrate barcode scanner" class="equip-img">
+                <img src="assets/img/icons/equip-3.svg" alt="Slimrate POS station" class="equip-img">
+                <img src="assets/img/icons/phone.svg" alt="Slimrate mobile app" class="equip-img">
 
-                <div class="block-right">
-                    <div class="equip-card">
-                        <img src="assets/img/icons/checkMashine.svg" alt="Slimrate product image" class="equip-img">
-                        <img src="assets/img/icons/scanner.svg" alt="Slimrate product image" class="equip-img">
-                        <img src="assets/img/icons/equip-3.svg" alt="Slimrate product image" class="equip-img">
-                        <img src="assets/img/icons/phone.svg" alt="Slimrate product image" class="equip-img">
-                        
-                        <div class="equip-img">
-                            <a href="payment_processing.html">Payment Processing</a><a href="payment_processing.html"><img src="assets/img/icons/equip-btn.svg" alt="Slimrate product image" class="equip-btn"></a></div>
-                        <div class="equip-img">
-                            <a href="software.html">POS Software</a><a href="software.html"><img src="assets/img/icons/equip-btn.svg" alt="Slimrate product image" class="equip-btn"></a></div>
-                        <div class="equip-img">
-                            <a href="hardware.html">POS Hardware</a><a href="hardware.html"><img src="assets/img/icons/equip-btn.svg" alt="Slimrate product image" class="equip-btn"></a></div>
-                    
-                    </div>
-                    <img src="assets/img/circle.svg" alt="Slimrate product image" class="block-img-circle">
+                <div class="equip-img equip-label equip-label--processing">
+                    <a href="payment_processing.html">Payment Processing</a><a href="payment_processing.html"><img src="assets/img/icons/equip-btn.svg" alt="Open payment processing" class="equip-btn"></a>
+                </div>
+                <div class="equip-img equip-label equip-label--software">
+                    <a href="software.html">POS Software</a><a href="software.html"><img src="assets/img/icons/equip-btn.svg" alt="Open POS software" class="equip-btn"></a>
+                </div>
+                <div class="equip-img equip-label equip-label--hardware">
+                    <a href="hardware.html">POS Hardware</a><a href="hardware.html"><img src="assets/img/icons/equip-btn.svg" alt="Open POS hardware" class="equip-btn"></a>
+                </div>
+                <div class="equip-img equip-label equip-label--mobile">
+                    <a href="support.html">Mobile App</a><a href="support.html"><img src="assets/img/icons/equip-btn.svg" alt="Open mobile app info" class="equip-btn"></a>
                 </div>
             </div>
-        </section>
+            <img src="assets/img/circle.svg" alt="Slimrate decorative circle" class="block-img-circle">
+        </div>
+    </div>
+</section>
 `;
 
-class EquipCompany extends HTMLElement {
-    constructor() {
-        super();
-        this._contents = new DocumentFragment();
-        this._contents.appendChild(equipCompanyTemplate.content.cloneNode(true));
+if (!customElements.get("equip-company-el")) {
+    class EquipCompany extends HTMLElement {
+        constructor() {
+            super();
+            this._contents = new DocumentFragment();
+            this._contents.appendChild(equipCompanyTemplate.content.cloneNode(true));
+        }
+        connectedCallback() {
+            this.appendChild(this._contents);
+        }
     }
-    connectedCallback() {
-        this.appendChild(this._contents);
-    }
+
+    customElements.define("equip-company-el", EquipCompany);
 }
-customElements.define("equip-company-el", EquipCompany);

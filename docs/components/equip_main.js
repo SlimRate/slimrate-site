@@ -44,14 +44,17 @@ equipCompanyTemplate.innerHTML = `
 </section>
 `;
 
-class EquipCompany extends HTMLElement {
-    constructor() {
-        super();
-        this._contents = new DocumentFragment();
-        this._contents.appendChild(equipCompanyTemplate.content.cloneNode(true));
+if (!customElements.get("equip-company-el")) {
+    class EquipCompany extends HTMLElement {
+        constructor() {
+            super();
+            this._contents = new DocumentFragment();
+            this._contents.appendChild(equipCompanyTemplate.content.cloneNode(true));
+        }
+        connectedCallback() {
+            this.appendChild(this._contents);
+        }
     }
-    connectedCallback() {
-        this.appendChild(this._contents);
-    }
+
+    customElements.define("equip-company-el", EquipCompany);
 }
-customElements.define("equip-company-el", EquipCompany);
