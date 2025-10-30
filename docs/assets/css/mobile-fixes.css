@@ -1174,10 +1174,12 @@ body {
 
     .hardware-nav__media {
         max-width: 70%;
+        overflow: visible;
     }
 
     .hardware-nav__media img {
         transform: scale(1.0);
+        transform-origin: center;
     }
 
     .hardware-nav__body {
@@ -1194,22 +1196,8 @@ body {
     }
 
     .footer {
-        font-size: 11px;
-        padding: 7px 14px;
-    }
-
-    .hardware-nav__media {
-        max-width: 65%;
-        overflow: visible;
-    }
-
-    .hardware-nav__media img {
-        transform: scale(1.5);
-        transform-origin: center;
-    }
-
-    .footer {
         padding-top: 24px;
+        font-size: 11px;
     }
 
     .footer-top {
@@ -1227,6 +1215,98 @@ body {
 
     .footer-bottom ul li {
         font-size: 12px;
+    }
+}
+
+/* Updated header design for all pages */
+.main-allPages .container {
+    padding-left: 0 !important;
+    margin-left: 0;
+}
+
+.mainPageHeader .container {
+    padding-left: 0 !important;
+    margin-left: 0;
+}
+
+/* Mobile adaptivity for main-allPages */
+@media screen and (max-width: 767px) {
+    .main-allPages {
+        margin: 0 12px !important;
+        border-radius: 30px 0 30px 0 !important;
+        min-height: 100vh !important;
+    }
+
+    .main-allPages .main-bg {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    .main-allPages .gallery {
+        height: 100% !important;
+        width: 100% !important;
+    }
+
+    .main-allPages .gallery img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        object-position: center !important;
+    }
+
+    .main-allPages .container {
+        min-height: 100vh !important;
+    }
+
+    .main-allPages .block-left {
+        border-radius: 0 24px 24px 0 !important;
+        padding: 16px 16px 16px 20px !important;
+        background: rgba(0, 0, 0, 0.1) !important;
+        -webkit-backdrop-filter: blur(6px) !important;
+        backdrop-filter: blur(6px) !important;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .main-allPages {
+        margin: 0 8px !important;
+        border-radius: 24px 0 24px 0 !important;
+        min-height: 100vh !important;
+    }
+
+    .main-allPages .main-bg {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    .main-allPages .gallery {
+        height: 100% !important;
+        width: 100% !important;
+    }
+
+    .main-allPages .gallery img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        object-position: center !important;
+    }
+
+    .main-allPages .container {
+        min-height: 100vh !important;
+    }
+
+    .main-allPages .block-left {
+        border-radius: 0 16px 16px 0 !important;
+        padding: 12px 12px 12px 16px !important;
+        background: rgba(0, 0, 0, 0.1) !important;
+        -webkit-backdrop-filter: blur(6px) !important;
+        backdrop-filter: blur(6px) !important;
     }
 }
 
