@@ -1,0 +1,1232 @@
+/* Mobile Responsiveness Fixes for Slimrate Main Page 
+ * 
+ * This file contains comprehensive mobile responsiveness fixes for index.html
+ * without distorting or changing the content of blocks.
+ * 
+ * Breakpoints:
+ * - Mobile: < 767px
+ * - Small Mobile: < 480px
+ * - Tablet: 768px - 991px
+ * 
+ * Sections covered:
+ * 1. Base mobile fixes (prevent horizontal overflow)
+ * 2. Container width adjustments
+ * 3. Main header section
+ * 4. Coop logos section
+ * 5. Hardware navigation cards
+ * 6. Minimal slider
+ * 7. Customer testimonials
+ * 8. Easy Guides section
+ * 9. Popup overlays
+ * 10. Typography adjustments
+ * 11. Spacing adjustments
+ * 12. Image overflow prevention
+ */
+
+/* ========================================
+   Base Mobile Fixes
+   ======================================== */
+
+/* Ensure body doesn't overflow horizontally on mobile */
+body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+.wrapper {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+/* ========================================
+   Container Width Fixes for Mobile
+   ======================================== */
+
+@media screen and (max-width: 767px) {
+    /* Fix container max-width for smaller devices */
+    .container {
+        max-width: 100% !important;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    /* Main header section */
+    .main.mainPageHeader {
+        min-height: auto;
+        padding: 60px 0;
+        margin: 0 16px;
+        border-radius: 50px 0 50px 0;
+    }
+
+    .main {
+        padding-bottom: 80px;
+    }
+
+    .main .container {
+        padding: 0 20px;
+    }
+
+    .main .block-left {
+        padding: 20px;
+        width: 100%;
+        backdrop-filter: blur(6px);
+        background: rgba(0, 0, 0, 0.15);
+        border-radius: 20px;
+    }
+
+    .main .section-title {
+        font-size: 28px !important;
+        line-height: 1.2;
+        margin-bottom: 16px;
+    }
+
+    .main .section-descr {
+        font-size: 15px !important;
+        line-height: 1.4;
+        margin-bottom: 20px;
+    }
+
+    .equip-buttons {
+        display: flex;
+        justify-content: center;
+    }
+
+    .equip-buttons .btn {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    /* Coop logos section */
+    .coop {
+        padding: 30px 0;
+    }
+
+    .coop .container {
+        flex-wrap: wrap;
+        gap: 15px;
+        padding: 0 20px;
+    }
+
+    .coop-logo {
+        max-width: 80px !important;
+        height: auto !important;
+    }
+}
+
+/* ========================================
+   Hardware Navigation Section - Mobile
+   ======================================== */
+
+@media (max-width: 767px) {
+    .hardware-nav {
+        padding: 40px 0;
+    }
+
+    .hardware-nav__inner {
+        padding: 0 16px;
+    }
+
+    .hardware-nav__grid {
+        grid-template-columns: 1fr !important;
+        grid-template-areas:
+            "tablets"
+            "emv"
+            "printers"
+            "accessories" !important;
+        gap: 16px;
+    }
+
+    .hardware-nav__card {
+        flex-direction: row !important;
+        align-items: center !important;
+        min-height: 200px !important;
+        padding: 24px !important;
+    }
+
+    .hardware-nav__card--emv {
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+    }
+
+    .hardware-nav__card--tablets {
+        min-height: 200px !important;
+    }
+
+    .hardware-nav__body {
+        max-width: 55% !important;
+        gap: 12px;
+    }
+
+    .hardware-nav__body--bottom {
+        margin-top: 0 !important;
+    }
+
+    .hardware-nav__heading {
+        font-size: 22px !important;
+        line-height: 1.2;
+    }
+
+    .hardware-nav__cta {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .hardware-nav__media {
+        max-width: 40% !important;
+        flex: 0 0 auto !important;
+    }
+
+    .hardware-nav__media img {
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    .hardware-nav__card--emv .hardware-nav__media img,
+    .hardware-nav__card--tablets .hardware-nav__media img,
+    .hardware-nav__card--printers .hardware-nav__media img,
+    .hardware-nav__card--accessories .hardware-nav__media img {
+        max-width: 100% !important;
+    }
+}
+
+/* ========================================
+   Minimal Slider - Mobile Enhancements
+   ======================================== */
+
+@media screen and (max-width: 767px) {
+    .slider-container {
+        max-width: 100%;
+        padding: 10px 16px;
+        overflow: hidden;
+    }
+
+    button.prev {
+        left: 5px;
+    }
+
+    button.next {
+        right: 5px;
+    }
+}
+
+/* ========================================
+   Customer Testimonials - Mobile
+   ======================================== */
+
+@media screen and (max-width: 767px) {
+    .testimonial-wrapper {
+        padding: 0 16px;
+        width: 100%;
+    }
+
+    .testimonial-frame {
+        width: calc(100% - 32px);
+        max-width: 100%;
+        padding: 24px 16px;
+        border-radius: 0 40px 0 40px;
+    }
+
+    #cardComponent {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .testimonial-header {
+        font-size: 24px !important;
+        margin-bottom: 12px;
+        text-align: center;
+    }
+}
+
+/* ========================================
+   Easy Guides Section - Mobile
+   ======================================== */
+
+@media (max-width: 767px) {
+    .easy-guides {
+        padding: 50px 0;
+    }
+
+    .easy-guides__wrap {
+        flex-direction: column;
+        gap: 30px;
+        padding: 0 16px;
+    }
+
+    .easy-guides__media {
+        flex: 1 1 100%;
+        padding: 16px;
+        border-radius: 20px;
+        min-height: auto;
+    }
+
+    .easy-guides__media::before {
+        top: 10px;
+        left: 14px;
+        width: 60px;
+        height: 16px;
+    }
+
+    .easy-guides__media::after {
+        top: 16px;
+        right: 16px;
+        width: calc(100% - 90px);
+    }
+
+    .easy-guides__iframe {
+        aspect-ratio: 16 / 9;
+        border-radius: 16px;
+    }
+
+    .easy-guides__content {
+        flex: 1 1 100%;
+        padding: 32px 20px;
+        border-radius: 32px;
+        width: 100%;
+    }
+
+    .easy-guides__title {
+        font-size: 28px !important;
+        line-height: 1.15;
+        margin-bottom: 16px;
+    }
+
+    .easy-guides__text {
+        font-size: 15px !important;
+        line-height: 1.5;
+        margin-bottom: 24px;
+    }
+
+    .easy-guides__button {
+        width: 100%;
+        text-align: center;
+        padding: 16px 28px;
+        font-size: 16px;
+    }
+}
+
+/* ========================================
+   Additional Popup and Overlay Fixes
+   ======================================== */
+
+@media screen and (max-width: 767px) {
+    .popup-overlay {
+        padding: 20px;
+    }
+
+    .popup-content {
+        max-width: 90% !important;
+        padding: 20px;
+        border-radius: 16px;
+    }
+
+    .close-btn {
+        font-size: 32px;
+        top: 10px;
+        right: 10px;
+    }
+}
+
+/* ========================================
+   General Mobile Typography
+   ======================================== */
+
+@media screen and (max-width: 767px) {
+    h1 {
+        font-size: 28px !important;
+        line-height: 1.2;
+    }
+
+    h2 {
+        font-size: 24px !important;
+        line-height: 1.2;
+    }
+
+    h3 {
+        font-size: 20px !important;
+        line-height: 1.3;
+    }
+
+    p {
+        font-size: 15px;
+        line-height: 1.5;
+    }
+
+    .btn {
+        font-size: 15px;
+        padding: 12px 24px;
+    }
+}
+
+/* ========================================
+   Spacing Adjustments for Mobile
+   ======================================== */
+
+@media screen and (max-width: 767px) {
+    :root {
+        --section-gap: 40px;
+        --section-gap-lg: 50px;
+        --section-gap-sm: 30px;
+    }
+
+    .wrapper > section,
+    .wrapper > div.coop,
+    .wrapper > div.testimonial-wrapper,
+    .wrapper > div.slider-container,
+    .wrapper > equip-company-el,
+    .wrapper > mini-faq,
+    .wrapper > pricing-form {
+        margin-top: var(--section-gap);
+    }
+
+    .wrapper > *:first-child {
+        margin-top: 0;
+    }
+
+    .wrapper > *:nth-child(2) {
+        margin-top: var(--section-gap-sm);
+    }
+}
+
+/* ========================================
+   Fix for Images Overflow
+   ======================================== */
+
+@media screen and (max-width: 767px) {
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .gallery {
+        height: auto;
+        min-height: 300px;
+    }
+
+    .gallery img {
+        height: auto;
+        min-height: 300px;
+        object-fit: cover;
+    }
+}
+
+/* ========================================
+   Prevent Horizontal Scroll
+   ======================================== */
+
+@media screen and (max-width: 767px) {
+    * {
+        max-width: 100%;
+    }
+
+    html,
+    body {
+        overflow-x: hidden;
+        max-width: 100vw;
+    }
+
+    .wrapper {
+        overflow-x: hidden;
+    }
+}
+
+/* ========================================
+   Extra Small Devices (< 480px)
+   ======================================== */
+
+@media screen and (max-width: 480px) {
+    .main .section-title {
+        font-size: 24px !important;
+    }
+
+    .main .section-descr {
+        font-size: 14px !important;
+    }
+
+    .main.mainPageHeader {
+        margin: 0 12px;
+        padding: 40px 0;
+        border-radius: 30px 0 30px 0;
+    }
+
+    .main .block-left {
+        padding: 16px;
+    }
+
+    .hardware-nav__heading {
+        font-size: 18px !important;
+    }
+
+    .hardware-nav__cta {
+        padding: 8px 16px;
+        font-size: 13px;
+    }
+
+    .hardware-nav__card {
+        padding: 20px !important;
+        min-height: 180px !important;
+    }
+
+    .easy-guides__title {
+        font-size: 24px !important;
+    }
+
+    .easy-guides__text {
+        font-size: 14px !important;
+    }
+
+    .easy-guides__content {
+        padding: 24px 16px;
+        border-radius: 24px;
+    }
+
+    .testimonial-header {
+        font-size: 20px !important;
+    }
+
+    .coop-logo {
+        max-width: 70px !important;
+    }
+}
+
+/* ========================================
+   Tablet Devices (768px - 991px)
+   ======================================== */
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .container {
+        max-width: 720px !important;
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    .main.mainPageHeader {
+        margin: 0 24px;
+        border-radius: 60px 0 60px 0;
+    }
+
+    .main .section-title {
+        font-size: 36px !important;
+    }
+
+    .main .section-descr {
+        font-size: 17px !important;
+    }
+
+    .hardware-nav__inner {
+        padding: 0 24px;
+    }
+
+    .easy-guides__wrap {
+        padding: 0 24px;
+    }
+
+    .testimonial-wrapper {
+        padding: 0 24px;
+    }
+}
+
+/* ========================================
+   Slimrate POS All-in-One Section - Mobile
+   ======================================== */
+
+/* Base styles for allinone text elements */
+.allinone__title {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.1;
+    color: #1f2537;
+    margin-bottom: 10px;
+}
+
+.allinone__title span {
+    display: block;
+    color: #2b6bf3;
+    margin-top: 4px;
+}
+
+.allinone__text {
+    font-size: 14px;
+    line-height: 1.45;
+    color: #425466;
+    margin-bottom: 8px;
+}
+
+.allinone__text:last-of-type {
+    margin-bottom: 10px;
+}
+
+.allinone__cta {
+    display: inline-block;
+    margin-top: 0;
+}
+
+/* Desktop fixes - ensure content fits */
+@media screen and (min-width: 992px) {
+    .equip.allinone .block-left {
+        aspect-ratio: auto !important;
+        min-height: var(--allinone-square-size);
+        height: auto !important;
+        padding: clamp(24px, 2.2vw, 36px);
+        justify-content: space-between;
+    }
+    
+    .equip.allinone .allinone__title {
+        font-size: clamp(20px, 2vw, 28px);
+        line-height: 1.1;
+        margin-bottom: clamp(8px, 1vw, 10px);
+    }
+    
+    .equip.allinone .allinone__text {
+        font-size: clamp(12px, 1vw, 14px);
+        line-height: 1.45;
+        margin-bottom: clamp(6px, 0.8vw, 8px);
+    }
+    
+    .equip.allinone .allinone__text:last-of-type {
+        margin-bottom: clamp(8px, 1vw, 10px);
+    }
+    
+    .equip.allinone .allinone__cta {
+        margin-top: 0;
+        align-self: flex-start;
+    }
+}
+
+/* Ensure proper spacing and no overlap */
+@media screen and (max-width: 1199px) {
+    .equip.allinone .container {
+        gap: clamp(40px, 5vw, 60px);
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .equip.allinone {
+        padding: 60px 0;
+        overflow: visible;
+    }
+
+    .equip.allinone .container {
+        flex-direction: column !important;
+        align-items: center;
+        gap: 60px;
+        padding: 0 24px;
+        min-height: auto !important;
+        height: auto !important;
+    }
+
+    .equip.allinone .block-left {
+        width: 100% !important;
+        max-width: 600px !important;
+        aspect-ratio: auto !important;
+        min-height: auto !important;
+        height: auto !important;
+        flex: 0 0 auto !important;
+        position: relative;
+        z-index: 2;
+        order: 1;
+    }
+
+    .equip.allinone .block-left::before {
+        display: none;
+    }
+
+    .equip.allinone .block-right {
+        position: relative;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        min-height: auto !important;
+        aspect-ratio: 1 / 1 !important;
+        margin: 0 auto;
+        flex: 0 0 auto !important;
+        order: 2;
+        z-index: 1;
+    }
+
+    .equip.allinone .block-right::before,
+    .equip.allinone .block-right::after {
+        display: none;
+    }
+
+    .equip.allinone .block-img-circle {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        transform: translateY(90px) !important;
+        margin: 0;
+    }
+
+    /* Center and scale the equip-card on mobile */
+    .equip.allinone .equip-card {
+        left: 50% !important;
+        --equip-card-scale: 0.95 !important;
+    }
+
+    /* Adjust POS Hardware label position on mobile - raise it up */
+    .equip.allinone .equip-img:nth-child(7) {
+        top: 0px !important;
+    }
+
+    /* Adjust Mobile App label position on mobile */
+    .equip.allinone .equip-img:nth-child(8) {
+        top: auto !important;
+        bottom: 80px !important;
+    }
+
+    /* Hide or adjust decorative backgrounds on tablet */
+    .equip.allinone .custom-bg,
+    .equip.allinone .bg-top,
+    .equip.allinone .bg-bottom {
+        opacity: 0.3;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .equip.allinone {
+        padding: 40px 0;
+    }
+
+    .equip.allinone .container {
+        gap: 50px;
+        padding: 0 20px;
+    }
+
+    .equip.allinone .block-left {
+        padding: 28px;
+        border-radius: 0 50px 0 50px;
+        max-width: 100% !important;
+    }
+
+    .equip.allinone .allinone__title {
+        font-size: 26px !important;
+        line-height: 1.2;
+    }
+
+    .equip.allinone .allinone__text {
+        font-size: 15px !important;
+        line-height: 1.6;
+    }
+
+    .equip.allinone .allinone__cta {
+        width: 100%;
+        text-align: center;
+        padding: 14px 24px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .equip.allinone .container {
+        gap: 40px;
+        padding: 0 16px;
+    }
+
+    .equip.allinone .block-left {
+        padding: 24px;
+    }
+
+    .equip.allinone .allinone__title {
+        font-size: 22px !important;
+    }
+
+    .equip.allinone .allinone__text {
+        font-size: 14px !important;
+        line-height: 1.5;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .equip.allinone .container {
+        gap: 35px;
+        padding: 0 12px;
+    }
+
+    .equip.allinone .allinone__title {
+        font-size: 20px !important;
+    }
+
+    .equip.allinone .allinone__text {
+        font-size: 13px !important;
+    }
+}
+
+/* ========================================
+   FAQ Section - Mobile
+   ======================================== */
+
+@media screen and (max-width: 991px) {
+    .faq--compact {
+        padding: 60px 0;
+    }
+
+    .faq--compact .container {
+        flex-direction: column;
+        gap: 32px;
+        padding: 0 20px;
+    }
+
+    .faq--compact .faq-block__left,
+    .faq--compact .faq-block__right {
+        max-width: 100% !important;
+        width: 100%;
+    }
+
+    .faq--compact .faq__cta {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .faq--compact {
+        padding: 40px 0;
+    }
+
+    .faq--compact .container {
+        gap: 24px;
+        padding: 0 16px;
+    }
+
+    .faq--compact .section-title {
+        font-size: 28px !important;
+        line-height: 1.2;
+        margin-bottom: 16px;
+    }
+
+    .faq--compact .faq-block__lead {
+        font-size: 16px !important;
+        line-height: 1.5;
+    }
+
+    .faq--compact .faq__cta {
+        padding: 14px 24px;
+        font-size: 15px;
+    }
+
+    .faq-question__title {
+        font-size: 17px !important;
+        line-height: 1.3;
+        margin-bottom: 12px;
+    }
+
+    .faq-question__descr {
+        font-size: 15px !important;
+        line-height: 1.5;
+    }
+
+    .faq--compact .faq-question {
+        margin-bottom: 20px;
+    }
+
+    .faq--compact .faq-block__contact {
+        gap: 6px;
+        font-size: 15px;
+    }
+
+    .faq--compact .faq-block__hint {
+        font-size: 14px;
+    }
+
+    .faq--compact .faq-block__contact a {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .faq--compact .section-title {
+        font-size: 24px !important;
+    }
+
+    .faq--compact .faq-block__lead {
+        font-size: 15px !important;
+    }
+
+    .faq-question__title {
+        font-size: 16px !important;
+    }
+
+    .faq-question__descr {
+        font-size: 14px !important;
+    }
+}
+
+/* ========================================
+   Footer - Mobile Improvements
+   ======================================== */
+
+.footer-top ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-top ul li a {
+    color: #407AF4;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+.footer-top ul li a:hover {
+    color: #2d5acf;
+    text-decoration: underline;
+}
+
+.footer-top ul li:first-child {
+    font-weight: 600 !important;
+    font-size: 18px !important;
+}
+
+.footer-bottom ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-bottom ul li a {
+    color: #666;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 14px;
+}
+
+.footer-bottom ul li a:hover {
+    color: #407AF4;
+}
+
+@media screen and (max-width: 991px) {
+    .footer {
+        padding-top: 40px;
+        margin-bottom: 24px;
+    }
+
+    .footer-top {
+        flex-wrap: wrap;
+        gap: 40px 32px;
+        padding-bottom: 40px;
+    }
+
+    .footer-top ul {
+        flex: 1 1 45%;
+        min-width: 200px;
+    }
+
+    .footer-top ul li:first-child {
+        font-size: 18px;
+        margin-bottom: 16px;
+    }
+
+    .footer-top ul li {
+        margin-bottom: 14px;
+        font-size: 15px;
+    }
+
+    .footer-bottom {
+        padding-top: 32px;
+    }
+
+    .footer-bottom ul {
+        justify-content: center;
+        gap: 8px 24px;
+    }
+
+    .footer-bottom ul li {
+        margin-right: 0;
+        margin-bottom: 0;
+    }
+}
+
+/* ========================================
+   Hardware Nav - Keep Asymmetric Grid on Mobile
+   ======================================== */
+
+/* Desktop improvements */
+.hardware-nav__media {
+    max-width: 60%;
+    overflow: visible;
+}
+
+.hardware-nav__media img {
+    transform: scale(1.4);
+    transform-origin: center;
+}
+
+.hardware-nav__body {
+    z-index: 2;
+    position: relative;
+}
+
+.hardware-nav__cta {
+    border-radius: 8px !important;
+}
+
+@media screen and (max-width: 991px) {
+    .hardware-nav {
+        padding: 40px 0;
+    }
+
+    .hardware-nav__grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+        grid-template-rows: repeat(2, 1fr) !important;
+        grid-template-areas:
+            "tablets tablets emv"
+            "printers accessories emv" !important;
+        gap: 12px;
+        grid-auto-rows: minmax(220px, auto);
+    }
+
+    .hardware-nav__card {
+        padding: 16px;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        position: relative;
+    }
+
+    .hardware-nav__media {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 80%;
+        z-index: 0;
+        pointer-events: none;
+    }
+
+    .hardware-nav__media img {
+        max-width: 100%;
+        height: auto;
+        transform: scale(1.2);
+        transform-origin: center;
+        opacity: 0.9;
+    }
+
+    .hardware-nav__body {
+        width: 100%;
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        margin-top: auto;
+        padding: 0;
+        z-index: 2;
+        position: relative;
+    }
+
+    .hardware-nav__heading {
+        margin: 0;
+        order: 1;
+        z-index: 2;
+        position: relative;
+    }
+
+    .hardware-nav__body a {
+        width: 100% !important;
+        display: block;
+        order: 2;
+    }
+
+    .hardware-nav__cta {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        text-align: center;
+        padding: 10px 20px !important;
+        border-radius: 8px;
+        box-sizing: border-box;
+        display: block;
+        z-index: 2;
+        position: relative;
+    }
+
+    .hardware-nav__card--tablets {
+        grid-area: tablets !important;
+    }
+
+    .hardware-nav__card--emv {
+        grid-area: emv !important;
+    }
+
+    .hardware-nav__card--printers {
+        grid-area: printers !important;
+    }
+
+    .hardware-nav__card--accessories {
+        grid-area: accessories !important;
+    }
+
+    .hardware-nav__heading {
+        font-size: 16px;
+    }
+
+    .hardware-nav__cta {
+        font-size: 13px;
+    }
+
+    .hardware-nav__media {
+        max-width: 55%;
+        overflow: visible;
+    }
+
+    .hardware-nav__media img {
+        max-width: 100%;
+        height: auto;
+        transform: scale(1.3);
+        transform-origin: center;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .hardware-nav__grid {
+        gap: 10px;
+        grid-auto-rows: minmax(200px, auto);
+    }
+
+    .hardware-nav__card {
+        padding: 14px;
+    }
+
+    .hardware-nav__media {
+        max-width: 75%;
+    }
+
+    .hardware-nav__media img {
+        transform: scale(1.1);
+    }
+
+    .hardware-nav__body {
+        gap: 8px;
+    }
+
+    .hardware-nav__heading {
+        font-size: 14px;
+    }
+
+    .hardware-nav__cta {
+        font-size: 12px;
+        padding: 8px 16px !important;
+    }
+
+    .footer {
+        max-width: 60%;
+        overflow: visible;
+    }
+
+    .hardware-nav__media img {
+        transform: scale(1.1);
+        transform-origin: center;
+    }
+
+    .footer {
+        padding-top: 32px;
+        margin-bottom: 16px;
+    }
+
+    .footer-top {
+        flex-direction: column;
+        gap: 32px;
+        padding-bottom: 32px;
+    }
+
+    .footer-top ul {
+        width: 100%;
+        flex: none;
+    }
+
+    .footer-top ul li:first-child {
+        font-size: 17px;
+        margin-bottom: 12px;
+    }
+
+    .footer-top ul li {
+        font-size: 14px;
+        margin-bottom: 12px;
+    }
+
+    .footer-bottom {
+        padding-top: 24px;
+    }
+
+    .footer-bottom ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .footer-bottom ul li {
+        font-size: 13px;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hardware-nav__grid {
+        gap: 8px;
+        grid-auto-rows: minmax(180px, auto);
+    }
+
+    .hardware-nav__card {
+        padding: 12px;
+    }
+
+    .hardware-nav__media {
+        max-width: 70%;
+    }
+
+    .hardware-nav__media img {
+        transform: scale(1.0);
+    }
+
+    .hardware-nav__body {
+        gap: 6px;
+    }
+
+    .hardware-nav__heading {
+        font-size: 13px;
+    }
+
+    .hardware-nav__cta {
+        font-size: 11px;
+        padding: 7px 14px !important;
+    }
+
+    .footer {
+        font-size: 11px;
+        padding: 7px 14px;
+    }
+
+    .hardware-nav__media {
+        max-width: 65%;
+        overflow: visible;
+    }
+
+    .hardware-nav__media img {
+        transform: scale(1.5);
+        transform-origin: center;
+    }
+
+    .footer {
+        padding-top: 24px;
+    }
+
+    .footer-top {
+        gap: 24px;
+        padding-bottom: 24px;
+    }
+
+    .footer-top ul li:first-child {
+        font-size: 16px;
+    }
+
+    .footer-top ul li {
+        font-size: 13px;
+    }
+
+    .footer-bottom ul li {
+        font-size: 12px;
+    }
+}
+
