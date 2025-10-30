@@ -1,0 +1,58 @@
+/* Vertical rhythm adjustments for homepage sections */
+
+:root {
+    --section-gap: 80px;
+    --section-gap-lg: var(--section-gap);
+    --section-gap-sm: var(--section-gap);
+}
+
+.wrapper > section,
+.wrapper > div.coop,
+.wrapper > div.testimonial-wrapper,
+.wrapper > div.slider-container,
+.wrapper > equip-company-el,
+.wrapper > mini-faq,
+.wrapper > pricing-form,
+.wrapper > bottom-menu {
+    margin-top: var(--section-gap);
+}
+
+.wrapper > *:first-child {
+    margin-top: 0;
+}
+
+.wrapper > *:nth-child(2) {
+    margin-top: var(--section-gap-sm);
+}
+
+.testimonial-wrapper,
+.easy-guides {
+    margin-top: var(--section-gap-lg);
+}
+
+.easy-guides + mini-faq,
+mini-faq + pricing-form {
+    margin-top: var(--section-gap);
+}
+
+mini-faq,
+equip-company-el,
+pricing-form,
+bottom-menu {
+    display: block;
+}
+
+.coop,
+.hardware-nav,
+.slider-container,
+.testimonial-wrapper,
+mini-faq,
+.easy-guides,
+equip-company-el,
+pricing-form {
+    margin-bottom: 0;
+}
+
+mini-faq .faq {
+    padding-bottom: var(--section-gap);
+}

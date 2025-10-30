@@ -3599,11 +3599,13 @@ label.has-value {
 
 
 
+
 .faq {
 
-    padding-bottom: 310px;
+    padding: 80px 0;
 
 }
+
 
 
 
@@ -3616,6 +3618,8 @@ label.has-value {
     justify-content: space-between;
 
     max-width: 960px;
+
+    padding: 0;
 
 }
 
@@ -3647,9 +3651,10 @@ label.has-value {
 
 
 
+
 .faq--compact {
 
-    padding-bottom: 220px;
+    padding: 0;
 
 }
 
@@ -8458,9 +8463,9 @@ ection.we-support {
 
     grid-template-areas:
 
-        "tablets tablets ewm"
+        "tablets tablets emv"
 
-        "printers accessories ewm";
+        "printers accessories emv";
 
     gap: clamp(20px, 3vw, 32px);
 
@@ -8558,9 +8563,9 @@ ection.we-support {
 
 
 
-.hardware-nav__card--ewm {
+.hardware-nav__card--emv {
 
-    grid-area: ewm;
+    grid-area: emv;
 
     flex-direction: column;
 
@@ -8786,7 +8791,7 @@ ection.we-support {
 
 
 
-.hardware-nav__card--ewm .hardware-nav__media {
+.hardware-nav__card--emv .hardware-nav__media {
 
     align-self: stretch;
 
@@ -8798,7 +8803,7 @@ ection.we-support {
 
 
 
-.hardware-nav__card--ewm .hardware-nav__media img {
+.hardware-nav__card--emv .hardware-nav__media img {
 
     max-width: clamp(220px, 45%, 340px);
 
@@ -8846,7 +8851,7 @@ ection.we-support {
 
         grid-template-areas:
 
-            "tablets ewm"
+            "tablets emv"
 
             "printers accessories";
 
@@ -8856,7 +8861,7 @@ ection.we-support {
 
     .hardware-nav__card--tablets,
 
-    .hardware-nav__card--ewm {
+    .hardware-nav__card--emv {
 
         min-height: 320px;
 
@@ -8876,7 +8881,7 @@ ection.we-support {
 
             "tablets"
 
-            "ewm"
+            "emv"
 
             "printers"
 
@@ -8897,8 +8902,7 @@ ection.we-support {
     }
 
 
-
-    .hardware-nav__card--ewm {
+    .hardware-nav__card--emv {
 
         flex-direction: row;
 
