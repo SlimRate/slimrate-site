@@ -5911,6 +5911,8 @@ label.has-value {
 
     justify-content: center;
 
+    text-align: center;
+
 }
 
 
@@ -8802,11 +8804,11 @@ ection.we-support {
 
     background: url("../img/mainhardwarenew/Backgroundhardwares.png") center / cover no-repeat;
 
-    filter: blur(26px);
+    filter: blur(8px);
 
     transform: scale(0.9);
 
-    z-index: 0;
+    z-index: -2;
 
 }
 
@@ -8822,7 +8824,7 @@ ection.we-support {
 
     background: var(--hardware-overlay);
 
-    z-index: 1;
+    z-index: -1;
 
     opacity: 0.92;
 
@@ -8918,7 +8920,7 @@ ection.we-support {
 
     position: relative;
 
-    z-index: 2;
+    z-index: 0;
 
     flex: 1 1 auto;
 
@@ -9003,6 +9005,34 @@ ection.we-support {
 .hardware-nav__card--accessories .hardware-nav__media img {
 
     max-width: clamp(180px, 50%, 260px);
+
+}
+
+
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+    .hardware-nav__card--printers .hardware-nav__media img,
+
+    .hardware-nav__card--accessories .hardware-nav__media img {
+
+        max-width: clamp(240px, 75%, 380px);
+
+    }
+
+}
+
+
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+
+    .hardware-nav__card--printers .hardware-nav__media img,
+
+    .hardware-nav__card--accessories .hardware-nav__media img {
+
+        max-width: clamp(200px, 55%, 300px);
+
+    }
 
 }
 
@@ -9338,7 +9368,7 @@ ection.we-support {
 
 
 
-@media (max-width: 992px) {
+@media (max-width: 991px) {
 
     .easy-guides__wrap {
 
