@@ -1,98 +1,106 @@
-$('.something-wrapper').slick({
-    slidesToShow: 3,
-    slidesToScroll: 3,
-    rows: 2,
-    autoplay: true,
-    autoplaySpeed: 1000,
-    arrows: false,
-    infinite: true,
-    easing: 'ease-in-out',
-    dots: true,
-    responsive: [{
-        breakpoint: 991,
-        settings: {
-            slidesToShow: 1,
-        }
-    }]
-});
+// Unified Slick Slider Configuration
+const slickConfigs = {
+    'something-wrapper': {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        rows: 2,
+        autoplay: true,
+        autoplaySpeed: 1000,
+        arrows: false,
+        infinite: true,
+        easing: 'ease-in-out',
+        dots: true,
+        responsive: [{
+            breakpoint: 991,
+            settings: { slidesToShow: 1 }
+        }]
+    },
+    'we-support-swiper': {
+        slidesToShow: 7,
+        slidesToScroll: 3,
+        rows: 1,
+        autoplay: true,
+        autoplaySpeed: 1000,
+        arrows: false,
+        pauseOnHover: false,
+        pauseOnFocus: false,
+        dots: true,
+        responsive: [{
+            breakpoint: 991,
+            settings: { slidesToShow: 3 }
+        }]
+    },
+    'hardware-cards': {
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        rows: 1,
+        autoplay: true,
+        autoplaySpeed: 1000,
+        arrows: false,
+        dots: true,
+        responsive: [{
+            breakpoint: 991,
+            settings: { slidesToShow: 1 }
+        }]
+    },
+    'tech-stack-swiper': {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        rows: 3,
+        autoplay: true,
+        autoplaySpeed: 1000,
+        arrows: false,
+        dots: true,
+        responsive: [{
+            breakpoint: 1199,
+            settings: { slidesToShow: 1 }
+        }, {
+            breakpoint: 991,
+            settings: { slidesToShow: 1 }
+        }]
+    },
+    'tariff-cards': {
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        infinite: false,
+        autoplay: true,
+        autoplaySpeed: 1000,
+        responsive: [{
+            breakpoint: 991,
+            settings: { slidesToShow: 1 }
+        }]
+    },
+    'gallery': {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        infinite: true,
+        autoplay: true,
+        arrows: false,
+        autoplaySpeed: 2000
+    }
+};
 
-$('.we-support-swiper').slick({
-    slidesToShow: 7,
-    slidesToScroll: 3,
-    rows: 1,
-    autoplay: true,
-    autoplaySpeed: 1000,
-    arrows: false,
-    pauseOnHover: false,
-    pauseOnFocus: false,
-    dots: true,
-    responsive: [{
-        breakpoint: 991,
-        settings: {
-            slidesToShow: 3,
+// Initialize all sliders
+function initSliders() {
+    Object.keys(slickConfigs).forEach(selector => {
+        const $element = $(`.${selector}`);
+        if ($element.length && typeof $element.slick === 'function') {
+            $element.slick(slickConfigs[selector]);
         }
-    }]
-});
+    });
+}
 
-$('.hardware-cards').slick({
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    rows: 1,
-    autoplay: true,
-    autoplaySpeed: 1000,
-    arrows: false,
-    dots: true,
-    responsive: [{
-        breakpoint: 991,
-        settings: {
-            slidesToShow: 1,
-        }
-    }]
-});
-
-$('.tech-stack-swiper').slick({
-    slidesToShow: 2,
-    slidesToScroll: 1,
-    rows: 3,
-    autoplay: true,
-    autoplaySpeed: 1000,
-    arrows: false,
-    dots: true,
-    responsive: [{
-        breakpoint: 1199,
-        settings: {
-            slidesToShow: 1,
-        }
-    }, {
-        breakpoint: 991,
-        settings: {
-            slidesToShow: 1,
-        }
-    }]
-});
-
-$('.tariff-cards').slick({
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    infinite: false,
-    autoplay: true,
-    autoplaySpeed: 1000,
-    responsive: [{
-        breakpoint: 991,
-        settings: {
-            slidesToShow: 1,
-        }
-    }]
-});
-
-$('.gallery').slick({
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    infinite: true,
-    autoplay: true,
-    arrows: false,
-    autoplaySpeed: 2000,
-});
+// Initialize when DOM is ready
+if (typeof $ !== 'undefined' && $.fn.slick) {
+    $(document).ready(initSliders);
+} else {
+    // Fallback for deferred scripts
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initSliders);
+    } else {
+        initSliders();
+    }
+}
 
 document.body.addEventListener('click', function(event) {
     const parent = event.target.closest('.menu__item');

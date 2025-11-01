@@ -18,10 +18,8 @@ topMenuTeplate.innerHTML = `
       <li ><a href="pricing.html" id='${pricingMenuElementId}'>Pricing</a></li>
       <li><a href="company.html" id ='${companyMenuElementId}'>Company</a></li>
     </ul>
-    <a href="company.html#get_demo" id="careersLink">
-  <button class="btn btn-red">Careers</button>
-</a>
-    <a href="https://ap.slimrate.com/#"><button class="btn btn-blue">Login</button></a>
+    <a href="company.html#get_demo" id="careersLink" class="btn btn-red">Careers</a>
+    <a href="https://ap.slimrate.com/#" class="btn btn-blue">Login</a>
 </div>
 </div>
 </header>
