@@ -203,7 +203,7 @@ input.form-control:focus {
 
     top: 0;
 
-    z-index: 20;
+    z-index: var(--z-header);
 
     background: #fff;
 
@@ -6589,7 +6589,7 @@ label.has-value {
 
         display: block;
 
-        z-index: 22;
+        z-index: var(--z-modal);
 
     }
 
