@@ -167,8 +167,8 @@ body {
     /* Fix container max-width for smaller devices */
     .container {
         max-width: 100%;
-        padding-left: 20px;
-        padding-right: 20px;
+        padding-left: var(--spacing-lg);
+        padding-right: var(--spacing-lg);
     }
 
     .footer .container {
@@ -186,11 +186,11 @@ body {
     }
 
     .main {
-        padding-bottom: 80px;
+        padding-bottom: var(--spacing-4xl);
     }
 
     .main .container {
-        padding: 0 20px;
+        padding: 0 var(--spacing-lg);
     }
 
     .main .block-left {
@@ -634,13 +634,13 @@ body {
 
     /* Footer (from line 1282) */
     .footer {
-        padding-top: 24px;
+        padding-top: var(--spacing-xl);
         font-size: 11px;
     }
 
     .footer-top {
-        gap: 24px;
-        padding-bottom: 24px;
+        gap: var(--spacing-xl);
+        padding-bottom: var(--spacing-xl);
     }
 
     .footer-top ul li:first-child {
@@ -702,12 +702,12 @@ body {
 @media (min-width: 768px) and (max-width: 1023px) {
     .container {
         max-width: 720px;
-        padding-left: 24px;
-        padding-right: 24px;
+        padding-left: var(--spacing-xl);
+        padding-right: var(--spacing-xl);
     }
 
     .main.mainPageHeader {
-        margin: 0 24px;
+        margin: 0 var(--spacing-xl);
         border-radius: 60px 0 60px 0;
     }
 
@@ -909,14 +909,14 @@ body {
 
     /* Footer */
     .footer {
-        padding-top: 40px;
-        margin-bottom: 24px;
+        padding-top: var(--spacing-3xl);
+        margin-bottom: var(--spacing-xl);
     }
 
     .footer-top {
         flex-wrap: wrap;
-        gap: 40px 32px;
-        padding-bottom: 40px;
+        gap: var(--spacing-3xl) var(--spacing-2xl);
+        padding-bottom: var(--spacing-3xl);
     }
 
     .footer-top ul {
@@ -1195,18 +1195,18 @@ body {
 
     .footer-top ul li {
         font-size: 14px;
-        margin-bottom: 12px;
+        margin-bottom: var(--spacing-sm);
     }
 
     .footer-bottom {
-        padding-top: 24px;
+        padding-top: var(--spacing-xl);
         text-align: center;
     }
 
     .footer-bottom ul {
         flex-direction: column;
         align-items: center;
-        gap: 12px;
+        gap: var(--spacing-sm);
         justify-content: center;
         text-align: center;
     }
