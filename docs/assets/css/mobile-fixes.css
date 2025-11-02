@@ -28,7 +28,9 @@
    ======================================== */
 
 :root {
-    /* Breakpoints */
+    /* ========================================
+       Breakpoints
+       ======================================== */
     --breakpoint-xs: 360px;
     --breakpoint-sm: 480px;
     --breakpoint-md: 767px;
@@ -36,7 +38,9 @@
     --breakpoint-xl: 1199px;
     --breakpoint-xxl: 1300px;
     
-    /* Z-index layers */
+    /* ========================================
+       Z-index layers
+       ======================================== */
     --z-background: -2;
     --z-behind: -1;
     --z-base: 0;
@@ -48,6 +52,96 @@
     --z-menu-button: 21;
     --z-modal: 22;
     --z-tooltip: 1000;
+    
+    /* ========================================
+       Colors - Primary Palette
+       ======================================== */
+    --color-primary: #2b6bf3;
+    --color-primary-hover: #2d5acf;
+    --color-primary-light: #407AF4;
+    --color-secondary: #ef2b23;
+    --color-dark: #252525;
+    --color-text-primary: #1f2537;
+    --color-text-secondary: #425466;
+    --color-text-muted: #666;
+    
+    /* ========================================
+       Colors - Neutrals
+       ======================================== */
+    --color-white: #ffffff;
+    --color-black: #000000;
+    --color-bg-overlay: rgba(0, 0, 0, 0.1);
+    --color-bg-overlay-dark: rgba(0, 0, 0, 0.15);
+    
+    /* ========================================
+       Spacing Scale
+       ======================================== */
+    --spacing-xs: 8px;
+    --spacing-sm: 12px;
+    --spacing-md: 16px;
+    --spacing-lg: 20px;
+    --spacing-xl: 24px;
+    --spacing-2xl: 32px;
+    --spacing-3xl: 40px;
+    --spacing-4xl: 60px;
+    
+    /* ========================================
+       Border Radius
+       ======================================== */
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 20px;
+    --radius-xl: 24px;
+    --radius-2xl: 30px;
+    --radius-3xl: 40px;
+    --radius-4xl: 50px;
+    --radius-round: 50%;
+    
+    /* ========================================
+       Typography
+       ======================================== */
+    /* Font sizes in px (for older browsers) and rem */
+    --font-size-xs: 11px;
+    --font-size-xs-rem: 0.6875rem; /* 11px / 16px */
+    --font-size-sm: 13px;
+    --font-size-sm-rem: 0.8125rem; /* 13px / 16px */
+    --font-size-base: 14px;
+    --font-size-base-rem: 0.875rem; /* 14px / 16px */
+    --font-size-md: 15px;
+    --font-size-md-rem: 0.9375rem; /* 15px / 16px */
+    --font-size-lg: 16px;
+    --font-size-lg-rem: 1rem; /* 16px / 16px */
+    --font-size-xl: 17px;
+    --font-size-xl-rem: 1.0625rem; /* 17px / 16px */
+    --font-size-2xl: 20px;
+    --font-size-2xl-rem: 1.25rem; /* 20px / 16px */
+    --font-size-3xl: 24px;
+    --font-size-3xl-rem: 1.5rem; /* 24px / 16px */
+    --font-size-4xl: 26px;
+    --font-size-4xl-rem: 1.625rem; /* 26px / 16px */
+    --font-size-5xl: 28px;
+    --font-size-5xl-rem: 1.75rem; /* 28px / 16px */
+    
+    /* Line Heights */
+    --line-height-tight: 1.1;
+    --line-height-normal: 1.2;
+    --line-height-relaxed: 1.3;
+    --line-height-loose: 1.5;
+    --line-height-extra-loose: 1.6;
+    
+    /* ========================================
+       Transitions
+       ======================================== */
+    --transition-fast: 0.25s;
+    --transition-normal: 0.3s;
+    --transition-slow: 0.5s;
+    --transition-ease: ease;
+    
+    /* ========================================
+       Blur Effects
+       ======================================== */
+    --blur-light: blur(6px);
+    --blur-medium: blur(8px);
 }
 
 /* ========================================
@@ -100,24 +194,35 @@ body {
     }
 
     .main .block-left {
-        padding: 20px;
+        padding: var(--spacing-lg);
         width: 100%;
-        -webkit-backdrop-filter: blur(6px);
-        backdrop-filter: blur(6px);
-        background: rgba(0, 0, 0, 0.15);
-        border-radius: 20px;
+        /* Fallback for browsers without backdrop-filter support */
+        background: rgba(0, 0, 0, 0.25);
+        /* Modern backdrop-filter */
+        -webkit-backdrop-filter: var(--blur-light);
+        backdrop-filter: var(--blur-light);
+        /* Lighter background when backdrop-filter is supported */
+        background: var(--color-bg-overlay-dark);
+        border-radius: var(--radius-lg);
+    }
+    
+    /* Better fallback using @supports */
+    @supports ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+        .main .block-left {
+            background: var(--color-bg-overlay-dark);
+        }
     }
 
     .main .section-title {
-        font-size: 28px;
-        line-height: 1.2;
-        margin-bottom: 16px;
+        font-size: var(--font-size-5xl);
+        line-height: var(--line-height-normal);
+        margin-bottom: var(--spacing-md);
     }
 
     .main .section-descr {
-        font-size: 15px;
+        font-size: var(--font-size-md);
         line-height: 1.4;
-        margin-bottom: 20px;
+        margin-bottom: var(--spacing-lg);
     }
 
     .equip-buttons {
@@ -137,8 +242,8 @@ body {
 
     .coop .container {
         flex-wrap: wrap;
-        gap: 15px;
-        padding: 0 20px;
+        gap: var(--spacing-md);
+        padding: 0 var(--spacing-lg);
     }
 
     .coop .coop-logo {
@@ -165,19 +270,20 @@ body {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: auto auto;
         grid-template-areas: none;
-        gap: 12px;
+        gap: var(--spacing-sm);
     }
 
-    .hardware-nav .hardware-nav__card,
-    .hardware-nav .hardware-nav__card--emv,
-    .hardware-nav .hardware-nav__card--tablets,
-    .hardware-nav .hardware-nav__card--printers,
-    .hardware-nav .hardware-nav__card--accessories {
+    /* Hardware navigation cards - shared styles */
+    .hardware-nav__card,
+    .hardware-nav__card--emv,
+    .hardware-nav__card--tablets,
+    .hardware-nav__card--printers,
+    .hardware-nav__card--accessories {
         flex-direction: column;
         align-items: stretch;
         justify-content: space-between;
         min-height: 220px;
-        padding: 14px;
+        padding: var(--spacing-sm);
         gap: 0;
         grid-area: unset;
         grid-column: auto;
@@ -187,21 +293,21 @@ body {
     }
     
     /* Background layer with blurred image - bottom layer */
-    .hardware-nav .hardware-nav__layer {
+    .hardware-nav__layer {
         z-index: var(--z-background);
     }
     
-    .hardware-nav .hardware-nav__layer::before {
+    .hardware-nav__layer::before {
         z-index: var(--z-background);
-        filter: blur(8px);
+        filter: var(--blur-medium);
     }
     
-    .hardware-nav .hardware-nav__layer::after {
+    .hardware-nav__layer::after {
         z-index: var(--z-behind);
     }
 
     /* Product image - middle layer */
-    .hardware-nav .hardware-nav__media {
+    .hardware-nav__media {
         position: absolute;
         top: 50%;
         left: 50%;
@@ -217,8 +323,8 @@ body {
         order: 2;
     }
 
-    .hardware-nav .hardware-nav__media--left,
-    .hardware-nav .hardware-nav__media--right {
+    .hardware-nav__media--left,
+    .hardware-nav__media--right {
         position: absolute;
         top: 50%;
         left: 50%;
@@ -226,10 +332,10 @@ body {
         z-index: var(--z-base);
     }
 
-    .hardware-nav .hardware-nav__media img,
-    .hardware-nav .hardware-nav__card--tablets .hardware-nav__media img,
-    .hardware-nav .hardware-nav__card--printers .hardware-nav__media img,
-    .hardware-nav .hardware-nav__card--accessories .hardware-nav__media img {
+    .hardware-nav__media img,
+    .hardware-nav__card--tablets .hardware-nav__media img,
+    .hardware-nav__card--printers .hardware-nav__media img,
+    .hardware-nav__card--accessories .hardware-nav__media img {
         position: relative;
         width: auto;
         height: auto;
@@ -240,23 +346,23 @@ body {
         z-index: var(--z-base);
     }
 
-    .hardware-nav .hardware-nav__card--emv .hardware-nav__media {
+    .hardware-nav__card--emv .hardware-nav__media {
         align-items: center;
         z-index: var(--z-base);
     }
     
-    .hardware-nav .hardware-nav__card--emv .hardware-nav__media img {
+    .hardware-nav__card--emv .hardware-nav__media img {
         max-height: 160px;
         max-width: 120px;
         opacity: 1;
     }
 
     /* Content (heading and button) - top layer */
-    .hardware-nav .hardware-nav__body {
+    .hardware-nav__body {
         position: relative;
         z-index: var(--z-overlay);
         max-width: 100%;
-        gap: 8px;
+        gap: var(--spacing-xs);
         order: 1;
         width: 100%;
         text-align: left;
@@ -264,13 +370,13 @@ body {
         flex-shrink: 0;
     }
 
-    .hardware-nav .hardware-nav__body--bottom {
+    .hardware-nav__body--bottom {
         margin-top: 0;
     }
 
-    .hardware-nav .hardware-nav__heading {
-        font-size: 15px;
-        line-height: 1.3;
+    .hardware-nav__heading {
+        font-size: var(--font-size-md);
+        line-height: var(--line-height-relaxed);
         margin: 0;
         text-align: left;
         max-width: 90%;
@@ -278,11 +384,11 @@ body {
         z-index: var(--z-overlay);
     }
 
-    .hardware-nav .hardware-nav__cta {
+    .hardware-nav__cta {
         position: relative;
         z-index: var(--z-overlay);
-        padding: 7px 14px;
-        font-size: 11px;
+        padding: 7px var(--spacing-sm);
+        font-size: var(--font-size-xs);
         white-space: nowrap;
         align-self: flex-start;
         order: 3;
@@ -349,15 +455,15 @@ body {
 
     /* Customer Testimonials */
     .testimonial-wrapper {
-        padding: 0 16px;
+        padding: 0 var(--spacing-md);
         width: 100%;
     }
 
     .testimonial-frame {
-        width: calc(100% - 32px);
+        width: calc(100% - var(--spacing-2xl));
         max-width: 100%;
-        padding: 24px 16px;
-        border-radius: 0 40px 0 40px;
+        padding: var(--spacing-xl) var(--spacing-md);
+        border-radius: 0 var(--radius-3xl) 0 var(--radius-3xl);
     }
 
     #cardComponent {
@@ -366,8 +472,8 @@ body {
     }
 
     .testimonial-header {
-        font-size: 24px;
-        margin-bottom: 12px;
+        font-size: var(--font-size-3xl);
+        margin-bottom: var(--spacing-sm);
         text-align: center;
     }
 }
@@ -384,58 +490,72 @@ body {
     .easy-guides__wrap {
         flex-direction: column;
         gap: 30px;
-        padding: 0 16px;
+        padding: 0 var(--spacing-md);
     }
 
     .easy-guides__media {
         flex: 1 1 100%;
-        padding: 16px;
-        border-radius: 20px;
+        padding: var(--spacing-md);
+        border-radius: var(--radius-lg);
         min-height: auto;
     }
 
     .easy-guides__media::before {
         top: 10px;
-        left: 14px;
+        left: var(--spacing-sm);
         width: 60px;
-        height: 16px;
+        height: var(--spacing-md);
     }
 
     .easy-guides__media::after {
-        top: 16px;
-        right: 16px;
+        top: var(--spacing-md);
+        right: var(--spacing-md);
         width: calc(100% - 90px);
     }
 
     .easy-guides__iframe {
+        /* Fallback for browsers that don't support aspect-ratio */
+        width: 100%;
+        height: 0;
+        padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        position: relative;
+        /* Modern aspect-ratio property */
         aspect-ratio: 16 / 9;
-        border-radius: 16px;
+        border-radius: var(--spacing-md);
+    }
+    
+    /* For browsers supporting aspect-ratio, reset padding-bottom */
+    @supports (aspect-ratio: 16 / 9) {
+        .easy-guides__iframe {
+            height: auto;
+            padding-bottom: 0;
+        }
     }
 
     .easy-guides__content {
         flex: 1 1 100%;
-        padding: 32px 20px;
-        border-radius: 32px;
+        padding: var(--spacing-2xl) var(--spacing-lg);
+        border-radius: var(--spacing-2xl);
         width: 100%;
     }
 
     .easy-guides .easy-guides__title {
-        font-size: 28px;
+        font-size: var(--font-size-5xl);
         line-height: 1.15;
-        margin-bottom: 16px;
+        margin-bottom: var(--spacing-md);
     }
 
     .easy-guides .easy-guides__text {
-        font-size: 15px;
-        line-height: 1.5;
-        margin-bottom: 24px;
+        font-size: var(--font-size-md);
+        line-height: var(--line-height-loose);
+        margin-bottom: var(--spacing-xl);
     }
 
     .easy-guides__button {
         width: 100%;
         text-align: center;
-        padding: 16px 28px;
-        font-size: 16px;
+        padding: var(--spacing-md) 28px;
+        font-size: var(--spacing-md);
     }
 }
 
@@ -446,17 +566,17 @@ body {
 @media (max-width: 767px) {
     /* Popup overlays */
     .popup-overlay {
-        padding: 20px;
+        padding: var(--spacing-lg);
     }
 
     .popup-content {
         max-width: 90%;
-        padding: 20px;
-        border-radius: 16px;
+        padding: var(--spacing-lg);
+        border-radius: var(--radius-md);
     }
 
     .close-btn {
-        font-size: 32px;
+        font-size: var(--spacing-2xl);
         top: 10px;
         right: 10px;
     }
@@ -466,28 +586,28 @@ body {
        ======================================== */
 
     h1 {
-        font-size: 28px;
-        line-height: 1.2;
+        font-size: var(--font-size-5xl);
+        line-height: var(--line-height-normal);
     }
 
     h2 {
-        font-size: 24px;
-        line-height: 1.2;
+        font-size: var(--font-size-3xl);
+        line-height: var(--line-height-normal);
     }
 
     h3 {
-        font-size: 20px;
-        line-height: 1.3;
+        font-size: var(--font-size-2xl);
+        line-height: var(--line-height-relaxed);
     }
 
     p {
-        font-size: 15px;
-        line-height: 1.5;
+        font-size: var(--font-size-md);
+        line-height: var(--line-height-loose);
     }
 
     .btn {
-        font-size: 15px;
-        padding: 12px 24px;
+        font-size: var(--font-size-md);
+        padding: var(--spacing-sm) var(--spacing-xl);
     }
 
     /* ========================================
@@ -625,27 +745,27 @@ body {
     }
 
     .hardware-nav__cta {
-        font-size: 11px;
-        padding: 7px 14px !important;
+        font-size: var(--font-size-xs);
+        padding: 7px var(--spacing-sm);
     }
 
     /* Easy Guides */
     .easy-guides .easy-guides__title {
-        font-size: 24px;
+        font-size: var(--font-size-3xl);
     }
 
     .easy-guides .easy-guides__text {
-        font-size: 14px;
+        font-size: var(--font-size-base);
     }
 
     .easy-guides__content {
-        padding: 24px 16px;
-        border-radius: 24px;
+        padding: var(--spacing-xl) var(--spacing-md);
+        border-radius: var(--spacing-xl);
     }
 
     /* Customer Testimonials */
     .testimonial-header {
-        font-size: 20px;
+        font-size: var(--font-size-2xl);
     }
 
     /* Coop logos */
@@ -655,12 +775,12 @@ body {
 
     /* All-in-One section (from line 832) */
     .equip.allinone .container {
-        gap: 40px;
-        padding: 0 16px;
+        gap: var(--spacing-3xl);
+        padding: 0 var(--spacing-md);
     }
 
     .equip.allinone .block-left {
-        padding: 24px;
+        padding: var(--spacing-xl);
     }
 
     .equip.allinone .allinone__title {
@@ -729,26 +849,26 @@ body {
 
     .main-allPages .gallery {
         height: 100% !important;
-        width: 100% !important;
+        width: 100%;
     }
 
     .main-allPages .gallery img {
-        width: 100% !important;
-        height: 100% !important;
-        object-fit: cover !important;
-        object-position: center !important;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
     }
 
     .main-allPages .container {
-        min-height: 100vh !important;
+        min-height: 100vh;
     }
 
     .main-allPages .block-left {
-        border-radius: 0 16px 16px 0 !important;
-        padding: 12px 12px 12px 16px !important;
-        background: rgba(0, 0, 0, 0.1) !important;
-        -webkit-backdrop-filter: blur(6px) !important;
-        backdrop-filter: blur(6px) !important;
+        border-radius: 0 var(--radius-md) var(--radius-md) 0;
+        padding: var(--spacing-sm) var(--spacing-sm) var(--spacing-sm) var(--spacing-md);
+        background: var(--color-bg-overlay);
+        -webkit-backdrop-filter: var(--blur-light);
+        backdrop-filter: var(--blur-light);
     }
 }
 
@@ -795,24 +915,24 @@ body {
 
 /* Base styles for allinone text elements */
 .allinone__title {
-    font-size: 28px;
+    font-size: var(--font-size-5xl);
     font-weight: 700;
-    line-height: 1.1;
-    color: #1f2537;
+    line-height: var(--line-height-tight);
+    color: var(--color-text-primary);
     margin-bottom: 10px;
 }
 
 .allinone__title span {
     display: block;
-    color: #2b6bf3;
+    color: var(--color-primary);
     margin-top: 4px;
 }
 
 .allinone__text {
-    font-size: 14px;
+    font-size: var(--font-size-base);
     line-height: 1.45;
-    color: #425466;
-    margin-bottom: 8px;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-xs);
 }
 
 .allinone__text:last-of-type {
@@ -1132,16 +1252,16 @@ body {
 }
 
 .footer-top ul li a {
-    color: #407AF4;
+    color: var(--color-primary-light);
     text-decoration: none;
-    transition: color 0.3s ease;
-    font-size: 16px;
+    transition: color var(--transition-normal) var(--transition-ease);
+    font-size: var(--font-size-lg);
     font-weight: 400;
-    line-height: 1.6;
+    line-height: var(--line-height-extra-loose);
 }
 
 .footer-top ul li a:hover {
-    color: #2d5acf;
+    color: var(--color-primary-hover);
     text-decoration: underline;
 }
 
@@ -1158,14 +1278,14 @@ body {
 }
 
 .footer-bottom ul li a {
-    color: #666;
+    color: var(--color-text-muted);
     text-decoration: none;
-    transition: color 0.3s ease;
-    font-size: 14px;
+    transition: color var(--transition-normal) var(--transition-ease);
+    font-size: var(--font-size-base);
 }
 
 .footer-bottom ul li a:hover {
-    color: #407AF4;
+    color: var(--color-primary-light);
 }
 
 /* ========================================
