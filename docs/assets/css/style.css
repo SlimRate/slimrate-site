@@ -1566,7 +1566,7 @@ h2.section-title span {
 
     position: relative;
 
-    margin-bottom: 425px;
+    margin-bottom: var(--spacing-ultra-lg);
 
 }
 
@@ -1574,7 +1574,7 @@ h2.section-title span {
 
 .advantages-allPage {
 
-    padding-bottom: 200px;
+    padding-bottom: var(--spacing-ultra-lg);
 
     padding-top: var(--section-spacing-2xl);
 
@@ -2320,9 +2320,9 @@ h2.section-title span {
 
 .company-advantages {
 
-    margin-top: 295px;
+    margin-top: var(--spacing-ultra-lg);
 
-    margin-bottom: 200px;
+    margin-bottom: var(--spacing-ultra-lg);
 
 }
 
@@ -2670,7 +2670,7 @@ h2.section-title span {
 
 .contact {
 
-    margin-bottom: 220px;
+    margin-bottom: var(--spacing-ultra-lg);
 
     position: relative;
 
@@ -5347,7 +5347,7 @@ label.has-value {
 
 .tariff {
 
-    padding-bottom: 317px;
+    padding-bottom: var(--spacing-ultra-xl);
 
     margin-top: 64px;
 
@@ -6237,7 +6237,7 @@ label.has-value {
 
     .advantages {
 
-        margin-bottom: 320px;
+        margin-bottom: var(--spacing-ultra-lg);
 
     }
 
@@ -6307,7 +6307,7 @@ label.has-value {
 
     .faq {
 
-        padding-bottom: 200px;
+        padding-bottom: var(--spacing-ultra-lg);
 
     }
 

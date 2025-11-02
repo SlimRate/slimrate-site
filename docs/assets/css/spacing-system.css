@@ -65,6 +65,13 @@
     --content-padding-vertical: var(--spacing-16); /* 64px */
     --content-padding-sm: var(--spacing-10);       /* 40px */
     --content-padding-lg: var(--spacing-20);       /* 80px */
+    
+    /* ========================================
+       Special Large Spacing - For exceptional cases
+       Use sparingly for unique layout requirements
+       ======================================== */
+    --spacing-ultra-lg: var(--spacing-40);     /* 160px - ultra large gaps */
+    --spacing-ultra-xl: var(--spacing-48);     /* 192px - maximum gaps */
 }
 
 /* ========================================
