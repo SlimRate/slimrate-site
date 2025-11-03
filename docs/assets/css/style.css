@@ -2123,6 +2123,30 @@ h2.section-title span {
 
     flex-direction: column;
 
+    -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+
+
+
+.advantages-card:hover {
+
+    -webkit-transform: translateY(-4px);
+
+    transform: translateY(-4px);
+
+}
+
+
+
+.advantages-card:hover .advantages-card__img {
+
+    -webkit-transform: scale(1.1);
+
+    transform: scale(1.1);
+
 }
 
 
@@ -2160,6 +2184,10 @@ h2.section-title span {
     overflow: hidden;
 
     background-color: #ef2b23;
+
+    -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
 }
 
@@ -4608,6 +4636,24 @@ label.has-value {
 
     border: 1px solid rgba(0, 0, 0, 0.12);
 
+    -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+
+
+
+.hardware-card:hover {
+
+    -webkit-transform: translateY(-4px);
+
+    transform: translateY(-4px);
+
+    -webkit-box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+
 }
 
 
@@ -4778,7 +4824,7 @@ label.has-value {
 
 .why .container-header {
 
-    margin-bottom: 0px
+    margin-bottom: 0
 
 }
 
@@ -4886,7 +4932,7 @@ label.has-value {
 
     height: 420px;
 
-    margin-right: 50px;
+    margin-right: var(--section-spacing-md);
 
     z-index: 3
 
@@ -5122,7 +5168,7 @@ label.has-value {
 
 .why-block__list {
 
-    margin-top: 100px
+    margin-top: var(--section-spacing-xl)
 
 }
 
@@ -5148,7 +5194,7 @@ label.has-value {
 
 .why-block__list li:not(:first-child) {
 
-    padding-top: 40px
+    padding-top: var(--component-spacing-2xl)
 
 }
 
@@ -5676,6 +5722,20 @@ label.has-value {
 
     gap: var(--component-spacing-xl);
 
+    -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+
+
+
+.types-card:hover {
+
+    -webkit-transform: translateX(8px);
+
+    transform: translateX(8px);
+
 }
 
 
@@ -6021,6 +6081,24 @@ label.has-value {
     -webkit-box-shadow: 0px -4px 0px #2b4fb9, 0px 7px 8px rgba(0, 0, 0, 0.08), 0px 12px 17px rgba(0, 0, 0, 0.06), 0px 5px 22px rgba(0, 0, 0, 0.04);
 
     box-shadow: 0px -4px 0px #2b4fb9, 0px 7px 8px rgba(0, 0, 0, 0.08), 0px 12px 17px rgba(0, 0, 0, 0.06), 0px 5px 22px rgba(0, 0, 0, 0.04);
+
+    -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+
+
+
+.tariff-card:hover {
+
+    -webkit-transform: translateY(-4px);
+
+    transform: translateY(-4px);
+
+    -webkit-box-shadow: 0px -4px 0px #2b4fb9, 0px 11px 12px rgba(0, 0, 0, 0.1), 0px 16px 21px rgba(0, 0, 0, 0.08), 0px 9px 26px rgba(0, 0, 0, 0.06);
+
+    box-shadow: 0px -4px 0px #2b4fb9, 0px 11px 12px rgba(0, 0, 0, 0.1), 0px 16px 21px rgba(0, 0, 0, 0.08), 0px 9px 26px rgba(0, 0, 0, 0.06);
 
 }
 
