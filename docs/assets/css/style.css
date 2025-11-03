@@ -979,7 +979,7 @@ h2.section-title span {
 
     color: #000000;
 
-    margin-top: 12px;
+    margin-top: var(--component-spacing-sm);
 
 }
 
@@ -1899,7 +1899,7 @@ h2.section-title span {
 
     position: relative;
 
-    margin-bottom: var(--spacing-ultra-lg);
+    margin-bottom: var(--section-spacing-2xl);
 
 }
 
@@ -1907,7 +1907,7 @@ h2.section-title span {
 
 .advantages-allPage {
 
-    padding-bottom: var(--spacing-ultra-lg);
+    padding-bottom: var(--section-spacing-2xl);
 
     padding-top: var(--section-spacing-2xl);
 
@@ -1951,7 +1951,7 @@ h2.section-title span {
 
     max-width: 560px;
 
-    margin-top: 20px;
+    margin-top: var(--component-spacing-lg);
 
 }
 
@@ -1959,7 +1959,7 @@ h2.section-title span {
 
 .advantages .container .section-descr {
 
-    margin-top: 0px;
+    margin-top: 0;
 
 }
 
@@ -2111,11 +2111,13 @@ h2.section-title span {
 
     font-weight: 600;
 
-    font-size: 16px;
+    font-size: 18px;
 
-    line-height: 20px;
+    line-height: 23px;
 
     color: #0c0c0c;
+
+    margin-bottom: var(--component-spacing-md);
 
 }
 
@@ -2138,6 +2140,8 @@ h2.section-title span {
     font-feature-settings: "liga" off;
 
     color: #0c0c0c;
+
+    margin-top: var(--component-spacing-sm);
 
 }
 
@@ -2653,9 +2657,9 @@ h2.section-title span {
 
 .company-advantages {
 
-    margin-top: var(--spacing-ultra-lg);
+    margin-top: var(--section-spacing-2xl);
 
-    margin-bottom: var(--spacing-ultra-lg);
+    margin-bottom: var(--section-spacing-2xl);
 
 }
 
@@ -3003,7 +3007,7 @@ h2.section-title span {
 
 .contact {
 
-    margin-bottom: var(--spacing-ultra-lg);
+    margin-bottom: var(--section-spacing-2xl);
 
     position: relative;
 
@@ -4512,9 +4516,7 @@ label.has-value {
 
 .hardware-card {
 
-    padding-top: var(--component-spacing-lg);
-
-    padding-bottom: var(--component-spacing-lg);
+    padding: var(--component-spacing-lg);
 
     margin-bottom: var(--section-spacing-md);
 
@@ -4526,7 +4528,7 @@ label.has-value {
 
     border-radius: 8px;
 
-    border: 1px solid #b7b7b7;
+    border: 1px solid rgba(0, 0, 0, 0.12);
 
 }
 
@@ -4624,9 +4626,9 @@ label.has-value {
 
 .hardware-card button {
 
-    margin-left: 20px;
+    margin-left: var(--component-spacing-lg);
 
-    margin-bottom: 0px;
+    margin-bottom: 0;
 
 }
 
@@ -4634,9 +4636,9 @@ label.has-value {
 
 .hardware-card__title {
 
-    padding-left: 20px;
+    padding-left: var(--component-spacing-lg);
 
-    padding-right: 20px;
+    padding-right: var(--component-spacing-lg);
 
     font-weight: 700;
 
@@ -4780,7 +4782,7 @@ label.has-value {
 
     max-width: 410px;
 
-    margin: 16px auto 0px;
+    margin: var(--component-spacing-md) auto 0;
 
     font-family: 'Vodafone', 'Poppins', sans-serif;
 
@@ -5574,7 +5576,7 @@ label.has-value {
 
 .types-card {
 
-    margin-bottom: 50px;
+    margin-bottom: var(--section-spacing-md);
 
     display: -webkit-box;
 
@@ -5593,6 +5595,8 @@ label.has-value {
     -ms-flex-align: start;
 
     align-items: flex-start;
+
+    gap: var(--component-spacing-xl);
 
 }
 
@@ -5622,7 +5626,7 @@ label.has-value {
 
 .types-card__text {
 
-    padding-top: 30px;
+    padding-top: var(--component-spacing-xl);
 
     max-width: 650px;
 
@@ -5928,7 +5932,7 @@ label.has-value {
 
     max-width: 292px;
 
-    padding: 24px 24px 24px;
+    padding: var(--component-spacing-lg);
 
     position: relative;
 
@@ -5980,9 +5984,9 @@ label.has-value {
 
 .tariff-card ul li {
 
-    padding-left: 30px;
+    padding-left: var(--component-spacing-xl);
 
-    margin-bottom: 10px;
+    margin-bottom: var(--component-spacing-sm);
 
     font-weight: 400;
 
@@ -6038,7 +6042,7 @@ label.has-value {
 
 .tariff-card__title {
 
-    margin-bottom: 10px;
+    margin-bottom: var(--component-spacing-sm);
 
     font-weight: 700;
 
@@ -6068,7 +6072,7 @@ label.has-value {
 
 .tariff-card__price {
 
-    margin-bottom: 6px;
+    margin-bottom: var(--component-spacing-xs);
 
 }
 
@@ -6088,7 +6092,7 @@ label.has-value {
 
 .tariff-card__priceTitle {
 
-    margin-bottom: 6px;
+    margin-bottom: var(--component-spacing-xs);
 
 }
 
@@ -6122,7 +6126,7 @@ label.has-value {
 
     display: block;
 
-    padding-top: 20px;
+    padding-top: var(--component-spacing-lg);
 
 }
 
