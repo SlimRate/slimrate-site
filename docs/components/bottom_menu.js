@@ -8,6 +8,7 @@ bottomMenuTemplate.innerHTML = `
             <li><a href="hardware.html">POS Hardware</a></li>
             <li><a href="payment_processing.html">Payment Processing</a></li>
             <li><a href="software.html">POS Software</a></li>
+            <li><a href="mobile-app.html">Mobile App</a></li>
         </ul>
         <ul>
             <li>Business Types</li>

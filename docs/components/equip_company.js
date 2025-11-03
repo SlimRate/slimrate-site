@@ -35,7 +35,7 @@ equipCompanyTemplate.innerHTML = `
                     <a href="hardware.html">POS Hardware</a><a href="hardware.html"><img src="assets/img/icons/equip-btn.svg" alt="Open POS hardware" class="equip-btn"></a>
                 </div>
                 <div class="equip-img equip-label equip-label--mobile">
-                    <a href="support.html">Mobile App</a><a href="support.html"><img src="assets/img/icons/equip-btn.svg" alt="Open mobile app info" class="equip-btn"></a>
+                    <a href="mobile-app.html">Mobile App</a><a href="mobile-app.html"><img src="assets/img/icons/equip-btn.svg" alt="Open mobile app info" class="equip-btn"></a>
                 </div>
             </div>
             <img src="assets/img/circle.svg" alt="Slimrate decorative circle" class="block-img-circle">

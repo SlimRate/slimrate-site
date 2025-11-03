@@ -1198,6 +1198,339 @@ h2.section-title span {
     background-image: url("../img/gallery/r-specialty/1.jpg");
 }
 
+.mainPageHeader--mobile-app {
+    background: url("../img/mainhardwarenew/Backgroundhardwares.png") center / cover no-repeat;
+    position: relative;
+}
+
+.mainPageHeader--mobile-app::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("../img/mainhardwarenew/Backgroundhardwares.png") center / cover no-repeat;
+    filter: blur(8px);
+    z-index: 0;
+}
+
+.mainPageHeader--mobile-app::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(64, 122, 244, 0.85) 0%, rgba(91, 142, 245, 0.85) 100%);
+    z-index: 0;
+}
+
+.mainPageHeader--mobile-app .container {
+    position: relative;
+    z-index: 1;
+}
+
+.mainPageHeader--mobile-app .main-bg {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 45%;
+    height: auto;
+    z-index: 1;
+}
+
+.mainPageHeader--mobile-app .gallery {
+    z-index: 1;
+    height: auto;
+    overflow: visible;
+}
+
+.mainPageHeader--mobile-app .gallery img {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+}
+
+@media (max-width: 992px) {
+    .mainPageHeader--mobile-app .main-bg {
+        display: none;
+    }
+}
+
+/* Mobile App Features Section */
+.mobile-app-features {
+    margin-bottom: 165px;
+    padding: 35px 0;
+}
+
+.mobile-app-features .container {
+    max-width: 1200px;
+}
+
+.mobile-app-features .container-header {
+    margin-bottom: 25px;
+}
+
+.mobile-app-features .products-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-top: 25px;
+}
+
+.mobile-app-features .products-card {
+    max-width: 100%;
+    min-height: auto;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+}
+
+.mobile-app-features .products-card__img {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 14px;
+    font-size: 26pt;
+}
+
+.mobile-app-features .products-card__title {
+    font-size: 15px;
+    line-height: 19px;
+    margin-bottom: 10px;
+}
+
+.mobile-app-features .products-card__descr {
+    font-size: 13px;
+    line-height: 19px;
+    margin-bottom: 0;
+    flex-grow: 1;
+}
+
+@media (max-width: 1200px) {
+    .mobile-app-features .products-cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .mobile-app-features .products-cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+    
+    .mobile-app-features .products-card {
+        padding: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .mobile-app-features .products-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Mobile App: How It Works Section */
+.how-it-works {
+    margin-bottom: 165px;
+    padding: 35px 0;
+}
+
+.how-it-works .container {
+    max-width: 1200px;
+}
+
+.how-it-works .container-header {
+    margin-bottom: 25px;
+}
+
+.how-it-works__steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-top: 25px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.step {
+    text-align: center;
+    padding: 22px 18px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.step:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.step-number {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #407AF4 0%, #5B8EF5 100%);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 23px;
+    font-weight: 700;
+    margin: 0 auto 14px;
+}
+
+.step h3 {
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #212529;
+}
+
+.step p {
+    color: #6c757d;
+    line-height: 1.45;
+    font-size: 13px;
+}
+
+/* Mobile App: Benefits Section */
+.benefits {
+    margin-bottom: 165px;
+    padding: 35px 0;
+}
+
+.benefits .container {
+    max-width: 1200px;
+}
+
+.benefits .container-header {
+    margin-bottom: 25px;
+}
+
+.benefits__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-top: 25px;
+}
+
+.benefit-card {
+    padding: 22px;
+    background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+    border-radius: 12px;
+    border: 1px solid #e9ecef;
+    transition: all 0.3s ease;
+}
+
+.benefit-card:hover {
+    border-color: #407AF4;
+    box-shadow: 0 8px 24px rgba(64, 122, 244, 0.15);
+    transform: translateY(-4px);
+}
+
+.benefit-card h3 {
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #407AF4;
+}
+
+.benefit-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.benefit-card li {
+    padding: 5px 0;
+    color: #6c757d;
+    position: relative;
+    padding-left: 22px;
+    font-size: 13px;
+    line-height: 1.45;
+}
+
+.benefit-card li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #407AF4;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+/* Mobile App: Technical Requirements Section */
+.tech-requirements {
+    margin-bottom: 165px;
+    padding: 35px 0;
+    background: #f8f9fa;
+}
+
+.tech-requirements .container {
+    max-width: 1000px;
+}
+
+.tech-requirements .container-header {
+    margin-bottom: 25px;
+}
+
+.tech-requirements__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+    margin-top: 25px;
+}
+
+.tech-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.tech-card h3 {
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tech-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.tech-card li {
+    padding: 5px 0;
+    color: #6c757d;
+    border-bottom: 1px solid #e9ecef;
+    font-size: 13px;
+}
+
+.tech-card li:last-child {
+    border-bottom: none;
+}
+
+/* Mobile App: Responsive Styles */
+@media (max-width: 992px) {
+    .how-it-works__steps {
+        grid-template-columns: 1fr;
+    }
+
+    .benefits__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tech-requirements__grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .benefits__grid {
+        grid-template-columns: 1fr;
+    }
+}
 
 
 .main-mobile-bg-top {
@@ -9292,6 +9625,11 @@ ection.we-support {
 
     font-weight: 700;
 
+}
+
+/* Container header centered - used across multiple pages */
+.container-header.text-center {
+    text-align: center;
 }
 
 

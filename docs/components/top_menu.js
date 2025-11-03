@@ -52,6 +52,9 @@ topMenuTeplate.innerHTML = `
                 <li>
                     <a href="payment_processing.html" class='lastLink'>Payment Processing</a>
                 </li>
+                <li>
+                    <a href="mobile-app.html" class='lastLink'>Mobile App</a>
+                </li>
               
             </ul>
         </div>
@@ -308,6 +311,16 @@ function initDropment() {
                   <div>Payment Processing<span><br>Full suite of
                     payment acceptance tools - in-store, online and mobile. Designed to
                     help build and grow your business.
+          </span></div>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="mobile-app.html">
+              <div class="nav-body">
+                  <div class="nav-el-i"><i class="nav-el las la-mobile"></i></div>
+                  <div>Mobile App<span><br>Manage your business from anywhere 
+                    with full POS system power in your pocket. Real-time access to your data.
           </span></div>
               </div>
           </a>
