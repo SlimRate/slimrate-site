@@ -710,6 +710,59 @@ const productPagesData = {
     contactForm: { show: true, variant: "default" }
   },
 
+  "sr-whs1": {
+    meta: {
+      title: "SR-WHS1 Wired Handheld Scanner | Slimrate",
+      description: "Reliable wired handheld scanner for consistent barcode scanning in retail.",
+      keywords: "wired scanner, SR-WHS1, handheld scanner, barcode reader"
+    },
+    hero: {
+      productId: "sr-whs1",
+      categoryNav: "Scanners",
+      name: "SR-WHS1",
+      tagline: "SR-WHS1 Wired Handheld Scanner",
+      description: "Ensure consistent performance with our Wired Handheld Scanner. Ideal for retail environments, it provides quick and accurate barcode scanning with a durable design.",
+      price: "$199.00",
+      priceUnit: "pcs.",
+      ctaButton: {
+        text: "Get Quote",
+        link: "#contact"
+      },
+      keyFeatures: [
+        "Reliable wired connection",
+        "Fast scanning speed",
+        "Ergonomic design"
+      ],
+      images: {
+        main: "assets/img/gallery/hardware/SR-WHS1.png",
+        gallery: [
+          "assets/img/gallery/hardware/SR-WHS1.png"
+        ]
+      }
+    },
+    detailSections: [],
+    banner: { show: false },
+    featuresGrid: { 
+      show: true,
+      items: [
+        { icon: "reliable", title: "Always Connected", description: "Wired connection ensures consistent performance without batteries" },
+        { icon: "speed", title: "Fast Scanning", description: "Quick barcode recognition for efficient checkout" },
+        { icon: "easy", title: "Plug and Play", description: "Simple setup with no configuration required" },
+        { icon: "versatility", title: "Durable Build", description: "Built to withstand daily retail use" }
+      ]
+    },
+    specifications: { show: false },
+    audience: { show: true, useGlobalCards: true },
+    faq: { 
+      show: true, 
+      questions: [
+        { question: "Does it need batteries?", answer: "No, the SR-WHS1 is powered through its wired USB connection, so no batteries are required." },
+        { question: "What barcodes can it read?", answer: "The SR-WHS1 reads all standard 1D barcodes including UPC, EAN, Code 39, Code 128, and more." }
+      ]
+    },
+    contactForm: { show: true, variant: "default" }
+  },
+
   // SR-WHS1 already exists above
 
   // ========== SCALES ==========
