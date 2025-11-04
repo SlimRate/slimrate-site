@@ -134,8 +134,24 @@
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
-    height: 240px;
+    min-height: 240px;
     align-items: center;
+}
+
+.product-link-container {
+    width: 100%;
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+}
+
+.product-details-btn {
+    padding: 10px 24px;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
 }
 
 
@@ -165,6 +181,10 @@
     .availability,
     .price {
         text-align: left;
+    }
+
+    .product-link-container {
+        justify-content: flex-start;
     }
    
 }

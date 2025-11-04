@@ -53,6 +53,7 @@ function createProductCard(data) {
                     <span class="price">$${data.available ? data.costForBlack : data.costForWhite}</span>
                 </div>
             </div>
+            ${data.link ? `<div class="product-link-container"><a href="${data.link}" class="btn btn-red product-details-btn">View Details</a></div>` : ''}
         </div>
     `;
 

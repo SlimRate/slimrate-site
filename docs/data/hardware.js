@@ -10,6 +10,7 @@ const rawProductGroups = [
                 costForBlack: 999,
                 costForWhite: 999,
                 availableColors: ["black"],
+                link: "sr-falcon.html",
                 images: [
                     "assets/img/products/hardware/falcon/80 printer -1.png",
                     "assets/img/products/hardware/falcon/80 printer -2.png",
@@ -24,6 +25,7 @@ const rawProductGroups = [
                 costForBlack: 1199,
                 costForWhite: 1199,
                 availableColors: ["black"],
+                link: "sr-swan.html",
                 images: [
                     "assets/img/products/hardware/swan 2/Swan2main.png",
                     "assets/img/products/hardware/swan 2/Swan2front.png",
@@ -32,10 +34,11 @@ const rawProductGroups = [
             },
             {
                 name: "SR155 Duo",
-                text: "Our double display POS system ensures seamless interaction for both customers and staff. Featuring a customer-facing display, it enhances transparency and engagement at the point of sale. Slimrate SR155 Duo \t15.6” + 10.1” Touchscreen terminal",
+                text: "Our double display POS system ensures seamless interaction for both customers and staff. Featuring a customer-facing display, it enhances transparency and engagement at the point of sale. Slimrate SR155 Duo \t15.6\" + 10.1\" Touchscreen terminal",
                 available: false,
                 costForBlack: 999,
                 costForWhite: 999,
+                link: "sr155-duo.html",
                 images: [
                     "assets/img/gallery/hardware/SR155 Duo 1.png",
                     "assets/img/gallery/hardware/SR155 Duo 2.png",
@@ -44,10 +47,11 @@ const rawProductGroups = [
             },
             {
                 name: "SR155 Solo",
-                text: "Streamline your checkout process with our single display POS. Designed for efficiency and ease of use, it supports quick transactions and offers a user-friendly interface for staff. 15.6” Touchscreen terminal",
+                text: "Streamline your checkout process with our single display POS. Designed for efficiency and ease of use, it supports quick transactions and offers a user-friendly interface for staff. 15.6\" Touchscreen terminal",
                 available: true,
                 costForBlack: 850,
                 costForWhite: 850,
+                link: "sr155-solo.html",
                 images: [
                     "assets/img/gallery/hardware/SR155 Solo 1.png",
                     "assets/img/gallery/hardware/SR155 Solo 2.png",
@@ -65,6 +69,7 @@ const rawProductGroups = [
                 available: true,
                 costForBlack: 329,
                 costForWhite: 329,
+                link: "sr-trp1.html",
                 images: [
                     "assets/img/gallery/hardware/SR-TRP1 Thermal Receipt Printer 1.png",
                     "assets/img/gallery/hardware/SR-TRP1 Thermal Receipt Printer 2.png",
@@ -81,6 +86,7 @@ const rawProductGroups = [
                 available: true,
                 costForBlack: 129,
                 costForWhite: 129,
+                link: "sr-410.html",
                 images: [
                     "assets/img/gallery/hardware/SR-410 Cash Drawer 1.png",
                     "assets/img/gallery/hardware/SR-410 Cash Drawer 2.png",
@@ -97,6 +103,7 @@ const rawProductGroups = [
                 available: false,
                 costForBlack: 279,
                 costForWhite: 279,
+                link: "sr-ds1.html",
                 images: [
                     "assets/img/gallery/hardware/SR-WHS1 Wired Table Scanner 1.png",
                 ],
@@ -107,6 +114,7 @@ const rawProductGroups = [
                 available: false,
                 costForBlack: 399,
                 costForWhite: 399,
+                link: "sr-wlhs1.html",
                 images: [
                     "assets/img/gallery/hardware/SR-WLHS1 Wireless Handheld Scanner 3.png",
                     "assets/img/gallery/hardware/SR-WHS1 Wired Handheld Scanner 2.png",
@@ -119,6 +127,7 @@ const rawProductGroups = [
                 available: true,
                 costForBlack: 199,
                 costForWhite: 199,
+                link: "sr-whs1.html",
                 images: [
                     "assets/img/gallery/hardware/SR-WHS1.png",
                 ],
@@ -134,6 +143,7 @@ const rawProductGroups = [
                 available: false,
                 costForBlack: 290,
                 costForWhite: 290,
+                link: "a35.html",
                 images: [
                     "assets/img/gallery/hardware/A35 Payment Terminal 1.png",
                 ],
@@ -144,6 +154,7 @@ const rawProductGroups = [
                 available: false,
                 costForBlack: 349,
                 costForWhite: 349,
+                link: "a920.html",
                 images: [
                     "assets/img/gallery/hardware//A920 Payment Terminal 1.png",
                 ],
@@ -160,6 +171,7 @@ const rawProductGroups = [
                 available: true,
                 costForBlack: 475,
                 costForWhite: 475,
+                link: "digital-scale.html",
                 images: [
                     "assets/img/gallery/hardware/DS1.png",
                 ],
@@ -170,6 +182,7 @@ const rawProductGroups = [
                 available: true,
                 costForBlack: 1799,
                 costForWhite: 1799,
+                link: "aiscale-pos-s625.html",
                 images: [
                     "assets/img/gallery/hardware/AIScale Cash Register S625 1.png",
                     "assets/img/gallery/hardware/AIScale Cash Register S625 2.png",
@@ -181,6 +194,7 @@ const rawProductGroups = [
                 available: true,
                 costForBlack: 1499,
                 costForWhite: 1499,
+                link: "aiscale-label-printing-s130.html",
                 images: [
                     "assets/img/gallery/hardware/AIScale Label Printing S130 1.png",
                     "assets/img/gallery/hardware/AIScale Label Printing S130 2.png",
