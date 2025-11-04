@@ -32,11 +32,14 @@
     <meta property="og:image" content="https://slimrate.com/apple-touch-icon.png"/>
     <meta name="geo.region" content="US"/>
     <title>Slimrate</title>
+    <link rel="stylesheet" href="assets/css/spacing-system.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
     <link rel="stylesheet" href="assets/slick/slick.css">
     <link rel="stylesheet" href="assets/slick/slick-theme.css">
     <link rel="stylesheet" href="assets/css/burger.css">
+    <link rel="stylesheet" href="assets/css/layout-overrides.css">
+    <link rel="stylesheet" href="assets/css/mobile-fixes.css">
 
     <!-- Define custom components -->
     <script src="components/top_menu.js"></script>
@@ -51,8 +54,13 @@
     <top-menu></top-menu>
     <div class="wrapper">
 
-        <section class="main main-allPages" style="background-image: url('assets/img/gallery/h-casual/1.jpg')">
-            <div class="container" style="padding-top: 50px;">
+        <section class="main mainPageHeader mainPageHeader--h-casual">
+            <div class="main-bg">
+                <div class="gallery">
+                    <img src="assets/img/gallery/h-casual/1.jpg" alt="Slimrate product image">
+                </div>
+            </div>
+            <div class="container">
                 <div class="block-left">
                     <div class="breadcrumb"><a href="software.html">Software</a> <img src="assets/img/arrow-right.svg" alt="Arrow icon"> <a href="restaurant.html">Restaurant POS</a></div>
                     <h1 class="section-title">Restaurant POS<br><span>Casual Dining</span></h1>
@@ -63,14 +71,12 @@
                     </div>
                 </div>
             </div>
-            <img src="assets/img/main-bg-bot.svg" alt="" class="main-bg-bot">
         </section>
         <h-something-slider></h-something-slider>
 
-        <div style="margin-top: 200px;" class="off-mobile"></div>
-        <div style="margin-top: 100px;" class="oт-mobile"></div>
+        <div class="mt-section-xl off-mobile"></div>
         <equip-company-el></equip-company-el>
-        <div style="margin-top: 64px;" class="off-mobile"></div>
+        <div class="mt-section-md off-mobile"></div>
         <h-advantages></h-advantages>
         <pricing-form></pricing-form>
         <bottom-menu></bottom-menu>

@@ -1,0 +1,95 @@
+/* ========================================
+   LAYOUT OVERRIDES
+   Vertical rhythm adjustments for homepage sections
+   Uses the new spacing-system.css variables
+   Updated: November 2, 2025
+   ======================================== */
+
+/* ========================================
+   DEPRECATED VARIABLES - Kept for backwards compatibility
+   Use spacing-system.css variables instead
+   ======================================== */
+:root {
+    --section-gap: var(--section-spacing-lg);      /* 80px - maps to new system */
+    --section-gap-lg: var(--section-spacing-xl);   /* 96px - maps to new system */
+    --section-gap-sm: var(--section-spacing-md);   /* 64px - maps to new system */
+}
+
+/* ========================================
+   MAIN WRAPPER SECTIONS - Standard Spacing
+   All direct children of .wrapper get consistent vertical spacing
+   ======================================== */
+
+.wrapper > section,
+.wrapper > div.coop,
+.wrapper > div.testimonial-wrapper,
+.wrapper > div.slider-container,
+.wrapper > equip-company-el,
+.wrapper > mini-faq,
+.wrapper > pricing-form,
+.wrapper > bottom-menu {
+    margin-top: var(--section-spacing-lg);
+}
+
+/* First section - no top margin */
+.wrapper > *:first-child {
+    margin-top: 0;
+}
+
+/* Second section - medium spacing after hero */
+.wrapper > *:nth-child(2) {
+    margin-top: var(--section-spacing-md);
+}
+
+/* ========================================
+   SPECIFIC SECTION OVERRIDES
+   Some sections need different spacing for visual hierarchy
+   ======================================== */
+
+/* Testimonials and Easy Guides - larger gap for emphasis */
+.testimonial-wrapper,
+.easy-guides {
+    margin-top: var(--section-spacing-xl);
+}
+
+/* Connected sections - maintain standard spacing */
+.easy-guides + mini-faq,
+mini-faq + pricing-form {
+    margin-top: var(--section-spacing-lg);
+}
+
+/* ========================================
+   WEB COMPONENT DISPLAY FIX
+   Custom elements need explicit display property
+   ======================================== */
+
+mini-faq,
+equip-company-el,
+pricing-form,
+bottom-menu {
+    display: block;
+}
+
+/* ========================================
+   SECTION BOTTOM MARGIN RESET
+   Prevent double spacing between sections
+   ======================================== */
+
+.coop,
+.hardware-nav,
+.slider-container,
+.testimonial-wrapper,
+mini-faq,
+.easy-guides,
+equip-company-el,
+pricing-form {
+    margin-bottom: 0;
+}
+
+/* ========================================
+   SECTION INTERNAL PADDING
+   ======================================== */
+
+mini-faq .faq {
+    padding-bottom: var(--section-spacing-lg);
+}

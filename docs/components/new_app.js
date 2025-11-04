@@ -15,6 +15,7 @@ equipCompanyTemplate2.innerHTML = `
                         and analysis with Slimrate!
                     </p>
                     <div class="equip-buttons equip-buttons2" >
+                        <a href="mobile-app.html" class="btn btn-red" style="margin-right: 10px;">Learn More</a>
                         <button class="form__btn"  onclick="
         (function() {
             var userAgent = navigator.userAgent || navigator.vendor || window.opera;
@@ -26,7 +27,7 @@ equipCompanyTemplate2.innerHTML = `
                 window.location.href = 'https://play.google.com/store/apps/details?id=com.slimrate.business'; 
             }
         })();
-    " >Try NOW!</button>
+    " >Download Now</button>
                     </div>
                 </div>
 

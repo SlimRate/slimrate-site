@@ -3,7 +3,7 @@
         }
         
         .hamburger-menu {
-            z-index: 21;
+            z-index: var(--z-menu-button);
             display: block;
         }
         
@@ -62,7 +62,7 @@ background: #fafafa;
             width: 30px;
             height: 20px;
             cursor: pointer;
-            z-index: 21;
+            z-index: var(--z-menu-button);
         }
         
         .more {
@@ -166,7 +166,7 @@ background: #fafafa;
         }
         
         .menu__box {
-            z-index: 10;
+            z-index: var(--z-dropdown);
             display: block;
             position: fixed;
             visibility: hidden;

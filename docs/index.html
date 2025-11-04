@@ -11,6 +11,9 @@
 
   gtag('config', 'G-42Y6GNN6DE');
 </script>
+    <!-- Preconnect for faster font loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
@@ -32,23 +35,23 @@
     <meta property="og:image" content="https://slimrate.com/apple-touch-icon.png"/>
     <meta name="geo.region" content="US"/>
     <title>Slimrate</title>
+    <link rel="stylesheet" href="assets/css/spacing-system.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/burger.css" />
-    <script src="assets/js/imask.min.js"></script>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/slick/slick.min.js"></script>
-    <script src="assets/js/masks.js"></script>
+    <link rel="stylesheet" href="assets/css/layout-overrides.css" />
+    <link rel="stylesheet" href="assets/css/mobile-fixes.css" />
+    <script defer src="assets/js/imask.min.js"></script>
+    <script defer src="assets/js/jquery.min.js"></script>
+    <script defer src="assets/slick/slick.min.js"></script>
+    <script defer src="assets/js/masks.js"></script>
 
     <!-- Define custom components -->
-    <script src="components/top_menu.js"></script>
-    <script src="components/faq.js"></script>
-    <script src="components/our_products.js"></script>
-    <script src="components/bottom_menu.js"></script>
-    <script src="components/pricing_form.js"></script>
-    <script src="components/new_app.js"></script>
-    <script src="components/equip_main.js"></script>
-    
-    <!-- customerTestimonials -->  
+    <script defer src="components/top_menu.js"></script>
+    <script defer src="components/faq.js"></script>
+    <script defer src="components/our_products.js"></script>
+    <script defer src="components/bottom_menu.js"></script>
+    <script defer src="components/pricing_form.js"></script>
+    <script defer src="components/equip_main.js"></script>    <!-- customerTestimonials -->  
     <link rel="stylesheet" href="components/customerTestimonials/customertestimonials.css">
     <!-- minimalSlider -->
     <link rel="stylesheet" href="components/minimalSlider/minimalSlider.css">
@@ -60,10 +63,10 @@
     <top-menu></top-menu>
 
     <div class="wrapper">
-        <section class="main mainPageHeader" style="background-image: url('assets/img/gallery/software/333.webp')">
+    <section class="main mainPageHeader">
             <div class="main-bg">
-                <div class="gallery">
-                    <img src="assets/img/gallery/software/333.webp" alt="Slimrate product image">
+        <div class="gallery">
+          <img src="assets/2025mainbg.png" alt="Slimrate product image" width="1920" height="1080">
                 </div>
             </div>
             <div class="container" >
@@ -73,8 +76,7 @@
                         Seamlessly Integrated Software, Hardware, and Payment Processing
                     </p>
                     <div class="equip-buttons">
-                        <a href="#get_demo">
-                            <button class="btn btn-red">Get Demo</button></a>
+                        <a href="#get_demo" class="btn btn-red">Get Demo</a>
                     </div>
                 </div>
             </div>
@@ -86,21 +88,64 @@
             <img src="assets/img/bg-small-bottomcoop.svg" alt="" class="img-bg-bottom" />
 
             <div class="container">
-                <img src="assets/img/coop-logo/img-1.svg" alt="Partner logo" class="coop-logo" />
-                <img src="assets/img/coop-logo/img-2.svg" alt="Partner logo" class="coop-logo" />
-                <img src="assets/img/coop-logo/img-3.svg" alt="Partner logo" class="coop-logo" />
-                <img src="assets/img/coop-logo/img-4.svg" alt="Partner logo" class="coop-logo" />
-                <img src="assets/img/coop-logo/pca.png" alt="Partner logo" class="coop-logo" />
-                <img src="assets/img/coop-logo/img-1-white.svg" alt="Partner logo" class="coop-logo coop-logo-white" />
-                <img src="assets/img/coop-logo/img-2-white.svg" alt="Partner logo" class="coop-logo coop-logo-white" />
-                <img src="assets/img/coop-logo/img-4-white.svg" alt="Partner logo" class="coop-logo coop-logo-white" />
-                <img src="assets/img/coop-logo/img-3-white.svg" alt="Partner logo" class="coop-logo coop-logo-white" />
-                <img src="assets/img/coop-logo/pca.png" alt="Partner logo" class="coop-logo coop-logo-white" />
+                <img src="assets/img/coop-logo/img-1.svg" alt="Partner logo" class="coop-logo" width="120" height="60" />
+                <img src="assets/img/coop-logo/img-2.svg" alt="Partner logo" class="coop-logo" width="120" height="60" />
+                <img src="assets/img/coop-logo/img-3.svg" alt="Partner logo" class="coop-logo" width="120" height="60" />
+                <img src="assets/img/coop-logo/img-4.svg" alt="Partner logo" class="coop-logo" width="120" height="60" />
+                <img src="assets/img/coop-logo/pca.png" alt="Partner logo" class="coop-logo" width="120" height="60" />
+                <img src="assets/img/coop-logo/img-1-white.svg" alt="Partner logo" class="coop-logo coop-logo-white" width="120" height="60" />
+                <img src="assets/img/coop-logo/img-2-white.svg" alt="Partner logo" class="coop-logo coop-logo-white" width="120" height="60" />
+                <img src="assets/img/coop-logo/img-4-white.svg" alt="Partner logo" class="coop-logo coop-logo-white" width="120" height="60" />
+                <img src="assets/img/coop-logo/img-3-white.svg" alt="Partner logo" class="coop-logo coop-logo-white" width="120" height="60" />
+                <img src="assets/img/coop-logo/pca.png" alt="Partner logo" class="coop-logo coop-logo-white" width="120" height="60" />
             </div>
         </div>
 
 
-     
+    <section class="hardware-nav" aria-label="Slimrate hardware categories">
+      <div class="hardware-nav__inner">
+        <div class="hardware-nav__grid">
+          <a class="hardware-nav__card hardware-nav__card--tablets" href="hardware.html">
+            <div class="hardware-nav__body">
+              <h3 class="hardware-nav__heading">Tablets</h3>
+              <span class="hardware-nav__cta hardware-nav__cta--arrow">More</span>
+            </div>
+            <div class="hardware-nav__media hardware-nav__media--left">
+              <img src="assets/img/mainhardwarenew/SmallTablet.png" alt="Slimrate small tablet POS terminal" loading="lazy" width="400" height="400">
+            </div>
+          </a>
+          <a class="hardware-nav__card hardware-nav__card--emv" href="hardware.html">
+            <div class="hardware-nav__body hardware-nav__body--bottom">
+              <h3 class="hardware-nav__heading">EMV Terminals</h3>
+              <span class="hardware-nav__cta hardware-nav__cta--arrow">More</span>
+            </div>
+            <div class="hardware-nav__media hardware-nav__media--right">
+              <img src="assets/img/mainhardwarenew/HandheldEMV.png" alt="Slimrate handheld EMV terminal" loading="lazy" width="400" height="400">
+            </div>
+          </a>
+          <a class="hardware-nav__card hardware-nav__card--printers" href="hardware.html">
+            <div class="hardware-nav__body">
+              <h3 class="hardware-nav__heading">Printers</h3>
+              <span class="hardware-nav__cta hardware-nav__cta--arrow">More</span>
+            </div>
+            <div class="hardware-nav__media hardware-nav__media--right">
+              <img src="assets/img/mainhardwarenew/ptinter.png" alt="Slimrate receipt printer" loading="lazy" width="400" height="400">
+            </div>
+          </a>
+          <a class="hardware-nav__card hardware-nav__card--accessories" href="hardware.html">
+            <div class="hardware-nav__body">
+              <h3 class="hardware-nav__heading">Accessories</h3>
+              <span class="hardware-nav__cta hardware-nav__cta--arrow">More</span>
+            </div>
+            <div class="hardware-nav__media hardware-nav__media--right">
+              <img src="assets/img/mainhardwarenew/scanner.png" alt="Slimrate barcode scanner accessories" loading="lazy" width="400" height="400">
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+        
          <!-- minimalSlider  -->
         <div class="slider-container">
           <div class="slider">
@@ -112,37 +157,61 @@
             <button class="close-btn" id="closeBtnUp">&times;</button>
           </div>
         </div>
-
-
-         <div style="margin-top: 370px;" class="off-mobile"></div>
-        <div style="margin-top: 200px;" class="on-mobile"></div>
-        <new-app></new-app>
-        <div style="margin-top: 50px;" class="on-mobile"></div>
-        <div style="margin-top: 200px;" class="off-mobile"></div> 
-
         <!-- Customers tentimonial -->
-        <div id="cardComponent">
-          <h2 class="testimonial-header">
-              Customer <span class="highlight">Testimonials</span>
-          </h2>
-          <div class="flex testimonial-content" id="testimonial-content"></div>
-          <div class="slider-dots" id="slider-dots"></div>
+        <div class="testimonial-wrapper">
+          <div class="testimonial-frame">
+            <div id="cardComponent">
+              <h2 class="testimonial-header">
+                  Customer <span class="highlight">Testimonials</span>
+              </h2>
+              <div class="flex testimonial-content" id="testimonial-content"></div>
+              <div class="slider-dots" id="slider-dots"></div>
+            </div>
+          </div>
         </div> 
 
-        <div style="margin-top: 370px;" class="off-mobile"></div>
-        <div style="margin-top: 200px;" class="on-mobile"></div>
         <equip-company-el></equip-company-el>
-        <div style="margin-top: 200px;" class="on-mobile"></div>
-        <div style="margin-top: 200px;" class="off-mobile"></div>
         <mini-faq></mini-faq>
-        <div style="margin-top: 50px;" class="on-mobile"></div>
+
+        <section class="easy-guides" aria-labelledby="easy-guides-title">
+          <div class="container easy-guides__wrap">
+            <div class="easy-guides__media">
+              <iframe
+                class="easy-guides__iframe"
+                data-playlist-src="https://www.youtube.com/embed/videoseries?list=PLt3HfNKaik2mLckgFSpBlcVO_xt1JEbi1&amp;listType=playlist&amp;si=8x7MXeHP1bWnEmKe&amp;modestbranding=1&amp;rel=0"
+                src="https://www.youtube.com/embed/videoseries?list=PLt3HfNKaik2mLckgFSpBlcVO_xt1JEbi1&amp;listType=playlist&amp;si=8x7MXeHP1bWnEmKe&amp;modestbranding=1&amp;rel=0"
+                title="Slimrate Easy Guides playlist"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+                referrerpolicy="strict-origin-when-cross-origin"
+              ></iframe>
+            </div>
+            <div class="easy-guides__content">
+              <h2 id="easy-guides-title" class="easy-guides__title">Easy Guides</h2>
+              <p class="easy-guides__text">
+                Learn the essentials in minutes with clear, easy-to-follow guides that break down every step.
+                Whether you're just getting started or looking to sharpen your skills, these quick tutorials give you
+                the confidence to use Slimrate with ease and efficiency.
+              </p>
+              <div class="easy-guides__actions">
+                <a
+                  class="btn btn-red easy-guides__button"
+                  href="https://www.youtube.com/@Slimrate"
+                  target="_blank"
+                  rel="noopener"
+                >Check Out Our Channel</a>
+              </div>
+            </div>
+          </div>
+        </section>
 
         <pricing-form></pricing-form>
         <bottom-menu></bottom-menu>
     </div>
     
   <!-- customerTestimonials -->  
-  <script src="components/customerTestimonials/customerTestimonials.js"></script>
+  <script defer src="components/customerTestimonials/customerTestimonials.js"></script>
   <!-- minimalSlider-->
   <script type="module" defer src="components/minimalSlider/minimalSlider.js"></script>
   <script defer src="assets/js/more.js"></script>
@@ -152,6 +221,23 @@
       navigator.serviceWorker.register("service-worker.js");
     });
   }
+</script>
+
+<script>
+  (function setEasyGuidesPlaylist() {
+    const iframe = document.querySelector('.easy-guides__iframe[data-playlist-src]');
+    if (!iframe) return;
+    try {
+      const url = new URL(iframe.dataset.playlistSrc);
+      const origin = window.location.origin;
+      if (origin && origin.startsWith('http')) {
+        url.searchParams.set('origin', origin);
+      }
+      iframe.src = url.toString();
+    } catch (err) {
+      /* noop */
+    }
+  })();
 </script>
 
 
