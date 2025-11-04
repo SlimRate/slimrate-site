@@ -46,7 +46,6 @@
     
     <!-- Components -->
     <script src="../../components/top_menu.js"></script>
-    <script src="../../components/product_sidebar.js"></script>
     <script src="../../components/product_hero.js"></script>
     <script src="../../components/product_details.js"></script>
     <script src="../../components/product_banner.js"></script>
@@ -60,16 +59,9 @@
 <body>
     <top-menu></top-menu>
     
-    <div class="product-page-wrapper">
-        <!-- Sidebar Navigation -->
-        <product-sidebar 
-            category="Tablets"
-            active-product="sr-falcon">
-        </product-sidebar>
-        
-        <main class="product-content">
-            <!-- Hero Section -->
-            <product-hero data-product-id="sr-falcon"></product-hero>
+    <div class="wrapper">
+        <!-- Hero Section -->
+        <product-hero data-product-id="sr-falcon"></product-hero>
             
             <!-- Detail Sections -->
             <product-details data-product-id="sr-falcon"></product-details>
@@ -108,7 +100,6 @@
             <!-- Contact Form -->
             <div id="contact"></div>
             <pricing-form></pricing-form>
-        </main>
     </div>
     
     <bottom-menu></bottom-menu>

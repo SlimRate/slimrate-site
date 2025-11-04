@@ -3,108 +3,6 @@
    Стили для персональных страниц продуктов
    ===================================================== */
 
-/* ===== LAYOUT ===== */
-.product-page-wrapper {
-    display: flex;
-    gap: 0;
-    position: relative;
-    min-height: 100vh;
-}
-
-.product-content {
-    flex: 1;
-    margin-left: 280px;
-    padding: 0;
-    transition: margin-left 0.3s ease;
-}
-
-/* ===== SIDEBAR NAVIGATION ===== */
-.product-sidebar {
-    position: fixed;
-    left: 0;
-    top: 80px;
-    width: 280px;
-    height: calc(100vh - 80px);
-    background: #fff;
-    border-right: 1px solid #E5E7EB;
-    padding: 32px 0;
-    overflow-y: auto;
-    z-index: 100;
-    transition: transform 0.3s ease;
-}
-
-.product-sidebar.collapsed {
-    transform: translateX(-100%);
-}
-
-.product-sidebar__header {
-    padding: 0 24px 16px;
-    border-bottom: 1px solid #E5E7EB;
-}
-
-.product-sidebar__category {
-    font-size: 14px;
-    font-weight: 600;
-    color: #407AF4;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 20px;
-}
-
-.product-sidebar__list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.product-sidebar__item {
-    margin: 0;
-}
-
-.product-sidebar__link {
-    display: flex;
-    align-items: center;
-    padding: 12px 24px;
-    color: #1F2937;
-    text-decoration: none;
-    font-size: 15px;
-    transition: all 0.2s ease;
-    border-left: 3px solid transparent;
-}
-
-.product-sidebar__link:hover {
-    background-color: #F3F4F6;
-    color: #407AF4;
-}
-
-.product-sidebar__link.active {
-    background-color: #EFF6FF;
-    color: #407AF4;
-    font-weight: 600;
-    border-left-color: #407AF4;
-}
-
-.product-sidebar__link-arrow {
-    margin-left: auto;
-    color: #9CA3AF;
-}
-
-.product-sidebar__toggle {
-    display: none;
-    position: fixed;
-    top: 90px;
-    left: 16px;
-    z-index: 101;
-    background: #407AF4;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-}
-
 /* ===== BREADCRUMBS ===== */
 .product-breadcrumbs {
     padding: 24px 0;
@@ -509,22 +407,6 @@
 
 /* Tablet */
 @media (max-width: 1024px) {
-    .product-content {
-        margin-left: 0;
-    }
-
-    .product-sidebar {
-        transform: translateX(-100%);
-    }
-
-    .product-sidebar.open {
-        transform: translateX(0);
-    }
-
-    .product-sidebar__toggle {
-        display: block;
-    }
-
     .product-hero__grid,
     .product-details__grid {
         grid-template-columns: 1fr;
@@ -594,10 +476,5 @@
     .product-faq__question {
         font-size: 16px;
         padding: 16px 20px;
-    }
-
-    .product-sidebar {
-        width: 100%;
-        max-width: 320px;
     }
 }
