@@ -15,9 +15,9 @@ class ProductHero extends HTMLElement {
             <section class="product-hero">
                 <div class="product-hero__container">
                     <nav class="product-breadcrumbs">
-                        <a href="../../index.html">Home</a> / 
-                        <a href="../../hardware.html">Hardware</a> / 
-                        <a href="../../hardware.html#${data.categoryNav.toLowerCase()}">${data.categoryNav}</a> / 
+                        <a href="index.html">Home</a> / 
+                        <a href="hardware.html">Hardware</a> / 
+                        <a href="hardware.html#${data.categoryNav.toLowerCase()}">${data.categoryNav}</a> / 
                         <span>${data.name}</span>
                     </nav>
                     

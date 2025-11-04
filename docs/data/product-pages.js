@@ -1,16 +1,16 @@
-// Product Pages Data
-// Данные для персональных страниц hardware продуктов
+﻿// Product Pages Data
+// Ð”Ð°Ð½Ð½Ñ‹Ðµ Ð´Ð»Ñ Ð¿ÐµÑ€ÑÐ¾Ð½Ð°Ð»ÑŒÐ½Ñ‹Ñ… ÑÑ‚Ñ€Ð°Ð½Ð¸Ñ† hardware Ð¿Ñ€Ð¾Ð´ÑƒÐºÑ‚Ð¾Ð²
 
 const productPagesData = {
   "sr-falcon": {
-    // Meta информация
+    // Meta Ð¸Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸Ñ
     meta: {
       title: "SR Falcon - Premium POS Tablet | Slimrate",
       description: "SR Falcon is a next-gen POS tablet built for speed, style, and reliability with 14-slot processor, Android 12, and rugged design for 24/7 operation.",
       keywords: "POS tablet, SR Falcon, restaurant POS, retail POS, Android POS"
     },
     
-    // Hero секция
+    // Hero ÑÐµÐºÑ†Ð¸Ñ
     hero: {
       productId: "sr-falcon",
       categoryNav: "Tablets",
@@ -29,17 +29,17 @@ const productPagesData = {
         "Rugged design for 24/7 use"
       ],
       images: {
-        main: "../../assets/img/products/hardware/falcon/80 printer -1.png",
+        main: "assets/img/products/hardware/falcon/80 printer -1.png",
         gallery: [
-          "../../assets/img/products/hardware/falcon/80 printer -1.png",
-          "../../assets/img/products/hardware/falcon/80 printer -2.png",
-          "../../assets/img/products/hardware/falcon/80 printer -3.png",
-          "../../assets/img/products/hardware/falcon/80 printer -4.png"
+          "assets/img/products/hardware/falcon/80 printer -1.png",
+          "assets/img/products/hardware/falcon/80 printer -2.png",
+          "assets/img/products/hardware/falcon/80 printer -3.png",
+          "assets/img/products/hardware/falcon/80 printer -4.png"
         ]
       }
     },
     
-    // Детальные секции
+    // Ð”ÐµÑ‚Ð°Ð»ÑŒÐ½Ñ‹Ðµ ÑÐµÐºÑ†Ð¸Ð¸
     detailSections: [
       {
         id: "section-1",
@@ -54,7 +54,7 @@ const productPagesData = {
           ]
         },
         image: {
-          src: "../../assets/img/products/hardware/falcon/80 printer -2.png",
+          src: "assets/img/products/hardware/falcon/80 printer -2.png",
           alt: "SR Falcon All-in-One POS Solution"
         }
       },
@@ -63,7 +63,7 @@ const productPagesData = {
         title: "Powerful Dock. Endless Possibilities.",
         layout: "image-left",
         content: {
-          description: "Choose the modular dock for your workflow – host charging charging ports, connect peripheral devices, and expand your system capabilities without limitations.",
+          description: "Choose the modular dock for your workflow â€“ host charging charging ports, connect peripheral devices, and expand your system capabilities without limitations.",
           features: [
             "RMS-certified Wi-Fi for industry use",
             "Rugged aluminum body",
@@ -71,20 +71,20 @@ const productPagesData = {
           ]
         },
         image: {
-          src: "../../assets/img/products/hardware/falcon/80 printer -3.png",
+          src: "assets/img/products/hardware/falcon/80 printer -3.png",
           alt: "SR Falcon Modular Dock"
         }
       }
     ],
     
-    // Баннер
+    // Ð‘Ð°Ð½Ð½ÐµÑ€
     banner: {
       show: true,
       text: "Streamlined POS Solutions for Every Business",
       subtitle: "From quick-service restaurants to retail stores and beyond, our POS systems help you serve customers faster and smarter."
     },
     
-    // Сетка преимуществ
+    // Ð¡ÐµÑ‚ÐºÐ° Ð¿Ñ€ÐµÐ¸Ð¼ÑƒÑ‰ÐµÑÑ‚Ð²
     featuresGrid: {
       show: true,
       title: null,
@@ -92,7 +92,7 @@ const productPagesData = {
         {
           icon: "reliability",
           title: "Reliability Meets Efficiency",
-          description: "Built for non-stop operation. If your POS goes down, it doesn't just hurt you – it hurts your customers' experience, too. Slow service means lost sales and frustrated guests."
+          description: "Built for non-stop operation. If your POS goes down, it doesn't just hurt you â€“ it hurts your customers' experience, too. Slow service means lost sales and frustrated guests."
         },
         {
           icon: "effortless",
@@ -112,14 +112,14 @@ const productPagesData = {
       ]
     },
     
-    // Технические характеристики
+    // Ð¢ÐµÑ…Ð½Ð¸Ñ‡ÐµÑÐºÐ¸Ðµ Ñ…Ð°Ñ€Ð°ÐºÑ‚ÐµÑ€Ð¸ÑÑ‚Ð¸ÐºÐ¸
     specifications: {
       show: true,
       title: "What kind of hardware is needed for the POS system?",
       content: "You'll need tablets, terminals, or a regular laptop connected to the internet. Slimrate supports a variety of devices, so you can choose what fits your budget and setup. In addition, we offer complete hardware bundles to get you started quickly."
     },
     
-    // Целевая аудитория
+    // Ð¦ÐµÐ»ÐµÐ²Ð°Ñ Ð°ÑƒÐ´Ð¸Ñ‚Ð¾Ñ€Ð¸Ñ
     audience: {
       show: true,
       title: "Who is Slimrate for?",
@@ -141,11 +141,11 @@ const productPagesData = {
       ]
     },
     
-    // Форма контакта
+    // Ð¤Ð¾Ñ€Ð¼Ð° ÐºÐ¾Ð½Ñ‚Ð°ÐºÑ‚Ð°
     contactForm: {
       show: true,
       title: "Contact us",
-      subtitle: "Get in Touch – Your Questions, Our Answers. Let's Connect!",
+      subtitle: "Get in Touch â€“ Your Questions, Our Answers. Let's Connect!",
       variant: "blue-box"
     }
   },
@@ -174,9 +174,9 @@ const productPagesData = {
         "Multiple payment methods"
       ],
       images: {
-        main: "../../assets/img/gallery/hardware/A35 Payment Terminal 1.png",
+        main: "assets/img/gallery/hardware/A35 Payment Terminal 1.png",
         gallery: [
-          "../../assets/img/gallery/hardware/A35 Payment Terminal 1.png"
+          "assets/img/gallery/hardware/A35 Payment Terminal 1.png"
         ]
       }
     },
@@ -194,7 +194,7 @@ const productPagesData = {
           ]
         },
         image: {
-          src: "../../assets/img/gallery/hardware/A35 Payment Terminal 1.png",
+          src: "assets/img/gallery/hardware/A35 Payment Terminal 1.png",
           alt: "A35 Payment Terminal"
         }
       }
@@ -268,10 +268,10 @@ const productPagesData = {
         "Compatible with all POS systems"
       ],
       images: {
-        main: "../../assets/img/gallery/hardware/SR-TRP1 Thermal Receipt Printer 1.png",
+        main: "assets/img/gallery/hardware/SR-TRP1 Thermal Receipt Printer 1.png",
         gallery: [
-          "../../assets/img/gallery/hardware/SR-TRP1 Thermal Receipt Printer 1.png",
-          "../../assets/img/gallery/hardware/SR-TRP1 Thermal Receipt Printer 2.png"
+          "assets/img/gallery/hardware/SR-TRP1 Thermal Receipt Printer 1.png",
+          "assets/img/gallery/hardware/SR-TRP1 Thermal Receipt Printer 2.png"
         ]
       }
     },
@@ -325,7 +325,7 @@ const productPagesData = {
     contactForm: { show: true, variant: "default" }
   },
 
-  // ========== TABLETS (остальные) ==========
+  // ========== TABLETS (Ð¾ÑÑ‚Ð°Ð»ÑŒÐ½Ñ‹Ðµ) ==========
   
   "sr-swan": {
     meta: {
@@ -338,7 +338,7 @@ const productPagesData = {
       categoryNav: "Tablets",
       name: "SR Swan",
       tagline: "SR Swan",
-      description: "Slimrate Swan is a sleek, silent, fanless tablet POS with long-life components and premium aesthetics for front‑of‑house presentation.",
+      description: "Slimrate Swan is a sleek, silent, fanless tablet POS with long-life components and premium aesthetics for frontâ€‘ofâ€‘house presentation.",
       price: "$1,199.00",
       priceUnit: "pcs.",
       ctaButton: {
@@ -351,11 +351,11 @@ const productPagesData = {
         "Long-life components"
       ],
       images: {
-        main: "../../assets/img/products/hardware/swan 2/Swan2main.png",
+        main: "assets/img/products/hardware/swan 2/Swan2main.png",
         gallery: [
-          "../../assets/img/products/hardware/swan 2/Swan2main.png",
-          "../../assets/img/products/hardware/swan 2/Swan2front.png",
-          "../../assets/img/products/hardware/swan 2/Swan2back.png"
+          "assets/img/products/hardware/swan 2/Swan2main.png",
+          "assets/img/products/hardware/swan 2/Swan2front.png",
+          "assets/img/products/hardware/swan 2/Swan2back.png"
         ]
       }
     },
@@ -373,7 +373,7 @@ const productPagesData = {
           ]
         },
         image: {
-          src: "../../assets/img/products/hardware/swan 2/Swan2front.png",
+          src: "assets/img/products/hardware/swan 2/Swan2front.png",
           alt: "SR Swan Front View"
         }
       }
@@ -424,11 +424,11 @@ const productPagesData = {
         "Enhanced transparency"
       ],
       images: {
-        main: "../../assets/img/gallery/hardware/SR155 Duo 1.png",
+        main: "assets/img/gallery/hardware/SR155 Duo 1.png",
         gallery: [
-          "../../assets/img/gallery/hardware/SR155 Duo 1.png",
-          "../../assets/img/gallery/hardware/SR155 Duo 2.png",
-          "../../assets/img/gallery/hardware/SR155 Duo 3.png"
+          "assets/img/gallery/hardware/SR155 Duo 1.png",
+          "assets/img/gallery/hardware/SR155 Duo 2.png",
+          "assets/img/gallery/hardware/SR155 Duo 3.png"
         ]
       }
     },
@@ -446,7 +446,7 @@ const productPagesData = {
           ]
         },
         image: {
-          src: "../../assets/img/gallery/hardware/SR155 Duo 2.png",
+          src: "assets/img/gallery/hardware/SR155 Duo 2.png",
           alt: "SR155 Duo Dual Display"
         }
       }
@@ -497,10 +497,10 @@ const productPagesData = {
         "User-friendly interface"
       ],
       images: {
-        main: "../../assets/img/gallery/hardware/SR155 Solo 1.png",
+        main: "assets/img/gallery/hardware/SR155 Solo 1.png",
         gallery: [
-          "../../assets/img/gallery/hardware/SR155 Solo 1.png",
-          "../../assets/img/gallery/hardware/SR155 Solo 2.png"
+          "assets/img/gallery/hardware/SR155 Solo 1.png",
+          "assets/img/gallery/hardware/SR155 Solo 2.png"
         ]
       }
     },
@@ -553,9 +553,9 @@ const productPagesData = {
         "Built-in printer"
       ],
       images: {
-        main: "../../assets/img/gallery/hardware/A920 Payment Terminal 1.png",
+        main: "assets/img/gallery/hardware/A920 Payment Terminal 1.png",
         gallery: [
-          "../../assets/img/gallery/hardware/A920 Payment Terminal 1.png"
+          "assets/img/gallery/hardware/A920 Payment Terminal 1.png"
         ]
       }
     },
@@ -573,7 +573,7 @@ const productPagesData = {
           ]
         },
         image: {
-          src: "../../assets/img/gallery/hardware/A920 Payment Terminal 1.png",
+          src: "assets/img/gallery/hardware/A920 Payment Terminal 1.png",
           alt: "A920 Mobile Terminal"
         }
       }
@@ -626,9 +626,9 @@ const productPagesData = {
         "Hands-free operation"
       ],
       images: {
-        main: "../../assets/img/gallery/hardware/SR-WHS1 Wired Table Scanner 1.png",
+        main: "assets/img/gallery/hardware/SR-WHS1 Wired Table Scanner 1.png",
         gallery: [
-          "../../assets/img/gallery/hardware/SR-WHS1 Wired Table Scanner 1.png"
+          "assets/img/gallery/hardware/SR-WHS1 Wired Table Scanner 1.png"
         ]
       }
     },
@@ -679,11 +679,11 @@ const productPagesData = {
         "Ergonomic design"
       ],
       images: {
-        main: "../../assets/img/gallery/hardware/SR-WLHS1 Wireless Handheld Scanner 3.png",
+        main: "assets/img/gallery/hardware/SR-WLHS1 Wireless Handheld Scanner 3.png",
         gallery: [
-          "../../assets/img/gallery/hardware/SR-WLHS1 Wireless Handheld Scanner 3.png",
-          "../../assets/img/gallery/hardware/SR-WHS1 Wired Handheld Scanner 2.png",
-          "../../assets/img/gallery/hardware/SR-WHS1 Wired Handheld Scanner 3.png"
+          "assets/img/gallery/hardware/SR-WLHS1 Wireless Handheld Scanner 3.png",
+          "assets/img/gallery/hardware/SR-WHS1 Wired Handheld Scanner 2.png",
+          "assets/img/gallery/hardware/SR-WHS1 Wired Handheld Scanner 3.png"
         ]
       }
     },
@@ -738,9 +738,9 @@ const productPagesData = {
         "Durable construction"
       ],
       images: {
-        main: "../../assets/img/gallery/hardware/DS1.png",
+        main: "assets/img/gallery/hardware/DS1.png",
         gallery: [
-          "../../assets/img/gallery/hardware/DS1.png"
+          "assets/img/gallery/hardware/DS1.png"
         ]
       }
     },
@@ -791,10 +791,10 @@ const productPagesData = {
         "Touchscreen interface"
       ],
       images: {
-        main: "../../assets/img/gallery/hardware/AIScale Cash Register S625 1.png",
+        main: "assets/img/gallery/hardware/AIScale Cash Register S625 1.png",
         gallery: [
-          "../../assets/img/gallery/hardware/AIScale Cash Register S625 1.png",
-          "../../assets/img/gallery/hardware/AIScale Cash Register S625 2.png"
+          "assets/img/gallery/hardware/AIScale Cash Register S625 1.png",
+          "assets/img/gallery/hardware/AIScale Cash Register S625 2.png"
         ]
       }
     },
@@ -845,10 +845,10 @@ const productPagesData = {
         "Integrated camera"
       ],
       images: {
-        main: "../../assets/img/gallery/hardware/AIScale Label Printing S130 1.png",
+        main: "assets/img/gallery/hardware/AIScale Label Printing S130 1.png",
         gallery: [
-          "../../assets/img/gallery/hardware/AIScale Label Printing S130 1.png",
-          "../../assets/img/gallery/hardware/AIScale Label Printing S130 2.png"
+          "assets/img/gallery/hardware/AIScale Label Printing S130 1.png",
+          "assets/img/gallery/hardware/AIScale Label Printing S130 2.png"
         ]
       }
     },
@@ -901,10 +901,10 @@ const productPagesData = {
         "POS integration"
       ],
       images: {
-        main: "../../assets/img/gallery/hardware/SR-410 Cash Drawer 1.png",
+        main: "assets/img/gallery/hardware/SR-410 Cash Drawer 1.png",
         gallery: [
-          "../../assets/img/gallery/hardware/SR-410 Cash Drawer 1.png",
-          "../../assets/img/gallery/hardware/SR-410 Cash Drawer 2.png"
+          "assets/img/gallery/hardware/SR-410 Cash Drawer 1.png",
+          "assets/img/gallery/hardware/SR-410 Cash Drawer 2.png"
         ]
       }
     },
@@ -932,7 +932,8 @@ const productPagesData = {
   }
 };
 
-// Экспорт данных
+// Ð­ÐºÑÐ¿Ð¾Ñ€Ñ‚ Ð´Ð°Ð½Ð½Ñ‹Ñ…
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = productPagesData;
 }
+
