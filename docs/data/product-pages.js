@@ -985,8 +985,14 @@ const productPagesData = {
   }
 };
 
-// Ð­ÐºÑÐ¿Ð¾Ñ€Ñ‚ Ð´Ð°Ð½Ð½Ñ‹Ñ…
+// Экспорт данных
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = productPagesData;
 }
+
+// Для браузера
+if (typeof window !== 'undefined') {
+  window.productPagesData = productPagesData;
+}
+
 
