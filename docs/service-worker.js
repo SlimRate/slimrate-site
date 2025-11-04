@@ -1,4 +1,4 @@
-const CACHE_NAME = 'slimrate-cache-v4';
+const CACHE_NAME = 'slimrate-cache-v5';
 
 // Time (in milliseconds) to keep cached responses before updating.
 // Currently set to ninety days.
@@ -22,15 +22,27 @@ const ASSETS_TO_CACHE = [
   '/index.html',
   '/assets/css/style.css',
   '/assets/css/burger.css',
+  '/assets/css/layout-overrides.css',
+  '/assets/css/mobile-fixes.css',
   '/assets/js/imask.min.js',
   '/assets/js/jquery.min.js',
   '/assets/js/masks.js',
   '/assets/js/more.js',
   '/assets/slick/slick.min.js',
+  '/assets/slick/slick.css',
+  '/assets/slick/slick-theme.css',
   '/components/top_menu.js',
   '/components/bottom_menu.js',
   '/components/pricing_form.js',
+  '/components/faq.js',
+  '/components/our_products.js',
+  '/components/equip_main.js',
+  '/components/customerTestimonials/customerTestimonials.js',
+  '/components/customerTestimonials/customertestimonials.css',
+  '/components/minimalSlider/minimalSlider.js',
+  '/components/minimalSlider/minimalSlider.css',
   '/assets/img/logo.svg',
+  '/assets/2025mainbg.png'
 ];
 
 self.addEventListener('install', event => {

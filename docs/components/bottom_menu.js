@@ -8,6 +8,7 @@ bottomMenuTemplate.innerHTML = `
             <li><a href="hardware.html">POS Hardware</a></li>
             <li><a href="payment_processing.html">Payment Processing</a></li>
             <li><a href="software.html">POS Software</a></li>
+            <li><a href="mobile-app.html">Mobile App</a></li>
         </ul>
         <ul>
             <li>Business Types</li>
@@ -49,6 +50,21 @@ class BottomMenu extends HTMLElement {
     }
     connectedCallback() {
         this.appendChild(this._contents);
+        this.injectZendeskWidget();
+    }
+
+    injectZendeskWidget() {
+        if (document.getElementById('ze-snippet')) {
+            return;
+        }
+
+        const zendeskScript = document.createElement('script');
+        zendeskScript.id = 'ze-snippet';
+        zendeskScript.src = 'https://static.zdassets.com/ekr/snippet.js?key=9eae20ea-c981-4e2b-bdf3-facd3067b893';
+        zendeskScript.async = true;
+
+        const target = document.head || document.body || this;
+        target.appendChild(zendeskScript);
     }
 }
 customElements.define("bottom-menu", BottomMenu);

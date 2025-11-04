@@ -1,0 +1,17 @@
+<svg width="170" height="50" viewBox="0 0 170 50" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#000;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#000;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="170" height="50" rx="8" fill="url(#grad)"/>
+  <g>
+    <!-- Apple Logo -->
+    <path d="M32.5 25.5c-.03-3.2 2.6-4.75 2.72-4.84-1.48-2.17-3.79-2.47-4.61-2.5-1.96-.2-3.82 1.15-4.82 1.15s-2.53-1.13-4.16-1.1c-2.14.03-4.11 1.24-5.21 3.15-2.22 3.86-.57 9.58 1.6 12.71 1.06 1.53 2.33 3.25 3.99 3.19 1.61-.07 2.22-1.04 4.17-1.04s2.49 1.04 4.18 1.01c1.72-.03 2.83-1.56 3.89-3.1 1.23-1.78 1.73-3.51 1.76-3.6-.04-.01-3.37-1.29-3.41-5.13M28.72 16.5c.88-1.06 1.47-2.54 1.31-4.01-1.27.05-2.81.84-3.72 1.91-.81.94-1.52 2.44-1.33 3.88 1.41.11 2.85-.72 3.74-1.78" fill="#fff"/>
+    <!-- Download on the text -->
+    <text x="47" y="20" font-family="SF Pro Display, -apple-system, sans-serif" font-size="9" fill="#fff" opacity="0.9">Download on the</text>
+    <!-- App Store text -->
+    <text x="47" y="34" font-family="SF Pro Display, -apple-system, sans-serif" font-size="17" font-weight="600" fill="#fff">App Store</text>
+  </g>
+</svg>
