@@ -985,12 +985,12 @@ const productPagesData = {
   }
 };
 
-// Экспорт данных
+// Export data
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = productPagesData;
 }
 
-// Для браузера
+// For browser
 if (typeof window !== 'undefined') {
   window.productPagesData = productPagesData;
 }

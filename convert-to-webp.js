@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const sharp = require('sharp');
 
-// Функция для рекурсивного поиска всех файлов
+// Function to recursively search for all files
 function getAllFiles(dirPath, arrayOfFiles = []) {
     const files = fs.readdirSync(dirPath);
 
@@ -10,7 +10,7 @@ function getAllFiles(dirPath, arrayOfFiles = []) {
         const filePath = path.join(dirPath, file);
         
         if (fs.statSync(filePath).isDirectory()) {
-            // Пропускаем node_modules и другие служебные папки
+            // Skip node_modules and other service folders
             if (!file.startsWith('.') && file !== 'node_modules') {
                 arrayOfFiles = getAllFiles(filePath, arrayOfFiles);
             }
@@ -22,53 +22,53 @@ function getAllFiles(dirPath, arrayOfFiles = []) {
     return arrayOfFiles;
 }
 
-// Функция для конвертации изображения в WebP
+// Function to convert image to WebP
 async function convertToWebP(inputPath) {
     const ext = path.extname(inputPath).toLowerCase();
     
-    // Проверяем, что это изображение для конвертации
+    // Check if this is an image for conversion
     if (!['.jpg', '.jpeg', '.png'].includes(ext)) {
         return null;
     }
 
-    // Создаем путь для WebP файла
+    // Create path for WebP file
     const outputPath = inputPath.replace(/\.(jpg|jpeg|png)$/i, '.webp');
     
-    // Пропускаем, если WebP уже существует
+    // Skip if WebP already exists
     if (fs.existsSync(outputPath)) {
-        console.log(`Пропуск (уже существует): ${outputPath}`);
+        console.log(`Skip (already exists): ${outputPath}`);
         return null;
     }
 
     try {
         await sharp(inputPath)
-            .webp({ quality: 85 }) // Качество 85% - хороший баланс между размером и качеством
+            .webp({ quality: 85 }) // Quality 85% - good balance between size and quality
             .toFile(outputPath);
         
         const originalSize = fs.statSync(inputPath).size;
         const newSize = fs.statSync(outputPath).size;
         const savings = ((originalSize - newSize) / originalSize * 100).toFixed(2);
         
-        console.log(`✓ Конвертировано: ${path.relative(process.cwd(), inputPath)}`);
-        console.log(`  Размер: ${(originalSize / 1024).toFixed(2)}KB → ${(newSize / 1024).toFixed(2)}KB (сэкономлено ${savings}%)`);
+        console.log(`✓ Converted: ${path.relative(process.cwd(), inputPath)}`);
+        console.log(`  Size: ${(originalSize / 1024).toFixed(2)}KB → ${(newSize / 1024).toFixed(2)}KB (saved ${savings}%)`);
         
         return { inputPath, outputPath, originalSize, newSize, savings };
     } catch (error) {
-        console.error(`✗ Ошибка при конвертации ${inputPath}:`, error.message);
+        console.error(`✗ Error converting ${inputPath}:`, error.message);
         return null;
     }
 }
 
-// Основная функция
+// Main function
 async function main() {
     const docsPath = path.join(__dirname, 'docs');
     
     if (!fs.existsSync(docsPath)) {
-        console.error('Папка docs не найдена!');
+        console.error('Docs folder not found!');
         process.exit(1);
     }
 
-    console.log('Поиск изображений для конвертации...\n');
+    console.log('Searching for images to convert...\n');
     
     const allFiles = getAllFiles(docsPath);
     const imageFiles = allFiles.filter(file => {
@@ -76,8 +76,8 @@ async function main() {
         return ['.jpg', '.jpeg', '.png'].includes(ext);
     });
 
-    console.log(`Найдено ${imageFiles.length} изображений для конвертации\n`);
-    console.log('Начинаем конвертацию...\n');
+    console.log(`Found ${imageFiles.length} images for conversion\n`);
+    console.log('Starting conversion...\n');
 
     const results = [];
     let totalOriginalSize = 0;
@@ -93,11 +93,11 @@ async function main() {
     }
 
     console.log('\n' + '='.repeat(60));
-    console.log('ИТОГИ:');
-    console.log(`Конвертировано файлов: ${results.length}`);
-    console.log(`Исходный размер: ${(totalOriginalSize / 1024 / 1024).toFixed(2)} MB`);
-    console.log(`Новый размер: ${(totalNewSize / 1024 / 1024).toFixed(2)} MB`);
-    console.log(`Сэкономлено: ${(((totalOriginalSize - totalNewSize) / totalOriginalSize) * 100).toFixed(2)}%`);
+    console.log('SUMMARY:');
+    console.log(`Files converted: ${results.length}`);
+    console.log(`Original size: ${(totalOriginalSize / 1024 / 1024).toFixed(2)} MB`);
+    console.log(`New size: ${(totalNewSize / 1024 / 1024).toFixed(2)} MB`);
+    console.log(`Saved: ${(((totalOriginalSize - totalNewSize) / totalOriginalSize) * 100).toFixed(2)}%`);
     console.log('='.repeat(60));
 }
 

@@ -1,5 +1,5 @@
 // Product Sidebar Component
-// Боковая навигация по продуктам категории
+// Sidebar navigation for category products
 
 class ProductSidebar extends HTMLElement {
     connectedCallback() {
@@ -11,7 +11,7 @@ class ProductSidebar extends HTMLElement {
     }
 
     render(category, activeProduct) {
-        // Получаем список продуктов из hardware.js
+        // Get products list from hardware.js
         const products = this.getProductsByCategory(category);
         
         this.innerHTML = `
@@ -79,7 +79,7 @@ class ProductSidebar extends HTMLElement {
                 sidebar.classList.toggle('open');
             });
 
-            // Закрытие при клике вне сайдбара на мобильных
+            // Close sidebar on click outside on mobile
             document.addEventListener('click', (e) => {
                 if (window.innerWidth <= 1024) {
                     if (!sidebar.contains(e.target) && !toggle.contains(e.target)) {

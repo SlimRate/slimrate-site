@@ -13,8 +13,8 @@ pricingFormTemplate.innerHTML = `
   position: fixed;
   z-index: 1;
   left: 50%;
-  transform: translateX(-50%); /* Центрирование по ширине */
-  bottom: 30px; /* Нижнее расположение */
+  transform: translateX(-50%); /* Center horizontally */
+  bottom: 30px; /* Bottom position */
   font-size: 17px;
 }
 
@@ -34,17 +34,17 @@ pricingFormTemplate.innerHTML = `
 }
 
 .toast.success {
-  background-color: #4CAF50; /* Зеленый для успеха */
+  background-color: #4CAF50; /* Green for success */
 }
 
 .toast.error {
-  background-color: #f44336; /* Красный для ошибки */
+  background-color: #f44336; /* Red for error */
 }
 
-/* Тост для верхней части страницы */
+/* Toast for top of page */
 .toast.top {
   bottom: auto;
-  top: 30px; /* Верхнее расположение */
+  top: 30px; /* Top position */
 }
 
 @keyframes fadein-top {
@@ -197,13 +197,13 @@ function showToast(message, type, position = 'bottom') {
     
     toastMessage.textContent = message;
     
-    // Удаляем все предыдущие классы
+    // Remove all previous classes
     toast.className = "toast";
 
-    // Добавляем класс для стиля успеха или ошибки
+    // Add class for success or error style
     toast.classList.add("show", type);
 
-    // Выбираем позицию тоста (верх или низ)
+    // Choose toast position (top or bottom)
     if (position === 'top') {
         toast.classList.add("top");
         toast.style.animation = "fadein-top 0.5s, fadeout-top 0.5s 2.5s";
@@ -211,7 +211,7 @@ function showToast(message, type, position = 'bottom') {
         toast.style.animation = "fadein 0.5s, fadeout 0.5s 2.5s";
     }
 
-    // Убираем тост через 3 секунды
+    // Remove toast after 3 seconds
     setTimeout(function() {
         toast.className = toast.className.replace("show", "");
     }, 3000);

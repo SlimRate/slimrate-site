@@ -1,64 +1,64 @@
-# Оптимизация изображений - WebP конвертация
+# Image Optimization - WebP Conversion
 
-## Что было сделано
+## What Was Done
 
-Все изображения в проекте (JPG, JPEG, PNG) были автоматически конвертированы в формат WebP для оптимизации загрузки сайта.
+All images in the project (JPG, JPEG, PNG) were automatically converted to WebP format to optimize site loading.
 
-## Результаты оптимизации
+## Optimization Results
 
-- **Конвертировано файлов:** 288
-- **Исходный размер:** 92.81 MB
-- **Новый размер:** 23.77 MB
-- **Сэкономлено:** 74.39% (69.04 MB)
+- **Files converted:** 288
+- **Original size:** 92.81 MB
+- **New size:** 23.77 MB
+- **Saved:** 74.39% (69.04 MB)
 
-## Обновленные файлы
+## Updated Files
 
-- **HTML файлов:** 44
-- **JavaScript файлов:** 5
+- **HTML files:** 44
+- **JavaScript files:** 5
 
-## Скрипты
+## Scripts
 
-Созданы два скрипта для автоматизации процесса:
+Two scripts were created to automate the process:
 
 ### 1. convert-to-webp.js
-Конвертирует все изображения в WebP формат с качеством 85%.
+Converts all images to WebP format with 85% quality.
 
 ```bash
 node convert-to-webp.js
 ```
 
 ### 2. update-image-refs.js
-Автоматически обновляет все ссылки на изображения в HTML и JS файлах.
+Automatically updates all image references in HTML and JS files.
 
 ```bash
 node update-image-refs.js
 ```
 
-## Использование в будущем
+## Future Usage
 
-Если добавляются новые изображения:
+If new images are added:
 
-1. Поместите изображения в нужную папку
-2. Запустите `node convert-to-webp.js` для конвертации
-3. Запустите `node update-image-refs.js` для обновления ссылок
+1. Place images in the desired folder
+2. Run `node convert-to-webp.js` for conversion
+3. Run `node update-image-refs.js` to update references
 
-## Зависимости
+## Dependencies
 
-Проект использует библиотеку `sharp` для конвертации изображений. Она уже установлена:
+The project uses the `sharp` library for image conversion. It's already installed:
 
 ```bash
 npm install sharp
 ```
 
-## Примечания
+## Notes
 
-- Исходные файлы JPG/PNG сохранены и могут быть удалены после проверки работоспособности
-- Качество WebP установлено на 85% - оптимальный баланс между размером и качеством
-- Некоторые изображения не дали значительного выигрыша в размере (например, уже сжатые JPEG)
+- Original JPG/PNG files are preserved and can be deleted after verifying functionality
+- WebP quality is set to 85% - optimal balance between size and quality
+- Some images didn't provide significant size savings (e.g., already compressed JPEGs)
 
-## Преимущества WebP
+## WebP Benefits
 
-- Меньший размер файлов (в среднем на 25-35% меньше, чем JPEG/PNG)
-- Более быстрая загрузка страниц
-- Поддержка прозрачности (как PNG)
-- Поддерживается всеми современными браузерами
+- Smaller file sizes (on average 25-35% smaller than JPEG/PNG)
+- Faster page loading
+- Transparency support (like PNG)
+- Supported by all modern browsers

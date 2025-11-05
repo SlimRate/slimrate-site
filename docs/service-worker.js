@@ -1,8 +1,34 @@
-const CACHE_NAME = 'slimrate-cache-v5';
+const CACHE_NAME = 'slimrate-cache-v6';
 
-// Time (in milliseconds) to keep cached responses before updating.
-// Currently set to ninety days.
-const CACHE_MAX_AGE = 90 * 24 * 60 * 60 * 1000;
+// Cache durations for different resource types (in milliseconds)
+const CACHE_DURATIONS = {
+  images: 365 * 24 * 60 * 60 * 1000,      // 1 year for images (webp, jpg, png, svg)
+  styles: 180 * 24 * 60 * 60 * 1000,      // 6 months for CSS
+  scripts: 180 * 24 * 60 * 60 * 1000,     // 6 months for JS
+  fonts: 365 * 24 * 60 * 60 * 1000,       // 1 year for fonts
+  html: 7 * 24 * 60 * 60 * 1000,          // 7 days for HTML pages
+  default: 30 * 24 * 60 * 60 * 1000       // 30 days for everything else
+};
+
+// Helper function to get cache duration based on resource type
+function getCacheDuration(url) {
+  const urlObj = new URL(url);
+  const pathname = urlObj.pathname.toLowerCase();
+  
+  if (pathname.match(/\.(webp|jpg|jpeg|png|gif|svg|ico)$/)) {
+    return CACHE_DURATIONS.images;
+  } else if (pathname.match(/\.css$/)) {
+    return CACHE_DURATIONS.styles;
+  } else if (pathname.match(/\.js$/)) {
+    return CACHE_DURATIONS.scripts;
+  } else if (pathname.match(/\.(woff|woff2|ttf|eot|otf)$/)) {
+    return CACHE_DURATIONS.fonts;
+  } else if (pathname.match(/\.html$/) || pathname === '/' || !pathname.includes('.')) {
+    return CACHE_DURATIONS.html;
+  }
+  
+  return CACHE_DURATIONS.default;
+}
 
 // Helper to clone a response and attach the current timestamp so we can
 // determine its age later.
@@ -21,11 +47,11 @@ const ASSETS_TO_CACHE = [
   '/',
   '/index.html',
   '/assets/css/style.css',
+  '/assets/css/spacing-system.css',
   '/assets/css/burger.css',
   '/assets/css/layout-overrides.css',
   '/assets/css/mobile-fixes.css',
-  '/assets/js/imask.min.js',
-  '/assets/js/jquery.min.js',
+  '/assets/css/hardware-cards-vertical-slider.css',
   '/assets/js/masks.js',
   '/assets/js/more.js',
   '/assets/slick/slick.min.js',
@@ -36,13 +62,9 @@ const ASSETS_TO_CACHE = [
   '/components/pricing_form.js',
   '/components/faq.js',
   '/components/our_products.js',
-  '/components/equip_main.js',
-  '/components/customerTestimonials/customerTestimonials.js',
-  '/components/customerTestimonials/customertestimonials.css',
-  '/components/minimalSlider/minimalSlider.js',
-  '/components/minimalSlider/minimalSlider.css',
   '/assets/img/logo.svg',
-  '/assets/2025mainbg.png'
+  '/assets/2025mainbg.webp',
+  '/assets/hardware2025bg.webp'
 ];
 
 self.addEventListener('install', event => {
@@ -73,23 +95,36 @@ self.addEventListener('fetch', event => {
   event.respondWith(
     caches.open(CACHE_NAME).then(cache =>
       cache.match(event.request).then(async cachedResponse => {
+        const cacheDuration = getCacheDuration(event.request.url);
+        
         const fetchAndCache = fetch(event.request)
-          .then(networkResponse =>
-            timestampedResponse(networkResponse).then(responseToCache => {
-              cache.put(event.request, responseToCache.clone());
-              return networkResponse;
-            })
-          )
+          .then(networkResponse => {
+            // Only cache successful responses
+            if (networkResponse && networkResponse.status === 200) {
+              return timestampedResponse(networkResponse).then(responseToCache => {
+                cache.put(event.request, responseToCache.clone());
+                return networkResponse;
+              });
+            }
+            return networkResponse;
+          })
           .catch(() => cachedResponse);
 
         if (cachedResponse) {
           const cachedTime = cachedResponse.headers.get('sw-cache-time');
           const isFresh =
-            cachedTime && Date.now() - Number(cachedTime) < CACHE_MAX_AGE;
+            cachedTime && Date.now() - Number(cachedTime) < cacheDuration;
 
           if (isFresh) {
-            // Serve cached response immediately and update in background.
-            event.waitUntil(fetchAndCache);
+            // Serve cached response immediately and update in background for HTML.
+            // For static assets, just serve from cache without updating
+            const isStaticAsset = !requestUrl.pathname.match(/\.html$/) && 
+                                 requestUrl.pathname !== '/' && 
+                                 requestUrl.pathname.includes('.');
+            
+            if (!isStaticAsset) {
+              event.waitUntil(fetchAndCache);
+            }
             return cachedResponse;
           }
         }

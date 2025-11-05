@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-// Функция для рекурсивного поиска всех HTML файлов
+// Function to recursively search for all HTML files
 function getAllHtmlFiles(dirPath, arrayOfFiles = []) {
     const files = fs.readdirSync(dirPath);
 
@@ -20,12 +20,12 @@ function getAllHtmlFiles(dirPath, arrayOfFiles = []) {
     return arrayOfFiles;
 }
 
-// Функция для обновления ссылок на изображения в HTML файле
+// Function to update image references in HTML file
 function updateImageReferences(filePath) {
     let content = fs.readFileSync(filePath, 'utf8');
     let modified = false;
 
-    // Заменяем ссылки на .jpg, .jpeg, .png на .webp
+    // Replace .jpg, .jpeg, .png references with .webp
     const patterns = [
         /\.jpg"/gi,
         /\.jpeg"/gi,
@@ -59,14 +59,14 @@ function updateImageReferences(filePath) {
 
     if (modified) {
         fs.writeFileSync(filePath, content, 'utf8');
-        console.log(`✓ Обновлен: ${path.relative(process.cwd(), filePath)}`);
+        console.log(`✓ Updated: ${path.relative(process.cwd(), filePath)}`);
         return true;
     }
 
     return false;
 }
 
-// Функция для обновления ссылок в JavaScript файлах
+// Function to update references in JavaScript files
 function updateJsReferences(filePath) {
     let content = fs.readFileSync(filePath, 'utf8');
     let modified = false;
@@ -104,36 +104,36 @@ function updateJsReferences(filePath) {
 
     if (modified) {
         fs.writeFileSync(filePath, content, 'utf8');
-        console.log(`✓ Обновлен: ${path.relative(process.cwd(), filePath)}`);
+        console.log(`✓ Updated: ${path.relative(process.cwd(), filePath)}`);
         return true;
     }
 
     return false;
 }
 
-// Основная функция
+// Main function
 function main() {
     const docsPath = path.join(__dirname, 'docs');
     
-    console.log('Поиск HTML и JS файлов для обновления ссылок на изображения...\n');
+    console.log('Searching for HTML and JS files to update image references...\n');
 
-    // Обновляем HTML файлы
+    // Update HTML files
     const htmlFiles = getAllHtmlFiles(docsPath);
     let htmlUpdated = 0;
 
-    console.log('Обновление HTML файлов:\n');
+    console.log('Updating HTML files:\n');
     htmlFiles.forEach(file => {
         if (updateImageReferences(file)) {
             htmlUpdated++;
         }
     });
 
-    // Обновляем JS файлы в components
+    // Update JS files in components
     const componentsPath = path.join(docsPath, 'components');
     let jsUpdated = 0;
 
     if (fs.existsSync(componentsPath)) {
-        console.log('\nОбновление JavaScript файлов:\n');
+        console.log('\nUpdating JavaScript files:\n');
         const jsFiles = fs.readdirSync(componentsPath)
             .filter(file => file.endsWith('.js'))
             .map(file => path.join(componentsPath, file));
@@ -146,9 +146,9 @@ function main() {
     }
 
     console.log('\n' + '='.repeat(60));
-    console.log('ИТОГИ:');
-    console.log(`HTML файлов обновлено: ${htmlUpdated}`);
-    console.log(`JavaScript файлов обновлено: ${jsUpdated}`);
+    console.log('SUMMARY:');
+    console.log(`HTML files updated: ${htmlUpdated}`);
+    console.log(`JavaScript files updated: ${jsUpdated}`);
     console.log('='.repeat(60));
 }
 

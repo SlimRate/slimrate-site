@@ -18,7 +18,7 @@ function createSlides() {
       const productName = product.name;
       const deviceLabel = group.label;
 
-      // Создаем элементы
+      // Create elements
       const figure = document.createElement('figure');
   figure.dataset.productName = productName; 
   figure.tabIndex = 0;

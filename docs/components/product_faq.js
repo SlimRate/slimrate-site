@@ -1,5 +1,5 @@
 // Product FAQ Component
-// FAQ секция для продукта
+// FAQ section for product
 
 class ProductFAQ extends HTMLElement {
     connectedCallback() {
@@ -46,7 +46,7 @@ class ProductFAQ extends HTMLElement {
                 const index = question.getAttribute('data-index');
                 const answer = this.querySelector(`.product-faq__answer[data-index="${index}"]`);
                 
-                // Toggle активного состояния
+                // Toggle active state
                 question.classList.toggle('active');
                 answer.classList.toggle('active');
             });

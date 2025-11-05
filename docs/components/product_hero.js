@@ -1,5 +1,5 @@
 // Product Hero Component
-// Hero секция продукта с изображением и основной информацией
+// Hero section with product image and main information
 
 class ProductHero extends HTMLElement {
     connectedCallback() {
@@ -81,7 +81,7 @@ class ProductHero extends HTMLElement {
                 if (mainImage && fullImage) {
                     mainImage.src = fullImage;
                     
-                    // Обновляем активную миниатюру
+                    // Update active thumbnail
                     thumbs.forEach(t => t.classList.remove('active'));
                     thumb.classList.add('active');
                 }

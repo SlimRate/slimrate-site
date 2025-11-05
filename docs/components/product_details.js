@@ -1,5 +1,5 @@
 // Product Details Component
-// Детальные секции с описанием и изображениями
+// Detailed sections with descriptions and images
 
 class ProductDetails extends HTMLElement {
     connectedCallback() {

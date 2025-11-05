@@ -8,30 +8,30 @@
 
 ## 📋 Overview
 
-Единая система вертикальных отступов для сайта Slimrate, основанная на 8-point grid системе. Обеспечивает консистентность, адаптивность и легкость в поддержке.
+Unified vertical spacing system for Slimrate website, based on 8-point grid system. Provides consistency, responsiveness, and ease of maintenance.
 
 ---
 
-## 🎯 Основные принципы
+## 🎯 Core Principles
 
 ### 1. **8-Point Grid System**
-Все отступы кратны 8px (базовая единица spacing-2). Это обеспечивает:
-- Визуальную гармонию
-- Pixel-perfect выравнивание
-- Легкость масштабирования
+All spacings are multiples of 8px (base unit spacing-2). This provides:
+- Visual harmony
+- Pixel-perfect alignment
+- Easy scalability
 
-### 2. **Семантические переменные**
-Вместо хардкодных значений используются CSS-переменные:
+### 2. **Semantic Variables**
+CSS variables are used instead of hardcoded values:
 ```css
-/* ❌ Плохо */
+/* ❌ Bad */
 margin-top: 80px;
 
-/* ✅ Хорошо */
+/* ✅ Good */
 margin-top: var(--section-spacing-lg);
 ```
 
-### 3. **Адаптивность по умолчанию**
-Отступы автоматически уменьшаются на мобильных устройствах через media queries.
+### 3. **Responsive by Default**
+Spacings automatically decrease on mobile devices through media queries.
 
 ---
 
@@ -40,8 +40,8 @@ margin-top: var(--section-spacing-lg);
 ### Base Units (Desktop)
 ```css
 --spacing-0:  0px
---spacing-1:  4px      /* минимальный отступ */
---spacing-2:  8px      /* базовая единица */
+--spacing-1:  4px      /* minimal spacing */
+--spacing-2:  8px      /* base unit */
 --spacing-3:  12px
 --spacing-4:  16px
 --spacing-5:  20px
@@ -61,68 +61,68 @@ margin-top: var(--section-spacing-lg);
 
 ## 🔧 Semantic Variables
 
-### Section Spacing (между основными блоками страницы)
+### Section Spacing (between main page blocks)
 
-| Variable | Desktop | Tablet | Mobile | Small Mobile | Использование |
-|----------|---------|--------|--------|--------------|---------------|
-| `--section-spacing-xs` | 40px | 32px | 24px | 20px | Минимальный зазор |
-| `--section-spacing-sm` | 48px | 40px | 32px | 24px | Малый зазор |
-| `--section-spacing-md` | 64px | 48px | 40px | 32px | Средний зазор |
-| `--section-spacing-lg` | **80px** | **64px** | **48px** | **40px** | **Стандарт (default)** |
-| `--section-spacing-xl` | 96px | 80px | 64px | 48px | Большой зазор |
-| `--section-spacing-2xl` | 128px | 96px | 80px | 64px | Экстра большой |
+| Variable | Desktop | Tablet | Mobile | Small Mobile | Usage |
+|----------|---------|--------|--------|--------------|-------|
+| `--section-spacing-xs` | 40px | 32px | 24px | 20px | Minimal gap |
+| `--section-spacing-sm` | 48px | 40px | 32px | 24px | Small gap |
+| `--section-spacing-md` | 64px | 48px | 40px | 32px | Medium gap |
+| `--section-spacing-lg` | **80px** | **64px** | **48px** | **40px** | **Standard (default)** |
+| `--section-spacing-xl` | 96px | 80px | 64px | 48px | Large gap |
+| `--section-spacing-2xl` | 128px | 96px | 80px | 64px | Extra large |
 
-### Component Spacing (внутри компонентов)
+### Component Spacing (inside components)
 
-| Variable | Value | Использование |
-|----------|-------|---------------|
-| `--component-spacing-xs` | 8px | Плотное размещение |
-| `--component-spacing-sm` | 12px | Малый отступ |
-| `--component-spacing-md` | 16px | Стандарт |
-| `--component-spacing-lg` | 24px | Большой отступ |
-| `--component-spacing-xl` | 32px | Между подсекциями |
-| `--component-spacing-2xl` | 40px | Максимальный |
+| Variable | Value | Usage |
+|----------|-------|-------|
+| `--component-spacing-xs` | 8px | Dense layout |
+| `--component-spacing-sm` | 12px | Small spacing |
+| `--component-spacing-md` | 16px | Standard |
+| `--component-spacing-lg` | 24px | Large spacing |
+| `--component-spacing-xl` | 32px | Between subsections |
+| `--component-spacing-2xl` | 40px | Maximum |
 
 ### Hero/Content Spacing
 
 ```css
---hero-padding-top: 64px         /* padding сверху hero-секций */
---hero-padding-bottom: 128px     /* padding снизу hero-секций */
---content-padding-vertical: 64px /* стандартный padding секций */
---content-padding-sm: 40px       /* малый padding */
---content-padding-lg: 80px       /* большой padding */
+--hero-padding-top: 64px         /* top padding for hero sections */
+--hero-padding-bottom: 128px     /* bottom padding for hero sections */
+--content-padding-vertical: 64px /* standard section padding */
+--content-padding-sm: 40px       /* small padding */
+--content-padding-lg: 80px       /* large padding */
 ```
 
 ---
 
-## 💡 Когда использовать
+## 💡 When to Use
 
 ### Section Spacing (`--section-spacing-*`)
 
-Используйте для отступов **между основными блоками страницы**:
+Use for spacing **between main page blocks**:
 
 ```css
-/* ✅ Правильно */
+/* ✅ Correct */
 .wrapper > section {
     margin-top: var(--section-spacing-lg);
 }
 
 .testimonial-wrapper {
-    margin-top: var(--section-spacing-xl); /* больше для акцента */
+    margin-top: var(--section-spacing-xl); /* larger for emphasis */
 }
 ```
 
-**Примеры:**
-- Отступ между hero и следующей секцией
-- Отступ между `.coop` и `.hardware-nav`
-- Отступ между формой и футером
+**Examples:**
+- Spacing between hero and next section
+- Spacing between `.coop` and `.hardware-nav`
+- Spacing between form and footer
 
 ### Component Spacing (`--component-spacing-*`)
 
-Используйте для отступов **внутри компонентов и карточек**:
+Use for spacing **inside components and cards**:
 
 ```css
-/* ✅ Правильно */
+/* ✅ Correct */
 .card-title {
     margin-bottom: var(--component-spacing-md);
 }
@@ -136,16 +136,16 @@ margin-top: var(--section-spacing-lg);
 }
 ```
 
-**Примеры:**
-- Отступ между заголовком и описанием карточки
-- Отступ между элементами формы
-- Отступ внутри FAQ-вопросов
+**Examples:**
+- Spacing between card title and description
+- Spacing between form elements
+- Spacing inside FAQ items
 
 ---
 
-## 🚀 Примеры использования
+## 🚀 Usage Examples
 
-### 1. Стандартная секция
+### 1. Standard Section
 
 ```css
 .my-section {
@@ -154,7 +154,7 @@ margin-top: var(--section-spacing-lg);
 }
 ```
 
-### 2. Hero-секция
+### 2. Hero Section
 
 ```css
 .hero {
@@ -163,7 +163,7 @@ margin-top: var(--section-spacing-lg);
 }
 ```
 
-### 3. Карточка
+### 3. Card
 
 ```css
 .card {
@@ -183,22 +183,22 @@ margin-top: var(--section-spacing-lg);
 }
 ```
 
-### 4. Использование utility классов
+### 4. Using Utility Classes
 
 ```html
-<!-- Быстрое применение стандартных отступов -->
+<!-- Quick application of standard spacing -->
 <section class="mt-section-lg mb-section-0">
-    <h2 class="mb-comp-md">Заголовок</h2>
-    <p class="mb-comp-lg">Описание</p>
+    <h2 class="mb-comp-md">Title</h2>
+    <p class="mb-comp-lg">Description</p>
     <button>CTA</button>
 </section>
 ```
 
 ---
 
-## 📱 Адаптивность
+## 📱 Responsiveness
 
-Все spacing-переменные автоматически адаптируются:
+All spacing variables automatically adapt:
 
 ```css
 /* Desktop (default) */
@@ -214,7 +214,7 @@ margin-top: var(--section-spacing-lg);
 --section-spacing-lg: 40px;
 ```
 
-**Ничего дополнительного делать не нужно!** Просто используйте переменные.
+**No additional work needed!** Just use the variables.
 
 ---
 
@@ -250,30 +250,30 @@ margin-top: var(--section-spacing-lg);
 
 ---
 
-## ⚠️ Важные правила
+## ⚠️ Important Rules
 
-### ❌ НЕ делайте так:
+### ❌ DON'T do this:
 
 ```css
-/* Хардкодные значения */
+/* Hardcoded values */
 margin-top: 85px;
 padding-bottom: 123px;
 
-/* Произвольные значения */
+/* Arbitrary values */
 margin-top: 47px;
 
-/* Использование px напрямую */
+/* Using px directly */
 .section { margin: 80px 0; }
 ```
 
-### ✅ Делайте так:
+### ✅ DO this:
 
 ```css
-/* Используйте семантические переменные */
+/* Use semantic variables */
 margin-top: var(--section-spacing-lg);
 padding-bottom: var(--content-padding-vertical);
 
-/* Или utility классы */
+/* Or utility classes */
 .mt-section-lg
 .mb-comp-md
 ```
@@ -282,18 +282,18 @@ padding-bottom: var(--content-padding-vertical);
 
 ## 🔄 Migration Guide
 
-### Как мигрировать существующий код:
+### How to migrate existing code:
 
-**Шаг 1:** Найдите хардкодные значения
+**Step 1:** Find hardcoded values
 ```bash
-# Поиск всех margin-top/bottom в CSS
+# Search for all margin-top/bottom in CSS
 grep -n "margin-top\|margin-bottom" style.css
 ```
 
-**Шаг 2:** Замените на ближайшее значение из шкалы
+**Step 2:** Replace with nearest value from scale
 
-| Было | Станет |
-|------|--------|
+| Before | After |
+|--------|-------|
 | `margin-top: 80px` | `var(--section-spacing-lg)` |
 | `margin-top: 100px` | `var(--section-spacing-xl)` |
 | `margin-top: 64px` | `var(--section-spacing-md)` |
@@ -302,101 +302,92 @@ grep -n "margin-top\|margin-bottom" style.css
 | `margin-bottom: 16px` | `var(--component-spacing-md)` |
 | `padding: 64px 0` | `var(--content-padding-vertical) 0` |
 
-**Шаг 3:** Тестируйте визуально на всех breakpoints
+**Step 3:** Test visually on all breakpoints
 
 ---
 
-## 📊 Текущий статус
+## 📊 Current Status
 
-### ✅ Завершено (Phase 1):
-- [x] Создан `spacing-system.css` с полной шкалой
-- [x] Обновлен `layout-overrides.css`
-- [x] Добавлены адаптивные media queries
-- [x] Интегрировано в основные страницы (index, hardware, restaurant, software, retail, company, payment_processing, pricing)
-- [x] Созданы utility классы
+### ✅ Completed (Phase 1):
+- [x] Created `spacing-system.css` with full scale
+- [x] Updated `layout-overrides.css`
+- [x] Added responsive media queries
+- [x] Integrated into main pages (index, hardware, restaurant, software, retail, company, payment_processing, pricing)
+- [x] Created utility classes
 
-### ✅ Завершено (Phase 2):
-- [x] Рефакторинг `style.css` - заменено 70+ хардкодных значений
-- [x] Обновлен `mobile-fixes.css` - заменено 6 хардкодных значений
-- [x] Рефакторинг основных секций (`.main`, `.coop`, `.advantages`)
-- [x] Рефакторинг FAQ секций
-- [x] Рефакторинг card компонентов (hardware, who, types, tariff, products)
-- [x] Рефакторинг form и pricing компонентов
-- [x] Обновлены media queries для responsive дизайна
-- [x] 0 ошибок после рефакторинга
+### ✅ Completed (Phase 2):
+- [x] Refactored `style.css` - replaced 70+ hardcoded values
+- [x] Updated `mobile-fixes.css` - replaced 6 hardcoded values
+- [x] Refactored main sections (`.main`, `.coop`, `.advantages`)
+- [x] Refactored FAQ sections
+- [x] Refactored card components (hardware, who, types, tariff, products)
+- [x] Refactored form and pricing components
+- [x] Updated media queries for responsive design
+- [x] 0 errors after refactoring
 
-**Статистика Phase 2:**
-- Обработано файлов: 3
-- Заменено значений: 76+
-- Затронуто строк кода: ~150+
-- Подробный отчет: `PHASE_2_COMPLETION_REPORT.md`
+**Phase 2 Statistics:**
+- Files processed: 3
+- Values replaced: 76+
+- Lines of code affected: ~150+
 
-### ✅ Завершено (Phase 3):
-- [x] Устранены экстремальные значения (425px, 320px, 295px, 220px, 317px, 200px)
-- [x] Добавлены переменные ultra-spacing (--spacing-ultra-lg, --spacing-ultra-xl)
-- [x] Заменено 7 экстремальных значений на стандартизированные переменные
-- [x] Создан детальный чеклист для тестирования (PHASE_3_TESTING_CHECKLIST.md)
-- [x] Открыт index.html в браузере для визуальной проверки
-- [x] 0 ошибок после всех изменений
+### ✅ Completed (Phase 3):
+- [x] Eliminated extreme values (425px, 320px, 295px, 220px, 317px, 200px)
+- [x] Added ultra-spacing variables (--spacing-ultra-lg, --spacing-ultra-xl)
+- [x] Replaced 7 extreme values with standardized variables
+- [x] Created detailed testing checklist
+- [x] Opened index.html in browser for visual verification
+- [x] 0 errors after all changes
 
-**Статистика Phase 3:**
-- Добавлено переменных: 2 (ultra-lg, ultra-xl)
-- Заменено значений: 7
-- Создано документов: 2 (PHASE_3_COMPLETION_REPORT.md, PHASE_3_TESTING_CHECKLIST.md)
+**Phase 3 Statistics:**
+- Variables added: 2 (ultra-lg, ultra-xl)
+- Values replaced: 7
 
-### 🧪 Следующий этап (Manual QA):
-- [ ] Ручное тестирование по чеклисту PHASE_3_TESTING_CHECKLIST.md
-- [ ] Визуальная проверка на всех breakpoints (desktop/tablet/mobile)
-- [ ] Тестирование всех 8 страниц сайта
-- [ ] Кросс-браузерное тестирование (опционально)
-- [ ] Финальное утверждение перед деплоем
+### 🧪 Next Step (Manual QA):
+- [ ] Manual testing per checklist
+- [ ] Visual verification on all breakpoints (desktop/tablet/mobile)
+- [ ] Testing all 8 site pages
+- [ ] Cross-browser testing (optional)
+- [ ] Final approval before deploy
 
 ---
 
-## 📊 Общая статистика проекта
+## 📊 Overall Project Statistics
 
-**Обработано файлов:** 4
-- spacing-system.css (создан, 270+ строк)
-- style.css (рефакторинг, 77+ замен)
-- mobile-fixes.css (рефакторинг, 6 замен)
-- layout-overrides.css (интеграция)
+**Files Processed:** 4
+- spacing-system.css (created, 270+ lines)
+- style.css (refactored, 77+ replacements)
+- mobile-fixes.css (refactored, 6 replacements)
+- layout-overrides.css (integration)
 
-**Заменено значений:** 83+
-- Phase 1: Создание системы и базовая интеграция
-- Phase 2: 76 замен (70 в style.css + 6 в mobile-fixes.css)
-- Phase 3: 7 замен экстремальных значений
+**Values Replaced:** 83+
+- Phase 1: System creation and basic integration
+- Phase 2: 76 replacements (70 in style.css + 6 in mobile-fixes.css)
+- Phase 3: 7 extreme value replacements
 
-**Затронуто строк кода:** ~180+
+**Lines of Code Affected:** ~180+
 
-**Найдено ошибок:** 0
-
-**Создано документации:** 5 файлов
-- SPACING_SYSTEM.md (этот документ)
-- PHASE_2_COMPLETION_REPORT.md
-- PHASE_3_COMPLETION_REPORT.md
-- PHASE_3_TESTING_CHECKLIST.md
-- OPTIMIZATION_NOTES.md (обновлен)
+**Errors Found:** 0
 
 ---
 
 ## 🎓 Best Practices
 
-1. **Всегда используйте переменные**, не хардкодите значения
-2. **Выбирайте ближайшее значение** из шкалы, не создавайте новые
-3. **Section spacing для секций**, component spacing для компонентов
-4. **По умолчанию используйте `-lg`** (стандартный размер)
-5. **Используйте `-xl` и `-2xl` для акцентов**, не злоупотребляйте
-6. **Тестируйте на мобильных** - отступы уменьшаются автоматически
+1. **Always use variables**, don't hardcode values
+2. **Choose nearest value** from scale, don't create new ones
+3. **Section spacing for sections**, component spacing for components
+4. **Use `-lg` by default** (standard size)
+5. **Use `-xl` and `-2xl` for emphasis**, don't overuse
+6. **Test on mobile** - spacings decrease automatically
 
 ---
 
-## 📞 Вопросы?
+## 📞 Questions?
 
-Если не уверены, какую переменную использовать:
-1. Посмотрите на соседние секции - что они используют?
-2. Используйте `--section-spacing-lg` по умолчанию для секций
-3. Используйте `--component-spacing-md` по умолчанию для компонентов
-4. Консультируйтесь с командой при необходимости
+If unsure which variable to use:
+1. Look at neighboring sections - what do they use?
+2. Use `--section-spacing-lg` by default for sections
+3. Use `--component-spacing-md` by default for components
+4. Consult with team when necessary
 
 ---
 

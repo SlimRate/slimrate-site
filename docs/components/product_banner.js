@@ -1,5 +1,5 @@
 // Product Banner Component
-// Промежуточный баннер с призывом к действию
+// Intermediate banner with call to action
 
 class ProductBanner extends HTMLElement {
     connectedCallback() {

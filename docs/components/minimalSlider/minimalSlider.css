@@ -102,7 +102,7 @@ button.next:hover {
   background: rgba(0,0,0,0.8);
 }
 
-/* Попап стили с анимацией */
+/* Popup styles with animation */
 .popup-overlay {
   position: fixed;
   top: 0;
@@ -186,7 +186,7 @@ button.next:hover {
   color: #000;
 }
 
-/* Адаптивность */
+/* Responsive */
 @media (max-width: 1024px) {
   .slides figure {
     width: calc((100% - 20px) / 3);

@@ -1,5 +1,5 @@
 // Product Features Grid Component
-// Сетка преимуществ с иконками
+// Feature/benefits grid with icons
 
 class ProductFeaturesGrid extends HTMLElement {
     connectedCallback() {
