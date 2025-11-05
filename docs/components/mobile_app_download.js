@@ -15,7 +15,7 @@ mobileAppDownloadTemplate.innerHTML = `
                     <img src="assets/img/mobileapp/applematerials/Download-on-the-App-Store/US/Download_on_App_Store/Black_lockup/SVG/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the App Store" class="store-badge">
                 </a>
                 <a href="https://play.google.com/store/apps/details?id=com.slimrate.business" target="_blank" rel="noopener noreferrer" class="badge-link">
-                    <img src="assets/img/mobileapp/googlematerials/Google Play Badge guidelines/Get it on Google Play Badges/Digital/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play" class="store-badge">
+                    <img src="assets/img/mobileapp/googlematerials/Google Play Badge guidelines/Get it on Google Play Badges/Digital/GetItOnGooglePlay_Badge_Web_color_English.webp" alt="Get it on Google Play" class="store-badge">
                 </a>
             </div>
             <p class="download-note">Free to download. Requires Slimrate POS subscription.</p>

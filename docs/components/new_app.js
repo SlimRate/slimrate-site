@@ -32,7 +32,7 @@ equipCompanyTemplate2.innerHTML = `
                 </div>
 
                 <div class="block-right block-right2" style=" display: flex;justify-content: center; margin-top: 60px">
-                <img src="assets/img/icons/screens.png" alt="Slimrate product image" style="height: 100%; ">
+                <img src="assets/img/icons/screens.webp" alt="Slimrate product image" style="height: 100%; ">
                 </div>
             </div>
         </section>

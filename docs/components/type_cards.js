@@ -6,7 +6,7 @@ typesTemplate.innerHTML = `
     <div class="container">
         <div class="types-card">
             <div class="types-card__img">
-                <img src="assets/img/rest.jpeg" alt="Slimrate product image">
+                <img src="assets/img/rest.webp" alt="Slimrate product image">
             </div>
             <div class="types-card__text">
                 <h4 class="section-title">Business Types</h4>
@@ -16,7 +16,7 @@ typesTemplate.innerHTML = `
         </div>
         <div class="types-card">
             <div class="types-card__img">
-                <img src="assets/img/retail.jpeg" alt="Slimrate product image">
+                <img src="assets/img/retail.webp" alt="Slimrate product image">
             </div>
             <div class="types-card__text">
                 <h4 class="section-title">Payment Processing</h4>

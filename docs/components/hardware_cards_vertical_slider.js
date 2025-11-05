@@ -1,6 +1,6 @@
 import productGroups from '../data/hardware.js';
 
-const NOT_IN_STOCK_IMAGE = 'assets/img/gallery/hardware/not in stock.png';
+const NOT_IN_STOCK_IMAGE = 'assets/img/gallery/hardware/not in stock.webp';
 const ACTIVATION_KEYS = ['Enter', ' '];
 
 const sanitizeImages = (images) => {
