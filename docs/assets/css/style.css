@@ -6008,9 +6008,11 @@ label.has-value {
 
     align-items: flex-start;
 
-    max-width: 1010px;
+    max-width: 1198px;
 
     width: 100%;
+
+    gap: 24px;
 
 }
 
@@ -6046,7 +6048,7 @@ label.has-value {
 
 .tariff-card {
 
-    max-width: 292px;
+    max-width: 370px;
 
     padding: var(--component-spacing-lg);
 
@@ -6063,6 +6065,8 @@ label.has-value {
     -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    flex: 1;
 
 }
 
