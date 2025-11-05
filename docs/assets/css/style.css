@@ -5146,7 +5146,17 @@ label.has-value {
 
 .why-block__list {
 
-    margin-top: var(--section-spacing-xl)
+    margin-top: var(--section-spacing-xl);
+
+    list-style: none;
+
+}
+
+
+
+.why-block__list ul {
+
+    list-style: none;
 
 }
 
@@ -6115,6 +6125,8 @@ label.has-value {
 .tariff-card ul {
 
     margin-bottom: var(--component-spacing-xl);
+
+    list-style: none;
 
 }
 
