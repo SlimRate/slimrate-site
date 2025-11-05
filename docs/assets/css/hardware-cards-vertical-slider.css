@@ -154,6 +154,20 @@
     transition: background-color 0.3s ease;
 }
 
+.product-details-btn:visited {
+    background: #ef2b23;
+    border: 1px solid #ef2b23;
+    color: #fff;
+}
+
+.product-details-btn:active,
+.product-details-btn:focus {
+    background: #ef2b23;
+    border: 1px solid #ef2b23;
+    color: #fff;
+    outline: none;
+}
+
 
 @media (min-width: 768px) {
     .product-card {

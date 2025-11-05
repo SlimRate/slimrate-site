@@ -804,134 +804,127 @@ input.form-control:focus {
 
 
 .btn {
-
     padding: var(--component-spacing-md) var(--component-spacing-xl);
-
     border: 1px solid #b61827;
-
     background-color: #fff;
-
     color: #b61827;
-
     font-weight: 700;
-
     font-size: 16px;
-
     line-height: 24px;
-
     letter-spacing: 0.02em;
-
     border-radius: 8px;
-
     display: inline-block;
-
     text-align: center;
-
     cursor: pointer;
-
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-
     text-decoration: none;
+}
 
+.btn:visited {
+    background-color: #fff;
+    color: #b61827;
+    border: 1px solid #b61827;
+}
+
+.btn:active,
+.btn:focus {
+    background-color: #fff;
+    color: #b61827;
+    border: 1px solid #b61827;
+    outline: none;
 }
 
 
 
 .btn-red {
-
     background: #ef2b23;
-
     border: 1px solid #ef2b23;
-
     color: #fff;
-
     box-sizing: border-box;
-
 }
 
-
+.btn-red:visited {
+    background: #ef2b23;
+    border: 1px solid #ef2b23;
+    color: #fff;
+}
 
 .btn-red:hover {
-
     background: #fff;
-
     border: 1px solid #ef2b23;
-
     color: #ef2b23;
-
     transform: translateY(-2px);
-
     box-shadow: 0px 8px 16px rgba(239, 43, 35, 0.24);
-
 }
 
-
+.btn-red:active,
+.btn-red:focus {
+    background: #ef2b23;
+    border: 1px solid #ef2b23;
+    color: #fff;
+    outline: none;
+}
 
 .btn-blue {
-
     background: #2B6BF3;
-
     border: 1px solid #2B6BF3;
-
     color: #fff;
-
     box-sizing: border-box;
-
     margin-left: 0 !important;
-
 }
 
-
+.btn-blue:visited {
+    background: #2B6BF3;
+    border: 1px solid #2B6BF3;
+    color: #fff;
+}
 
 .btn-blue:hover {
-
     background: #fff;
-
     border: 1px solid #2B6BF3;
-
     color: #2B6BF3;
-
     transform: translateY(-2px);
-
     box-shadow: 0px 8px 16px rgba(43, 107, 243, 0.24);
+}
 
+.btn-blue:active,
+.btn-blue:focus {
+    background: #2B6BF3;
+    border: 1px solid #2B6BF3;
+    color: #fff;
+    outline: none;
 }
 
 
 
 .btn-white {
-
     background: #ffffff;
-
     border-radius: 8px;
-
     border: none;
-
     margin-right: var(--section-spacing-md);
-
     color: #2b6bf3;
-
     font-weight: 700;
-
     font-size: 16px;
-
     line-height: 26px;
-
     letter-spacing: 0.02em;
-
 }
 
-
+.btn-white:visited {
+    background: #ffffff;
+    color: #2b6bf3;
+}
 
 .btn-white:hover {
-
     transform: translateY(-2px);
-
     box-shadow: 0px 8px 16px rgba(43, 107, 243, 0.16);
-
 }
 
-
+.btn-white:active,
+.btn-white:focus {
+    background: #ffffff;
+    color: #2b6bf3;
+    outline: none;
+}
 
 /* Button Size Variants */
 
