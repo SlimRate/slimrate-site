@@ -2712,36 +2712,21 @@ h2.section-title span {
 
 
 .coop .container {
-
     padding: 0px 0px 30px;
-
-    -webkit-box-pack: justify;
-
-    -ms-flex-pack: justify;
-
+    display: flex;
     justify-content: space-between;
-
-    -webkit-box-align: center;
-
-    -ms-flex-align: center;
-
     align-items: center;
-
-    -ms-flex-wrap: wrap;
-
     flex-wrap: wrap;
-
+    gap: 20px;
 }
 
 
 
 .coop-logo {
-
-    width: auto;
-
+    max-width: 100px;
+    height: auto;
+    object-fit: contain;
 }
-
-
 
 .company-types {
 
