@@ -6006,11 +6006,11 @@ label.has-value {
 
     display: flex;
 
-    -webkit-box-pack: justify;
+    -webkit-box-pack: center;
 
-    -ms-flex-pack: justify;
+    -ms-flex-pack: center;
 
-    justify-content: space-between;
+    justify-content: center;
 
     -webkit-box-align: start;
 
