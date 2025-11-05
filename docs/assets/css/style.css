@@ -4956,7 +4956,7 @@ label.has-value {
     position: relative;
 }
 .equip.allinone .container {
-    justify-content: center;
+    justify-content: space-between;
     gap: var(--allinone-gap);
     align-items: flex-start;
 }
