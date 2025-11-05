@@ -4956,7 +4956,7 @@ label.has-value {
     position: relative;
 }
 .equip.allinone .container {
-    justify-content: space-between;
+    justify-content: center;
     gap: var(--allinone-gap);
     align-items: flex-start;
 }
@@ -4979,7 +4979,7 @@ label.has-value {
     position: absolute;
     top: calc(-1 * var(--allinone-decor-offset));
     bottom: auto;
-    right: calc(100% + var(--allinone-gap));
+    right: calc(100% + var(--allinone-gap) - var(--allinone-decor-offset));
     left: -100vw;
     height: calc(100% + (2 * var(--allinone-decor-offset)));
     background: #2b6bf3;
