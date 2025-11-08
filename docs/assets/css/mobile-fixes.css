@@ -294,6 +294,18 @@ body {
         width: 100%;
     }
 
+    .hardware-advantages-wrapper {
+        padding: 0 var(--spacing-md);
+        width: 100%;
+    }
+
+    .hardware-advantages-frame {
+        width: calc(100% - var(--spacing-2xl));
+        max-width: 100%;
+        padding: var(--spacing-xl) var(--spacing-md);
+        border-radius: 0 var(--radius-3xl) 0 var(--radius-3xl);
+    }
+
     .testimonial-header {
         font-size: var(--font-size-3xl);
         margin-bottom: var(--spacing-sm);
