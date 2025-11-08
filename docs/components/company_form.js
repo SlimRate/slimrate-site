@@ -59,11 +59,13 @@ companyFormTemplate.innerHTML = `
 </style>
 <div class="container">
     <div class="contact__left">
-        <h2 class="section-title">Join</h2>
-        <h2 class="section-title">#TeamSlimrate</h2>
-        <p class="section-descr">
-        We are looking for dedicated, customer-focused team members! Complete our form below and submit. Slimrate will get back to you shortly to discuss your application. Call us for more information or questions you may have.
-        </p>
+        <div class="contact__left-inner">
+            <h2 class="section-title">Join</h2>
+            <h2 class="section-title">#TeamSlimrate</h2>
+            <p class="section-descr">
+            We are looking for dedicated, customer-focused team members! Complete our form below and submit. Slimrate will get back to you shortly to discuss your application. Call us for more information or questions you may have.
+            </p>
+        </div>
     </div>
     <div id="toast" class="toast">
         <span id="toast-message"></span>

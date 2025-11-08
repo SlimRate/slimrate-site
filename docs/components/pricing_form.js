@@ -61,10 +61,12 @@ pricingFormTemplate.innerHTML = `
 </style>
 <div class="container">
     <div class="contact__left">
-        <h2 class="section-title">Contact us</h2>
-        <p class="section-descr">Get in Touch - Your Questions, Our Answers. 
-        Let's Connect!
-        </p>
+        <div class="contact__left-inner">
+            <h2 class="section-title">Contact us</h2>
+            <p class="section-descr">Get in Touch - Your Questions, Our Answers. 
+            Let's Connect!
+            </p>
+        </div>
     </div>
     <div id="toast" class="toast">
         <span id="toast-message"></span>

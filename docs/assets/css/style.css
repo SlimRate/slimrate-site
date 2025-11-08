@@ -3113,7 +3113,7 @@ h2.section-title span {
 
 .contact .section-title {
 
-    color: #111a2b;
+    color: #ffffff;
 
     font-style: normal;
 
@@ -3133,7 +3133,7 @@ h2.section-title span {
 
 .contact .section-descr {
 
-    color: #152039;
+    color: #ffffff;
 
     font-weight: 500;
 
@@ -3183,11 +3183,9 @@ h2.section-title span {
 
     flex: 1 1 42%;
 
-    background: #e4ecff;
-
     border-radius: 0 120px 0 0;
 
-    padding: 90px var(--section-spacing-lg);
+    padding: 0;
 
     min-height: 420px;
 
@@ -3195,11 +3193,9 @@ h2.section-title span {
 
     flex-direction: column;
 
-    justify-content: flex-start;
+    justify-content: center;
 
-    align-items: flex-start;
-
-    gap: 18px;
+    align-items: stretch;
 
     box-shadow: 0 40px 80px rgba(21, 40, 100, 0.08);
 
@@ -3221,15 +3217,80 @@ h2.section-title span {
 
     bottom: 0;
 
-    left: -100vw;
+    right: 0;
 
-    width: 100vw;
+    width: 200%;
 
-    background: #e4ecff;
+    background: url("../BGs/2149081077.jpg") right center / cover no-repeat;
+
+    border-radius: 0 120px 0 0;
 
     z-index: -1;
 
 }
+
+.contact__left-inner {
+
+    width: 80%;
+
+    margin-left: auto;
+
+    padding: 48px clamp(24px, 4vw, var(--section-spacing-lg));
+
+    background: rgba(0, 0, 0, 0.1);
+
+    -webkit-backdrop-filter: blur(6px);
+
+    backdrop-filter: blur(6px);
+
+    border-radius: 50px 0 0 50px;
+
+    box-sizing: border-box;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+}
+
+.contact__left-inner .section-title,
+.contact__left-inner .section-descr {
+
+    color: #ffffff;
+
+    margin: 0;
+
+}
+
+@media (max-width: 768px) {
+    .contact__left {
+        min-height: 300px;
+        justify-content: flex-end;
+        padding-bottom: 20px;
+    }
+    
+    .contact__left-inner {
+        width: 90%;
+        padding: 16px 20px;
+        gap: 6px;
+        border-radius: 30px 0 0 30px;
+    }
+    
+    .contact__left-inner .section-title {
+        font-size: 22px;
+        line-height: 26px;
+    }
+    
+    .contact__left-inner .section-descr {
+        font-size: 12px;
+        line-height: 17px;
+        max-width: 100%;
+    }
+}
+
+
 
 
 
