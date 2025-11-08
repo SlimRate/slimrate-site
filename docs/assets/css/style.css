@@ -9609,6 +9609,13 @@ ection.we-support {
     padding: 0;
 }
 
+.hardware-advantages-frame .advantages-allPage {
+    background: transparent;
+    z-index: auto;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
 .hardware-advantages-frame .container {
     background: transparent;
 }
