@@ -3219,7 +3219,9 @@ h2.section-title span {
 
     right: 0;
 
-    width: 200%;
+    left: 0;
+
+    margin-left: calc(-50vw + 50%);
 
     background: url("../BGs/2149081077.jpg") right center / cover no-repeat;
 
@@ -3266,27 +3268,30 @@ h2.section-title span {
 
 @media (max-width: 768px) {
     .contact__left {
-        min-height: 300px;
-        justify-content: flex-end;
-        padding-bottom: 20px;
+        min-height: 420px !important;
+        justify-content: center !important;
+        padding: 0 !important;
+        border-radius: 0 60px 0 0 !important;
     }
     
     .contact__left-inner {
-        width: 90%;
-        padding: 16px 20px;
-        gap: 6px;
-        border-radius: 30px 0 0 30px;
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding: 32px 24px !important;
+        gap: 8px;
+        border-radius: 0 !important;
     }
     
     .contact__left-inner .section-title {
-        font-size: 22px;
-        line-height: 26px;
+        font-size: 24px !important;
+        line-height: 30px !important;
     }
     
     .contact__left-inner .section-descr {
-        font-size: 12px;
-        line-height: 17px;
-        max-width: 100%;
+        font-size: 14px !important;
+        line-height: 20px !important;
+        max-width: 100% !important;
     }
 }
 
