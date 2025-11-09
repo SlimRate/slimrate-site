@@ -9686,6 +9686,36 @@ ection.we-support {
     background: transparent;
 }
 
+.h-advantages-wrapper {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.h-advantages-frame {
+    width: calc(100vw - 64px);
+    margin: 0 auto;
+    background: #eaf1fe;
+    border-radius: 0 100px 0 100px;
+    padding: clamp(24px, 6vw, 48px);
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+.h-advantages-frame .advantages {
+    padding: 0;
+}
+
+.h-advantages-frame .advantages-allPage {
+    background: transparent;
+    z-index: auto;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.h-advantages-frame .container {
+    background: transparent;
+}
+
 .easy-guides {
 
     padding: var(--section-spacing-lg) 0;
