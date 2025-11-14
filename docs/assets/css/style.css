@@ -9926,27 +9926,28 @@ ection.we-support {
 
 
 .easy-guides__iframe {
-
     width: 100%;
-
+    /* Fallback for older browsers */
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    /* Modern aspect-ratio property */
     aspect-ratio: 16 / 9;
-
     border: none;
-
     border-radius: 20px;
-
     position: relative;
-
     z-index: 1;
-
     box-shadow: 0 18px 40px rgba(11, 16, 60, 0.3);
-
     display: block;
-
     background: #0c0f1a;
-
     object-fit: cover;
+}
 
+/* For browsers supporting aspect-ratio, reset padding-bottom */
+@supports (aspect-ratio: 16 / 9) {
+    .easy-guides__iframe {
+        height: auto;
+        padding-bottom: 0;
+    }
 }
 
 
