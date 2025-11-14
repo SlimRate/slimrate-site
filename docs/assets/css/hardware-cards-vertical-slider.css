@@ -176,6 +176,7 @@
         flex-direction: row;
         align-items: flex-start;
         max-width: 800px;
+        padding: 24px;
     }
 
     .image-container {
@@ -183,6 +184,7 @@
         height: 240px;
         max-width: none;
         margin-bottom: 0;
+        margin-right: 24px;
         flex-shrink: 0;
     }
 
