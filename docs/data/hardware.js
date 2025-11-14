@@ -12,10 +12,10 @@ const rawProductGroups = [
                 availableColors: ["black"],
                 link: "sr-falcon.html",
                 images: [
-                    "assets/img/products/hardware/falcon/80 printer -1.png",
-                    "assets/img/products/hardware/falcon/80 printer -2.png",
-                    "assets/img/products/hardware/falcon/80 printer -3.png",
-                    "assets/img/products/hardware/falcon/80 printer -4.png",
+                    "assets/hardwareimg/SR Falcon 1.png",
+                    "assets/hardwareimg/SR Falcon 2.png",
+                    "assets/hardwareimg/SR Falcon 3.png",
+                    "assets/hardwareimg/SR Falcon 4.png",
                 ],
             },
             {
@@ -27,9 +27,9 @@ const rawProductGroups = [
                 availableColors: ["black"],
                 link: "sr-swan.html",
                 images: [
-                    "assets/img/products/hardware/swan 2/Swan2main.png",
-                    "assets/img/products/hardware/swan 2/Swan2front.png",
-                    "assets/img/products/hardware/swan 2/Swan2back.png",
+                    "assets/hardwareimg/SR Swan 1.png",
+                    "assets/hardwareimg/SR Swan 2.png",
+                    "assets/hardwareimg/SR Swan 3.png",
                 ],
             },
             {
@@ -40,9 +40,8 @@ const rawProductGroups = [
                 costForWhite: 999,
                 link: "sr155-duo.html",
                 images: [
-                    "assets/img/gallery/hardware/SR155 Duo 1.png",
-                    "assets/img/gallery/hardware/SR155 Duo 2.png",
-                    "assets/img/gallery/hardware/SR155 Duo 3.png",
+                    "assets/hardwareimg/SR155 Duo 1.png",
+                    "assets/hardwareimg/SR155 Duo 2.png",
                 ],
             },
             {
@@ -53,8 +52,8 @@ const rawProductGroups = [
                 costForWhite: 850,
                 link: "sr155-solo.html",
                 images: [
-                    "assets/img/gallery/hardware/SR155 Solo 1.png",
-                    "assets/img/gallery/hardware/SR155 Solo 2.png",
+                    "assets/hardwareimg/SR155 Solo 1.png",
+                    "assets/hardwareimg/SR155 Solo 2.png",
                 ],
             },
             // SR155 Combo removed per request
@@ -71,8 +70,8 @@ const rawProductGroups = [
                 costForWhite: 329,
                 link: "sr-trp1.html",
                 images: [
-                    "assets/img/gallery/hardware/SR-TRP1 Thermal Receipt Printer 1.png",
-                    "assets/img/gallery/hardware/SR-TRP1 Thermal Receipt Printer 2.png",
+                    "assets/hardwareimg/SR-TRP1 1.png",
+                    "assets/hardwareimg/SR-TRP1 2.png",
                 ],
             },
         ],
@@ -88,8 +87,8 @@ const rawProductGroups = [
                 costForWhite: 129,
                 link: "sr-410.html",
                 images: [
-                    "assets/img/gallery/hardware/SR-410 Cash Drawer 1.png",
-                    "assets/img/gallery/hardware/SR-410 Cash Drawer 2.png",
+                    "assets/hardwareimg/SR-410 1.png",
+                    "assets/hardwareimg/SR-410 2.png",
                 ],
             },
         ],
@@ -105,7 +104,7 @@ const rawProductGroups = [
                 costForWhite: 279,
                 link: "sr-ds1.html",
                 images: [
-                    "assets/img/gallery/hardware/SR-WHS1 Wired Table Scanner 1.png",
+                    "assets/hardwareimg/SR-DS1 1.png",
                 ],
             },
             {
@@ -116,9 +115,9 @@ const rawProductGroups = [
                 costForWhite: 399,
                 link: "sr-wlhs1.html",
                 images: [
-                    "assets/img/gallery/hardware/SR-WLHS1 Wireless Handheld Scanner 3.png",
-                    "assets/img/gallery/hardware/SR-WHS1 Wired Handheld Scanner 2.png",
-                    "assets/img/gallery/hardware/SR-WHS1 Wired Handheld Scanner 3.png",
+                    "assets/hardwareimg/SR-WLHS1 1.png",
+                    "assets/hardwareimg/SR-WLHS1 2.png",
+                    "assets/hardwareimg/SR-WLHS1 3.png",
                 ],
             },
             {
@@ -129,7 +128,8 @@ const rawProductGroups = [
                 costForWhite: 199,
                 link: "sr-whs1.html",
                 images: [
-                    "assets/img/gallery/hardware/SR-WHS1.png",
+                    "assets/hardwareimg/SR-WHS1 1.png",
+                    "assets/hardwareimg/SR-WHS1 2.png",
                 ],
             },
         ],
@@ -145,7 +145,7 @@ const rawProductGroups = [
                 costForWhite: 290,
                 link: "a35.html",
                 images: [
-                    "assets/img/gallery/hardware/A35 Payment Terminal 1.png",
+                    "assets/hardwareimg/A35 1.png",
                 ],
             },
             {
@@ -156,7 +156,7 @@ const rawProductGroups = [
                 costForWhite: 349,
                 link: "a920.html",
                 images: [
-                    "assets/img/gallery/hardware//A920 Payment Terminal 1.png",
+                    "assets/hardwareimg/A920 1.png",
                 ],
             },
             // E700 removed per request
@@ -173,7 +173,7 @@ const rawProductGroups = [
                 costForWhite: 475,
                 link: "digital-scale.html",
                 images: [
-                    "assets/img/gallery/hardware/DS1.png",
+                    "assets/hardwareimg/Digital Scale 1.png",
                 ],
             },
             {
@@ -184,8 +184,8 @@ const rawProductGroups = [
                 costForWhite: 1799,
                 link: "aiscale-pos-s625.html",
                 images: [
-                    "assets/img/gallery/hardware/AIScale Cash Register S625 1.png",
-                    "assets/img/gallery/hardware/AIScale Cash Register S625 2.png",
+                    "assets/hardwareimg/AIScale POS S625 1.png",
+                    "assets/hardwareimg/AIScale POS S625 2.png",
                 ],
             },
             {
@@ -196,8 +196,8 @@ const rawProductGroups = [
                 costForWhite: 1499,
                 link: "aiscale-label-printing-s130.html",
                 images: [
-                    "assets/img/gallery/hardware/AIScale Label Printing S130 1.png",
-                    "assets/img/gallery/hardware/AIScale Label Printing S130 2.png",
+                    "assets/hardwareimg/AIScale Label Printing S130 1.png",
+                    "assets/hardwareimg/AIScale Label Printing S130 2.png",
                 ],
             },
         ],
