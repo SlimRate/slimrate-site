@@ -256,18 +256,24 @@ body {
         padding: 50px 0;
     }
 
+    .united-partners-scroll {
+        -webkit-mask-image: linear-gradient(to right, transparent 0, black 80px, black calc(100% - 80px), transparent 100%);
+        mask-image: linear-gradient(to right, transparent 0, black 80px, black calc(100% - 80px), transparent 100%);
+    }
+
     .united-partners-track {
-        gap: 50px;
+        gap: 40px;
     }
 
     .partner-logo {
-        min-width: 85px;
+        min-width: 100px;
         height: 70px;
+        padding: 0 15px;
     }
 
     .partner-logo img {
-        max-width: 85px;
-        max-height: 70px;
+        max-width: 100px;
+        max-height: 65px;
     }
 }
 
@@ -639,18 +645,24 @@ body {
         padding: 40px 0;
     }
 
+    .united-partners-scroll {
+        -webkit-mask-image: linear-gradient(to right, transparent 0, black 40px, black calc(100% - 40px), transparent 100%);
+        mask-image: linear-gradient(to right, transparent 0, black 40px, black calc(100% - 40px), transparent 100%);
+    }
+
     .united-partners-track {
-        gap: 40px;
+        gap: 30px;
     }
 
     .partner-logo {
-        min-width: 70px;
+        min-width: 80px;
         height: 60px;
+        padding: 0 10px;
     }
 
     .partner-logo img {
-        max-width: 70px;
-        max-height: 60px;
+        max-width: 80px;
+        max-height: 55px;
     }
 
     /* All-in-One section (from line 832) */

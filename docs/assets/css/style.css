@@ -2783,7 +2783,6 @@ h2.section-title span {
     margin-bottom: var(--section-spacing-sm);
     position: relative;
     z-index: 2;
-    overflow: hidden;
     width: 100%;
     padding: 60px 0;
 }
@@ -2805,15 +2804,20 @@ h2.section-title span {
 
 .united-partners-scroll {
     width: 100%;
+    display: inline-flex;
+    flex-wrap: nowrap;
     overflow: hidden;
     position: relative;
+    /* Gradient mask for fade effect on edges */
+    -webkit-mask-image: linear-gradient(to right, transparent 0, black 128px, black calc(100% - 200px), transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0, black 128px, black calc(100% - 200px), transparent 100%);
 }
 
 .united-partners-track {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 60px;
-    animation: scroll-logos 40s linear infinite;
+    animation: scroll-logos 30s linear infinite;
     will-change: transform;
 }
 
@@ -2823,28 +2827,27 @@ h2.section-title span {
 
 .partner-logo {
     flex-shrink: 0;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-width: 100px;
+    min-width: 120px;
     height: 80px;
+    padding: 0 20px;
 }
 
 .partner-logo img {
-    max-width: 100px;
-    max-height: 80px;
+    max-width: 120px;
+    max-height: 70px;
     width: auto;
     height: auto;
     object-fit: contain;
-    filter: grayscale(20%);
-    opacity: 0.9;
+    filter: grayscale(30%) opacity(0.8);
     transition: all 0.3s ease;
 }
 
 .partner-logo:hover img {
-    filter: grayscale(0%);
-    opacity: 1;
-    transform: scale(1.1);
+    filter: grayscale(0%) opacity(1);
+    transform: scale(1.05);
 }
 
 @keyframes scroll-logos {
@@ -2852,7 +2855,7 @@ h2.section-title span {
         transform: translateX(0);
     }
     100% {
-        transform: translateX(-50%);
+        transform: translateX(calc(-100% / 3));
     }
 }
 
