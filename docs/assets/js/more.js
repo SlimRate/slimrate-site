@@ -111,8 +111,8 @@ document.body.addEventListener('click', function(event) {
 
 $(".t1 ").hover(function() {
     $('.n1').removeClass('hidden');
-    $('.n2').addClass('hidden');
-    $('.t2').removeClass('active');
+    $('.n2, .n3').addClass('hidden');
+    $('.t2, .t3').removeClass('active');
     $('.t1').addClass('active');
 }, function() {
 
@@ -120,9 +120,18 @@ $(".t1 ").hover(function() {
 
 $(".t2 ").hover(function() {
     $('.n2').removeClass('hidden');
-    $('.n1').addClass('hidden');
-    $('.t1').removeClass('active');
+    $('.n1, .n3').addClass('hidden');
+    $('.t1, .t3').removeClass('active');
     $('.t2').addClass('active');
+}, function() {
+
+});
+
+$(".t3 ").hover(function() {
+    $('.n3').removeClass('hidden');
+    $('.n1, .n2').addClass('hidden');
+    $('.t1, .t2').removeClass('active');
+    $('.t3').addClass('active');
 }, function() {
 
 });

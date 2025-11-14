@@ -44,16 +44,125 @@ topMenuTeplate.innerHTML = `
                 <li class="divider">
                 </li>
                 <li>
-                    <a href="software.html" class='lastLink'>Software</a>
+                    <div class="menu__item i5" id="menu5">
+                        <div class="flexContainer">
+                          <a >Software</a>
+                          <img class="menu_arrow_rotate r5" src="/assets/img/arrow-right.svg" alt="Arrow icon">
+                        </div>
+                        <div class="more m5">
+                            <a class="more_head">Increase revenue, streamline operations, and build customer loyalty with powerful cloud-based software.
+                            </a>
+                            <ul>
+                                <li>
+                                    <a href="software.html" class='lastLink'>POS Software</a>
+                                </li>
+                                <li>
+                                    <a href="payment_processing.html" class='lastLink'>Payment Processing</a>
+                                </li>
+                                <li>
+                                    <a href="mobile-app.html" class='lastLink'>Mobile App</a>
+                                </li>
+                                <li>
+                                    <a href="admin-panel.html" class='lastLink'>Admin Panel</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </li>
                 <li>
-                    <a href="hardware.html" class='lastLink'>Hardware</a>
+                    <div class="menu__item i6" id="menu6">
+                       <div class="flexContainer">
+                        <a >Hardware</a>
+                        <img class="menu_arrow_rotate r6" src="/assets/img/arrow-right.svg" alt="Arrow icon">
+                       </div>
+                        <div class="more m6">
+                            <a class="more_head">Deliver a seamless user experience with durable hardware and built-in powerful technology</a>
+                            <ul>
+                                <li>
+                                    <a href="hardware.html" class='lastLink'>All Hardware</a>
+                                </li>
+                                <li style="font-weight: 600; padding: 8px 0; color: #666;">Tablets</li>
+                                <li>
+                                    <a href="sr-falcon.html" class='lastLink'>SR Falcon</a>
+                                </li>
+                                <li>
+                                    <a href="sr-swan.html" class='lastLink'>SR Swan</a>
+                                </li>
+                                <li>
+                                    <a href="sr155-duo.html" class='lastLink'>SR155 Duo</a>
+                                </li>
+                                <li>
+                                    <a href="sr155-solo.html" class='lastLink'>SR155 Solo</a>
+                                </li>
+                                <li style="font-weight: 600; padding: 8px 0; color: #666;">Printers</li>
+                                <li>
+                                    <a href="sr-trp1.html" class='lastLink'>SR-TRP1</a>
+                                </li>
+                                <li style="font-weight: 600; padding: 8px 0; color: #666;">Cash Drawer</li>
+                                <li>
+                                    <a href="sr-410.html" class='lastLink'>SR-410</a>
+                                </li>
+                                <li style="font-weight: 600; padding: 8px 0; color: #666;">Scanners</li>
+                                <li>
+                                    <a href="sr-ds1.html" class='lastLink'>SR-DS1</a>
+                                </li>
+                                <li>
+                                    <a href="sr-wlhs1.html" class='lastLink'>SR-WLHS1</a>
+                                </li>
+                                <li>
+                                    <a href="sr-whs1.html" class='lastLink'>SR-WHS1</a>
+                                </li>
+                                <li style="font-weight: 600; padding: 8px 0; color: #666;">EMV Terminals</li>
+                                <li>
+                                    <a href="a35.html" class='lastLink'>A35</a>
+                                </li>
+                                <li>
+                                    <a href="a920.html" class='lastLink'>A920</a>
+                                </li>
+                                <li style="font-weight: 600; padding: 8px 0; color: #666;">Scales</li>
+                                <li>
+                                    <a href="digital-scale.html" class='lastLink'>Digital Scale</a>
+                                </li>
+                                <li>
+                                    <a href="aiscale-pos-s625.html" class='lastLink'>AIScale POS S625</a>
+                                </li>
+                                <li>
+                                    <a href="aiscale-label-printing-s130.html" class='lastLink'>AIScale Label S130</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </li>
                 <li>
-                    <a href="payment_processing.html" class='lastLink'>Payment Processing</a>
-                </li>
-                <li>
-                    <a href="mobile-app.html" class='lastLink'>Mobile App</a>
+                    <div class="menu__item i7" id="menu7">
+                       <div class="flexContainer">
+                        <a >Integrations</a>
+                        <img class="menu_arrow_rotate r7" src="/assets/img/arrow-right.svg" alt="Arrow icon">
+                       </div>
+                        <div class="more m7">
+                            <a class="more_head">Connect seamlessly with your favorite tools and services</a>
+                            <ul>
+                                <li>
+                                    <a href="homebase.html" class='lastLink'>Homebase</a>
+                                </li>
+                                <li>
+                                    <a href="liquor-control.html" class='lastLink'>Liquor Control</a>
+                                </li>
+                                <li>
+                                    <a href="tobacco-scan-data.html" class='lastLink'>Tobacco Scan Data</a>
+                                </li>
+                                <li>
+                                    <a href="hikvision.html" class='lastLink'>Hikvision</a>
+                                </li>
+                                <li>
+                                    <a href="barcode-lookup.html" class='lastLink'>Barcode Lookup</a>
+                                </li>
+                                <li>
+                                    <a href="woocommerce.html" class='lastLink'>WooCommerce</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </li>
               
             </ul>
@@ -277,30 +386,25 @@ function initDropment() {
   const productHtmlObj = {
     infoHtmlStr: `
       <h2 class="dropmenu-title">Solutions</h2>
-      <p class="dropmenu-descr">Industry leading point of sale and management tools to separate you from your competition. Live
-      support to ensure your questions are always answered.</p>
+      <a class="header__tab t1 active" href="javascript:void(0)">Software<span>Increase revenue, streamline
+      operations, and build customer loyalty with powerful cloud-based
+      software.
+            </span></a>
+        <a class="header__tab t2" href="javascript:void(0)">Hardware<span>Deliver a seamless user experience
+                    with durable hardware and built-in powerful technology
+            </span></a>
+        <a class="header__tab t3" href="javascript:void(0)">Integrations<span>Connect seamlessly with your favorite tools and services
+            </span></a>
       `,
     navContentHtmlStr: `
-      <div class="dropmenu-nav">
+      <div class="dropmenu-nav n1">
       <ul>
       <li>
           <a href="software.html">
               <div class="nav-body">
                   <div class="nav-el-i"><i class="nav-el las la-desktop"></i></div>
-                  <div>Software<span><br>Increase revenue, streamline
-      operations, and build customer loyalty with powerful cloud-based
-      software.
+                  <div>POS Software<span><br>Powerful point of sale system for restaurants and retail
               </span></div>
-              </div>
-          </a>
-      </li>
-      <li>
-          <a href="hardware.html">
-              <div class="nav-body">
-                  <div class="nav-el-i"><i class="nav-el las la-server"></i></div>
-                  <div>Hardware<span><br>Deliver a seamless user experience
-                    with durable hardware and built-in powerful technology
-            </span></div>
               </div>
           </a>
       </li>
@@ -308,9 +412,7 @@ function initDropment() {
           <a href="payment_processing.html">
               <div class="nav-body">
                   <div class="nav-el-i"><i class="nav-el las la-money-check-alt"></i></div>
-                  <div>Payment Processing<span><br>Full suite of
-                    payment acceptance tools - in-store, online and mobile. Designed to
-                    help build and grow your business.
+                  <div>Payment Processing<span><br>Full suite of payment acceptance tools
           </span></div>
               </div>
           </a>
@@ -319,17 +421,224 @@ function initDropment() {
           <a href="mobile-app.html">
               <div class="nav-body">
                   <div class="nav-el-i"><i class="nav-el las la-mobile"></i></div>
-                  <div>Mobile App<span><br>Manage your business from anywhere 
-                    with full POS system power in your pocket. Real-time access to your data.
+                  <div>Mobile App<span><br>Manage your business from anywhere
           </span></div>
               </div>
           </a>
       </li>
       <li>
-         
+          <a href="admin-panel.html">
+              <div class="nav-body">
+                  <div class="nav-el-i"><i class="nav-el las la-cog"></i></div>
+                  <div>Admin Panel<span><br>Complete control and insights for your business
+          </span></div>
+              </div>
+          </a>
       </li>
   </ul>
-        <!-- <a href="">Overview→</a> -->
+      </div>
+      <div class="dropmenu-nav n2 hidden">
+      <ul>
+      <li>
+          <a href="hardware.html">
+              <div class="nav-body">
+                  <div class="nav-el-i"><i class="nav-el las la-server"></i></div>
+                  <div>All Hardware<span><br>Complete range of POS hardware solutions
+              </span></div>
+              </div>
+          </a>
+      </li>
+      <li class="divider-title">Tablets</li>
+      <li>
+          <a href="sr-falcon.html">
+              <div class="nav-body">
+                  <div class="nav-el-i"><i class="nav-el las la-tablet"></i></div>
+                  <div>SR Falcon<span><br>Flagship performance tablet
+              </span></div>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="sr-swan.html">
+              <div class="nav-body">
+                  <div class="nav-el-i"><i class="nav-el las la-tablet"></i></div>
+                  <div>SR Swan<span><br>Sleek fanless tablet POS
+              </span></div>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="sr155-duo.html">
+              <div class="nav-body">
+                  <div class="nav-el-i"><i class="nav-el las la-tablet"></i></div>
+                  <div>SR155 Duo<span><br>Double display POS system
+              </span></div>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="sr155-solo.html">
+              <div class="nav-body">
+                  <div class="nav-el-i"><i class="nav-el las la-tablet"></i></div>
+                  <div>SR155 Solo<span><br>Single display touchscreen
+              </span></div>
+              </div>
+          </a>
+      </li>
+      <li class="divider-title">Printers</li>
+      <li>
+          <a href="sr-trp1.html">
+              <div class="nav-body">
+                  <div class="nav-el-i"><i class="nav-el las la-print"></i></div>
+                  <div>SR-TRP1<span><br>Thermal receipt printer
+              </span></div>
+              </div>
+          </a>
+      </li>
+      <li class="divider-title">Cash Drawer</li>
+      <li>
+          <a href="sr-410.html">
+              <div class="nav-body">
+                  <div class="nav-el-i"><i class="nav-el las la-cash-register"></i></div>
+                  <div>SR-410<span><br>Secure cash drawer
+              </span></div>
+              </div>
+          </a>
+      </li>
+      <li class="divider-title">Scanners</li>
+      <li>
+          <a href="sr-ds1.html">
+              <div class="nav-body">
+                  <div class="nav-el-i"><i class="nav-el las la-barcode"></i></div>
+                  <div>SR-DS1<span><br>Desktop scanner
+              </span></div>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="sr-wlhs1.html">
+              <div class="nav-body">
+                  <div class="nav-el-i"><i class="nav-el las la-barcode"></i></div>
+                  <div>SR-WLHS1<span><br>Wireless handheld scanner
+              </span></div>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="sr-whs1.html">
+              <div class="nav-body">
+                  <div class="nav-el-i"><i class="nav-el las la-barcode"></i></div>
+                  <div>SR-WHS1<span><br>Wired handheld scanner
+              </span></div>
+              </div>
+          </a>
+      </li>
+      <li class="divider-title">EMV Terminals</li>
+      <li>
+          <a href="a35.html">
+              <div class="nav-body">
+                  <div class="nav-el-i"><i class="nav-el las la-credit-card"></i></div>
+                  <div>A35<span><br>Payment terminal
+              </span></div>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="a920.html">
+              <div class="nav-body">
+                  <div class="nav-el-i"><i class="nav-el las la-credit-card"></i></div>
+                  <div>A920<span><br>Mobile payment terminal
+              </span></div>
+              </div>
+          </a>
+      </li>
+      <li class="divider-title">Scales</li>
+      <li>
+          <a href="digital-scale.html">
+              <div class="nav-body">
+                  <div class="nav-el-i"><i class="nav-el las la-weight"></i></div>
+                  <div>Digital Scale<span><br>Precise measurements
+              </span></div>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="aiscale-pos-s625.html">
+              <div class="nav-body">
+                  <div class="nav-el-i"><i class="nav-el las la-weight"></i></div>
+                  <div>AIScale POS S625<span><br>Tablet with integrated scales
+              </span></div>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="aiscale-label-printing-s130.html">
+              <div class="nav-body">
+                  <div class="nav-el-i"><i class="nav-el las la-weight"></i></div>
+                  <div>AIScale Label S130<span><br>Smart labeling scale
+              </span></div>
+              </div>
+          </a>
+      </li>
+  </ul>
+      </div>
+      <div class="dropmenu-nav n3 hidden">
+      <ul>
+      <li>
+          <a href="homebase.html">
+              <div class="nav-body">
+                  <div class="nav-el-i"><i class="nav-el las la-user-clock"></i></div>
+                  <div>Homebase<span><br>Employee scheduling and time tracking
+              </span></div>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="liquor-control.html">
+              <div class="nav-body">
+                  <div class="nav-el-i"><i class="nav-el las la-wine-bottle"></i></div>
+                  <div>Liquor Control<span><br>Alcohol compliance and inventory management
+              </span></div>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="tobacco-scan-data.html">
+              <div class="nav-body">
+                  <div class="nav-el-i"><i class="nav-el las la-smoking"></i></div>
+                  <div>Tobacco Scan Data<span><br>Tobacco product compliance tracking
+              </span></div>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="hikvision.html">
+              <div class="nav-body">
+                  <div class="nav-el-i"><i class="nav-el las la-video"></i></div>
+                  <div>Hikvision<span><br>Security camera integration
+              </span></div>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="barcode-lookup.html">
+              <div class="nav-body">
+                  <div class="nav-el-i"><i class="nav-el las la-search"></i></div>
+                  <div>Barcode Lookup<span><br>Product information and pricing
+              </span></div>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="woocommerce.html">
+              <div class="nav-body">
+                  <div class="nav-el-i"><i class="nav-el las la-shopping-cart"></i></div>
+                  <div>WooCommerce<span><br>E-commerce platform integration
+              </span></div>
+              </div>
+          </a>
+      </li>
+  </ul>
       </div>
     `,
   };
@@ -517,22 +826,33 @@ function initDropment() {
     const el = document.getElementsByClassName('dropmenu')[0];
     el.addEventListener('mouseleave', () => onRemove(el));
 
-    $('.t1 ').hover(
+    // Tab switching for both Product (Solutions) and Business Types menus
+    $('.t1').hover(
       function () {
         $('.n1').removeClass('hidden');
-        $('.n2').addClass('hidden');
-        $('.t2').removeClass('active');
+        $('.n2, .n3').addClass('hidden');
+        $('.t2, .t3').removeClass('active');
         $('.t1').addClass('active');
       },
       function () {}
     );
 
-    $('.t2 ').hover(
+    $('.t2').hover(
       function () {
         $('.n2').removeClass('hidden');
-        $('.n1').addClass('hidden');
-        $('.t1').removeClass('active');
+        $('.n1, .n3').addClass('hidden');
+        $('.t1, .t3').removeClass('active');
         $('.t2').addClass('active');
+      },
+      function () {}
+    );
+
+    $('.t3').hover(
+      function () {
+        $('.n3').removeClass('hidden');
+        $('.n1, .n2').addClass('hidden');
+        $('.t1, .t2').removeClass('active');
+        $('.t3').addClass('active');
       },
       function () {}
     );
