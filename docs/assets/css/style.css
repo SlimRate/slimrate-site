@@ -2775,6 +2775,87 @@ h2.section-title span {
 
 }
 
+/* ============================================
+   United Partners - Infinite Scroll Logo Banner
+   ============================================ */
+
+.united-partners {
+    margin-bottom: var(--section-spacing-sm);
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    width: 100%;
+    padding: 60px 0;
+}
+
+.united-partners .img-bg {
+    top: -110px;
+    position: absolute;
+    width: 100%;
+    height: 125px;
+    bottom: 0px;
+    z-index: -1;
+    animation: 3s ease-in-out 0s infinite alternate none running meet-right-drawing-animation;
+    transform: translateX(-50%);
+}
+
+.united-partners .img-bg-bottom {
+    display: none;
+}
+
+.united-partners-scroll {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.united-partners-track {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    animation: scroll-logos 40s linear infinite;
+    will-change: transform;
+}
+
+.united-partners-track:hover {
+    animation-play-state: paused;
+}
+
+.partner-logo {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 100px;
+    height: 80px;
+}
+
+.partner-logo img {
+    max-width: 100px;
+    max-height: 80px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    filter: grayscale(20%);
+    opacity: 0.9;
+    transition: all 0.3s ease;
+}
+
+.partner-logo:hover img {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+@keyframes scroll-logos {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
 
 
 .products {
