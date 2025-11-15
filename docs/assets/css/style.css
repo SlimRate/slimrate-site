@@ -6354,11 +6354,11 @@ label.has-value {
 
     justify-content: center;
 
-    -webkit-box-align: start;
+    -webkit-box-align: stretch;
 
-    -ms-flex-align: start;
+    -ms-flex-align: stretch;
 
-    align-items: flex-start;
+    align-items: stretch;
 
     max-width: 1198px;
 
@@ -6420,6 +6420,20 @@ label.has-value {
 
     flex: 1;
 
+    display: -webkit-box;
+
+    display: -ms-flexbox;
+
+    display: flex;
+
+    -webkit-box-orient: vertical;
+
+    -webkit-box-direction: normal;
+
+    -ms-flex-direction: column;
+
+    flex-direction: column;
+
 }
 
 
@@ -6469,6 +6483,12 @@ label.has-value {
     margin-bottom: var(--component-spacing-xl);
 
     list-style: none;
+
+    -webkit-box-flex: 1;
+
+    -ms-flex-positive: 1;
+
+    flex-grow: 1;
 
 }
 
@@ -6585,6 +6605,8 @@ label.has-value {
 .tariff-card__priceTitle {
 
     margin-bottom: var(--component-spacing-xs);
+
+    margin-top: auto;
 
 }
 
