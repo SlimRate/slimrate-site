@@ -31,6 +31,14 @@ tariffsTemplate.innerHTML = `
                                 <li>24/7 live customer support
                                 </li>
                             </ul>
+                            <br> 
+                            <br> 
+                            <br> 
+                            <br> 
+                            <br> 
+                            <br> 
+                            <br> 
+                            <br> 
                             <p class="tariff-card__text">Perfect for: Small businesses, startups, cafes, and boutique retailers.
                             </p>
                             <p class="tariff-card__priceTitle">Starting at</p>
@@ -85,7 +93,9 @@ tariffsTemplate.innerHTML = `
                                 <li>Dedicated project manager and ongoing support
                                 </li>
                             </ul>
-                            <p class="tariff-card__text">Perfect for: Large enterprises, specialty retailers, and businesses with complex requirements.
+                            <br> 
+                            <br> 
+                            <p class="tariff-card__text">Perfect for: Large enterprises, specialty retailers, and businesses with complex requirements.
                             </p>
                             <p class="tariff-card__priceTitle">Starting at</p>
                             <div class="tariff-card__price"><span>Custom price</span></div>
