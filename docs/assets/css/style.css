@@ -6342,29 +6342,19 @@ label.has-value {
 
 .tariff-cards {
 
-    display: -webkit-box;
+    display: grid;
 
-    display: -ms-flexbox;
+    grid-template-columns: repeat(3, 1fr);
 
-    display: flex;
+    grid-gap: 24px;
 
-    -webkit-box-pack: center;
-
-    -ms-flex-pack: center;
-
-    justify-content: center;
-
-    -webkit-box-align: stretch;
-
-    -ms-flex-align: stretch;
-
-    align-items: stretch;
+    gap: 24px;
 
     max-width: 1198px;
 
     width: 100%;
 
-    gap: 24px;
+    justify-content: center;
 
 }
 
@@ -6383,6 +6373,8 @@ label.has-value {
     -ms-flex-direction: column;
 
     flex-direction: column;
+
+    height: 100%;
 
 }
 
@@ -7394,7 +7386,17 @@ label.has-value {
 
     .tariff-card {
 
-        max-width: 90%;
+        max-width: 100%;
+
+    }
+
+
+
+    .tariff-cards {
+
+        grid-template-columns: repeat(2, 1fr);
+
+        max-width: 700px;
 
     }
 
@@ -8489,6 +8491,8 @@ label.has-value {
         max-width: none;
 
         width: 320px;
+
+        grid-template-columns: 1fr;
 
     }
 
