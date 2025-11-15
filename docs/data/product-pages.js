@@ -18,7 +18,6 @@ const productPagesData = {
       tagline: "SR Falcon",
       description: "SR Falcon is a next-gen POS tablet built for speed, style, and reliability, with server performance and high-end specs to satisfy even the most demanding user needs and retail stores to mobile sales. Everything your business needs.",
       price: "$1,600.00",
-      priceUnit: "pcs.",
       ctaButton: {
         text: "Get Quote",
         link: "#contact"
@@ -163,7 +162,6 @@ const productPagesData = {
       tagline: "A35 Payment Terminal",
       description: "The A35 Payment Terminal offers secure and efficient payment processing. Its compact design and advanced security features make it ideal for any retail environment.",
       price: "$290.00",
-      priceUnit: "pcs.",
       ctaButton: {
         text: "Get Quote",
         link: "#contact"
@@ -257,7 +255,6 @@ const productPagesData = {
       tagline: "SR-TRP1 Thermal Receipt Printer",
       description: "Print receipts swiftly and quietly with our Thermal Receipt Printer. Ideal for high-volume environments, it ensures crisp and clear receipts every time without the need for ink.",
       price: "$329.00",
-      priceUnit: "pcs.",
       ctaButton: {
         text: "Get Quote",
         link: "#contact"
@@ -338,9 +335,8 @@ const productPagesData = {
       categoryNav: "Tablets",
       name: "SR Swan",
       tagline: "SR Swan",
-      description: "Slimrate Swan is a sleek, silent, fanless tablet POS with long-life components and premium aesthetics for frontâ€‘ofâ€‘house presentation.",
+      description: "Slimrate Swan is a sleek, silent, fanless tablet POS with long-life components and premium aesthetics for frontâ€'ofâ€'house presentation.",
       price: "$1,199.00",
-      priceUnit: "pcs.",
       ctaButton: {
         text: "Get Quote",
         link: "#contact"
@@ -413,7 +409,6 @@ const productPagesData = {
       tagline: "SR155 Duo",
       description: "Our double display POS system ensures seamless interaction for both customers and staff. Featuring a customer-facing display, it enhances transparency and engagement at the point of sale.",
       price: "$999.00",
-      priceUnit: "pcs.",
       ctaButton: {
         text: "Get Quote",
         link: "#contact"
@@ -486,7 +481,6 @@ const productPagesData = {
       tagline: "SR155 Solo",
       description: "Streamline your checkout process with our single display POS. Designed for efficiency and ease of use, it supports quick transactions and offers a user-friendly interface for staff.",
       price: "$850.00",
-      priceUnit: "pcs.",
       ctaButton: {
         text: "Get Quote",
         link: "#contact"
@@ -542,7 +536,6 @@ const productPagesData = {
       tagline: "A920 Payment Terminal",
       description: "Enhance your mobile payments with the A920 Payment Terminal. Combining portability with robust functionality, it supports a variety of payment methods and offers a sleek design.",
       price: "$349.00",
-      priceUnit: "pcs.",
       ctaButton: {
         text: "Get Quote",
         link: "#contact"
@@ -615,7 +608,6 @@ const productPagesData = {
       tagline: "SR-DS1 Desktop Scanner",
       description: "Streamline your scanning process with our Desktop Scanner. Designed for high-volume use, it offers fast and accurate scanning, making it perfect for busy retail settings.",
       price: "$279.00",
-      priceUnit: "pcs.",
       ctaButton: {
         text: "Get Quote",
         link: "#contact"
@@ -668,7 +660,6 @@ const productPagesData = {
       tagline: "SR-WLHS1 Wireless Handheld Scanner",
       description: "Improve mobility and efficiency with our Wireless Handheld Scanner. Perfect for inventory management and point-of-sale scanning, it offers reliable and fast barcode scanning.",
       price: "$399.00",
-      priceUnit: "pcs.",
       ctaButton: {
         text: "Get Quote",
         link: "#contact"
@@ -723,7 +714,6 @@ const productPagesData = {
       tagline: "SR-WHS1 Wired Handheld Scanner",
       description: "Ensure consistent performance with our Wired Handheld Scanner. Ideal for retail environments, it provides quick and accurate barcode scanning with a durable design.",
       price: "$199.00",
-      priceUnit: "pcs.",
       ctaButton: {
         text: "Get Quote",
         link: "#contact"
@@ -780,7 +770,6 @@ const productPagesData = {
       tagline: "Digital Scale",
       description: "Ensure precise measurements with our Digital Scale. Ideal for retail environments, it offers accurate weight readings and integrates seamlessly with your POS system.",
       price: "$475.00",
-      priceUnit: "pcs.",
       ctaButton: {
         text: "Get Quote",
         link: "#contact"
@@ -833,7 +822,6 @@ const productPagesData = {
       tagline: "AIScale POS S625",
       description: "This Slimrate device combines a tablet interface with integrated scales and a receipt printer, offering a compact, efficient solution for retail environments. Perfect for weight-based transactions.",
       price: "$1,799.00",
-      priceUnit: "pcs.",
       ctaButton: {
         text: "Get Quote",
         link: "#contact"
@@ -887,7 +875,6 @@ const productPagesData = {
       tagline: "AIScale Label Printing S130",
       description: "These smart labeling scales with an integrated camera by Slimrate offer accurate weighing and automated product identification. Ideal for retail environments, they simplify labeling processes and enhance operational efficiency.",
       price: "$1,499.00",
-      priceUnit: "pcs.",
       ctaButton: {
         text: "Get Quote",
         link: "#contact"
@@ -943,7 +930,6 @@ const productPagesData = {
       tagline: "SR-410 Cash Drawer",
       description: "Secure your cash transactions with our durable Cash Drawer. Featuring a robust design and smooth operation, it integrates seamlessly with your POS system for easy cash management.",
       price: "$129.00",
-      priceUnit: "pcs.",
       ctaButton: {
         text: "Get Quote",
         link: "#contact"
