@@ -50,7 +50,6 @@ const ASSETS_TO_CACHE = [
   '/assets/css/spacing-system.css',
   '/assets/css/burger.css',
   '/assets/css/layout-overrides.css',
-  '/assets/css/mobile-fixes.css',
   '/assets/css/hardware-cards-vertical-slider.css',
   '/assets/js/masks.js',
   '/assets/js/more.js',
