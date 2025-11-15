@@ -38,7 +38,7 @@ pricingComparisonTemplate.innerHTML = `
                         <td class="plan-feature"><span class="checkmark special">✓ ADVANCED</span></td>
                     </tr>
                     <tr>
-                        <td class="feature-name">Payment Processing Integration</td>
+                        <td class="feature-name">Payment Processing</td>
                         <td class="plan-feature"><span class="checkmark">✓</span></td>
                         <td class="plan-feature"><span class="checkmark">✓</span></td>
                         <td class="plan-feature"><span class="checkmark">✓</span></td>
