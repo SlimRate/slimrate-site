@@ -6342,11 +6342,15 @@ label.has-value {
 
 .tariff-cards {
 
-    display: -webkit-box;
+    display: -ms-grid;
 
-    display: -ms-flexbox;
+    display: grid;
 
-    display: flex;
+    -ms-grid-columns: 1fr 24px 1fr 24px 1fr;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 24px;
 
     -webkit-box-pack: center;
 
@@ -6354,17 +6358,27 @@ label.has-value {
 
     justify-content: center;
 
-    -webkit-box-align: start;
+    -webkit-box-align: stretch;
 
-    -ms-flex-align: start;
+    -ms-flex-align: stretch;
 
-    align-items: flex-start;
+    align-items: stretch;
 
     max-width: 1198px;
 
     width: 100%;
 
-    gap: 24px;
+}
+
+.tariff-cards .swiper-slide {
+
+    display: -webkit-box;
+
+    display: -ms-flexbox;
+
+    display: flex;
+
+    height: 100%;
 
 }
 
@@ -6410,6 +6424,20 @@ label.has-value {
 
     border-radius: 8px;
 
+    display: -webkit-box;
+
+    display: -ms-flexbox;
+
+    display: flex;
+
+    -webkit-box-orient: vertical;
+
+    -webkit-box-direction: normal;
+
+    -ms-flex-direction: column;
+
+    flex-direction: column;
+
     -webkit-box-shadow: 0px -4px 0px #2b4fb9, 0px 7px 8px rgba(0, 0, 0, 0.08), 0px 12px 17px rgba(0, 0, 0, 0.06), 0px 5px 22px rgba(0, 0, 0, 0.04);
 
     box-shadow: 0px -4px 0px #2b4fb9, 0px 7px 8px rgba(0, 0, 0, 0.08), 0px 12px 17px rgba(0, 0, 0, 0.06), 0px 5px 22px rgba(0, 0, 0, 0.04);
@@ -6418,7 +6446,15 @@ label.has-value {
 
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
+    -webkit-box-flex: 1;
+
+    -ms-flex: 1;
+
     flex: 1;
+
+    width: 100%;
+
+    height: 860px;
 
 }
 
@@ -6469,6 +6505,8 @@ label.has-value {
     margin-bottom: var(--component-spacing-xl);
 
     list-style: none;
+
+    flex-grow: 1;
 
 }
 

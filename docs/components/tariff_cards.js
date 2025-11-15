@@ -30,15 +30,9 @@ tariffsTemplate.innerHTML = `
                                 </li>
                                 <li>24/7 live customer support
                                 </li>
+                                <li style="opacity: 0; pointer-events: none; user-select: none;">Placeholder text for layout spacing
+                                </li>
                             </ul>
-                            <br> 
-                            <br> 
-                            <br> 
-                            <br> 
-                            <br> 
-                            <br> 
-                            <br> 
-                            <br> 
                             <p class="tariff-card__text">Perfect for: Small businesses, startups, cafes, and boutique retailers.
                             </p>
                             <p class="tariff-card__priceTitle">Starting at</p>
@@ -92,10 +86,10 @@ tariffsTemplate.innerHTML = `
                                 </li>
                                 <li>Dedicated project manager and ongoing support
                                 </li>
+                                <li style="opacity: 0; pointer-events: none; user-select: none; height: 52px;">Invisible spacing element
+                                </li>
                             </ul>
-                            <br> 
-                            <br> 
-                            <p class="tariff-card__text">Perfect for: Large enterprises, specialty retailers, and businesses with complex requirements.
+                            <p class="tariff-card__text">Perfect for: Large enterprises, specialty retailers, and businesses with complex requirements.
                             </p>
                             <p class="tariff-card__priceTitle">Starting at</p>
                             <div class="tariff-card__price"><span>Custom price</span></div>
