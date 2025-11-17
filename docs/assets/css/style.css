@@ -1113,6 +1113,8 @@ h1.section-title {
 
     letter-spacing: 0.02em;
 
+    margin-bottom: var(--component-spacing-lg);
+
 }
 
 
@@ -1130,6 +1132,8 @@ h2.section-title {
     line-height: 48px;
 
     letter-spacing: -0.02em;
+
+    margin-bottom: var(--component-spacing-xl);
 
 }
 
@@ -1160,6 +1164,8 @@ h2.section-title span {
     color: #000000;
 
     margin-top: var(--component-spacing-sm);
+
+    margin-bottom: var(--component-spacing-xl);
 
 }
 
@@ -1226,7 +1232,13 @@ body {
 
     display: flex;
 
+    flex-direction: column;
+
     margin: 0 auto;
+
+    padding-left: var(--spacing-lg);
+
+    padding-right: var(--spacing-lg);
 
     z-index: 1;
 
@@ -10936,6 +10948,28 @@ ection.we-support {
 
 @media (max-width: 991px) {
 
+    /* Container fixes for tablet */
+    .container {
+        padding-left: var(--spacing-md);
+        padding-right: var(--spacing-md);
+    }
+
+    /* Typography adjustments for tablet */
+    h1.section-title {
+        font-size: 40px;
+        line-height: 1.15;
+    }
+
+    h2.section-title {
+        font-size: 32px;
+        line-height: 1.2;
+    }
+
+    .section-descr {
+        font-size: 18px;
+        line-height: 1.5;
+    }
+
     .easy-guides__wrap {
 
         flex-direction: column;
@@ -11491,6 +11525,12 @@ ection.we-support {
         padding-right: var(--spacing-lg);
     }
 
+    /* Integration pages and similar content pages - ensure proper spacing */
+    .pp .container {
+        flex-direction: column;
+        gap: 0;
+    }
+
     .footer .container {
         padding-left: 0;
         padding-right: 0;
@@ -11746,9 +11786,21 @@ ection.we-support {
         line-height: var(--line-height-normal);
     }
 
+    h1.section-title {
+        font-size: 32px;
+        line-height: 1.2;
+        margin-bottom: var(--component-spacing-md);
+    }
+
     h2 {
         font-size: var(--font-size-3xl);
         line-height: var(--line-height-normal);
+    }
+
+    h2.section-title {
+        font-size: 28px;
+        line-height: 1.2;
+        margin-bottom: var(--component-spacing-lg);
     }
 
     h3 {
@@ -11756,9 +11808,21 @@ ection.we-support {
         line-height: var(--line-height-relaxed);
     }
 
+    h3.section-title {
+        font-size: 24px;
+        line-height: 1.25;
+        margin-bottom: var(--component-spacing-md);
+    }
+
     p {
         font-size: var(--font-size-md);
         line-height: var(--line-height-loose);
+    }
+
+    .section-descr {
+        font-size: 16px;
+        line-height: 1.5;
+        margin-bottom: var(--component-spacing-lg);
     }
 
     .btn {
@@ -12277,6 +12341,108 @@ ection.we-support {
 .mainPageHeader .container {
     padding-left: 0;
     margin-left: 0;
+}
+
+/* ========================================
+   Integration Pages & Content Pages Fixes
+   ======================================== */
+
+/* Ensure proper layout for content-heavy pages */
+.pp .container {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Proper spacing between sections on integration pages */
+.pp .container > * + * {
+    margin-top: 0;
+}
+
+/* Fix for benefits/features grids */
+.benefits-grid,
+.integrations-grid {
+    width: 100%;
+}
+
+/* Text centering utility */
+.text-center {
+    text-align: center;
+}
+
+/* Ensure proper spacing for inline styles on integration pages */
+.pp h2.section-title,
+.pp h3.section-title {
+    clear: both;
+    display: block;
+}
+
+.pp .section-descr {
+    clear: both;
+    display: block;
+}
+
+/* Mobile-specific fixes for integration pages */
+@media (max-width: 767px) {
+    .pp .container {
+        padding-left: var(--spacing-md);
+        padding-right: var(--spacing-md);
+    }
+
+    /* Integration cards - mobile optimization */
+    .integration-card {
+        padding: var(--spacing-lg) !important;
+        margin-bottom: var(--spacing-lg) !important;
+    }
+
+    .integration-card h3 {
+        font-size: 22px !important;
+        margin-bottom: var(--spacing-md) !important;
+    }
+
+    .integration-card h3 i {
+        font-size: 28px !important;
+    }
+
+    .integration-card p {
+        font-size: 15px !important;
+        margin-bottom: var(--spacing-md) !important;
+    }
+
+    .integration-features li,
+    .feature-list li {
+        font-size: 15px !important;
+        padding-left: var(--spacing-lg) !important;
+    }
+
+    /* Benefits cards - mobile optimization */
+    .benefit-card {
+        padding: var(--spacing-lg) !important;
+    }
+
+    .benefit-card h3 {
+        font-size: 20px !important;
+        margin-bottom: var(--spacing-sm) !important;
+    }
+
+    .benefit-card h3 i {
+        font-size: 26px !important;
+    }
+
+    .benefit-card p {
+        font-size: 14px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .pp .container {
+        padding-left: var(--spacing-sm);
+        padding-right: var(--spacing-sm);
+    }
+
+    .integration-card,
+    .benefit-card {
+        padding: var(--spacing-md) !important;
+    }
 }
 
 /* Footer - Mobile Link Styles */
