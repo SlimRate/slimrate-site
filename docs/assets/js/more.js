@@ -59,17 +59,6 @@ const slickConfigs = {
             settings: { slidesToShow: 1 }
         }]
     },
-    'tariff-cards': {
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        infinite: false,
-        autoplay: true,
-        autoplaySpeed: 1000,
-        responsive: [{
-            breakpoint: 991,
-            settings: { slidesToShow: 1 }
-        }]
-    },
     'gallery': {
         slidesToShow: 1,
         slidesToScroll: 1,
