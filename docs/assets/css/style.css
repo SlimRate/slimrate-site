@@ -1232,13 +1232,7 @@ body {
 
     display: flex;
 
-    flex-direction: column;
-
     margin: 0 auto;
-
-    padding-left: var(--spacing-lg);
-
-    padding-right: var(--spacing-lg);
 
     z-index: 1;
 
@@ -10948,12 +10942,6 @@ ection.we-support {
 
 @media (max-width: 991px) {
 
-    /* Container fixes for tablet */
-    .container {
-        padding-left: var(--spacing-md);
-        padding-right: var(--spacing-md);
-    }
-
     /* Typography adjustments for tablet */
     h1.section-title {
         font-size: 40px;
@@ -10968,6 +10956,13 @@ ection.we-support {
     .section-descr {
         font-size: 18px;
         line-height: 1.5;
+    }
+
+    /* Container padding for integration pages only */
+    .pp > div > .container,
+    .pp .wrapper > .container:not(.mainPageHeader .container):not(.main .container) {
+        padding-left: var(--spacing-md);
+        padding-right: var(--spacing-md);
     }
 
     .easy-guides__wrap {
@@ -11523,12 +11518,6 @@ ection.we-support {
         max-width: 100%;
         padding-left: var(--spacing-lg);
         padding-right: var(--spacing-lg);
-    }
-
-    /* Integration pages and similar content pages - ensure proper spacing */
-    .pp .container {
-        flex-direction: column;
-        gap: 0;
     }
 
     .footer .container {
@@ -12347,15 +12336,13 @@ ection.we-support {
    Integration Pages & Content Pages Fixes
    ======================================== */
 
-/* Ensure proper layout for content-heavy pages */
-.pp .container {
+/* Ensure proper layout for content-heavy pages - only for direct children divs */
+.pp > div > .container,
+.pp .wrapper > .container:not(.mainPageHeader .container):not(.main .container) {
     display: flex;
     flex-direction: column;
-}
-
-/* Proper spacing between sections on integration pages */
-.pp .container > * + * {
-    margin-top: 0;
+    padding-left: var(--spacing-lg);
+    padding-right: var(--spacing-lg);
 }
 
 /* Fix for benefits/features grids */
@@ -12383,7 +12370,8 @@ ection.we-support {
 
 /* Mobile-specific fixes for integration pages */
 @media (max-width: 767px) {
-    .pp .container {
+    .pp > div > .container,
+    .pp .wrapper > .container:not(.mainPageHeader .container):not(.main .container) {
         padding-left: var(--spacing-md);
         padding-right: var(--spacing-md);
     }
@@ -12434,7 +12422,8 @@ ection.we-support {
 }
 
 @media (max-width: 480px) {
-    .pp .container {
+    .pp > div > .container,
+    .pp .wrapper > .container:not(.mainPageHeader .container):not(.main .container) {
         padding-left: var(--spacing-sm);
         padding-right: var(--spacing-sm);
     }
