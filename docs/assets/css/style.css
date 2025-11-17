@@ -346,6 +346,8 @@ input.form-control:focus {
 
     max-width: 1160px;
 
+    flex-direction: row;
+
     -webkit-box-pack: justify;
 
     -ms-flex-pack: justify;
@@ -1232,6 +1234,8 @@ body {
 
     display: flex;
 
+    flex-direction: column;
+
     margin: 0 auto;
 
     z-index: 1;
@@ -1247,6 +1251,8 @@ body {
     display: -ms-flexbox;
 
     display: flex;
+
+    flex-direction: row;
 
     -webkit-box-pack: justify;
 
@@ -1918,6 +1924,8 @@ body {
 
     display: flex;
 
+    flex-direction: row;
+
     align-items: center;
 
     min-height: 600px;
@@ -2437,6 +2445,8 @@ body {
     display: -ms-flexbox;
 
     display: flex;
+
+    flex-direction: row;
 
     -webkit-box-pack: justify;
 
@@ -3561,6 +3571,8 @@ body {
 
     display: flex;
 
+    flex-direction: row;
+
     justify-content: space-between;
 
     align-items: stretch;
@@ -4490,6 +4502,8 @@ label.has-value {
 
 
 .faq .container {
+
+    flex-direction: row;
 
     -webkit-box-pack: justify;
 
@@ -10755,6 +10769,8 @@ ection.we-support {
 
     display: flex;
 
+    flex-direction: row;
+
     align-items: center;
 
     justify-content: space-between;
@@ -10959,10 +10975,16 @@ ection.we-support {
     }
 
     /* Container padding for integration pages only */
-    .pp > div > .container,
-    .pp .wrapper > .container:not(.mainPageHeader .container):not(.main .container) {
+    .pp .wrapper > .container {
         padding-left: var(--spacing-md);
         padding-right: var(--spacing-md);
+    }
+
+    /* Keep header without side padding */
+    .pp .main .container,
+    .pp .mainPageHeader .container {
+        padding-left: 0;
+        padding-right: 0;
     }
 
     .easy-guides__wrap {
@@ -12336,24 +12358,59 @@ ection.we-support {
    Integration Pages & Content Pages Fixes
    ======================================== */
 
-/* Ensure proper layout for content-heavy pages - only for direct children divs */
-.pp > div > .container,
-.pp .wrapper > .container:not(.mainPageHeader .container):not(.main .container) {
-    display: flex;
-    flex-direction: column;
+/* Ensure proper layout for content-heavy pages */
+.pp .wrapper > .container {
+    display: block !important;
+    flex-direction: column !important;
     padding-left: var(--spacing-lg);
     padding-right: var(--spacing-lg);
 }
 
+/* Content containers inside integration pages */
+.pp .wrapper > .container > * {
+    display: block;
+    width: 100%;
+}
+
+/* But keep horizontal layout for header/hero sections */
+.pp .main .container,
+.pp .mainPageHeader .container {
+    display: flex !important;
+    flex-direction: row !important;
+    padding-left: 0;
+    padding-right: 0;
+}
+
 /* Fix for benefits/features grids */
 .benefits-grid,
-.integrations-grid {
+.integrations-grid,
+.feature-grid {
     width: 100%;
+    display: grid !important;
 }
 
 /* Text centering utility */
 .text-center {
     text-align: center;
+    display: block !important;
+}
+
+/* Ensure section title and descr have proper bottom margins on integration pages */
+.pp .container > h2.section-title,
+.pp .container > .text-center h2.section-title,
+.pp .container .text-center h2.section-title {
+    margin-bottom: var(--component-spacing-xl) !important;
+}
+
+.pp .container > .section-descr,
+.pp .container > .text-center .section-descr,
+.pp .container .text-center .section-descr {
+    margin-bottom: var(--component-spacing-2xl) !important;
+}
+
+.pp .container > h3.section-title {
+    margin-top: var(--spacing-2xl);
+    margin-bottom: var(--component-spacing-lg);
 }
 
 /* Ensure proper spacing for inline styles on integration pages */
@@ -12370,10 +12427,16 @@ ection.we-support {
 
 /* Mobile-specific fixes for integration pages */
 @media (max-width: 767px) {
-    .pp > div > .container,
-    .pp .wrapper > .container:not(.mainPageHeader .container):not(.main .container) {
+    .pp .wrapper > .container {
         padding-left: var(--spacing-md);
         padding-right: var(--spacing-md);
+    }
+
+    /* Keep header without side padding */
+    .pp .main .container,
+    .pp .mainPageHeader .container {
+        padding-left: 0;
+        padding-right: 0;
     }
 
     /* Integration cards - mobile optimization */
@@ -12422,10 +12485,16 @@ ection.we-support {
 }
 
 @media (max-width: 480px) {
-    .pp > div > .container,
-    .pp .wrapper > .container:not(.mainPageHeader .container):not(.main .container) {
+    .pp .wrapper > .container {
         padding-left: var(--spacing-sm);
         padding-right: var(--spacing-sm);
+    }
+
+    /* Keep header without side padding */
+    .pp .main .container,
+    .pp .mainPageHeader .container {
+        padding-left: 0;
+        padding-right: 0;
     }
 
     .integration-card,
