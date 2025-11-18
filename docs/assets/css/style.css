@@ -5267,6 +5267,9 @@ label.has-value {
     z-index: 0;
     overflow: hidden;
 }
+.equip.allinone .block-right {
+    overflow: hidden;
+}
 .equip.allinone .block-right .bg-image-right {
     position: absolute;
     inset: calc(-1 * var(--allinone-decor-offset));
@@ -5275,7 +5278,7 @@ label.has-value {
     border-radius: 0 100px 0 100px;
     filter: blur(3px);
     opacity: 0.3;
-    z-index: -1;
+    z-index: 0;
     pointer-events: none;
 }
 .equip.allinone .block-right::after {
@@ -5342,7 +5345,7 @@ label.has-value {
     border-radius: 100px 0 100px 0;
     filter: blur(3px);
     opacity: 0.3;
-    z-index: -1;
+    z-index: 0;
     pointer-events: none;
 }
 .equip.allinone .block-img-circle {
