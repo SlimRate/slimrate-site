@@ -81,7 +81,7 @@ if (!customElements.get("equip-company-el")) {
                 const randomLeft = bgImages[Math.floor(Math.random() * bgImages.length)];
                 const bgElement = document.createElement('div');
                 bgElement.className = 'bg-image-left';
-                bgElement.style.setProperty('--random-bg-left', `url('assets/BGs/${randomLeft}')`);
+                bgElement.style.backgroundImage = `url('assets/BGs/${randomLeft}')`;
                 blockLeft.insertBefore(bgElement, blockLeft.firstChild);
             }
             
@@ -89,7 +89,7 @@ if (!customElements.get("equip-company-el")) {
                 const randomRight = bgImages[Math.floor(Math.random() * bgImages.length)];
                 const bgElement = document.createElement('div');
                 bgElement.className = 'bg-image-right';
-                bgElement.style.setProperty('--random-bg-right', `url('assets/BGs/${randomRight}')`);
+                bgElement.style.backgroundImage = `url('assets/BGs/${randomRight}')`;
                 blockRight.insertBefore(bgElement, blockRight.firstChild);
             }
         }

@@ -5270,7 +5270,6 @@ label.has-value {
 .equip.allinone .block-right .bg-image-right {
     position: absolute;
     inset: calc(-1 * var(--allinone-decor-offset));
-    background-image: var(--random-bg-right, none);
     background-size: cover;
     background-position: center;
     border-radius: 0 100px 0 100px;
@@ -5338,7 +5337,6 @@ label.has-value {
     right: calc(100% + var(--allinone-gap) - var(--allinone-decor-offset));
     left: -100vw;
     height: calc(100% + (2 * var(--allinone-decor-offset)));
-    background-image: var(--random-bg-left, none);
     background-size: cover;
     background-position: center;
     border-radius: 100px 0 100px 0;
