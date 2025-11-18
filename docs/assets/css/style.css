@@ -5262,24 +5262,16 @@ label.has-value {
     content: "";
     position: absolute;
     inset: calc(-1 * var(--allinone-decor-offset));
-    background: #2b6bf3;
-    border-radius: 0 100px 0 100px;
-    z-index: 0;
-    overflow: hidden;
-}
-.equip.allinone .block-right {
-    overflow: hidden;
-}
-.equip.allinone .block-right .bg-image-right {
-    position: absolute;
-    inset: calc(-1 * var(--allinone-decor-offset));
+    background-color: #2b6bf3;
+    background-image: var(--bg-image-right, none);
     background-size: cover;
     background-position: center;
+    background-blend-mode: overlay;
     border-radius: 0 100px 0 100px;
-    filter: blur(3px);
-    opacity: 0.3;
     z-index: 0;
-    pointer-events: none;
+    overflow: hidden;
+    filter: blur(2px);
+    opacity: 0.85;
 }
 .equip.allinone .block-right::after {
     content: "";
@@ -5327,26 +5319,17 @@ label.has-value {
     right: calc(100% + var(--allinone-gap) - var(--allinone-decor-offset));
     left: -100vw;
     height: calc(100% + (2 * var(--allinone-decor-offset)));
-    background: #2b6bf3;
+    background-color: #2b6bf3;
+    background-image: var(--bg-image-left, none);
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
     border-radius: 100px 0 100px 0;
     pointer-events: none;
     z-index: -1;
     overflow: hidden;
-}
-.equip.allinone .block-left .bg-image-left {
-    position: absolute;
-    top: calc(-1 * var(--allinone-decor-offset));
-    bottom: auto;
-    right: calc(100% + var(--allinone-gap) - var(--allinone-decor-offset));
-    left: -100vw;
-    height: calc(100% + (2 * var(--allinone-decor-offset)));
-    background-size: cover;
-    background-position: center;
-    border-radius: 100px 0 100px 0;
-    filter: blur(3px);
-    opacity: 0.3;
-    z-index: 0;
-    pointer-events: none;
+    filter: blur(2px);
+    opacity: 0.85;
 }
 .equip.allinone .block-img-circle {
     display: block;
