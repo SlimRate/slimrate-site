@@ -5263,8 +5263,14 @@ label.has-value {
     position: absolute;
     inset: calc(-1 * var(--allinone-decor-offset));
     background: #2b6bf3;
+    background-image: var(--random-bg-right, none);
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
     border-radius: 0 100px 0 100px;
     z-index: 0;
+    filter: blur(3px);
+    opacity: 0.6;
 }
 .equip.allinone .block-right::after {
     content: "";
@@ -5313,9 +5319,15 @@ label.has-value {
     left: -100vw;
     height: calc(100% + (2 * var(--allinone-decor-offset)));
     background: #2b6bf3;
+    background-image: var(--random-bg-left, none);
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
     border-radius: 100px 0 100px 0;
     pointer-events: none;
     z-index: -1;
+    filter: blur(3px);
+    opacity: 0.6;
 }
 .equip.allinone .block-img-circle {
     display: block;

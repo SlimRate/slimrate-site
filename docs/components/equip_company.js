@@ -53,6 +53,39 @@ if (!customElements.get("equip-company-el")) {
         }
         connectedCallback() {
             this.appendChild(this._contents);
+            this.setRandomBackgrounds();
+        }
+        setRandomBackgrounds() {
+            const bgImages = [
+                '1669.jpg',
+                '16939.jpg',
+                '19205.jpg',
+                '1967.jpg',
+                '2149081077.jpg',
+                '41208.jpg',
+                '5204.jpg',
+                'ChatGPT Image 16 ╨╕╤Ä╨╜. 2025 ╨│ 2.png',
+                'Frame 33738020.png',
+                'Frame 33738021.png',
+                'pexels-imin-technology-276315592-12935050 ╨║╨╛╨┐╨╕╤Å.png',
+                'pexels-imin-technology-276315592-12935051.png',
+                'pexels-imin-technology-276315592-12935064.png',
+                'pexels-imin-technology-276315592-12935069 2.png',
+                'slim 2.png'
+            ];
+            
+            const blockLeft = this.querySelector('.block-left');
+            const blockRight = this.querySelector('.block-right');
+            
+            if (blockLeft) {
+                const randomLeft = bgImages[Math.floor(Math.random() * bgImages.length)];
+                blockLeft.style.setProperty('--random-bg-left', `url('assets/BGs/${randomLeft}')`);
+            }
+            
+            if (blockRight) {
+                const randomRight = bgImages[Math.floor(Math.random() * bgImages.length)];
+                blockRight.style.setProperty('--random-bg-right', `url('assets/BGs/${randomRight}')`);
+            }
         }
     }
 
