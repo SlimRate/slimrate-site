@@ -5262,16 +5262,24 @@ label.has-value {
     content: "";
     position: absolute;
     inset: calc(-1 * var(--allinone-decor-offset));
-    background-color: #2b6bf3;
-    background-image: var(--bg-image-right, none);
-    background-size: cover;
-    background-position: center;
-    background-blend-mode: overlay;
+    background: #2b6bf3;
     border-radius: 0 100px 0 100px;
     z-index: 0;
     overflow: hidden;
-    filter: blur(2px);
-    opacity: 0.85;
+}
+.equip.allinone .block-right .bg-decor-right {
+    position: absolute;
+    top: calc(-1 * var(--allinone-decor-offset) + 2px);
+    bottom: calc(-1 * var(--allinone-decor-offset) + 2px);
+    left: calc(100% + var(--allinone-gap) + 2px);
+    right: calc(-100vw + 2px);
+    background-size: cover;
+    background-position: center;
+    border-radius: 0 100px 0 100px;
+    pointer-events: none;
+    z-index: 1;
+    filter: blur(1px);
+    opacity: 0.35;
 }
 .equip.allinone .block-right::after {
     content: "";
@@ -5283,7 +5291,7 @@ label.has-value {
     background: #eaf1fe;
     border-radius: 0 100px 0 100px;
     pointer-events: none;
-    z-index: -1;
+    z-index: 0;
 }
 .equip.allinone {
     --allinone-square-size: clamp(260px, 38vw, 520px);
@@ -5310,6 +5318,7 @@ label.has-value {
     border-radius: 0 100px 0 100px;
     padding: clamp(32px, 3vw, 48px);
     z-index: 1;
+    overflow: visible;
 }
 .equip.allinone .block-left::before {
     content: "";
@@ -5319,17 +5328,26 @@ label.has-value {
     right: calc(100% + var(--allinone-gap) - var(--allinone-decor-offset));
     left: -100vw;
     height: calc(100% + (2 * var(--allinone-decor-offset)));
-    background-color: #2b6bf3;
-    background-image: var(--bg-image-left, none);
-    background-size: cover;
-    background-position: center;
-    background-blend-mode: overlay;
+    background: #2b6bf3;
     border-radius: 100px 0 100px 0;
     pointer-events: none;
     z-index: -1;
     overflow: hidden;
-    filter: blur(2px);
-    opacity: 0.85;
+}
+.equip.allinone .block-left .bg-decor-left {
+    position: absolute;
+    top: calc(-1 * var(--allinone-decor-offset) + 3px);
+    bottom: auto;
+    right: calc(100% + var(--allinone-gap) - var(--allinone-decor-offset) + 3px);
+    left: calc(-100vw + 3px);
+    height: calc(100% + (2 * var(--allinone-decor-offset)) - 6px);
+    background-size: cover;
+    background-position: center;
+    border-radius: 98px 0 98px 0;
+    pointer-events: none;
+    z-index: 0;
+    filter: blur(0.8px);
+    opacity: 0.35;
 }
 .equip.allinone .block-img-circle {
     display: block;

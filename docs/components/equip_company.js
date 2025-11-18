@@ -6,6 +6,7 @@ equipCompanyTemplate.innerHTML = `
     <img src="assets/img/bg-bot-1.svg" alt="Slimrate decorative background" class="bg-bottom">
     <div class="container allinone__wrap">
         <div class="block-left allinone__card">
+            <div class="bg-decor-left"></div>
             <h2 class="allinone__title">Slimrate POS:<span>Your All-in-One Business Solution</span></h2>
             <p class="allinone__text">
                 Streamline your business operations with Slimrate POS. From accepting payments to managing employees and
@@ -19,6 +20,7 @@ equipCompanyTemplate.innerHTML = `
             <a href="#get_demo" class="btn btn-red allinone__cta">Get Demo</a>
         </div>
         <div class="block-right">
+            <div class="bg-decor-right"></div>
             <div class="equip-card">
                 <img src="assets/img/icons/checkMashine.svg" alt="Slimrate payment terminal" class="equip-img">
                 <img src="assets/img/icons/scanner.svg" alt="Slimrate barcode scanner" class="equip-img">
@@ -78,13 +80,19 @@ if (!customElements.get("equip-company-el")) {
             const blockRight = this.querySelector('.block-right');
             
             if (blockLeft) {
-                const randomLeft = bgImages[Math.floor(Math.random() * bgImages.length)];
-                blockLeft.style.setProperty('--bg-image-left', `url('assets/BGs/${randomLeft}')`);
+                const bgDecorLeft = blockLeft.querySelector('.bg-decor-left');
+                if (bgDecorLeft) {
+                    const randomLeft = bgImages[Math.floor(Math.random() * bgImages.length)];
+                    bgDecorLeft.style.backgroundImage = `url('assets/BGs/${randomLeft}')`;
+                }
             }
             
             if (blockRight) {
-                const randomRight = bgImages[Math.floor(Math.random() * bgImages.length)];
-                blockRight.style.setProperty('--bg-image-right', `url('assets/BGs/${randomRight}')`);
+                const bgDecorRight = blockRight.querySelector('.bg-decor-right');
+                if (bgDecorRight) {
+                    const randomRight = bgImages[Math.floor(Math.random() * bgImages.length)];
+                    bgDecorRight.style.backgroundImage = `url('assets/BGs/${randomRight}')`;
+                }
             }
         }
     }
