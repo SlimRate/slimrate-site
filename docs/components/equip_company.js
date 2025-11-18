@@ -79,12 +79,18 @@ if (!customElements.get("equip-company-el")) {
             
             if (blockLeft) {
                 const randomLeft = bgImages[Math.floor(Math.random() * bgImages.length)];
-                blockLeft.style.setProperty('--random-bg-left', `url('assets/BGs/${randomLeft}')`);
+                const bgElement = document.createElement('div');
+                bgElement.className = 'bg-image-left';
+                bgElement.style.setProperty('--random-bg-left', `url('assets/BGs/${randomLeft}')`);
+                blockLeft.insertBefore(bgElement, blockLeft.firstChild);
             }
             
             if (blockRight) {
                 const randomRight = bgImages[Math.floor(Math.random() * bgImages.length)];
-                blockRight.style.setProperty('--random-bg-right', `url('assets/BGs/${randomRight}')`);
+                const bgElement = document.createElement('div');
+                bgElement.className = 'bg-image-right';
+                bgElement.style.setProperty('--random-bg-right', `url('assets/BGs/${randomRight}')`);
+                blockRight.insertBefore(bgElement, blockRight.firstChild);
             }
         }
     }
