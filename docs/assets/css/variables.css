@@ -1,0 +1,209 @@
+/* ========================================
+   CSS Custom Properties - Single Source of Truth
+   Consolidated from style.css and spacing-system.css
+   ======================================== */
+
+:root {
+    /* ========================================
+       Breakpoints
+       ======================================== */
+    --breakpoint-xs: 360px;
+    --breakpoint-sm: 480px;
+    --breakpoint-md: 767px;
+    --breakpoint-lg: 991px;
+    --breakpoint-xl: 1199px;
+    --breakpoint-xxl: 1300px;
+    
+    /* ========================================
+       Z-index layers
+       ======================================== */
+    --z-background: -2;
+    --z-behind: -1;
+    --z-base: 0;
+    --z-content: 1;
+    --z-overlay: 2;
+    --z-dropdown: 10;
+    --z-header: 20;
+    --z-menu: 21;
+    --z-menu-button: 21;
+    --z-modal: 22;
+    --z-tooltip: 1000;
+    
+    /* ========================================
+       Colors - Primary Palette
+       ======================================== */
+    --color-primary: #2b6bf3;
+    --color-primary-hover: #2d5acf;
+    --color-primary-light: #407AF4;
+    --color-secondary: #ef2b23;
+    --color-dark: #252525;
+    --color-text-primary: #1f2537;
+    --color-text-secondary: #425466;
+    --color-text-muted: #666;
+    
+    /* ========================================
+       Colors - Neutrals
+       ======================================== */
+    --color-white: #ffffff;
+    --color-black: #000000;
+    --color-bg-overlay: rgba(0, 0, 0, 0.1);
+    --color-bg-overlay-dark: rgba(0, 0, 0, 0.15);
+    
+    /* ========================================
+       Spacing Scale (New System)
+       Base unit: 8px (0.5rem)
+       ======================================== */
+    --spacing-0: 0;
+    --spacing-1: 4px;      /* 0.25rem */
+    --spacing-2: 8px;      /* 0.5rem */
+    --spacing-3: 12px;     /* 0.75rem */
+    --spacing-4: 16px;     /* 1rem */
+    --spacing-5: 20px;     /* 1.25rem */
+    --spacing-6: 24px;     /* 1.5rem */
+    --spacing-8: 32px;     /* 2rem */
+    --spacing-10: 40px;    /* 2.5rem */
+    --spacing-12: 48px;    /* 3rem */
+    --spacing-16: 64px;    /* 4rem */
+    --spacing-20: 80px;    /* 5rem */
+    --spacing-24: 96px;    /* 6rem */
+    --spacing-32: 128px;   /* 8rem */
+    --spacing-40: 160px;   /* 10rem */
+    --spacing-48: 192px;   /* 12rem */
+
+    /* ========================================
+       Legacy Spacing Mapping (Old -> New)
+       ======================================== */
+    --spacing-xs: var(--spacing-2);   /* 8px */
+    --spacing-sm: var(--spacing-3);   /* 12px */
+    --spacing-md: var(--spacing-4);   /* 16px */
+    --spacing-lg: var(--spacing-5);   /* 20px */
+    --spacing-xl: var(--spacing-6);   /* 24px */
+    --spacing-2xl: var(--spacing-8);  /* 32px */
+    --spacing-3xl: var(--spacing-10); /* 40px */
+    --spacing-4xl: var(--spacing-16); /* 60px -> 64px (Aligned to grid) */
+    
+    /* ========================================
+       Section Spacing
+       ======================================== */
+    --section-spacing-xs: var(--spacing-10);   /* 40px */
+    --section-spacing-sm: var(--spacing-12);   /* 48px */
+    --section-spacing-md: var(--spacing-16);   /* 64px */
+    --section-spacing-lg: var(--spacing-20);   /* 80px */
+    --section-spacing-xl: var(--spacing-24);   /* 96px */
+    --section-spacing-2xl: var(--spacing-32);  /* 128px */
+    
+    /* Legacy Section Gaps */
+    --section-gap: var(--section-spacing-lg);      /* 80px */
+    --section-gap-lg: var(--section-spacing-xl);   /* 96px */
+    --section-gap-sm: var(--section-spacing-md);   /* 64px */
+
+    /* ========================================
+       Component Spacing
+       ======================================== */
+    --component-spacing-xs: var(--spacing-2);  /* 8px */
+    --component-spacing-sm: var(--spacing-3);  /* 12px */
+    --component-spacing-md: var(--spacing-4);  /* 16px */
+    --component-spacing-lg: var(--spacing-6);  /* 24px */
+    --component-spacing-xl: var(--spacing-8);  /* 32px */
+    --component-spacing-2xl: var(--spacing-10); /* 40px */
+    
+    /* ========================================
+       Hero/Header Spacing
+       ======================================== */
+    --hero-padding-top: var(--spacing-16);     /* 64px */
+    --hero-padding-bottom: var(--spacing-32);  /* 128px */
+    
+    /* ========================================
+       Content Block Spacing
+       ======================================== */
+    --content-padding-vertical: var(--spacing-16); /* 64px */
+    --content-padding-sm: var(--spacing-10);       /* 40px */
+    --content-padding-lg: var(--spacing-20);       /* 80px */
+    
+    /* ========================================
+       Special Large Spacing
+       ======================================== */
+    --spacing-ultra-lg: var(--spacing-40);     /* 160px */
+    --spacing-ultra-xl: var(--spacing-48);     /* 192px */
+
+    /* ========================================
+       Border Radius
+       ======================================== */
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 20px;
+    --radius-xl: 24px;
+    --radius-2xl: 30px;
+    --radius-3xl: 40px;
+    --radius-4xl: 50px;
+    --radius-round: 50%;
+    
+    /* ========================================
+       Typography
+       ======================================== */
+    --font-size-xs: 11px;
+    --font-size-xs-rem: 0.6875rem;
+    --font-size-sm: 13px;
+    --font-size-sm-rem: 0.8125rem;
+    --font-size-base: 14px;
+    --font-size-base-rem: 0.875rem;
+    --font-size-md: 15px;
+    --font-size-md-rem: 0.9375rem;
+    --font-size-lg: 16px;
+    --font-size-lg-rem: 1rem;
+    --font-size-xl: 17px;
+    --font-size-xl-rem: 1.0625rem;
+    --font-size-2xl: 20px;
+    --font-size-2xl-rem: 1.25rem;
+    --font-size-3xl: 24px;
+    --font-size-3xl-rem: 1.5rem;
+    --font-size-4xl: 26px;
+    --font-size-4xl-rem: 1.625rem;
+    --font-size-5xl: 28px;
+    --font-size-5xl-rem: 1.75rem;
+    
+    --line-height-tight: 1.1;
+    --line-height-normal: 1.2;
+    --line-height-relaxed: 1.3;
+    --line-height-loose: 1.5;
+    --line-height-extra-loose: 1.6;
+    
+    /* ========================================
+       Transitions
+       ======================================== */
+    --transition-fast: 0.25s;
+    --transition-normal: 0.3s;
+    --transition-slow: 0.5s;
+    --transition-ease: ease;
+    
+    /* ========================================
+       Blur Effects
+       ======================================== */
+    --blur-light: blur(6px);
+    --blur-medium: blur(8px);
+}
+
+/* ========================================
+   RESPONSIVE SPACING - Tablet
+   Breakpoint: 768px - 991px
+   ======================================== */
+@media (max-width: 991px) {
+    :root {
+        /* Section Spacing - Tablet */
+        --section-spacing-xs: 32px;
+        --section-spacing-sm: 40px;
+        --section-spacing-md: 48px;
+        --section-spacing-lg: 64px;
+        --section-spacing-xl: 80px;
+        --section-spacing-2xl: 96px;
+        
+        /* Hero Spacing - Tablet */
+        --hero-padding-top: 48px;
+        --hero-padding-bottom: 96px;
+        
+        /* Content Block Spacing - Tablet */
+        --content-padding-vertical: 48px;
+        --content-padding-sm: 32px;
+        --content-padding-lg: 64px;
+    }
+}
