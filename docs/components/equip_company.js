@@ -1,9 +1,6 @@
 const equipCompanyTemplate = document.createElement('template');
 equipCompanyTemplate.innerHTML = `
 <section class="equip company-equip allinone" id="slimrate-pos">
-    <img src="assets/img/custom-bg-1.svg" alt="Slimrate decorative background" class="custom-bg">
-    <img src="assets/img/bg-top-1.svg" alt="Slimrate decorative background" class="bg-top">
-    <img src="assets/img/bg-bot-1.svg" alt="Slimrate decorative background" class="bg-bottom">
     <div class="container allinone__wrap">
         <div class="block-left allinone__card">
             <div class="bg-decor-left"></div>
