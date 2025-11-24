@@ -27,11 +27,11 @@
 }
 
 .integration-card h3 i {
-    font-size: 36px;
+    font-size: var(--font-size-6xl);
 }
 
 .integration-card p {
-    font-size: 18px; /* Custom size */
+    font-size: var(--font-size-xl-plus);
     line-height: 1.6;
     color: var(--color-text-muted);
     margin-bottom: var(--spacing-lg);
@@ -84,7 +84,7 @@
     }
 
     .integration-card h3 i {
-        font-size: 28px;
+        font-size: var(--font-size-5xl);
     }
 
     .integration-card p {
@@ -92,7 +92,7 @@
     }
 
     .integration-features li {
-        font-size: 15px;
+        font-size: var(--font-size-md);
         padding-left: var(--spacing-lg);
     }
 }

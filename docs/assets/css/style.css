@@ -217,7 +217,8 @@ input.form-control:focus {
 
 .header-logo {
 
-    width: 209px;
+    max-width: 209px;
+    width: 100%;
 
     line-height: 0;
 
@@ -7792,7 +7793,8 @@ label.has-value {
 
     .block-img-circle {
 
-        width: 527px;
+        max-width: 527px;
+        width: 100%;
 
         height: auto;
 
@@ -7972,7 +7974,8 @@ label.has-value {
 
     .something-cards {
 
-        width: 1160px;
+        max-width: 1160px;
+        width: 100%;
 
     }
 
@@ -7980,7 +7983,8 @@ label.has-value {
 
     .we-support-cards {
 
-        width: 1160px;
+        max-width: 1160px;
+        width: 100%;
 
     }
 

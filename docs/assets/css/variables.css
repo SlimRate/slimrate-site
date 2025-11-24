@@ -45,6 +45,7 @@
        Colors - Neutrals
        ======================================== */
     --color-white: #ffffff;
+    --color-gray-50: #fafafa;
     --color-black: #000000;
     --color-bg-overlay: rgba(0, 0, 0, 0.1);
     --color-bg-overlay-dark: rgba(0, 0, 0, 0.15);
@@ -153,6 +154,8 @@
     --font-size-lg-rem: 1rem;
     --font-size-xl: 17px;
     --font-size-xl-rem: 1.0625rem;
+    --font-size-xl-plus: 18px;
+    --font-size-xl-plus-rem: 1.125rem;
     --font-size-2xl: 20px;
     --font-size-2xl-rem: 1.25rem;
     --font-size-3xl: 24px;
@@ -161,6 +164,8 @@
     --font-size-4xl-rem: 1.625rem;
     --font-size-5xl: 28px;
     --font-size-5xl-rem: 1.75rem;
+    --font-size-6xl: 36px;
+    --font-size-6xl-rem: 2.25rem;
     
     --line-height-tight: 1.1;
     --line-height-normal: 1.2;
