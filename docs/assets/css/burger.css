@@ -12,7 +12,6 @@
             line-height: 29px;
             font-weight: 600;
             color: #252525;
-            -webkit-transition: all 0.5s ease;
             transition: all 0.5s ease;
             position: relative;
         }
@@ -20,6 +19,7 @@
         .more ul {
             padding: 10px 12px;
         }
+
         .menu__item.i3.open, .menu__item.i4.open, .menu__item.i2.open, .menu__item.i1.open {
 background: #fafafa;
         }
@@ -29,7 +29,6 @@ background: #fafafa;
             line-height: 29px;
             font-weight: 400;
             color: #252525;
-            -webkit-transition: all 0.5s ease;
             transition: all 0.5s ease;
             position: relative;
         }
@@ -74,37 +73,37 @@ background: #fafafa;
         
         .i1.open .m1 {
             max-height: 1000rem;
-            padding-top: 0px;
+            padding-top: 0;
         }
         
         .i2.open .m2 {
             max-height: 1000rem;
-            padding-top: 0px;
+            padding-top: 0;
         }
         
         .i3.open .m3 {
             max-height: 1000rem;
-            padding-top: 0px;
+            padding-top: 0;
         }
         
         .i4.open .m4 {
             max-height: 1000rem;
-            padding-top: 0px;
+            padding-top: 0;
         }
         
         .i5.open .m5 {
             max-height: 1000rem;
-            padding-top: 0px;
+            padding-top: 0;
         }
         
         .i6.open .m6 {
             max-height: 1000rem;
-            padding-top: 0px;
+            padding-top: 0;
         }
         
         .i7.open .m7 {
             max-height: 1000rem;
-            padding-top: 0px;
+            padding-top: 0;
         }
         
         .menu_arrow_rotate {
@@ -208,11 +207,10 @@ background: #fafafa;
             padding-top: 80px;
             list-style: none;
             background-color: #fff;
-            box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
+            box-shadow: 1px 0 6px rgb(0, 0, 0, 0.2);
             transition-duration: 0.25s;
             min-height: 100%;
-            overflow-y: scroll;
-            overflow-x: hidden;
+            overflow: hidden scroll;
             padding-bottom: 40px;
         }
         
@@ -233,6 +231,7 @@ background: #fafafa;
         .lastLink {
             color: #2B6BF3 !important;
         }
+
         .flexContainer {
             display: flex;
             justify-content: space-between;

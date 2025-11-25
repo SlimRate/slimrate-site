@@ -28,7 +28,7 @@
 /* ===== HERO SECTION ===== */
 .product-hero {
     padding: 60px 0;
-    background: linear-gradient(135deg, #F9FAFB 0%, #FFFFFF 100%);
+    background: linear-gradient(135deg, #F9FAFB 0%, #FFF 100%);
 }
 
 .product-hero__container {
@@ -143,7 +143,7 @@
 .product-hero__gallery-thumb.active {
     border-color: #407AF4;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(64, 122, 244, 0.15);
+    box-shadow: 0 4px 12px rgb(64, 122, 244, 0.15);
 }
 
 /* ===== DETAIL SECTIONS ===== */
@@ -244,7 +244,7 @@
 
 .product-banner__subtitle {
     font-size: 18px;
-    color: rgba(255, 255, 255, 0.9);
+    color: rgb(255, 255, 255, 0.9);
     margin: 0;
     line-height: 1.6;
 }
@@ -352,7 +352,7 @@
     border-radius: 8px;
     margin-bottom: 16px;
     overflow: hidden;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 3px rgb(0, 0, 0, 0.1);
 }
 
 .product-faq__question {
@@ -406,7 +406,7 @@
 /* ===== RESPONSIVE STYLES ===== */
 
 /* Tablet */
-@media (max-width: 1024px) {
+@media (width <= 1024px) {
     .product-hero__grid,
     .product-details__grid {
         grid-template-columns: 1fr;
@@ -423,7 +423,7 @@
 }
 
 /* Mobile */
-@media (max-width: 768px) {
+@media (width <= 768px) {
     .product-hero {
         padding: 40px 0;
     }

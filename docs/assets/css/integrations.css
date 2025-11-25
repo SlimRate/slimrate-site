@@ -7,13 +7,13 @@
     border-radius: var(--radius-md); /* 16px, was 12px */
     padding: var(--spacing-3xl);
     margin-bottom: var(--spacing-2xl);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 8px rgb(0, 0, 0, 0.08);
     transition: transform var(--transition-normal) var(--transition-ease), box-shadow var(--transition-normal) var(--transition-ease);
 }
 
 .integration-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 8px 24px rgb(0, 0, 0, 0.12);
 }
 
 .integration-card h3 {
@@ -51,7 +51,7 @@
     color: var(--color-text-primary);
 }
 
-.integration-features li:before {
+.integration-features li::before {
     content: "✓";
     position: absolute;
     left: 0;
@@ -68,13 +68,13 @@
     margin: 0 auto;
 }
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
     .integrations-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-@media (max-width: 767px) {
+@media (width <= 767px) {
     .integration-card {
         padding: var(--spacing-xl);
     }
