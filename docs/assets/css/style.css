@@ -1043,7 +1043,7 @@ body {
 
 .mobile-app-features .products-card {
     max-width: 100%;
-    min-height: auto;
+    min-height: 0;
     padding: 18px;
     display: flex;
     flex-direction: column;
@@ -1413,6 +1413,8 @@ body {
     max-width: 560px;
     padding: 24px 24px 24px 120px;
     background: rgb(0, 0, 0, 0.1);
+    -webkit-backdrop-filter: blur(6px);
+
     backdrop-filter: blur(6px);
     border-radius: 0 50px 50px 0;
     margin-left: 0;
@@ -1465,6 +1467,8 @@ body {
     max-width: 560px;
     padding: 24px 24px 24px 120px;
     background: rgb(0, 0, 0, 0.1);
+    -webkit-backdrop-filter: blur(6px);
+
     backdrop-filter: blur(6px);
     border-radius: 0 50px 50px 0;
     margin-left: 0;
@@ -2126,6 +2130,7 @@ body {
     position: relative;
 
     /* Gradient mask for fade effect on edges */
+    -webkit-mask-image: linear-gradient(to right, transparent 0, black 128px, black calc(100% - 200px), transparent 100%);
     mask-image: linear-gradient(to right, transparent 0, black 128px, black calc(100% - 200px), transparent 100%);
 }
 
@@ -2490,6 +2495,9 @@ body {
     margin-left: auto;
     padding: 48px clamp(24px, 4vw, var(--section-spacing-lg));
     background: rgb(0, 0, 0, 0.1);
+    -webkit-backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+
     backdrop-filter: blur(6px);
     border-radius: 50px 0 0 50px;
     box-sizing: border-box;
@@ -5782,7 +5790,7 @@ label.has-value {
     .contact__left {
         padding: 70px 60px;
         border-radius: 0 100px 0 0;
-        min-height: auto;
+        min-height: 0;
 
     }
 
@@ -5826,6 +5834,8 @@ label.has-value {
         border-radius: 0 30px 30px 0;
         padding: 20px 20px 20px 60px;
         background: rgb(0, 0, 0, 0.1);
+        -webkit-backdrop-filter: blur(6px);
+
         backdrop-filter: blur(6px);
         max-width: 500px;
 
@@ -5855,6 +5865,8 @@ label.has-value {
 
 
     .main:not(.main-allPages) .block-left {
+        -webkit-backdrop-filter: blur(6px);
+
         backdrop-filter: blur(6px);
         background: rgb(0, 0, 0, 0.1);
         padding: 10px;
@@ -6715,7 +6727,7 @@ label.has-value {
 
 
     .main-allPages {
-        min-height: auto;
+        min-height: 0;
         margin: 0 16px;
         margin-bottom: 90px;
         padding-bottom: var(--section-spacing-lg);
@@ -6731,6 +6743,8 @@ label.has-value {
         border-radius: 0 30px 30px 0;
         padding: 20px 20px 20px 60px;
         background: rgb(0, 0, 0, 0.1);
+        -webkit-backdrop-filter: blur(6px);
+
         backdrop-filter: blur(6px);
         max-width: 500px;
 
@@ -6760,6 +6774,8 @@ label.has-value {
 
 
     .main:not(.main-allPages) .block-left {
+        -webkit-backdrop-filter: blur(6px);
+
         backdrop-filter: blur(6px);
         background: rgb(0, 0, 0, 0.1);
         padding: 10px;
@@ -7620,7 +7636,7 @@ label.has-value {
 
 
     .main-allPages {
-        min-height: auto;
+        min-height: 0;
         margin: 0 16px;
         margin-bottom: 90px;
         padding-bottom: var(--section-spacing-lg);
@@ -7636,6 +7652,8 @@ label.has-value {
         border-radius: 0 30px 30px 0;
         padding: 20px 20px 20px 60px;
         background: rgb(0, 0, 0, 0.1);
+        -webkit-backdrop-filter: blur(6px);
+
         backdrop-filter: blur(6px);
         max-width: 500px;
 
@@ -7665,6 +7683,8 @@ label.has-value {
 
 
     .main:not(.main-allPages) .block-left {
+               -webkit-backdrop-filter: blur(6px);
+
                backdrop-filter: blur(6px);
         background: rgb(0, 0, 0, 0.1);
         padding: 10px;
@@ -8525,7 +8545,7 @@ label.has-value {
 
 
     .main-allPages {
-        min-height: auto;
+        min-height: 0;
         margin: 0 16px;
         margin-bottom: 90px;
         padding-bottom: var(--section-spacing-lg);
@@ -8541,6 +8561,8 @@ label.has-value {
         border-radius: 0 30px 30px 0;
         padding: 20px 20px 20px 60px;
         background: rgb(0, 0, 0, 0.1);
+        -webkit-backdrop-filter: blur(6px);
+
         backdrop-filter: blur(6px);
         max-width: 500px;
 
@@ -8570,6 +8592,8 @@ label.has-value {
 
 
     .main:not(.main-allPages) .block-left {
+        -webkit-backdrop-filter: blur(6px);
+
         backdrop-filter: blur(6px);
         background: rgb(0, 0, 0, 0.1);
         padding: 10px;
@@ -9430,7 +9454,7 @@ label.has-value {
 
 
     .main-allPages {
-        min-height: auto;
+        min-height: 0;
         margin: 0 16px;
         margin-bottom: 90px;
         padding-bottom: var(--section-spacing-lg);
@@ -9446,6 +9470,8 @@ label.has-value {
         border-radius: 0 30px 30px 0;
         padding: 20px 20px 20px 60px;
         background: rgb(0, 0, 0, 0.1);
+        -webkit-backdrop-filter: blur(6px);
+
         backdrop-filter: blur(6px);
         max-width: 500px;
 
@@ -9475,6 +9501,8 @@ label.has-value {
 
 
     .main:not(.main-allPages) .block-left {
+        -webkit-backdrop-filter: blur(6px);
+
         backdrop-filter: blur(6px);
         background: rgb(0, 0, 0, 0.1);
         padding: 10px;
@@ -10335,7 +10363,7 @@ label.has-value {
 
 
     .main-allPages {
-        min-height: auto;
+        min-height: 0;
         margin: 0 16px;
         margin-bottom: 90px;
         padding-bottom: var(--section-spacing-lg);
@@ -10351,6 +10379,8 @@ label.has-value {
         border-radius: 0 30px 30px 0;
         padding: 20px 20px 20px 60px;
         background: rgb(0, 0, 0, 0.1);
+        -webkit-backdrop-filter: blur(6px);
+
         backdrop-filter: blur(6px);
         max-width: 500px;
 
@@ -10380,6 +10410,8 @@ label.has-value {
 
 
     .main:not(.main-allPages) .block-left {
+        -webkit-backdrop-filter: blur(6px);
+
         backdrop-filter: blur(6px);
         background: rgb(0, 0, 0, 0.1);
         padding: 10px;
@@ -11240,7 +11272,7 @@ label.has-value {
 
 
     .main-allPages {
-        min-height: auto;
+        min-height: 0;
         margin: 0 16px;
         margin-bottom: 90px;
         padding-bottom: var(--section-spacing-lg);
@@ -11256,6 +11288,8 @@ label.has-value {
         border-radius: 0 30px 30px 0;
         padding: 20px 20px 20px 60px;
         background: rgb(0, 0, 0, 0.1);
+        -webkit-backdrop-filter: blur(6px);
+
         backdrop-filter: blur(6px);
         max-width: 500px;
 
@@ -11285,6 +11319,8 @@ label.has-value {
 
 
     .main:not(.main-allPages) .block-left {
+        -webkit-backdrop-filter: blur(6px);
+
         backdrop-filter: blur(6px);
         background: rgb(0, 0, 0, 0.1);
         padding: 10px;
@@ -12145,7 +12181,7 @@ label.has-value {
 
 
     .main-allPages {
-        min-height: auto;
+        min-height: 0;
         margin: 0 16px;
         margin-bottom: 90px;
         padding-bottom: var(--section-spacing-lg);
@@ -12161,6 +12197,8 @@ label.has-value {
         border-radius: 0 30px 30px 0;
         padding: 20px 20px 20px 60px;
         background: rgb(0, 0, 0, 0.1);
+        -webkit-backdrop-filter: blur(6px);
+
         backdrop-filter: blur(6px);
         max-width: 500px;
 
@@ -12190,6 +12228,8 @@ label.has-value {
 
 
     .main:not(.main-allPages) .block-left {
+        -webkit-backdrop-filter: blur(6px);
+
         backdrop-filter: blur(6px);
         background: rgb(0, 0, 0, 0.1);
         padding: 10px;
