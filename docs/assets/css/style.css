@@ -4438,76 +4438,6 @@ label.has-value {
     }
 }
 
-/* Equip Allinone - Override for 767px to maintain layout like 768px */
-@media (width <= 767px) {
-    .equip.allinone .block-right {
-        width: 100%;
-        max-width: 400px;
-        aspect-ratio: 1 / 1;
-        height: auto !important;
-        overflow: visible;
-    }
-    
-    .equip.allinone .container {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    /* Preserve equip-img positions from 991px breakpoint, not 767px generic equip */
-    .equip.allinone .equip-img:nth-child(1) {
-        bottom: -48px;
-        left: -138px;
-        width: auto;
-        height: auto;
-    }
-    
-    .equip.allinone .equip-img:nth-child(2) {
-        left: -66px;
-        top: 90px;
-        width: auto;
-        height: auto;
-    }
-    
-    .equip.allinone .equip-img:nth-child(3) {
-        right: 79px;
-        top: -25px;
-        width: auto;
-        height: auto;
-    }
-    
-    .equip.allinone .equip-img:nth-child(4) {
-        right: 120px;
-        bottom: -66px;
-        left: auto;
-        width: auto;
-        height: auto;
-    }
-    
-    .equip.allinone .equip-img:nth-child(5) {
-        width: 150px;
-        left: -145px;
-        bottom: 89px;
-        right: auto;
-        top: auto;
-        inset: auto;
-    }
-    
-    .equip.allinone .equip-img:nth-child(6) {
-        width: 150px;
-        inset: -110px 117px auto auto;
-    }
-    
-    .equip.allinone .equip-img:nth-child(7) {
-        width: 150px;
-        inset: -27px auto auto -60px;
-    }
-    
-    .equip.allinone .equip-img:nth-child(8) {
-        width: 150px;
-        inset: 328px -25px auto auto;
-    }
-}
-
 /* Equip Allinone - Small Mobile */
 @media (max-width: 360px) {
     .equip.allinone .container {
@@ -13787,3 +13717,92 @@ label.has-value {
         display: flex;
         display: flex;
         flex-wrap: wrap; } }
+
+/* ============================================
+   EQUIP ALLINONE - Override for 767px and below
+   Must be at the end to override all other .equip styles
+   Matches the styles from @media (width <= 1199px) for consistency
+   ============================================ */
+@media (width <= 767px) {
+    .equip.allinone {
+        padding-bottom: 60px;
+    }
+    
+    .equip.allinone .block-right {
+        width: 100%;
+        max-width: 400px;
+        aspect-ratio: 1 / 1;
+        height: auto;
+        overflow: visible;
+    }
+    
+    .equip.allinone .container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    /* Override generic .equip-img positions with allinone-specific values */
+    /* These match the 768px+ layout from @media (width <= 1199px) */
+    .equip.allinone .equip-img:nth-child(1) {
+        width: 190px;
+        height: auto;
+        left: -120px;
+        bottom: -64px;
+        top: auto;
+        right: auto;
+    }
+    
+    .equip.allinone .equip-img:nth-child(2) {
+        width: 140px;
+        height: auto;
+        left: -50px;
+        top: 90px;
+        bottom: auto;
+        right: auto;
+    }
+    
+    .equip.allinone .equip-img:nth-child(3) {
+        width: 238px;
+        height: auto;
+        right: 25px;
+        top: -55px;
+        bottom: auto;
+        left: auto;
+    }
+    
+    .equip.allinone .equip-img:nth-child(4) {
+        width: 212px;
+        height: auto;
+        right: 64px;
+        bottom: -83px;
+        top: auto;
+        left: auto;
+    }
+    
+    .equip.allinone .equip-img:nth-child(5) {
+        width: 150px;
+        left: -144px;
+        bottom: 58px;
+        right: auto;
+        top: auto;
+    }
+    
+    .equip.allinone .equip-img:nth-child(6) {
+        width: 150px;
+        inset: -148px auto auto 192px;
+    }
+    
+    .equip.allinone .equip-img:nth-child(7) {
+        width: 150px;
+        left: -65px;
+        bottom: 243px;
+        right: auto;
+        top: auto;
+        inset: auto;
+    }
+    
+    .equip.allinone .equip-img:nth-child(8) {
+        width: 150px;
+        inset: auto -49px 31px auto;
+    }
+}
