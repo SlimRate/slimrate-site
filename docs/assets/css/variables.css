@@ -180,6 +180,29 @@
        ======================================== */
     --blur-light: blur(6px);
     --blur-medium: blur(8px);
+    
+    /* ========================================
+       Hardware Nav Section
+       ======================================== */
+    --hw-section-padding: clamp(40px, 6vw, 60px);
+    --hw-container-padding: clamp(16px, 5vw, 32px);
+    --hw-grid-gap: clamp(20px, 3vw, 32px);
+    --hw-card-gap: clamp(20px, 4vw, 48px);
+    --hw-card-padding: clamp(32px, 4vw, 48px);
+    --hw-card-radius: 20px;
+    --hw-hover-lift: -6px;
+    --hw-body-gap: 18px;
+    --hw-body-max-width: clamp(220px, 25vw, 320px);
+    --hw-img-scale-hover: 1;
+    --hw-cta-shadow-hover: 0 12px 24px rgba(255, 59, 48, 0.35);
+    --hw-img-shadow-hover: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.3));
+    
+    /* Hardware Nav Overlay Gradients */
+    --hw-overlay-default: linear-gradient(135deg, rgba(24, 35, 78, 0.9) 0%, rgba(46, 77, 148, 0.7) 100%);
+    --hw-overlay-tablets: linear-gradient(135deg, rgba(28, 43, 84, 0.92) 0%, rgba(65, 94, 178, 0.72) 100%);
+    --hw-overlay-emv: linear-gradient(160deg, rgba(25, 31, 66, 0.95) 0%, rgba(68, 40, 114, 0.7) 60%, rgba(110, 66, 183, 0.6) 100%);
+    --hw-overlay-printers: linear-gradient(150deg, rgba(23, 37, 68, 0.92) 0%, rgba(170, 36, 47, 0.68) 100%);
+    --hw-overlay-accessories: linear-gradient(150deg, rgba(20, 37, 78, 0.92) 0%, rgba(218, 63, 79, 0.68) 100%);
 }
 
 /* ========================================
