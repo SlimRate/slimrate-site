@@ -4456,30 +4456,9 @@ label.has-value {
 
 /* Equip Allinone - Mobile improvements for 320px-500px */
 @media (max-width: 500px) {
-    .equip.allinone .block-right {
-        max-width: 320px;
-    }
-    
-    .equip.allinone .equip-card {
-        left: 48%;
-    }
-    
     .equip.allinone .block-img-circle {
         transform: translateY(80px);
         opacity: 0.6;
-    }
-    
-    .equip.allinone .equip-card .equip-label a {
-        font-size: 11px;
-    }
-    
-    /* Move right-side labels inward on mobile */
-    .equip.allinone .equip-card .equip-img:nth-child(6) {
-        inset: -110px 80px auto auto;
-    }
-    
-    .equip.allinone .equip-card .equip-img:nth-child(8) {
-        inset: 328px 10px auto auto;
     }
 }
 
@@ -4496,10 +4475,6 @@ label.has-value {
     .equip.allinone .block-left {
         padding: clamp(20px, 4vw, 32px);
         border-radius: 0 60px;
-    }
-    
-    .equip.allinone .block-right {
-        max-width: 280px;
     }
     
     .equip.allinone .block-img-circle {
@@ -4526,30 +4501,6 @@ label.has-value {
         padding: 10px 20px;
         font-size: 14px;
     }
-    
-    .equip.allinone .equip-card {
-        --equip-card-scale: 0.55;
-        left: 46%;
-    }
-    
-    .equip.allinone .equip-card .equip-label a {
-        font-size: 10px;
-        padding-bottom: 8px;
-    }
-    
-    .equip.allinone .equip-card .equip-btn {
-        width: 20px;
-        height: 20px;
-    }
-    
-    /* Move right-side labels inward on small mobile */
-    .equip.allinone .equip-card .equip-img:nth-child(6) {
-        inset: -110px 50px auto auto;
-    }
-    
-    .equip.allinone .equip-card .equip-img:nth-child(8) {
-        inset: 328px 0 auto auto;
-    }
 }
 
 @media (max-width: 340px) {
@@ -4561,24 +4512,6 @@ label.has-value {
     .equip.allinone .block-left {
         padding: 16px;
         border-radius: 0 40px;
-    }
-    
-    .equip.allinone .block-right {
-        max-width: 250px;
-    }
-    
-    .equip.allinone .equip-card {
-        --equip-card-scale: 0.50;
-        left: 45%;
-    }
-    
-    /* Move right-side labels further inward on very small screens */
-    .equip.allinone .equip-card .equip-img:nth-child(6) {
-        inset: -110px 30px auto auto;
-    }
-    
-    .equip.allinone .equip-card .equip-img:nth-child(8) {
-        inset: 328px -10px auto auto;
     }
     
     .equip.allinone .allinone__title {
