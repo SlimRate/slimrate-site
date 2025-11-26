@@ -4438,6 +4438,76 @@ label.has-value {
     }
 }
 
+/* Equip Allinone - Override for 767px to maintain layout like 768px */
+@media (width <= 767px) {
+    .equip.allinone .block-right {
+        width: 100%;
+        max-width: 400px;
+        aspect-ratio: 1 / 1;
+        height: auto !important;
+        overflow: visible;
+    }
+    
+    .equip.allinone .container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    /* Preserve equip-img positions from 991px breakpoint, not 767px generic equip */
+    .equip.allinone .equip-img:nth-child(1) {
+        bottom: -48px;
+        left: -138px;
+        width: auto;
+        height: auto;
+    }
+    
+    .equip.allinone .equip-img:nth-child(2) {
+        left: -66px;
+        top: 90px;
+        width: auto;
+        height: auto;
+    }
+    
+    .equip.allinone .equip-img:nth-child(3) {
+        right: 79px;
+        top: -25px;
+        width: auto;
+        height: auto;
+    }
+    
+    .equip.allinone .equip-img:nth-child(4) {
+        right: 120px;
+        bottom: -66px;
+        left: auto;
+        width: auto;
+        height: auto;
+    }
+    
+    .equip.allinone .equip-img:nth-child(5) {
+        width: 150px;
+        left: -145px;
+        bottom: 89px;
+        right: auto;
+        top: auto;
+        inset: auto;
+    }
+    
+    .equip.allinone .equip-img:nth-child(6) {
+        width: 150px;
+        inset: -110px 117px auto auto;
+    }
+    
+    .equip.allinone .equip-img:nth-child(7) {
+        width: 150px;
+        inset: -27px auto auto -60px;
+    }
+    
+    .equip.allinone .equip-img:nth-child(8) {
+        width: 150px;
+        inset: 328px -25px auto auto;
+    }
+}
+
 /* Equip Allinone - Small Mobile */
 @media (max-width: 360px) {
     .equip.allinone .container {
