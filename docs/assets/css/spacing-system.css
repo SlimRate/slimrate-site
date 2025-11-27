@@ -1,0 +1,37 @@
+/* ========================================
+   SPACING SYSTEM CSS
+   ========================================
+   
+   This file redirects to the unified variables.css
+   Kept for backward compatibility with existing HTML imports.
+   
+   All spacing variables are now defined in variables.css
+   
+   ======================================== */
+
+/* This file intentionally left minimal.
+   All spacing is now managed through variables.css
+   which is imported before this file in the HTML.
+   
+   USAGE:
+   ------
+   Use CSS variables from variables.css:
+   
+   Spacing Scale:
+   - --spacing-1 through --spacing-48
+   - --spacing-xs, --spacing-sm, etc.
+   
+   Section Spacing:
+   - --section-spacing-xs through --section-spacing-2xl
+   - --section-gap, --section-gap-lg, --section-gap-sm
+   
+   Component Spacing:
+   - --component-spacing-xs through --component-spacing-2xl
+   
+   Hero/Header:
+   - --hero-padding-top, --hero-padding-bottom
+   
+   Content Blocks:
+   - --content-padding-vertical
+   - --content-padding-sm, --content-padding-lg
+*/

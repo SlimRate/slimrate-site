@@ -1,18 +1,47 @@
 /* ========================================
    CSS Custom Properties - Single Source of Truth
    Consolidated from style.css and spacing-system.css
+   
+   UNIFIED BREAKPOINT SYSTEM (Mobile-First)
+   ========================================
+   
+   BREAKPOINTS REFERENCE:
+   ----------------------
+   xs:  0      - 479px   (Small mobile)
+   sm:  480px  - 767px   (Mobile)
+   md:  768px  - 1023px  (Tablet)
+   lg:  1024px - 1279px  (Desktop)
+   xl:  1280px - 1439px  (Large desktop)
+   xxl: 1440px+          (Extra large)
+   
+   USAGE PATTERN (Mobile-First):
+   -----------------------------
+   Base styles = Mobile (xs/sm)
+   @media (min-width: 768px)  → Tablet+
+   @media (min-width: 1024px) → Desktop+
+   @media (min-width: 1280px) → Large Desktop+
+   
    ======================================== */
 
 :root {
     /* ========================================
-       Breakpoints
+       Breakpoints - Unified System
+       Use these values consistently across all media queries
        ======================================== */
-    --breakpoint-xs: 360px;
-    --breakpoint-sm: 480px;
-    --breakpoint-md: 767px;
-    --breakpoint-lg: 991px;
-    --breakpoint-xl: 1199px;
-    --breakpoint-xxl: 1300px;
+    --bp-xs: 360px;    /* Extra small mobile (rarely used) */
+    --bp-sm: 480px;    /* Small mobile → Mobile transition */
+    --bp-md: 768px;    /* Mobile → Tablet transition */
+    --bp-lg: 1024px;   /* Tablet → Desktop transition */
+    --bp-xl: 1280px;   /* Desktop → Large desktop transition */
+    --bp-xxl: 1440px;  /* Large desktop → Extra large transition */
+    
+    /* Legacy aliases (for backward compatibility) */
+    --breakpoint-xs: var(--bp-xs);
+    --breakpoint-sm: var(--bp-sm);
+    --breakpoint-md: var(--bp-md);
+    --breakpoint-lg: var(--bp-lg);
+    --breakpoint-xl: var(--bp-xl);
+    --breakpoint-xxl: var(--bp-xxl);
     
     /* ========================================
        Z-index layers
@@ -206,10 +235,10 @@
 }
 
 /* ========================================
-   RESPONSIVE SPACING - Tablet
-   Breakpoint: 768px - 991px
+   RESPONSIVE SPACING - Tablet (768px+)
+   Mobile-first: overrides base mobile values
    ======================================== */
-@media (width <= 991px) {
+@media (min-width: 768px) {
     :root {
         /* Section Spacing - Tablet */
         --section-spacing-xs: 32px;
@@ -227,5 +256,29 @@
         --content-padding-vertical: 48px;
         --content-padding-sm: 32px;
         --content-padding-lg: 64px;
+    }
+}
+
+/* ========================================
+   RESPONSIVE SPACING - Desktop (1024px+)
+   ======================================== */
+@media (min-width: 1024px) {
+    :root {
+        /* Section Spacing - Desktop */
+        --section-spacing-xs: 40px;
+        --section-spacing-sm: 48px;
+        --section-spacing-md: 64px;
+        --section-spacing-lg: 80px;
+        --section-spacing-xl: 96px;
+        --section-spacing-2xl: 128px;
+        
+        /* Hero Spacing - Desktop */
+        --hero-padding-top: 64px;
+        --hero-padding-bottom: 128px;
+        
+        /* Content Block Spacing - Desktop */
+        --content-padding-vertical: 64px;
+        --content-padding-sm: 40px;
+        --content-padding-lg: 80px;
     }
 }

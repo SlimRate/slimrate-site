@@ -4106,7 +4106,7 @@ label.has-value {
     }
 }
 
-@media (min-width: 1200px) {
+@media (width >= 1200px) {
     .equip.allinone {
         --allinone-row-height: 600px;
         --allinone-left-height: 500px;
@@ -4146,7 +4146,7 @@ label.has-value {
 }
 
 /* Equip Allinone - Tablet to Small Desktop (992px - 1199px) */
-@media (width >= 992px) and (width <= 1200px) {
+@media (min-width: 992px) and (max-width: 1199px) {
     .equip.allinone .block-left {
         aspect-ratio: auto;
         min-height: var(--allinone-square-size);
@@ -4169,14 +4169,14 @@ label.has-value {
 }
 
 /* Equip Allinone - Under 1200px */
-@media (width <= 1200px) {
+@media (max-width: 1199px) {
     .equip.allinone .container {
         gap: clamp(40px, 5vw, 60px);
     }
 }
 
 /* Equip Allinone - Tablets & Mobile (max-width: 991px) */
-@media (width <= 992px) {
+@media (max-width: 991px) {
     .equip.allinone {
         padding: 60px 0;
         overflow: visible;
@@ -4187,7 +4187,7 @@ label.has-value {
         align-items: center;
         gap: 60px;
         padding: 0 24px;
-        min-height: 0;
+        min-height: auto;
         height: auto;
     }
     
@@ -4195,7 +4195,7 @@ label.has-value {
         width: 100%;
         max-width: 600px;
         aspect-ratio: auto;
-        min-height: 0;
+        min-height: auto;
         height: auto;
         flex: 0 0 auto;
         position: relative;
@@ -4216,7 +4216,7 @@ label.has-value {
         width: 100%;
         max-width: 100%;
         height: auto;
-        min-height: 0;
+        min-height: auto;
         aspect-ratio: 1 / 1;
         margin: 0 auto;
         flex: 0 0 auto;
@@ -4271,7 +4271,7 @@ label.has-value {
 }
 
 /* Equip Allinone - Small Mobile */
-@media (width <= 360px) {
+@media (max-width: 360px) {
     .equip.allinone .container {
         gap: 35px;
         padding: 0 12px;
@@ -4287,14 +4287,14 @@ label.has-value {
 }
 
 /* Equip Allinone - Mobile improvements for 320px-500px */
-@media (width <= 480px) {
+@media (max-width: 500px) {
     .equip.allinone .block-img-circle {
         transform: translateY(80px);
         opacity: 0.6;
     }
 }
 
-@media (width <= 400px) {
+@media (max-width: 400px) {
     .equip.allinone {
         padding: 40px 0;
     }
@@ -4335,7 +4335,7 @@ label.has-value {
     }
 }
 
-@media (width <= 340px) {
+@media (max-width: 340px) {
     .equip.allinone .container {
         gap: 30px;
         padding: 0 10px;
@@ -5404,7 +5404,7 @@ label.has-value {
 /* ========================================
    Below 1199px - Tariff Cards: Vertical Stack (1 column)
    ======================================== */
-@media (width <= 1200px) {
+@media (width <= 1199px) {
     .tariff {
         padding-bottom: var(--section-spacing-xl);
         margin-top: var(--section-spacing-md);
@@ -5512,7 +5512,7 @@ label.has-value {
 /* ========================================
    Mobile (< 767px) - Tariff Cards: 1 column
    ======================================== */
-@media (width <= 768px) {
+@media (width <= 767px) {
     .tariff {
         padding-bottom: var(--section-spacing-lg);
         margin-top: var(--section-spacing-sm);
@@ -5953,7 +5953,7 @@ label.has-value {
 }
 
 /* Easy Guides - Responsive */
-@media (width <= 992px) {
+@media (width <= 991px) {
     .easy-guides__wrap {
         flex-direction: column;
         gap: 40px;
@@ -5971,7 +5971,7 @@ label.has-value {
     }
 }
 
-@media (width <= 768px) {
+@media (width <= 767px) {
     .easy-guides {
         padding: var(--section-spacing-md) 0;
     }
@@ -5994,7 +5994,7 @@ label.has-value {
     }
 }
 
-@media (width <= 480px) {
+@media (width <= 576px) {
     .easy-guides__media {
         border-radius: 24px;
         padding: 20px 20px 0;
@@ -6105,7 +6105,7 @@ label.has-value {
 
 
 
-@media (width <= 1280px) {
+@media screen and (width <= 1300px) {
     .dropmenu-info {
         margin-left: 40px;
 
@@ -6134,7 +6134,7 @@ label.has-value {
 
 
 
-@media (width <= 1200px) {
+@media screen and (width <= 1199px) {
     .contact__right::after {
         content: none;
 
@@ -6610,7 +6610,7 @@ label.has-value {
 
 }
 
-@media (width <= 768px) {
+@media (width <= 767px) {
     .types-card {
         flex-direction: column !important;
         margin-bottom: var(--component-spacing-xl);
@@ -7239,7 +7239,7 @@ label.has-value {
 
 
 
-@media (width <= 992px) {
+@media screen and (width <= 991px) {
     .off-mobile {
         display: none
 
@@ -7519,9 +7519,719 @@ label.has-value {
 
 }
 
+@media (width <= 767px) {
+    .types-card {
+        flex-direction: column !important;
+        margin-bottom: var(--component-spacing-xl);
+
+    }
 
 
 
+    .types-card__img {
+        max-width: none;
+
+    }
 
 
 
+    .types-card__text {
+        padding-top: 24px;
+        max-width: none;
+
+    }
+
+
+
+    .types .section-descr {
+        font-size: 16px;
+        line-height: 26px;
+        letter-spacing: 0;
+
+    }
+
+
+
+    .container {
+        max-width: 460px;
+
+    }
+
+    .gallery{
+        width: 180vh;
+
+    }
+
+
+
+    .tech-stack__right {
+        max-width: 460px;
+
+    }
+
+
+
+    .tech-stack .container {
+        max-width: 460px;
+
+    }
+
+
+
+    .tech-stack-card {
+        padding-left: 0;
+        max-width: inherit;
+
+    }
+
+
+
+    .img-bg {
+        display: none;
+
+    }
+
+
+
+    .advantages {
+        margin-bottom: 150px;
+
+    }
+
+
+
+    .advantages-cards {
+        flex-wrap: wrap;
+
+    }
+
+
+
+    .advantages-card {
+        margin-bottom: var(--component-spacing-2xl);
+
+    }
+
+
+
+    .advantages-allPages {
+        margin-bottom: 128px;
+
+    }
+
+    
+
+
+
+    .equip {
+        padding-bottom: 0;
+
+    }
+
+
+
+    .equip-text {
+        margin-bottom: var(--component-spacing-lg);
+
+    }
+
+
+
+    .equip .block-left {
+        max-width: none;
+
+    }
+
+
+
+    .equip .block-right {
+        max-width: none;
+        height: 446px;
+
+    }
+
+
+
+    .equip .block-img-circle {
+        width: 100%;
+        bottom: 25px;
+
+    }
+
+
+
+    .equip .container {
+        flex-direction: column;
+
+    }
+
+
+
+    .equip .bg-top {
+        bottom: 99%;
+
+    }
+
+
+
+    .equip .bg-bottom {
+        top: 98%;
+
+    }
+
+
+
+    .equip .section-title {
+        font-weight: 700;
+        font-size: 38px;
+        line-height: 48px;
+        text-transform: none;
+        max-width: none;
+        margin-bottom: var(--component-spacing-lg);
+
+    }
+
+
+
+    .equip-img:nth-child(1) {
+        width: 180px;
+        left: 20px;
+        bottom: 24px;
+
+    }
+
+
+
+    .equip-img:nth-child(2) {
+        left: 80px;
+        width: 120px;
+        top: 115px;
+
+    }
+
+
+
+    .equip-img:nth-child(3) {
+        top: 40px;
+        width: 172px;
+        right: 49px;
+
+    }
+
+
+
+    .equip-img:nth-child(4) {
+        width: 187px;
+        left: 237px;
+        bottom: 26px;
+        right: auto;
+
+    }
+
+
+
+    .equip-img:nth-child(5) {
+        width: 150px;
+        left: -26px;
+        bottom: 124px;
+        right: auto;
+
+    }
+
+
+
+    .equip-img:nth-child(6) {
+        width: 150px;
+        inset: -7px auto auto 349px;
+
+    }
+
+
+
+    .equip-img:nth-child(7) {
+        width: 150px;
+        inset: auto auto 63vw 10vw;
+
+    }
+
+
+
+    .equip-img:nth-child(8) {
+        width: 150px;
+        inset: auto -3% 28vw auto;
+
+    }
+
+
+
+    .who::before {
+        height: 100%;
+
+    }
+
+
+
+    .who-bg-bottom {
+        top: unset;
+        bottom: -1%;
+
+    }
+
+
+
+    .who-card:nth-child(4) {
+        display: none;
+
+    }
+
+
+
+    .coop {
+        padding: 50px 0 0;
+        margin-bottom: 210px;
+        background: #407af4;
+
+    }
+
+
+
+    .coop .img-bg {
+        display: none;
+
+    }
+
+
+
+    .coop .img-bg-top {
+        display: block;
+        width: 100%;
+        position: absolute;
+        bottom: 90%;
+
+    }
+
+
+
+    .coop .img-bg-bottom {
+        display: block;
+        width: 100%;
+        position: absolute;
+        top: 99%;
+        animation: 4s ease-in-out 0s infinite alternate none running meet-right-drawing-animation;
+        transform: translateX(-50%);
+
+    }
+
+
+
+    .coop-logo {
+        display: none;
+        margin-bottom: 34px;
+
+    }
+
+
+
+    .coop-logo-white {
+        display: block;
+
+    }
+
+
+
+    .products-cards {
+        flex-wrap: wrap;
+
+    }
+
+
+
+    .products-card {
+        max-width: 220px;
+        margin-bottom: var(--component-spacing-lg);
+
+    }
+
+
+
+    .products .container {
+        max-width: 617px;
+        padding: 80px 77px;
+
+    }
+
+
+
+    .products .container>a {
+        display: block;
+        margin-left: auto;
+        margin-top: 20px;
+
+    }
+
+
+
+    .products .container-header a {
+        display: none;
+
+    }
+
+
+
+    .faq {
+        padding-bottom: 180px;
+
+    }
+
+
+
+    .faq .section-title {
+        margin-bottom: var(--component-spacing-2xl);
+
+    }
+
+
+
+    .faq .container {
+        flex-direction: column;
+        max-width: 460px;
+
+    }
+
+
+
+    .faq--compact .container {
+        gap: 24px;
+        max-width: 100%;
+
+    }
+
+
+
+    .faq--compact .faq-block__left,
+
+    .faq--compact .faq-block__right {
+        max-width: 100%;
+
+    }
+
+
+
+    .faq--compact .faq__cta {
+        width: 100%;
+        text-align: center;
+
+    }
+
+
+
+    .contact {
+        margin-bottom: 180px;
+        padding: 60px 0;
+
+    }
+
+
+
+    .contact .section-title {
+        text-align: center;
+        margin-bottom: 18px;
+        font-size: 36px;
+        line-height: 46px;
+
+    }
+
+
+
+    .contact .section-descr {
+        max-width: 420px;
+        margin: 0 auto 8px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 26px;
+        text-align: center;
+
+    }
+
+
+
+    .contact__left {
+        max-width: none;
+        margin-bottom: var(--component-spacing-lg);
+        padding: 54px 36px;
+        border-radius: 0 80px 0 0;
+        text-align: center;
+        align-items: center;
+
+    }
+
+
+
+    .tech-stack__left {
+        max-width: none;
+        margin-bottom: var(--component-spacing-lg);
+
+    }
+
+
+
+    .contact .container {
+        flex-direction: column;
+        max-width: 520px;
+        gap: 32px;
+
+    }
+
+
+
+    .contact__right {
+        padding: 54px 36px;
+        border-radius: 40px;
+
+    }
+
+
+
+    .form__btn {
+        margin: 0 auto;
+
+    }
+
+
+
+    .form__input-body {
+        max-width: 220px;
+
+    }
+
+
+
+    .form__select label {
+        min-width: 140px;
+
+    }
+
+
+
+    .tariff {
+        padding-bottom: 150px;
+
+    }
+
+
+
+    .tariff .container {
+        -ms-flex-align: start;
+        align-items: flex-start;
+
+    }
+
+
+
+    .tariff .container-header .section-title {
+        text-transform: none;
+        width: 100%;
+        text-align: center;
+
+    }
+
+
+
+    .tariff .container-header .section-descr {
+        text-align: center;
+
+    }
+
+
+
+    .tariff-descr {
+        flex-wrap: wrap;
+        gap: 12px;
+
+    }
+
+
+
+    .tariff-cards {
+        max-width: none;
+        width: 320px;
+
+    }
+
+
+
+    .hardware-cards {
+        max-width: none;
+        width: 320px;
+
+    }
+
+
+
+    .hardware-card {
+        margin: 0 auto;
+
+    }
+
+
+
+    .tariff-card {
+        margin: 0 auto;
+
+    }
+
+
+
+    .footer-top {
+        padding-bottom: 0;
+        flex-direction: column;
+
+    }
+
+
+
+    .footer-top ul {
+        display: -webkit-box;
+        display: flex;
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: var(--component-spacing-2xl);
+
+    }
+
+
+
+    .footer-top ul li {
+        margin-right: 20px;
+        margin-bottom: 0;
+
+    }
+
+
+
+    .footer-top ul li:last-child {
+        margin-right: 0;
+
+    }
+
+
+
+    .footer-top ul li:first-child {
+        width: 100%;
+        margin-bottom: 12px;
+
+    }
+
+
+
+    .footer-bottom {
+        padding-top: 40px;
+        max-width: 320px;
+        margin: 0 auto;
+
+    }
+
+
+
+    .footer-bottom ul {
+        display: -webkit-box;
+        display: flex;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 auto;
+        -ms-flex-pack: center;
+        justify-content: center;
+
+    }
+
+}
+
+
+/* ============================================
+   EQUIP ALLINONE - Override for 767px and below
+   Must be at the end to override all other .equip styles
+   Matches the styles from @media (width <= 1199px) for consistency
+   ============================================ */
+@media (width <= 767px) {
+    .equip.allinone {
+        padding-bottom: 60px;
+    }
+    
+    .equip.allinone .block-right {
+        width: 100%;
+        max-width: 100%;
+        aspect-ratio: 1 / 1;
+        height: auto;
+        overflow: visible;
+    }
+    
+    .equip.allinone .container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    /* Override generic .equip-img positions with allinone-specific values */
+    /* These match the 768px+ layout from @media (width <= 1199px) */
+    .equip.allinone .equip-img:nth-child(1) {
+        width: 190px;
+        height: auto;
+        left: -120px;
+        bottom: -64px;
+        top: auto;
+        right: auto;
+    }
+    
+    .equip.allinone .equip-img:nth-child(2) {
+        width: 140px;
+        height: auto;
+        left: -50px;
+        top: 90px;
+        bottom: auto;
+        right: auto;
+    }
+    
+    .equip.allinone .equip-img:nth-child(3) {
+        width: 238px;
+        height: auto;
+        right: 25px;
+        top: -55px;
+        bottom: auto;
+        left: auto;
+    }
+    
+    .equip.allinone .equip-img:nth-child(4) {
+        width: 212px;
+        height: auto;
+        right: 64px;
+        bottom: -83px;
+        top: auto;
+        left: auto;
+    }
+    
+    .equip.allinone .equip-img:nth-child(5) {
+        width: 150px;
+        left: -144px;
+        bottom: 58px;
+        right: auto;
+        top: auto;
+    }
+    
+    .equip.allinone .equip-img:nth-child(6) {
+        width: 150px;
+        inset: -148px auto auto 192px;
+    }
+    
+    .equip.allinone .equip-img:nth-child(7) {
+        width: 150px;
+        left: -65px;
+        bottom: 243px;
+        right: auto;
+        top: auto;
+        inset: auto;
+    }
+    
+    .equip.allinone .equip-img:nth-child(8) {
+        width: 150px;
+        inset: auto -49px 31px auto;
+    }
+}
