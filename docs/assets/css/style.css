@@ -4410,10 +4410,16 @@ label.has-value {
     }
     
     .equip.allinone .block-right {
+        position: relative;
         width: 100%;
-        max-width: 400px;
+        max-width: 100%;
+        height: auto;
+        min-height: auto;
         aspect-ratio: 1 / 1;
+        margin: 0 auto;
+        flex: 0 0 auto;
         order: 2;
+        z-index: var(--z-content);
         overflow: visible;
     }
     
@@ -4427,6 +4433,30 @@ label.has-value {
     
     .equip.allinone .block-right .bg-decor-right {
         display: none;
+    }
+    
+    .equip.allinone .block-img-circle {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        transform: translateY(90px);
+        margin: 0;
+    }
+    
+    .equip.allinone .equip-card {
+        left: 50%;
+        --equip-card-scale: 0.95;
+        transform: translate(-50%, -50%) scale(0.95) !important;
+    }
+    
+    .equip.allinone .equip-img:nth-child(7) {
+        top: 0;
+    }
+    
+    .equip.allinone .equip-img:nth-child(8) {
+        top: auto;
+        bottom: 80px;
     }
     
     .equip.allinone .allinone__title {
@@ -13730,7 +13760,7 @@ label.has-value {
     
     .equip.allinone .block-right {
         width: 100%;
-        max-width: 400px;
+        max-width: 100%;
         aspect-ratio: 1 / 1;
         height: auto;
         overflow: visible;
