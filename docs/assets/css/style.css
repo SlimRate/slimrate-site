@@ -6576,7 +6576,9 @@ label.has-value {
 
 
     .breadcrumb {
-        display: none;
+        /* Show breadcrumb with horizontal scroll instead of hiding */
+        display: flex;
+        font-size: 14px;
 
     }
 
@@ -7485,7 +7487,9 @@ label.has-value {
 
 
     .breadcrumb {
-        display: none;
+        /* Breadcrumb visible on mobile with scroll - see mobile improvements */
+        display: flex;
+        font-size: 12px;
 
     }
 
@@ -7520,8 +7524,459 @@ label.has-value {
 }
 
 
+/* ========================================
+   MOBILE RESPONSIVENESS IMPROVEMENTS
+   Additional fixes for better mobile experience
+   ======================================== */
 
+/* ----------------------------------------
+   1. PRICING COMPARISON TABLE - CARD VIEW FOR MOBILE
+   Transform table to stacked cards on small screens
+   ---------------------------------------- */
+@media (width <= 480px) {
+    /* Scroll indicator for horizontal scroll */
+    .pricing-comparison__table-wrapper {
+        position: relative;
+    }
+    
+    .pricing-comparison__table-wrapper::after {
+        content: "← Прокрутите →";
+        display: block;
+        text-align: center;
+        font-size: 12px;
+        color: #6b7280;
+        padding: 8px;
+        background: linear-gradient(to right, rgba(99, 102, 241, 0.1), rgba(99, 102, 241, 0.05));
+        border-radius: 0 0 8px 8px;
+    }
+    
+    /* Improve table readability on mobile */
+    .pricing-comparison__table {
+        min-width: 500px;
+    }
+    
+    .pricing-comparison__table th {
+        font-size: 11px;
+        padding: 8px 4px;
+        line-height: 1.3;
+    }
+    
+    .pricing-comparison__table td {
+        padding: 6px 4px;
+    }
+    
+    .pricing-comparison__table td.feature-name {
+        font-size: 11px;
+        line-height: 1.4;
+        min-width: 140px;
+    }
+    
+    .pricing-comparison__table .checkmark {
+        font-size: 16px;
+    }
+    
+    .pricing-comparison__table .no-check {
+        font-size: 16px;
+    }
+    
+    .pricing-comparison__table .checkmark.special {
+        font-size: 9px;
+        display: block;
+        line-height: 1.2;
+    }
+}
 
+/* ----------------------------------------
+   2. TARIFF CARDS - BETTER MOBILE OPTIMIZATION
+   ---------------------------------------- */
+@media (width <= 480px) {
+    .tariff-card {
+        height: auto;
+        min-height: unset;
+        padding: var(--spacing-md);
+    }
+    
+    .tariff-card__title {
+        font-size: 20px;
+        margin-bottom: 8px;
+    }
+    
+    .tariff-card__text {
+        font-size: 14px;
+        line-height: 1.5;
+        margin-bottom: 12px;
+    }
+    
+    .tariff-card ul {
+        margin-bottom: 16px;
+    }
+    
+    .tariff-card ul li {
+        font-size: 13px;
+        line-height: 1.5;
+        margin-bottom: 6px;
+        padding-left: 20px;
+    }
+    
+    .tariff-card__price {
+        margin-bottom: 16px;
+    }
+    
+    .tariff-card__price span {
+        font-size: 28px;
+    }
+    
+    .tariff-card .btn-red {
+        width: 100%;
+        padding: 14px 20px;
+        font-size: 15px;
+        text-align: center;
+    }
+}
 
+/* ----------------------------------------
+   3. SLIDER NAVIGATION DOTS - LARGER TOUCH TARGETS
+   ---------------------------------------- */
+@media (width <= 768px) {
+    /* Slick slider dots */
+    .slick-dots {
+        bottom: -30px;
+    }
+    
+    .slick-dots li {
+        margin: 0 6px;
+    }
+    
+    .slick-dots li button {
+        width: 12px;
+        height: 12px;
+        padding: 0;
+    }
+    
+    .slick-dots li button::before {
+        font-size: 12px;
+        width: 12px;
+        height: 12px;
+        line-height: 12px;
+    }
+    
+    /* Features tabs - larger touch area */
+    .features-tabs [role="tablist"] button,
+    .features-tabs .slick-dots li button {
+        min-width: 44px;
+        min-height: 44px;
+    }
+}
 
+/* ----------------------------------------
+   4. FORM BUTTONS - FULL WIDTH ON MOBILE
+   ---------------------------------------- */
+@media (width <= 480px) {
+    .form__btn,
+    .contact-form button[type="submit"],
+    .company-form-wrap button.btn-main,
+    .btn-main,
+    .btn-red {
+        width: 100%;
+        padding: 16px 24px;
+        font-size: 16px;
+        text-align: center;
+    }
+    
+    /* Specific form improvements */
+    .form__select {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .form__select label {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .form__input {
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+}
+
+/* ----------------------------------------
+   5. BREADCRUMB - SCROLLABLE ON MOBILE
+   ---------------------------------------- */
+@media (width <= 768px) {
+    .breadcrumb {
+        display: flex;
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        padding-bottom: 8px;
+        margin-bottom: var(--component-spacing-lg);
+    }
+    
+    .breadcrumb::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .breadcrumb a {
+        font-size: 14px;
+        flex-shrink: 0;
+    }
+    
+    .breadcrumb img {
+        margin: 0 8px;
+        flex-shrink: 0;
+    }
+}
+
+@media (width <= 480px) {
+    .breadcrumb {
+        font-size: 12px;
+    }
+    
+    .breadcrumb a {
+        font-size: 12px;
+    }
+    
+    .breadcrumb img {
+        margin: 0 6px;
+        width: 12px;
+        height: auto;
+    }
+}
+
+/* ----------------------------------------
+   6. FOOTER - IMPROVED GRID LAYOUT
+   ---------------------------------------- */
+@media (width <= 992px) {
+    .footer-top {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+        padding-bottom: var(--component-spacing-xl);
+    }
+    
+    .footer-top ul {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 0;
+    }
+    
+    .footer-top ul li {
+        margin-right: 0;
+        margin-bottom: 8px;
+    }
+    
+    .footer-top ul li:first-child {
+        width: auto;
+        margin-bottom: 12px;
+    }
+}
+
+@media (width <= 480px) {
+    .footer-top {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+    
+    .footer-top ul {
+        text-align: center;
+    }
+    
+    .footer-top ul li:first-child {
+        font-size: 18px;
+    }
+    
+    .footer-bottom {
+        padding-top: 24px;
+    }
+    
+    .footer-bottom ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+    
+    .footer-bottom ul li {
+        margin: 0;
+    }
+}
+
+/* ----------------------------------------
+   7. FAQ SECTION - MOBILE OPTIMIZATION
+   ---------------------------------------- */
+@media (width <= 768px) {
+    .faq .container {
+        flex-direction: column;
+        padding: 0 var(--spacing-md);
+        gap: 32px;
+    }
+    
+    .faq-block__left {
+        max-width: 100%;
+        text-align: center;
+    }
+    
+    .faq-block__right {
+        max-width: 100%;
+    }
+    
+    .faq--compact .container {
+        flex-direction: column;
+        gap: 24px;
+    }
+    
+    .faq--compact .faq-block__left {
+        max-width: 100%;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .faq--compact .faq-block__right {
+        max-width: 100%;
+    }
+}
+
+@media (width <= 480px) {
+    .faq {
+        padding: var(--section-spacing-md) 0;
+    }
+    
+    .faq-question {
+        margin-bottom: var(--component-spacing-lg);
+    }
+    
+    .faq-question summary,
+    .faq-question .question-title {
+        font-size: 14px;
+        line-height: 1.5;
+        padding: 12px 16px;
+    }
+    
+    .faq-question .answer,
+    .faq-question p {
+        font-size: 13px;
+        line-height: 1.6;
+        padding: 0 16px 12px;
+    }
+    
+    .faq--compact .faq-block__lead {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+    
+    .faq--compact .faq__cta {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* ----------------------------------------
+   8. PRODUCT IMAGES - BETTER CONTAINMENT
+   ---------------------------------------- */
+@media (width <= 768px) {
+    .product-image img,
+    .hardware-card img,
+    .product-hero__image img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        max-height: 280px;
+    }
+}
+
+@media (width <= 480px) {
+    .product-image img,
+    .hardware-card img,
+    .product-hero__image img {
+        max-height: 220px;
+    }
+    
+    .hardware-card {
+        transform: none;
+        margin: 0 auto;
+    }
+}
+
+/* ----------------------------------------
+   9. GENERAL MOBILE IMPROVEMENTS
+   ---------------------------------------- */
+@media (width <= 480px) {
+    /* Prevent horizontal overflow */
+    body {
+        overflow-x: hidden;
+    }
+    
+    .container {
+        padding-left: var(--spacing-md);
+        padding-right: var(--spacing-md);
+    }
+    
+    /* Section titles */
+    .section-title {
+        font-size: 24px;
+        line-height: 1.3;
+    }
+    
+    .section-descr {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+    
+    /* Ensure minimum touch target size (44x44px) */
+    a, button, input[type="submit"], 
+    input[type="button"], .btn {
+        min-height: 44px;
+    }
+    
+    /* Improve text readability */
+    p, li {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+}
+
+/* ----------------------------------------
+   10. CONTACT SECTION - MOBILE FIXES
+   ---------------------------------------- */
+@media (width <= 480px) {
+    .contact__left-inner .section-title {
+        font-size: 22px;
+    }
+    
+    .contact__right {
+        padding: var(--spacing-md);
+    }
+    
+    .form__group {
+        margin-bottom: 12px;
+    }
+    
+    .form__label {
+        font-size: 14px;
+        margin-bottom: 4px;
+    }
+}
+
+/* ----------------------------------------
+   11. HARDWARE CARDS - MOBILE GRID
+   ---------------------------------------- */
+@media (width <= 768px) {
+    .hardware-cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+    
+    .hardware-card {
+        max-width: 100%;
+    }
+}
+
+@media (width <= 480px) {
+    .hardware-cards {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
 
