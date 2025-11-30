@@ -1639,6 +1639,21 @@ body {
 
 }
 
+/* Gallery styles for hero background image */
+.main-bg .gallery,
+.main-bg .gallery .slick-list,
+.main-bg .gallery .slick-track {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.main-bg .gallery img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+    object-position: center;
+}
+
 
 
 .company-faq {
