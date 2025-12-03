@@ -1,21 +1,21 @@
 const testimonials = [
   {
-    image: 'assets/img/gallery/c-testimonials/image (1).png',
-    title: 'Golf Course',
+    image: 'assets/img/gallery/h-bars/1.webp',
+    title: 'Bar',
     challenge:
-      'Managing tee time bookings, membership renewals, pro shop sales, and restaurant operations with an outdated system.',
+      'Tracking drink inventory, managing tabs, and running promotions manually was slow and error-prone.',
     solution:
-      'A comprehensive POS system integrating all functions into a single platform.',
+      'Our POS system integrates inventory tracking, tab management, and promotions, making bar operations faster and more accurate.',
     stats: [
       {
         label: 'Increased Revenue',
         value: '20%',
-        info: 'Rise in pro shop sales',
+        info: 'Rise in drink sales',
       },
       {
         label: 'Enhanced Customer Experience',
         value: '16%',
-        info: 'Quicker check-ins',
+        info: 'Quicker tab management',
       },
       // { label: 'Increased Memberships', value: '25%', info: 'growth in memberships' }
     ],
@@ -107,12 +107,12 @@ const testimonials = [
     ],
   },
   {
-    image: 'assets/img/gallery/c-testimonials/image (6).png',
-    title: 'Sober House Network',
+    image: 'assets/img/gallery/r-liquor/1.webp',
+    title: 'Liquor Store',
     challenge:
-      'Managing multiple locations, tracking resident payments, scheduling counseling sessions, and ensuring inventory of daily essentials with manual processes',
+      'Keeping track of inventory, processing sales, and managing customer loyalty programs manually was time-consuming and prone to errors.',
     solution:
-      'A tailored POS system for real-time tracking of payments, automated scheduling, and resident management.',
+      'Our POS system integrates inventory management, sales reporting, and customer loyalty programs, streamlining operations and saving time.',
     stats: [
       {
         label: 'Improved Efficiency',
