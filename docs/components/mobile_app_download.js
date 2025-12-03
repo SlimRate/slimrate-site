@@ -1,8 +1,6 @@
 const mobileAppDownloadTemplate = document.createElement('template');
 mobileAppDownloadTemplate.innerHTML = `
 <section class="mobile-app-download" id="download">
-    <img src="assets/img/bg-top-2.svg" alt="Background decoration" class="bg-top">
-    <img src="assets/img/bg-bot-2.svg" alt="Background decoration" class="bg-bottom">
     <div class="container">
         <div class="download-content">
             <h2 class="section-title">Download <span>Now</span></h2>
@@ -26,27 +24,14 @@ mobileAppDownloadTemplate.innerHTML = `
 <style>
 .mobile-app-download {
     position: relative;
-    margin-bottom: 165px;
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    margin: 0 20px var(--section-spacing-lg, 60px);
+    max-width: calc(1400px - 40px);
+    margin-left: auto;
+    margin-right: auto;
+    background: linear-gradient(145deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 32px;
     overflow: hidden;
-}
-
-.mobile-app-download .bg-top,
-.mobile-app-download .bg-bottom {
-    position: absolute;
-    width: 100%;
-    height: auto;
-    z-index: 0;
-}
-
-.mobile-app-download .bg-top {
-    top: 0;
-    left: 0;
-}
-
-.mobile-app-download .bg-bottom {
-    bottom: 0;
-    left: 0;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
 }
 
 .mobile-app-download .container {
@@ -102,6 +87,11 @@ mobileAppDownloadTemplate.innerHTML = `
 }
 
 @media (max-width: 768px) {
+    .mobile-app-download {
+        margin: 0 12px var(--section-spacing-lg, 60px);
+        border-radius: 24px;
+    }
+    
     .download-buttons {
         flex-direction: column;
         align-items: center;

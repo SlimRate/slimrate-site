@@ -1,0 +1,107 @@
+/* ========================================
+   Integrations Page Styles
+   ======================================== */
+
+.integration-card {
+    background: var(--color-white);
+    border-radius: var(--radius-md); /* 16px, was 12px */
+    padding: var(--spacing-3xl);
+    margin-bottom: var(--spacing-2xl);
+    box-shadow: 0 2px 8px rgb(0, 0, 0, 0.08);
+    transition: transform var(--transition-normal) var(--transition-ease), box-shadow var(--transition-normal) var(--transition-ease);
+}
+
+.integration-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgb(0, 0, 0, 0.12);
+}
+
+.integration-card h3 {
+    color: var(--color-primary);
+    font-size: var(--font-size-5xl); /* 28px */
+    font-weight: 700;
+    margin-bottom: var(--spacing-lg);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.integration-card h3 i {
+    font-size: 36px;
+}
+
+.integration-card p {
+    font-size: 18px; /* Custom size */
+    line-height: 1.6;
+    color: var(--color-text-muted);
+    margin-bottom: var(--spacing-lg);
+}
+
+.integration-features {
+    list-style: none;
+    padding: 0;
+    margin: var(--spacing-xl) 0;
+}
+
+.integration-features li {
+    padding: var(--spacing-sm) 0;
+    padding-left: var(--spacing-xl);
+    position: relative;
+    font-size: var(--font-size-lg); /* 16px */
+    color: var(--color-text-primary);
+}
+
+.integration-features li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+    font-weight: bold;
+    font-size: var(--font-size-2xl); /* 20px */
+}
+
+.integrations-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-2xl);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media (width >= 768px) {
+    .integrations-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (width <= 767px) {
+    .integration-card {
+        padding: var(--spacing-xl);
+    }
+
+    .integration-card h3 {
+        font-size: var(--font-size-3xl); /* 24px */
+    }
+
+    .integration-card h3 i {
+        font-size: 28px;
+    }
+
+    .integration-card p {
+        font-size: var(--font-size-lg); /* 16px */
+    }
+
+    .integration-features li {
+        font-size: 15px;
+        padding-left: var(--spacing-lg);
+    }
+}
+
+.mainPageHeader--integrations {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #1a4cc9 100%);
+}
+
+.mainPageHeader--integrations .section-title,
+.mainPageHeader--integrations .section-descr {
+    color: var(--color-white);
+}

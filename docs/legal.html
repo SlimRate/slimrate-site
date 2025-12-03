@@ -2,13 +2,18 @@
 <html lang="en">
 
 <head>
-<!-- Google tag (gtag.js) -->
+<!-- Google tag (gtag.js) with Consent Mode -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-42Y6GNN6DE"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
+  
+  // Default consent to denied until user accepts
+  gtag('consent', 'default', {
+    'analytics_storage': 'denied'
+  });
+  
   gtag('js', new Date());
-
   gtag('config', 'G-42Y6GNN6DE');
 </script>
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.webp">
@@ -32,13 +37,14 @@
     <meta property="og:image" content="https://slimrate.com/apple-touch-icon.webp"/>
     <meta name="geo.region" content="US"/>
     <title>Slimrate</title>
-    <link rel="stylesheet" href="assets/css/spacing-system.css">
+    <link rel="stylesheet" href="assets/css/variables.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
     <link rel="stylesheet" href="assets/slick/slick.css">
     <link rel="stylesheet" href="assets/slick/slick-theme.css">
     <link rel="stylesheet" href="assets/css/burger.css">
-    <link rel="stylesheet" href="assets/css/layout-overrides.css">
+    <link rel="stylesheet" href="assets/css/fixes.css">
+    
     <!-- Define custom components -->
     <script src="components/top_menu.js"></script>
     <script src="components/faq.js"></script>
@@ -60,9 +66,55 @@
 <body>
     <top-menu></top-menu>
     <div class="wrapper">
-        <center>
-            <h2>Coming soon</h2>
-        </center>
+        <div class="text" style="margin-top:50pt; margin-bottom:20pt; margin-left:128pt; margin-right:128pt">
+            <h1 style="margin-top:0pt; margin-bottom:20pt; text-align:center;">Legal Information</h1>
+            
+            <p style="margin-top:0pt; margin-bottom:10pt;"><strong>Last Updated:</strong> December 2, 2025</p>
+
+            <h2 style="margin-top:25pt; margin-bottom:10pt;">Company Information</h2>
+            <p style="margin-top:0pt; margin-bottom:15pt;">
+                Slimrate, LLC is a Florida limited liability company providing Point of Sale (POS) software, hardware, and payment processing services to businesses across the United States.
+            </p>
+
+            <h2 style="margin-top:25pt; margin-bottom:10pt;">Legal Documents</h2>
+            <p style="margin-top:0pt; margin-bottom:15pt;">
+                The following legal documents govern your use of our website and services:
+            </p>
+            <ul style="margin:0pt; padding-left:30pt; margin-bottom:15pt;">
+                <li style="margin-bottom:10pt;"><a href="privacy.html"><strong>Privacy Policy</strong></a> - Describes how we collect, use, and protect your personal information.</li>
+                <li style="margin-bottom:10pt;"><a href="terms.html"><strong>Terms of Service</strong></a> - The terms and conditions governing your use of our services.</li>
+                <li style="margin-bottom:10pt;"><a href="cookie.html"><strong>Cookie Policy</strong></a> - Information about how we use cookies on our website.</li>
+                <li style="margin-bottom:10pt;"><a href="merchant.html"><strong>Merchant Agreement</strong></a> - Terms specific to merchants using our payment processing services.</li>
+            </ul>
+
+            <h2 style="margin-top:25pt; margin-bottom:10pt;">Copyright Notice</h2>
+            <p style="margin-top:0pt; margin-bottom:15pt;">
+                © 2024 Slimrate, LLC. All rights reserved. All content, trademarks, logos, and intellectual property displayed on this website are the property of Slimrate, LLC or their respective owners. Unauthorized reproduction, distribution, or modification of any materials on this site is strictly prohibited.
+            </p>
+
+            <h2 style="margin-top:25pt; margin-bottom:10pt;">Trademark Information</h2>
+            <p style="margin-top:0pt; margin-bottom:15pt;">
+                "Slimrate" and the Slimrate logo are trademarks of Slimrate, LLC. Other product and company names mentioned on this site may be trademarks of their respective owners.
+            </p>
+
+            <h2 style="margin-top:25pt; margin-bottom:10pt;">Disclaimer</h2>
+            <p style="margin-top:0pt; margin-bottom:15pt;">
+                The information provided on this website is for general informational purposes only. While we strive to keep the information accurate and up-to-date, we make no representations or warranties of any kind about the completeness, accuracy, reliability, or availability of the information, products, or services contained on the website.
+            </p>
+
+            <h2 style="margin-top:25pt; margin-bottom:10pt;">Governing Law</h2>
+            <p style="margin-top:0pt; margin-bottom:15pt;">
+                All legal matters relating to Slimrate, LLC and this website shall be governed by and construed in accordance with the laws of the State of Florida, United States, without regard to its conflict of law provisions.
+            </p>
+
+            <h2 style="margin-top:25pt; margin-bottom:10pt;">Contact Information</h2>
+            <p style="margin-top:0pt; margin-bottom:15pt;">
+                For legal inquiries, please contact us at:<br>
+                Email: <a href="mailto:info@slimrate.com">info@slimrate.com</a><br>
+                Phone: (888) 977-4533
+            </p>
+        </div>
+        <mini-faq></mini-faq>
         <bottom-menu></bottom-menu>
     </div>
     <script src="https://unpkg.com/imask"></script>
@@ -73,6 +125,11 @@
 
     <!-- Zendesk Support Widget -->
     <script src="components/zendesk_widget.js"></script>
+
+    <!-- Cookie Consent -->
+    <script src="components/cookie_consent.js"></script>
+    <cookie-consent></cookie-consent>
 </body>
 
 </html>
+

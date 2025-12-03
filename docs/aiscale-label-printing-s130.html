@@ -1,8 +1,20 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-42Y6GNN6DE"></script>
-    <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-42Y6GNN6DE');</script>
+    <!-- Google tag (gtag.js) with Consent Mode -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-42Y6GNN6DE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  
+  // Default consent to denied until user accepts
+  gtag('consent', 'default', {
+    'analytics_storage': 'denied'
+  });
+  
+  gtag('js', new Date());
+  gtag('config', 'G-42Y6GNN6DE');
+</script>
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.webp">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.webp">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.webp">
@@ -15,11 +27,12 @@
     <meta name="description" content="AI-powered labeling scale with camera for automated product identification and labeling."/>
     <meta name="keywords" content="AIScale S130, label printing scale, smart scale, AI scale"/>
     <title>AIScale Label Printing S130 - Smart Labeling Scale | Slimrate</title>
-    <link rel="stylesheet" href="assets/css/spacing-system.css">
+    <link rel="stylesheet" href="assets/css/variables.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/product-page.css">
     <link rel="stylesheet" href="assets/css/burger.css">
-    <link rel="stylesheet" href="assets/css/layout-overrides.css">
+    <link rel="stylesheet" href="assets/css/fixes.css">
+    
     <script defer src="data/product-pages.js"></script>
     <script defer src="components/top_menu.js"></script>
     <script defer src="components/product_hero.js"></script>
@@ -48,6 +61,12 @@
 
     <!-- Zendesk Support Widget -->
     <script src="components/zendesk_widget.js"></script>
+
+    <!-- Cookie Consent -->
+    <script src="components/cookie_consent.js"></script>
+    <cookie-consent></cookie-consent>
 </body>
 </html>
+
+
 

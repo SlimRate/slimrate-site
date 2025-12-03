@@ -1,5 +1,5 @@
-@import url(https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap);
-@import url(https://fonts.googleapis.com/css2?family=Lato&display=swap);
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
 
 * {
     box-sizing: border-box;
@@ -7,8 +7,7 @@
 
 #cards-container {
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
+    flex-flow: column wrap;
     gap: 20px;
     justify-content: center;
     width: 100%;
@@ -22,16 +21,15 @@
 
 .product-group > h1{
     max-width: 800px;
-    margin: 0 auto 20px auto;
+    margin: 0 auto 20px;
     margin-bottom: 20px;
     width: 100%;
-    color: #0066CC;
+    color: #06C;
     font-size: 22px;
 }
 
 .product-card {
-    background-color: #ffffff;
-    
+    background-color: #fff;
     border: 1px solid #BABABA;
     border-radius: 24px; 
     padding: 16px; 
@@ -39,7 +37,7 @@
     flex-direction: column;
     align-items: center;
     max-width: 100%;
-    margin: 0 auto 20px auto; 
+    margin: 0 auto 20px; 
 }
 
 .image-container {
@@ -90,7 +88,6 @@
     font-weight: 700;
     font-size: 20px;
     color: #0A2540;
-   
     align-self: flex-start;
     margin-bottom: 20px;
 }
@@ -171,7 +168,7 @@
 }
 
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
     .product-card {
         flex-direction: row;
         align-items: flex-start;

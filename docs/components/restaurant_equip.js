@@ -1,9 +1,6 @@
 const restaurantTemplate = document.createElement('template');
 restaurantTemplate.innerHTML = `
-<section class="equip">
-            <img src="assets/img/custom-bg-1.svg" alt="Slimrate product image" class="custom-bg">
-            <img src="assets/img/bg-top-1.svg" alt="Slimrate product image" class="bg-top">
-            <img src="assets/img/bg-bot-1.svg" alt="Slimrate product image" class="bg-bottom">
+<section class="equip equip-modern">
             <div class="container">
                 <div class="block-left">
                     <p class="section-descr">Why Slimrate</p>

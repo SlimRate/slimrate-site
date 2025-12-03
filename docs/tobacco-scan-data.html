@@ -2,13 +2,18 @@
 <html lang="en">
 
 <head>
-<!-- Google tag (gtag.js) -->
+<!-- Google tag (gtag.js) with Consent Mode -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-42Y6GNN6DE"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
+  
+  // Default consent to denied until user accepts
+  gtag('consent', 'default', {
+    'analytics_storage': 'denied'
+  });
+  
   gtag('js', new Date());
-
   gtag('config', 'G-42Y6GNN6DE');
 </script>
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.webp">
@@ -25,10 +30,11 @@
     <meta name="keywords" content="tobacco compliance, FDA, scan data, age verification, POS integration"/>
     <link rel="canonical" href="https://slimrate.com/tobacco-scan-data.html"/>
     <title>Tobacco Scan Data Integration - Slimrate</title>
-    <link rel="stylesheet" href="assets/css/spacing-system.css">
+    <link rel="stylesheet" href="assets/css/variables.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/burger.css">
-    <link rel="stylesheet" href="assets/css/layout-overrides.css">
+    <link rel="stylesheet" href="assets/css/fixes.css">
+    
     <script src="components/top_menu.js"></script>
     <script src="components/pricing_form.js"></script>
     <script src="components/bottom_menu.js"></script>
@@ -204,5 +210,11 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="assets/js/more.js"></script>
     <script src="components/zendesk_widget.js"></script>
+
+    <!-- Cookie Consent -->
+    <script src="components/cookie_consent.js"></script>
+    <cookie-consent></cookie-consent>
 </body>
 </html>
+
+

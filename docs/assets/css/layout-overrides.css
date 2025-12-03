@@ -1,95 +1,230 @@
 /* ========================================
-   LAYOUT OVERRIDES
-   Vertical rhythm adjustments for homepage sections
-   Uses the new spacing-system.css variables
-   Updated: November 2, 2025
+   LAYOUT OVERRIDES CSS
+   ========================================
+   
+   Override and enhancement layer for layout adjustments.
+   Use this file to make targeted fixes without modifying main styles.
+   
+   SECTIONS:
+   ---------
+   1. Container Overrides
+   2. Section Padding Overrides  
+   3. Flexbox Overrides
+   4. Grid Overrides
+   5. Responsive Fixes
+   
    ======================================== */
 
 /* ========================================
-   DEPRECATED VARIABLES - Kept for backwards compatibility
-   Use spacing-system.css variables instead
+   Container Overrides
    ======================================== */
-:root {
-    --section-gap: var(--section-spacing-lg);      /* 80px - maps to new system */
-    --section-gap-lg: var(--section-spacing-xl);   /* 96px - maps to new system */
-    --section-gap-sm: var(--section-spacing-md);   /* 64px - maps to new system */
+
+/* Full-bleed sections that break out of container */
+.layout-full-bleed {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+}
+
+/* Container with no padding on mobile */
+.container--flush-mobile {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+@media (min-width: 768px) {
+    .container--flush-mobile {
+        padding-left: var(--spacing-6);
+        padding-right: var(--spacing-6);
+    }
 }
 
 /* ========================================
-   MAIN WRAPPER SECTIONS - Standard Spacing
-   All direct children of .wrapper get consistent vertical spacing
+   Section Padding Overrides
    ======================================== */
 
-.wrapper > section,
-.wrapper > div.coop,
-.wrapper > div.testimonial-wrapper,
-.wrapper > div.slider-container,
-.wrapper > equip-company-el,
-.wrapper > mini-faq,
-.wrapper > pricing-form,
-.wrapper > bottom-menu {
-    margin-top: var(--section-spacing-lg);
+/* No top padding - for sections following hero */
+.section--no-top {
+    padding-top: 0 !important;
 }
 
-/* First section - no top margin */
-.wrapper > *:first-child {
-    margin-top: 0;
+/* No bottom padding - for sections before footer */
+.section--no-bottom {
+    padding-bottom: 0 !important;
 }
 
-/* Second section - medium spacing after hero */
-.wrapper > *:nth-child(2) {
-    margin-top: var(--section-spacing-md);
+/* Extra padding for featured sections */
+.section--featured {
+    padding-top: var(--section-spacing-xl);
+    padding-bottom: var(--section-spacing-xl);
+}
+
+@media (min-width: 1024px) {
+    .section--featured {
+        padding-top: var(--section-spacing-2xl);
+        padding-bottom: var(--section-spacing-2xl);
+    }
 }
 
 /* ========================================
-   SPECIFIC SECTION OVERRIDES
-   Some sections need different spacing for visual hierarchy
+   Flexbox Overrides
    ======================================== */
 
-/* Testimonials and Easy Guides - larger gap for emphasis */
-.testimonial-wrapper,
-.easy-guides {
-    margin-top: var(--section-spacing-xl);
+/* Force column on smaller screens with custom breakpoint */
+.flex-col-until-lg {
+    display: flex;
+    flex-direction: column;
 }
 
-/* Connected sections - maintain standard spacing */
-.easy-guides + mini-faq,
-mini-faq + pricing-form {
-    margin-top: var(--section-spacing-lg);
+@media (min-width: 1024px) {
+    .flex-col-until-lg {
+        flex-direction: row;
+    }
 }
 
-/* ========================================
-   WEB COMPONENT DISPLAY FIX
-   Custom elements need explicit display property
-   ======================================== */
-
-mini-faq,
-equip-company-el,
-pricing-form,
-bottom-menu {
-    display: block;
+/* Center content on mobile */
+.flex-center-mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* ========================================
-   SECTION BOTTOM MARGIN RESET
-   Prevent double spacing between sections
-   ======================================== */
-
-.coop,
-.hardware-nav,
-.slider-container,
-.testimonial-wrapper,
-mini-faq,
-.easy-guides,
-equip-company-el,
-pricing-form {
-    margin-bottom: 0;
+@media (min-width: 768px) {
+    .flex-center-mobile {
+        justify-content: flex-start;
+    }
 }
 
 /* ========================================
-   SECTION INTERNAL PADDING
+   Grid Overrides
    ======================================== */
 
-mini-faq .faq {
-    padding-bottom: var(--section-spacing-lg);
+/* Responsive grid that collapses to single column on mobile */
+.grid-collapse-mobile {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-6);
+}
+
+@media (min-width: 768px) {
+    .grid-collapse-mobile {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .grid-collapse-mobile {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* ========================================
+   Max-Width Overrides
+   ======================================== */
+
+/* Content width constraints */
+.max-w-prose {
+    max-width: 65ch;
+}
+
+.max-w-content {
+    max-width: 800px;
+}
+
+.max-w-wide {
+    max-width: 1200px;
+}
+
+/* ========================================
+   Aspect Ratio Helpers
+   ======================================== */
+
+.aspect-video {
+    aspect-ratio: 16 / 9;
+}
+
+.aspect-square {
+    aspect-ratio: 1 / 1;
+}
+
+.aspect-card {
+    aspect-ratio: 4 / 3;
+}
+
+/* ========================================
+   Z-Index Layer Overrides
+   ======================================== */
+
+.layer-back {
+    z-index: var(--z-background);
+}
+
+.layer-base {
+    z-index: var(--z-base);
+}
+
+.layer-content {
+    z-index: var(--z-content);
+}
+
+.layer-overlay {
+    z-index: var(--z-overlay);
+}
+
+.layer-top {
+    z-index: var(--z-modal);
+}
+
+/* ========================================
+   Responsive Fixes
+   ======================================== */
+
+/* Prevent horizontal scroll from animations/transforms */
+.overflow-fix {
+    overflow-x: hidden;
+}
+
+/* Image scaling fix for mobile */
+.img-responsive {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Force element to stack below siblings on mobile */
+@media (max-width: 767px) {
+    .order-last-mobile {
+        order: 99;
+    }
+    
+    .order-first-mobile {
+        order: -1;
+    }
+}
+
+/* ========================================
+   Scroll Behavior
+   ======================================== */
+
+/* Smooth scroll target offset for fixed header */
+.scroll-target {
+    scroll-margin-top: 120px;
+}
+
+@media (max-width: 1023px) {
+    .scroll-target {
+        scroll-margin-top: 80px;
+    }
+}
+
+/* ========================================
+   Print Overrides
+   ======================================== */
+
+@media print {
+    .no-print {
+        display: none !important;
+    }
+    
+    .print-break {
+        page-break-before: always;
+    }
 }

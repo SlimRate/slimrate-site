@@ -1,292 +1,37 @@
 /* ========================================
-   SLIMRATE SPACING SYSTEM
-   Created: November 2, 2025
-   Purpose: Unified vertical spacing system for consistent layout rhythm
-   ======================================== */
-
-/* ========================================
-   CORE SPACING SCALE
-   Base unit: 8px (0.5rem) - follows 8-point grid system
-   This ensures pixel-perfect alignment and visual harmony
-   ======================================== */
-
-:root {
-    /* ========================================
-       Base Spacing Units (Desktop)
-       ======================================== */
-    --spacing-0: 0;
-    --spacing-1: 4px;      /* 0.25rem - minimal spacing */
-    --spacing-2: 8px;      /* 0.5rem - base unit */
-    --spacing-3: 12px;     /* 0.75rem */
-    --spacing-4: 16px;     /* 1rem */
-    --spacing-5: 20px;     /* 1.25rem */
-    --spacing-6: 24px;     /* 1.5rem */
-    --spacing-8: 32px;     /* 2rem */
-    --spacing-10: 40px;    /* 2.5rem */
-    --spacing-12: 48px;    /* 3rem */
-    --spacing-16: 64px;    /* 4rem */
-    --spacing-20: 80px;    /* 5rem */
-    --spacing-24: 96px;    /* 6rem */
-    --spacing-32: 128px;   /* 8rem */
-    --spacing-40: 160px;   /* 10rem */
-    --spacing-48: 192px;   /* 12rem */
-    
-    /* ========================================
-       Section Spacing - Between major page blocks
-       Use these for spacing between top-level sections
-       ======================================== */
-    --section-spacing-xs: var(--spacing-10);   /* 40px - minimal section gap */
-    --section-spacing-sm: var(--spacing-12);   /* 48px - small section gap */
-    --section-spacing-md: var(--spacing-16);   /* 64px - medium section gap */
-    --section-spacing-lg: var(--spacing-20);   /* 80px - standard section gap (DEFAULT) */
-    --section-spacing-xl: var(--spacing-24);   /* 96px - large section gap */
-    --section-spacing-2xl: var(--spacing-32);  /* 128px - extra large section gap */
-    
-    /* ========================================
-       Component Spacing - Within sections/components
-       Use these for spacing inside cards, forms, etc.
-       ======================================== */
-    --component-spacing-xs: var(--spacing-2);  /* 8px */
-    --component-spacing-sm: var(--spacing-3);  /* 12px */
-    --component-spacing-md: var(--spacing-4);  /* 16px */
-    --component-spacing-lg: var(--spacing-6);  /* 24px */
-    --component-spacing-xl: var(--spacing-8);  /* 32px */
-    --component-spacing-2xl: var(--spacing-10); /* 40px */
-    
-    /* ========================================
-       Hero/Header Spacing - For main page headers
-       ======================================== */
-    --hero-padding-top: var(--spacing-16);     /* 64px */
-    --hero-padding-bottom: var(--spacing-32);  /* 128px */
-    
-    /* ========================================
-       Content Block Spacing - For content sections
-       ======================================== */
-    --content-padding-vertical: var(--spacing-16); /* 64px */
-    --content-padding-sm: var(--spacing-10);       /* 40px */
-    --content-padding-lg: var(--spacing-20);       /* 80px */
-    
-    /* ========================================
-       Special Large Spacing - For exceptional cases
-       Use sparingly for unique layout requirements
-       ======================================== */
-    --spacing-ultra-lg: var(--spacing-40);     /* 160px - ultra large gaps */
-    --spacing-ultra-xl: var(--spacing-48);     /* 192px - maximum gaps */
-}
-
-/* ========================================
-   RESPONSIVE SPACING - Tablet
-   Breakpoint: 768px - 991px
-   Scale down spacing proportionally for tablet devices
-   ======================================== */
-
-@media (max-width: 991px) {
-    :root {
-        /* Section Spacing - Tablet */
-        --section-spacing-xs: 32px;   /* was 40px */
-        --section-spacing-sm: 40px;   /* was 48px */
-        --section-spacing-md: 48px;   /* was 64px */
-        --section-spacing-lg: 64px;   /* was 80px */
-        --section-spacing-xl: 80px;   /* was 96px */
-        --section-spacing-2xl: 96px;  /* was 128px */
-        
-        /* Hero Spacing - Tablet */
-        --hero-padding-top: 48px;     /* was 64px */
-        --hero-padding-bottom: 96px;  /* was 128px */
-        
-        /* Content Block Spacing - Tablet */
-        --content-padding-vertical: 48px; /* was 64px */
-        --content-padding-sm: 32px;       /* was 40px */
-        --content-padding-lg: 64px;       /* was 80px */
-    }
-}
-
-/* ========================================
-   RESPONSIVE SPACING - Mobile
-   Breakpoint: < 767px
-   Further reduce spacing for mobile devices
-   ======================================== */
-
-@media (max-width: 767px) {
-    :root {
-        /* Section Spacing - Mobile */
-        --section-spacing-xs: 24px;   /* was 40px */
-        --section-spacing-sm: 32px;   /* was 48px */
-        --section-spacing-md: 40px;   /* was 64px */
-        --section-spacing-lg: 48px;   /* was 80px */
-        --section-spacing-xl: 64px;   /* was 96px */
-        --section-spacing-2xl: 80px;  /* was 128px */
-        
-        /* Hero Spacing - Mobile */
-        --hero-padding-top: 40px;     /* was 64px */
-        --hero-padding-bottom: 64px;  /* was 128px */
-        
-        /* Content Block Spacing - Mobile */
-        --content-padding-vertical: 40px; /* was 64px */
-        --content-padding-sm: 24px;       /* was 40px */
-        --content-padding-lg: 48px;       /* was 80px */
-    }
-}
-
-/* ========================================
-   RESPONSIVE SPACING - Small Mobile
-   Breakpoint: < 480px
-   Minimal spacing for very small screens
-   ======================================== */
-
-@media (max-width: 480px) {
-    :root {
-        /* Section Spacing - Small Mobile */
-        --section-spacing-xs: 20px;   /* was 40px */
-        --section-spacing-sm: 24px;   /* was 48px */
-        --section-spacing-md: 32px;   /* was 64px */
-        --section-spacing-lg: 40px;   /* was 80px */
-        --section-spacing-xl: 48px;   /* was 96px */
-        --section-spacing-2xl: 64px;  /* was 128px */
-        
-        /* Hero Spacing - Small Mobile */
-        --hero-padding-top: 32px;     /* was 64px */
-        --hero-padding-bottom: 48px;  /* was 128px */
-        
-        /* Content Block Spacing - Small Mobile */
-        --content-padding-vertical: 32px; /* was 64px */
-        --content-padding-sm: 20px;       /* was 40px */
-        --content-padding-lg: 40px;       /* was 80px */
-    }
-}
-
-/* ========================================
-   UTILITY CLASSES - Section Margin Top
-   Quick application of standard section spacing
-   ======================================== */
-
-.mt-section-xs { margin-top: var(--section-spacing-xs) !important; }
-.mt-section-sm { margin-top: var(--section-spacing-sm) !important; }
-.mt-section-md { margin-top: var(--section-spacing-md) !important; }
-.mt-section-lg { margin-top: var(--section-spacing-lg) !important; }
-.mt-section-xl { margin-top: var(--section-spacing-xl) !important; }
-.mt-section-2xl { margin-top: var(--section-spacing-2xl) !important; }
-.mt-section-0 { margin-top: 0 !important; }
-
-/* ========================================
-   UTILITY CLASSES - Section Margin Bottom
-   ======================================== */
-
-.mb-section-xs { margin-bottom: var(--section-spacing-xs) !important; }
-.mb-section-sm { margin-bottom: var(--section-spacing-sm) !important; }
-.mb-section-md { margin-bottom: var(--section-spacing-md) !important; }
-.mb-section-lg { margin-bottom: var(--section-spacing-lg) !important; }
-.mb-section-xl { margin-bottom: var(--section-spacing-xl) !important; }
-.mb-section-2xl { margin-bottom: var(--section-spacing-2xl) !important; }
-.mb-section-0 { margin-bottom: 0 !important; }
-
-/* ========================================
-   UTILITY CLASSES - Component Spacing
-   For spacing within components
-   ======================================== */
-
-.mb-comp-xs { margin-bottom: var(--component-spacing-xs) !important; }
-.mb-comp-sm { margin-bottom: var(--component-spacing-sm) !important; }
-.mb-comp-md { margin-bottom: var(--component-spacing-md) !important; }
-.mb-comp-lg { margin-bottom: var(--component-spacing-lg) !important; }
-.mb-comp-xl { margin-bottom: var(--component-spacing-xl) !important; }
-.mb-comp-2xl { margin-bottom: var(--component-spacing-2xl) !important; }
-
-.mt-comp-xs { margin-top: var(--component-spacing-xs) !important; }
-.mt-comp-sm { margin-top: var(--component-spacing-sm) !important; }
-.mt-comp-md { margin-top: var(--component-spacing-md) !important; }
-.mt-comp-lg { margin-top: var(--component-spacing-lg) !important; }
-.mt-comp-xl { margin-top: var(--component-spacing-xl) !important; }
-.mt-comp-2xl { margin-top: var(--component-spacing-2xl) !important; }
-
-/* ========================================
-   USAGE GUIDELINES
+   SPACING SYSTEM CSS
+   ========================================
    
-   When to use each spacing level:
+   This file redirects to the unified variables.css
+   Kept for backward compatibility with existing HTML imports.
    
-   SECTION SPACING (between major page blocks):
-   - xs (40px):  Minimal gap, use sparingly
-   - sm (48px):  Small gap for related sections
-   - md (64px):  Medium gap for distinct but related content
-   - lg (80px):  STANDARD - default spacing between sections
-   - xl (96px):  Large gap for important visual breaks
-   - 2xl (128px): Extra large gap for major page divisions
-   
-   COMPONENT SPACING (within sections):
-   - xs (8px):   Tight spacing between related elements
-   - sm (12px):  Small spacing for grouped items
-   - md (16px):  STANDARD - default component spacing
-   - lg (24px):  Larger spacing between component groups
-   - xl (32px):  Extra space for sub-sections within components
-   - 2xl (40px): Maximum internal component spacing
-   
-   EXAMPLES:
-   
-   .my-section {
-       margin-top: var(--section-spacing-lg);
-       padding: var(--content-padding-vertical) 0;
-   }
-   
-   .my-card-title {
-       margin-bottom: var(--component-spacing-md);
-   }
-   
-   .hero-section {
-       padding-top: var(--hero-padding-top);
-       padding-bottom: var(--hero-padding-bottom);
-   }
+   All spacing variables are now defined in variables.css
    
    ======================================== */
 
-/* ========================================
-   UTILITY CLASSES - Quick spacing application
-   Use these for rapid prototyping or inline replacements
-   ======================================== */
-
-/* Section Spacing - Margin Top */
-.mt-section-0 { margin-top: 0 !important; }
-.mt-section-xs { margin-top: var(--section-spacing-xs) !important; }
-.mt-section-sm { margin-top: var(--section-spacing-sm) !important; }
-.mt-section-md { margin-top: var(--section-spacing-md) !important; }
-.mt-section-lg { margin-top: var(--section-spacing-lg) !important; }
-.mt-section-xl { margin-top: var(--section-spacing-xl) !important; }
-.mt-section-2xl { margin-top: var(--section-spacing-2xl) !important; }
-
-/* Section Spacing - Margin Bottom */
-.mb-section-0 { margin-bottom: 0 !important; }
-.mb-section-xs { margin-bottom: var(--section-spacing-xs) !important; }
-.mb-section-sm { margin-bottom: var(--section-spacing-sm) !important; }
-.mb-section-md { margin-bottom: var(--section-spacing-md) !important; }
-.mb-section-lg { margin-bottom: var(--section-spacing-lg) !important; }
-.mb-section-xl { margin-bottom: var(--section-spacing-xl) !important; }
-.mb-section-2xl { margin-bottom: var(--section-spacing-2xl) !important; }
-
-/* Component Spacing - Margin Top */
-.mt-comp-0 { margin-top: 0 !important; }
-.mt-comp-xs { margin-top: var(--component-spacing-xs) !important; }
-.mt-comp-sm { margin-top: var(--component-spacing-sm) !important; }
-.mt-comp-md { margin-top: var(--component-spacing-md) !important; }
-.mt-comp-lg { margin-top: var(--component-spacing-lg) !important; }
-.mt-comp-xl { margin-top: var(--component-spacing-xl) !important; }
-.mt-comp-2xl { margin-top: var(--component-spacing-2xl) !important; }
-
-/* Component Spacing - Margin Bottom */
-.mb-comp-0 { margin-bottom: 0 !important; }
-.mb-comp-xs { margin-bottom: var(--component-spacing-xs) !important; }
-.mb-comp-sm { margin-bottom: var(--component-spacing-sm) !important; }
-.mb-comp-md { margin-bottom: var(--component-spacing-md) !important; }
-.mb-comp-lg { margin-bottom: var(--component-spacing-lg) !important; }
-.mb-comp-xl { margin-bottom: var(--component-spacing-xl) !important; }
-.mb-comp-2xl { margin-bottom: var(--component-spacing-2xl) !important; }
-
-/* Negative margins (use sparingly - consider redesigning layout instead) */
-.mt-section-lg-neg { margin-top: calc(-1 * var(--section-spacing-lg)) !important; }
-.mt-section-xl-neg { margin-top: calc(-1 * var(--section-spacing-xl)) !important; }
-.mt-section-2xl-neg { margin-top: calc(-1 * var(--section-spacing-2xl)) !important; }
-
-/* Special spacing values for specific use cases */
-.section-spacer {
-    display: block;
-    width: 100%;
-    height: 0;
-}
+/* This file intentionally left minimal.
+   All spacing is now managed through variables.css
+   which is imported before this file in the HTML.
+   
+   USAGE:
+   ------
+   Use CSS variables from variables.css:
+   
+   Spacing Scale:
+   - --spacing-1 through --spacing-48
+   - --spacing-xs, --spacing-sm, etc.
+   
+   Section Spacing:
+   - --section-spacing-xs through --section-spacing-2xl
+   - --section-gap, --section-gap-lg, --section-gap-sm
+   
+   Component Spacing:
+   - --component-spacing-xs through --component-spacing-2xl
+   
+   Hero/Header:
+   - --hero-padding-top, --hero-padding-bottom
+   
+   Content Blocks:
+   - --content-padding-vertical
+   - --content-padding-sm, --content-padding-lg
+*/

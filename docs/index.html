@@ -2,13 +2,18 @@
 <html lang="en">
 
 <head>
-<!-- Google tag (gtag.js) -->
+<!-- Google tag (gtag.js) with Consent Mode -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-42Y6GNN6DE"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
+  
+  // Default consent to denied until user accepts
+  gtag('consent', 'default', {
+    'analytics_storage': 'denied'
+  });
+  
   gtag('js', new Date());
-
   gtag('config', 'G-42Y6GNN6DE');
 </script>
     <!-- Preconnect for faster font loading -->
@@ -35,10 +40,10 @@
     <meta property="og:image" content="https://slimrate.com/apple-touch-icon.webp"/>
     <meta name="geo.region" content="US"/>
     <title>Slimrate</title>
-    <link rel="stylesheet" href="assets/css/spacing-system.css" />
+    <link rel="stylesheet" href="assets/css/variables.css" />
+    <link rel="stylesheet" href="assets/css/breakpoints.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/burger.css" />
-    <link rel="stylesheet" href="assets/css/layout-overrides.css" />
     <script defer src="assets/js/imask.min.js"></script>
     <script defer src="assets/js/jquery.min.js"></script>
     <script defer src="assets/slick/slick.min.js"></script>
@@ -143,18 +148,36 @@
         <section class="easy-guides" aria-labelledby="easy-guides-title">
           <div class="container easy-guides__wrap">
             <div class="easy-guides__media">
-              <iframe
-                class="easy-guides__iframe"
-                data-playlist-src="https://www.youtube.com/embed/videoseries?list=PLt3HfNKaik2mLckgFSpBlcVO_xt1JEbi1&amp;listType=playlist&amp;si=8x7MXeHP1bWnEmKe&amp;modestbranding=1&amp;rel=0"
-                src="https://www.youtube.com/embed/videoseries?list=PLt3HfNKaik2mLckgFSpBlcVO_xt1JEbi1&amp;listType=playlist&amp;si=8x7MXeHP1bWnEmKe&amp;modestbranding=1&amp;rel=0"
-                title="Slimrate Easy Guides playlist"
-                loading="lazy"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen
-                referrerpolicy="strict-origin-when-cross-origin"
-              ></iframe>
+              <div class="easy-guides__browser">
+                <div class="easy-guides__browser-header">
+                  <span class="easy-guides__browser-dot easy-guides__browser-dot--red"></span>
+                  <span class="easy-guides__browser-dot easy-guides__browser-dot--yellow"></span>
+                  <span class="easy-guides__browser-dot easy-guides__browser-dot--green"></span>
+                  <div class="easy-guides__browser-bar"></div>
+                </div>
+                <div class="easy-guides__browser-content">
+                  <iframe
+                    class="easy-guides__iframe"
+                    data-playlist-src="https://www.youtube.com/embed/videoseries?list=PLt3HfNKaik2mLckgFSpBlcVO_xt1JEbi1&amp;listType=playlist&amp;si=8x7MXeHP1bWnEmKe&amp;modestbranding=1&amp;rel=0"
+                    src="https://www.youtube.com/embed/videoseries?list=PLt3HfNKaik2mLckgFSpBlcVO_xt1JEbi1&amp;listType=playlist&amp;si=8x7MXeHP1bWnEmKe&amp;modestbranding=1&amp;rel=0"
+                    title="Slimrate Easy Guides playlist"
+                    loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen
+                    referrerpolicy="strict-origin-when-cross-origin"
+                  ></iframe>
+                </div>
+              </div>
             </div>
             <div class="easy-guides__content">
+              <span class="easy-guides__label">
+                <span class="easy-guides__label-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                  </svg>
+                </span>
+                Video Tutorials
+              </span>
               <h2 id="easy-guides-title" class="easy-guides__title">Easy Guides</h2>
               <p class="easy-guides__text">
                 Learn the essentials in minutes with clear, easy-to-follow guides that break down every step.
@@ -167,7 +190,15 @@
                   href="https://www.youtube.com/@Slimrate"
                   target="_blank"
                   rel="noopener"
-                >Check Out Our Channel</a>
+                >
+                  <span>Check Out Our Channel</span>
+                  <span class="easy-guides__button-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </span>
+                </a>
               </div>
             </div>
           </div>
@@ -209,6 +240,10 @@
 
     <!-- Zendesk Support Widget -->
     <script src="components/zendesk_widget.js"></script>
+
+    <!-- Cookie Consent -->
+    <script src="components/cookie_consent.js"></script>
+    <cookie-consent></cookie-consent>
 </body>
 
 </html>

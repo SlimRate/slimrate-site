@@ -209,4 +209,175 @@
             margin-bottom: 6px;
             margin-top: 0px;
           }
+          
+          .h2Text {
+            font-size: clamp(18px, 5vw, 26px);
+            line-height: 1.2;
+          }
+          
+          .stats-value {
+            font-size: clamp(32px, 8vw, 44px);
+          }
+          
+          .slider-dots {
+            bottom: 16px;
+            gap: 20px;
+          }
+          
+          .slider-dot {
+            width: 10px;
+            height: 10px;
+          }
+        }
+        
+        /* Medium mobile devices (401px - 500px) - transition to column layout */
+        @media (max-width: 500px) {
+          #cardComponent {
+            min-height: 620px;
+            height: auto;
+            padding: 14px;
+            padding-bottom: 50px;
+          }
+          
+          .testimonial-content {
+            height: auto;
+            min-height: 540px;
+          }
+          
+          .mobile-first-level {
+            flex-direction: column;
+            gap: 14px;
+          }
+          
+          .image-container {
+            width: 100%;
+            height: 200px;
+            max-height: 200px;
+          }
+          
+          .image-container img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+          }
+          
+          .testimonial-text-container {
+            width: 100%;
+          }
+        }
+        
+        /* Extra small devices (320px - 400px) */
+        @media (max-width: 400px) {
+          #cardComponent {
+            min-height: 580px;
+            height: auto;
+            padding: 12px;
+            padding-bottom: 48px;
+          }
+          
+          .testimonial-content {
+            height: auto;
+            min-height: 500px;
+          }
+          
+          .mobile-first-level {
+            flex-direction: column;
+            gap: 12px;
+          }
+          
+          .image-container {
+            width: 100%;
+            height: 180px;
+            max-height: 180px;
+          }
+          
+          .image-container img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+          }
+          
+          .testimonial-text-container {
+            width: 100%;
+          }
+          
+          .mobile-third-level {
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+          }
+          
+          .stats-box {
+            min-height: 95px;
+            padding: 6px 8px;
+          }
+          
+          .stats-value {
+            font-size: 28px;
+          }
+          
+          .rise-info {
+            font-size: 12px;
+            line-height: 1.3;
+          }
+          
+          .font-bold {
+            font-size: 13px;
+          }
+          
+          .h2Text {
+            font-size: 18px;
+          }
+          
+          .margin-top-small {
+            font-size: 13px;
+            line-height: 1.4;
+          }
+          
+          .slider-dots {
+            bottom: 12px;
+            gap: 16px;
+          }
+        }
+        
+        /* Very small devices (< 360px) */
+        @media (max-width: 360px) {
+          #cardComponent {
+            padding: 10px;
+            padding-bottom: 44px;
+          }
+          
+          .testimonial-header {
+            font-size: 24px;
+            margin-bottom: 12px;
+          }
+          
+          .image-container {
+            height: 160px;
+            max-height: 160px;
+          }
+          
+          .image-container img {
+            height: 160px;
+          }
+          
+          .mobile-third-level {
+            gap: 8px;
+          }
+          
+          .stats-box {
+            min-height: 85px;
+            padding: 4px 6px;
+          }
+          
+          .stats-value {
+            font-size: 24px;
+          }
+          
+          .rise-info {
+            font-size: 11px;
+          }
+          
+          .font-bold {
+            font-size: 12px;
+          }
         }

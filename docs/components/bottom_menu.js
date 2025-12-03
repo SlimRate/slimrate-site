@@ -29,13 +29,10 @@ bottomMenuTemplate.innerHTML = `
     </div>
     <div class="footer-bottom">
         <ul>
-            <!--- <li><a href="privacy.html">Privacy Statement</a></li>
-            <li><a href="do_not_sell_my_info.html">Do Not Sell My Personal Information</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
             <li><a href="terms.html">Terms of Service</a></li>
-            <li><a href="merchant.html">Merchant Agreement</a></li>
-            <li><a href="legal.html">Legal</a></li>
             <li><a href="cookie.html">Cookie Policy</a></li>
-            <li><a href="mailto:report@slimrate.com">Report a Vulnerability</a></li> --->
+            <li><a href="legal.html">Legal</a></li>
             <li><a href="index.html">Copyright © 2024 Slimrate LLC. All rights reserved</a></li>
         </ul>
     </div>
