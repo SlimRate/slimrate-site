@@ -36,7 +36,6 @@ class ProductHero extends HTMLElement {
                             
                             <div class="product-hero__price-container">
                                 <div class="product-hero__price">${data.price}</div>
-                                <div class="product-hero__price-unit">${data.priceUnit}</div>
                             </div>
                             
                             <div class="product-hero__cta">
