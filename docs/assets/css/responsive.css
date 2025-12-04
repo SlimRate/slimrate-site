@@ -1,0 +1,350 @@
+/* ========================================
+   Responsive Mobile Improvements
+   Global mobile fixes and responsive enhancements
+   ======================================== */
+
+/* ----------------------------------------
+   Slider Navigation (Mobile Dots)
+   ---------------------------------------- */
+.slick-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 0;
+    margin: 20px 0 0;
+    list-style: none;
+}
+
+.slick-dots li {
+    margin: 0;
+    padding: 0;
+}
+
+.slick-dots li button {
+    width: 10px;
+    height: 10px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: rgba(0, 102, 204, 0.3);
+    font-size: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.slick-dots li.slick-active button {
+    background: #0066cc;
+    transform: scale(1.2);
+}
+
+.slick-dots li button:hover {
+    background: #0066cc;
+}
+
+/* Swiper pagination dots */
+.swiper-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 0;
+    margin: 20px 0 0;
+}
+
+.swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background: rgba(0, 102, 204, 0.3);
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+    background: #0066cc;
+    transform: scale(1.2);
+}
+
+/* ----------------------------------------
+   Form Button Mobile Fixes
+   ---------------------------------------- */
+@media (max-width: 768px) {
+    .form__btn,
+    .btn-form {
+        width: 100%;
+        min-height: 48px;
+        font-size: 16px;
+    }
+    
+    .form__input,
+    .form__select {
+        min-height: 48px;
+        font-size: 16px;
+    }
+}
+
+/* ----------------------------------------
+   Footer Grid Mobile Improvements
+   ---------------------------------------- */
+@media (max-width: 768px) {
+    .footer-top {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    
+    .footer-nav {
+        text-align: center;
+    }
+    
+    .footer-nav__title {
+        margin-bottom: 12px;
+    }
+    
+    .footer-nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+    }
+}
+
+/* ----------------------------------------
+   Product Images Containment
+   ---------------------------------------- */
+.product-img,
+.hardware-card__img,
+.something-card__img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+@media (max-width: 768px) {
+    .product-img,
+    .hardware-card__img,
+    .something-card__img {
+        max-height: 200px;
+    }
+}
+
+/* ----------------------------------------
+   Card Grid Mobile Fixes
+   ---------------------------------------- */
+@media (max-width: 992px) {
+    .products-cards,
+    .advantages-cards,
+    .who-cards,
+    .hardware-cards {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .products-cards,
+    .advantages-cards,
+    .who-cards,
+    .hardware-cards {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+}
+
+/* ----------------------------------------
+   Hero Section Mobile Spacing
+   ---------------------------------------- */
+@media (max-width: 768px) {
+    .main,
+    .mainPageHeader {
+        padding: 80px 0 60px;
+        min-height: auto;
+    }
+    
+    .main__title {
+        font-size: clamp(28px, 6vw, 42px);
+        line-height: 1.2;
+    }
+    
+    .main__descr {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+}
+
+/* ----------------------------------------
+   Section Spacing Mobile
+   ---------------------------------------- */
+@media (max-width: 768px) {
+    section {
+        padding: 40px 0;
+    }
+    
+    .container-header {
+        margin-bottom: 24px;
+    }
+    
+    .section-title {
+        font-size: clamp(24px, 5vw, 32px);
+        line-height: 1.2;
+        margin-bottom: 12px;
+    }
+    
+    .section-descr {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+}
+
+/* ----------------------------------------
+   Navigation Mobile Improvements
+   ---------------------------------------- */
+@media (max-width: 992px) {
+    .header-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: #fff;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        z-index: 1000;
+        padding: 80px 20px 20px;
+        overflow-y: auto;
+    }
+    
+    .header-nav.active {
+        transform: translateX(0);
+    }
+    
+    .header-nav__list {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+    
+    .header-nav__link {
+        font-size: 18px;
+        padding: 12px 0;
+        width: 100%;
+        display: block;
+    }
+}
+
+/* ----------------------------------------
+   Table Responsive
+   ---------------------------------------- */
+@media (max-width: 768px) {
+    .pricing-comparison__table {
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .pricing-comparison__table table {
+        min-width: 600px;
+    }
+}
+
+/* ----------------------------------------
+   Utility Mobile Classes
+   ---------------------------------------- */
+@media (max-width: 768px) {
+    .hide-mobile {
+        display: none !important;
+    }
+}
+
+@media (min-width: 769px) {
+    .hide-desktop {
+        display: none !important;
+    }
+}
+
+/* ----------------------------------------
+   Touch Target Improvements
+   ---------------------------------------- */
+@media (max-width: 768px) {
+    a,
+    button,
+    .btn,
+    input[type="submit"],
+    input[type="button"] {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    .header-nav__link,
+    .footer-nav__link {
+        padding: 12px 8px;
+    }
+}
+
+/* ----------------------------------------
+   Scroll Behavior
+   ---------------------------------------- */
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ----------------------------------------
+   Safe Area Insets (for notched devices)
+   ---------------------------------------- */
+@supports (padding: max(0px)) {
+    .header {
+        padding-left: max(16px, env(safe-area-inset-left));
+        padding-right: max(16px, env(safe-area-inset-right));
+    }
+    
+    .footer {
+        padding-bottom: max(32px, env(safe-area-inset-bottom));
+    }
+}
+
+/* ----------------------------------------
+   Print Styles
+   ---------------------------------------- */
+@media print {
+    .header,
+    .footer,
+    .mobile_header,
+    .slick-dots,
+    .swiper-pagination,
+    .btn,
+    nav {
+        display: none !important;
+    }
+    
+    body {
+        font-size: 12pt;
+        line-height: 1.5;
+        color: #000;
+        background: #fff;
+    }
+    
+    a {
+        color: #000;
+        text-decoration: underline;
+    }
+    
+    img {
+        max-width: 100% !important;
+    }
+}

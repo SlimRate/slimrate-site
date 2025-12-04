@@ -1,0 +1,698 @@
+/* ========================================
+   Sections Styles (Various page sections)
+   ======================================== */
+
+/* ----------------------------------------
+   Coop / Partners Section
+   ---------------------------------------- */
+.coop {
+    margin-bottom: var(--section-spacing-sm);
+    position: relative;
+    z-index: 2;
+}
+
+.coop .img-bg-top {
+    display: none;
+}
+
+.coop .img-bg-bottom {
+    display: none;
+}
+
+.coop-logo-white {
+    display: none;
+}
+
+.coop .img-bg {
+    top: -110px;
+    position: absolute;
+    width: 100%;
+    height: 125px;
+    bottom: 0;
+    z-index: -1;
+    animation: 3s ease-in-out 0s infinite alternate none running meet-right-drawing-animation;
+    transform: translateX(-50%);
+}
+
+.coop .container {
+    padding: 0 0 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.coop-logo {
+    max-width: 100px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* ----------------------------------------
+   United Partners - Infinite Scroll Logo Banner
+   ---------------------------------------- */
+.united-partners {
+    margin-bottom: var(--section-spacing-sm);
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: 60px 0;
+}
+
+.united-partners .img-bg {
+    top: -110px;
+    position: absolute;
+    width: 100%;
+    height: 125px;
+    bottom: 0;
+    z-index: -1;
+    animation: 3s ease-in-out 0s infinite alternate none running meet-right-drawing-animation;
+    transform: translateX(-50%);
+}
+
+.united-partners .img-bg-bottom {
+    display: none;
+}
+
+.united-partners-scroll {
+    width: 100%;
+    display: inline-flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    position: relative;
+    -webkit-mask-image: linear-gradient(to right, transparent 0, black 128px, black calc(100% - 200px), transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0, black 128px, black calc(100% - 200px), transparent 100%);
+}
+
+.united-partners-track {
+    display: inline-flex;
+    align-items: center;
+    gap: 60px;
+    animation: scroll-logos 30s linear infinite;
+    will-change: transform;
+}
+
+.united-partners-track:hover {
+    animation-play-state: paused;
+}
+
+.partner-logo {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 120px;
+    height: 80px;
+    padding: 0 20px;
+}
+
+.partner-logo img {
+    max-width: 120px;
+    max-height: 70px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    filter: grayscale(30%) opacity(0.8);
+    transition: all 0.3s ease;
+}
+
+.partner-logo:hover img {
+    filter: grayscale(0%) opacity(1);
+    transform: scale(1.05);
+}
+
+@keyframes scroll-logos {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-100% / 3));
+    }
+}
+
+/* ----------------------------------------
+   We Support Section
+   ---------------------------------------- */
+.we-support .container {
+    flex-direction: column;
+}
+
+.we-support .container-header {
+    margin-bottom: 70px;
+}
+
+.we-support-cards {
+    display: -webkit-box;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.we-support .swiper {
+    overflow: unset !important;
+    position: static;
+}
+
+.we-support-card {
+    display: flex;
+    margin-bottom: var(--component-spacing-lg);
+    max-width: 335px;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.we-support-card__img {
+    width: 62px;
+    font-size: 35pt;
+    height: 62px;
+    display: -webkit-box;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    align-items: center;
+    overflow: hidden;
+    margin-bottom: var(--component-spacing-lg);
+}
+
+.we-support-card__title {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 23px;
+    letter-spacing: 0.02em;
+    color: #000;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+/* ----------------------------------------
+   Tech Stack Section
+   ---------------------------------------- */
+.tech-stack__left {
+    max-width: 35%;
+}
+
+.tech-stack .container {
+    max-width: 1160px;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: relative;
+    padding-top: 55px;
+}
+
+.tech-stack__right {
+    -ms-flex-item-align: end;
+    align-self: flex-end;
+    max-width: 60%;
+}
+
+.tech-stack-cards {
+    display: -webkit-box;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.tech-stack-card {
+    display: flex;
+    margin-bottom: var(--component-spacing-lg);
+    width: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-left: 30px;
+}
+
+.tech-stack__title {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 23px;
+    letter-spacing: 0.02em;
+    color: #000;
+    margin-bottom: var(--component-spacing-lg);
+    text-align: center;
+}
+
+.tech-stack-card__descr {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    color: #000;
+}
+
+/* ----------------------------------------
+   New App Section
+   ---------------------------------------- */
+.new-app-section {
+    background: linear-gradient(145deg, #2f6aff 0%, #1b52f4 100%);
+    border-radius: 32px;
+    margin: 0 20px var(--section-spacing-lg);
+    max-width: calc(1400px - 40px);
+    margin-left: auto;
+    margin-right: auto;
+    padding: var(--section-spacing-md) 0;
+    box-shadow: 0 20px 60px rgba(20, 46, 140, 0.2);
+    overflow: hidden;
+    position: relative;
+}
+
+.new-app-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+        radial-gradient(300px 300px at calc(100% - 60px) -100px, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.15) 60%, transparent 61%),
+        radial-gradient(200px 200px at -50px calc(100% + 50px), rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 65%, transparent 66%);
+    z-index: 0;
+}
+
+.new-app-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.new-app-section .section-title,
+.new-app-section .section-title-app {
+    color: #fff;
+}
+
+.new-app-section .equip-text {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* ----------------------------------------
+   Company Sections
+   ---------------------------------------- */
+.company-types {
+    margin-bottom: 0 !important;
+}
+
+.company-tech {
+    margin-bottom: 5vh;
+}
+
+.company-advantages {
+    margin-top: var(--section-spacing-2xl);
+    margin-bottom: var(--section-spacing-2xl);
+}
+
+/* ----------------------------------------
+   Why Section
+   ---------------------------------------- */
+.why {
+    min-height: 790px;
+}
+
+.why .container {
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.why .container-header {
+    margin-bottom: 0;
+}
+
+.why .container-header .section-title {
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+
+.why .container-header .section-title::before {
+    position: absolute;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 30px;
+    border-radius: 11px;
+    background: #06C;
+    z-index: -1;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -85%;
+}
+
+.why .container-header .section-title::after {
+    position: absolute;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 30px;
+    border-radius: 11px;
+    background: #06C;
+    z-index: -1;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -85%;
+}
+
+.why .container-header .section-descr {
+    max-width: 410px;
+    margin: var(--component-spacing-md) auto 0;
+    font-family: Vodafone, Poppins, sans-serif;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 26px;
+    text-align: center;
+    color: #919191;
+}
+
+.why-block__img {
+    position: relative;
+    min-width: 530px;
+    height: 420px;
+    margin-right: var(--section-spacing-md);
+    z-index: 3;
+    transform: translateY(40px);
+}
+
+.why-block__img img {
+    position: absolute;
+    width: 100%;
+    transition: -webkit-transform 0.9s ease;
+    transition: transform 0.9s ease;
+    transition: transform 0.9s ease, -webkit-transform 0.9s ease;
+}
+
+.why-block__img img:first-child {
+    height: auto;
+    right: 0;
+    z-index: 3;
+}
+
+.why-block__img img:nth-child(2) {
+    z-index: 2;
+    top: 10%;
+    left: 0;
+}
+
+.why-block__img img:last-child {
+    z-index: 1;
+    left: 0;
+    top: 30%;
+}
+
+.why-block__list {
+    margin-top: var(--section-spacing-xl);
+    list-style: none;
+}
+
+.why-block__list ul {
+    list-style: none;
+}
+
+.why-block__list li {
+    transition: all ease 0.8s;
+}
+
+.why-block__list li.unactive {
+    opacity: 0.3;
+}
+
+.why-block__list li:not(:first-child) {
+    padding-top: var(--component-spacing-2xl);
+}
+
+.why-block__list li:hover {
+    animation: descr-anim 0.8s linear;
+}
+
+.why-block__list li:hover span {
+    left: -76px;
+}
+
+.why-block__list li:hover span div::after {
+    width: 24px;
+    height: 24px;
+}
+
+.why-block__list li:hover span div::before {
+    width: 70px;
+}
+
+.why-block__list-item {
+    position: relative;
+    transition: all 0.5s ease;
+    cursor: default;
+    padding-left: 70px;
+}
+
+.why-block__list-item span {
+    position: absolute;
+    left: 0;
+    top: 27px;
+    transform: translateY(-25px);
+    transition: all ease 0.8s;
+}
+
+.why-block__list-item span .round {
+    position: relative;
+    display: block;
+    left: 0;
+    top: 4px;
+    width: 11.11px;
+    height: 11.11px;
+    border-radius: 100%;
+    background: #F46B65;
+    transition: all ease 0.8s;
+}
+
+.why-block__list-item span .round::before {
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 3px;
+    top: 50%;
+    left: 40px;
+    transform: translateY(-50%);
+    background: #F46B65;
+    transition: all ease 0.8s;
+}
+
+.why-block__list-item span .round::after {
+    position: absolute;
+    content: '';
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    width: 11.11px;
+    height: 11.11px;
+    border-radius: 100%;
+    background: #FABFBD;
+    transition: all ease 0.8s;
+}
+
+.why-block__list .section-title {
+    margin-bottom: 75px;
+}
+
+.why-list__title {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 23px;
+    margin-bottom: 10px;
+    color: #0c0707;
+}
+
+.why-list__descr {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 29px;
+    color: #0C0C0C;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    max-width: 413px;
+}
+
+/* Why block animations */
+.why-block__img.animation-st-1 img:nth-child(1) {
+    transform: translateY(-20px) scale(1.1);
+}
+
+.why-block__img.animation-st-1 img:nth-child(2),
+.why-block__img.animation-st-1 img:nth-child(3) {
+    transform: translateY(60px);
+}
+
+.why-block__img.animation-st-2 img:nth-child(1) {
+    transform: translateY(-50px);
+}
+
+.why-block__img.animation-st-2 img:nth-child(2) {
+    transform: scale(1.1);
+}
+
+.why-block__img.animation-st-2 img:nth-child(3) {
+    transform: translateY(50px);
+}
+
+.why-block__img.animation-st-3 img:nth-child(1),
+.why-block__img.animation-st-3 img:nth-child(2) {
+    transform: translateY(-40px);
+}
+
+.why-block__img.animation-st-3 img:nth-child(3) {
+    transform: translateY(60px) scale(1.1);
+}
+
+.why-block__list.animation-st-1 li:nth-child(2) {
+    padding-top: 70px;
+}
+
+.why-block__list.animation-st-2 li:nth-child(1) {
+    transform: translateY(-70px);
+}
+
+.why-block__list.animation-st-2 li:nth-child(3) {
+    padding-top: 90px;
+}
+
+.why-block__list.animation-st-3 li:nth-child(1) {
+    transform: translateY(-70px);
+}
+
+.why-block__list.animation-st-3 li:nth-child(2) {
+    transform: translateY(-70px);
+}
+
+/* ----------------------------------------
+   Sections Responsive Styles
+   ---------------------------------------- */
+@media (width <= 1200px) {
+    .coop {
+        margin-bottom: 120px;
+    }
+
+    .coop .container {
+        padding-bottom: 0;
+    }
+
+    .new-app-section {
+        margin: 0 12px var(--section-spacing-lg);
+        border-radius: 24px;
+    }
+
+    .tech-stack__right {
+        max-width: 500px;
+    }
+
+    .tech-stack .container {
+        max-width: 940px;
+    }
+
+    .something .slick-list {
+        overflow: unset;
+    }
+
+    .we-support .slick-list {
+        overflow: unset;
+    }
+
+    .something-cards {
+        width: 100%;
+    }
+
+    .we-support-cards {
+        width: 100%;
+    }
+}
+
+@media (width <= 992px) {
+    .something-wrapper-hardware {
+        flex-direction: column;
+    }
+
+    .why .container {
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        flex-direction: column;
+        margin-bottom: 5vh;
+        gap: 10vh;
+    }
+
+    .why {
+        min-height: 100%;
+    }
+
+    .why .container-header .section-title::before {
+        width: 50vw;
+        left: -50vw;
+    }
+
+    .why .container-header .section-title::after {
+        width: 50vw;
+        right: -50vw;
+    }
+
+    .why-block__img {
+        position: relative;
+        min-width: 100%;
+        height: 50vw;
+        z-index: 3;
+    }
+}
+
+@media (width <= 768px) {
+    .tech-stack__right {
+        max-width: 460px;
+    }
+
+    .tech-stack .container {
+        max-width: 460px;
+    }
+
+    .tech-stack-card {
+        padding-left: 0;
+        max-width: inherit;
+    }
+
+    .tech-stack__left {
+        max-width: none;
+        margin-bottom: var(--component-spacing-lg);
+    }
+
+    .coop {
+        padding: 50px 0 0;
+        margin-bottom: 210px;
+        background: #407af4;
+    }
+
+    .coop .img-bg {
+        display: none;
+    }
+
+    .coop .img-bg-top {
+        display: block;
+        width: 100%;
+        position: absolute;
+        bottom: 90%;
+    }
+
+    .coop .img-bg-bottom {
+        display: block;
+        width: 100%;
+        position: absolute;
+        top: 99%;
+        animation: 4s ease-in-out 0s infinite alternate none running meet-right-drawing-animation;
+        transform: translateX(-50%);
+    }
+
+    .coop-logo {
+        display: none;
+        margin-bottom: 34px;
+    }
+
+    .coop-logo-white {
+        display: block;
+    }
+}

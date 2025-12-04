@@ -1,0 +1,636 @@
+/* ========================================
+   Pricing / Tariff Section Styles
+   ======================================== */
+
+.tariff {
+    padding-bottom: var(--spacing-ultra-xl);
+    margin-top: 64px;
+}
+
+.tariff .container {
+    display: -webkit-box;
+    display: flex;
+    flex-direction: column;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.tariff .container-header {
+    display: -webkit-box;
+    display: flex;
+    flex-direction: column;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-bottom: var(--component-spacing-2xl);
+}
+
+.tariff .container-header .section-title {
+    text-align: center;
+    margin-bottom: var(--component-spacing-lg);
+}
+
+.tariff .container-header .section-descr {
+    text-align: center;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    margin-top: 0;
+    margin-bottom: var(--component-spacing-2xl);
+    color: #b7b7b7;
+}
+
+.tariff-descr {
+    list-style: none;
+    display: -webkit-box;
+    display: flex;
+}
+
+.tariff-descr li {
+    position: relative;
+    margin-right: 10px;
+    display: -webkit-box;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    color: #b7b7b7;
+}
+
+.tariff-descr li::before {
+    position: relative;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background: url("/assets/img/check-green.svg") no-repeat center;
+    background-size: cover;
+    display: block;
+    z-index: 1;
+    margin-right: 10px;
+}
+
+.tariff-descr li:last-child {
+    margin-right: 0;
+}
+
+.tariff-cards {
+    display: grid;
+    -ms-grid-columns: 1fr 24px 1fr 24px 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    max-width: 1198px;
+    width: 100%;
+}
+
+.tariff-card {
+    max-width: 370px;
+    padding: var(--component-spacing-lg);
+    position: relative;
+    background: #fff;
+    border-radius: 8px;
+    display: -webkit-box;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 -4px 0 #2b4fb9, 0 7px 8px rgb(0, 0, 0, 0.08), 0 12px 17px rgb(0, 0, 0, 0.06), 0 5px 22px rgb(0, 0, 0, 0.04);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    flex: 1;
+    width: 100%;
+    height: 860px;
+}
+
+.tariff-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 -4px 0 #2b4fb9, 0 11px 12px rgb(0, 0, 0, 0.1), 0 16px 21px rgb(0, 0, 0, 0.08), 0 9px 26px rgb(0, 0, 0, 0.06);
+}
+
+.tariff-card::before {
+    position: absolute;
+    content: "";
+    top: -3px;
+    left: 0;
+    display: block;
+    height: 20px;
+    width: 100%;
+    background-color: #2b6bf3;
+    border-radius: 8px;
+    z-index: -1;
+}
+
+.tariff-card ul {
+    margin-bottom: var(--component-spacing-xl);
+    list-style: none;
+    flex-grow: 1;
+}
+
+.tariff-card ul li {
+    padding-left: var(--component-spacing-xl);
+    margin-bottom: var(--component-spacing-sm);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    color: #b7b7b7;
+    position: relative;
+}
+
+.tariff-card ul li::before {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background: url("/assets/img/check.svg") no-repeat center;
+    background-size: cover;
+    display: block;
+    z-index: 1;
+    transform: translateY(-50%);
+}
+
+.tariff-card ul li:last-child {
+    margin-bottom: 0;
+}
+
+.tariff-card__title {
+    margin-bottom: var(--component-spacing-sm);
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 23px;
+    letter-spacing: 0.02em;
+}
+
+.tariff-card__text {
+    margin-bottom: var(--component-spacing-lg);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+}
+
+.tariff-card__price {
+    margin-bottom: var(--component-spacing-xs);
+}
+
+.tariff-card__price span {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+}
+
+.tariff-card__priceTitle {
+    margin-bottom: var(--component-spacing-xs);
+}
+
+.tariff-card .btn-red {
+    max-width: none;
+    width: 100%;
+    margin-bottom: 0;
+}
+
+.tariff-card .price-off {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    color: #b7b7b7;
+    width: 100%;
+    text-align: center;
+    display: block;
+    padding-top: var(--component-spacing-lg);
+}
+
+/* ========================================
+   Pricing Comparison Table
+   ======================================== */
+
+.pricing-comparison {
+    padding: var(--section-spacing-lg) 0;
+    background: #fff;
+    width: 100%;
+    clear: both;
+}
+
+.pricing-comparison-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--component-spacing-lg);
+    display: flex;
+    flex-direction: column;
+}
+
+.pricing-comparison__header {
+    text-align: center;
+    margin-bottom: var(--section-spacing-lg);
+    padding-bottom: var(--component-spacing-xl);
+    width: 100%;
+}
+
+.pricing-comparison__subtitle {
+    font-size: 16px;
+    line-height: 24px;
+    color: #6b7280;
+    margin-bottom: var(--component-spacing-md);
+}
+
+.pricing-comparison__title {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 48px;
+    color: #1f2937;
+    margin: 0;
+}
+
+.pricing-comparison__table-wrapper {
+    overflow-x: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgb(0, 0, 0, 0.1), 0 2px 4px -1px rgb(0, 0, 0, 0.06);
+    width: 100%;
+}
+
+.pricing-comparison__table {
+    width: 100%;
+    min-width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+}
+
+.pricing-comparison__table thead {
+    background: #f9fafb;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+.pricing-comparison__table th {
+    padding: var(--component-spacing-lg) var(--component-spacing-md);
+    text-align: left;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 28px;
+    color: #1f2937;
+}
+
+.pricing-comparison__table th.feature-column {
+    width: 40%;
+}
+
+.pricing-comparison__table th.plan-column {
+    width: 20%;
+    text-align: center;
+}
+
+.pricing-comparison__table tbody tr {
+    border-bottom: 1px solid #e5e7eb;
+    transition: background-color 0.2s ease;
+}
+
+.pricing-comparison__table tbody tr:hover {
+    background: #f9fafb;
+}
+
+.pricing-comparison__table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.pricing-comparison__table td {
+    padding: var(--component-spacing-md);
+}
+
+.pricing-comparison__table td.feature-name {
+    font-size: 16px;
+    line-height: 24px;
+    color: #374151;
+    font-weight: 400;
+}
+
+.pricing-comparison__table td.plan-feature {
+    text-align: center;
+    font-size: 20px;
+}
+
+.pricing-comparison__table .checkmark {
+    color: #10b981;
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.pricing-comparison__table .checkmark.special {
+    color: #407AF4;
+    font-size: 14px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.pricing-comparison__table .no-check {
+    color: #d1d5db;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+/* ========================================
+   Pricing Responsive Styles
+   ======================================== */
+
+@media (width <= 1200px) {
+    .tariff {
+        padding-bottom: var(--section-spacing-xl);
+        margin-top: var(--section-spacing-md);
+    }
+    
+    .tariff .container-header {
+        margin-bottom: var(--component-spacing-xl);
+    }
+    
+    .tariff .container-header .section-title {
+        text-align: center;
+    }
+    
+    .tariff-cards {
+        display: -webkit-box;
+        display: flex;
+        flex-direction: column;
+        -ms-flex-align: center;
+        justify-content: center;
+        align-items: center;
+        gap: var(--section-spacing-md);
+        max-width: 100%;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 var(--spacing-lg);
+    }
+    
+    .tariff-card {
+        height: 860px;
+        padding: var(--component-spacing-lg);
+        max-width: 600px;
+        width: 100%;
+    }
+    
+    .tariff-card__title {
+        font-size: var(--font-size-xl);
+        margin-bottom: var(--component-spacing-sm);
+    }
+    
+    .tariff-card__text {
+        font-size: var(--font-size-md);
+        margin-bottom: var(--component-spacing-md);
+    }
+    
+    .tariff-card ul {
+        margin-bottom: var(--component-spacing-lg);
+    }
+    
+    .pricing-comparison {
+        padding: var(--section-spacing-md) 0;
+    }
+    
+    .pricing-comparison__title {
+        font-size: var(--font-size-5xl);
+        line-height: var(--line-height-normal);
+    }
+    
+    .pricing-comparison__subtitle {
+        font-size: var(--font-size-base);
+    }
+    
+    .pricing-comparison__table th,
+    .pricing-comparison__table td {
+        padding: var(--component-spacing-md) var(--component-spacing-sm);
+    }
+    
+    .pricing-comparison__table th {
+        font-size: var(--font-size-lg);
+    }
+    
+    .pricing-comparison__table td.feature-name {
+        font-size: var(--font-size-base);
+    }
+}
+
+@media (width <= 1024px) {
+    .pricing-comparison__title {
+        font-size: 32px;
+        line-height: 40px;
+    }
+    
+    .pricing-comparison__table th,
+    .pricing-comparison__table td {
+        padding: var(--component-spacing-md) var(--component-spacing-sm);
+    }
+    
+    .pricing-comparison__table th {
+        font-size: 16px;
+    }
+    
+    .pricing-comparison__table td.feature-name {
+        font-size: 14px;
+    }
+}
+
+@media (width <= 768px) {
+    .tariff {
+        padding-bottom: 150px;
+    }
+
+    .tariff .container {
+        -ms-flex-align: start;
+        align-items: flex-start;
+    }
+
+    .tariff .container-header .section-title {
+        text-transform: none;
+        width: 100%;
+        text-align: center;
+    }
+
+    .tariff .container-header .section-descr {
+        text-align: center;
+    }
+
+    .tariff-descr {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .tariff-cards {
+        max-width: none;
+        width: 320px;
+    }
+
+    .tariff-card {
+        margin: 0 auto;
+    }
+
+    .pricing-comparison {
+        padding: var(--section-spacing-md) 0;
+    }
+    
+    .pricing-comparison__title {
+        font-size: 28px;
+        line-height: 36px;
+    }
+    
+    .pricing-comparison__table-wrapper {
+        border-radius: 8px;
+    }
+    
+    .pricing-comparison__table th.feature-column {
+        width: 50%;
+        position: sticky;
+        left: 0;
+        background: #f9fafb;
+        z-index: 2;
+        box-shadow: 2px 0 4px rgb(0, 0, 0, 0.05);
+    }
+    
+    .pricing-comparison__table td.feature-name {
+        position: sticky;
+        left: 0;
+        background: #fff;
+        z-index: 1;
+        box-shadow: 2px 0 4px rgb(0, 0, 0, 0.05);
+    }
+    
+    .pricing-comparison__table tbody tr:hover td.feature-name {
+        background: #f9fafb;
+    }
+    
+    .pricing-comparison__table th.plan-column {
+        width: 16.66%;
+    }
+    
+    .pricing-comparison__table th,
+    .pricing-comparison__table td {
+        padding: var(--component-spacing-sm);
+    }
+    
+    .pricing-comparison__table th {
+        font-size: 14px;
+    }
+    
+    .pricing-comparison__table .checkmark {
+        font-size: 20px;
+    }
+    
+    .pricing-comparison__table .checkmark.special {
+        font-size: 11px;
+    }
+}
+
+@media (width <= 480px) {
+    .tariff-card {
+        height: auto;
+        min-height: unset;
+        padding: var(--spacing-md);
+    }
+    
+    .tariff-card__title {
+        font-size: 20px;
+        margin-bottom: 8px;
+    }
+    
+    .tariff-card__text {
+        font-size: 14px;
+        line-height: 1.5;
+        margin-bottom: 12px;
+    }
+    
+    .tariff-card ul {
+        margin-bottom: 16px;
+    }
+    
+    .tariff-card ul li {
+        font-size: 13px;
+        line-height: 1.5;
+        margin-bottom: 6px;
+        padding-left: 20px;
+    }
+    
+    .tariff-card__price {
+        margin-bottom: 16px;
+    }
+    
+    .tariff-card__price span {
+        font-size: 28px;
+    }
+    
+    .tariff-card .btn-red {
+        width: 100%;
+        padding: 14px 20px;
+        font-size: 15px;
+        text-align: center;
+    }
+
+    .pricing-comparison__table-wrapper {
+        position: relative;
+    }
+    
+    .pricing-comparison__table-wrapper::after {
+        content: "← Прокрутите →";
+        display: block;
+        text-align: center;
+        font-size: 12px;
+        color: #6b7280;
+        padding: 8px;
+        background: linear-gradient(to right, rgba(99, 102, 241, 0.1), rgba(99, 102, 241, 0.05));
+        border-radius: 0 0 8px 8px;
+    }
+    
+    .pricing-comparison__table {
+        min-width: 500px;
+    }
+    
+    .pricing-comparison__table th {
+        font-size: 11px;
+        padding: 8px 4px;
+        line-height: 1.3;
+    }
+    
+    .pricing-comparison__table td {
+        padding: 6px 4px;
+    }
+    
+    .pricing-comparison__table td.feature-name {
+        font-size: 11px;
+        line-height: 1.4;
+        min-width: 140px;
+    }
+    
+    .pricing-comparison__table .checkmark {
+        font-size: 16px;
+    }
+    
+    .pricing-comparison__table .no-check {
+        font-size: 16px;
+    }
+    
+    .pricing-comparison__table .checkmark.special {
+        font-size: 9px;
+        display: block;
+        line-height: 1.2;
+    }
+
+    .pricing-comparison-container {
+        padding: 0 var(--spacing-sm);
+    }
+    
+    .pricing-comparison__title {
+        font-size: var(--font-size-3xl);
+        line-height: var(--line-height-normal);
+    }
+    
+    .pricing-comparison__subtitle {
+        font-size: var(--font-size-xs);
+    }
+    
+    .pricing-comparison__table th.feature-column {
+        width: 45%;
+    }
+    
+    .pricing-comparison__table th.plan-column {
+        width: 18.33%;
+        min-width: 70px;
+    }
+}

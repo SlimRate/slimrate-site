@@ -1,0 +1,49 @@
+/* ========================================
+   Main CSS - Style Imports
+   SlimRate POS Website
+   ======================================== */
+
+/* ----------------------------------------
+   Core / Foundation
+   ---------------------------------------- */
+@import url('variables.css');
+@import url('base.css');
+@import url('spacing-system.css');
+
+/* ----------------------------------------
+   Layout Components
+   ---------------------------------------- */
+@import url('header.css');
+@import url('footer.css');
+@import url('dropdown-menu.css');
+@import url('burger.css');
+
+/* ----------------------------------------
+   UI Components
+   ---------------------------------------- */
+@import url('buttons.css');
+@import url('forms.css');
+@import url('cards.css');
+@import url('faq.css');
+@import url('pricing.css');
+
+/* ----------------------------------------
+   Page Sections
+   ---------------------------------------- */
+@import url('hero.css');
+@import url('equip.css');
+@import url('sections.css');
+
+/* ----------------------------------------
+   Special Pages / Features
+   ---------------------------------------- */
+@import url('product-page.css');
+@import url('integrations.css');
+@import url('hardware-cards-vertical-slider.css');
+
+/* ----------------------------------------
+   Responsive / Utilities
+   ---------------------------------------- */
+@import url('breakpoints.css');
+@import url('responsive.css');
+@import url('layout-overrides.css');

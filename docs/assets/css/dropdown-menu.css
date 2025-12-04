@@ -1,0 +1,243 @@
+/* ========================================
+   Dropdown Menu Styles
+   ======================================== */
+
+@keyframes menu-animate {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    50% {
+        transform: translateY(-80px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
+@keyframes menu-animate-close {
+    0% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translateY(-40px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+}
+
+.dropmenu {
+    position: absolute;
+    top: -110vh;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+    background: #fff;
+}
+
+.dropmenu a::before {
+    display: none !important;
+}
+
+.header-nav .dropmenu.hovered {
+    border-top: 1px solid #E3E3E3;
+    top: 100%;
+}
+
+.dropmenu.hovered {
+    animation: menu-animate .3s linear;
+}
+
+.dropmenu.hovered.removed {
+    animation: menu-animate-close .3s linear;
+}
+
+.dropmenu .container {
+    -ms-flex-align: start;
+    align-items: flex-start;
+    justify-content: start;
+}
+
+.dropmenu-info {
+    max-width: 274px;
+    width: 100%;
+    margin-left: 140px;
+    padding-bottom: 28px;
+}
+
+.dropmenu-title {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 50px;
+    line-height: 63px;
+    color: #000;
+    margin-bottom: 15px;
+}
+
+.dropmenu-descr {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 29px;
+    color: #919191;
+}
+
+.dropmenu-container {
+    display: inline-flex;
+}
+
+.dropmenu-nav {
+    width: 100%;
+    padding-right: 72px;
+    margin-left: 19px;
+    background-color: rgb(183, 183, 183, 0.07);
+}
+
+.dropmenu-nav > a {
+    font-style: normal;
+    font-weight: 600 !important;
+    font-size: 21px !important;
+    line-height: 26px !important;
+    color: #0c0c0c !important;
+}
+
+.dropmenu-nav a:hover .nav-el-i {
+    background-color: #EF2B23;
+    border: 2px solid #EF2B23;
+}
+
+.dropmenu-nav a:hover .nav-el-i i {
+    color: #fff;
+}
+
+.dropmenu-nav a .nav-el-i {
+    border-radius: 16px;
+    height: 44px;
+    width: 44px;
+    border: 2px solid rgb(183, 183, 183, 0.48);
+    margin-right: 18px;
+    padding-left: 7px;
+    padding-top: 7px;
+    background-color: #fafafa;
+    transition: all 0.3s ease;
+}
+
+.nav-el-i i {
+    border-radius: 18px;
+    font-size: 27px;
+    padding-right: 14px;
+    color: #000;
+    transition: all 0.3s ease;
+}
+
+.dropmenu-nav > a:hover {
+    color: #ef2b23 !important;
+}
+
+.dropmenu-nav ul {
+    margin-bottom: var(--component-spacing-2xl);
+    justify-content: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.dropmenu-nav ul li {
+    margin-right: 0;
+    max-width: 370px;
+    padding: 16px;
+    flex: 1 1 370px;
+}
+
+.dropmenu-nav ul li a {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 21px;
+    line-height: 26px;
+    display: -webkit-box;
+    display: flex;
+    flex-direction: column;
+    color: #2B6BF3;
+}
+
+.on-mobile {
+    display: none;
+}
+
+.dropmenu-nav ul li a:hover {
+    color: #ef2b23 !important;
+}
+
+.dropmenu-nav ul li a:hover span {
+    color: #ef2b23 !important;
+}
+
+.dropmenu-nav ul li a span {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 26px;
+    color: #919191;
+    transition: all 0.5s ease;
+}
+
+.dropmenu-nav ul li.divider-title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 12px 16px 8px;
+    flex: 1 1 100%;
+    max-width: 100%;
+    cursor: default;
+}
+
+/* Nav Body */
+.nav-body {
+    display: flex;
+}
+
+/* ========================================
+   Dropdown Menu Responsive Styles
+   ======================================== */
+
+@media (width <= 1280px) {
+    .dropmenu-info {
+        margin-left: 40px;
+    }
+
+    .dropmenu-nav ul li {
+        margin-right: 0;
+        max-width: 310px;
+        padding: 16px;
+        flex: 1 1 310px;
+    }
+
+    .dropmenu-nav {
+        width: 100%;
+        padding-right: 24px;
+        margin-left: 9px;
+    }
+}
+
+@media (width <= 992px) {
+    .off-mobile {
+        display: none;
+    }
+
+    .on-mobile {
+        display: block;
+    }
+}

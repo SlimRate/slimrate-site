@@ -1,0 +1,240 @@
+/* ========================================
+   Header & Navigation Styles
+   ======================================== */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: var(--z-header);
+    background: #fff;
+}
+
+.header-logo {
+    width: 209px;
+    line-height: 0;
+    padding: 10px 20px;
+}
+
+.header .container {
+    max-width: 1160px;
+    flex-direction: row;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.header-nav {
+    display: -webkit-box;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.header-nav ul {
+    display: -webkit-box;
+    display: flex;
+    list-style: none;
+}
+
+.header-nav ul li {
+    margin-right: 45px;
+    padding: 35px 0;
+}
+
+.header-nav ul li a {
+    font-size: 16px;
+    line-height: 29px;
+    font-weight: 500;
+    color: #425466;
+    transition: all 0.5s ease;
+    position: relative;
+}
+
+.header-nav ul li a::before {
+    position: absolute;
+    content: "";
+    top: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #ef2b23;
+    display: block;
+    transition: all 0.5s ease;
+}
+
+.header-nav ul li a:hover {
+    color: #252525;
+}
+
+.header-nav ul li a:hover::before {
+    width: 100%;
+}
+
+.header-nav ul li:last-child {
+    margin-right: 0;
+}
+
+.header .btn {
+    border-radius: 50px;
+    padding: 15px 26px;
+    margin-right: 15px;
+    height: 56px;
+    margin-left: 45px;
+}
+
+.header .btn-login {
+    margin-left: 5px;
+}
+
+.header-nav ul li .header__tab span {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 26px;
+    color: #919191;
+    transition: all 0.5s ease;
+}
+
+.header-nav ul li .header__tab {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 21px;
+    line-height: 26px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    color: #0c0c0c;
+}
+
+.header__tab {
+    border-left: 2px solid #fff;
+}
+
+.active {
+    background-color: rgb(183, 183, 183, 0.07);
+    border-left: 2px solid #EF2B23;
+}
+
+/* Mobile Header */
+.mobile_header {
+    display: none;
+}
+
+.mobile_header a {
+    font-size: 18px;
+    line-height: 29px;
+    font-weight: 700;
+    color: #252525;
+    transition: all 0.5s ease;
+    position: relative;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    display: -webkit-box;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-bottom: var(--component-spacing-2xl);
+}
+
+.breadcrumb img {
+    margin: 0 var(--component-spacing-md);
+}
+
+.breadcrumb a {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.breadcrumb a:hover {
+    color: #ff6b00;
+}
+
+/* ========================================
+   Header Responsive Styles
+   ======================================== */
+
+@media (width <= 1200px) {
+    .breadcrumb {
+        display: flex;
+        font-size: 14px;
+    }
+}
+
+@media (width <= 992px) {
+    .header {
+        height: 60px;
+    }
+
+    .header-logo img {
+        height: 40px;
+    }
+
+    .mobile_header {
+        display: block;
+        z-index: var(--z-modal);
+    }
+
+    .header .container {
+        max-width: none;
+        padding: 0 15px;
+        width: 100%;
+    }
+
+    .header-nav {
+        display: none;
+    }
+
+    .breadcrumb {
+        display: flex;
+        font-size: 12px;
+    }
+}
+
+@media (width <= 768px) {
+    .breadcrumb {
+        display: flex;
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        padding-bottom: 8px;
+        margin-bottom: var(--component-spacing-lg);
+    }
+    
+    .breadcrumb::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .breadcrumb a {
+        font-size: 14px;
+        flex-shrink: 0;
+    }
+    
+    .breadcrumb img {
+        margin: 0 8px;
+        flex-shrink: 0;
+    }
+}
+
+@media (width <= 480px) {
+    .breadcrumb {
+        font-size: 12px;
+    }
+    
+    .breadcrumb a {
+        font-size: 12px;
+    }
+    
+    .breadcrumb img {
+        margin: 0 6px;
+        width: 12px;
+        height: auto;
+    }
+}

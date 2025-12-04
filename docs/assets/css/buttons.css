@@ -1,0 +1,196 @@
+/* ========================================
+   Button Styles
+   ======================================== */
+
+.btn {
+    padding: var(--component-spacing-md) var(--component-spacing-xl);
+    border: 1px solid #b61827;
+    background-color: #fff;
+    color: #b61827;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.02em;
+    border-radius: 8px;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+}
+
+.btn:visited {
+    background-color: #fff;
+    color: #b61827;
+    border: 1px solid #b61827;
+}
+
+.btn:active,
+.btn:focus {
+    background-color: #fff;
+    color: #b61827;
+    border: 1px solid #b61827;
+    outline: none;
+}
+
+/* Button Red */
+.btn-red {
+    background: #ef2b23;
+    border: 1px solid #ef2b23;
+    color: #fff;
+    box-sizing: border-box;
+}
+
+.btn-red:visited {
+    background: #ef2b23;
+    border: 1px solid #ef2b23;
+    color: #fff;
+}
+
+.btn-red:hover {
+    background: #fff;
+    border: 1px solid #ef2b23;
+    color: #ef2b23;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgb(239, 43, 35, 0.24);
+}
+
+.btn-red:active,
+.btn-red:focus {
+    background: #ef2b23;
+    border: 1px solid #ef2b23;
+    color: #fff;
+    outline: none;
+}
+
+/* Button Blue */
+.btn-blue {
+    background: #2B6BF3;
+    border: 1px solid #2B6BF3;
+    color: #fff;
+    box-sizing: border-box;
+    margin-left: 0 !important;
+}
+
+.btn-blue:visited {
+    background: #2B6BF3;
+    border: 1px solid #2B6BF3;
+    color: #fff;
+}
+
+.btn-blue:hover {
+    background: #fff;
+    border: 1px solid #2B6BF3;
+    color: #2B6BF3;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgb(43, 107, 243, 0.24);
+}
+
+.btn-blue:active,
+.btn-blue:focus {
+    background: #2B6BF3;
+    border: 1px solid #2B6BF3;
+    color: #fff;
+    outline: none;
+}
+
+/* Button White */
+.btn-white {
+    background: #fff;
+    border-radius: 8px;
+    border: none;
+    margin-right: var(--section-spacing-md);
+    color: #2b6bf3;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 26px;
+    letter-spacing: 0.02em;
+}
+
+.btn-white:visited {
+    background: #fff;
+    color: #2b6bf3;
+}
+
+.btn-white:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgb(43, 107, 243, 0.16);
+}
+
+.btn-white:active,
+.btn-white:focus {
+    background: #fff;
+    color: #2b6bf3;
+    outline: none;
+}
+
+/* Button Size Variants */
+.btn-sm {
+    padding: var(--component-spacing-sm) var(--component-spacing-lg);
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.btn-lg {
+    padding: var(--component-spacing-lg) 48px;
+    font-size: 18px;
+    line-height: 28px;
+}
+
+/* Equip Buttons */
+.equip-buttons {
+    display: -webkit-box;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.equip-buttons a {
+    color: #fff;
+}
+
+.equip-buttons a:hover {
+    color: #ef2b23;
+}
+
+/* ========================================
+   Button Responsive Styles
+   ======================================== */
+
+@media (width <= 1200px) {
+    .main .equip-buttons {
+        flex-direction: column;
+    }
+
+    .main .equip-buttons a {
+        color: #fff;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 26px;
+    }
+
+    .main .equip-buttons .btn {
+        margin: 0;
+        margin-bottom: var(--component-spacing-2xl);
+        width: 185px;
+    }
+}
+
+@media (width <= 480px) {
+    .form__btn,
+    .contact-form button[type="submit"],
+    .company-form-wrap button.btn-main,
+    .btn-main,
+    .btn-red {
+        width: 100%;
+        padding: 16px 24px;
+        font-size: 16px;
+        text-align: center;
+    }
+    
+    /* Ensure minimum touch target size (44x44px) */
+    a, button, input[type="submit"], 
+    input[type="button"], .btn {
+        min-height: 44px;
+    }
+}
