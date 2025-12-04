@@ -1,0 +1,306 @@
+/* ========================================
+   Hardware Navigation Grid
+   Responsive category cards for hardware page
+   
+   Breakpoints:
+   - Base: Mobile (< 768px) - 2 columns
+   - md: 768px+ (Tablet) - 3 columns asymmetric
+   - lg: 1024px+ (Desktop) - horizontal cards
+   - xl: 1280px+ (Large desktop)
+   ======================================== */
+
+.hardware-nav {
+    background: #fff;
+    padding: clamp(32px, 6vw, 60px) 0;
+    margin-top: var(--section-spacing-md);
+}
+
+.hardware-nav__inner {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 clamp(12px, 4vw, 32px);
+}
+
+/* Grid: Mobile-first (2 columns) */
+.hardware-nav__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(8px, 2vw, 32px);
+}
+
+/* Card base styles */
+.hardware-nav__card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: clamp(12px, 3vw, 48px);
+    border-radius: var(--hw-card-radius);
+    color: #fff;
+    text-decoration: none;
+    overflow: hidden;
+    isolation: isolate;
+    min-height: clamp(180px, 30vw, 360px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Card background blur */
+.hardware-nav__card::before {
+    content: "";
+    position: absolute;
+    inset: -14%;
+    background: url("../img/mainhardwarenew/Backgroundhardwares.png") center / cover no-repeat;
+    filter: blur(8px);
+    transform: scale(0.9);
+    z-index: -2;
+}
+
+/* Card overlay gradients */
+.hardware-nav__card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--hw-overlay-default);
+    opacity: 0.92;
+    z-index: -1;
+}
+
+.hardware-nav__card--tablets::after { background: var(--hw-overlay-tablets); }
+.hardware-nav__card--emv::after { background: var(--hw-overlay-emv); }
+.hardware-nav__card--printers::after { background: var(--hw-overlay-printers); }
+.hardware-nav__card--accessories::after { background: var(--hw-overlay-accessories); }
+
+/* Hover effects */
+.hardware-nav__card:hover,
+.hardware-nav__card:focus-visible {
+    transform: translateY(-6px);
+}
+
+.hardware-nav__card:focus-visible {
+    outline: 3px solid rgba(255, 255, 255, 0.65);
+    outline-offset: 4px;
+}
+
+.hardware-nav__card:is(:hover, :focus-visible) .hardware-nav__media img {
+    transform: scale(1.05) translateY(-8px);
+    filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.3));
+}
+
+.hardware-nav__card:is(:hover, :focus-visible) .hardware-nav__cta {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(255, 59, 48, 0.35);
+}
+
+/* Card body */
+.hardware-nav__body {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: clamp(6px, 1.5vw, 18px);
+    max-width: 100%;
+    width: 100%;
+    margin-top: auto;
+}
+
+.hardware-nav__body--bottom {
+    margin-top: auto;
+}
+
+/* Card heading */
+.hardware-nav__heading {
+    font-size: clamp(14px, 2.5vw, 28px);
+    font-weight: 700;
+    line-height: 1.15;
+    margin: 0;
+    color: #fff;
+    max-width: 90%;
+    order: 1;
+}
+
+/* CTA button */
+.hardware-nav__cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: clamp(6px, 1.5vw, 12px) clamp(12px, 3vw, 24px);
+    background: rgba(255, 59, 48, 0.95);
+    color: #fff;
+    font-size: clamp(10px, 1.5vw, 14px);
+    font-weight: 600;
+    border-radius: clamp(6px, 1vw, 10px);
+    text-decoration: none;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+    min-height: 44px;
+    width: 100%;
+    text-align: center;
+    order: 2;
+}
+
+.hardware-nav__cta:hover {
+    background: rgba(255, 59, 48, 1);
+}
+
+/* Media container - centered behind content */
+.hardware-nav__media {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hardware-nav__media img {
+    max-height: clamp(100px, 18vw, 320px);
+    max-width: clamp(100px, 22vw, 320px);
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.4s ease, filter 0.4s ease;
+    opacity: 0.85;
+}
+
+.hardware-nav__card--emv .hardware-nav__media img {
+    max-height: clamp(120px, 22vw, 280px);
+    max-width: clamp(80px, 15vw, 200px);
+}
+
+/* ========================================
+   Tablet+ (768px)
+   ======================================== */
+@media (min-width: 768px) {
+    .hardware-nav__grid {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, minmax(220px, auto));
+        grid-template-areas: 
+            "tablets tablets emv"
+            "printers accessories emv";
+    }
+    
+    .hardware-nav__card--tablets { grid-area: tablets; }
+    .hardware-nav__card--emv { 
+        grid-area: emv; 
+        min-height: 100%;
+    }
+    .hardware-nav__card--printers { grid-area: printers; }
+    .hardware-nav__card--accessories { grid-area: accessories; }
+    
+    .hardware-nav__inner {
+        padding: 0 24px;
+    }
+    
+    .hardware-nav__media img {
+        opacity: 0.9;
+        transform: scale(1.1);
+    }
+    
+    .hardware-nav__cta {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+/* ========================================
+   Desktop (1024px)
+   ======================================== */
+@media (min-width: 1024px) {
+    .hardware-nav__card {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: clamp(20px, 4vw, 48px);
+    }
+    
+    .hardware-nav__card--emv {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-end;
+    }
+    
+    .hardware-nav__card--tablets {
+        min-height: 360px;
+    }
+    
+    .hardware-nav__body {
+        max-width: clamp(220px, 30vw, 320px);
+        width: auto;
+        margin-top: 0;
+    }
+    
+    .hardware-nav__body--bottom {
+        margin-top: auto;
+    }
+    
+    .hardware-nav__heading {
+        max-width: none;
+    }
+    
+    .hardware-nav__cta {
+        width: auto;
+    }
+    
+    /* Media positioned to side */
+    .hardware-nav__media {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        max-width: 45%;
+    }
+    
+    .hardware-nav__media--left { order: -1; }
+    .hardware-nav__media--right { order: 1; }
+    
+    .hardware-nav__media img {
+        max-width: 100%;
+        height: auto;
+        opacity: 1;
+        transform: none;
+    }
+    
+    .hardware-nav__card--tablets .hardware-nav__media img {
+        max-width: clamp(200px, 35vw, 320px);
+    }
+    
+    .hardware-nav__card--emv .hardware-nav__media img {
+        max-width: clamp(140px, 20vw, 200px);
+    }
+    
+    .hardware-nav__card--printers .hardware-nav__media img,
+    .hardware-nav__card--accessories .hardware-nav__media img {
+        max-width: clamp(160px, 30vw, 240px);
+    }
+    
+    /* EMV card media centered */
+    .hardware-nav__card--emv .hardware-nav__media {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: none;
+    }
+}
+
+/* ========================================
+   Large Desktop (1280px)
+   ======================================== */
+@media (min-width: 1280px) {
+    .hardware-nav__card {
+        min-height: 260px;
+    }
+    
+    .hardware-nav__card--tablets {
+        min-height: 360px;
+    }
+    
+    .hardware-nav__grid {
+        grid-auto-rows: minmax(260px, auto);
+    }
+}

@@ -1,4 +1,4 @@
-const CACHE_NAME = 'slimrate-cache-v6';
+const CACHE_NAME = 'slimrate-cache-v10';
 
 // Cache durations for different resource types (in milliseconds)
 const CACHE_DURATIONS = {
@@ -46,8 +46,23 @@ async function timestampedResponse(response) {
 const ASSETS_TO_CACHE = [
   '/',
   '/index.html',
-  '/assets/css/style.css',
+  '/assets/css/variables.css',
+  '/assets/css/base.css',
   '/assets/css/spacing-system.css',
+  '/assets/css/header.css',
+  '/assets/css/buttons.css',
+  '/assets/css/dropdown-menu.css',
+  '/assets/css/hero.css',
+  '/assets/css/cards.css',
+  '/assets/css/forms.css',
+  '/assets/css/footer.css',
+  '/assets/css/faq.css',
+  '/assets/css/pricing.css',
+  '/assets/css/equip.css',
+  '/assets/css/sections.css',
+  '/assets/css/hardware-nav.css',
+  '/assets/css/breakpoints.css',
+  '/assets/css/responsive.css',
   '/assets/css/burger.css',
   '/assets/css/layout-overrides.css',
   '/assets/css/hardware-cards-vertical-slider.css',

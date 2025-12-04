@@ -116,6 +116,26 @@
     border-left: 2px solid #EF2B23;
 }
 
+.header-nav ul li .header__tab span {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 26px;
+    color: #919191;
+    transition: all 0.5s ease;
+}
+
+.header-nav ul li .header__tab {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 21px;
+    line-height: 26px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    color: #0c0c0c;
+}
+
 /* Mobile Header */
 .mobile_header {
     display: none;
