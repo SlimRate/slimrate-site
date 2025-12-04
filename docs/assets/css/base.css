@@ -14,6 +14,71 @@ html {
   box-sizing: border-box;
 }
 
+/* Container */
+.container {
+    max-width: 1160px;
+    width: 100%;
+    display: -webkit-box;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    z-index: 1;
+}
+
+.container-header {
+    display: -webkit-box;
+    display: flex;
+    flex-flow: row wrap;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+/* Section Titles */
+h1.section-title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 63px;
+    letter-spacing: 0.02em;
+    margin-bottom: var(--component-spacing-lg);
+}
+
+h2.section-title {
+    color: #000;
+    text-transform: capitalize;
+    font-weight: 700;
+    font-size: 38px;
+    line-height: 48px;
+    letter-spacing: -0.02em;
+    margin-bottom: var(--component-spacing-xl);
+}
+
+h2.section-title span {
+    color: #ef2b23;
+    font-size: 1em;
+}
+
+.section-descr {
+    width: 100%;
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 32px;
+    letter-spacing: 0.02em;
+    color: #000;
+    margin-top: var(--component-spacing-sm);
+    margin-bottom: var(--component-spacing-xl);
+}
+
+.section-descr.small {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 23px;
+    color: #425466;
+}
+
 /* Utility Classes */
 .hidden {
     display: none;
