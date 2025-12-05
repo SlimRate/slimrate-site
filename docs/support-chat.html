@@ -293,13 +293,8 @@
     // Main Logic
     // ==========================================================================
     (function main() {
-      if (isPopupWindow()) {
-        // We are already in a popup window — load Zendesk
-        loadZendeskWidget();
-      } else {
-        // We are in a regular window/tab — open popup
-        openPopup();
-      }
+      // Always load Zendesk widget directly (no popup to avoid browser blocking)
+      loadZendeskWidget();
     })();
   </script>
 </body>
