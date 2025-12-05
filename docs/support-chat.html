@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support Chat</title>
+  <style>
+    /* ==========================================================================
+       Base Styles
+       ========================================================================== */
+    *, *::before, *::after { box-sizing: border-box; }
+    
+    body, html { 
+      margin: 0; 
+      padding: 0; 
+      height: 100%; 
+      width: 100%;
+      overflow: hidden; 
+      background-color: #f5f5f5;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+    
+    /* ==========================================================================
+       Loading Screen
+       ========================================================================== */
+    .loading-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #f5f5f5;
+      z-index: 9999;
+      transition: opacity 0.3s ease-out;
+    }
+    
+    .loading-container.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+    
+    .spinner {
+      width: 40px;
+      height: 40px;
+      border: 3px solid #e0e0e0;
+      border-top-color: #1f73b7;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    
+    .loading-text {
+      margin-top: 16px;
+      font-size: 14px;
+      color: #666;
+    }
+    
+    .loading-dots::after {
+      content: '';
+      animation: dots 1.5s steps(4, end) infinite;
+    }
+
+    @keyframes dots {
+      0%, 20% { content: ''; }
+      40% { content: '.'; }
+      60% { content: '..'; }
+      80%, 100% { content: '...'; }
+    }
+
+    /* ==========================================================================
+       Redirect Screen (shown when opening popup)
+       ========================================================================== */
+    .redirect-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #f5f5f5;
+      z-index: 99999;
+      text-align: center;
+      padding: 20px;
+    }
+    
+    .redirect-text {
+      font-size: 16px;
+      color: #333;
+      margin-bottom: 8px;
+    }
+    
+    .redirect-subtext {
+      font-size: 13px;
+      color: #888;
+    }
+    
+    /* ==========================================================================
+       Zendesk Widget Styles (stretch to fill the entire window)
+       ========================================================================== */
+    iframe[title="Messaging window"] {
+      position: fixed !important;
+      top: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      bottom: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      max-height: 100% !important;
+    }
+    
+    /* Hide the launcher button — we open the widget automatically */
+    iframe[title="Button to launch messaging window"] {
+      display: none !important;
+    }
+  </style>
+</head>
+<body>
+  <!-- Loading screen (shown in the popup window) -->
+  <div class="loading-container" id="loading">
+    <div class="spinner"></div>
+    <div class="loading-text">Connecting to support<span class="loading-dots"></span></div>
+  </div>
+
+  <script>
+    // ==========================================================================
+    // Popup Window Configuration
+    // ==========================================================================
+    var POPUP_CONFIG = {
+      width: 400,
+      height: 650,
+      name: 'ZendeskSupportChat'
+    };
+
+    // ==========================================================================
+    // Check if the device is mobile (no popup support)
+    // ==========================================================================
+    function isMobileDevice() {
+      // Check for touch support and screen size
+      var hasTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+      var isSmallScreen = window.innerWidth <= 768;
+      
+      // Check user agent for mobile devices
+      var mobileRegex = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
+      var isMobileUA = mobileRegex.test(navigator.userAgent);
+      
+      return isMobileUA || (hasTouch && isSmallScreen);
+    }
+
+    // ==========================================================================
+    // Check if we are already in a popup window of the required size
+    // ==========================================================================
+    function isPopupWindow() {
+      // On mobile devices, we don't use popups — always load widget directly
+      if (isMobileDevice()) {
+        return true;
+      }
+      
+      // Check window size with ±100px tolerance
+      var tolerance = 100;
+      var widthOk = Math.abs(window.innerWidth - POPUP_CONFIG.width) < tolerance ||
+                    Math.abs(window.outerWidth - POPUP_CONFIG.width) < tolerance;
+      var heightOk = Math.abs(window.innerHeight - POPUP_CONFIG.height) < tolerance ||
+                     Math.abs(window.outerHeight - POPUP_CONFIG.height) < tolerance;
+      
+      // Additional check: if the window was opened via window.open,
+      // it will have window.opener set
+      var hasOpener = window.opener !== null;
+      
+      // Consider it a popup if the size matches OR if it has an opener
+      return (widthOk && heightOk) || hasOpener;
+    }
+
+    // ==========================================================================
+    // Open Popup Window
+    // ==========================================================================
+    function openPopup() {
+      // Calculate position to center on screen
+      var left = Math.round((screen.width - POPUP_CONFIG.width) / 2);
+      var top = Math.round((screen.height - POPUP_CONFIG.height) / 2);
+      
+      // Window features
+      var features = [
+        'width=' + POPUP_CONFIG.width,
+        'height=' + POPUP_CONFIG.height,
+        'left=' + left,
+        'top=' + top,
+        'scrollbars=yes',
+        'resizable=no',
+        'toolbar=no',
+        'menubar=no',
+        'location=no',
+        'status=no'
+      ].join(',');
+      
+      // Open current page in a popup
+      var popup = window.open(window.location.href, POPUP_CONFIG.name, features);
+      
+      // If popup opened successfully — close the current window
+      if (popup) {
+        // Show message that chat has been opened
+        showRedirectMessage();
+        
+        // Try to close this window after a short delay
+        setTimeout(function() {
+          // window.close() only works if the window was opened by a script
+          // Otherwise, we just show the message
+          window.close();
+        }, 500);
+      }
+      
+      return popup;
+    }
+
+    // ==========================================================================
+    // Show Redirect Message
+    // ==========================================================================
+    function showRedirectMessage() {
+      // Remove loading screen
+      var loading = document.getElementById('loading');
+      if (loading) {
+        loading.remove();
+      }
+      
+      // Create redirect screen
+      var redirect = document.createElement('div');
+      redirect.className = 'redirect-container';
+      redirect.innerHTML = 
+        '<div class="redirect-text">Chat opened in a new window</div>' +
+        '<div class="redirect-subtext">You can close this tab</div>';
+      document.body.appendChild(redirect);
+    }
+
+    // ==========================================================================
+    // Load Zendesk Widget
+    // ==========================================================================
+    function loadZendeskWidget() {
+      // Zendesk account key — replace with your own
+      var accountKey = '9eae20ea-c981-4e2b-bdf3-facd3067b893';
+      
+      var script = document.createElement('script');
+      script.id = 'ze-snippet';
+      script.src = 'https://static.zdassets.com/ekr/snippet.js?key=' + accountKey;
+      script.async = true;
+      script.onload = function() {
+        // After script loads, wait for initialization and open messenger
+        openMessengerWhenReady();
+      };
+      document.head.appendChild(script);
+    }
+
+    // ==========================================================================
+    // Open Messenger When Ready
+    // ==========================================================================
+    function openMessengerWhenReady() {
+      if (typeof zE === 'undefined') {
+        setTimeout(openMessengerWhenReady, 100);
+        return;
+      }
+      
+      // Open the chat
+      zE('messenger', 'open');
+      
+      // Hide loading screen with animation
+      setTimeout(function() {
+        var loadingEl = document.getElementById('loading');
+        if (loadingEl) {
+          loadingEl.classList.add('hidden');
+          setTimeout(function() {
+            loadingEl.remove();
+          }, 300);
+        }
+      }, 500);
+      
+      // Prevent chat from being closed — reopen it immediately
+      zE('messenger:on', 'close', function() {
+        setTimeout(function() {
+          zE('messenger', 'open');
+        }, 100);
+      });
+    }
+
+    // ==========================================================================
+    // Main Logic
+    // ==========================================================================
+    (function main() {
+      if (isPopupWindow()) {
+        // We are already in a popup window — load Zendesk
+        loadZendeskWidget();
+      } else {
+        // We are in a regular window/tab — open popup
+        openPopup();
+      }
+    })();
+  </script>
+</body>
+</html>
