@@ -412,4 +412,118 @@
     .gallery {
         width: 180vh;
     }
+    
+    /* Hero fixes for tablets */
+    .mainPageHeader {
+        margin: 0 16px;
+        border-radius: 50px 0;
+    }
+    
+    .main .block-left {
+        padding: 20px;
+        border-radius: 0 24px 24px 0;
+    }
+}
+
+/* Small mobile screens (480px and below) */
+@media (width <= 480px) {
+    .mainPageHeader {
+        margin: 0 12px;
+        border-radius: 32px 0;
+        min-height: unset;
+    }
+    
+    .mainPageHeader .container {
+        min-height: 400px;
+        padding: 0 8px;
+    }
+    
+    .main .block-left {
+        padding: 16px;
+        border-radius: 0 16px 16px 0;
+        max-width: calc(100% - 8px);
+    }
+    
+    .main .section-title {
+        font-size: 24px;
+        line-height: 1.3;
+    }
+    
+    .main .section-descr {
+        font-size: 14px;
+        line-height: 1.5;
+        max-width: 100%;
+    }
+    
+    .main-allPages {
+        margin: 0 12px;
+        border-radius: 32px 0;
+    }
+    
+    .main-allPages .block-left {
+        padding: 16px;
+        border-radius: 0 16px 16px 0;
+    }
+}
+
+/* Very narrow screens (380px and below) */
+@media (width <= 380px) {
+    .mainPageHeader {
+        margin: 0 8px;
+        border-radius: 24px 0;
+    }
+    
+    .mainPageHeader .container {
+        min-height: 350px;
+        padding: 0 4px;
+    }
+    
+    .main .block-left {
+        padding: 12px;
+        border-radius: 0 12px 12px 0;
+    }
+    
+    .main .section-title {
+        font-size: 22px;
+    }
+    
+    .main-allPages {
+        margin: 0 8px;
+        border-radius: 24px 0;
+    }
+    
+    .main-allPages .block-left {
+        padding: 12px;
+        border-radius: 0 12px 12px 0;
+    }
+}
+
+/* Extra narrow screens (320px and below) */
+@media (width <= 320px) {
+    .mainPageHeader {
+        margin: 0 4px;
+        border-radius: 16px 0;
+    }
+    
+    .mainPageHeader .container {
+        min-height: 300px;
+    }
+    
+    .main .block-left {
+        padding: 10px;
+        border-radius: 0 8px 8px 0;
+    }
+    
+    .main .section-title {
+        font-size: 20px;
+    }
+    
+    .main .section-descr {
+        font-size: 13px;
+    }
+    
+    .main-allPages {
+        margin: 0 4px;
+        border-radius: 16px 0;
+    }
 }

@@ -73,7 +73,56 @@ a:focus-visible {
    Mobile App Page Specific Styles
    ======================================== */
 
-/* Mobile App Features */
+/* Mobile App Features - Base Styles */
+.mobile-app-features {
+    margin-bottom: 165px;
+    padding: 35px 0;
+}
+
+.mobile-app-features .container {
+    max-width: 1200px;
+}
+
+.mobile-app-features .container-header {
+    margin-bottom: 25px;
+}
+
+.mobile-app-features .products-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-top: 25px;
+}
+
+.mobile-app-features .products-card {
+    max-width: 100%;
+    min-height: 0;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+}
+
+.mobile-app-features .products-card__img {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 14px;
+    font-size: 26pt;
+}
+
+.mobile-app-features .products-card__title {
+    font-size: 15px;
+    line-height: 19px;
+    margin-bottom: 10px;
+}
+
+.mobile-app-features .products-card__descr {
+    font-size: 13px;
+    line-height: 19px;
+    margin-bottom: 0;
+    flex-grow: 1;
+}
+
+/* Mobile App Features - Responsive */
 @media (width <= 1200px) {
     .mobile-app-features .products-cards {
         grid-template-columns: repeat(3, 1fr);
@@ -1259,6 +1308,210 @@ a:focus-visible {
         width: 100%;
         padding: var(--spacing-4, 16px) var(--spacing-5, 20px);
         justify-content: center;
+    }
+}
+
+/* ========================================
+   CRITICAL: Very Narrow Screens (320px and below)
+   Fixes for iPhone SE, Galaxy S series, etc.
+   ======================================== */
+
+@media (max-width: 380px) {
+    /* Prevent any horizontal overflow */
+    html, body {
+        overflow-x: hidden;
+        max-width: 100vw;
+    }
+    
+    /* Hero section - reduce margins drastically */
+    .mainPageHeader {
+        margin: 0 8px !important;
+        border-radius: 24px 0 !important;
+    }
+    
+    .main-allPages {
+        margin: 0 8px !important;
+        border-radius: 24px 0 !important;
+    }
+    
+    /* Block left - reduce padding */
+    .main .block-left,
+    .main-allPages .block-left {
+        padding: 16px !important;
+        border-radius: 0 16px 16px 0 !important;
+        max-width: calc(100% - 16px) !important;
+    }
+    
+    /* Container padding */
+    .container {
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+    }
+    
+    /* Section titles */
+    .section-title,
+    h1.section-title,
+    h2.section-title {
+        font-size: 22px !important;
+        line-height: 1.3 !important;
+        word-wrap: break-word;
+    }
+    
+    .section-descr {
+        font-size: 13px !important;
+        line-height: 1.5 !important;
+    }
+    
+    /* Hardware nav cards - single column */
+    .hardware-nav__grid {
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+    }
+    
+    .hardware-nav__card {
+        min-height: 160px !important;
+        padding: 16px !important;
+    }
+    
+    .hardware-nav__heading {
+        font-size: 18px !important;
+    }
+    
+    .hardware-nav__cta {
+        padding: 10px 16px !important;
+        font-size: 12px !important;
+    }
+    
+    .hardware-nav__inner {
+        padding: 0 8px !important;
+    }
+    
+    /* Buttons */
+    .btn,
+    .btn-red,
+    .btn-main {
+        padding: 12px 20px !important;
+        font-size: 14px !important;
+        min-width: unset !important;
+    }
+    
+    /* Equip buttons */
+    .equip-buttons {
+        flex-direction: column !important;
+        gap: 12px !important;
+        width: 100% !important;
+    }
+    
+    .equip-buttons .btn {
+        margin: 0 !important;
+        width: 100% !important;
+    }
+    
+    /* Header */
+    .header {
+        padding: 0 8px !important;
+    }
+    
+    .header-logo {
+        padding: 8px !important;
+    }
+    
+    .header-logo img {
+        height: 32px !important;
+    }
+    
+    /* Footer */
+    .footer-top {
+        padding: 0 8px !important;
+    }
+    
+    .footer-bottom ul li {
+        margin: 8px !important;
+    }
+    
+    /* Cards */
+    .products-card,
+    .something-card,
+    .who-card {
+        padding: 16px !important;
+    }
+    
+    /* FAQ */
+    .faq-question summary,
+    .faq-question .question-title {
+        font-size: 13px !important;
+        padding: 10px 12px !important;
+    }
+    
+    /* Forms */
+    .form__input,
+    .form__select select,
+    input,
+    select,
+    textarea {
+        font-size: 16px !important; /* Prevents zoom on iOS */
+        padding: 12px !important;
+    }
+    
+    /* Pricing cards */
+    .tariff-card {
+        padding: 16px !important;
+    }
+    
+    .tariff-card__title {
+        font-size: 18px !important;
+    }
+    
+    .tariff-card__price span {
+        font-size: 24px !important;
+    }
+    
+    /* Customer testimonials */
+    .customer-testimonials__card {
+        padding: 16px !important;
+    }
+    
+    /* Easy guides */
+    .easy-guides__content {
+        padding: 20px 12px !important;
+    }
+    
+    .easy-guides__title {
+        font-size: 20px !important;
+    }
+}
+
+/* Extra small screens (below 320px) */
+@media (max-width: 320px) {
+    .mainPageHeader {
+        margin: 0 4px !important;
+        border-radius: 16px 0 !important;
+    }
+    
+    .main .block-left,
+    .main-allPages .block-left {
+        padding: 12px !important;
+        border-radius: 0 12px 12px 0 !important;
+    }
+    
+    .container {
+        padding-left: 8px !important;
+        padding-right: 8px !important;
+    }
+    
+    .section-title,
+    h1.section-title,
+    h2.section-title {
+        font-size: 20px !important;
+    }
+    
+    .hardware-nav__card {
+        min-height: 140px !important;
+        padding: 12px !important;
+    }
+    
+    .hardware-nav__heading {
+        font-size: 16px !important;
     }
 }
 

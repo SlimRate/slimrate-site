@@ -304,3 +304,43 @@
         grid-auto-rows: minmax(260px, auto);
     }
 }
+
+/* ========================================
+   Very Small Mobile (380px and below)
+   Single column layout for narrow screens
+   ======================================== */
+@media (max-width: 380px) {
+    .hardware-nav {
+        padding: 24px 0;
+    }
+    
+    .hardware-nav__inner {
+        padding: 0 8px;
+    }
+    
+    .hardware-nav__grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .hardware-nav__card {
+        min-height: 140px;
+        padding: 16px;
+        border-radius: 12px;
+    }
+    
+    .hardware-nav__heading {
+        font-size: 18px;
+    }
+    
+    .hardware-nav__cta {
+        padding: 10px 16px;
+        font-size: 12px;
+        min-height: 40px;
+    }
+    
+    .hardware-nav__media img {
+        max-height: 100px;
+        max-width: 100px;
+    }
+}

@@ -1207,3 +1207,284 @@
         justify-content: center;
     }
 }
+
+
+/* ----------------------------------------
+   Slider Arrow Controls
+   ---------------------------------------- */
+.slider-arrow {
+    width: 30px;
+    height: 30px;
+    display: block;
+    top: -135px;
+    position: absolute;
+    right: 0;
+    background: url("/assets/img/slider-arrow.svg") no-repeat center;
+    background-size: cover;
+    cursor: pointer;
+}
+
+.slider-arrow_right {
+    right: 30px;
+}
+
+.slider-arrow_left {
+    transform: rotateY(180deg);
+    right: 100px;
+}
+
+
+/* ----------------------------------------
+   Company Page Specific Styles
+   ---------------------------------------- */
+.company-faq .faq-block__left {
+    max-width: 100%;
+}
+
+.company-faq .faq-block__right {
+    display: none;
+}
+
+.company-types {
+    padding-top: 60px;
+}
+
+.company-tech {
+    padding-top: 0;
+}
+
+.company-advantages {
+    padding-top: 0;
+}
+
+
+/* ----------------------------------------
+   Why Block Animations
+   ---------------------------------------- */
+.why-block__img {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+}
+
+.why-block__img img {
+    position: absolute;
+    width: 100%;
+    transition: transform 0.9s ease;
+}
+
+.why-block__img img:first-child {
+    height: auto;
+    right: 0;
+    z-index: 3;
+}
+
+.why-block__img img:nth-child(2) {
+    z-index: 2;
+    top: 10%;
+    left: 0;
+}
+
+.why-block__img img:last-child {
+    z-index: 1;
+    left: 0;
+    top: 30%;
+}
+
+.why-block__list {
+    margin-top: var(--section-spacing-xl);
+    list-style: none;
+}
+
+.why-block__list ul {
+    list-style: none;
+}
+
+.why-block__list li {
+    transition: all ease 0.8s;
+}
+
+.why-block__list li.unactive {
+    opacity: 0.3;
+}
+
+.why-block__list li:not(:first-child) {
+    padding-top: var(--component-spacing-2xl);
+}
+
+.why-block__list li:hover {
+    animation: descr-anim 0.8s linear;
+}
+
+.why-block__list li:hover span {
+    left: -76px;
+}
+
+.why-block__list li:hover span div::after {
+    width: 24px;
+    height: 24px;
+}
+
+.why-block__list li:hover span div::before {
+    width: 70px;
+}
+
+.why-block__list-item {
+    position: relative;
+    transition: all 0.5s ease;
+    cursor: default;
+    padding-left: 70px;
+}
+
+.why-block__list-item span {
+    position: absolute;
+    left: 0;
+    top: 27px;
+    transform: translateY(-25px);
+    transition: all ease 0.8s;
+}
+
+.why-block__list-item span .round {
+    position: relative;
+    display: block;
+    left: 0;
+    top: 4px;
+    width: 11.11px;
+    height: 11.11px;
+    border-radius: 100%;
+    background: #F46B65;
+    transition: all ease 0.8s;
+}
+
+.why-block__list-item span .round::before {
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 3px;
+    top: 50%;
+    left: 40px;
+    transform: translateY(-50%);
+    background: #F46B65;
+    transition: all ease 0.8s;
+}
+
+.why-block__list-item span .round::after {
+    position: absolute;
+    content: '';
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    width: 11.11px;
+    height: 11.11px;
+    border-radius: 100%;
+    background: #FABFBD;
+    transition: all ease 0.8s;
+}
+
+.why-block__list .section-title {
+    margin-bottom: 75px;
+}
+
+.why-list__title {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 23px;
+    margin-bottom: 10px;
+    color: #0c0707;
+}
+
+.why-list__descr {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 29px;
+    color: #0C0C0C;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    max-width: 413px;
+}
+
+/* Why Block Animation States */
+.why-block__img.animation-st-1 img:nth-child(1) {
+    transform: translateY(-20px) scale(1.1);
+}
+
+.why-block__img.animation-st-1 img:nth-child(2),
+.why-block__img.animation-st-1 img:nth-child(3) {
+    transform: translateY(60px);
+}
+
+.why-block__img.animation-st-2 img:nth-child(1) {
+    transform: translateY(-50px);
+}
+
+.why-block__img.animation-st-2 img:nth-child(2) {
+    transform: scale(1.1);
+}
+
+.why-block__img.animation-st-2 img:nth-child(3) {
+    transform: translateY(50px);
+}
+
+.why-block__img.animation-st-3 img:nth-child(1),
+.why-block__img.animation-st-3 img:nth-child(2) {
+    transform: translateY(-40px);
+}
+
+.why-block__img.animation-st-3 img:nth-child(3) {
+    transform: translateY(60px) scale(1.1);
+}
+
+.why-block__list.animation-st-1 li:nth-child(2) {
+    padding-top: 70px;
+}
+
+.why-block__list.animation-st-2 li:nth-child(1) {
+    transform: translateY(-70px);
+}
+
+.why-block__list.animation-st-2 li:nth-child(3) {
+    padding-top: 90px;
+}
+
+.why-block__list.animation-st-3 li:nth-child(1) {
+    transform: translateY(-70px);
+}
+
+.why-block__list.animation-st-3 li:nth-child(2) {
+    transform: translateY(-70px);
+}
+
+
+/* ----------------------------------------
+   Allinone Text Elements
+   ---------------------------------------- */
+.allinone__title {
+    font-size: var(--font-size-5xl);
+    font-weight: 700;
+    line-height: var(--line-height-tight);
+    color: var(--color-text-primary);
+    margin-bottom: 10px;
+}
+
+.allinone__title span {
+    display: block;
+    color: var(--color-primary);
+    margin-top: 4px;
+}
+
+.allinone__text {
+    font-size: var(--font-size-base);
+    line-height: 1.45;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.allinone__text:last-of-type {
+    margin-bottom: 10px;
+}
+
+.allinone__cta {
+    display: inline-block;
+    margin-top: 0;
+}
