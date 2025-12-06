@@ -3,8 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Support Chat</title>
+  <title>Slimrate Support</title>
+  <link rel="icon" type="image/png" href="https://slimrate.com/favicon.ico">
   <style>
+    /* ==========================================================================
+       Slimrate Brand Colors
+       Primary: #EE2F2B (Red)
+       Secondary: #009E2D (Green)
+       Background: #191919 (Not Black)
+       Text: #FFFFFF (White)
+       Additional: #888888, #A4A4A4, #C5C5C5, #F3F3F3
+       ========================================================================== */
+    
     /* ==========================================================================
        Base Styles
        ========================================================================== */
@@ -16,7 +26,7 @@
       height: 100%; 
       width: 100%;
       overflow: hidden; 
-      background-color: #f5f5f5;
+      background: #FFFFFF;
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
     
@@ -33,7 +43,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      background-color: #f5f5f5;
+      background: #FFFFFF;
       z-index: 9999;
       transition: opacity 0.3s ease-out;
     }
@@ -42,14 +52,20 @@
       opacity: 0;
       pointer-events: none;
     }
+
+    .logo {
+      width: 120px;
+      height: auto;
+      margin-bottom: 24px;
+    }
     
     .spinner {
-      width: 40px;
-      height: 40px;
-      border: 3px solid #e0e0e0;
-      border-top-color: #1f73b7;
+      width: 48px;
+      height: 48px;
+      border: 4px solid #F3F3F3;
+      border-top-color: #EE2F2B;
       border-radius: 50%;
-      animation: spin 1s linear infinite;
+      animation: spin 0.8s linear infinite;
     }
     
     @keyframes spin {
@@ -57,9 +73,11 @@
     }
     
     .loading-text {
-      margin-top: 16px;
-      font-size: 14px;
-      color: #666;
+      margin-top: 20px;
+      font-size: 16px;
+      font-weight: 500;
+      color: #191919;
+      letter-spacing: 0.5px;
     }
     
     .loading-dots::after {
@@ -87,21 +105,39 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      background-color: #f5f5f5;
+      background: #FFFFFF;
       z-index: 99999;
       text-align: center;
       padding: 20px;
     }
+
+    .redirect-icon {
+      width: 64px;
+      height: 64px;
+      background: rgba(238, 47, 43, 0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .redirect-icon svg {
+      width: 32px;
+      height: 32px;
+      fill: #EE2F2B;
+    }
     
     .redirect-text {
-      font-size: 16px;
-      color: #333;
+      font-size: 18px;
+      font-weight: 600;
+      color: #191919;
       margin-bottom: 8px;
     }
     
     .redirect-subtext {
-      font-size: 13px;
-      color: #888;
+      font-size: 14px;
+      color: #A4A4A4;
     }
     
     /* ==========================================================================
@@ -127,18 +163,105 @@
 <body>
   <!-- Loading screen (shown in the popup window) -->
   <div class="loading-container" id="loading">
+    <img class="logo" src="https://slimrate.com/assets/img/logo.svg" alt="Slimrate" onerror="this.style.display='none'">
     <div class="spinner"></div>
     <div class="loading-text">Connecting to support<span class="loading-dots"></span></div>
   </div>
 
   <script>
     // ==========================================================================
+    // Parse URL Query Parameters
+    // Extracts all query parameters and converts them to conversation fields
+    // Example URL: ?order_id=123&customer_name=John&total=100.50&_tags=vip,mobile
+    // Result: 
+    //   fields: [{ id: 'order_id', value: '123' }, { id: 'customer_name', value: 'John' }, ...]
+    //   tags: ['vip', 'mobile']
+    // ==========================================================================
+    function parseQueryParams() {
+      var params = new URLSearchParams(window.location.search);
+      var fields = [];
+      var tags = [];
+      
+      params.forEach(function(value, key) {
+        // Skip internal parameters that shouldn't be passed to Zendesk
+        if (key === '_' || key === 'timestamp' || key === 'nocache') {
+          return;
+        }
+
+        // Special key for tags (comma-separated list)
+        if (key === '_tags') {
+          tags = value.split(',').map(function(tag) {
+            return tag.trim();
+          }).filter(function(tag) {
+            return tag.length > 0;
+          });
+          return;
+        }
+        
+        // Try to parse value as number or boolean
+        var parsedValue = value;
+        
+        // Check for boolean values
+        if (value.toLowerCase() === 'true') {
+          parsedValue = true;
+        } else if (value.toLowerCase() === 'false') {
+          parsedValue = false;
+        } 
+        // Check for numeric values
+        else if (!isNaN(value) && value.trim() !== '') {
+          parsedValue = parseFloat(value);
+        }
+        
+        fields.push({
+          id: key,
+          value: parsedValue
+        });
+      });
+      
+      return { fields: fields, tags: tags };
+    }
+
+    // Store parsed conversation data globally
+    var CONVERSATION_DATA = parseQueryParams();
+    var CONVERSATION_FIELDS = CONVERSATION_DATA.fields;
+    var CONVERSATION_TAGS = CONVERSATION_DATA.tags;
+
+    // ==========================================================================
+    // Slimrate Brand Theme Configuration
+    // Colors from Slimrate palette:
+    // - mainRed: #EE2F2B
+    // - mainNotBlack: #191919
+    // - green: #009E2D
+    // - blue: #3D6AEB
+    // - add1: #888888, add2: #A4A4A4, add3: #C5C5C5, add4: #F3F3F3
+    // - darkGray: #3D3D3D
+    // - errorPink: #DB5D61
+    // ==========================================================================
+    var SLIMRATE_THEME = {
+      primary: "#EE2F2B",         // Slimrate Red (mainRed)
+      onPrimary: "#FFFFFF",       // White text on primary
+      message: "#F3F3F3",         // Light gray for user messages (add4)
+      onMessage: "#191919",       // Dark text on user messages (mainNotBlack)
+      action: "#009E2D",          // Green for action buttons
+      onAction: "#FFFFFF",        // White text on actions
+      businessMessage: "#FFFFFF", // White for business messages
+      onBusinessMessage: "#191919", // Dark text on business messages (mainNotBlack)
+      background: "#FFFFFF",      // White background
+      onBackground: "#191919",    // Dark text on background (mainNotBlack)
+      error: "#DB5D61",           // Error pink
+      onError: "#FFFFFF",         // White text on error
+      notify: "#EE2F2B",          // Red for notifications (mainRed)
+      onNotify: "#FFFFFF",        // White text on notifications
+      onSecondaryAction: "#191919" // Dark text on secondary actions (mainNotBlack)
+    };
+
+    // ==========================================================================
     // Popup Window Configuration
     // ==========================================================================
     var POPUP_CONFIG = {
       width: 400,
       height: 650,
-      name: 'ZendeskSupportChat'
+      name: 'SlimrateSupportChat'
     };
 
     // ==========================================================================
@@ -205,15 +328,12 @@
       // Open current page in a popup
       var popup = window.open(window.location.href, POPUP_CONFIG.name, features);
       
-      // If popup opened successfully — close the current window
+      // If popup opened successfully — show redirect message
       if (popup) {
-        // Show message that chat has been opened
         showRedirectMessage();
         
         // Try to close this window after a short delay
         setTimeout(function() {
-          // window.close() only works if the window was opened by a script
-          // Otherwise, we just show the message
           window.close();
         }, 500);
       }
@@ -231,20 +351,23 @@
         loading.remove();
       }
       
-      // Create redirect screen
+      // Create redirect screen with icon
       var redirect = document.createElement('div');
       redirect.className = 'redirect-container';
       redirect.innerHTML = 
+        '<div class="redirect-icon">' +
+          '<svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V8l8 5 8-5v10zm-8-7L4 6h16l-8 5z"/></svg>' +
+        '</div>' +
         '<div class="redirect-text">Chat opened in a new window</div>' +
         '<div class="redirect-subtext">You can close this tab</div>';
       document.body.appendChild(redirect);
     }
 
     // ==========================================================================
-    // Load Zendesk Widget
+    // Load Zendesk Widget with Slimrate Theme
     // ==========================================================================
     function loadZendeskWidget() {
-      // Zendesk account key — replace with your own
+      // Zendesk account key
       var accountKey = '9eae20ea-c981-4e2b-bdf3-facd3067b893';
       
       var script = document.createElement('script');
@@ -252,37 +375,100 @@
       script.src = 'https://static.zdassets.com/ekr/snippet.js?key=' + accountKey;
       script.async = true;
       script.onload = function() {
-        // After script loads, wait for initialization and open messenger
-        openMessengerWhenReady();
+        // After script loads, wait for initialization and configure
+        configureAndOpenMessenger();
       };
       document.head.appendChild(script);
     }
 
     // ==========================================================================
-    // Open Messenger When Ready
+    // Configure Messenger with Theme and Open
+    // Waits for the Zendesk widget to be fully loaded before configuring
     // ==========================================================================
-    function openMessengerWhenReady() {
+    function configureAndOpenMessenger() {
+      // Step 1: Wait for zE function to be available
       if (typeof zE === 'undefined') {
-        setTimeout(openMessengerWhenReady, 100);
+        console.log('[Slimrate Support] Waiting for zE function...');
+        setTimeout(configureAndOpenMessenger, 100);
         return;
       }
       
-      // Open the chat
-      zE('messenger', 'open');
+      console.log('[Slimrate Support] zE function available, waiting for widget ready...');
       
-      // Hide loading screen with animation
+      // Step 2: Listen for the 'open' event which indicates widget is ready
+      // The widget fires 'open' event when it's fully loaded and opened
+      zE('messenger:on', 'open', function() {
+        console.log('[Slimrate Support] Messenger opened and ready');
+        onWidgetReady();
+      });
+      
+      // Step 3: Apply Slimrate brand theme (can be set before widget is ready)
+      zE('messenger:set', 'customization', {
+        theme: SLIMRATE_THEME
+      });
+      console.log('[Slimrate Support] Theme applied');
+
+      // Step 4: Set conversation tags from URL query parameters
+      // Tags are applied when user sends a message
+      if (CONVERSATION_TAGS.length > 0) {
+        console.log('[Slimrate Support] Setting conversation tags:', CONVERSATION_TAGS);
+        zE('messenger:set', 'conversationTags', CONVERSATION_TAGS);
+      }
+
+      // Step 5: Set conversation fields from URL query parameters
+      // Fields are applied when user sends a message
+      // IMPORTANT: Fields MUST be configured in Zendesk Admin Center with 
+      // "Customers can edit" permission! Otherwise they won't appear on tickets.
+      //
+      // Admin Center → Objects and rules → Tickets → Fields → Create/Edit field
+      // → Permissions → Check "Customers can edit"
+      if (CONVERSATION_FIELDS.length > 0) {
+        console.log('[Slimrate Support] Setting conversation fields:');
+        console.log('[Slimrate Support] Raw fields array:', JSON.stringify(CONVERSATION_FIELDS, null, 2));
+        
+        // Log each field for debugging
+        CONVERSATION_FIELDS.forEach(function(field, index) {
+          console.log('[Slimrate Support] Field ' + (index + 1) + ':', 
+            'id=' + field.id + ' (type: ' + typeof field.id + ')', 
+            'value=' + field.value + ' (type: ' + typeof field.value + ')');
+        });
+        
+        // Note: conversationFields does NOT support callback parameter!
+        // Fields are applied asynchronously when user sends a message.
+        zE('messenger:set', 'conversationFields', CONVERSATION_FIELDS);
+        console.log('[Slimrate Support] Conversation fields command sent to Zendesk');
+      }
+      
+      // Open messenger after all configuration is set
+      // Small delay to ensure fields are processed
       setTimeout(function() {
-        var loadingEl = document.getElementById('loading');
-        if (loadingEl) {
-          loadingEl.classList.add('hidden');
-          setTimeout(function() {
-            loadingEl.remove();
-          }, 300);
-        }
-      }, 500);
+        zE('messenger', 'open');
+      }, 100);
+    }
+    
+    // ==========================================================================
+    // Called when widget is fully loaded and ready
+    // ==========================================================================
+    function onWidgetReady() {
+      // Hide loading screen with smooth animation
+      var loadingEl = document.getElementById('loading');
+      if (loadingEl) {
+        loadingEl.classList.add('hidden');
+        setTimeout(function() {
+          loadingEl.remove();
+        }, 300);
+      }
       
-      // Prevent chat from being closed — reopen it immediately
+      // Setup handler to prevent closing
+      setupCloseHandler();
+    }
+
+    // ==========================================================================
+    // Prevent chat from being closed — reopen it immediately
+    // ==========================================================================
+    function setupCloseHandler() {
       zE('messenger:on', 'close', function() {
+        console.log('[Slimrate Support] User tried to close, reopening...');
         setTimeout(function() {
           zE('messenger', 'open');
         }, 100);
