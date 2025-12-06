@@ -1,492 +1,440 @@
 <!DOCTYPE html>
 <html lang="en">
+<!--
+================================================================================
+SLIMRATE SUPPORT CHAT
+================================================================================
+Кастомизированная страница Zendesk Chat для Slimrate.
+Основана на zendesk-chat-template.html с применением брендинга Slimrate.
+
+Цвета бренда Slimrate:
+- Primary (Red): #EE2F2B
+- Secondary (Green): #009E2D
+- Background (Not Black): #191919
+- Text (White): #FFFFFF
+- Additional: #888888, #A4A4A4, #C5C5C5, #F3F3F3
+
+Для использования в приложении укажите URL этого файла в конфигурации:
+ZENDESK_WEB_CHAT_URL=https://yourdomain.com/support-chat.html
+================================================================================
+-->
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Slimrate Support</title>
-  <link rel="icon" type="image/png" href="https://slimrate.com/favicon.ico">
-  <style>
-    /* ==========================================================================
-       Slimrate Brand Colors
-       Primary: #EE2F2B (Red)
-       Secondary: #009E2D (Green)
-       Background: #191919 (Not Black)
-       Text: #FFFFFF (White)
-       Additional: #888888, #A4A4A4, #C5C5C5, #F3F3F3
-       ========================================================================== */
-    
-    /* ==========================================================================
-       Base Styles
-       ========================================================================== */
-    *, *::before, *::after { box-sizing: border-box; }
-    
-    body, html { 
-      margin: 0; 
-      padding: 0; 
-      height: 100%; 
-      width: 100%;
-      overflow: hidden; 
-      background: #FFFFFF;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    }
-    
-    /* ==========================================================================
-       Loading Screen
-       ========================================================================== */
-    .loading-container {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      background: #FFFFFF;
-      z-index: 9999;
-      transition: opacity 0.3s ease-out;
-    }
-    
-    .loading-container.hidden {
-      opacity: 0;
-      pointer-events: none;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slimrate Support</title>
+    <link rel="icon" type="image/png" href="https://slimrate.com/favicon.ico">
 
-    .logo {
-      width: 120px;
-      height: auto;
-      margin-bottom: 24px;
-    }
-    
-    .spinner {
-      width: 48px;
-      height: 48px;
-      border: 4px solid #F3F3F3;
-      border-top-color: #EE2F2B;
-      border-radius: 50%;
-      animation: spin 0.8s linear infinite;
-    }
-    
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
-    
-    .loading-text {
-      margin-top: 20px;
-      font-size: 16px;
-      font-weight: 500;
-      color: #191919;
-      letter-spacing: 0.5px;
-    }
-    
-    .loading-dots::after {
-      content: '';
-      animation: dots 1.5s steps(4, end) infinite;
-    }
+    <style>
+        /* =====================================================================
+           Slimrate Brand Colors
+           Primary: #EE2F2B (Red)
+           Secondary: #009E2D (Green)
+           Background: #191919 (Not Black)
+           Text: #FFFFFF (White)
+           Additional: #888888, #A4A4A4, #C5C5C5, #F3F3F3
+           ===================================================================== */
+        :root {
+            --brand-primary: #EE2F2B;
+            --brand-secondary: #009E2D;
+            --text-primary: #191919;
+            --text-secondary: #A4A4A4;
+            --bg-primary: #FFFFFF;
+            --bg-secondary: #F3F3F3;
+        }
 
-    @keyframes dots {
-      0%, 20% { content: ''; }
-      40% { content: '.'; }
-      60% { content: '..'; }
-      80%, 100% { content: '...'; }
-    }
+        /* =====================================================================
+           Базовые стили
+           ===================================================================== */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
 
-    /* ==========================================================================
-       Redirect Screen (shown when opening popup)
-       ========================================================================== */
-    .redirect-container {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      background: #FFFFFF;
-      z-index: 99999;
-      text-align: center;
-      padding: 20px;
-    }
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            background: var(--bg-primary);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
 
-    .redirect-icon {
-      width: 64px;
-      height: 64px;
-      background: rgba(238, 47, 43, 0.2);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 20px;
-    }
+        /* =====================================================================
+           Экран загрузки
+           ===================================================================== */
+        .loading-container {
+            position: fixed;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: var(--bg-primary);
+            z-index: 9999;
+            transition: opacity 0.3s ease-out;
+        }
 
-    .redirect-icon svg {
-      width: 32px;
-      height: 32px;
-      fill: #EE2F2B;
-    }
-    
-    .redirect-text {
-      font-size: 18px;
-      font-weight: 600;
-      color: #191919;
-      margin-bottom: 8px;
-    }
-    
-    .redirect-subtext {
-      font-size: 14px;
-      color: #A4A4A4;
-    }
-    
-    /* ==========================================================================
-       Zendesk Widget Styles (stretch to fill the entire window)
-       ========================================================================== */
-    iframe[title="Messaging window"] {
-      position: fixed !important;
-      top: 0 !important;
-      left: 0 !important;
-      right: 0 !important;
-      bottom: 0 !important;
-      width: 100% !important;
-      height: 100% !important;
-      max-height: 100% !important;
-    }
-    
-    /* Hide the launcher button — we open the widget automatically */
-    iframe[title="Button to launch messaging window"] {
-      display: none !important;
-    }
-  </style>
+        .loading-container.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .logo {
+            width: 120px;
+            height: auto;
+            margin-bottom: 24px;
+        }
+
+        .spinner {
+            width: 48px;
+            height: 48px;
+            border: 4px solid var(--bg-secondary);
+            border-top-color: var(--brand-primary);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .loading-text {
+            margin-top: 20px;
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-primary);
+            letter-spacing: 0.5px;
+        }
+
+        .loading-dots::after {
+            content: '';
+            animation: dots 1.5s steps(4, end) infinite;
+        }
+
+        @keyframes dots {
+
+            0%,
+            20% {
+                content: '';
+            }
+
+            40% {
+                content: '.';
+            }
+
+            60% {
+                content: '..';
+            }
+
+            80%,
+            100% {
+                content: '...';
+            }
+        }
+
+        /* =====================================================================
+           Экран перенаправления
+           ===================================================================== */
+        .redirect-container {
+            position: fixed;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: var(--bg-primary);
+            z-index: 99999;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .redirect-icon {
+            width: 64px;
+            height: 64px;
+            background: rgba(238, 47, 43, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .redirect-icon svg {
+            width: 32px;
+            height: 32px;
+            fill: var(--brand-primary);
+        }
+
+        .redirect-text {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .redirect-subtext {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        /* =====================================================================
+           Стили Zendesk виджета
+           ===================================================================== */
+        iframe[title="Messaging window"] {
+            position: fixed !important;
+            inset: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            max-height: 100% !important;
+        }
+
+        iframe[title="Button to launch messaging window"] {
+            display: none !important;
+        }
+    </style>
 </head>
+
 <body>
-  <!-- Loading screen (shown in the popup window) -->
-  <div class="loading-container" id="loading">
-    <img class="logo" src="https://slimrate.com/assets/img/logo.svg" alt="Slimrate" onerror="this.style.display='none'">
-    <div class="spinner"></div>
-    <div class="loading-text">Connecting to support<span class="loading-dots"></span></div>
-  </div>
+    <!-- Экран загрузки -->
+    <div class="loading-container" id="loading">
+        <img class="logo" src="https://slimrate.com/assets/img/logo.svg" alt="Slimrate"
+            onerror="this.style.display='none'">
+        <div class="spinner"></div>
+        <div class="loading-text">Connecting to support<span class="loading-dots"></span></div>
+    </div>
 
-  <script>
-    // ==========================================================================
-    // Parse URL Query Parameters
-    // Extracts all query parameters and converts them to conversation fields
-    // Example URL: ?order_id=123&customer_name=John&total=100.50&_tags=vip,mobile
-    // Result: 
-    //   fields: [{ id: 'order_id', value: '123' }, { id: 'customer_name', value: 'John' }, ...]
-    //   tags: ['vip', 'mobile']
-    // ==========================================================================
-    function parseQueryParams() {
-      var params = new URLSearchParams(window.location.search);
-      var fields = [];
-      var tags = [];
-      
-      params.forEach(function(value, key) {
-        // Skip internal parameters that shouldn't be passed to Zendesk
-        if (key === '_' || key === 'timestamp' || key === 'nocache') {
-          return;
+    <script>
+        // =====================================================================
+        // КОНФИГУРАЦИЯ SLIMRATE
+        // =====================================================================
+
+        // Zendesk account key для Slimrate
+        var ZENDESK_ACCOUNT_KEY = '9eae20ea-c981-4e2b-bdf3-facd3067b893';
+
+        // Тема Slimrate для Zendesk виджета
+        // Цвета из палитры Slimrate:
+        // - mainRed: #EE2F2B
+        // - mainNotBlack: #191919
+        // - green: #009E2D
+        // - blue: #3D6AEB
+        // - add1: #888888, add2: #A4A4A4, add3: #C5C5C5, add4: #F3F3F3
+        // - darkGray: #3D3D3D
+        // - errorPink: #DB5D61
+        var ZENDESK_THEME = {
+            primary: "#EE2F2B",           // Slimrate Red
+            onPrimary: "#FFFFFF",         // White text on primary
+            message: "#F3F3F3",           // Light gray for user messages
+            onMessage: "#191919",         // Dark text on user messages
+            action: "#009E2D",            // Green for action buttons
+            onAction: "#FFFFFF",          // White text on actions
+            businessMessage: "#FFFFFF",   // White for agent messages
+            onBusinessMessage: "#191919", // Dark text on agent messages
+            background: "#FFFFFF",        // White background
+            onBackground: "#191919",      // Dark text on background
+            error: "#DB5D61",             // Error pink
+            onError: "#FFFFFF",           // White text on error
+            notify: "#EE2F2B",            // Red for notifications
+            onNotify: "#FFFFFF",          // White text on notifications
+            onSecondaryAction: "#191919"  // Dark text on secondary actions
+        };
+
+        // Конфигурация popup окна
+        var POPUP_CONFIG = {
+            width: 400,
+            height: 650,
+            name: 'SlimrateSupportChat'
+        };
+
+        // =====================================================================
+        // ПАРСЕР URL QUERY ПАРАМЕТРОВ
+        // =====================================================================
+        function parseQueryParams() {
+            var params = new URLSearchParams(window.location.search);
+            var fields = [];
+            var tags = [];
+
+            params.forEach(function (value, key) {
+                // Пропускаем cache-busting параметры
+                if (key === '_' || key === 'timestamp' || key === 'nocache') {
+                    return;
+                }
+
+                // Специальный ключ для тегов
+                if (key === '_tags') {
+                    tags = value.split(',').map(function (tag) {
+                        return tag.trim();
+                    }).filter(function (tag) {
+                        return tag.length > 0;
+                    });
+                    return;
+                }
+
+                // Парсим тип значения
+                var parsedValue = value;
+                if (value.toLowerCase() === 'true') {
+                    parsedValue = true;
+                } else if (value.toLowerCase() === 'false') {
+                    parsedValue = false;
+                } else if (!isNaN(value) && value.trim() !== '') {
+                    parsedValue = parseFloat(value);
+                }
+
+                fields.push({ id: key, value: parsedValue });
+            });
+
+            return { fields: fields, tags: tags };
         }
 
-        // Special key for tags (comma-separated list)
-        if (key === '_tags') {
-          tags = value.split(',').map(function(tag) {
-            return tag.trim();
-          }).filter(function(tag) {
-            return tag.length > 0;
-          });
-          return;
+        var CONVERSATION_DATA = parseQueryParams();
+
+        // =====================================================================
+        // ДЕТЕКЦИЯ УСТРОЙСТВА
+        // =====================================================================
+        function isMobileDevice() {
+            var hasTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+            var isSmallScreen = window.innerWidth <= 768;
+            var mobileRegex = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
+            return mobileRegex.test(navigator.userAgent) || (hasTouch && isSmallScreen);
         }
-        
-        // Try to parse value as number or boolean
-        var parsedValue = value;
-        
-        // Check for boolean values
-        if (value.toLowerCase() === 'true') {
-          parsedValue = true;
-        } else if (value.toLowerCase() === 'false') {
-          parsedValue = false;
-        } 
-        // Check for numeric values
-        else if (!isNaN(value) && value.trim() !== '') {
-          parsedValue = parseFloat(value);
+
+        function isPopupWindow() {
+            if (isMobileDevice()) return true;
+
+            var tolerance = 100;
+            var widthOk = Math.abs(window.innerWidth - POPUP_CONFIG.width) < tolerance ||
+                Math.abs(window.outerWidth - POPUP_CONFIG.width) < tolerance;
+            var heightOk = Math.abs(window.innerHeight - POPUP_CONFIG.height) < tolerance ||
+                Math.abs(window.outerHeight - POPUP_CONFIG.height) < tolerance;
+
+            return (widthOk && heightOk) || window.opener !== null;
         }
-        
-        fields.push({
-          id: key,
-          value: parsedValue
-        });
-      });
-      
-      return { fields: fields, tags: tags };
-    }
 
-    // Store parsed conversation data globally
-    var CONVERSATION_DATA = parseQueryParams();
-    var CONVERSATION_FIELDS = CONVERSATION_DATA.fields;
-    var CONVERSATION_TAGS = CONVERSATION_DATA.tags;
+        // =====================================================================
+        // POPUP ОКНО
+        // =====================================================================
+        function openPopup() {
+            var left = Math.round((screen.width - POPUP_CONFIG.width) / 2);
+            var top = Math.round((screen.height - POPUP_CONFIG.height) / 2);
 
-    // ==========================================================================
-    // Slimrate Brand Theme Configuration
-    // Colors from Slimrate palette:
-    // - mainRed: #EE2F2B
-    // - mainNotBlack: #191919
-    // - green: #009E2D
-    // - blue: #3D6AEB
-    // - add1: #888888, add2: #A4A4A4, add3: #C5C5C5, add4: #F3F3F3
-    // - darkGray: #3D3D3D
-    // - errorPink: #DB5D61
-    // ==========================================================================
-    var SLIMRATE_THEME = {
-      primary: "#EE2F2B",         // Slimrate Red (mainRed)
-      onPrimary: "#FFFFFF",       // White text on primary
-      message: "#F3F3F3",         // Light gray for user messages (add4)
-      onMessage: "#191919",       // Dark text on user messages (mainNotBlack)
-      action: "#009E2D",          // Green for action buttons
-      onAction: "#FFFFFF",        // White text on actions
-      businessMessage: "#FFFFFF", // White for business messages
-      onBusinessMessage: "#191919", // Dark text on business messages (mainNotBlack)
-      background: "#FFFFFF",      // White background
-      onBackground: "#191919",    // Dark text on background (mainNotBlack)
-      error: "#DB5D61",           // Error pink
-      onError: "#FFFFFF",         // White text on error
-      notify: "#EE2F2B",          // Red for notifications (mainRed)
-      onNotify: "#FFFFFF",        // White text on notifications
-      onSecondaryAction: "#191919" // Dark text on secondary actions (mainNotBlack)
-    };
+            var features = [
+                'width=' + POPUP_CONFIG.width,
+                'height=' + POPUP_CONFIG.height,
+                'left=' + left,
+                'top=' + top,
+                'scrollbars=yes',
+                'resizable=no',
+                'toolbar=no',
+                'menubar=no',
+                'location=no',
+                'status=no'
+            ].join(',');
 
-    // ==========================================================================
-    // Popup Window Configuration
-    // ==========================================================================
-    var POPUP_CONFIG = {
-      width: 400,
-      height: 650,
-      name: 'SlimrateSupportChat'
-    };
+            var popup = window.open(window.location.href, POPUP_CONFIG.name, features);
 
-    // ==========================================================================
-    // Check if the device is mobile (no popup support)
-    // ==========================================================================
-    function isMobileDevice() {
-      // Check for touch support and screen size
-      var hasTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-      var isSmallScreen = window.innerWidth <= 768;
-      
-      // Check user agent for mobile devices
-      var mobileRegex = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
-      var isMobileUA = mobileRegex.test(navigator.userAgent);
-      
-      return isMobileUA || (hasTouch && isSmallScreen);
-    }
+            if (popup) {
+                showRedirectMessage();
+                setTimeout(function () { window.close(); }, 500);
+            }
 
-    // ==========================================================================
-    // Check if we are already in a popup window of the required size
-    // ==========================================================================
-    function isPopupWindow() {
-      // On mobile devices, we don't use popups — always load widget directly
-      if (isMobileDevice()) {
-        return true;
-      }
-      
-      // Check window size with ±100px tolerance
-      var tolerance = 100;
-      var widthOk = Math.abs(window.innerWidth - POPUP_CONFIG.width) < tolerance ||
-                    Math.abs(window.outerWidth - POPUP_CONFIG.width) < tolerance;
-      var heightOk = Math.abs(window.innerHeight - POPUP_CONFIG.height) < tolerance ||
-                     Math.abs(window.outerHeight - POPUP_CONFIG.height) < tolerance;
-      
-      // Additional check: if the window was opened via window.open,
-      // it will have window.opener set
-      var hasOpener = window.opener !== null;
-      
-      // Consider it a popup if the size matches OR if it has an opener
-      return (widthOk && heightOk) || hasOpener;
-    }
+            return popup;
+        }
 
-    // ==========================================================================
-    // Open Popup Window
-    // ==========================================================================
-    function openPopup() {
-      // Calculate position to center on screen
-      var left = Math.round((screen.width - POPUP_CONFIG.width) / 2);
-      var top = Math.round((screen.height - POPUP_CONFIG.height) / 2);
-      
-      // Window features
-      var features = [
-        'width=' + POPUP_CONFIG.width,
-        'height=' + POPUP_CONFIG.height,
-        'left=' + left,
-        'top=' + top,
-        'scrollbars=yes',
-        'resizable=no',
-        'toolbar=no',
-        'menubar=no',
-        'location=no',
-        'status=no'
-      ].join(',');
-      
-      // Open current page in a popup
-      var popup = window.open(window.location.href, POPUP_CONFIG.name, features);
-      
-      // If popup opened successfully — show redirect message
-      if (popup) {
-        showRedirectMessage();
-        
-        // Try to close this window after a short delay
-        setTimeout(function() {
-          window.close();
-        }, 500);
-      }
-      
-      return popup;
-    }
+        function showRedirectMessage() {
+            var loading = document.getElementById('loading');
+            if (loading) loading.remove();
 
-    // ==========================================================================
-    // Show Redirect Message
-    // ==========================================================================
-    function showRedirectMessage() {
-      // Remove loading screen
-      var loading = document.getElementById('loading');
-      if (loading) {
-        loading.remove();
-      }
-      
-      // Create redirect screen with icon
-      var redirect = document.createElement('div');
-      redirect.className = 'redirect-container';
-      redirect.innerHTML = 
-        '<div class="redirect-icon">' +
-          '<svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V8l8 5 8-5v10zm-8-7L4 6h16l-8 5z"/></svg>' +
-        '</div>' +
-        '<div class="redirect-text">Chat opened in a new window</div>' +
-        '<div class="redirect-subtext">You can close this tab</div>';
-      document.body.appendChild(redirect);
-    }
+            var redirect = document.createElement('div');
+            redirect.className = 'redirect-container';
+            redirect.innerHTML =
+                '<div class="redirect-icon">' +
+                '<svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V8l8 5 8-5v10zm-8-7L4 6h16l-8 5z"/></svg>' +
+                '</div>' +
+                '<div class="redirect-text">Chat opened in a new window</div>' +
+                '<div class="redirect-subtext">You can close this tab</div>';
+            document.body.appendChild(redirect);
+        }
 
-    // ==========================================================================
-    // Load Zendesk Widget with Slimrate Theme
-    // ==========================================================================
-    function loadZendeskWidget() {
-      // Zendesk account key
-      var accountKey = '9eae20ea-c981-4e2b-bdf3-facd3067b893';
-      
-      var script = document.createElement('script');
-      script.id = 'ze-snippet';
-      script.src = 'https://static.zdassets.com/ekr/snippet.js?key=' + accountKey;
-      script.async = true;
-      script.onload = function() {
-        // After script loads, wait for initialization and configure
-        configureAndOpenMessenger();
-      };
-      document.head.appendChild(script);
-    }
+        // =====================================================================
+        // ZENDESK ВИДЖЕТ
+        // =====================================================================
+        function loadZendeskWidget() {
+            var script = document.createElement('script');
+            script.id = 'ze-snippet';
+            script.src = 'https://static.zdassets.com/ekr/snippet.js?key=' + ZENDESK_ACCOUNT_KEY;
+            script.async = true;
+            script.onload = configureAndOpenMessenger;
+            document.head.appendChild(script);
+        }
 
-    // ==========================================================================
-    // Configure Messenger with Theme and Open
-    // Waits for the Zendesk widget to be fully loaded before configuring
-    // ==========================================================================
-    function configureAndOpenMessenger() {
-      // Step 1: Wait for zE function to be available
-      if (typeof zE === 'undefined') {
-        console.log('[Slimrate Support] Waiting for zE function...');
-        setTimeout(configureAndOpenMessenger, 100);
-        return;
-      }
-      
-      console.log('[Slimrate Support] zE function available, waiting for widget ready...');
-      
-      // Step 2: Listen for the 'open' event which indicates widget is ready
-      // The widget fires 'open' event when it's fully loaded and opened
-      zE('messenger:on', 'open', function() {
-        console.log('[Slimrate Support] Messenger opened and ready');
-        onWidgetReady();
-      });
-      
-      // Step 3: Apply Slimrate brand theme (can be set before widget is ready)
-      zE('messenger:set', 'customization', {
-        theme: SLIMRATE_THEME
-      });
-      console.log('[Slimrate Support] Theme applied');
+        function configureAndOpenMessenger() {
+            if (typeof zE === 'undefined') {
+                setTimeout(configureAndOpenMessenger, 100);
+                return;
+            }
 
-      // Step 4: Set conversation tags from URL query parameters
-      // Tags are applied when user sends a message
-      if (CONVERSATION_TAGS.length > 0) {
-        console.log('[Slimrate Support] Setting conversation tags:', CONVERSATION_TAGS);
-        zE('messenger:set', 'conversationTags', CONVERSATION_TAGS);
-      }
+            console.log('[Slimrate Support] zE available, configuring...');
 
-      // Step 5: Set conversation fields from URL query parameters
-      // Fields are applied when user sends a message
-      // IMPORTANT: Fields MUST be configured in Zendesk Admin Center with 
-      // "Customers can edit" permission! Otherwise they won't appear on tickets.
-      //
-      // Admin Center → Objects and rules → Tickets → Fields → Create/Edit field
-      // → Permissions → Check "Customers can edit"
-      if (CONVERSATION_FIELDS.length > 0) {
-        console.log('[Slimrate Support] Setting conversation fields:');
-        console.log('[Slimrate Support] Raw fields array:', JSON.stringify(CONVERSATION_FIELDS, null, 2));
-        
-        // Log each field for debugging
-        CONVERSATION_FIELDS.forEach(function(field, index) {
-          console.log('[Slimrate Support] Field ' + (index + 1) + ':', 
-            'id=' + field.id + ' (type: ' + typeof field.id + ')', 
-            'value=' + field.value + ' (type: ' + typeof field.value + ')');
-        });
-        
-        // Note: conversationFields does NOT support callback parameter!
-        // Fields are applied asynchronously when user sends a message.
-        zE('messenger:set', 'conversationFields', CONVERSATION_FIELDS);
-        console.log('[Slimrate Support] Conversation fields command sent to Zendesk');
-      }
-      
-      // Open messenger after all configuration is set
-      // Small delay to ensure fields are processed
-      setTimeout(function() {
-        zE('messenger', 'open');
-      }, 100);
-    }
-    
-    // ==========================================================================
-    // Called when widget is fully loaded and ready
-    // ==========================================================================
-    function onWidgetReady() {
-      // Hide loading screen with smooth animation
-      var loadingEl = document.getElementById('loading');
-      if (loadingEl) {
-        loadingEl.classList.add('hidden');
-        setTimeout(function() {
-          loadingEl.remove();
-        }, 300);
-      }
-      
-      // Setup handler to prevent closing
-      setupCloseHandler();
-    }
+            // Event handlers
+            zE('messenger:on', 'open', onWidgetReady);
 
-    // ==========================================================================
-    // Prevent chat from being closed — reopen it immediately
-    // ==========================================================================
-    function setupCloseHandler() {
-      zE('messenger:on', 'close', function() {
-        console.log('[Slimrate Support] User tried to close, reopening...');
-        setTimeout(function() {
-          zE('messenger', 'open');
-        }, 100);
-      });
-    }
+            // Apply Slimrate theme
+            zE('messenger:set', 'customization', { theme: ZENDESK_THEME });
 
-    // ==========================================================================
-    // Main Logic
-    // ==========================================================================
-    (function main() {
-      if (isPopupWindow()) {
-        // We are already in a popup window — load Zendesk
-        loadZendeskWidget();
-      } else {
-        // We are in a regular window/tab — open popup
-        openPopup();
-      }
-    })();
-  </script>
+            // Set conversation tags
+            if (CONVERSATION_DATA.tags.length > 0) {
+                console.log('[Slimrate Support] Setting tags:', CONVERSATION_DATA.tags);
+                zE('messenger:set', 'conversationTags', CONVERSATION_DATA.tags);
+            }
+
+            // Set conversation fields
+            // Slimrate custom fields:
+            // - CompanyID:     44092665671451
+            // - CompanyName:   44092637446427
+            // - EmployeeName:  44092715476507
+            // - Role:          44092719873179
+            // - EmployeeId:    44092797619483
+            if (CONVERSATION_DATA.fields.length > 0) {
+                console.log('[Slimrate Support] Setting fields:', CONVERSATION_DATA.fields);
+                zE('messenger:set', 'conversationFields', CONVERSATION_DATA.fields);
+            }
+
+            // Open messenger
+            setTimeout(function () { zE('messenger', 'open'); }, 100);
+        }
+
+        function onWidgetReady() {
+            console.log('[Slimrate Support] Widget ready');
+
+            var loading = document.getElementById('loading');
+            if (loading) {
+                loading.classList.add('hidden');
+                setTimeout(function () { loading.remove(); }, 300);
+            }
+
+            // Prevent closing — reopen immediately
+            zE('messenger:on', 'close', function () {
+                console.log('[Slimrate Support] Reopening...');
+                setTimeout(function () { zE('messenger', 'open'); }, 100);
+            });
+        }
+
+        // =====================================================================
+        // ГЛАВНАЯ ЛОГИКА
+        // =====================================================================
+        (function main() {
+            if (isPopupWindow()) {
+                loadZendeskWidget();
+            } else {
+                openPopup();
+            }
+        })();
+    </script>
 </body>
+
 </html>
