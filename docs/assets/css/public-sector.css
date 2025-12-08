@@ -2,6 +2,103 @@
    Public Sector Page Styles
    ======================================== */
 
+/* Public Sector Serve Slider */
+.public-sector-serve-section #cardComponent {
+    background: transparent;
+    padding: var(--spacing-xl) 0;
+}
+
+.public-sector-serve-section .testimonial-content {
+    height: auto;
+    min-height: 280px;
+}
+
+.public-sector-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: var(--spacing-xl);
+    width: 100%;
+}
+
+.public-sector-card {
+    background: var(--color-white);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-xl);
+    text-align: center;
+    box-shadow: 0 4px 16px rgb(0, 0, 0, 0.08);
+    transition: transform var(--transition-normal) var(--transition-ease), box-shadow var(--transition-normal) var(--transition-ease);
+}
+
+.public-sector-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgb(0, 0, 0, 0.12);
+}
+
+.public-sector-card__icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto var(--spacing-lg);
+    background: linear-gradient(135deg, var(--color-primary) 0%, #1a4cc9 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.public-sector-card__icon i {
+    font-size: 28px;
+    color: var(--color-white);
+}
+
+.public-sector-card__title {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.3;
+}
+
+.public-sector-card__descr {
+    font-size: var(--font-size-md);
+    color: var(--color-text-muted);
+    line-height: 1.5;
+    margin: 0;
+}
+
+@media (width <= 1200px) {
+    .public-sector-cards-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (width <= 768px) {
+    .public-sector-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-lg);
+    }
+    
+    .public-sector-card {
+        padding: var(--spacing-lg);
+    }
+    
+    .public-sector-card__icon {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .public-sector-card__icon i {
+        font-size: 24px;
+    }
+    
+    .public-sector-card__title {
+        font-size: var(--font-size-lg);
+    }
+    
+    .public-sector-card__descr {
+        font-size: var(--font-size-sm);
+    }
+}
+
 /* Hero Section */
 .mainPageHeader--public-sector {
     background: linear-gradient(135deg, #1a365d 0%, #2d4a7c 50%, #1a4cc9 100%);
