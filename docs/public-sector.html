@@ -57,6 +57,7 @@
     <link rel="stylesheet" href="assets/css/responsive.css">
     <link rel="stylesheet" href="assets/css/integrations.css">
     <link rel="stylesheet" href="assets/css/public-sector.css">
+    <link rel="stylesheet" href="components/customerTestimonials/customertestimonials.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
     <link rel="stylesheet" href="assets/slick/slick.css">
     <link rel="stylesheet" href="assets/slick/slick-theme.css">
@@ -106,9 +107,9 @@
             </div>
         </section>
 
-        <!-- WHO WE SERVE -->
+        <!-- WHO WE SERVE - Testimonial Slider -->
         <div class="mt-section-2xl"></div>
-        <section class="who" id="solutions">
+        <section class="public-sector-serve-section" id="solutions">
             <div class="container">
                 <div class="container-header">
                     <h2 class="section-title">Who We Serve</h2>
@@ -116,57 +117,9 @@
                         Slimrate supports organizations across the public-sector landscape
                     </p>
                 </div>
-                <div class="who-cards">
-                    <div class="who-card">
-                        <div class="who-card__img"><i class="las la-city"></i></div>
-                        <h4 class="who-card__title">Municipal & County Governments</h4>
-                        <p class="who-card__descr">Streamline fee collection and revenue management across departments</p>
-                    </div>
-                    <div class="who-card">
-                        <div class="who-card__img"><i class="las la-school"></i></div>
-                        <h4 class="who-card__title">K–12 School Districts</h4>
-                        <p class="who-card__descr">Cafeterias, bookstores, and student services all in one platform</p>
-                    </div>
-                    <div class="who-card">
-                        <div class="who-card__img"><i class="las la-university"></i></div>
-                        <h4 class="who-card__title">Colleges & Universities</h4>
-                        <p class="who-card__descr">Campus-wide payment solutions for dining, parking, and services</p>
-                    </div>
-                    <div class="who-card">
-                        <div class="who-card__img"><i class="las la-plane-departure"></i></div>
-                        <h4 class="who-card__title">Airports & Convention Centers</h4>
-                        <p class="who-card__descr">High-volume transaction handling for public venues</p>
-                    </div>
-                    <div class="who-card">
-                        <div class="who-card__img"><i class="las la-landmark"></i></div>
-                        <h4 class="who-card__title">State Agencies & Authorities</h4>
-                        <p class="who-card__descr">Enterprise-scale solutions with full audit compliance</p>
-                    </div>
-                    <div class="who-card">
-                        <div class="who-card__img"><i class="las la-ambulance"></i></div>
-                        <h4 class="who-card__title">Public Safety & Emergency Services</h4>
-                        <p class="who-card__descr">Reliable payment systems for critical service departments</p>
-                    </div>
-                    <div class="who-card">
-                        <div class="who-card__img"><i class="las la-tree"></i></div>
-                        <h4 class="who-card__title">Parks, Recreation & Community Centers</h4>
-                        <p class="who-card__descr">Manage registrations, rentals, and facility fees with ease</p>
-                    </div>
-                    <div class="who-card">
-                        <div class="who-card__img"><i class="las la-hospital"></i></div>
-                        <h4 class="who-card__title">Public Health & Hospital Systems</h4>
-                        <p class="who-card__descr">Patient convenience payments and facility services</p>
-                    </div>
-                    <div class="who-card">
-                        <div class="who-card__img"><i class="las la-palette"></i></div>
-                        <h4 class="who-card__title">Museums & Cultural Institutions</h4>
-                        <p class="who-card__descr">Admissions, memberships, gift shops, and special events</p>
-                    </div>
-                    <div class="who-card">
-                        <div class="who-card__img"><i class="las la-users"></i></div>
-                        <h4 class="who-card__title">Tribal Governments & Enterprises</h4>
-                        <p class="who-card__descr">Comprehensive payment solutions for tribal operations</p>
-                    </div>
+                <div id="cardComponent">
+                    <div id="public-sector-serve-content" class="testimonial-content flex"></div>
+                    <div id="public-sector-slider-dots" class="slider-dots"></div>
                 </div>
             </div>
         </section>
@@ -425,6 +378,7 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="assets/slick/slick.min.js"></script>
     <script src="assets/js/more.js"></script>
+    <script src="components/publicSectorServe/publicSectorServe.js"></script>
 
     <!-- Zendesk Support Widget -->
     <script src="components/zendesk_widget.js"></script>
