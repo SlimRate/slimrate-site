@@ -1,7 +1,6 @@
 const unitedPartnersTemplate = document.createElement('template');
 unitedPartnersTemplate.innerHTML = `
 <section class="united-partners">
-    <img src="assets/img/coop-bg.svg" alt="" class="img-bg" />
     <img src="assets/img/bg-small-bottomcoop.svg" alt="" class="img-bg-bottom" />
     
     <div class="united-partners-scroll">
