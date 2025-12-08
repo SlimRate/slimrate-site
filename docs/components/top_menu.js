@@ -247,6 +247,34 @@ topMenuTeplate.innerHTML = `
                         </div>
                     </div>
                 </li>
+                <li>
+                    <div class="menu__item i8" id="menu8">
+                       <div class="flexContainer">
+                        <a >Public Sector</a>
+                        <img class="menu_arrow_rotate r8" src="/assets/img/arrow-right.svg" alt="Arrow icon">
+                       </div>
+                        <div class="more m8">
+                            <a class="more_head">Modern POS, payments & digital commerce for government, education & nonprofits</a>
+                            <ul>
+                                <li>
+                                    <a href="public-sector.html" class='lastLink'>Public Sector Overview</a>
+                                </li>
+                                <li>
+                                    <a href="public-sector.html#solutions" class='lastLink'>Government & Municipal</a>
+                                </li>
+                                <li>
+                                    <a href="public-sector.html#solutions" class='lastLink'>Education (K-12 & Higher Ed)</a>
+                                </li>
+                                <li>
+                                    <a href="public-sector.html#solutions" class='lastLink'>Healthcare & Public Health</a>
+                                </li>
+                                <li>
+                                    <a href="public-sector.html#solutions" class='lastLink'>Museums & Nonprofits</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
             </ul>
         </div>
     </div>
@@ -653,6 +681,9 @@ function initDropment() {
         <a class="header__tab t2" href="javascript:void(0)">Retail POS<span>Sell in-style with an integrated retail
                 POS solution that makes it easy to sell online and in-store
             </span></a>
+        <a class="header__tab t3" href="javascript:void(0)">Public Sector<span>Modern POS, payments & digital commerce
+                for government, education & nonprofits
+            </span></a>
       `,
     navContentHtmlStr: `
       <div class="dropmenu-nav n1">
@@ -724,6 +755,31 @@ function initDropment() {
                       </span></div></div></a></li>
       
       <!-- <a href="">Overview→</a> -->
+      </div>
+      <div class="dropmenu-nav n3 hidden">
+      <ul>
+
+      <li><a href="public-sector.html"><div class="nav-body">
+      <div class="nav-el-i"><i class="nav-el las la-landmark"></i></div><div>Public Sector Overview<span><br>Complete POS and payment solutions for public agencies
+              </span></div></div></a></li>
+
+      <li><a href="public-sector.html#solutions"><div class="nav-body">
+      <div class="nav-el-i"><i class="nav-el las la-city"></i></div><div>Government & Municipal<span><br>Streamline fee collection and revenue management
+              </span></div></div></a></li>
+
+      <li><a href="public-sector.html#solutions"><div class="nav-body">
+      <div class="nav-el-i"><i class="nav-el las la-graduation-cap"></i></div><div>Education (K-12 & Higher Ed)<span><br>Campus-wide payment solutions
+              </span></div></div></a></li>
+
+      <li><a href="public-sector.html#solutions"><div class="nav-body">
+      <div class="nav-el-i"><i class="nav-el las la-hospital"></i></div><div>Healthcare & Public Health<span><br>Patient convenience payments and facility services
+              </span></div></div></a></li>
+
+      <li><a href="public-sector.html#solutions"><div class="nav-body">
+      <div class="nav-el-i"><i class="nav-el las la-palette"></i></div><div>Museums & Nonprofits<span><br>Admissions, memberships, and special events
+              </span></div></div></a></li>
+
+      </ul>
       </div>
       `,
   };
