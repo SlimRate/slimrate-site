@@ -125,7 +125,7 @@ pricingFormTemplate.innerHTML = `
             </input>
         </form>
        <!-- <p class="contact__privacy">By requesting a demo, you agree to receive automated text messages from
-            Slimrate. We’ll handle your info according to our <a href="privacy.html">privacy statement.</a>
+            Slimrate. We'll handle your info according to our <a href="privacy-policy.html">privacy statement.</a>
         </p> -->
     </div>
 </div>

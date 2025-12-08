@@ -29,7 +29,7 @@ bottomMenuTemplate.innerHTML = `
     </div>
     <div class="footer-bottom">
         <ul>
-            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
             <li><a href="terms.html">Terms of Service</a></li>
             <li><a href="cookie.html">Cookie Policy</a></li>
             <li><a href="legal.html">Legal</a></li>
