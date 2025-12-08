@@ -2,100 +2,162 @@
    Public Sector Page Styles
    ======================================== */
 
-/* Public Sector Serve Slider */
-.public-sector-serve-section #cardComponent {
-    background: transparent;
-    padding: var(--spacing-xl) 0;
+/* Public Sector Serve Section */
+.public-sector-serve {
+    padding: var(--spacing-3xl) 0;
 }
 
-.public-sector-serve-section .testimonial-content {
-    height: auto;
-    min-height: 280px;
+.serve-cards {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-2xl);
+    margin-top: var(--spacing-2xl);
 }
 
-.public-sector-cards-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: var(--spacing-xl);
-    width: 100%;
-}
-
-.public-sector-card {
-    background: var(--color-white);
-    border-radius: var(--radius-md);
-    padding: var(--spacing-xl);
-    text-align: center;
-    box-shadow: 0 4px 16px rgb(0, 0, 0, 0.08);
-    transition: transform var(--transition-normal) var(--transition-ease), box-shadow var(--transition-normal) var(--transition-ease);
-}
-
-.public-sector-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgb(0, 0, 0, 0.12);
-}
-
-.public-sector-card__icon {
-    width: 60px;
-    height: 60px;
-    margin: 0 auto var(--spacing-lg);
-    background: linear-gradient(135deg, var(--color-primary) 0%, #1a4cc9 100%);
-    border-radius: 50%;
+.serve-card {
     display: flex;
     align-items: center;
-    justify-content: center;
+    gap: var(--spacing-2xl);
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-2xl);
+    box-shadow: 0 4px 20px rgb(0, 0, 0, 0.08);
+    transition: transform var(--transition-normal) var(--transition-ease), box-shadow var(--transition-normal) var(--transition-ease);
+    scroll-margin-top: 100px;
 }
 
-.public-sector-card__icon i {
-    font-size: 28px;
-    color: var(--color-white);
+.serve-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgb(0, 0, 0, 0.12);
 }
 
-.public-sector-card__title {
-    font-size: var(--font-size-xl);
+.serve-card--left {
+    flex-direction: row;
+}
+
+.serve-card--right {
+    flex-direction: row-reverse;
+}
+
+.serve-card__content {
+    flex: 1;
+}
+
+.serve-card__title {
+    font-size: var(--font-size-4xl);
     font-weight: 700;
     color: var(--color-text-primary);
-    margin-bottom: var(--spacing-sm);
-    line-height: 1.3;
+    margin-bottom: var(--spacing-md);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
 }
 
-.public-sector-card__descr {
-    font-size: var(--font-size-md);
+.serve-card__title i {
+    color: var(--color-primary);
+    font-size: 32px;
+}
+
+.serve-card__descr {
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-lg);
+}
+
+.serve-card__text {
+    font-size: var(--font-size-lg);
+    line-height: 1.7;
     color: var(--color-text-muted);
-    line-height: 1.5;
     margin: 0;
 }
 
-@media (width <= 1200px) {
-    .public-sector-cards-grid {
-        grid-template-columns: repeat(3, 1fr);
+.serve-card__icon {
+    width: 150px;
+    height: 150px;
+    min-width: 150px;
+    background: linear-gradient(135deg, var(--color-primary) 0%, #1a4cc9 100%);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 24px rgb(64, 122, 244, 0.3);
+}
+
+.serve-card__icon i {
+    font-size: 64px;
+    color: var(--color-white);
+}
+
+/* Alternating background colors for visual variety */
+.serve-card:nth-child(odd) {
+    background: linear-gradient(135deg, #f8faff 0%, #ffffff 100%);
+}
+
+.serve-card:nth-child(even) {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+}
+
+@media (width <= 991px) {
+    .serve-card {
+        padding: var(--spacing-xl);
+        gap: var(--spacing-xl);
+    }
+    
+    .serve-card__icon {
+        width: 120px;
+        height: 120px;
+        min-width: 120px;
+    }
+    
+    .serve-card__icon i {
+        font-size: 48px;
+    }
+    
+    .serve-card__title {
+        font-size: var(--font-size-3xl);
+    }
+    
+    .serve-card__title i {
+        font-size: 28px;
     }
 }
 
 @media (width <= 768px) {
-    .public-sector-cards-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: var(--spacing-lg);
+    .serve-card,
+    .serve-card--left,
+    .serve-card--right {
+        flex-direction: column;
+        text-align: center;
     }
     
-    .public-sector-card {
-        padding: var(--spacing-lg);
+    .serve-card__title {
+        justify-content: center;
+        font-size: var(--font-size-2xl);
     }
     
-    .public-sector-card__icon {
-        width: 50px;
-        height: 50px;
+    .serve-card__title i {
+        display: none;
     }
     
-    .public-sector-card__icon i {
-        font-size: 24px;
+    .serve-card__icon {
+        width: 100px;
+        height: 100px;
+        min-width: 100px;
+        order: -1;
     }
     
-    .public-sector-card__title {
+    .serve-card__icon i {
+        font-size: 40px;
+    }
+    
+    .serve-card__descr {
         font-size: var(--font-size-lg);
     }
     
-    .public-sector-card__descr {
-        font-size: var(--font-size-sm);
+    .serve-card__text {
+        font-size: var(--font-size-md);
+        text-align: left;
     }
 }
 

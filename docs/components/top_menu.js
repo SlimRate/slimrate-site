@@ -260,16 +260,16 @@ topMenuTeplate.innerHTML = `
                                     <a href="public-sector.html" class='lastLink'>Public Sector Overview</a>
                                 </li>
                                 <li>
-                                    <a href="public-sector.html#solutions" class='lastLink'>Government & Municipal</a>
+                                    <a href="public-sector.html#government" class='lastLink'>Government & Municipal</a>
                                 </li>
                                 <li>
-                                    <a href="public-sector.html#solutions" class='lastLink'>Education (K-12 & Higher Ed)</a>
+                                    <a href="public-sector.html#k12" class='lastLink'>Education (K-12 & Higher Ed)</a>
                                 </li>
                                 <li>
-                                    <a href="public-sector.html#solutions" class='lastLink'>Healthcare & Public Health</a>
+                                    <a href="public-sector.html#healthcare" class='lastLink'>Healthcare & Public Health</a>
                                 </li>
                                 <li>
-                                    <a href="public-sector.html#solutions" class='lastLink'>Museums & Nonprofits</a>
+                                    <a href="public-sector.html#museums" class='lastLink'>Museums & Nonprofits</a>
                                 </li>
                             </ul>
                         </div>
@@ -763,19 +763,19 @@ function initDropment() {
       <div class="nav-el-i"><i class="nav-el las la-landmark"></i></div><div>Public Sector Overview<span><br>Complete POS and payment solutions for public agencies
               </span></div></div></a></li>
 
-      <li><a href="public-sector.html#solutions"><div class="nav-body">
+      <li><a href="public-sector.html#government"><div class="nav-body">
       <div class="nav-el-i"><i class="nav-el las la-city"></i></div><div>Government & Municipal<span><br>Streamline fee collection and revenue management
               </span></div></div></a></li>
 
-      <li><a href="public-sector.html#solutions"><div class="nav-body">
+      <li><a href="public-sector.html#k12"><div class="nav-body">
       <div class="nav-el-i"><i class="nav-el las la-graduation-cap"></i></div><div>Education (K-12 & Higher Ed)<span><br>Campus-wide payment solutions
               </span></div></div></a></li>
 
-      <li><a href="public-sector.html#solutions"><div class="nav-body">
+      <li><a href="public-sector.html#healthcare"><div class="nav-body">
       <div class="nav-el-i"><i class="nav-el las la-hospital"></i></div><div>Healthcare & Public Health<span><br>Patient convenience payments and facility services
               </span></div></div></a></li>
 
-      <li><a href="public-sector.html#solutions"><div class="nav-body">
+      <li><a href="public-sector.html#museums"><div class="nav-body">
       <div class="nav-el-i"><i class="nav-el las la-palette"></i></div><div>Museums & Nonprofits<span><br>Admissions, memberships, and special events
               </span></div></div></a></li>
 
