@@ -148,9 +148,12 @@
 @media (max-width: 768px) {
     .products-cards,
     .advantages-cards,
-    .who-cards,
     .hardware-cards {
         grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .who-cards {
         gap: 16px;
     }
 }

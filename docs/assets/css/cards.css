@@ -337,56 +337,74 @@
 }
 
 .who-cards {
-    display: -webkit-box;
-    display: flex;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    width: 100%;
+}
+
+.who-cards > a {
+    display: block;
+    height: 100%;
+    text-decoration: none;
 }
 
 .who-card {
-    padding: var(--component-spacing-lg) var(--component-spacing-lg) var(--component-spacing-2xl);
-    margin-bottom: var(--section-spacing-md);
-    max-width: 360px;
+    padding: 32px;
     width: 100%;
     background: #fff;
-    border-radius: 8px;
-    border: 1px solid #b7b7b7;
-    transform: scale(1.0);
-    box-shadow: none;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.who-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
 }
 
 .who-card__img {
-    width: 62px;
-    height: 62px;
-    border-radius: var(--component-spacing-lg);
-    font-size: 35pt;
-    margin-bottom: var(--component-spacing-lg);
-    display: -webkit-box;
+    width: 70px;
+    height: 70px;
+    border-radius: 16px;
+    font-size: 32px;
+    margin-bottom: 24px;
     display: flex;
-    -ms-flex-pack: center;
     justify-content: center;
-    -ms-flex-align: center;
     align-items: center;
-    overflow: hidden;
-    background-color: transparent;
-    border: #B7B7B7 solid 2px;
+    background-color: rgba(43, 107, 243, 0.08);
+    color: #2B6BF3;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.who-card:hover .who-card__img {
+    background-color: #2B6BF3;
+    color: #fff;
+    transform: scale(1.1) rotate(-5deg);
 }
 
 .who-card__title {
     font-weight: 700;
-    font-size: 18px;
-    line-height: 23px;
-    letter-spacing: 0.02em;
-    color: #425466;
-    margin-bottom: var(--component-spacing-lg);
+    font-size: 22px;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+    color: #1a1a1a;
+    margin-bottom: 12px;
 }
 
 .who-card__descr {
     font-weight: 400;
     font-size: 16px;
-    line-height: 26px;
-    color: #425466;
+    line-height: 1.6;
+    color: #666;
 }
 
 /* ----------------------------------------
