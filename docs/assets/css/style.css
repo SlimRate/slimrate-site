@@ -4196,6 +4196,17 @@ label.has-value {
     z-index: 1;
 }
 
+.equip-mobile-image {
+    display: none;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    position: relative;
+    z-index: 2;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
 @container (max-width: 480px) {
     .equip.allinone .equip-card {
         --equip-card-scale: 0.64 !important;
@@ -4334,10 +4345,10 @@ label.has-value {
     .equip.allinone .block-right {
         position: relative;
         width: 100%;
-        max-width: 100%;
+        max-width: 500px;
         height: auto;
         min-height: 0;
-        aspect-ratio: 1 / 1;
+        aspect-ratio: auto;
         margin: 0 auto;
         flex: 0 0 auto;
         order: 2;
@@ -4345,6 +4356,14 @@ label.has-value {
         overflow: visible;
     }
     
+    .equip.allinone .equip-card {
+        display: none;
+    }
+
+    .equip-mobile-image {
+        display: block;
+    }
+
     .equip.allinone .block-right::before {
         display: none;
     }
@@ -4358,27 +4377,7 @@ label.has-value {
     }
     
     .equip.allinone .block-img-circle {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        transform: translateY(90px);
-        margin: 0;
-    }
-    
-    .equip.allinone .equip-card {
-        left: 50%;
-        --equip-card-scale: 0.95;
-        transform: translate(-50%, -50%) scale(var(--equip-card-scale)) !important;
-    }
-    
-    .equip.allinone .equip-img:nth-child(7) {
-        top: 0;
-    }
-    
-    .equip.allinone .equip-img:nth-child(8) {
-        top: auto;
-        bottom: 80px;
+        display: none;
     }
     
     .equip.allinone .allinone__title {
