@@ -98,43 +98,44 @@
 @media (width <= 768px) {
     .footer-top {
         padding-bottom: 0;
-        flex-direction: column;
+        /* Removed ineffective flex-direction: column since it is grid */
     }
 
     .footer-top ul {
-        display: -webkit-box;
         display: flex;
-        flex-wrap: wrap;
-        margin-bottom: var(--component-spacing-2xl);
+        flex-direction: column; /* Ensure vertical list */
+        margin-bottom: 24px;
     }
 
     .footer-top ul li {
-        margin-right: 20px;
-        margin-bottom: 0;
+        margin-right: 0;
+        margin-bottom: 12px;
     }
 
     .footer-top ul li:last-child {
-        margin-right: 0;
+        margin-bottom: 0;
     }
 
     .footer-top ul li:first-child {
         width: 100%;
-        margin-bottom: 12px;
+        margin-bottom: 16px;
     }
 
     .footer-bottom {
         padding-top: 40px;
-        max-width: 320px;
         margin: 0 auto;
     }
 
     .footer-bottom ul {
-        display: -webkit-box;
         display: flex;
         flex-wrap: wrap;
         margin: 0 auto;
-        -ms-flex-pack: center;
         justify-content: center;
+        gap: 16px;
+    }
+    
+    .footer-bottom ul li {
+        margin: 0;
     }
 }
 

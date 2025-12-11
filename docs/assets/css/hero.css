@@ -20,6 +20,14 @@
     background-position: center;
 }
 
+@media (max-width: 768px) {
+    .mainPageHeader {
+        margin: 0;
+        border-radius: 0 0 30px 30px;
+    }
+}
+
+
 /* Page-specific background images */
 .mainPageHeader--hardware {
     background-image: url("../img/gallery/hardware/hardware.png");
