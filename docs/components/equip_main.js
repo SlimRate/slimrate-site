@@ -37,7 +37,6 @@ equipCompanyTemplate.innerHTML = `
                     <a href="support.html">Mobile App</a><a href="support.html"><img src="assets/img/icons/equip-btn.svg" alt="Open mobile app info" class="equip-btn"></a>
                 </div>
             </div>
-            <img src="assets/img/main-screen.png" alt="Slimrate POS All-in-One" class="equip-mobile-image">
             <img src="assets/img/circle.svg" alt="Slimrate decorative circle" class="block-img-circle">
         </div>
     </div>

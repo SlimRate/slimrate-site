@@ -4196,17 +4196,6 @@ label.has-value {
     z-index: 1;
 }
 
-.equip-mobile-image {
-    display: none;
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    position: relative;
-    z-index: 2;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
-
 @container (max-width: 480px) {
     .equip.allinone .equip-card {
         --equip-card-scale: 0.64 !important;
@@ -4343,40 +4332,6 @@ label.has-value {
     }
     
     .equip.allinone .block-right {
-        position: relative;
-        width: 100%;
-        max-width: 500px;
-        height: auto;
-        min-height: 0;
-        aspect-ratio: auto;
-        margin: 0 auto;
-        flex: 0 0 auto;
-        order: 2;
-        z-index: var(--z-content);
-        overflow: visible;
-    }
-    
-    .equip.allinone .equip-card {
-        display: none;
-    }
-
-    .equip-mobile-image {
-        display: block;
-    }
-
-    .equip.allinone .block-right::before {
-        display: none;
-    }
-    
-    .equip.allinone .block-right::after {
-        display: none;
-    }
-    
-    .equip.allinone .block-right .bg-decor-right {
-        display: none;
-    }
-    
-    .equip.allinone .block-img-circle {
         display: none;
     }
     
