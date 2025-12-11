@@ -1431,9 +1431,12 @@ a:focus-visible {
     
     /* Cards */
     .products-card,
-    .something-card,
-    .who-card {
+    .something-card {
         padding: 16px !important;
+    }
+
+    .who-card {
+        padding: 20px !important;
     }
     
     /* FAQ */

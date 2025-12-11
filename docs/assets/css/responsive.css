@@ -156,6 +156,15 @@
     .who-cards {
         gap: 16px;
     }
+
+    .who-card {
+        padding: 20px;
+    }
+
+    .who::before {
+        width: 100%;
+        border-radius: 0;
+    }
 }
 
 /* ----------------------------------------
