@@ -4198,31 +4198,31 @@ label.has-value {
 
 @container (max-width: 480px) {
     .equip.allinone .equip-card {
-        --equip-card-scale: 0.64 !important;
+        --equip-card-scale: 0.64;
     }
 }
 
 @container (max-width: 420px) {
     .equip.allinone .equip-card {
-        --equip-card-scale: 0.57 !important;
+        --equip-card-scale: 0.57;
     }
 }
 
 @container (max-width: 360px) {
     .equip.allinone .equip-card {
-        --equip-card-scale: 0.49 !important;
+        --equip-card-scale: 0.49;
     }
 }
 
 @container (max-width: 320px) {
     .equip.allinone .equip-card {
-        --equip-card-scale: 0.44 !important;
+        --equip-card-scale: 0.44;
     }
 }
 
 @container (max-width: 280px) {
     .equip.allinone .equip-card {
-        --equip-card-scale: 0.38 !important;
+        --equip-card-scale: 0.38;
     }
 }
 
@@ -4332,7 +4332,53 @@ label.has-value {
     }
     
     .equip.allinone .block-right {
+        position: relative;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        min-height: 0;
+        aspect-ratio: 1 / 1;
+        margin: 0 auto;
+        flex: 0 0 auto;
+        order: 2;
+        z-index: var(--z-content);
+        overflow: visible;
+    }
+    
+    .equip.allinone .block-right::before {
         display: none;
+    }
+    
+    .equip.allinone .block-right::after {
+        display: none;
+    }
+    
+    .equip.allinone .block-right .bg-decor-right {
+        display: none;
+    }
+    
+    .equip.allinone .block-img-circle {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        transform: translateY(90px);
+        margin: 0;
+    }
+    
+    .equip.allinone .equip-card {
+        left: 50%;
+        --equip-card-scale: 0.95;
+        transform: translate(-50%, -50%) scale(0.95) !important;
+    }
+    
+    .equip.allinone .equip-img:nth-child(7) {
+        top: 0;
+    }
+    
+    .equip.allinone .equip-img:nth-child(8) {
+        top: auto;
+        bottom: 80px;
     }
     
     .equip.allinone .allinone__title {
@@ -4341,6 +4387,12 @@ label.has-value {
     
     .equip.allinone .allinone__text {
         font-size: clamp(14px, 3vw, 16px);
+    }
+}
+
+@media (width <= 768px) {
+    .equip.allinone .block-right {
+        display: none;
     }
 }
 
