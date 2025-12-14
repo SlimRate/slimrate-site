@@ -326,6 +326,19 @@
 
 .equip.allinone .equip-card .equip-label {
     z-index: 2;
+    flex-direction: column;
+}
+
+.equip.allinone .equip-card .equip-label a,
+.equip.allinone .equip-card .equip-label a:visited,
+.equip.allinone .equip-card .equip-label a:hover,
+.equip.allinone .equip-card .equip-label a:active {
+    color: #fff !important;
+    font-weight: 600;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    display: block;
+    width: auto;
+    text-decoration: none;
 }
 
 .equip.allinone .equip-card .equip-label--mobile {
@@ -595,17 +608,7 @@
     }
     
     .equip.allinone .block-right {
-        position: relative;
-        width: 100%;
-        max-width: 100%;
-        height: auto;
-        min-height: 0;
-        aspect-ratio: 1 / 1;
-        margin: 0 auto;
-        flex: 0 0 auto;
-        order: 2;
-        z-index: var(--z-content);
-        overflow: visible;
+        display: none;
     }
     
     .equip.allinone .block-right::before {
