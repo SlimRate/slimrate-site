@@ -4390,7 +4390,7 @@ label.has-value {
     }
 }
 
-@media (width <= 768px) {
+@media (width <= 992px) {
     .equip.allinone .block-right {
         display: none;
     }
@@ -4496,6 +4496,15 @@ label.has-value {
 
 .equip.allinone .equip-card .equip-label {
     z-index: 2;
+    flex-direction: column;
+}
+
+.equip.allinone .equip-card .equip-label a {
+    color: #fff;
+    font-weight: 600;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    display: block;
+    width: auto;
 }
 
 
