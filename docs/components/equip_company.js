@@ -66,10 +66,10 @@ if (!customElements.get("equip-company-el")) {
                 'ChatGPT Image 16 ╨╕╤Ä╨╜. 2025 ╨│ 2.png',
                 'Frame 33738020.png',
                 'Frame 33738021.png',
-                'pexels-imin-technology-276315592-12935050 ╨║╨╛╨┐╨╕╤Å.png',
-                'pexels-imin-technology-276315592-12935051.png',
-                'pexels-imin-technology-276315592-12935064.png',
-                'pexels-imin-technology-276315592-12935069 2.png',
+                'pexels-slimrate-technology-276315592-12935050 ╨║╨╛╨┐╨╕╤Å.png',
+                'pexels-slimrate-technology-276315592-12935051.png',
+                'pexels-slimrate-technology-276315592-12935064.png',
+                'pexels-slimrate-technology-276315592-12935069 2.png',
                 'slim 2.png'
             ];
             
