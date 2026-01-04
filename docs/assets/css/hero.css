@@ -192,6 +192,25 @@
     object-fit: cover;
 }
 
+/* Hero video responsive variants */
+.hero-video--mobile {
+    display: none;
+}
+
+.hero-video--desktop {
+    display: block;
+}
+
+@media (width <= 768px) {
+    .hero-video--mobile {
+        display: block;
+    }
+    
+    .hero-video--desktop {
+        display: none;
+    }
+}
+
 .main-bg-bot {
     bottom: -10px;
     position: absolute;
