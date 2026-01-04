@@ -450,7 +450,7 @@
     }
 }
 
-@media (width <= 1200px) {
+@media (max-width: 1200px) {
     .equip {
         background: #2b6bf3;
         padding-bottom: 150px;
@@ -550,7 +550,7 @@
     }
 }
 
-@media (width >= 992px) and (width <= 1200px) {
+@media (min-width: 992px) and (max-width: 1200px) {
     .equip.allinone .block-left {
         aspect-ratio: auto;
         min-height: var(--allinone-square-size);
@@ -572,7 +572,7 @@
     }
 }
 
-@media (width <= 992px) {
+@media (max-width: 992px) {
     .equip.allinone {
         padding: 60px 0;
         overflow: visible;
@@ -656,7 +656,7 @@
     }
 }
 
-@media (width <= 768px) {
+@media (max-width: 768px) {
     .equip {
         padding-bottom: 0;
     }
@@ -748,14 +748,14 @@
     }
 }
 
-@media (width <= 480px) {
+@media (max-width: 480px) {
     .equip.allinone .block-img-circle {
         transform: translateY(80px);
         opacity: 0.6;
     }
 }
 
-@media (width <= 400px) {
+@media (max-width: 400px) {
     .equip.allinone {
         padding: 40px 0;
     }
@@ -796,7 +796,7 @@
     }
 }
 
-@media (width <= 360px) {
+@media (max-width: 360px) {
     .equip.allinone .container {
         gap: 35px;
         padding: 0 12px;
@@ -811,7 +811,7 @@
     }
 }
 
-@media (width <= 340px) {
+@media (max-width: 340px) {
     .equip.allinone .container {
         gap: 30px;
         padding: 0 10px;

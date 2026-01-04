@@ -568,7 +568,7 @@
 /* ----------------------------------------
    Sections Responsive Styles
    ---------------------------------------- */
-@media (width <= 1200px) {
+@media (max-width: 1200px) {
     .coop {
         margin-bottom: 120px;
     }
@@ -607,7 +607,7 @@
     }
 }
 
-@media (width <= 992px) {
+@media (max-width: 992px) {
     .something-wrapper-hardware {
         flex-direction: column;
     }
@@ -642,7 +642,7 @@
     }
 }
 
-@media (width <= 768px) {
+@media (max-width: 768px) {
     .tech-stack__right {
         max-width: 460px;
     }

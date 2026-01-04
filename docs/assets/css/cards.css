@@ -673,7 +673,7 @@
 /* ----------------------------------------
    Cards Responsive Styles
    ---------------------------------------- */
-@media (width <= 1200px) {
+@media (max-width: 1200px) {
     .products {
         margin-bottom: 0;
     }
@@ -714,7 +714,7 @@
     }
 }
 
-@media (width <= 768px) {
+@media (max-width: 768px) {
     .types-card {
         flex-direction: column !important;
         margin-bottom: var(--component-spacing-xl);
@@ -805,7 +805,7 @@
     }
 }
 
-@media (width <= 480px) {
+@media (max-width: 480px) {
     .hardware-cards {
         grid-template-columns: 1fr;
         gap: 20px;

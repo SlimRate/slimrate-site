@@ -1,4 +1,4 @@
-﻿@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap");
 
 /* ========================================
    CSS Custom Properties - Unified Variables
@@ -1014,7 +1014,7 @@ body {
     height: auto;
 }
 
-@media (width <= 992px) {
+@media (max-width: 992px) {
     .mainPageHeader--mobile-app .main-bg {
         display: none;
     }
@@ -1377,13 +1377,13 @@ body {
     flex-grow: 1;
 }
 
-@media (width <= 1200px) {
+@media (max-width: 1200px) {
     .mobile-app-features .products-cards {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
-@media (width <= 768px) {
+@media (max-width: 768px) {
     .mobile-app-features .products-cards {
         grid-template-columns: repeat(2, 1fr);
         gap: 16px;
@@ -1394,7 +1394,7 @@ body {
     }
 }
 
-@media (width <= 480px) {
+@media (max-width: 480px) {
     .mobile-app-features .products-cards {
         grid-template-columns: 1fr;
     }
@@ -1523,7 +1523,7 @@ body {
 }
 
 .benefit-card li::before {
-    content: "âœ“";
+    content: "✓";
     position: absolute;
     left: 0;
     color: #407AF4;
@@ -1587,7 +1587,7 @@ body {
 }
 
 /* Mobile App: Responsive Styles */
-@media (width <= 992px) {
+@media (max-width: 992px) {
     .how-it-works__steps {
         grid-template-columns: 1fr;
     }
@@ -1601,7 +1601,7 @@ body {
     }
 }
 
-@media (width <= 768px) {
+@media (max-width: 768px) {
     .benefits__grid {
         grid-template-columns: 1fr;
     }
@@ -1670,7 +1670,7 @@ body {
 
 
 
-/* Modern New App Section - без волн */
+/* Modern New App Section - ??? ???? */
 .new-app-section {
     background: linear-gradient(145deg, #2f6aff 0%, #1b52f4 100%);
     border-radius: 32px;
@@ -2126,7 +2126,7 @@ body {
 
 
 
-/* Modern equip section - без волн */
+/* Modern equip section - ??? ???? */
 .equip-modern {
     background: linear-gradient(145deg, #2f6aff 0%, #1b52f4 100%);
     border-radius: 32px;
@@ -2945,7 +2945,7 @@ body {
 
 }
 
-@media (width <= 768px) {
+@media (max-width: 768px) {
     .contact__left {
         min-height: 420px !important;
         justify-content: center !important;
@@ -4266,7 +4266,7 @@ label.has-value {
 }
 
 /* Equip Allinone - Tablet to Small Desktop (992px - 1199px) */
-@media (width >= 992px) and (width <= 1200px) {
+@media (min-width: 992px) and (max-width: 1200px) {
     .equip.allinone .block-left {
         aspect-ratio: auto;
         min-height: var(--allinone-square-size);
@@ -4289,14 +4289,14 @@ label.has-value {
 }
 
 /* Equip Allinone - Under 1200px */
-@media (width <= 1200px) {
+@media (max-width: 1200px) {
     .equip.allinone .container {
         gap: clamp(40px, 5vw, 60px);
     }
 }
 
 /* Equip Allinone - Tablets & Mobile (max-width: 991px) */
-@media (width <= 992px) {
+@media (max-width: 992px) {
     .equip.allinone {
         padding: 60px 0;
         overflow: visible;
@@ -4390,14 +4390,14 @@ label.has-value {
     }
 }
 
-@media (width <= 992px) {
+@media (max-width: 992px) {
     .equip.allinone .block-right {
         display: none;
     }
 }
 
 /* Equip Allinone - Small Mobile */
-@media (width <= 360px) {
+@media (max-width: 360px) {
     .equip.allinone .container {
         gap: 35px;
         padding: 0 12px;
@@ -4413,14 +4413,14 @@ label.has-value {
 }
 
 /* Equip Allinone - Mobile improvements for 320px-500px */
-@media (width <= 480px) {
+@media (max-width: 480px) {
     .equip.allinone .block-img-circle {
         transform: translateY(80px);
         opacity: 0.6;
     }
 }
 
-@media (width <= 400px) {
+@media (max-width: 400px) {
     .equip.allinone {
         padding: 40px 0;
     }
@@ -4461,7 +4461,7 @@ label.has-value {
     }
 }
 
-@media (width <= 340px) {
+@media (max-width: 340px) {
     .equip.allinone .container {
         gap: 30px;
         padding: 0 10px;
@@ -5432,7 +5432,7 @@ label.has-value {
 }
 
 /* Responsive styles */
-@media (width <= 1024px) {
+@media (max-width: 1024px) {
     .pricing-comparison__title {
         font-size: 32px;
         line-height: 40px;
@@ -5452,7 +5452,7 @@ label.has-value {
     }
 }
 
-@media (width <= 768px) {
+@media (max-width: 768px) {
     .pricing-comparison {
         padding: var(--section-spacing-md) 0;
     }
@@ -5496,7 +5496,7 @@ label.has-value {
     }
 }
 
-@media (width <= 480px) {
+@media (max-width: 480px) {
     .pricing-comparison__subtitle {
         font-size: 14px;
     }
@@ -5541,7 +5541,7 @@ label.has-value {
 /* ========================================
    Below 1199px - Tariff Cards: Vertical Stack (1 column)
    ======================================== */
-@media (width <= 1200px) {
+@media (max-width: 1200px) {
     .tariff {
         padding-bottom: var(--section-spacing-xl);
         margin-top: var(--section-spacing-md);
@@ -5649,7 +5649,7 @@ label.has-value {
 /* ========================================
    Mobile (< 767px) - Tariff Cards: 1 column
    ======================================== */
-@media (width <= 768px) {
+@media (max-width: 768px) {
     .tariff {
         padding-bottom: var(--section-spacing-lg);
         margin-top: var(--section-spacing-sm);
@@ -5853,7 +5853,7 @@ label.has-value {
 /* ========================================
    Small Mobile (< 480px) - Optimized for small screens
    ======================================== */
-@media (width <= 480px) {
+@media (max-width: 480px) {
     .tariff {
         padding-bottom: var(--section-spacing-md);
         margin-top: var(--spacing-lg);
@@ -6657,7 +6657,7 @@ label.has-value {
 
 
 
-@media (width <= 1280px) {
+@media (max-width: 1280px) {
     .dropmenu-info {
         margin-left: 40px;
 
@@ -6686,7 +6686,7 @@ label.has-value {
 
 
 
-@media (width <= 1200px) {
+@media (max-width: 1200px) {
     .contact__right::after {
         content: none;
 
@@ -7188,7 +7188,7 @@ label.has-value {
 
 }
 
-@media (width <= 768px) {
+@media (max-width: 768px) {
     .types-card {
         flex-direction: column !important;
         margin-bottom: var(--component-spacing-xl);
@@ -7810,7 +7810,7 @@ label.has-value {
 
 
 
-@media (width <= 992px) {
+@media (max-width: 992px) {
     .off-mobile {
         display: none
 
@@ -8102,14 +8102,14 @@ label.has-value {
    1. PRICING COMPARISON TABLE - CARD VIEW FOR MOBILE
    Transform table to stacked cards on small screens
    ---------------------------------------- */
-@media (width <= 480px) {
+@media (max-width: 480px) {
     /* Scroll indicator for horizontal scroll */
     .pricing-comparison__table-wrapper {
         position: relative;
     }
     
     .pricing-comparison__table-wrapper::after {
-        content: "← Прокрутите →";
+        content: "? ?????????? ?";
         display: block;
         text-align: center;
         font-size: 12px;
@@ -8158,7 +8158,7 @@ label.has-value {
 /* ----------------------------------------
    2. TARIFF CARDS - BETTER MOBILE OPTIMIZATION
    ---------------------------------------- */
-@media (width <= 480px) {
+@media (max-width: 480px) {
     .tariff-card {
         height: auto;
         min-height: unset;
@@ -8206,7 +8206,7 @@ label.has-value {
 /* ----------------------------------------
    3. SLIDER NAVIGATION DOTS - LARGER TOUCH TARGETS
    ---------------------------------------- */
-@media (width <= 768px) {
+@media (max-width: 768px) {
     /* Slick slider dots */
     .slick-dots {
         bottom: -30px;
@@ -8240,7 +8240,7 @@ label.has-value {
 /* ----------------------------------------
    4. FORM BUTTONS - FULL WIDTH ON MOBILE
    ---------------------------------------- */
-@media (width <= 480px) {
+@media (max-width: 480px) {
     .form__btn,
     .contact-form button[type="submit"],
     .company-form-wrap button.btn-main,
@@ -8271,7 +8271,7 @@ label.has-value {
 /* ----------------------------------------
    5. BREADCRUMB - SCROLLABLE ON MOBILE
    ---------------------------------------- */
-@media (width <= 768px) {
+@media (max-width: 768px) {
     .breadcrumb {
         display: flex;
         overflow-x: auto;
@@ -8298,7 +8298,7 @@ label.has-value {
     }
 }
 
-@media (width <= 480px) {
+@media (max-width: 480px) {
     .breadcrumb {
         font-size: 12px;
     }
@@ -8317,7 +8317,7 @@ label.has-value {
 /* ----------------------------------------
    6. FOOTER - IMPROVED GRID LAYOUT
    ---------------------------------------- */
-@media (width <= 992px) {
+@media (max-width: 992px) {
     .footer-top {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -8342,7 +8342,7 @@ label.has-value {
     }
 }
 
-@media (width <= 480px) {
+@media (max-width: 480px) {
     .footer-top {
         grid-template-columns: 1fr;
         gap: 32px;
@@ -8374,7 +8374,7 @@ label.has-value {
 /* ----------------------------------------
    7. FAQ SECTION - MOBILE OPTIMIZATION
    ---------------------------------------- */
-@media (width <= 768px) {
+@media (max-width: 768px) {
     .faq .container {
         flex-direction: column;
         padding: 0 var(--spacing-md);
@@ -8406,7 +8406,7 @@ label.has-value {
     }
 }
 
-@media (width <= 480px) {
+@media (max-width: 480px) {
     .faq {
         padding: var(--section-spacing-md) 0;
     }
@@ -8443,7 +8443,7 @@ label.has-value {
 /* ----------------------------------------
    8. PRODUCT IMAGES - BETTER CONTAINMENT
    ---------------------------------------- */
-@media (width <= 768px) {
+@media (max-width: 768px) {
     .product-image img,
     .hardware-card img,
     .product-hero__image img {
@@ -8454,7 +8454,7 @@ label.has-value {
     }
 }
 
-@media (width <= 480px) {
+@media (max-width: 480px) {
     .product-image img,
     .hardware-card img,
     .product-hero__image img {
@@ -8470,7 +8470,7 @@ label.has-value {
 /* ----------------------------------------
    9. GENERAL MOBILE IMPROVEMENTS
    ---------------------------------------- */
-@media (width <= 480px) {
+@media (max-width: 480px) {
     /* Prevent horizontal overflow */
     body {
         overflow-x: hidden;
@@ -8508,7 +8508,7 @@ label.has-value {
 /* ----------------------------------------
    10. CONTACT SECTION - MOBILE FIXES
    ---------------------------------------- */
-@media (width <= 480px) {
+@media (max-width: 480px) {
     .contact__left-inner .section-title {
         font-size: 22px;
     }
@@ -8530,7 +8530,7 @@ label.has-value {
 /* ----------------------------------------
    11. HARDWARE CARDS - MOBILE GRID
    ---------------------------------------- */
-@media (width <= 768px) {
+@media (max-width: 768px) {
     .hardware-cards {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -8542,7 +8542,7 @@ label.has-value {
     }
 }
 
-@media (width <= 480px) {
+@media (max-width: 480px) {
     .hardware-cards {
         grid-template-columns: 1fr;
         gap: 20px;
