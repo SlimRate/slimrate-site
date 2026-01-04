@@ -123,13 +123,13 @@ a:focus-visible {
 }
 
 /* Mobile App Features - Responsive */
-@media (max-width: 1200px) {
+@media (max-width: 1023px) {
     .mobile-app-features .products-cards {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .mobile-app-features .products-cards {
         grid-template-columns: repeat(2, 1fr);
         gap: 16px;
@@ -140,7 +140,7 @@ a:focus-visible {
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 767px) {
     .mobile-app-features .products-cards {
         grid-template-columns: 1fr;
     }
@@ -211,13 +211,13 @@ a:focus-visible {
     font-size: 13px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .how-it-works__steps {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 767px) {
     .how-it-works {
         margin-bottom: 80px;
     }
@@ -293,13 +293,13 @@ a:focus-visible {
     font-size: 15px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .benefits__grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 767px) {
     .benefits {
         margin-bottom: 80px;
     }
@@ -358,7 +358,7 @@ a:focus-visible {
     color: #6c757d;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 767px) {
     .tech-requirements {
         margin-bottom: 80px;
     }
@@ -373,7 +373,7 @@ a:focus-visible {
    ======================================== */
 
 /* Pricing Comparison Table */
-@media (max-width: 1024px) {
+@media (max-width: 1023px) {
     .pricing-comparison__title {
         font-size: 32px;
         line-height: 40px;
@@ -393,7 +393,7 @@ a:focus-visible {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .pricing-comparison {
         padding: var(--section-spacing-md, 48px) 0;
     }
@@ -437,7 +437,7 @@ a:focus-visible {
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 767px) {
     .pricing-comparison__subtitle {
         font-size: 14px;
     }
@@ -495,7 +495,7 @@ a:focus-visible {
 }
 
 /* Tariff Cards */
-@media (max-width: 1200px) {
+@media (max-width: 1023px) {
     .tariff {
         padding-bottom: var(--section-spacing-xl, 80px);
         margin-top: var(--section-spacing-md, 48px);
@@ -529,7 +529,7 @@ a:focus-visible {
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 767px) {
     .tariff-card {
         height: auto;
         min-height: unset;
@@ -578,7 +578,7 @@ a:focus-visible {
    Global Responsive at 992px
    ======================================== */
 
-@media (max-width: 992px) {
+@media (max-width: 1023px) {
     .off-mobile {
         display: none;
     }
@@ -804,7 +804,7 @@ a:focus-visible {
    Global Responsive at 1200px
    ======================================== */
 
-@media (max-width: 1200px) {
+@media (max-width: 1023px) {
     .contact__right::after {
         content: none;
     }
@@ -843,7 +843,7 @@ a:focus-visible {
     }
 }
 
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
     .dropmenu-info {
         margin-left: 40px;
     }
@@ -866,7 +866,7 @@ a:focus-visible {
    Mobile Improvements (480px and below)
    ======================================== */
 
-@media (max-width: 480px) {
+@media (max-width: 767px) {
     /* Prevent horizontal overflow */
     body {
         overflow-x: hidden;
@@ -930,7 +930,7 @@ a:focus-visible {
 }
 
 /* Hardware Cards Grid at 768px */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .hardware-cards {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -1035,7 +1035,7 @@ a:focus-visible {
    Form Button Fixes (480px)
    ======================================== */
 
-@media (max-width: 480px) {
+@media (max-width: 767px) {
     .form__btn,
     .contact-form button[type="submit"],
     .company-form-wrap button.btn-main,
@@ -1121,7 +1121,7 @@ a:focus-visible {
    Footer Responsive Fixes
    ======================================== */
 
-@media (max-width: 992px) {
+@media (max-width: 1023px) {
     .footer-top {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -1146,7 +1146,7 @@ a:focus-visible {
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 767px) {
     .footer-top {
         grid-template-columns: 1fr;
         gap: 32px;
@@ -1280,7 +1280,7 @@ a:focus-visible {
     }
 }
 
-@media (max-width: 479px) {
+@media (max-width: 767px) {
     .easy-guides {
         padding: var(--section-spacing-sm, 32px) 0;
     }
@@ -1316,7 +1316,7 @@ a:focus-visible {
    Fixes for iPhone SE, Galaxy S series, etc.
    ======================================== */
 
-@media (max-width: 380px) {
+@media (max-width: 767px) {
     /* Prevent any horizontal overflow */
     html, body {
         overflow-x: hidden;
@@ -1485,7 +1485,7 @@ a:focus-visible {
 }
 
 /* Extra small screens (below 320px) */
-@media (max-width: 320px) {
+@media (max-width: 767px) {
     .mainPageHeader {
         margin: 0 4px !important;
         border-radius: 16px 0 !important;

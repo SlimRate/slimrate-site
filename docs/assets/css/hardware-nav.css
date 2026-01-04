@@ -291,7 +291,7 @@
 /* ========================================
    Large Desktop (1280px)
    ======================================== */
-@media (min-width: 1280px) {
+@media (min-width: 1024px) {
     .hardware-nav__card {
         min-height: 260px;
     }
@@ -309,7 +309,7 @@
    Very Small Mobile (380px and below)
    Single column layout for narrow screens
    ======================================== */
-@media (max-width: 380px) {
+@media (max-width: 767px) {
     .hardware-nav {
         padding: 24px 0;
     }

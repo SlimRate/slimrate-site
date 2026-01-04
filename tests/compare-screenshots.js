@@ -10,7 +10,7 @@ const path = require('path');
 const { PNG } = require('pngjs');
 
 const BEFORE_DIR = path.resolve(__dirname, '../screenshots-before');
-const AFTER_DIR = path.resolve(__dirname, '../screenshots-after');
+const AFTER_DIR = path.resolve(__dirname, '../screenshots-phase3');
 
 async function compareImages(beforePath, afterPath) {
     return new Promise((resolve) => {
