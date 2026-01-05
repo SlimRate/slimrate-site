@@ -5649,17 +5649,15 @@ label.has-value {
         transform: translate(-50%, -50%);
         max-width: none;
     }
+    
     .hardware-nav__card {
         min-height: 260px;
-    }
-    
-    .hardware-nav__card--tablets {
-        min-height: 360px;
     }
     
     .hardware-nav__grid {
         grid-auto-rows: minmax(260px, auto);
     }
+    
     .equip.allinone {
         /* Fixed sizes at desktop - no vw to prevent jumps at container max-width */
         --allinone-row-height: 600px;

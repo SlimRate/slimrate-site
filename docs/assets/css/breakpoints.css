@@ -270,12 +270,6 @@
 /* (min-width: 1024px) */
 @media (min-width: 1024px) {
     .container {
-        max-width: 960px;
-    }
-    .container {
-        max-width: 1160px;
-    }
-    .container {
         max-width: 1320px;
     }
     .hide-lg-up { display: none !important; }
