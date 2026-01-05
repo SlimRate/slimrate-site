@@ -199,7 +199,9 @@
    ======================================== */
 
 .equip.allinone {
-    --allinone-square-size: clamp(260px, 38vw, 520px);
+    /* Base: fluid from 260px to 484px based on 47vw */
+    /* 47vw reaches 484px at 1030px viewport */
+    --allinone-square-size: clamp(260px, 47vw, 484px);
     --allinone-gap: clamp(32px, 6vw, 96px);
     --allinone-decor-offset: 58px;
     overflow: visible;
@@ -411,11 +413,50 @@
    Equip Responsive Styles
    ======================================== */
 
-@media (min-width: 1200px) {
+
+
+
+
+
+
+
+
+
+
+/* ========================================
+   CONSOLIDATED MEDIA QUERIES
+   ======================================== */
+
+/* (min-width: 768px) */
+@media (min-width: 768px) {
+    .equip.allinone .block-left {
+        aspect-ratio: auto;
+        min-height: var(--allinone-square-size);
+        height: auto;
+        padding: clamp(24px, 2.2vw, 36px);
+        justify-content: space-between;
+    }
+    
+    .equip.allinone .allinone__title {
+        font-size: clamp(20px, 2vw, 28px);
+        line-height: 1.1;
+        margin-bottom: clamp(8px, 1vw, 10px);
+    }
+    
+    .equip.allinone .allinone__text {
+        font-size: clamp(12px, 1vw, 14px);
+        line-height: 1.45;
+        margin-bottom: clamp(6px, 0.8vw, 8px);
+    }
+}
+
+/* (min-width: 1024px) */
+@media (min-width: 1024px) {
     .equip.allinone {
+        /* Fixed sizes at desktop - no vw to prevent jumps at container max-width */
         --allinone-row-height: 600px;
         --allinone-left-height: 500px;
-        --allinone-square-size: calc(var(--allinone-row-height) - (2 * var(--allinone-decor-offset)));
+        --allinone-square-size: 484px;
     }
 
     .equip.allinone .container {
@@ -437,10 +478,10 @@
     }
 
     .equip.allinone .block-right {
-        width: calc(var(--allinone-row-height) - (2 * var(--allinone-decor-offset)));
-        max-width: calc(var(--allinone-row-height) - (2 * var(--allinone-decor-offset)));
-        height: calc(var(--allinone-row-height) - (2 * var(--allinone-decor-offset))) !important;
-        max-height: calc(var(--allinone-row-height) - (2 * var(--allinone-decor-offset)));
+        width: var(--allinone-square-size);
+        max-width: var(--allinone-square-size);
+        height: var(--allinone-square-size) !important;
+        max-height: var(--allinone-square-size);
         aspect-ratio: auto;
     }
 
@@ -450,7 +491,8 @@
     }
 }
 
-@media (width <= 1200px) {
+/* (max-width: 1023px) */
+@media (max-width: 1023px) {
     .equip {
         background: #2b6bf3;
         padding-bottom: 150px;
@@ -548,31 +590,6 @@
     .equip.allinone .container {
         gap: clamp(40px, 5vw, 60px);
     }
-}
-
-@media (width >= 992px) and (width <= 1200px) {
-    .equip.allinone .block-left {
-        aspect-ratio: auto;
-        min-height: var(--allinone-square-size);
-        height: auto;
-        padding: clamp(24px, 2.2vw, 36px);
-        justify-content: space-between;
-    }
-    
-    .equip.allinone .allinone__title {
-        font-size: clamp(20px, 2vw, 28px);
-        line-height: 1.1;
-        margin-bottom: clamp(8px, 1vw, 10px);
-    }
-    
-    .equip.allinone .allinone__text {
-        font-size: clamp(12px, 1vw, 14px);
-        line-height: 1.45;
-        margin-bottom: clamp(6px, 0.8vw, 8px);
-    }
-}
-
-@media (width <= 992px) {
     .equip.allinone {
         padding: 60px 0;
         overflow: visible;
@@ -656,7 +673,8 @@
     }
 }
 
-@media (width <= 768px) {
+/* (max-width: 767px) */
+@media (max-width: 767px) {
     .equip {
         padding-bottom: 0;
     }
@@ -746,16 +764,10 @@
         width: 150px;
         inset: auto -3% 28vw auto;
     }
-}
-
-@media (width <= 480px) {
     .equip.allinone .block-img-circle {
         transform: translateY(80px);
         opacity: 0.6;
     }
-}
-
-@media (width <= 400px) {
     .equip.allinone {
         padding: 40px 0;
     }
@@ -794,9 +806,6 @@
         padding: 10px 20px;
         font-size: 14px;
     }
-}
-
-@media (width <= 360px) {
     .equip.allinone .container {
         gap: 35px;
         padding: 0 12px;
@@ -809,9 +818,6 @@
     .equip.allinone .allinone__text {
         font-size: 13px;
     }
-}
-
-@media (width <= 340px) {
     .equip.allinone .container {
         gap: 30px;
         padding: 0 10px;

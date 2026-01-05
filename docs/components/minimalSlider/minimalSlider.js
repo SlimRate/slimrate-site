@@ -105,10 +105,9 @@ document.addEventListener('DOMContentLoaded', () => {
   
   const getImagesPerView = () => {
     const width = window.innerWidth;
-    if (width <= 480) return 1;
-    if (width <= 768) return 2;
-    if (width <= 1024) return 3;
-    return 4;
+    if (width <= 767) return 1;      // Mobile: 1 image
+    if (width <= 1023) return 2;     // Tablet: 2 images
+    return 3;                         // Desktop: 3 images
   };
 
   let imagesPerView = getImagesPerView();

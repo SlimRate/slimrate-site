@@ -1,5 +1,5 @@
 const hardwareSomethingSliderTemplate = document.createElement('template');
-if (window.innerWidth < 920) {
+if (window.innerWidth < 768) {
     hardwareSomethingSliderTemplate.innerHTML = `
 <section class="something">
 <div class="container">

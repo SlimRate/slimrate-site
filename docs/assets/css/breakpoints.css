@@ -30,38 +30,10 @@
     padding-right: var(--spacing-4);
 }
 
-@media (min-width: 480px) {
-    .container {
-        padding-left: var(--spacing-5);
-        padding-right: var(--spacing-5);
-    }
-}
 
-@media (min-width: 768px) {
-    .container {
-        max-width: 720px;
-        padding-left: var(--spacing-6);
-        padding-right: var(--spacing-6);
-    }
-}
 
-@media (min-width: 1024px) {
-    .container {
-        max-width: 960px;
-    }
-}
 
-@media (min-width: 1280px) {
-    .container {
-        max-width: 1160px;
-    }
-}
 
-@media (min-width: 1440px) {
-    .container {
-        max-width: 1320px;
-    }
-}
 
 /* Container Variants */
 .container--narrow {
@@ -82,70 +54,28 @@
    ======================================== */
 
 /* Hide on specific breakpoint and up */
-@media (min-width: 480px) {
-    .hide-sm-up { display: none !important; }
-}
 
-@media (min-width: 768px) {
-    .hide-md-up { display: none !important; }
-}
 
-@media (min-width: 1024px) {
-    .hide-lg-up { display: none !important; }
-}
 
-@media (min-width: 1280px) {
-    .hide-xl-up { display: none !important; }
-}
 
 /* Hide on specific breakpoint and down */
-@media (max-width: 479px) {
-    .hide-xs-down { display: none !important; }
-}
 
-@media (max-width: 767px) {
-    .hide-sm-down { display: none !important; }
-}
 
-@media (max-width: 1023px) {
-    .hide-md-down { display: none !important; }
-}
 
-@media (max-width: 1279px) {
-    .hide-lg-down { display: none !important; }
-}
 
 /* Semantic aliases */
 .hide-mobile { display: block; }
-@media (max-width: 767px) {
-    .hide-mobile { display: none !important; }
-}
 
 .hide-tablet { display: block; }
-@media (min-width: 768px) and (max-width: 1023px) {
-    .hide-tablet { display: none !important; }
-}
 
 .hide-desktop { display: block; }
-@media (min-width: 1024px) {
-    .hide-desktop { display: none !important; }
-}
 
 /* Show only on specific breakpoint */
 .show-mobile-only { display: none !important; }
-@media (max-width: 767px) {
-    .show-mobile-only { display: block !important; }
-}
 
 .show-tablet-only { display: none !important; }
-@media (min-width: 768px) and (max-width: 1023px) {
-    .show-tablet-only { display: block !important; }
-}
 
 .show-desktop-only { display: none !important; }
-@media (min-width: 1024px) {
-    .show-desktop-only { display: block !important; }
-}
 
 /* ========================================
    Flex Direction Utilities
@@ -155,21 +85,11 @@
     flex-direction: column;
 }
 
-@media (min-width: 768px) {
-    .flex-col-mobile {
-        flex-direction: row;
-    }
-}
 
 .flex-col-tablet {
     flex-direction: row;
 }
 
-@media (max-width: 1023px) {
-    .flex-col-tablet {
-        flex-direction: column;
-    }
-}
 
 /* ========================================
    Text Alignment Responsive
@@ -179,30 +99,12 @@
     text-align: center;
 }
 
-@media (min-width: 768px) {
-    .text-center-mobile {
-        text-align: left;
-    }
-}
 
 /* ========================================
    Spacing Responsive Utilities
    ======================================== */
 
 /* Mobile-specific padding */
-@media (max-width: 767px) {
-    .p-mobile-sm { padding: var(--spacing-3) !important; }
-    .p-mobile-md { padding: var(--spacing-4) !important; }
-    .p-mobile-lg { padding: var(--spacing-6) !important; }
-    
-    .px-mobile-sm { padding-left: var(--spacing-3) !important; padding-right: var(--spacing-3) !important; }
-    .px-mobile-md { padding-left: var(--spacing-4) !important; padding-right: var(--spacing-4) !important; }
-    .px-mobile-lg { padding-left: var(--spacing-6) !important; padding-right: var(--spacing-6) !important; }
-    
-    .py-mobile-sm { padding-top: var(--spacing-3) !important; padding-bottom: var(--spacing-3) !important; }
-    .py-mobile-md { padding-top: var(--spacing-4) !important; padding-bottom: var(--spacing-4) !important; }
-    .py-mobile-lg { padding-top: var(--spacing-6) !important; padding-bottom: var(--spacing-6) !important; }
-}
 
 /* ========================================
    Gap Responsive Utilities
@@ -212,17 +114,7 @@
     gap: var(--spacing-4);
 }
 
-@media (min-width: 768px) {
-    .gap-responsive {
-        gap: var(--spacing-6);
-    }
-}
 
-@media (min-width: 1024px) {
-    .gap-responsive {
-        gap: var(--spacing-8);
-    }
-}
 
 /* ========================================
    Grid Responsive Utilities
@@ -238,24 +130,9 @@
 /* Responsive columns */
 .grid-cols-1 { grid-template-columns: 1fr; }
 
-@media (min-width: 480px) {
-    .grid-cols-sm-2 { grid-template-columns: repeat(2, 1fr); }
-}
 
-@media (min-width: 768px) {
-    .grid-cols-md-2 { grid-template-columns: repeat(2, 1fr); }
-    .grid-cols-md-3 { grid-template-columns: repeat(3, 1fr); }
-}
 
-@media (min-width: 1024px) {
-    .grid-cols-lg-3 { grid-template-columns: repeat(3, 1fr); }
-    .grid-cols-lg-4 { grid-template-columns: repeat(4, 1fr); }
-}
 
-@media (min-width: 1280px) {
-    .grid-cols-xl-4 { grid-template-columns: repeat(4, 1fr); }
-    .grid-cols-xl-5 { grid-template-columns: repeat(5, 1fr); }
-}
 
 /* ========================================
    Width Responsive Utilities
@@ -265,11 +142,6 @@
     width: 100%;
 }
 
-@media (min-width: 768px) {
-    .w-full-mobile {
-        width: auto;
-    }
-}
 
 /* ========================================
    Border Radius Responsive
@@ -279,33 +151,13 @@
     border-radius: var(--radius-md);
 }
 
-@media (min-width: 768px) {
-    .rounded-responsive-sm {
-        border-radius: var(--radius-xl);
-    }
-}
 
-@media (min-width: 1024px) {
-    .rounded-responsive-sm {
-        border-radius: var(--radius-3xl);
-    }
-}
 
 .rounded-responsive-lg {
     border-radius: var(--radius-2xl);
 }
 
-@media (min-width: 768px) {
-    .rounded-responsive-lg {
-        border-radius: var(--radius-3xl);
-    }
-}
 
-@media (min-width: 1024px) {
-    .rounded-responsive-lg {
-        border-radius: 100px 0;
-    }
-}
 
 /* ========================================
    Section Padding Responsive
@@ -316,19 +168,7 @@
     padding-bottom: var(--section-spacing-sm);
 }
 
-@media (min-width: 768px) {
-    .section-padding {
-        padding-top: var(--section-spacing-md);
-        padding-bottom: var(--section-spacing-md);
-    }
-}
 
-@media (min-width: 1024px) {
-    .section-padding {
-        padding-top: var(--section-spacing-lg);
-        padding-bottom: var(--section-spacing-lg);
-    }
-}
 
 /* ========================================
    Font Size Responsive
@@ -359,22 +199,12 @@
     display: block;
 }
 
-@media (max-width: 1023px) {
-    .off-mobile {
-        display: none !important;
-    }
-}
 
 /* .on-mobile → .show-md-down-only */
 .on-mobile {
     display: none;
 }
 
-@media (max-width: 1023px) {
-    .on-mobile {
-        display: block !important;
-    }
-}
 
 /* ========================================
    Safe Area Support (for mobile devices)
@@ -388,4 +218,113 @@
     .safe-area-top {
         padding-top: env(safe-area-inset-top);
     }
+}
+
+
+/* ========================================
+   CONSOLIDATED MEDIA QUERIES
+   ======================================== */
+
+/* (min-width: 768px) */
+@media (min-width: 768px) {
+    .container {
+        padding-left: var(--spacing-5);
+        padding-right: var(--spacing-5);
+    }
+    .container {
+        max-width: 720px;
+        padding-left: var(--spacing-6);
+        padding-right: var(--spacing-6);
+    }
+    .hide-sm-up { display: none !important; }
+    .hide-md-up { display: none !important; }
+    .hide-tablet { display: none !important; }
+    .show-tablet-only { display: block !important; }
+    .flex-col-mobile {
+        flex-direction: row;
+    }
+    .text-center-mobile {
+        text-align: left;
+    }
+    .gap-responsive {
+        gap: var(--spacing-6);
+    }
+    .grid-cols-sm-2 { grid-template-columns: repeat(2, 1fr); }
+    .grid-cols-md-2 { grid-template-columns: repeat(2, 1fr); }
+    .grid-cols-md-3 { grid-template-columns: repeat(3, 1fr); }
+    .w-full-mobile {
+        width: auto;
+    }
+    .rounded-responsive-sm {
+        border-radius: var(--radius-xl);
+    }
+    .rounded-responsive-lg {
+        border-radius: var(--radius-3xl);
+    }
+    .section-padding {
+        padding-top: var(--section-spacing-md);
+        padding-bottom: var(--section-spacing-md);
+    }
+}
+
+/* (min-width: 1024px) */
+@media (min-width: 1024px) {
+    .container {
+        max-width: 1320px;
+    }
+    .hide-lg-up { display: none !important; }
+    .hide-xl-up { display: none !important; }
+    .hide-desktop { display: none !important; }
+    .show-desktop-only { display: block !important; }
+    .gap-responsive {
+        gap: var(--spacing-8);
+    }
+    .grid-cols-lg-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid-cols-lg-4 { grid-template-columns: repeat(4, 1fr); }
+    .grid-cols-xl-4 { grid-template-columns: repeat(4, 1fr); }
+    .grid-cols-xl-5 { grid-template-columns: repeat(5, 1fr); }
+    .rounded-responsive-sm {
+        border-radius: var(--radius-3xl);
+    }
+    .rounded-responsive-lg {
+        border-radius: 100px 0;
+    }
+    .section-padding {
+        padding-top: var(--section-spacing-lg);
+        padding-bottom: var(--section-spacing-lg);
+    }
+}
+
+/* (max-width: 1023px) */
+@media (max-width: 1023px) {
+    .hide-md-down { display: none !important; }
+    .hide-lg-down { display: none !important; }
+    .flex-col-tablet {
+        flex-direction: column;
+    }
+    .off-mobile {
+        display: none !important;
+    }
+    .on-mobile {
+        display: block !important;
+    }
+}
+
+/* (max-width: 767px) */
+@media (max-width: 767px) {
+    .hide-xs-down { display: none !important; }
+    .hide-sm-down { display: none !important; }
+    .hide-mobile { display: none !important; }
+    .show-mobile-only { display: block !important; }
+    .p-mobile-sm { padding: var(--spacing-3) !important; }
+    .p-mobile-md { padding: var(--spacing-4) !important; }
+    .p-mobile-lg { padding: var(--spacing-6) !important; }
+    
+    .px-mobile-sm { padding-left: var(--spacing-3) !important; padding-right: var(--spacing-3) !important; }
+    .px-mobile-md { padding-left: var(--spacing-4) !important; padding-right: var(--spacing-4) !important; }
+    .px-mobile-lg { padding-left: var(--spacing-6) !important; padding-right: var(--spacing-6) !important; }
+    
+    .py-mobile-sm { padding-top: var(--spacing-3) !important; padding-bottom: var(--spacing-3) !important; }
+    .py-mobile-md { padding-top: var(--spacing-4) !important; padding-bottom: var(--spacing-4) !important; }
+    .py-mobile-lg { padding-top: var(--spacing-6) !important; padding-bottom: var(--spacing-6) !important; }
 }

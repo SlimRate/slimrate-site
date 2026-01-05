@@ -406,7 +406,7 @@
 /* ===== RESPONSIVE STYLES ===== */
 
 /* Tablet */
-@media (width <= 1024px) {
+@media (max-width: 1023px) {
     .product-hero__grid,
     .product-details__grid {
         grid-template-columns: 1fr;
@@ -423,7 +423,7 @@
 }
 
 /* Mobile */
-@media (width <= 768px) {
+@media (max-width: 767px) {
     .product-hero {
         padding: 40px 0;
     }

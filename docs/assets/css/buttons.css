@@ -157,7 +157,7 @@
    Button Responsive Styles
    ======================================== */
 
-@media (width <= 1200px) {
+@media (max-width: 1023px) {
     .main .equip-buttons {
         flex-direction: column;
     }
@@ -176,7 +176,7 @@
     }
 }
 
-@media (width <= 480px) {
+@media (max-width: 767px) {
     .form__btn,
     .contact-form button[type="submit"],
     .company-form-wrap button.btn-main,

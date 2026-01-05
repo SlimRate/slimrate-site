@@ -151,7 +151,7 @@
    FAQ Responsive Styles
    ======================================== */
 
-@media (width <= 1200px) {
+@media (max-width: 1023px) {
     .faq {
         padding-bottom: var(--spacing-ultra-lg);
     }
@@ -161,7 +161,7 @@
     }
 }
 
-@media (width <= 768px) {
+@media (max-width: 767px) {
     .faq {
         padding-bottom: 180px;
     }
@@ -208,7 +208,7 @@
     }
 }
 
-@media (width <= 480px) {
+@media (max-width: 767px) {
     .faq {
         padding: var(--section-spacing-md) 0;
     }
