@@ -68,13 +68,13 @@
     margin: 0 auto;
 }
 
-@media (width >= 768px) {
+@media (min-width: 768px) {
     .integrations-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-@media (width <= 767px) {
+@media (max-width: 767px) {
     .integration-card {
         padding: var(--spacing-xl);
     }

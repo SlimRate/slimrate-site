@@ -98,7 +98,7 @@
     background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
 }
 
-@media (width <= 991px) {
+@media (max-width: 1023px) {
     .serve-card {
         padding: var(--spacing-xl);
         gap: var(--spacing-xl);
@@ -123,7 +123,7 @@
     }
 }
 
-@media (width <= 768px) {
+@media (max-width: 767px) {
     .serve-card,
     .serve-card--left,
     .serve-card--right {
@@ -405,7 +405,7 @@
 }
 
 /* Responsive Styles */
-@media (width <= 991px) {
+@media (max-width: 1023px) {
     .implementation-steps {
         gap: var(--spacing-lg);
     }
@@ -417,7 +417,7 @@
     }
 }
 
-@media (width <= 767px) {
+@media (max-width: 767px) {
     .mainPageHeader--public-sector {
         padding-bottom: var(--spacing-3xl);
     }

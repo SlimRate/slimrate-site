@@ -31,12 +31,6 @@
     padding-right: 0;
 }
 
-@media (min-width: 768px) {
-    .container--flush-mobile {
-        padding-left: var(--spacing-6);
-        padding-right: var(--spacing-6);
-    }
-}
 
 /* ========================================
    Section Padding Overrides
@@ -58,12 +52,6 @@
     padding-bottom: var(--section-spacing-xl);
 }
 
-@media (min-width: 1024px) {
-    .section--featured {
-        padding-top: var(--section-spacing-2xl);
-        padding-bottom: var(--section-spacing-2xl);
-    }
-}
 
 /* ========================================
    Flexbox Overrides
@@ -75,11 +63,6 @@
     flex-direction: column;
 }
 
-@media (min-width: 1024px) {
-    .flex-col-until-lg {
-        flex-direction: row;
-    }
-}
 
 /* Center content on mobile */
 .flex-center-mobile {
@@ -88,11 +71,6 @@
     align-items: center;
 }
 
-@media (min-width: 768px) {
-    .flex-center-mobile {
-        justify-content: flex-start;
-    }
-}
 
 /* ========================================
    Grid Overrides
@@ -105,17 +83,7 @@
     gap: var(--spacing-6);
 }
 
-@media (min-width: 768px) {
-    .grid-collapse-mobile {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
 
-@media (min-width: 1024px) {
-    .grid-collapse-mobile {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
 
 /* ========================================
    Max-Width Overrides
@@ -190,15 +158,6 @@
 }
 
 /* Force element to stack below siblings on mobile */
-@media (max-width: 767px) {
-    .order-last-mobile {
-        order: 99;
-    }
-    
-    .order-first-mobile {
-        order: -1;
-    }
-}
 
 /* ========================================
    Scroll Behavior
@@ -209,11 +168,6 @@
     scroll-margin-top: 120px;
 }
 
-@media (max-width: 1023px) {
-    .scroll-target {
-        scroll-margin-top: 80px;
-    }
-}
 
 /* ========================================
    Print Overrides
@@ -226,5 +180,56 @@
     
     .print-break {
         page-break-before: always;
+    }
+}
+
+
+/* ========================================
+   CONSOLIDATED MEDIA QUERIES
+   ======================================== */
+
+/* (min-width: 768px) */
+@media (min-width: 768px) {
+    .container--flush-mobile {
+        padding-left: var(--spacing-6);
+        padding-right: var(--spacing-6);
+    }
+    .flex-center-mobile {
+        justify-content: flex-start;
+    }
+    .grid-collapse-mobile {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* (min-width: 1024px) */
+@media (min-width: 1024px) {
+    .section--featured {
+        padding-top: var(--section-spacing-2xl);
+        padding-bottom: var(--section-spacing-2xl);
+    }
+    .flex-col-until-lg {
+        flex-direction: row;
+    }
+    .grid-collapse-mobile {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* (max-width: 1023px) */
+@media (max-width: 1023px) {
+    .scroll-target {
+        scroll-margin-top: 80px;
+    }
+}
+
+/* (max-width: 767px) */
+@media (max-width: 767px) {
+    .order-last-mobile {
+        order: 99;
+    }
+    
+    .order-first-mobile {
+        order: -1;
     }
 }

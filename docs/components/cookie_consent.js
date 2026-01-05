@@ -77,14 +77,7 @@ cookieConsentTemplate.innerHTML = `
     background: rgba(255, 255, 255, 0.1);
 }
 
-@media (max-width: 768px) {
-    .cookie-consent {
-        padding-right: 24px;
-        padding-bottom: 70px; /* Space for Zendesk on mobile */
-    }
-}
-
-@media (max-width: 600px) {
+@media (max-width: 767px) {
     .cookie-consent {
         flex-direction: column;
         text-align: center;

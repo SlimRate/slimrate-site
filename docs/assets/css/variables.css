@@ -2,40 +2,55 @@
    CSS Custom Properties - Single Source of Truth
    Consolidated from style.css and spacing-system.css
    
-   UNIFIED BREAKPOINT SYSTEM (Mobile-First)
+   SIMPLIFIED 3-BREAKPOINT SYSTEM (Mobile-First)
    ========================================
    
    BREAKPOINTS REFERENCE:
    ----------------------
-   xs:  0      - 479px   (Small mobile)
-   sm:  480px  - 767px   (Mobile)
-   md:  768px  - 1023px  (Tablet)
-   lg:  1024px - 1279px  (Desktop)
-   xl:  1280px - 1439px  (Large desktop)
-   xxl: 1440px+          (Extra large)
+   Mobile:  0      - 767px   (Phones)
+   Tablet:  768px  - 1023px  (Tablets, small laptops)
+   Desktop: 1024px+          (Desktops, laptops)
+   
+   On screens wider than 1200px + padding, content is centered
+   with flexible margins on sides (no extra breakpoints needed).
    
    USAGE PATTERN (Mobile-First):
    -----------------------------
-   Base styles = Mobile (xs/sm)
+   Base styles = Mobile (0-767px)
    @media (min-width: 768px)  → Tablet+
    @media (min-width: 1024px) → Desktop+
-   @media (min-width: 1280px) → Large Desktop+
+   
+   ⚠️ DO NOT USE other breakpoints like 480px, 1280px, 1440px
    
    ======================================== */
 
 :root {
     /* ========================================
-       Breakpoints - Unified System
+       Breakpoints - Simplified 3-Point System
        Use these values consistently across all media queries
        ======================================== */
-    --bp-xs: 360px;    /* Extra small mobile (rarely used) */
-    --bp-sm: 480px;    /* Small mobile → Mobile transition */
-    --bp-md: 768px;    /* Mobile → Tablet transition */
-    --bp-lg: 1024px;   /* Tablet → Desktop transition */
-    --bp-xl: 1280px;   /* Desktop → Large desktop transition */
-    --bp-xxl: 1440px;  /* Large desktop → Extra large transition */
     
-    /* Legacy aliases (for backward compatibility) */
+    /* PRIMARY BREAKPOINTS - USE ONLY THESE */
+    --bp-tablet: 768px;     /* Mobile → Tablet transition */
+    --bp-desktop: 1024px;   /* Tablet → Desktop transition */
+    --bp-mobile-max: 767px; /* Max-width for mobile-only styles */
+    
+    /* Container settings */
+    --container-max-width: 1200px;
+    --container-padding-mobile: 16px;
+    --container-padding-tablet: 24px;
+    --container-padding-desktop: 32px;
+    
+    /* DEPRECATED - keeping for backward compatibility during migration */
+    /* TODO: Remove after migration is complete */
+    --bp-xs: 360px;
+    --bp-sm: 480px;
+    --bp-md: 768px;    /* = --bp-tablet */
+    --bp-lg: 1024px;   /* = --bp-desktop */
+    --bp-xl: 1280px;   /* DEPRECATED: use --bp-desktop */
+    --bp-xxl: 1440px;  /* DEPRECATED: use --bp-desktop */
+    
+    /* Legacy aliases (DEPRECATED) */
     --breakpoint-xs: var(--bp-xs);
     --breakpoint-sm: var(--bp-sm);
     --breakpoint-md: var(--bp-md);

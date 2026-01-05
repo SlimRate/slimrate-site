@@ -11,7 +11,7 @@ const slickConfigs = {
         easing: 'ease-in-out',
         dots: true,
         responsive: [{
-            breakpoint: 991,
+            breakpoint: 1023,
             settings: { slidesToShow: 1 }
         }]
     },
@@ -26,7 +26,7 @@ const slickConfigs = {
         pauseOnFocus: false,
         dots: true,
         responsive: [{
-            breakpoint: 991,
+            breakpoint: 1023,
             settings: { slidesToShow: 3 }
         }]
     },
@@ -39,7 +39,7 @@ const slickConfigs = {
         arrows: false,
         dots: true,
         responsive: [{
-            breakpoint: 991,
+            breakpoint: 1023,
             settings: { slidesToShow: 1 }
         }]
     },
@@ -52,10 +52,7 @@ const slickConfigs = {
         arrows: false,
         dots: true,
         responsive: [{
-            breakpoint: 1199,
-            settings: { slidesToShow: 1 }
-        }, {
-            breakpoint: 991,
+            breakpoint: 1023,
             settings: { slidesToShow: 1 }
         }]
     },

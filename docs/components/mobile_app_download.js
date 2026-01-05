@@ -86,7 +86,7 @@ mobileAppDownloadTemplate.innerHTML = `
     margin-top: 20px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .mobile-app-download {
         margin: 0 12px var(--section-spacing-lg, 60px);
         border-radius: 24px;

@@ -187,7 +187,7 @@ button.next:hover {
 }
 
 /* Responsive */
-@media (max-width: 1024px) {
+@media (max-width: 1023px) {
   .slides figure {
     width: calc((100% - 20px) / 3);
     min-height: 320px;
@@ -199,19 +199,7 @@ button.next:hover {
   }
 }
 
-@media (max-width: 768px) {
-  .slides figure {
-    width: calc((100% - 10px) / 2);
-    min-height: 300px;
-  }
-
-  .slides img {
-    height: 190px;
-    max-height: 190px;
-  }
-}
-
-@media (max-width: 480px) {
+@media (max-width: 767px) {
   .slides {
     gap: 0;
   }

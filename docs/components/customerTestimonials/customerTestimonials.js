@@ -136,7 +136,7 @@ function renderTestimonial(slideIndex) {
     'testimonial-content'
   );
 
-  const isMobile = window.innerWidth <= 768;
+  const isMobile = window.innerWidth <= 767;
   testimonialContent.classList.remove('activeSlider');
 
   setTimeout(() => {

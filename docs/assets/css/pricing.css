@@ -333,7 +333,7 @@
    Pricing Responsive Styles
    ======================================== */
 
-@media (width <= 1200px) {
+@media (max-width: 1023px) {
     .tariff {
         padding-bottom: var(--section-spacing-xl);
         margin-top: var(--section-spacing-md);
@@ -409,7 +409,7 @@
     }
 }
 
-@media (width <= 1024px) {
+@media (max-width: 1023px) {
     .pricing-comparison__title {
         font-size: 32px;
         line-height: 40px;
@@ -429,7 +429,7 @@
     }
 }
 
-@media (width <= 768px) {
+@media (max-width: 767px) {
     .tariff {
         padding-bottom: 150px;
     }
@@ -519,7 +519,7 @@
     }
 }
 
-@media (width <= 480px) {
+@media (max-width: 767px) {
     .tariff-card {
         height: auto;
         min-height: unset;
