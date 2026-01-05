@@ -3924,7 +3924,7 @@ label.has-value {
 }
 
 .equip.allinone {
-    --allinone-square-size: clamp(260px, 38vw, 520px);
+    --allinone-square-size: clamp(260px, 40vw, 400px);
     --allinone-gap: clamp(32px, 6vw, 96px);
     --allinone-decor-offset: 58px;
 
@@ -5659,9 +5659,9 @@ label.has-value {
         grid-auto-rows: minmax(260px, auto);
     }
     .equip.allinone {
-        --allinone-row-height: 600px;
-        --allinone-left-height: 500px;
-        --allinone-square-size: calc(var(--allinone-row-height) - (2 * var(--allinone-decor-offset)));
+        --allinone-row-height: clamp(520px, 50vw, 600px);
+        --allinone-left-height: clamp(420px, 42vw, 500px);
+        --allinone-square-size: clamp(400px, 40vw, 484px);
     }
 
     .equip.allinone .container {
@@ -5683,10 +5683,10 @@ label.has-value {
     }
 
     .equip.allinone .block-right {
-        width: calc(var(--allinone-row-height) - (2 * var(--allinone-decor-offset)));
-        max-width: calc(var(--allinone-row-height) - (2 * var(--allinone-decor-offset)));
-        height: calc(var(--allinone-row-height) - (2 * var(--allinone-decor-offset))) !important;
-        max-height: calc(var(--allinone-row-height) - (2 * var(--allinone-decor-offset)));
+        width: var(--allinone-square-size);
+        max-width: var(--allinone-square-size);
+        height: var(--allinone-square-size) !important;
+        max-height: var(--allinone-square-size);
         aspect-ratio: auto;
     }
 
