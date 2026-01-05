@@ -317,6 +317,15 @@
     justify-content: space-between;
 }
 
+.why-content {
+    flex-direction: row;
+    align-items: center;
+}
+
+.why-content .why-block__list {
+    margin-top: 0;
+}
+
 .why .container-header {
     margin-bottom: 0;
 }
