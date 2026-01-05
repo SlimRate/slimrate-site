@@ -11,7 +11,7 @@ const fs = require('fs');
 
 // Configuration
 const BASE_URL = 'file://' + path.resolve(__dirname, '../docs');
-const OUTPUT_DIR = path.resolve(__dirname, '../screenshots-phase3');
+const OUTPUT_DIR = path.resolve(__dirname, '../screenshots-phase4');
 
 // 3 breakpoints as per simplified system
 const VIEWPORTS = [

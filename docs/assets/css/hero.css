@@ -20,12 +20,6 @@
     background-position: center;
 }
 
-@media (max-width: 767px) {
-    .mainPageHeader {
-        margin: 0;
-        border-radius: 0 0 30px 30px;
-    }
-}
 
 
 /* Page-specific background images */
@@ -201,15 +195,6 @@
     display: block;
 }
 
-@media (max-width: 767px) {
-    .hero-video--mobile {
-        display: block;
-    }
-    
-    .hero-video--desktop {
-        display: none;
-    }
-}
 
 .main-bg-bot {
     bottom: -10px;
@@ -301,6 +286,21 @@
    Hero Responsive Styles
    ======================================== */
 
+
+
+
+/* Small mobile screens (480px and below) */
+
+/* Very narrow screens (380px and below) */
+
+/* Extra narrow screens (320px and below) */
+
+
+/* ========================================
+   CONSOLIDATED MEDIA QUERIES
+   ======================================== */
+
+/* (max-width: 1023px) */
 @media (max-width: 1023px) {
     .mainPageHeader--mobile-app .main-bg {
         display: none;
@@ -377,9 +377,6 @@
         color: #fff;
         margin-bottom: var(--section-spacing-lg);
     }
-}
-
-@media (max-width: 1023px) {
     .main-allPages {
         margin: 0 32px;
         min-height: 598px;
@@ -435,7 +432,19 @@
     }
 }
 
+/* (max-width: 767px) */
 @media (max-width: 767px) {
+    .mainPageHeader {
+        margin: 0;
+        border-radius: 0 0 30px 30px;
+    }
+    .hero-video--mobile {
+        display: block;
+    }
+    
+    .hero-video--desktop {
+        display: none;
+    }
     .gallery {
         width: 180vh;
     }
@@ -450,10 +459,6 @@
         padding: 20px;
         border-radius: 0 24px 24px 0;
     }
-}
-
-/* Small mobile screens (480px and below) */
-@media (max-width: 767px) {
     .mainPageHeader {
         margin: 0 12px;
         border-radius: 32px 0;
@@ -491,10 +496,6 @@
         padding: 16px;
         border-radius: 0 16px 16px 0;
     }
-}
-
-/* Very narrow screens (380px and below) */
-@media (max-width: 767px) {
     .mainPageHeader {
         margin: 0 8px;
         border-radius: 24px 0;
@@ -523,10 +524,6 @@
         padding: 12px;
         border-radius: 0 12px 12px 0;
     }
-}
-
-/* Extra narrow screens (320px and below) */
-@media (max-width: 767px) {
     .mainPageHeader {
         margin: 0 4px;
         border-radius: 16px 0;
