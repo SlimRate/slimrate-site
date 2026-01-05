@@ -3924,7 +3924,9 @@ label.has-value {
 }
 
 .equip.allinone {
-    --allinone-square-size: clamp(260px, 40vw, 400px);
+    /* Base: fluid from 260px to 484px based on 47vw */
+    /* 47vw reaches 484px at 1030px viewport */
+    --allinone-square-size: clamp(260px, 47vw, 484px);
     --allinone-gap: clamp(32px, 6vw, 96px);
     --allinone-decor-offset: 58px;
 
@@ -5659,9 +5661,10 @@ label.has-value {
         grid-auto-rows: minmax(260px, auto);
     }
     .equip.allinone {
-        --allinone-row-height: clamp(520px, 50vw, 600px);
-        --allinone-left-height: clamp(420px, 42vw, 500px);
-        --allinone-square-size: clamp(400px, 40vw, 484px);
+        /* Fixed sizes at desktop - no vw to prevent jumps at container max-width */
+        --allinone-row-height: 600px;
+        --allinone-left-height: 500px;
+        --allinone-square-size: 484px;
     }
 
     .equip.allinone .container {
