@@ -1,0 +1,171 @@
+{
+  "lang": "es",
+  "langName": "Español",
+  
+  "nav": {
+    "solutions": "Soluciones",
+    "businessTypes": "Tipos de Negocio",
+    "pricing": "Precios",
+    "company": "Empresa",
+    "careers": "Carreras",
+    "login": "Iniciar Sesión",
+    "getDemo": "Obtener Demo"
+  },
+  
+  "nav_solutions": {
+    "software": "Software",
+    "posoftware": "Software POS",
+    "paymentProcessing": "Procesamiento de Pagos",
+    "mobileApp": "Aplicación Móvil",
+    "adminPanel": "Panel de Administración",
+    "hardware": "Hardware",
+    "allHardware": "Todo el Hardware",
+    "tablets": "Tabletas",
+    "printers": "Impresoras",
+    "cashDrawer": "Cajón de Efectivo",
+    "scanners": "Escáneres",
+    "emvTerminals": "Terminales EMV",
+    "scales": "Básculas",
+    "integrations": "Integraciones"
+  },
+  
+  "nav_business": {
+    "restaurantPos": "POS para Restaurantes",
+    "retailPos": "POS para Retail",
+    "barsNightclubs": "Bares y Discotecas",
+    "casualDining": "Restaurantes Informales",
+    "fineDining": "Restaurantes de Alta Cocina",
+    "quickService": "Restaurantes de Servicio Rápido (QSR)",
+    "coffeeShops": "Cafeterías y Panaderías",
+    "foodTrucks": "Food Trucks",
+    "liquorStores": "Licorerías",
+    "clothingStores": "Tiendas de Ropa y Accesorios",
+    "groceryStores": "Supermercados y Tiendas de Conveniencia",
+    "specialtyStores": "Tiendas Especializadas",
+    "publicSector": "Sector Público",
+    "ecommerce": "Comercio Electrónico"
+  },
+  
+  "nav_descriptions": {
+    "solutions": "Herramientas líderes en la industria de punto de venta y gestión para diferenciarte de tu competencia. Soporte en vivo para asegurar que tus preguntas siempre sean respondidas.",
+    "software": "Aumente los ingresos, optimice las operaciones y fidelice a los clientes con un potente software basado en la nube.",
+    "hardware": "Ofrezca una experiencia de usuario perfecta con hardware duradero y tecnología potente integrada",
+    "integrations": "Conéctese sin problemas con sus herramientas y servicios favoritos",
+    "businessTypes": "Tecnología moderna de pago y punto de venta para una variedad de aplicaciones",
+    "restaurant": "Solución POS y de gestión basada en la nube para restaurantes de todos los tamaños. Diseñado para que su restaurante funcione mejor",
+    "retail": "Venda con estilo con una solución POS de retail integrada que facilita la venta en línea y en tienda"
+  },
+  
+  "home": {
+    "hero": {
+      "title": "Eleve Su Negocio con Nuestra Solución POS Todo en Uno",
+      "description": "Software, Hardware y Procesamiento de Pagos Integrados",
+      "cta": "Obtener Demo"
+    },
+    "hardware": {
+      "tablets": "Tabletas",
+      "emvTerminals": "Terminales EMV",
+      "printers": "Impresoras",
+      "accessories": "Accesorios",
+      "more": "Más"
+    },
+    "testimonials": {
+      "title": "Testimonios de",
+      "titleHighlight": "Clientes"
+    },
+    "easyGuides": {
+      "title": "Guías Fáciles",
+      "description": "Aprenda a usar Slimrate con nuestros tutoriales en video"
+    }
+  },
+  
+  "software": {
+    "hero": {
+      "title": "Software",
+      "description": "Software completo y fácil de usar. Aumente los ingresos, optimice las operaciones y fidelice a los clientes con un potente software basado en la nube"
+    }
+  },
+  
+  "hardware": {
+    "hero": {
+      "title": "Hardware",
+      "description": "Ofrezca una experiencia de usuario perfecta con hardware duradero y tecnología potente integrada"
+    }
+  },
+  
+  "pricing": {
+    "hero": {
+      "title": "Precios",
+      "description": "Precios simples y transparentes para su negocio"
+    }
+  },
+  
+  "company": {
+    "hero": {
+      "title": "Sobre Nosotros",
+      "description": "Conozca más sobre Slimrate y nuestra misión"
+    }
+  },
+  
+  "footer": {
+    "solutions": "Soluciones",
+    "posHardware": "Hardware POS",
+    "paymentProcessing": "Procesamiento de Pagos",
+    "posSoftware": "Software POS",
+    "mobileApp": "Aplicación Móvil",
+    "businessTypes": "Tipos de Negocio",
+    "restaurantPos": "POS para Restaurantes",
+    "retailPos": "POS para Retail",
+    "company": "Empresa",
+    "aboutUs": "Sobre nosotros",
+    "pricing": "Precios",
+    "loginMerchant": "Iniciar Sesión Merchant",
+    "contactUs": "Contáctenos",
+    "privacyPolicy": "Política de Privacidad",
+    "termsOfService": "Términos de Servicio",
+    "cookiePolicy": "Política de Cookies",
+    "legal": "Legal",
+    "copyright": "Copyright © 2024 Slimrate LLC. Todos los derechos reservados"
+  },
+  
+  "common": {
+    "learnMore": "Más Información",
+    "getStarted": "Comenzar",
+    "contactUs": "Contáctenos",
+    "getQuote": "Obtener Cotización",
+    "viewAll": "Ver Todo",
+    "readMore": "Leer Más",
+    "back": "Atrás",
+    "next": "Siguiente",
+    "previous": "Anterior",
+    "submit": "Enviar",
+    "send": "Enviar",
+    "close": "Cerrar",
+    "more": "Más"
+  },
+  
+  "forms": {
+    "firstName": "Nombre",
+    "lastName": "Apellido",
+    "email": "Correo Electrónico",
+    "phone": "Teléfono",
+    "company": "Empresa",
+    "message": "Mensaje",
+    "businessType": "Tipo de Negocio",
+    "submit": "Enviar",
+    "required": "Requerido",
+    "invalidEmail": "Por favor ingrese un correo electrónico válido",
+    "invalidPhone": "Por favor ingrese un número de teléfono válido"
+  },
+  
+  "faq": {
+    "title": "Preguntas Frecuentes",
+    "subtitle": "Encuentre respuestas a preguntas comunes sobre nuestros productos y servicios"
+  },
+  
+  "languageSwitcher": {
+    "selectLanguage": "Seleccionar idioma",
+    "english": "English",
+    "spanish": "Español"
+  }
+}

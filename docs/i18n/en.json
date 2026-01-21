@@ -1,0 +1,171 @@
+{
+  "lang": "en",
+  "langName": "English",
+  
+  "nav": {
+    "solutions": "Solutions",
+    "businessTypes": "Business Types",
+    "pricing": "Pricing",
+    "company": "Company",
+    "careers": "Careers",
+    "login": "Login",
+    "getDemo": "Get Demo"
+  },
+  
+  "nav_solutions": {
+    "software": "Software",
+    "posoftware": "POS Software",
+    "paymentProcessing": "Payment Processing",
+    "mobileApp": "Mobile App",
+    "adminPanel": "Admin Panel",
+    "hardware": "Hardware",
+    "allHardware": "All Hardware",
+    "tablets": "Tablets",
+    "printers": "Printers",
+    "cashDrawer": "Cash Drawer",
+    "scanners": "Scanners",
+    "emvTerminals": "EMV Terminals",
+    "scales": "Scales",
+    "integrations": "Integrations"
+  },
+  
+  "nav_business": {
+    "restaurantPos": "Restaurant POS",
+    "retailPos": "Retail POS",
+    "barsNightclubs": "Bars & Nightclubs",
+    "casualDining": "Casual Dining",
+    "fineDining": "Fine Dining",
+    "quickService": "Quick Service Restaurants (QSR)",
+    "coffeeShops": "Coffee Shops & Bakeries",
+    "foodTrucks": "Food Trucks",
+    "liquorStores": "Liquor Stores",
+    "clothingStores": "Clothing and Apparel Stores",
+    "groceryStores": "Grocery and Convenience Stores",
+    "specialtyStores": "Specialty Stores",
+    "publicSector": "Public Sector",
+    "ecommerce": "E-commerce"
+  },
+  
+  "nav_descriptions": {
+    "solutions": "Industry leading point of sale and management tools to separate you from your competition. Live support to ensure your questions are always answered.",
+    "software": "Increase revenue, streamline operations, and build customer loyalty with powerful cloud-based software.",
+    "hardware": "Deliver a seamless user experience with durable hardware and built-in powerful technology",
+    "integrations": "Connect seamlessly with your favorite tools and services",
+    "businessTypes": "Modern payment and point of sale technology for a variety of applications",
+    "restaurant": "Cloud-based POS & management solution for restaurants of all sizes. Built to make your restaurant perform better",
+    "retail": "Sell in-style with an integrated retail POS solution that makes it easy to sell online and in-store"
+  },
+  
+  "home": {
+    "hero": {
+      "title": "Elevate Your Business with our All-in-One POS Solution",
+      "description": "Seamlessly Integrated Software, Hardware, and Payment Processing",
+      "cta": "Get Demo"
+    },
+    "hardware": {
+      "tablets": "Tablets",
+      "emvTerminals": "EMV Terminals",
+      "printers": "Printers",
+      "accessories": "Accessories",
+      "more": "More"
+    },
+    "testimonials": {
+      "title": "Customer",
+      "titleHighlight": "Testimonials"
+    },
+    "easyGuides": {
+      "title": "Easy Guides",
+      "description": "Learn how to use Slimrate with our video tutorials"
+    }
+  },
+  
+  "software": {
+    "hero": {
+      "title": "Software",
+      "description": "Comprehensive, easy to use software. Increase revenue, streamline operations, and build customer loyalty with powerful cloud-based software"
+    }
+  },
+  
+  "hardware": {
+    "hero": {
+      "title": "Hardware",
+      "description": "Deliver a seamless user experience with durable hardware and built-in powerful technology"
+    }
+  },
+  
+  "pricing": {
+    "hero": {
+      "title": "Pricing",
+      "description": "Simple, transparent pricing for your business"
+    }
+  },
+  
+  "company": {
+    "hero": {
+      "title": "About Us",
+      "description": "Learn more about Slimrate and our mission"
+    }
+  },
+  
+  "footer": {
+    "solutions": "Solutions",
+    "posHardware": "POS Hardware",
+    "paymentProcessing": "Payment Processing",
+    "posSoftware": "POS Software",
+    "mobileApp": "Mobile App",
+    "businessTypes": "Business Types",
+    "restaurantPos": "Restaurant POS",
+    "retailPos": "Retail POS",
+    "company": "Company",
+    "aboutUs": "About us",
+    "pricing": "Pricing",
+    "loginMerchant": "Login Merchant",
+    "contactUs": "Contact Us",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "cookiePolicy": "Cookie Policy",
+    "legal": "Legal",
+    "copyright": "Copyright © 2024 Slimrate LLC. All rights reserved"
+  },
+  
+  "common": {
+    "learnMore": "Learn More",
+    "getStarted": "Get Started",
+    "contactUs": "Contact Us",
+    "getQuote": "Get Quote",
+    "viewAll": "View All",
+    "readMore": "Read More",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "submit": "Submit",
+    "send": "Send",
+    "close": "Close",
+    "more": "More"
+  },
+  
+  "forms": {
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "Email",
+    "phone": "Phone",
+    "company": "Company",
+    "message": "Message",
+    "businessType": "Business Type",
+    "submit": "Submit",
+    "required": "Required",
+    "invalidEmail": "Please enter a valid email",
+    "invalidPhone": "Please enter a valid phone number"
+  },
+  
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Find answers to common questions about our products and services"
+  },
+  
+  "languageSwitcher": {
+    "selectLanguage": "Select language",
+    "english": "English",
+    "spanish": "Español"
+  }
+}

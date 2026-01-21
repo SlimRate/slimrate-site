@@ -90,3 +90,35 @@
   for = "/site.webmanifest"
   [headers.values]
     Cache-Control = "public, max-age=604800"
+
+# ========================================
+# Internationalization (i18n) Configuration
+# ========================================
+
+# Content-Language headers for language directories
+[[headers]]
+  for = "/es/*"
+  [headers.values]
+    Content-Language = "es"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Content-Language = "en"
+
+# Language-based redirects (optional auto-redirect based on browser language)
+# Uncomment these if you want automatic language detection redirects
+# Note: Uses 302 (temporary) to allow users to switch languages
+
+# [[redirects]]
+#   from = "/"
+#   to = "/es/"
+#   status = 302
+#   conditions = {Language = ["es"]}
+
+# Ensure /es/ directory works correctly
+[[redirects]]
+  from = "/es"
+  to = "/es/"
+  status = 301
+  force = false

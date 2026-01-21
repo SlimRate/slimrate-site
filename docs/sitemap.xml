@@ -1,34 +1,886 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://slimrate.com/cokie.html</loc></url>
-  <url><loc>https://slimrate.com/company.html</loc></url>
-  <url><loc>https://slimrate.com/dataremove.html</loc></url>
-  <url><loc>https://slimrate.com/do_not_sell_my_info.html</loc></url>
-  <url><loc>https://slimrate.com/e-commerce.html</loc></url>
-  <url><loc>https://slimrate.com/employerConfirm.html</loc></url>
-  <url><loc>https://slimrate.com/h-bars.html</loc></url>
-  <url><loc>https://slimrate.com/h-casual.html</loc></url>
-  <url><loc>https://slimrate.com/h-coffee.html</loc></url>
-  <url><loc>https://slimrate.com/h-fine.html</loc></url>
-  <url><loc>https://slimrate.com/h-quick.html</loc></url>
-  <url><loc>https://slimrate.com/h-truck.html</loc></url>
-  <url><loc>https://slimrate.com/hardware.html</loc></url>
-  <url><loc>https://slimrate.com/</loc></url>
-  <url><loc>https://slimrate.com/legal.html</loc></url>
-  <url><loc>https://slimrate.com/merchant.html</loc></url>
-  <url><loc>https://slimrate.com/mobile-app.html</loc></url>
-  <url><loc>https://slimrate.com/payment_processing.html</loc></url>
-  <url><loc>https://slimrate.com/pricing.html</loc></url>
-  <url><loc>https://slimrate.com/privacy-policy.html</loc></url>
-  <url><loc>https://slimrate.com/r-clothing.html</loc></url>
-  <url><loc>https://slimrate.com/r-grocery.html</loc></url>
-  <url><loc>https://slimrate.com/r-liquor.html</loc></url>
-  <url><loc>https://slimrate.com/r-specialty.html</loc></url>
-  <url><loc>https://slimrate.com/restaurant.html</loc></url>
-  <url><loc>https://slimrate.com/retail.html</loc></url>
-  <url><loc>https://slimrate.com/software.html</loc></url>
-  <url><loc>https://slimrate.com/support.html</loc></url>
-  <url><loc>https://slimrate.com/terms.html</loc></url>
-  <url><loc>https://slimrate.com/test.html</loc></url>
-  <url><loc>https://slimrate.com/tet3.html</loc></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <url>
+    <loc>https://slimrate.com/a35.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/a35.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/a35.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/a35.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/es/a35.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/a35.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/a35.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/a35.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/a920.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/a920.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/a920.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/a920.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/es/a920.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/a920.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/a920.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/a920.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/admin-panel.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/admin-panel.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/admin-panel.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/admin-panel.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/es/admin-panel.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/admin-panel.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/admin-panel.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/admin-panel.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/aiscale-label-printing-s130.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/aiscale-label-printing-s130.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/aiscale-label-printing-s130.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/aiscale-label-printing-s130.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/es/aiscale-label-printing-s130.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/aiscale-label-printing-s130.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/aiscale-label-printing-s130.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/aiscale-label-printing-s130.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/aiscale-pos-s625.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/aiscale-pos-s625.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/aiscale-pos-s625.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/aiscale-pos-s625.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/es/aiscale-pos-s625.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/aiscale-pos-s625.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/aiscale-pos-s625.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/aiscale-pos-s625.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/barcode-lookup.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/barcode-lookup.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/barcode-lookup.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/barcode-lookup.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/es/barcode-lookup.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/barcode-lookup.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/barcode-lookup.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/barcode-lookup.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/company.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/company.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/company.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/company.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/es/company.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/company.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/company.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/company.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/cookie.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/cookie.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/cookie.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/cookie.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/es/cookie.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/cookie.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/cookie.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/cookie.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/digital-scale.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/digital-scale.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/digital-scale.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/digital-scale.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/es/digital-scale.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/digital-scale.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/digital-scale.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/digital-scale.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/do_not_sell_my_info.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/do_not_sell_my_info.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/do_not_sell_my_info.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/do_not_sell_my_info.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/es/do_not_sell_my_info.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/do_not_sell_my_info.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/do_not_sell_my_info.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/do_not_sell_my_info.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/e-commerce.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/e-commerce.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/e-commerce.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/e-commerce.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/es/e-commerce.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/e-commerce.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/e-commerce.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/e-commerce.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/h-bars.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/h-bars.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/h-bars.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/h-bars.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/es/h-bars.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/h-bars.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/h-bars.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/h-bars.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/h-casual.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/h-casual.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/h-casual.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/h-casual.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/es/h-casual.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/h-casual.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/h-casual.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/h-casual.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/h-coffee.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/h-coffee.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/h-coffee.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/h-coffee.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/es/h-coffee.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/h-coffee.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/h-coffee.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/h-coffee.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/h-fine.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/h-fine.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/h-fine.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/h-fine.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/es/h-fine.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/h-fine.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/h-fine.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/h-fine.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/h-quick.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/h-quick.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/h-quick.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/h-quick.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/es/h-quick.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/h-quick.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/h-quick.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/h-quick.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/h-truck.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/h-truck.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/h-truck.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/h-truck.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/es/h-truck.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/h-truck.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/h-truck.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/h-truck.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/hardware.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/hardware.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/hardware.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/hardware.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/es/hardware.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/hardware.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/hardware.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/hardware.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/hikvision.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/hikvision.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/hikvision.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/hikvision.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/es/hikvision.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/hikvision.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/hikvision.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/hikvision.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/homebase.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/homebase.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/homebase.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/homebase.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/es/homebase.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/homebase.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/homebase.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/homebase.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/"/>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/es/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/"/>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/integrations.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/integrations.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/integrations.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/integrations.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/es/integrations.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/integrations.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/integrations.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/integrations.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/legal.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/legal.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/es/legal.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/legal.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/liquor-control.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/liquor-control.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/liquor-control.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/liquor-control.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/es/liquor-control.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/liquor-control.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/liquor-control.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/liquor-control.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/merchant.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/merchant.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/merchant.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/merchant.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/es/merchant.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/merchant.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/merchant.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/merchant.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/mobile-app.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/mobile-app.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/mobile-app.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/mobile-app.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/es/mobile-app.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/mobile-app.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/mobile-app.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/mobile-app.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/payment_processing.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/payment_processing.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/payment_processing.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/payment_processing.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/es/payment_processing.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/payment_processing.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/payment_processing.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/payment_processing.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/pricing.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/pricing.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/pricing.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/pricing.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/es/pricing.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/pricing.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/pricing.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/pricing.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/privacy-policy.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/privacy-policy.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/privacy-policy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/privacy-policy.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/es/privacy-policy.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/privacy-policy.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/privacy-policy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/privacy-policy.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/public-sector.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/public-sector.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/public-sector.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/public-sector.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/es/public-sector.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/public-sector.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/public-sector.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/public-sector.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/r-clothing.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/r-clothing.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/r-clothing.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/r-clothing.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/es/r-clothing.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/r-clothing.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/r-clothing.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/r-clothing.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/r-grocery.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/r-grocery.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/r-grocery.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/r-grocery.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/es/r-grocery.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/r-grocery.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/r-grocery.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/r-grocery.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/r-liquor.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/r-liquor.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/r-liquor.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/r-liquor.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/es/r-liquor.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/r-liquor.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/r-liquor.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/r-liquor.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/r-specialty.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/r-specialty.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/r-specialty.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/r-specialty.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/es/r-specialty.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/r-specialty.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/r-specialty.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/r-specialty.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/restaurant.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/restaurant.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/restaurant.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/restaurant.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/es/restaurant.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/restaurant.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/restaurant.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/restaurant.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/retail.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/retail.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/retail.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/retail.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/es/retail.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/retail.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/retail.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/retail.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/software.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/software.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/software.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/software.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/es/software.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/software.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/software.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/software.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/sr-410.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/sr-410.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/sr-410.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/sr-410.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/es/sr-410.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/sr-410.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/sr-410.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/sr-410.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/sr-ds1.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/sr-ds1.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/sr-ds1.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/sr-ds1.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/es/sr-ds1.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/sr-ds1.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/sr-ds1.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/sr-ds1.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/sr-falcon.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/sr-falcon.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/sr-falcon.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/sr-falcon.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/es/sr-falcon.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/sr-falcon.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/sr-falcon.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/sr-falcon.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/sr-swan.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/sr-swan.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/sr-swan.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/sr-swan.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/es/sr-swan.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/sr-swan.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/sr-swan.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/sr-swan.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/sr-trp1.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/sr-trp1.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/sr-trp1.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/sr-trp1.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/es/sr-trp1.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/sr-trp1.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/sr-trp1.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/sr-trp1.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/sr-whs1.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/sr-whs1.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/sr-whs1.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/sr-whs1.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/es/sr-whs1.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/sr-whs1.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/sr-whs1.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/sr-whs1.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/sr-wlhs1.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/sr-wlhs1.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/sr-wlhs1.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/sr-wlhs1.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/es/sr-wlhs1.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/sr-wlhs1.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/sr-wlhs1.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/sr-wlhs1.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/sr155-duo.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/sr155-duo.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/sr155-duo.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/sr155-duo.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/es/sr155-duo.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/sr155-duo.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/sr155-duo.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/sr155-duo.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/sr155-solo.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/sr155-solo.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/sr155-solo.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/sr155-solo.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/es/sr155-solo.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/sr155-solo.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/sr155-solo.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/sr155-solo.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/terms.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/terms.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/es/terms.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/terms.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/tobacco-scan-data.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/tobacco-scan-data.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/tobacco-scan-data.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/tobacco-scan-data.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/es/tobacco-scan-data.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/tobacco-scan-data.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/tobacco-scan-data.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/tobacco-scan-data.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/woocommerce.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/woocommerce.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/woocommerce.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/woocommerce.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slimrate.com/es/woocommerce.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slimrate.com/woocommerce.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slimrate.com/es/woocommerce.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slimrate.com/woocommerce.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>

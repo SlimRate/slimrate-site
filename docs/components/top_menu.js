@@ -20,6 +20,7 @@ topMenuTeplate.innerHTML = `
     </ul>
     <a href="company.html#get_demo" id="careersLink" class="btn btn-red">Careers</a>
     <a href="https://ap.slimrate.com/#" class="btn btn-blue">Login</a>
+    <language-switcher></language-switcher>
 </div>
 </div>
 </header>
