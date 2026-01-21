@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- Google tag (gtag.js) with Consent Mode -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-42Y6GNN6DE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  
+  // Default consent to denied until user accepts
+  gtag('consent', 'default', {
+    'analytics_storage': 'denied'
+  });
+  
+  gtag('js', new Date());
+  gtag('config', 'G-42Y6GNN6DE');
+</script>
+  <meta charset="UTF-8">
+  <title>Chat en Pantalla Completa - Anulaciones CSS Dinámicas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Slimrate ofrece soluciones avanzadas de punto de venta incluyendo software, hardware y procesamiento de pagos para negocios en Estados Unidos."/>
+    <meta name="keywords" content="Soluciones POS, procesamiento de pagos, software para retail, Estados Unidos"/>
+    <link rel="canonical" href="https://slimrate.com/es/support.html"/>
+    <meta property="og:title" content="Soluciones POS de Slimrate"/>
+    <meta property="og:description" content="Plataforma POS todo en uno para negocios en EE.UU."/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://slimrate.com/es/support.html"/>
+    <meta property="og:image" content="https://slimrate.com/apple-touch-icon.webp"/>
+    <meta name="geo.region" content="US"/>
+  <style>
+    /* Basic full-page layout for our container */
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #fff;
+    }
+    /* Container where the Chatwoot widget will render */
+    #chat-container {
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+  <div id="chat-container"></div>
+  
+  <script>
+    (function(d, t) {
+      var BASE_URL = "https://support.slimrate.com";
+      var websiteToken = "ePxJHrr6bgupFw1H41r8U6b7";
+
+      // Dynamically load the Chatwoot SDK
+      var sdkScript = d.createElement(t);
+      sdkScript.src = BASE_URL + "/packs/js/sdk.js";
+      sdkScript.defer = true;
+      sdkScript.async = true;
+      sdkScript.onload = function() {
+        // Initialize the Chatwoot widget
+        window.chatwootSDK.run({
+          baseUrl: BASE_URL,
+          websiteToken: websiteToken,
+          autoOpen: true,
+          hideLauncher: true,
+          container: "#chat-container"
+        });
+
+        // Use MutationObserver to wait until the widget holder appears
+        var observer = new MutationObserver(function(mutations, obs) {
+          var widgetHolder = document.querySelector(".woot-widget-holder");
+          if (widgetHolder) {
+            // Inject custom CSS overrides after the widget has loaded
+            var styleTag = document.createElement("style");
+            styleTag.textContent = `
+              /* Force the widget to be full screen */
+              .woot-widget-holder {
+                position: fixed !important;
+                top: 0 !important;
+                left: 0 !important;
+                right: 0 !important;
+                bottom: 0 !important;
+                width: 100% !important;
+                height: 100% !important;
+                max-width: 100% !important;
+                max-height: 100% !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                border-radius: 0 !important;
+                box-shadow: none !important;
+                transform: none !important;
+                z-index: 2147483000 !important;
+              }
+              .woot-widget-holder iframe {
+                width: 100% !important;
+                height: 100% !important;
+                border: none !important;
+              }
+              /* Override internal container constraints */
+              .chatwoot-container,
+              .chatwoot-chat-container,
+              .chatwoot-chat-content,
+              .chatwoot-inbox-widget,
+              .cw-app,
+              .cw-conversations,
+              .cw-conversation-container,
+              .cw-message-list {
+                width: 100% !important;
+                height: 100% !important;
+                max-width: 100% !important;
+                max-height: 100% !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                box-sizing: border-box !important;
+                overflow: auto !important;
+              }
+            `;
+            document.head.appendChild(styleTag);
+            obs.disconnect(); // Stop observing once our overrides are injected
+          }
+        });
+        observer.observe(document.body, { childList: true, subtree: true });
+      };
+      d.getElementsByTagName("head")[0].appendChild(sdkScript);
+    })(document, "script");
+  </script>
+
+    <!-- Zendesk Support Widget -->
+    <script src="../components/zendesk_widget.js"></script>
+
+    <!-- Cookie Consent -->
+    <script src="../components/cookie_consent.js"></script>
+    <cookie-consent></cookie-consent>
+</body>
+</html>

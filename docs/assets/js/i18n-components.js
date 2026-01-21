@@ -226,7 +226,52 @@
       'Tobacco product compliance tracking': 'Seguimiento de cumplimiento de productos de tabaco',
       'Security camera integration': 'Integración de cámaras de seguridad',
       'Product information and pricing': 'Información de productos y precios',
-      'E-commerce platform integration': 'Integración de plataforma de comercio electrónico'
+      'E-commerce platform integration': 'Integración de plataforma de comercio electrónico',
+      
+      // Tariff Cards
+      'Slimrate rates': 'Tarifas de Slimrate',
+      'Basic Plan': 'Plan Básico',
+      'Premium Plan': 'Plan Premium',
+      'Custom Plan': 'Plan Personalizado',
+      'For businesses starting out or needing essential POS functionality, our Basic Plan covers all your core needs.': 'Para negocios que comienzan o necesitan funcionalidad POS esencial, nuestro Plan Básico cubre todas sus necesidades principales.',
+      'Unlock advanced features and boost your business operations with our Premium Plan. This plan offers enhanced capabilities to streamline your workflow and grow your business.': 'Desbloquee funciones avanzadas y mejore las operaciones de su negocio con nuestro Plan Premium. Este plan ofrece capacidades mejoradas para optimizar su flujo de trabajo y hacer crecer su negocio.',
+      'For businesses with unique needs, our Custom Plan provides a fully tailored POS experience. Work with our in-house software team to build a solution that aligns perfectly with your business requirements.': 'Para negocios con necesidades únicas, nuestro Plan Personalizado proporciona una experiencia POS completamente adaptada. Trabaje con nuestro equipo de software interno para construir una solución que se alinee perfectamente con los requisitos de su negocio.',
+      'Standard POS software with essential sales and inventory management': 'Software POS estándar con gestión esencial de ventas e inventario',
+      'Basic reporting and analytics': 'Reportes y análisis básicos',
+      'Access to standard hardware options (POS display, receipt printers, cash drawers)': 'Acceso a opciones de hardware estándar (pantalla POS, impresoras de recibos, cajones de efectivo)',
+      'Integrated payment processing with competitive rates': 'Procesamiento de pagos integrado con tarifas competitivas',
+      '24/7 live customer support': 'Soporte al cliente en vivo 24/7',
+      'All Basic Plan features plus advanced inventory management': 'Todas las funciones del Plan Básico más gestión avanzada de inventario',
+      'Multi-location and multi-user management': 'Gestión multi-ubicación y multi-usuario',
+      'Enhanced reporting and custom analytics dashboards': 'Reportes mejorados y paneles de análisis personalizados',
+      'Loyalty programs and customer relationship management (CRM)': 'Programas de lealtad y gestión de relaciones con clientes (CRM)',
+      'Access to expanded hardware options and integrations': 'Acceso a opciones de hardware e integraciones expandidas',
+      'Priority support with dedicated account management': 'Soporte prioritario con gestión de cuenta dedicada',
+      'Completely customized software tailored to your business operations': 'Software completamente personalizado adaptado a las operaciones de su negocio',
+      'Integration with existing systems and third-party applications': 'Integración con sistemas existentes y aplicaciones de terceros',
+      'Personalized hardware and software configuration': 'Configuración personalizada de hardware y software',
+      'Advanced analytics and reporting customized to your business': 'Análisis y reportes avanzados personalizados para su negocio',
+      'Dedicated project manager and ongoing support': 'Gerente de proyecto dedicado y soporte continuo',
+      'Perfect for: Small businesses, startups, cafes, and boutique retailers.': 'Perfecto para: Pequeños negocios, startups, cafés y tiendas boutique.',
+      'Perfect for: Medium-sized businesses, multi-location stores, and businesses looking to scale.': 'Perfecto para: Negocios medianos, tiendas con múltiples ubicaciones y negocios que buscan escalar.',
+      'Perfect for: Large enterprises, specialty retailers, and businesses with complex requirements.': 'Perfecto para: Grandes empresas, tiendas especializadas y negocios con requisitos complejos.',
+      'Starting at': 'Desde',
+      '/month': '/mes',
+      'Custom price': 'Precio personalizado',
+      'Shop Now': 'Comprar Ahora',
+      'View all featres →': 'Ver todas las funciones →',
+      
+      // Software Advantages
+      'Comprehensive, Easy-to-use Software': 'Software Completo y Fácil de Usar',
+      'Powerful restaurant and retail software for restaurants and retail stores of all sizes': 'Potente software para restaurantes y tiendas de todos los tamaños',
+      'Simple and Easy-to-use': 'Simple y Fácil de Usar',
+      'Easy-to-use POS solution built to simplify operations with a lightning-fast interface': 'Solución POS fácil de usar diseñada para simplificar operaciones con una interfaz ultrarrápida',
+      'Seamless Onboarding': 'Incorporación Sin Problemas',
+      'The easiest way to start a business and get our system up and running in the fastest way possible': 'La forma más fácil de iniciar un negocio y poner nuestro sistema en funcionamiento lo más rápido posible',
+      'Industry Leading Customer Support': 'Soporte al Cliente Líder en la Industria',
+      'Above and beyond when it comes to customer care. 24/7/365 live support': 'Más allá de lo esperado en atención al cliente. Soporte en vivo 24/7/365',
+      'Training': 'Capacitación',
+      'Online and in-person training so you can get help when you need it': 'Capacitación en línea y presencial para que pueda obtener ayuda cuando la necesite'
     }
   };
 
@@ -315,7 +360,7 @@
     const lang = window.i18n?.currentLang;
     if (lang && lang !== 'en') {
       // Translate existing components
-      document.querySelectorAll('top-menu, bottom-menu, mini-faq, pricing-form').forEach(comp => {
+      document.querySelectorAll('top-menu, bottom-menu, mini-faq, pricing-form, tariff-cards, software-advantages, hardware-advantages, h-advantages, h-who-cards, r-who-cards, rest-who-cards, p-who-cards').forEach(comp => {
         translateElement(comp, lang);
       });
       // Also translate static content on the page
@@ -362,7 +407,7 @@
     const lang = window.i18n?.currentLang;
     if (lang && lang !== 'en') {
       setTimeout(() => {
-        document.querySelectorAll('top-menu, bottom-menu, mini-faq, pricing-form').forEach(comp => {
+        document.querySelectorAll('top-menu, bottom-menu, mini-faq, pricing-form, tariff-cards, software-advantages, hardware-advantages, h-advantages, h-who-cards, r-who-cards, rest-who-cards, p-who-cards').forEach(comp => {
           translateElement(comp, lang);
         });
         translateStaticContent(lang);
