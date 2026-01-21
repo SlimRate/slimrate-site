@@ -7,14 +7,16 @@ const languageSwitcherTemplate = document.createElement('template');
 languageSwitcherTemplate.innerHTML = `
 <style>
   :host {
-    display: inline-block;
+    position: fixed;
+    top: 12px;
+    right: 20px;
+    z-index: 10000;
   }
   
   .lang-switcher {
     position: relative;
     display: inline-flex;
     align-items: center;
-    margin-left: 12px;
     font-family: inherit;
   }
   
@@ -138,8 +140,9 @@ languageSwitcherTemplate.innerHTML = `
   
   /* Mobile styles */
   @media (max-width: 768px) {
-    .lang-switcher {
-      margin-left: 8px;
+    :host {
+      top: 10px;
+      right: 60px;
     }
     
     .lang-current {
@@ -147,7 +150,7 @@ languageSwitcherTemplate.innerHTML = `
     }
     
     .lang-dropdown {
-      right: -10px;
+      right: 0;
     }
   }
   
@@ -285,3 +288,11 @@ class LanguageSwitcher extends HTMLElement {
 }
 
 customElements.define('language-switcher', LanguageSwitcher);
+
+// Auto-insert language switcher into the page
+document.addEventListener('DOMContentLoaded', () => {
+  if (!document.querySelector('language-switcher')) {
+    const switcher = document.createElement('language-switcher');
+    document.body.appendChild(switcher);
+  }
+});
