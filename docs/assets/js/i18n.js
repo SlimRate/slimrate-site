@@ -234,6 +234,57 @@ class I18n {
 // Create global instance
 window.i18n = new I18n();
 
+// Global utility function to fix asset paths in any element
+window.fixAssetPaths = function(element) {
+  const basePath = window.i18n?.getBasePath() || '';
+  if (!basePath) return; // No fix needed for root pages
+  
+  // Fix img src
+  element.querySelectorAll('img[src^="assets/"]').forEach(img => {
+    const src = img.getAttribute('src');
+    if (!src.startsWith('../')) {
+      img.src = basePath + src;
+    }
+  });
+  
+  // Fix a href
+  element.querySelectorAll('a[href^="assets/"]').forEach(a => {
+    const href = a.getAttribute('href');
+    if (!href.startsWith('../')) {
+      a.href = basePath + href;
+    }
+  });
+  
+  // Fix link href (for stylesheets)
+  element.querySelectorAll('link[href^="assets/"]').forEach(link => {
+    const href = link.getAttribute('href');
+    if (!href.startsWith('../')) {
+      link.href = basePath + href;
+    }
+  });
+  
+  // Fix script src
+  element.querySelectorAll('script[src^="assets/"]').forEach(script => {
+    const src = script.getAttribute('src');
+    if (!src.startsWith('../')) {
+      script.src = basePath + src;
+    }
+  });
+};
+
+/**
+ * Global helper to get correct asset path (for dynamic usage in components)
+ * Usage: window.getAssetPath('assets/BGs/image.png') -> '../assets/BGs/image.png' (on /es/) or 'assets/BGs/image.png' (on root)
+ */
+window.getAssetPath = function(path) {
+  if (!window.i18n) return path;
+  const basePath = window.i18n.getBasePath();
+  if (path.startsWith('assets/') && !path.startsWith('../')) {
+    return basePath + path;
+  }
+  return path;
+};
+
 // Auto-initialize when DOM is ready
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', () => {

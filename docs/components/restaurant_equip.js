@@ -47,6 +47,7 @@ class RestaurantEquip extends HTMLElement {
     }
     connectedCallback() {
         this.appendChild(this._contents);
+        if (window.fixAssetPaths) window.fixAssetPaths(this);
     }
 }
 customElements.define("equip-restaurant", RestaurantEquip);

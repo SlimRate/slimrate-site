@@ -9,7 +9,7 @@ topMenuTeplate.innerHTML = `
 
 <div class="container">
 <a class="header-logo" href="index.html">
-    <img src="/assets/img/logo.svg" alt="Slimrate logo">
+    <img src="assets/img/logo.svg" alt="Slimrate logo">
 </a>
 <div class="header-nav">
     <ul>
@@ -35,7 +35,7 @@ topMenuTeplate.innerHTML = `
     <div class="menu__item i1" id="menu1">
       <div class="flexContainer">
         <a >Solutions</a>
-        <img class="menu_arrow_rotate r1" src="/assets/img/arrow-right.svg" alt="Arrow icon">
+        <img class="menu_arrow_rotate r1" src="assets/img/arrow-right.svg" alt="Arrow icon">
       </div>
         <div class="more m1">
             <a class="more_head">Industry leading point of sale and management tools to separate you from your competition. Live
@@ -47,7 +47,7 @@ topMenuTeplate.innerHTML = `
                     <div class="menu__item i5" id="menu5">
                         <div class="flexContainer">
                           <a >Software</a>
-                          <img class="menu_arrow_rotate r5" src="/assets/img/arrow-right.svg" alt="Arrow icon">
+                          <img class="menu_arrow_rotate r5" src="assets/img/arrow-right.svg" alt="Arrow icon">
                         </div>
                         <div class="more m5">
                             <a class="more_head">Increase revenue, streamline operations, and build customer loyalty with powerful cloud-based software.
@@ -73,7 +73,7 @@ topMenuTeplate.innerHTML = `
                     <div class="menu__item i6" id="menu6">
                        <div class="flexContainer">
                         <a >Hardware</a>
-                        <img class="menu_arrow_rotate r6" src="/assets/img/arrow-right.svg" alt="Arrow icon">
+                        <img class="menu_arrow_rotate r6" src="assets/img/arrow-right.svg" alt="Arrow icon">
                        </div>
                         <div class="more m6">
                             <a class="more_head">Deliver a seamless user experience with durable hardware and built-in powerful technology</a>
@@ -137,7 +137,7 @@ topMenuTeplate.innerHTML = `
                     <div class="menu__item i7" id="menu7">
                        <div class="flexContainer">
                         <a >Integrations</a>
-                        <img class="menu_arrow_rotate r7" src="/assets/img/arrow-right.svg" alt="Arrow icon">
+                        <img class="menu_arrow_rotate r7" src="assets/img/arrow-right.svg" alt="Arrow icon">
                        </div>
                         <div class="more m7">
                             <a class="more_head">Connect seamlessly with your favorite tools and services</a>
@@ -176,7 +176,7 @@ topMenuTeplate.innerHTML = `
     <div class="menu__item i2" id="menu2">
         <div class="flexContainer">
           <a >Business Types</a>
-          <img class="menu_arrow_rotate r2" src="/assets/img/arrow-right.svg" alt="Arrow icon">
+          <img class="menu_arrow_rotate r2" src="assets/img/arrow-right.svg" alt="Arrow icon">
         </div>
         <div class="more m2">
             <a class="more_head">Modern payment and point of sale technology for a variety of applications</a>
@@ -188,7 +188,7 @@ topMenuTeplate.innerHTML = `
                     <div class="menu__item i3" id="menu3">
                         <div class="flexContainer">
                           <a >Restaurant POS</a>
-                          <img class="menu_arrow_rotate r3" src="/assets/img/arrow-right.svg" alt="Arrow icon">
+                          <img class="menu_arrow_rotate r3" src="assets/img/arrow-right.svg" alt="Arrow icon">
                         </div>
                         <div class="more m3">
                             <a class="more_head">Cloud-based POS & management solution for restaurants of
@@ -225,7 +225,7 @@ topMenuTeplate.innerHTML = `
                     <div class="menu__item i4" id="menu4">
                        <div class="flexContainer">
                         <a >Retail POS</a>
-                        <img class="menu_arrow_rotate r4" src="/assets/img/arrow-right.svg" alt="Arrow icon">
+                        <img class="menu_arrow_rotate r4" src="assets/img/arrow-right.svg" alt="Arrow icon">
                        </div>
                         <div class="more m4">
                             <a class="more_head">Sell in-style with an integrated retail POS solution that
@@ -251,7 +251,7 @@ topMenuTeplate.innerHTML = `
                     <div class="menu__item i8" id="menu8">
                        <div class="flexContainer">
                         <a >Public Sector</a>
-                        <img class="menu_arrow_rotate r8" src="/assets/img/arrow-right.svg" alt="Arrow icon">
+                        <img class="menu_arrow_rotate r8" src="assets/img/arrow-right.svg" alt="Arrow icon">
                        </div>
                         <div class="more m8">
                             <a class="more_head">Modern POS, payments & digital commerce for government, education & nonprofits</a>
@@ -283,7 +283,7 @@ topMenuTeplate.innerHTML = `
       <div class="menu__item">
         <div class="flexContainer">
           <span>Pricing</span>
-          <img class="menu_arrow_rotate r1" src="/assets/img/arrow-right.svg" alt="Arrow icon">
+          <img class="menu_arrow_rotate r1" src="assets/img/arrow-right.svg" alt="Arrow icon">
         </div>
       </div>
    </a>
@@ -292,7 +292,7 @@ topMenuTeplate.innerHTML = `
       <div class="menu__item">
         <div class="flexContainer">
           <span>Company</span>
-          <img class="menu_arrow_rotate r1" src="/assets/img/arrow-right.svg" alt="Arrow icon">
+          <img class="menu_arrow_rotate r1" src="assets/img/arrow-right.svg" alt="Arrow icon">
         </div>
       </div>
    </a>
@@ -301,7 +301,7 @@ topMenuTeplate.innerHTML = `
   <div class="menu__item">
     <div class="flexContainer">
       <span style="color: #2B6BF3">Careers</span>
-      <img class="menu_arrow_rotate r1" src="/assets/img/arrow-right.svg" alt="Arrow icon">
+      <img class="menu_arrow_rotate r1" src="assets/img/arrow-right.svg" alt="Arrow icon">
     </div>
   </div>
 </a>
@@ -328,6 +328,10 @@ class TopMenu extends HTMLElement {
   }
   connectedCallback() {
     this.appendChild(this._contents);
+    // Fix asset paths for language subdirectories
+    if (window.fixAssetPaths) {
+      window.fixAssetPaths(this);
+    }
     initDropment();
     this.initEventListeners();
   // Capture UTM params once component mounts (present on most pages)

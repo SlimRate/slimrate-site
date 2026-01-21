@@ -52,6 +52,7 @@ if (!customElements.get("equip-company-el")) {
         }
         connectedCallback() {
             this.appendChild(this._contents);
+            if (window.fixAssetPaths) window.fixAssetPaths(this);
             this.setRandomBackgrounds();
         }
         setRandomBackgrounds() {
@@ -80,7 +81,8 @@ if (!customElements.get("equip-company-el")) {
                 const bgDecorLeft = blockLeft.querySelector('.bg-decor-left');
                 if (bgDecorLeft) {
                     const randomLeft = bgImages[Math.floor(Math.random() * bgImages.length)];
-                    bgDecorLeft.style.backgroundImage = `url('assets/BGs/${randomLeft}')`;
+                    const bgPath = window.getAssetPath ? window.getAssetPath(`assets/BGs/${randomLeft}`) : `assets/BGs/${randomLeft}`;
+                    bgDecorLeft.style.backgroundImage = `url('${bgPath}')`;
                 }
             }
             
@@ -88,7 +90,8 @@ if (!customElements.get("equip-company-el")) {
                 const bgDecorRight = blockRight.querySelector('.bg-decor-right');
                 if (bgDecorRight) {
                     const randomRight = bgImages[Math.floor(Math.random() * bgImages.length)];
-                    bgDecorRight.style.backgroundImage = `url('assets/BGs/${randomRight}')`;
+                    const bgPathR = window.getAssetPath ? window.getAssetPath(`assets/BGs/${randomRight}`) : `assets/BGs/${randomRight}`;
+                    bgDecorRight.style.backgroundImage = `url('${bgPathR}')`;
                 }
             }
         }

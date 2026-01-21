@@ -39,6 +39,7 @@ class Equip extends HTMLElement {
     }
     connectedCallback() {
         this.appendChild(this._contents);
+        if (window.fixAssetPaths) window.fixAssetPaths(this);
     }
 }
 customElements.define("equip-el", Equip);

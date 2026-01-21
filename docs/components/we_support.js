@@ -93,6 +93,7 @@ class WeSupport extends HTMLElement {
     }
     connectedCallback() {
         this.appendChild(this._contents);
+        if (window.fixAssetPaths) window.fixAssetPaths(this);
     }
 }
 customElements.define("we-support", WeSupport);

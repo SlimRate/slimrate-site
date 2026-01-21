@@ -138,6 +138,9 @@ function renderTestimonial(slideIndex) {
 
   const isMobile = window.innerWidth <= 767;
   testimonialContent.classList.remove('activeSlider');
+  
+  // Fix image path for language subdirectories
+  const imagePath = window.getAssetPath ? window.getAssetPath(testimonial.image) : testimonial.image;
 
   setTimeout(() => {
     const firstLevelClass = isMobile ? 'mobile-first-level' : '';
@@ -148,7 +151,7 @@ function renderTestimonial(slideIndex) {
       testimonialContent.innerHTML = `
 <div class="${firstLevelClass}">
   <div class="image-container relative">
-    <img src="${testimonial.image}" alt="${testimonial.title}" />
+    <img src="${imagePath}" alt="${testimonial.title}" />
     <span class="font-bold">${testimonial.title}</span>
   </div>
   <div class="testimonial-text-container">
@@ -181,7 +184,7 @@ function renderTestimonial(slideIndex) {
     } else {
       testimonialContent.innerHTML = `
       <div class="image-container relative">
-        <img src="${testimonial.image}" alt="${testimonial.title}" />
+        <img src="${imagePath}" alt="${testimonial.title}" />
         <span class="font-bold">${testimonial.title}</span>
       </div>
       <div class="flex-1 testimonial-text-container desctopColumn">
