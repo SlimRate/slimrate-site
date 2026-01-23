@@ -45,6 +45,7 @@
 
 .mainPageHeader--payment {
     background-image: url("../img/gallery/paymentProcessing2.jpg");
+    margin-bottom: var(--section-spacing-lg);
 }
 
 .mainPageHeader--h-bars {
