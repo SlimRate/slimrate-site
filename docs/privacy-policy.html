@@ -71,12 +71,29 @@
     <script src="components/top_menu.js"></script>
     <script src="components/faq.js"></script>
     <script src="components/bottom_menu.js"></script>
+    <style>
+        .policy-content {
+            margin: 50pt 128pt 20pt 128pt;
+        }
+        
+        @media (max-width: 991px) {
+            .policy-content {
+                margin: 40px 40px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .policy-content {
+                margin: 30px 20px;
+            }
+        }
+    </style>
 </head>
 
 <body>
     <top-menu></top-menu>
     <div class="wrapper">
-        <div class="privacy-container" id="privacy-container" style="margin-top:50pt; margin-bottom:20pt; margin-left:128pt; margin-right:128pt">
+        <div class="privacy-container policy-content" id="privacy-container">
             <p style="text-align: center; color: #888;">Loading privacy policy...</p>
         </div>
         <mini-faq></mini-faq>
