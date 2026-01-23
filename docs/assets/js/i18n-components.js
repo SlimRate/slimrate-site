@@ -10,6 +10,7 @@
   const componentTranslations = {
     en: {
       // Navigation
+      'Home': 'Home',
       'Solutions': 'Solutions',
       'Business Types': 'Business Types',
       'Pricing': 'Pricing',
@@ -85,6 +86,7 @@
     
     es: {
       // Navigation
+      'Home': 'Inicio',
       'Solutions': 'Soluciones',
       'Business Types': 'Tipos de Negocio',
       'Pricing': 'Precios',
@@ -436,7 +438,17 @@
       'Transform your checkout process into a lifelong customer relationship': 'Transforma tu proceso de pago en una relación de por vida con el cliente',
       'Increase your sales and profits with a hassle-free POS solution': 'Aumenta tus ventas y ganancias con una solución POS sin complicaciones',
       'Integrated POS solution to run and grow your business from a single cloud-based dashboard': 'Solución POS integrada para administrar y hacer crecer tu negocio desde un único panel basado en la nube',
-      'Manage your inventory and grow your business with an all-in-one high performance POS solution': 'Administra tu inventario y haz crecer tu negocio con una solución POS todo en uno de alto rendimiento'
+      'Manage your inventory and grow your business with an all-in-one high performance POS solution': 'Administra tu inventario y haz crecer tu negocio con una solución POS todo en uno de alto rendimiento',
+      
+      // Product Company Cards
+      'Core Competencies': 'Competencias Principales',
+      'Core  Competencies': 'Competencias Principales',
+      'A cloud-based retail and restaurant point-of-sale solution crafted to streamline operations, enhance efficiency, and drive business growth through innovative, cutting-edge technology.': 'Una solución de punto de venta basada en la nube para retail y restaurantes diseñada para optimizar operaciones, mejorar la eficiencia e impulsar el crecimiento del negocio mediante tecnología innovadora de vanguardia.',
+      'Enhance user experience with durable, stylish hardware and advanced integrated technology, offering seamless functionality and reliability for your business needs.': 'Mejore la experiencia del usuario con hardware duradero y elegante, y tecnología integrada avanzada, ofreciendo funcionalidad y confiabilidad perfectas para las necesidades de su negocio.',
+      'Payment Technology': 'Tecnología de Pago',
+      'An advanced omni-channel solution designed to provide faster, easier, and more secure payment processing, enhancing efficiency, and security across your business.': 'Una solución omnicanal avanzada diseñada para proporcionar un procesamiento de pagos más rápido, fácil y seguro, mejorando la eficiencia y la seguridad en todo su negocio.',
+      'Support': 'Soporte',
+      'A customer-focused company dedicated to providing exceptional, personalized support, ensuring reliable assistance is always available whenever and wherever you need it.': 'Una empresa centrada en el cliente dedicada a brindar soporte excepcional y personalizado, asegurando asistencia confiable disponible cuando y donde la necesite.'
     }
   };
 
@@ -525,7 +537,7 @@
     const lang = window.i18n?.currentLang;
     if (lang && lang !== 'en') {
       // Translate existing components
-      document.querySelectorAll('top-menu, bottom-menu, mini-faq, pricing-form, tariff-cards, software-advantages, hardware-advantages, h-advantages, h-who-cards, r-who-cards, rest-who-cards, p-who-cards').forEach(comp => {
+      document.querySelectorAll('top-menu, bottom-menu, mini-faq, pricing-form, tariff-cards, software-advantages, hardware-advantages, h-advantages, h-who-cards, r-who-cards, rest-who-cards, p-who-cards, product-company-cards').forEach(comp => {
         translateElement(comp, lang);
       });
       // Also translate static content on the page
@@ -595,7 +607,7 @@
    * Translate all known components and static content
    */
   function translateAllComponents(lang) {
-    document.querySelectorAll('top-menu, bottom-menu, mini-faq, pricing-form, tariff-cards, software-advantages, hardware-advantages, h-advantages, h-who-cards, r-who-cards, rest-who-cards, p-who-cards, h-something-slider, r-something-slider, equip-main, equip-company, type-cards, hardware-cards, our-products, pricing-advantages, pricing-comparison, we-support, united-partners, tech-stack, new-app, mobile-app-download, customer-testimonials, cookie-consent, product-cards').forEach(comp => {
+    document.querySelectorAll('top-menu, bottom-menu, mini-faq, pricing-form, tariff-cards, software-advantages, hardware-advantages, h-advantages, h-who-cards, r-who-cards, rest-who-cards, p-who-cards, h-something-slider, r-something-slider, hardware-something-slider, product-company-cards, equip-main, equip-company, type-cards, hardware-cards, our-products, pricing-advantages, pricing-comparison, we-support, united-partners, tech-stack, new-app, mobile-app-download, customer-testimonials, cookie-consent, product-cards').forEach(comp => {
       translateElement(comp, lang);
     });
     translateStaticContent(lang);
@@ -617,7 +629,7 @@
             translateElement(node, lang);
           }
           // Also translate any components inside the added node
-          node.querySelectorAll?.('top-menu, bottom-menu, mini-faq, pricing-form, tariff-cards, software-advantages, hardware-advantages, h-advantages, h-who-cards, r-who-cards, rest-who-cards, p-who-cards').forEach(comp => {
+          node.querySelectorAll?.('top-menu, bottom-menu, mini-faq, pricing-form, tariff-cards, software-advantages, hardware-advantages, h-advantages, h-who-cards, r-who-cards, rest-who-cards, p-who-cards, product-company-cards').forEach(comp => {
             translateElement(comp, lang);
           });
         }
