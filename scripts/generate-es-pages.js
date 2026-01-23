@@ -24,66 +24,91 @@ const SKIP_TRANSLATION = [
 const META_TRANSLATIONS = {
   'index.html': {
     title: 'Slimrate - Soluciones POS Todo en Uno',
-    description: 'Slimrate ofrece soluciones POS avanzadas incluyendo software, hardware y procesamiento de pagos para negocios en Estados Unidos.',
+    description: 'Slimrate ofrece soluciones POS avanzadas incluyendo software, hardware y procesamiento de pagos para negocios en Estados Unidos y Puerto Rico.',
+    keywords: 'soluciones POS, procesamiento de pagos, software minorista, Estados Unidos, Puerto Rico, sistema punto de venta',
     ogTitle: 'Soluciones POS Slimrate',
-    ogDescription: 'Plataforma POS todo en uno para negocios en EE.UU.'
+    ogDescription: 'Plataforma POS todo en uno para negocios en EE.UU. y Puerto Rico'
   },
   'software.html': {
     title: 'Software POS | Slimrate',
-    description: 'Software POS completo y fácil de usar. Aumente los ingresos, optimice las operaciones y fidelice a los clientes con un potente software basado en la nube.',
+    description: 'Software POS completo y fácil de usar. Aumente los ingresos, optimice las operaciones y fidelice a los clientes con un potente software basado en la nube. Disponible en Puerto Rico.',
+    keywords: 'Software POS, punto de venta nube, sistema de gestión, Estados Unidos, Puerto Rico',
     ogTitle: 'Software POS Slimrate',
     ogDescription: 'Software POS basado en la nube para su negocio.'
   },
   'hardware.html': {
     title: 'Hardware POS | Slimrate',
-    description: 'Hardware POS duradero con tecnología potente integrada. Tabletas, impresoras, escáneres y terminales EMV.',
+    description: 'Hardware POS duradero con tecnología potente integrada. Tabletas, impresoras, escáneres y terminales EMV. Disponible en EE.UU. y Puerto Rico.',
+    keywords: 'Hardware POS, Tabletas, impresoras, escáneres, terminales EMV, Puerto Rico, Estados Unidos',
     ogTitle: 'Hardware POS Slimrate',
     ogDescription: 'Hardware POS profesional para su negocio.'
   },
   'pricing.html': {
     title: 'Precios | Slimrate',
-    description: 'Precios simples y transparentes para su negocio. Sin tarifas ocultas.',
+    description: 'Precios simples y transparentes para su negocio. Sin tarifas ocultas. Disponible para comerciantes en Puerto Rico.',
+    keywords: 'precios POS, tarifas procesamiento, costos sistema punto de venta, Puerto Rico, Estados Unidos',
     ogTitle: 'Precios Slimrate',
     ogDescription: 'Planes de precios transparentes para soluciones POS.'
   },
   'company.html': {
     title: 'Sobre Nosotros | Slimrate',
-    description: 'Conozca más sobre Slimrate y nuestra misión de proporcionar las mejores soluciones POS.',
+    description: 'Conozca más sobre Slimrate y nuestra misión de proporcionar las mejores soluciones POS en Estados Unidos y Puerto Rico.',
+    keywords: 'sobre Slimrate, empresa POS, soluciones negocios, Puerto Rico, Estados Unidos',
     ogTitle: 'Sobre Slimrate',
     ogDescription: 'Conozca nuestra empresa y equipo.'
   },
   'restaurant.html': {
     title: 'POS para Restaurantes | Slimrate',
-    description: 'Solución POS y de gestión basada en la nube para restaurantes de todos los tamaños.',
+    description: 'Solución POS y de gestión basada en la nube para restaurantes de todos los tamaños en EE.UU. y Puerto Rico.',
+    keywords: 'POS restaurante, sistema gestión restaurante, punto de venta comida, Puerto Rico, Estados Unidos',
     ogTitle: 'POS para Restaurantes Slimrate',
     ogDescription: 'Sistema POS diseñado para restaurantes.'
   },
   'retail.html': {
     title: 'POS para Retail | Slimrate',
-    description: 'Solución POS de retail integrada que facilita la venta en línea y en tienda.',
+    description: 'Solución POS de retail integrada que facilita la venta en línea y en tienda. Disponible en Puerto Rico.',
+    keywords: 'POS retail, punto de venta tiendas, inventario, Puerto Rico, Estados Unidos',
     ogTitle: 'POS para Retail Slimrate',
     ogDescription: 'Sistema POS para tiendas minoristas.'
   },
   'mobile-app.html': {
     title: 'Aplicación Móvil | Slimrate',
     description: 'Gestione su negocio desde cualquier lugar con la aplicación móvil Slimrate.',
+    keywords: 'app negocios, gestión móvil, POS móvil, Puerto Rico, Estados Unidos',
     ogTitle: 'Aplicación Móvil Slimrate',
     ogDescription: 'Gestión de negocios en su bolsillo.'
   },
   'payment_processing.html': {
     title: 'Procesamiento de Pagos | Slimrate',
-    description: 'Procesamiento de pagos rápido y seguro para su negocio.',
+    description: 'Procesamiento de pagos rápido y seguro para su negocio en Estados Unidos y Puerto Rico.',
+    keywords: 'procesamiento pagos, tarjetas crédito, merchant services, Puerto Rico, Estados Unidos',
     ogTitle: 'Procesamiento de Pagos Slimrate',
     ogDescription: 'Soluciones de pago integradas.'
+  },
+  'a35.html': {
+    title: 'Terminal de Pago A35 - Procesamiento EMV Seguro | Slimrate',
+    description: 'El Terminal de Pago A35 de Slimrate ofrece procesamiento seguro y eficiente para negocios en EE.UU. y Puerto Rico.',
+    keywords: 'terminal de pago, A35, terminal EMV, lector de tarjetas, terminal POS, Puerto Rico',
+    ogTitle: 'Terminal de Pago A35 - Procesamiento EMV Seguro | Slimrate',
+    ogDescription: 'El Terminal de Pago A35 ofrece procesamiento de pagos seguro y eficiente.'
+  },
+  'a920.html': {
+    title: 'Terminal de Pago A920 - Solución EMV Móvil | Slimrate',
+    description: 'El Terminal Móvil A920 de Slimrate es ideal para pagos inalámbricos seguros en EE.UU. y Puerto Rico.',
+    keywords: 'A920, terminal de pago móvil, EMV portátil, pago inalámbrico, Puerto Rico',
+    ogTitle: 'Terminal de Pago A920 - Solución EMV Móvil | Slimrate',
+    ogDescription: 'Terminal móvil A920 para pagos seguros en cualquier lugar.'
   }
 };
 
 // Default Spanish meta for pages not in the list above
 const DEFAULT_META = {
-  description: 'Slimrate ofrece soluciones POS avanzadas incluyendo software, hardware y procesamiento de pagos para negocios en Estados Unidos.',
+  description: 'Slimrate ofrece soluciones POS avanzadas incluyendo software, hardware y procesamiento de pagos para negocios en Estados Unidos y Puerto Rico.',
   ogTitle: 'Soluciones POS Slimrate',
   ogDescription: 'Plataforma POS todo en uno para negocios en EE.UU.'
 };
+
+const DEFAULT_KEYWORDS = 'soluciones POS, procesamiento de pagos, software para tiendas, Estados Unidos, Puerto Rico';
 
 /**
  * Generate hreflang tags for a page
@@ -110,16 +135,16 @@ function processHtmlFile(filePath, fileName) {
   content = content.replace('<html lang="en">', '<html lang="es">');
   
   // 2. Update canonical URL
-  const canonicalPattern = /<link rel="canonical" href="https:\/\/slimrate\.com\/([^"]*)"\/>/;
+  const canonicalPattern = /<link rel="canonical" href="https:\/\/slimrate\.com\/([^"]*)"\/?>/;
   const canonicalMatch = content.match(canonicalPattern);
   if (canonicalMatch) {
     const pagePath = canonicalMatch[1] || '';
     const newCanonical = pagePath ? `https://slimrate.com/es/${pagePath}` : 'https://slimrate.com/es/';
     content = content.replace(canonicalPattern, `<link rel="canonical" href="${newCanonical}">`);
   } else {
-    // Handle index.html case
+    // Handle index.html case or missing canonical
     content = content.replace(
-      /<link rel="canonical" href="https:\/\/slimrate\.com\/"\/>/,
+      /<link rel="canonical" href="https:\/\/slimrate\.com\/?"\/?>/,
       '<link rel="canonical" href="https://slimrate.com/es/">'
     );
   }
@@ -140,6 +165,19 @@ function processHtmlFile(filePath, fileName) {
     content = content.replace(
       /<meta name="description" content="[^"]*"\/>/,
       `<meta name="description" content="${DEFAULT_META.description}">`
+    );
+  }
+  
+  // 3.1 Update keywords
+  if (meta.keywords) {
+    content = content.replace(
+      /<meta name="keywords" content="[^"]*"\/>/,
+      `<meta name="keywords" content="${meta.keywords}"/>`
+    );
+  } else {
+    content = content.replace(
+      /<meta name="keywords" content="[^"]*"\/>/,
+      `<meta name="keywords" content="${DEFAULT_KEYWORDS}"/>`
     );
   }
   
