@@ -25,22 +25,27 @@
 /* Page-specific background images */
 .mainPageHeader--hardware {
     background-image: url("../img/gallery/hardware/hardware.png");
+    margin-bottom: var(--section-spacing-lg);
 }
 
 .mainPageHeader--software {
     background-image: url("../img/gallery/software/software.png");
+    margin-bottom: var(--section-spacing-lg);
 }
 
 .mainPageHeader--restaurant {
     background-image: url("../img/gallery/software/image 66 (1).png");
+    margin-bottom: var(--section-spacing-lg);
 }
 
 .mainPageHeader--retail {
     background-image: url("../img/gallery/software/image 66 (1).png");
+    margin-bottom: var(--section-spacing-lg);
 }
 
 .mainPageHeader--company {
     background-image: url("../img/gallery/h-bars/1.jpg");
+    margin-bottom: var(--section-spacing-lg);
 }
 
 .mainPageHeader--payment {
@@ -50,47 +55,58 @@
 
 .mainPageHeader--h-bars {
     background-image: url("../img/gallery/h-bars/1.jpg");
+    margin-bottom: var(--section-spacing-lg);
 }
 
 .mainPageHeader--h-casual {
     background-image: url("../img/gallery/h-casual/1.jpg");
+    margin-bottom: var(--section-spacing-lg);
 }
 
 .mainPageHeader--h-coffee {
     background-image: url("../img/gallery/h-coffee/1.jpg");
+    margin-bottom: var(--section-spacing-lg);
 }
 
 .mainPageHeader--h-fine {
     background-image: url("../img/gallery/h-fine/1.jpg");
+    margin-bottom: var(--section-spacing-lg);
 }
 
 .mainPageHeader--h-quick {
     background-image: url("../img/gallery/h-quick/1.jpg");
+    margin-bottom: var(--section-spacing-lg);
 }
 
 .mainPageHeader--h-truck {
     background-image: url("../img/gallery/h-truck/1.jpg");
+    margin-bottom: var(--section-spacing-lg);
 }
 
 .mainPageHeader--r-clothing {
     background-image: url("../img/gallery/r-clothing/1.jpg");
+    margin-bottom: var(--section-spacing-lg);
 }
 
 .mainPageHeader--r-grocery {
     background-image: url("../img/gallery/r-grocery/1.jpg");
+    margin-bottom: var(--section-spacing-lg);
 }
 
 .mainPageHeader--r-liquor {
     background-image: url("../img/gallery/r-liquor/1.jpg");
+    margin-bottom: var(--section-spacing-lg);
 }
 
 .mainPageHeader--r-specialty {
     background-image: url("../img/gallery/r-specialty/1.jpg");
+    margin-bottom: var(--section-spacing-lg);
 }
 
 .mainPageHeader--mobile-app {
     background: url("../img/mainhardwarenew/Backgroundhardwares.png") center / cover no-repeat;
     position: relative;
+    margin-bottom: var(--section-spacing-lg);
 }
 
 .mainPageHeader--mobile-app::before {
