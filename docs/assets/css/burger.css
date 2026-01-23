@@ -122,20 +122,34 @@ background: #fafafa;
             filter: invert(100%);
         }
         
+        .menu-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .menu-buttons a {
+            flex: 1;
+            min-width: 140px;
+            display: flex;
+            justify-content: center;
+        }
+
         .menu__box .btn-red {
-            margin-top: 40px;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 0;
             padding: 16px;
-            width: 160px;
+            width: 100%;
+            white-space: nowrap;
         }
 
         .menu__box .btn-blue {
-            margin-top: 40px;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 0;
             padding: 16px;
-            width: 120px;
+            width: 100%;
+            white-space: nowrap;
         }
         
         .more .menu__item {
