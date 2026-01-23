@@ -59,7 +59,7 @@
     border-radius: 999px;
     display: -webkit-box;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 8px;
     background: rgb(255, 255, 255, 0.2);
 }
@@ -81,9 +81,12 @@
 }
 
 .form__select label {
-    padding: 10px 34px;
-    min-width: 157px;
-    display: block;
+    padding: 10px 5px;
+    min-width: 0;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: rgb(255, 255, 255, 0.75);
     font-weight: 600;
     font-size: 16px;
@@ -91,8 +94,8 @@
     transition: all 0.3s ease;
     border-radius: 999px;
     cursor: pointer;
-    text-align: center;
     background: transparent;
+    white-space: nowrap;
 }
 
 .form__select-item.form_type + label {
