@@ -15,7 +15,7 @@ equipCompanyTemplate2.innerHTML = `
                         <a href="mobile-app.html" class="btn btn-red" style="margin-right: 10px;">Learn More</a>
                         <button class="form__btn"  onclick="
         (function() {
-            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
             if (/android/i.test(userAgent)) {
                 window.location.href = 'https://play.google.com/store/apps/details?id=com.slimrate.business'; 
             } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {

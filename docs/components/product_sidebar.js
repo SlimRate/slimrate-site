@@ -81,7 +81,7 @@ class ProductSidebar extends HTMLElement {
 
             // Close sidebar on click outside on mobile/tablet
             document.addEventListener('click', (e) => {
-                if (window.innerWidth <= 1023) {
+                if (window.innerWidth < 1024) {
                     if (!sidebar.contains(e.target) && !toggle.contains(e.target)) {
                         sidebar.classList.remove('open');
                     }

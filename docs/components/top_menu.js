@@ -788,7 +788,7 @@ function initDropment() {
       `,
   };
 
-  var isHeaderHovered = false;
+  let isHeaderHovered = false;
 
   const header = document.getElementsByClassName('header')[0];
   header.addEventListener('mouseenter', () => {

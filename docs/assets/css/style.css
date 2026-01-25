@@ -1204,7 +1204,7 @@ body {
 
 /* Mobile App Features Section */
 .mobile-app-features {
-    margin-bottom: 165px;
+    margin-bottom: var(--section-spacing-2xl);
     padding: 35px 0;
 }
 
@@ -1256,7 +1256,7 @@ body {
 
 /* Mobile App: How It Works Section */
 .how-it-works {
-    margin-bottom: 165px;
+    margin-bottom: var(--section-spacing-2xl);
     padding: 35px 0;
 }
 
@@ -1321,7 +1321,7 @@ body {
 
 /* Mobile App: Benefits Section */
 .benefits {
-    margin-bottom: 165px;
+    margin-bottom: var(--section-spacing-2xl);
     padding: 35px 0;
 }
 
@@ -1387,7 +1387,7 @@ body {
 
 /* Mobile App: Technical Requirements Section */
 .tech-requirements {
-    margin-bottom: 165px;
+    margin-bottom: var(--section-spacing-2xl);
     padding: 35px 0;
     background: #f8f9fa;
 }
@@ -2451,7 +2451,7 @@ body {
 
 
 .products {
-    margin-bottom: 165px;
+    margin-bottom: var(--section-spacing-2xl);
 
 }
 
@@ -4464,8 +4464,8 @@ label.has-value {
 
 
 .types {
-    padding: 60px 0;
-    margin-bottom: 140px;
+    padding: var(--content-padding-vertical) 0;
+    margin-bottom: var(--section-spacing-2xl);
 
 }
 
@@ -6316,8 +6316,8 @@ label.has-value {
 
 
     .contact {
-        margin-bottom: 180px;
-        padding: 70px 0;
+        margin-bottom: var(--section-spacing-2xl);
+        padding: var(--content-padding-lg) 0;
 
     }
 
@@ -7584,7 +7584,7 @@ label.has-value {
 
 
     .advantages {
-        margin-bottom: 150px;
+        margin-bottom: var(--section-spacing-2xl);
 
     }
 
@@ -7605,7 +7605,7 @@ label.has-value {
 
 
     .advantages-allPages {
-        margin-bottom: 128px;
+        margin-bottom: var(--section-spacing-2xl);
 
     }
 
@@ -7909,8 +7909,8 @@ label.has-value {
 
 
     .contact {
-        margin-bottom: 180px;
-        padding: 60px 0;
+        margin-bottom: var(--section-spacing-2xl);
+        padding: var(--content-padding-vertical) 0;
 
     }
 

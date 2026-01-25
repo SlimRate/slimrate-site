@@ -324,8 +324,8 @@ label.has-value {
     }
 
     .contact {
-        margin-bottom: 180px;
-        padding: 70px 0;
+        margin-bottom: var(--section-spacing-2xl);
+        padding: var(--content-padding-lg) 0;
     }
 
     .contact .section-title {
@@ -390,8 +390,8 @@ label.has-value {
     }
 
     .contact {
-        margin-bottom: 180px;
-        padding: 60px 0;
+        margin-bottom: var(--section-spacing-2xl);
+        padding: var(--content-padding-vertical) 0;
     }
 
     .contact .section-title {

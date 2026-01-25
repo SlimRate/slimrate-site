@@ -75,7 +75,7 @@ a:focus-visible {
 
 /* Mobile App Features - Base Styles */
 .mobile-app-features {
-    margin-bottom: 165px;
+    margin-bottom: var(--section-spacing-2xl);
     padding: 35px 0;
 }
 
@@ -128,7 +128,7 @@ a:focus-visible {
 
 /* How It Works Section */
 .how-it-works {
-    margin-bottom: 165px;
+    margin-bottom: var(--section-spacing-2xl);
     padding: 35px 0;
 }
 
@@ -195,7 +195,7 @@ a:focus-visible {
 
 /* Benefits Section */
 .benefits {
-    margin-bottom: 165px;
+    margin-bottom: var(--section-spacing-2xl);
     padding: 35px 0;
 }
 
@@ -263,7 +263,7 @@ a:focus-visible {
 
 /* Tech Requirements Section */
 .tech-requirements {
-    margin-bottom: 165px;
+    margin-bottom: var(--section-spacing-2xl);
     padding: 35px 0;
     background: #f8f9fa;
 }
@@ -809,7 +809,7 @@ a:focus-visible {
         grid-template-columns: repeat(2, 1fr);
     }
     .how-it-works {
-        margin-bottom: 80px;
+        margin-bottom: var(--section-spacing-lg);
     }
     
     .how-it-works__steps {
@@ -819,14 +819,14 @@ a:focus-visible {
         grid-template-columns: repeat(2, 1fr);
     }
     .benefits {
-        margin-bottom: 80px;
+        margin-bottom: var(--section-spacing-lg);
     }
     
     .benefits__grid {
         grid-template-columns: 1fr;
     }
     .tech-requirements {
-        margin-bottom: 80px;
+        margin-bottom: var(--section-spacing-lg);
     }
     
     .tech-requirements__grid {

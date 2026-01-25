@@ -122,3 +122,16 @@
   to = "/es/"
   status = 301
   force = false
+
+# ========================================
+# Typo Redirects (cokie.html → cookie.html)
+# ========================================
+[[redirects]]
+  from = "/cokie.html"
+  to = "/cookie.html"
+  status = 301
+
+[[redirects]]
+  from = "/es/cokie.html"
+  to = "/es/cookie.html"
+  status = 301

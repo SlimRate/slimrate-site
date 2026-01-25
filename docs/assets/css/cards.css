@@ -6,7 +6,7 @@
    Products Cards
    ---------------------------------------- */
 .products {
-    margin-bottom: 165px;
+    margin-bottom: var(--section-spacing-2xl);
 }
 
 .products.company-products {
@@ -528,7 +528,7 @@
 }
 
 .something .container-header {
-    margin-bottom: 100px;
+    margin-bottom: var(--section-spacing-xl);
 }
 
 .something-cards {
@@ -592,8 +592,8 @@
    Types Cards
    ---------------------------------------- */
 .types {
-    padding: 60px 0;
-    margin-bottom: 140px;
+    padding: var(--content-padding-vertical) 0;
+    margin-bottom: var(--section-spacing-2xl);
 }
 
 .types .container {
@@ -736,7 +736,7 @@
     }
 
     .advantages {
-        margin-bottom: 150px;
+        margin-bottom: var(--section-spacing-2xl);
     }
 
     .advantages-cards {
@@ -748,7 +748,7 @@
     }
 
     .advantages-allPages {
-        margin-bottom: 128px;
+        margin-bottom: var(--section-spacing-2xl);
     }
 
     .who::before {

@@ -139,7 +139,7 @@
 }
 
 .we-support .container-header {
-    margin-bottom: 70px;
+    margin-bottom: var(--section-spacing-md);
 }
 
 .we-support-cards {
@@ -1208,7 +1208,7 @@
 /* (max-width: 1023px) */
 @media (max-width: 1023px) {
     .coop {
-        margin-bottom: 120px;
+        margin-bottom: var(--section-spacing-xl);
     }
 
     .coop .container {
@@ -1360,7 +1360,7 @@
 
     .coop {
         padding: 50px 0 0;
-        margin-bottom: 210px;
+        margin-bottom: var(--spacing-ultra-xl);
         background: #407af4;
     }
 

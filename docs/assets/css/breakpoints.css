@@ -228,10 +228,6 @@
 /* (min-width: 768px) */
 @media (min-width: 768px) {
     .container {
-        padding-left: var(--spacing-5);
-        padding-right: var(--spacing-5);
-    }
-    .container {
         max-width: 720px;
         padding-left: var(--spacing-6);
         padding-right: var(--spacing-6);

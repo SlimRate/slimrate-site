@@ -194,8 +194,8 @@ class PricingForm extends HTMLElement {
 customElements.define('pricing-form', PricingForm);
 
 function showToast(message, type, position = 'bottom') {
-    var toast = document.getElementById("toast");
-    var toastMessage = document.getElementById("toast-message");
+    const toast = document.getElementById("toast");
+    const toastMessage = document.getElementById("toast-message");
     
     toastMessage.textContent = message;
     
