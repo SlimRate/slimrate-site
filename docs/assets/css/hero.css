@@ -365,8 +365,13 @@
         margin-bottom: var(--component-spacing-xl);
     }
 
-    .main:not(.main-allPages) .main-bg {
+    .main:not(.main-allPages):not(.mainPageHeader--payment) .main-bg {
         display: none;
+    }
+
+    /* Keep video visible for payment processing page on mobile */
+    .mainPageHeader--payment .main-bg {
+        display: block;
     }
 
     .main:not(.main-allPages) .block-left {
@@ -418,8 +423,13 @@
         margin-bottom: var(--component-spacing-xl);
     }
 
-    .main:not(.main-allPages) .main-bg {
+    .main:not(.main-allPages):not(.mainPageHeader--payment) .main-bg {
         display: none;
+    }
+
+    /* Keep video visible for payment processing page on mobile */
+    .mainPageHeader--payment .main-bg {
+        display: block;
     }
 
     .main:not(.main-allPages) .block-left {
@@ -455,6 +465,11 @@
         margin: 0 4px;
         border-radius: 16px 0;
         min-height: unset;
+    }
+    
+    /* Hide background-image on payment page so video is visible */
+    .mainPageHeader--payment {
+        background-image: none;
     }
     
     .mainPageHeader .container {
