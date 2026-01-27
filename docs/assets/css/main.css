@@ -44,6 +44,5 @@
 /* ----------------------------------------
    Responsive / Utilities
    ---------------------------------------- */
-@import url('breakpoints.css');
-@import url('responsive.css');
+@import url('utilities.css');
 @import url('layout-overrides.css');
