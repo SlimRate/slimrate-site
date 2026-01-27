@@ -462,7 +462,9 @@
 /* (max-width: 767px) */
 @media (max-width: 767px) {
     .mainPageHeader {
-        margin: 0 4px;
+        margin-top: 0;
+        margin-left: 4px;
+        margin-right: 4px;
         border-radius: 16px 0;
         min-height: unset;
     }
