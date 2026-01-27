@@ -547,10 +547,19 @@ a:focus-visible {
         margin-bottom: var(--component-spacing-xl, 32px);
     }
     
-    .main:not(.main-allPages) .main-bg {
+    .main:not(.main-allPages):not(.mainPageHeader--payment) .main-bg {
         display: none;
     }
     
+    /* Keep video visible for payment processing page */
+    .mainPageHeader--payment .main-bg {
+        display: block;
+    }
+    
+    .mainPageHeader--payment {
+        background-image: none;
+    }
+
     .main:not(.main-allPages) .block-left {
         -webkit-backdrop-filter: blur(6px);
         backdrop-filter: blur(6px);
@@ -794,6 +803,15 @@ a:focus-visible {
 
 /* (max-width: 767px) */
 @media (max-width: 767px) {
+    /* Payment processing hero video - show mobile version */
+    .hero-video--mobile {
+        display: block;
+    }
+    
+    .hero-video--desktop {
+        display: none;
+    }
+    
     .mobile-app-features .products-cards {
         grid-template-columns: repeat(2, 1fr);
         gap: 16px;
