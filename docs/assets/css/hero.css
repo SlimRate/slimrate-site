@@ -469,8 +469,10 @@
         min-height: unset;
     }
     
-    /* Hide background-image on payment page so video is visible */
-    .mainPageHeader--payment {
+    /* Hide background-image on pages with hero video so video is visible */
+    .mainPageHeader--payment,
+    .mainPageHeader--restaurant,
+    .mainPageHeader--h-fine {
         background-image: none;
     }
     
