@@ -6417,6 +6417,13 @@ label.has-value {
 
     }
 
+    /* Keep .main-bg visible on pages with hero video */
+    .mainPageHeader--payment .main-bg,
+    .mainPageHeader--restaurant .main-bg,
+    .mainPageHeader--h-fine .main-bg {
+        display: flex;
+    }
+
 
 
     .main:not(.main-allPages) .block-left {
@@ -6694,6 +6701,13 @@ label.has-value {
     .main:not(.main-allPages) .main-bg {
         display: none;
 
+    }
+
+    /* Keep .main-bg visible on pages with hero video */
+    .mainPageHeader--payment .main-bg,
+    .mainPageHeader--restaurant .main-bg,
+    .mainPageHeader--h-fine .main-bg {
+        display: flex;
     }
 
 
