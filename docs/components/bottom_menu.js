@@ -31,6 +31,7 @@ bottomMenuTemplate.innerHTML = `
         <ul>
             <li><a href="privacy-policy.html">Privacy Policy</a></li>
             <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="sms-terms.html">SMS Terms</a></li>
             <li><a href="cookie.html">Cookie Policy</a></li>
             <li><a href="legal.html">Legal</a></li>
             <li><a href="index.html">Copyright © 2024 Slimrate LLC. All rights reserved</a></li>
