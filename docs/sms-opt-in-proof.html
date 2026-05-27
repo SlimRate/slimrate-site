@@ -207,8 +207,8 @@
       <h1>Slimrate SMS Opt-In Proof</h1>
       <p class="lede">
         This page documents Slimrate's current support-assisted SMS consent process
-        for non-marketing customer care, onboarding, account, payment, and service
-        notifications.
+        for non-marketing customer care and onboarding conversations handled by
+        Slimrate support staff in Zammad.
       </p>
       <div class="meta" aria-label="Document details">
         <span class="pill">Brand: Slimrate</span>
@@ -243,10 +243,10 @@
     <section aria-labelledby="opt-in-method">
       <h2 id="opt-in-method">Opt-In Method</h2>
       <p>
-        Slimrate staff collect explicit verbal consent during a support, onboarding,
-        appointment, or account-service interaction before sending SMS messages.
-        The phone number and consent confirmation are recorded in the customer or
-        merchant support record.
+        Slimrate staff collect explicit verbal consent during a support or onboarding
+        interaction before sending SMS messages. The phone number and consent
+        confirmation are recorded in the customer or merchant support ticket in
+        Zammad before SMS replies or ticket updates are sent.
       </p>
       <div class="callout">
         SMS consent is voluntary and is not a condition of purchase. Messages are
@@ -258,10 +258,10 @@
     <section aria-labelledby="verbal-script">
       <h2 id="verbal-script">Verbal Consent Script</h2>
       <div class="script">
-        "Do you agree to receive SMS updates from Slimrate about this support or
-        onboarding request at this phone number? Message frequency may vary.
-        Message and data rates may apply. Reply STOP to unsubscribe or HELP for
-        help. Consent is not a condition of purchase. Our Privacy Policy is
+        "Do you agree to receive SMS updates from Slimrate Support about this
+        support or onboarding ticket at this phone number? Message frequency may
+        vary. Message and data rates may apply. Reply STOP to unsubscribe or HELP
+        for help. Consent is not a condition of purchase. Our Privacy Policy is
         available at slimrate.com/privacy-policy.html and our SMS Terms are
         available at slimrate.com/sms-terms.html."
       </div>
@@ -270,7 +270,7 @@
     <section aria-labelledby="record-example">
       <h2 id="record-example">Consent Record Example</h2>
       <div class="mockup" role="img" aria-label="Example of the internal support record fields used to document SMS consent">
-        <div class="mockup-header">Support or Onboarding Record</div>
+        <div class="mockup-header">Zammad Support or Onboarding Ticket</div>
         <div class="mockup-body">
           <div class="row">
             <div class="label">Recipient phone</div>
@@ -278,7 +278,7 @@
           </div>
           <div class="row">
             <div class="label">Consent channel</div>
-            <div class="value">Verbal support/onboarding confirmation</div>
+            <div class="value">Verbal support/onboarding confirmation recorded in Zammad</div>
           </div>
           <div class="row">
             <div class="label">Consent status</div>
@@ -290,7 +290,7 @@
           </div>
           <div class="row">
             <div class="label">Message type</div>
-            <div class="value">Non-marketing support, onboarding, account, payment, or service update</div>
+            <div class="value">Non-marketing support or onboarding ticket reply/update</div>
           </div>
         </div>
       </div>
@@ -301,11 +301,11 @@
       <div class="grid">
         <div class="panel white">
           <h3>Support update</h3>
-          <p>Slimrate: Your support request has been updated. Reply STOP to unsubscribe or HELP for help.</p>
+          <p>Slimrate Support: Your support ticket has been updated. Reply STOP to unsubscribe or HELP for help.</p>
         </div>
         <div class="panel white">
           <h3>Onboarding update</h3>
-          <p>Slimrate: Your onboarding appointment is confirmed. Reply STOP to unsubscribe or HELP for help.</p>
+          <p>Slimrate Support: Your onboarding ticket has been updated. Reply STOP to unsubscribe or HELP for help.</p>
         </div>
       </div>
     </section>
