@@ -9,7 +9,7 @@ miniFAQTemplate.innerHTML = `
             <div class="faq-block__contact">
                 <p class="faq-block__hint">Need more help?</p>
                 <a class="faq-block__email" href="mailto:info@slimrate.com">info@slimrate.com</a>
-                <a class="faq-block__phone" href="tel:(888)9774533">(888)977-4533</a>
+                <a class="faq-block__phone" href="tel:+18886008161">+1 (888) 600-8161</a>
             </div>
         </div>
         <div class="faq-block__right">

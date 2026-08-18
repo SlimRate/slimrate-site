@@ -2,6 +2,7 @@ const productMenuElementId = 'dropmenu__product';
 const businessTypeMenuElementId = 'dropmenu__business-types';
 const pricingMenuElementId = 'dropmenu__pricing';
 const companyMenuElementId = 'dropmenu__company';
+const topMenuAssetPrefix = window.location.pathname.includes('/es/') ? '../' : '';
 
 const topMenuTeplate = document.createElement('template');
 topMenuTeplate.innerHTML = `
@@ -9,7 +10,7 @@ topMenuTeplate.innerHTML = `
 
 <div class="container">
 <a class="header-logo" href="index.html">
-    <img src="assets/img/logo.svg" alt="Slimrate logo">
+    <img src="${topMenuAssetPrefix}assets/img/logo.svg" alt="Slimrate logo">
 </a>
 <div class="header-nav">
     <ul>

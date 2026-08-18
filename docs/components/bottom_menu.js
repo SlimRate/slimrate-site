@@ -24,7 +24,7 @@ bottomMenuTemplate.innerHTML = `
         <ul>
             <li>Contact Us</li>
             <li><a href="mailto:info@slimrate.com">info@slimrate.com</a></li>
-            <li><a href="tel:(888)9774533">(888)977-4533</a></li>
+            <li><a href="tel:+18886008161">+1 (888) 600-8161</a></li>
         </ul>
     </div>
     <div class="footer-bottom">

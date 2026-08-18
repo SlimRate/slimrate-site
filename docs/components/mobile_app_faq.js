@@ -8,7 +8,7 @@ mobileAppFaqTemplate.innerHTML = `
             <div class="faq-block__contact">
                 <p class="faq-block__hint">Need more help?</p>
                 <a class="faq-block__email" href="mailto:info@slimrate.com">info@slimrate.com</a>
-                <a class="faq-block__phone" href="tel:(888)9774533">(888) 977-4533</a>
+                <a class="faq-block__phone" href="tel:+18886008161">+1 (888) 600-8161</a>
             </div>
         </div>
         <div class="faq-block__right">
@@ -39,7 +39,7 @@ mobileAppFaqTemplate.innerHTML = `
             <div class="faq-question">
                 <p class="faq-question__title">How do I get support if I have issues?</p>
                 <p class="faq-question__descr">
-                    Our support team is available 24/7. You can contact us at <a href="mailto:info@slimrate.com">info@slimrate.com</a> or call <a href="tel:8889774533">(888) 977-4533</a>. You can also access help resources directly within the app.
+                    Our support team is available 24/7. You can contact us at <a href="mailto:info@slimrate.com">info@slimrate.com</a> or call <a href="tel:+18886008161">+1 (888) 600-8161</a>. You can also access help resources directly within the app.
                 </p>
             </div>
         </div>
